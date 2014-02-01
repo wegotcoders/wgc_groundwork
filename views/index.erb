@@ -1,0 +1,59 @@
+<% if @profile %>
+  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+
+  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  <% @profile.each do |field, value| %>
+    <div class="profile-section box">
+      <h4><%= field %></h4>
+      <p class="profile-value"><%= value %></p>
+    </div>
+  <% end %>
+
+  <div id="stats" class="box">
+    <h3>Stats</h3>
+    <!-- TODO - Set the contents of this span with JavaScript -->
+    <span id="word-count">0</span> words found.
+  </div>
+
+  <div id="problems" class="box">
+    <h3>Programming Problems</h3>
+    <a href="/primes">My Prime Number Solution</a>
+  </div>
+
+  <div class="box">
+    <h3>Edit Profile</h3>
+
+    <form action="/update" method="POST">
+      <fieldset>
+        <div class="form-group">
+          <label for="trainee[about]">About</label>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+        </div>
+
+        <!-- TODO - Add more fields so that your profile can be edited -->
+
+        <input type="submit" value="Update Profile" class="btn btn-primary" />
+      </fieldset>
+    </form>
+  </div>
+<% else %>
+  <div class="welcome">
+    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+    <a href="/authorise">Authorise</a>
+  </div>
+<% end %>
+
+
+<!-- Add your Javascript to this script tag -->
+<script language="javascript">
+  console.log("I am Javascript!");
+
+  var profile_values = document.getElementsByClassName('profile-value');
+  var total_words = 0;
+
+  // TODO - Count the number of words in the profile.
+  // hint - look at what the innerHTML property provides.
+
+  document.getElementById('word-count').innerHTML = total_words;
+</script>

@@ -1,0 +1,31 @@
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+}
+
+#logo {
+  text-align: center;
+}
+
+#content {
+  padding: 1em;
+}
+
+.box {
+  border: 1px solid #999;
+  background: #FCFCFC;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}
+
+.welcome {
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+/* TODO - Add your own styles here */
