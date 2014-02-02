@@ -77,4 +77,6 @@ If you have completed the groundwork, these values should be 100%!
 
 * If you are having trouble updating your Codecademy, ensure that you have entered the correct URL to your profile page, including the http:// part of the URL.
 
+* If you're stuck, try deleting your cookies and starting again. There is a good plugin for chrome called Edit This Cookie that allows you to easily delete cookies.
+
 * You can use any third-party frameworks that you wish: bootstrap, jQuery etc. but this is not necessary nor required.
