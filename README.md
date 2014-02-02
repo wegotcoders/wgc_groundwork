@@ -1,6 +1,8 @@
-# We Got Coders Programming Challenge
+![We Got Coders Logo](http://wegotcoders.com/assets/logos/WEGOTCODERS_color.png "We Got Coders")
 
-This is the application that we will be using to demonstrate our preparedness for the course. If you've already applied and are ready to get started, follow the instructions below. If you haven't yet applied, please read about We Got Coders and apply on our website, http://wegotcoders.com/trainees.
+# Programming Challenge
+
+This is the application that you will be using to demonstrate your preparedness for the course. If you've already applied and are ready to get started, follow the instructions below. If you haven't yet applied, please read about We Got Coders and apply on our website, http://wegotcoders.com/trainees.
 
 ## INSTALL
 
