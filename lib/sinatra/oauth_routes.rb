@@ -26,11 +26,16 @@ module Sinatra
       end
 
       app.get '/callback' do
-        new_token = client.auth_code.get_token(params[:code], :redirect_uri => settings.redirect_uri)
-        session[:access_token]  = new_token.token
-        session[:refresh_token] = new_token.refresh_token
+        if params["error"]
+          @errors = Hash.new[params["error"]]= params["error_description"]
+          erb :error, :layout => :main
+        else
+          new_token = client.auth_code.get_token(params[:code], :redirect_uri => settings.redirect_uri)
+          session[:access_token]  = new_token.token
+          session[:refresh_token] = new_token.refresh_token
 
-        redirect '/'
+          redirect '/'
+        end
       end
     end
   end

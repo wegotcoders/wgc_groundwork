@@ -28,4 +28,12 @@ h3 {
   font-size: 1.5em;
 }
 
+.error {
+  text-align: center;
+}
+
+.error h2 {
+  font-size: 1.5em;
+}
+
 /* TODO - Add your own styles here */
