@@ -55,7 +55,7 @@ If you have completed the groundwork, these values should be 100%!
 
 6. Add some Javascript to the provided ```<script>``` tag in the views/index.erb file, that counts the number of words in each section. You ought to have at least twenty words for each of the questions.
 
-7. Add code to the primes.rb file, that finds the sum of all prime numbers less than one hundred. Can you refactor the implementation so that you can pass in higher numbers to act as the limit? Find the sum of all prime numbers up to two million. Add a field to your profile named ```trainees[primes_sum]``` and enter in your answer.
+7. Add code to the primes.rb file, that finds the sum of all prime numbers less than one hundred. Can you refactor the implementation so that you can pass in higher numbers to act as the limit? Test your implementation by running the rspec command ```rspec```. Find the sum of all prime numbers up to two million. Add a field to your profile named ```trainees[primes_sum]``` and enter in your answer.
 
 8. Over to you! Make any adjustments that you see fit, and add a feature that you are interested in attempting. Perhaps you might:
 
