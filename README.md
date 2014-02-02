@@ -30,7 +30,7 @@ in the terminal, and re-run ```ruby app.rb```.
 Attempt the following tasks. The list is meant to be progressively more
 difficult and open-ended; the aim is to demonstrate your approach when dealing with programming issues and to test your initiative. Complete as much as you can within the time limit; you will not be penalised for not finishing the list. We are looking for self-motivated effort and to see how much of the groundwork you have grasped.
 
-Don't forget to ```git add .``` and ```git commit``` after each step!
+Don't forget to ```git add .``` and ```git commit``` after each step, if you have made any changes to your code!
 
 1. You should see a list of the profile data that you submitted to us when you
 applied to We Got Coders. Use your knowledge of HTML / CSS to redesign and
@@ -51,15 +51,19 @@ your profile. You will need an input text box, with the appropriate ```name``` a
 5. Update your profile with the full URL to your codeacademy. You should notice three fields in the response, js_track_completedness, web_track_completedness and ruby_track_completedness. Display each of these values as a progress bar, which displays the completed total of the Codecademy track. The shaded portion of the progress bar should be proportional to the percentage completedness of the given track.
 If you have completed the groundwork, these values should be 100%!
 
-5. Add some Javascript to the provided ```<script>``` tag in the views/index.erb file, that counts the number of words in each section. You ought to have at least twenty words for each of the questions.
+6. Add some Javascript to the provided ```<script>``` tag in the views/index.erb file, that counts the number of words in each section. You ought to have at least twenty words for each of the questions.
 
-6. Add code to the primes.rb file, that finds the sum of all prime numbers less than one hundred. Can you refactor the implementation so that you can pass in higher numbers to act as the limit? Find the sum of all prime numbers up to two million. Add a field to your profile named ```trainees[prime_sum]``` and enter in your answer.
+7. Add code to the primes.rb file, that finds the sum of all prime numbers less than one hundred. Can you refactor the implementation so that you can pass in higher numbers to act as the limit? Find the sum of all prime numbers up to two million. Add a field to your profile named ```trainees[primes_sum]``` and enter in your answer.
 
-7. Over to you! Make any adjustments that you see fit, and add a feature that you are interested in attempting. Perhaps you might:
+8. Over to you! Make any adjustments that you see fit, and add a feature that you are interested in attempting. Perhaps you might:
 
     * Attempt a programming puzzle in Ruby, see http://projecteuler.net
     * Experiment with using JavaScript to respond to user events
     * Add some more pages and link them together
+
+9. Once you are done, submit a pull request. We will use this to review your work once you are done.
+
+10. Get buzzing! Mention @wegotcoders and tell the world why you decided to join the course and become a web developer.
 
 ## FAQs / Troubleshooting
 
