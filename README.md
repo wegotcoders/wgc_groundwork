@@ -17,8 +17,7 @@ Follow these steps to get going.
   git clone <your-git-clone-url>
 ```
 * Change directory to your cloned workspace in the terminal. ```cd wgc_groundwork```
-* Run the ```bundle``` command. This will retreive dependencies that are required
-in order for the application to work.
+* We now need to install some dependencies that will make the application work. If you've not done so already, install bundler using the ```gem install bundler``` command. Then run the ```bundle``` command, and you should see a number of gems being installed (see http://bundler.io for more information on how this works).
 * Update app.rb to include your OAuth application id and application secret,
 which you can find on your profile page (http://wegotcoders.com/trainees/sign_in).
 * Run the application using the following command: ```ruby app.rb```. Don't forget
