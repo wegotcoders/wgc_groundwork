@@ -33,7 +33,7 @@ difficult and open-ended; the aim is to demonstrate your approach when dealing w
 
 Don't forget to ```git add .``` and ```git commit``` after each step, if you have made any changes to your code!
 
-1. You should see a list of the profile data that you submitted to us when you
+* You should see a list of the profile data that you submitted to us when you
 applied to We Got Coders. Use your knowledge of HTML / CSS to redesign and
 layout the page in a presentable way. Show us what you can do with:
 
@@ -42,29 +42,29 @@ layout the page in a presentable way. Show us what you can do with:
     * Backgrounds / Gradients
     * Multiple columns
 
-2. Add an image of yourself to your profile. Add CSS where necessary to ensure that it looks presentable.
+* Add an image of yourself to your profile. Add CSS where necessary to ensure that it looks presentable.
 
-3. Observe how the about field works. What makes it bound to the data from your profile? Add more fields so that you can edit your profile.
+* Observe how the about field works. What makes it bound to the data from your profile? Add more fields so that you can edit your profile.
 
-4. Add a field to the form so that you can add your Codecademy account to
+* Add a field to the form so that you can add your Codecademy account to
 your profile. You will need an input text box, with the appropriate ```name``` attribute.
 
-5. Update your profile with the full URL to your codeacademy. You should notice three fields in the response, js_track_completedness, web_track_completedness and ruby_track_completedness. Display each of these values as a progress bar, which displays the completed total of the Codecademy track. The shaded portion of the progress bar should be proportional to the percentage completedness of the given track.
+* Update your profile with the full URL to your codeacademy. You should notice three fields in the response, js_track_completedness, web_track_completedness and ruby_track_completedness. Display each of these values as a progress bar, which displays the completed total of the Codecademy track. The shaded portion of the progress bar should be proportional to the percentage completedness of the given track.
 If you have completed the groundwork, these values should be 100%!
 
-6. Add some Javascript to the provided ```<script>``` tag in the views/index.erb file, that counts the number of words in each section. You ought to have at least twenty words for each of the questions.
+* Add some Javascript to the provided ```<script>``` tag in the views/index.erb file, that counts the number of words in each section. You ought to have at least twenty words for each of the questions.
 
-7. Add code to the primes.rb file, that finds the sum of all prime numbers less than one hundred. Can you refactor the implementation so that you can pass in higher numbers to act as the limit? Test your implementation by running the rspec command ```rspec```. Find the sum of all prime numbers up to two million. Add a field to your profile named ```trainees[primes_sum]``` and enter in your answer.
+* Add code to the primes.rb file, that finds the sum of all prime numbers less than one hundred. Can you refactor the implementation so that you can pass in higher numbers to act as the limit? Test your implementation by running the rspec command ```rspec```. Find the sum of all prime numbers up to two million. Add a field to your profile named ```trainees[primes_sum]``` and enter in your answer.
 
-8. Over to you! Make any adjustments that you see fit, and add a feature that you are interested in attempting. Perhaps you might:
+* Over to you! Make any adjustments that you see fit, and add a feature that you are interested in attempting. Perhaps you might:
 
     * Attempt a programming puzzle in Ruby, see http://projecteuler.net
     * Experiment with using JavaScript to respond to user events
     * Add some more pages and link them together
 
-9. Once you are done, submit a pull request. We will use this to review your work once you are done.
+* Once you are done, submit a pull request. We will use this to review your work once you are done.
 
-10. Get buzzing! Mention @wegotcoders and tell the world why you decided to join the course and become a web developer.
+* Get buzzing! Mention @wegotcoders and tell the world why you decided to join the course and become a web developer.
 
 ## FAQs / Troubleshooting
 
