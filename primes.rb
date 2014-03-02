@@ -15,7 +15,7 @@ class Primes
  end
 
 
-@test = Primes.sum_to
+@test = Primes.sum_to(2000000)
 
 puts @test
 
