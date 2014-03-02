@@ -1,18 +1,26 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-family:'Raleway',Helvetica,Arial;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
-  background-color: red;
-}
-
-#logo {
-float:left;  
+ background-image: -webkit-gradient(
+  linear,
+  left top,
+  left bottom,
+  color-stop(0, #FFFFFF),
+  color-stop(1, #82858C)
+);
+background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #82858C 100%);
+background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #82858C 100%);
+background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #82858C 100%);
+background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #82858C 100%);
+background-image: linear-gradient(to bottom, #FFFFFF 0%, #82858C 100%);
+ overflow-x: hidden;
 }
 
 
 #content {
-  padding: 1em;
+margin-top:50px;
 }
 
 .box {
@@ -40,24 +48,140 @@ h3 {
 
 /* TODO - Add your own styles here */
 
-#header{clear:both;
-overflow: auto;
-width: 100%;
+.navbar-default {
 background-color: #1abc9c;
+border:none;
+margin:0;
+padding:0;
 }
 
-nav{
+.navbar-default .navbar-brand {
+background:url("../images/logo.png") no-repeat;
+background-position: -20px -15px;
+background-size:100%;
+width:300px;
+padding:0;
+margin:0;
+text-indent: -9999px;
+}
+.navbar-default .navbar-toggle {
+border:none;
+padding:10px 0 10px 0;
+}
 
-float:right; 
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+background:none;
 
 }
 
-nav li{
 
-display:inline-block;
-padding:10px;
-margin:40px 10px;
-font-size:18px;
-font-weight:700;
+.navbar-collapse {
+box-shadow: none;
+border:none;
+background-color:rgba(255,255,255,0.09);
+}
+
+
+.navbar-default .navbar-nav>li>a {
+text-align: center;
 color:#000;
+padding:10px;
+font-weight: 600;
 }
+
+.navbar-default .navbar-nav>li>a.active {
+color:#f39c12;
+}
+
+/* Banner */
+
+.banner{background-color:black;
+height:300px;}
+.banner h1{line-height:300px;vertical-align: middle;font-size:25px;}
+#myname{color:#f39c12;}
+
+
+
+/*About */
+
+.about{min-height:600px;border-bottom:1px dashed #2c3e50;}
+.slides_nav li{display:inline-block;}
+.slides_nav li a{display:block;padding:10px;margin-top:30px;border:1px solid #000; 
+text-decoration:none;color:#000;}
+li.rslides_here a{color:#f39c12;border-color:#f39c12;}
+.quote{background:url("../images/quote.png") no-repeat;width:47px;height:45px;display:inline-block;
+margin:20px 0 20px 0;}
+.rslides p{text-align: left;font-size:14px;}
+
+
+/*Codecademy*/
+
+.codecademy{border-bottom:1px dashed #2c3e50;}
+
+
+/*Projects*/
+
+.projects{min-height:300px;border-bottom:1px dashed #2c3e50;}
+.projects p{font-size:14px;padding-top:20px;}
+
+
+/*Programming Problems*/
+
+.problems{min-height:300px;border-bottom:1px dashed #2c3e50;}
+
+
+
+/*Update Profile*/
+.update{border-bottom:1px dashed #2c3e50;}
+
+/*Profile*/
+
+.me{min-height:700px;}
+.me img{border: 4px solid #e74c3c;}
+.details{padding-top: 40px;}
+.details h3{color:#f39c12; weight:600;}
+
+
+.social_icons{width:100%;}
+.social_icons div{display:inline-block;width:64px;height:64px;}
+
+  #codecademy{background:url("../images/codecademy.png") no-repeat; background-size:64px 64px;}
+  #twitter{background:url("../images/twitter.png") no-repeat;}
+  #github{background:url("../images/github.png") no-repeat;background-size:64px 64px;}
+  #mail{background:url("../images/email.png") no-repeat;}
+  #dunked{background:url("../images/dunked.png") no-repeat; background-size:64px 64px;background-color:#000;}
+
+
+
+
+
+
+  @media(min-width:768px){
+
+  .banner{background-color:black;
+  height:600px;}
+  .banner h1{line-height:500px;font-size:45px;}
+  .about{height:800px;}
+  .about p{padding-top:50px;font-size:20px;line-height: 50px }
+  .codecademy{height:800px;}
+  .circles{padding-top:200px;}
+  .projects{height:800px;}
+  .projects p{ padding-top:200px;font-size:20px;line-height: 50px }
+
+
+  }
+
+  @media(min-width:1200px){
+
+  .banner{background-color:black;
+  height:800px;}
+  .banner h1{line-height:800px;vertical-align: middle;font-size:45px;}
+  .about{height:800px;}
+  .about p{padding-top:50px;font-size:20px;line-height: 50px }
+  .codecademy{height:800px;}
+  .circles{padding-top:200px;}
+  .projects{height:800px;}
+  .projects p{ padding-top:200px;font-size:20px;line-height: 50px }
+
+  }

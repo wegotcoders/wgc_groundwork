@@ -5,29 +5,91 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>We Got Coders - My Amazing Application</title>
+
   <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css" >
   <link rel="stylesheet" href="/stylesheets/main.css">
+ 
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 
-  <div id="header">
-    <div id="logo">
-      <img src="/images/logo.png" alt="We Got Coders"  />
-    </div>
-    <nav>
-    <ul>
-      <li>About</li>
-      <li>Ambition</li>
-      <li>item3</li>
-      <li>item4</li>
-      <li>item5</li> 
-    </ul>
-    </nav>
-  </div>
 
-  <div id="content">
+
+
+
+<div id="content">
     <%= yield %>
-  </div>
+</div>
 
+
+
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ <script src="/js/responsiveslides.min.js"></script>
+ <script src="/js/jquery.knob.js"></script>
+ <script src="/js/scrollIt.min.js" type="text/javascript"></script>
+ <script src="/js/bootstrap.min.js"></script>
+
+
+
+
+
+<script>
+$(function(){
+  $.scrollIt({topOffset: -50,
+
+     activeClass: 'active'
+
+  });
+});
+</script>
+
+
+<script>
+  $(function() {
+    $(".rslides").responsiveSlides({
+        auto: false,
+        pager: true,
+        manualControls: ".slides_nav",
+    });
+  });
+</script>
+
+<script>
+
+
+
+$('.dial')
+    .trigger(
+        'configure',
+        {
+        "min":10,
+        "max":40,
+        "fgColor":"#FF0000",
+        "skin":"tron",
+        "cursor":true
+        }
+    );
+
+</script>
+
+<script>
+$(".dial").knob({
+                'min':0
+                ,'max':100,
+                'readOnly':true
+                });
+
+</script>
+<script>
+
+$(".dial").knob({
+                    'release' : function (v) {  }
+                });
+
+
+</script>
 </body>
 </html>
