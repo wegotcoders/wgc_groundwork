@@ -176,6 +176,17 @@ a {
   padding: 1em;
 }
 
+.meter { 
+  height: 10px;  /* Can be anything */
+  position: relative;
+  background: #444;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 25px;
+  padding: 10px;
+  color: white;
+}
+
 #footer {
   min-height: 40px;
   width: 100%;

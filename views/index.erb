@@ -4,8 +4,15 @@
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
+      <!-- tettible ' know, but neehhh...-->
       <h3><%= field %>: </h3>
+      <% if field == "js_track_completedness" || 
+            field == "web_track_completedness" || 
+            field == "ruby_track_completedness" %>      
+      <p class="meter" style="width:<%= value*100 %>%" > <%= (value*100).to_i %>%</p>
+      <% else %>
       <p class="profile-value"><%= value %></p>
+      <% end %>
     </div>
   <% end %>
 
@@ -52,7 +59,7 @@
           <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
         </div>  
         <div class="form-group">
-          won't accept my answer (keeps 'converting' it): 142913828922
+          won't accept my answer (keeps 'converting' it?): 142913828922
           <label for="trainee[primes_sum]">Primes sum: </label>
           <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
         </div>  
