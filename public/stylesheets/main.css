@@ -60,11 +60,11 @@ body {
 
 fieldset {
   padding: 1em;
-  font:100%/1 monospace;
+  font:130%/1 monospace;
 }
 label {
   float:left;
-  width:10%;
+  width:15%;
   margin-right:0.5em;
   padding-top:0.2em;
   text-align:right;
