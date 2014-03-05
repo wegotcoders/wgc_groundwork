@@ -62,9 +62,10 @@ fieldset {
   padding: 1em;
   font:130%/1 monospace;
 }
+
 label {
   float:left;
-  width:15%;
+  width:17%;
   margin-right:0.5em;
   padding-top:0.2em;
   text-align:right;

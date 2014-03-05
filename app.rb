@@ -18,6 +18,10 @@ get '/primes' do
   erb :primes, :layout => :main
 end
 
+get '/blog' do
+  erb :blog, :layout => :main
+end
+
 get '/' do
   if signed_in?
     @profile = trainee.get_profile
