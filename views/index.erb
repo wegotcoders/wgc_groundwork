@@ -27,10 +27,30 @@
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>    
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition: </label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+        </div>   
+        <div class="form-group">
+          <label for="trainee[first_name]">Name: </label>
+          <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
+        </div> 
+        <div class="form-group">
+          <label for="trainee[last_name]">Surname: </label>
+          <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+        </div> 
+        <div class="form-group">
+          <label for="trainee[github]">Github: </label>
+          <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
+        </div> 
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy: </label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>  
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
