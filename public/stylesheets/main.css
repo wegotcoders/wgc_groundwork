@@ -1,8 +1,8 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  color: #333;*/
 }
 
 #logo {
@@ -14,7 +14,7 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
+  /*border: 1px solid #999;*/
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
@@ -26,6 +26,9 @@ body {
 
 h3 {
   font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 13px;
 }
 
 .error {
@@ -37,3 +40,121 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+.shadow {
+  -moz-box-shadow: 3px 3px 25px #444;
+  -webkit-box-shadow: 3px 3px 25px #444;
+  box-shadow: 3px 3px 25px #444;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444');
+}
+
+.shadow2 {
+  -moz-box-shadow: 0px 2px 20px  2px #444;
+  -webkit-box-shadow: 0px 2px 20px 2px #444;
+  box-shadow: 0px 2px 20px 2px #444;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444');
+}
+
+body {
+  background-image: url(/images/images.jpg);
+  background-repeat: repeat;
+  margin: 0;
+  padding: 0;
+  font-family: monospace,sans-serif;
+}
+
+#head {
+  height: 100px;
+  width:100%;
+  background-image: url(/images/tile3.jpg);
+  background-repeat: repeat;
+}
+
+#topnav {
+  height: 100%;
+  width: 835px;
+  margin-right: auto; 
+  margin-left: auto;
+  padding-top:4px;
+}
+
+#logo {
+  height: 100%;
+  width: 100px;
+  border: 2px dotted #FFF;
+  color: #FFF;
+  padding: 10px;
+  font-weight: bold;
+  float:left;  
+}
+
+#slogan {
+  color: white;
+  font-size: 12px;
+  font-weight:bold; 
+  width: 200px;
+  float:left;
+  padding-left: 5px;
+  margin-top: 80px;
+  font-style:italic;
+}
+
+#menu {
+  float: right;
+  margin-top: 45px;
+}
+
+#menu li {
+    background-color: #FFFFFF;
+    border: 1px solid white; 
+    float: left;
+    margin-left: 10px;
+    padding: 15px;
+    /* dont care about IE */
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;   
+    -webkit-transition: background-color 0.5s linear;
+    -moz-transition: background-color 0.5s linear;
+    -ms-transition: background-color 0.5s linear;
+    -o-transition: background-color 0.5s linear;
+    transition: background-color 0.5s linear;  
+}
+
+a {
+  text-decoration: none;
+}
+
+#menu li:hover {
+  background-color: black !important; 
+  border: 1px dotted white;   
+}
+
+#menu li:hover a {
+   color: white;
+}
+
+.profile-value {
+  text-align: justify;
+}
+
+#content {
+  width: 800px;
+  margin-right: auto; 
+  margin-left: auto;  
+  margin-top: 110px;
+  min-height: 600px;
+  background-color:white;
+  padding: 1em;
+}
+
+#footer {
+  min-height: 40px;
+  width: 100%;
+  margin: 50px auto 0 auto;
+  background-image: url(/images/tile3.jpg);
+  background-repeat: repeat;
+}

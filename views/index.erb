@@ -1,10 +1,11 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+   <!--<h3><%= @profile["first_name"] %>'s Amazing Profile</h3>-->
+  <h3 style="float: right; font-style: italic; text-transform: none;">the amazing ME</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
-      <h4><%= field %></h4>
+      <h3><%= field %>: </h3>
       <p class="profile-value"><%= value %></p>
     </div>
   <% end %>
