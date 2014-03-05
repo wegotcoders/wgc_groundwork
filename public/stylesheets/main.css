@@ -18,6 +18,7 @@ body {
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
+  clear: both;
 }
 
 .welcome {
@@ -49,14 +50,6 @@ h3 {
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444');
 }
 
-.shadow2 {
-  -moz-box-shadow: 0px 2px 20px  2px #444;
-  -webkit-box-shadow: 0px 2px 20px 2px #444;
-  box-shadow: 0px 2px 20px 2px #444;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444');
-}
-
 body {
   background-image: url(/images/images.jpg);
   background-repeat: repeat;
@@ -70,6 +63,11 @@ body {
   width:100%;
   background-image: url(/images/tile3.jpg);
   background-repeat: repeat;
+  -moz-box-shadow: 0px 2px 20px  2px #444;
+  -webkit-box-shadow: 0px 2px 20px 2px #444;
+  box-shadow: 0px 2px 20px 2px #444;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444');
 }
 
 #topnav {
@@ -94,7 +92,7 @@ body {
   color: white;
   font-size: 12px;
   font-weight:bold; 
-  width: 200px;
+  width: auto;
   float:left;
   padding-left: 5px;
   margin-top: 80px;
@@ -107,25 +105,26 @@ body {
 }
 
 #menu li {
-    background-color: #FFFFFF;
-    border: 1px solid white; 
-    float: left;
-    margin-left: 10px;
-    padding: 15px;
-    /* dont care about IE */
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    border-radius: 5px;   
-    -webkit-transition: background-color 0.5s linear;
-    -moz-transition: background-color 0.5s linear;
-    -ms-transition: background-color 0.5s linear;
-    -o-transition: background-color 0.5s linear;
-    transition: background-color 0.5s linear;  
+  background-color: #FFFFFF;
+  border: 1px solid white; 
+  float: left;
+  margin-left: 10px;
+  padding: 15px;
+  /* dont care about IE */
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;   
+  -webkit-transition: background-color 0.5s linear;
+  -moz-transition: background-color 0.5s linear;
+  -ms-transition: background-color 0.5s linear;
+  -o-transition: background-color 0.5s linear;
+  transition: background-color 0.5s linear;  
 }
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 #menu li:hover {
@@ -134,11 +133,25 @@ a {
 }
 
 #menu li:hover a {
-   color: white;
+ color: white;
 }
 
 .profile-value {
   text-align: justify;
+}
+
+.me {
+  width:200px;
+  -webkit-transition: width 0.5s linear;
+  -moz-transition: width 0.5s linear;
+  -ms-transition: width 0.5s linear;
+  -o-transition: width 0.5s linear;
+  transition: width 0.5s linear; 
+  border: 1px solid black;
+}
+
+.me:hover{
+  width:400px;
 }
 
 #content {
