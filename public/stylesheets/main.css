@@ -113,7 +113,7 @@ label {
 
 #menu {
   float: right;
-  margin-top: 45px;
+  margin-top: 40px;
 }
 
 #menu li {
@@ -140,7 +140,7 @@ a {
 }
 
 #menu li:hover {
-  background-color: black !important; 
+  background-color: #444 !important; 
   border: 1px dotted white;   
 }
 
