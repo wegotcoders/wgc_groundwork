@@ -25,7 +25,8 @@ body {
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 2em;
+  font-family: 'Comfortaa', cursive;
 }
 
 .error {
@@ -37,6 +38,10 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+body {
+  background-image: url(/images/pattern30.png);
+}
 
 #zoltan {
   text-align: center;
