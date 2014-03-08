@@ -9,10 +9,6 @@ body {
   text-align: center;
 }
 
-#content {
-  padding: 1em;
-}
-
 .box {
   border: 1px solid #999;
   background: #FCFCFC;
@@ -25,8 +21,9 @@ body {
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 2.5em;
   font-family: 'Comfortaa', cursive;
+  padding: 20px;
 }
 
 .error {
@@ -49,4 +46,21 @@ body {
 
 #profiletitle {
   text-align: center;
+}
+
+#content {
+  padding: 1em;
+  font-family: 'Comfortaa', cursive;
+  text-align: center;
+  width: 60%;
+  margin-left: 20%;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-family: 'Comfortaa', cursive;
+}
+
+.profile-section h4 {
+  font-size: 1.5em;
 }
