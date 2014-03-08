@@ -7,13 +7,14 @@ body {
 
 #logo {
   text-align: center;
+  background-color: rgba(255,255,255,0.8);
+  margin-bottom: 40px;
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
+  background: #AB1F27;
   padding: 1em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .welcome {
@@ -47,6 +48,7 @@ body {
 #profiletitle {
   text-align: center;
   background-color: rgba(255,255,255,0.8);
+  color: black;
 }
 
 #content {
@@ -55,6 +57,7 @@ body {
   text-align: center;
   width: 60%;
   margin-left: 20%;
+  color: white;
 }
 
 h2 {
@@ -64,9 +67,4 @@ h2 {
 
 .profile-section h4 {
   font-size: 1.5em;
-}
-
-.box {
-  background-image: 
-  radial-gradient(white,#E6BBBE);
 }
