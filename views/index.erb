@@ -9,19 +9,32 @@
     </div>
   <% end %>
 
-  <div id="stats" class="box">
-    <h2>Stats</h2>
+  <div id="codecademy" class="profile-section box">
+    <h4>Codecademy</h4>
+    <form action="/update" method="POST">
+      <fieldset>
+        <div class="form-group">
+          <label for="trainee[codecademy]">URL</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>
+        <input type="submit" value="Update Profile" class="btn btn-primary" />
+      </fieldset>
+    </form>
+  </div>
+
+  <div id="stats" class="profile-section box">
+    <h4>Stats</h4>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
 
-  <div id="problems" class="box">
-    <h2>Programming Problems</h2>
+  <div id="problems" class="profile-section box">
+    <h4>Programming Problems</h4>
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
-  <div class="box">
-    <h2>Edit Profile</h2>
+  <div class="profile-section box">
+    <h4>Edit Profile</h4>
 
     <form action="/update" method="POST">
       <fieldset>
