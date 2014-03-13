@@ -35,6 +35,14 @@
           <label for="trainee[ambition]">Ambition</label>
           <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
         </div>
+        <div class="form-group">
+          <label for="trainee[codecademy]">Code Academy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[dob]">D.O.B</label>
+          <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+        </div>
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
