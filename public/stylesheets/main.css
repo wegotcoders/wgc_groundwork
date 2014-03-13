@@ -1,5 +1,6 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: center;
+  font-family: "sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
@@ -37,3 +38,19 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+.wrapper{
+  max-height: 100%;
+  max-width: 960px;
+  display: inline-block;
+}
+
+h4{
+  font-weight: bold;
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+
+p,
+span{
+  text-align: left;
+}
