@@ -2,16 +2,36 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+ <ol >
   <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
+   <li><span> <div class="profile-section box">
+     <h4 class="field"><%= field %></h4>
+      <p class="profile-value" id="d"><%= value %></p>
+    </div></span> </li>
   <% end %>
+</ol> 
 
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
+
+<script>
+    function get_text(el) {
+    ret = "";
+    var length = el.childNodes.length;
+    for(var i = 0; i < length; i++) {
+        var node = el.childNodes[i];
+        if(node.nodeType != 8) {
+            ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+        }
+    }
+    return ret;
+}
+var words = get_text(document.getElementById('d'));
+var count = words.split(' ').length;
+f = getElementById('word-count').innerHTML =  "ddd"
+</script>
+
     <span id="word-count">0</span> words found.
   </div>
 
