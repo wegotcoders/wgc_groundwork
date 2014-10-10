@@ -7,9 +7,31 @@
   <title>We Got Coders - My Amazing Application</title>
   <link rel="stylesheet" href="/stylesheets/reset.css">
   <link rel="stylesheet" href="/stylesheets/main.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="css/style5.css" />
+    <script src="js/modernizr.custom.js"></script>
+
 </head>
 <body>
 
+<div class="container">
+      <nav id="bt-menu" class="bt-menu">
+        <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+        <ul>
+          <li><a href="/">All</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/ambition">Ambition</a></li>
+        </ul>
+        <ul>
+          <li><a target="_blank" href="http://www.twitter.com/_mahmudh" class="bt-icon icon-twitter">Twitter</a></li>
+          <li><a target="_blank" href="https://github.com/mahmudh" class="bt-icon icon-github">icon-github</a></li>
+        </ul>
+      </nav>
+    </div><!-- /container -->
   <div id="logo">
     <img src="/images/logo.png" alt="We Got Coders"  />
   </div>
@@ -17,6 +39,9 @@
   <div id="content">
     <%= yield %>
   </div>
-
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/borderMenu.js"></script>
 </body>
 </html>

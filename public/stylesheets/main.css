@@ -1,8 +1,19 @@
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
+  font-size: 20px !important;
   line-height: 1.428571429;
   color: #333;
+  background-color: #333 !important;
+}
+
+.white{
+  color: #999999 !important;
+  background-color: #fff !important;
+}
+
+.grey{
+  color: #333 !important;
+  background-color: #333 !important;
 }
 
 #logo {
@@ -14,10 +25,14 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
+  /*border: 1px solid #999;*/
+  border: 4px solid #fff;
+  /*border-radius: 20px;*/
+  /*background: #FCFCFC;*/
+  background-color: #fff;
   padding: 1em;
   margin-bottom: 0.5em;
+  color: #333;
 }
 
 .welcome {
@@ -25,7 +40,12 @@ body {
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.6em !important;
+  font-family: Helvetica;
+}
+
+h4{
+  font-size: 1.6em !important;
 }
 
 .error {
@@ -37,3 +57,40 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+.center{
+  text-align: center;
+}
+
+.progress{
+  margin-top: 30px;
+}
+
+.jumbotron{
+  /*background-color: #FF4F4F !important;*/
+  color: #333 !important; 
+}
+
+#picture{
+  border-radius: 150px;
+  margin-bottom: 20px;
+}
+
+#about-text{
+  color: black; 
+  height: ; 
+  width: ; 
+  vertical-align: top;
+  padding-top:;
+}
+
+input[type="text"]{
+  
+}
+
+#thanks{
+
+}
+
+.hide{
+  display: none;
+}
