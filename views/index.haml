@@ -1,0 +1,9 @@
+- if @profile
+  - @profile.each do |field, value|
+    .profile-section.box
+      %h4= field
+      %p.profile-value= value
+- else
+  %div.welcome
+    %p= 'Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.'
+    %a{href: '/authorise'}= 'Authorise'
