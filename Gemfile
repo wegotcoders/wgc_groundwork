@@ -6,7 +6,9 @@ gem 'httparty'
 gem 'json'
 
 #Assets
+gem 'sinatra-assetpack'
 gem 'haml'
+gem 'sass'
 
 group :development, :test do
   gem 'pry'

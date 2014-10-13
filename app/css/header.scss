@@ -1,0 +1,36 @@
+.inner {
+  width: 550px;
+  margin: 0 auto;
+}
+
+#header {
+  font-family: "Poiret One",Helvetica,Arial,sans-serif;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 100px;
+  padding: 30px 0px;
+  text-align: center;
+
+  #main-nav {
+    margin-top: 15px;
+  }
+
+  #main-nav > ul > li:first-of-type {
+   margin-left: 0;
+  }
+
+  #main-nav > ul > li {
+   position: relative;
+   display: inline-block;
+   vertical-align: middle;
+  }
+}
+
+#header h1 {
+  color: #333;
+  font-size: 58px;
+  font-weight: 300px;
+  line-height: 1.1;
+}
+
+

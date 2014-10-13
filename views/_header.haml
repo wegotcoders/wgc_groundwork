@@ -1,0 +1,10 @@
+%header#header.inner
+  - if @profile
+    %h1= @profile['first_name'] + ' ' + @profile['last_name']
+  %hr
+  %nav#main-nav
+    %ul
+      %li
+        %a{href: '#'}= 'Resume'
+      %li
+        %a{href: '#'}= 'Contact'

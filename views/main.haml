@@ -5,14 +5,16 @@
     %meta{"http-equiv" => "X-UA-Compatible", content: "IE=edge"}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
     %title= "We Got Coders - Application"
-    %link{rel: 'stylesheet', href: '/stylesheets/reset.css'}
-    %link{rel: 'stylesheet', href: '/stylesheets/main.css'}
     %link{rel: 'stylesheet', href: '/bootflat/css/bootflat.css'}
+    = css :application
+    %link{type:"text/css", rel: "stylesheet", href: "http://fonts.googleapis.com/css?family=Poiret+One"}
 
   %body
-    %div#logo
-      %img{src: '/images/logo.png', alt: 'We Got Coders'}
+    //%div#logo
+    //%img{src: '/images/logo.png', alt: 'We Got Coders'}
 
-    %div#content
+    = haml :_header
+    #content.inner
       = yield
+    %footer
 
