@@ -46,13 +46,13 @@
 }
 
 #header .mugshot a {
-  width: 200px;
-  height: 164px;
-  border-radius: 100px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-   background: url('/images/me_small.png') no-repeat;
+  width: 300px;
+  height: 200px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  background: url('/images/me_medium.jpg') no-repeat;
   position: absolute;
-  left: 203px;
-  top: 25px;
+  left: 50px;
+  top: 10px;
 }

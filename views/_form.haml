@@ -17,8 +17,16 @@
             %label{for: "trainee[codecademy]"}= "Codecademy:"
             %input{type: "text", name: "trainee[codecademy]", value: "#{@profile["codecademy"]}"}
 
+          %li
+            %label{for: "trainee[js_track_completedness]"}= "JS Track:"
+            %input{type: "text", name: "trainee[js_track_completedness]", value: "#{@profile["js_track_completedness"]}"}
 
+          %li
+            %label{for: "trainee[ruby_track_completedness]"}= "Ruby Track:"
+            %input{type: "text", name: "trainee[ruby_track_completedness]", value: "#{@profile["ruby_track_completedness"]}"}
 
-      <!-- TODO - Add more fields so that your profile can be edited -->
+          %li
+            %label{for: "trainee[web_track_completedness]"}= "Ruby Track:"
+            %input{type: "text", name: "trainee[web_track_completedness]", value: "#{@profile["web_track_completedness"]}"}
 
       %input{type: "submit", value: "Update Profile", class: "btn btn-primary"}
