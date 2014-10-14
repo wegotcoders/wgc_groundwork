@@ -1,9 +1,65 @@
 - if @profile
-  - @profile.each do |field, value|
-    .profile-section.box
-      %h4= field
-      %p.profile-value= value
+  %section#about
+    %h4= 'About'
+    %p= @profile['about']
+
+  %section#tracks
+    %h4= 'Tracks'
+    %p= 'Track information here'
+
+  %section#logic
+    %h4= 'Logic'
+    %p= 'logic'
+
+  %section#contact
+    %h4= 'Contact'
+    %p= 'contact'
+
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  /- @profile.each do |field, value|
+  /  .profile-section.box
+  /    %h4= field
+  /    %p.profile-value= value
 - else
   %div.welcome
     %p= 'Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.'
     %a{href: '/authorise'}= 'Authorise'
+
+:javascript
+  function scrollNav() {
+    console.log('offset', $( $(this).attr('href') ).offset())
+    $('#main-nav a').click(function(){
+      //toggle class
+      $('.active').removeClass('active');
+      $(this).closest('li').addClass('active');
+      //var theClass = $(this).attr('class');
+      //$('.'+theClass).parent('li').addClass('active');
+      //animate
+      $('html, body').stop().animate(
+        { scrollTop: $( $(this).attr('href') ).offset().top - 190 }, 400
+      );
+      return false;
+    });
+    $('.scrollTop a').scrollTop();
+  }
+  scrollNav();

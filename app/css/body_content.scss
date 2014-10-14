@@ -1,0 +1,27 @@
+.inner {
+  width: 550px;
+  margin: 0 auto;
+}
+
+#content h4 {
+  font-family: "Poiret One",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+#content p {
+  font-size: 1.3em;
+  line-height: 1.635em;
+}
+
+#content section:first-of-type {
+  margin-top: 0;
+}
+
+#content section {
+  margin-top: 20px;
+}
+
+section#about {
+  padding-top: 170px;
+}

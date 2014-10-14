@@ -17,7 +17,9 @@ class App < Sinatra::Base
    css :application, [
      'stylesheets/reset.css',
      'stylesheets/main.css',
-     'css/header.css'
+     'bootflat/css/bootflat.min.css',
+     'css/header.css',
+     'css/body_content.css'
    ]
    css_compression :sass
   end

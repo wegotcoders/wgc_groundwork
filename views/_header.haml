@@ -1,10 +1,14 @@
-%header#header.inner
+%header#header
   - if @profile
     %h1= @profile['first_name'] + ' ' + @profile['last_name']
   %hr
   %nav#main-nav
     %ul
+      %li.active
+        %a{href: '#about'}= 'About'
       %li
-        %a{href: '#'}= 'Resume'
+        %a{href: '#tracks'}= 'Tracks'
       %li
-        %a{href: '#'}= 'Contact'
+        %a{href: '#logic'}= 'Logic'
+      %li.scrollTop
+        %a{href: '#contact'}= 'Contact'
