@@ -1,0 +1,24 @@
+%section#form
+  %h4= "Edit Profile"
+
+  %form{action: "/update", method: "POST"}
+    %fieldset
+      %div.form-group
+        %ul
+          %li
+            %label{for: "trainee[about]"}= "About:"
+            %input{type: "text", name: "trainee[about]", value: "#{@profile["about"]}"}
+
+          %li
+            %label{for: "trainee[ambition]"}= "Ambition:"
+            %input{type: "text", name: "trainee[ambition]", value: "#{@profile["ambition"]}"}
+
+          %li
+            %label{for: "trainee[codecademy]"}= "Codecademy:"
+            %input{type: "text", name: "trainee[codecademy]", value: "#{@profile["codecademy"]}"}
+
+
+
+      <!-- TODO - Add more fields so that your profile can be edited -->
+
+      %input{type: "submit", value: "Update Profile", class: "btn btn-primary"}
