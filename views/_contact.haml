@@ -1,3 +1,11 @@
 %section#contact
   %h4= 'Contact'
-  %p= 'contact'
+  %button.btn-form.btn.btn-default
+    %span.glyphicon.glyphicon-pencil
+  %ul
+    %li
+      %p= "Phone Number: #{@profile['phone_number']}"
+      %p= "Twitter: #{@profile['twitter']}"
+      %p= "Github: #{@profile['github']}"
+
+%hr

@@ -23,3 +23,20 @@
       $('.scrollTop a').scrollTop();
     }
     scrollNav();
+
+    var profile_values = document.getElementsByClassName('profile-value');
+    var total_words = 0;
+    var words_str    = '';
+
+    // TODO - Count the number of words in the profile.
+    // hint - look at what the innerHTML property provides.
+
+    var p_array = $('#about p');
+    for(var i=0; i < p_array.length; i++) {
+      words_str += p_array[i].innerHTML;
+      words = p_array[i].innerHTML.split(/\s+\b/).length;
+      console.log(i, words);
+    }
+
+    total_words = words_str.split(/\s+\b/).length;
+    console.log('total', total_words);

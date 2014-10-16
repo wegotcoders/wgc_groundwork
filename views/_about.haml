@@ -1,6 +1,6 @@
 %section#about
   %h4= 'About'
-  %button.btn.btn-default
+  %button.btn-form.btn.btn-default
     %span.glyphicon.glyphicon-pencil
   %p= @profile['about']
   %p= @profile['ambition']
@@ -13,15 +13,3 @@
   %p= @profile['projects']
 
 %hr
-
-:javascript
-  function buttonToForm() {
-    $('#about button').click(function(){
-      //animate
-      $('html, body').stop().animate(
-        { scrollTop: $('#form').offset().top - 182 }, 400
-      );
-      return false;
-    });
-  }
-  buttonToForm();

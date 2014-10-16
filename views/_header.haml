@@ -10,11 +10,21 @@
     %hr
     %nav#main-nav
       %ul
-        %li.active
-          %a{href: '#about'}= 'About'
-        %li
-          %a{href: '#tracks'}= 'Tracks'
-        %li
-          %a{href: '#logic'}= 'Logic'
-        %li.scrollTop
-          %a{href: '#contact'}= 'Contact'
+        - if @sum
+          %li.active
+            %a{href: '/#about'}= 'About'
+          %li
+            %a{href: '/#tracks'}= 'Tracks'
+          %li
+            %a{href: '/#logic'}= 'Logic'
+          %li.scrollTop
+            %a{href: '/#contact'}= 'Contact'
+        - else
+          %li.active
+            %a{href: '#about'}= 'About'
+          %li
+            %a{href: '#tracks'}= 'Tracks'
+          %li
+            %a{href: '#logic'}= 'Logic'
+          %li.scrollTop
+            %a{href: '#contact'}= 'Contact'

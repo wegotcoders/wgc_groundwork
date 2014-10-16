@@ -4,11 +4,11 @@
 
 %section#tracks
   %h4= 'Tracks'
-  %button.btn.btn-default
+  %button.btn-form.btn.btn-default
     %span.glyphicon.glyphicon-pencil
   %p= @profile['codecademy']
 
-  %p= 'I have not finished any tracks on codecademy but I hope the programming exercise proves that I know my way around web development. I will over the last few days go through ruby and js to see if there is anything I could learn more from codecademy but I think these courses are a bit too low level for me.'
+  %p= 'I have not finished any tracks on codecademy but I hope the programming exercise proves that I know my way around web development. I will, after wgc_groundwork pull request, go over ruby and js tracks to see if there is anything I could learn more from codecademy but I think these courses are a bit too low level for me.'
   %p= 'I did Python track though 4 months ago out of curiousity and I have 74% of the track completed.'
 
   %h6= 'Python Track'
@@ -30,3 +30,5 @@
   .progress
     .progress-bar{role: 'progressbar', :"aria-valuenow" => web_track, :"aria-valuemin" => '0', :"aria-valuemax" => 100, style:"width:#{web_track}%;"}
       = ruby_track.to_s + "%"
+
+%hr

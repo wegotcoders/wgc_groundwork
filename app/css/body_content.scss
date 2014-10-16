@@ -24,7 +24,7 @@
   margin-top: 20px;
 }
 
-section#about {
+section#about, section#primes {
   padding-top: 170px;
 }
 
@@ -38,6 +38,21 @@ section#about {
   }
   ul > li > label {
     width: 20%;
+    display: block;
+    float: left;
   }
 }
 
+#logic ul > li {
+  margin-top: 10px;
+}
+#logic .primes-sum {
+  font-family: Roboto;
+  font-size: 2em;
+}
+#logic .small-wonder img {
+  width: 350px;
+}
+#logic .family {
+  display: none;
+}

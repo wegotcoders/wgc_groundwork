@@ -4,6 +4,10 @@ require 'haml'
 require 'sass'
 require './lib/profile'
 
+
+#changed the app.rb a wee bit
+#now starts the server by typing rackup -p 4567
+#in the terminal
 class App < Sinatra::Base
   set :application_id, '5b3223c71ae774c7d2e4dfe4c34e16851e6470ef99e3e1d81fdf0976f472b2ba'
   set :secret, 'c384151e9854c0feafa6015a214d21ff69539278fa00f99e801f00d7fb5633f1'
@@ -14,6 +18,11 @@ class App < Sinatra::Base
 
   register Sinatra::AssetPack
   assets do
+
+   js  :application, [
+     '/js/form.js'
+   ]
+
    css :application, [
      'stylesheets/reset.css',
      'stylesheets/main.css',
@@ -26,13 +35,22 @@ class App < Sinatra::Base
   end
 
   get '/primes' do
-    # TODO - Can we make this dynamic?
+    if signed_in?
+      @profile = trainee.get_profile
+    end
+
     limit = 100
+    if params['limit']
+      @sum = Primes.sum_to(params['limit'].to_i)
+    else
+      @sum = Primes.sum_to(limit)
+    end
 
-    # TODO - add your prime number solution in the primes.rb file.
-    @sum = Primes.sum_to(limit)
-
-    erb :primes, :layout => :main
+    if request.xhr?
+      'The sum is ' + @sum.to_s + '!'
+    else
+      haml :primes, :layout => :main
+    end
   end
 
   get '/' do
@@ -44,6 +62,7 @@ class App < Sinatra::Base
   end
 
   #let me see everything in text
+  #in raw-ish form
   get '/raw' do
     if signed_in?
       @profile = trainee.get_profile
@@ -62,8 +81,10 @@ class App < Sinatra::Base
   end
 
   include Sinatra::OauthRoutes
+  register Sinatra::OauthRoutes
 
   def trainee
     @trainee ||= WeGotCoders::Trainee.new(settings.site_url, session[:access_token])
   end
 end
+
