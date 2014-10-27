@@ -49,9 +49,6 @@ layout the page in a presentable way. Show us what you can do with:
 * Add a field to the form so that you can add your Codecademy account to
 your profile. You will need an input text box, with the appropriate ```name``` attribute.
 
-* Update your profile with the full URL to your codeacademy. You should notice three fields in the response, js_track_completedness, web_track_completedness and ruby_track_completedness. Display each of these values as a progress bar, which displays the completed total of the Codecademy track. The shaded portion of the progress bar should be proportional to the percentage completedness of the given track.
-If you have completed the groundwork, these values should be 100%!
-
 * Add some Javascript to the provided ```<script>``` tag in the views/index.erb file, that counts the number of words in each section. You ought to have at least twenty words for each of the questions.
 
 * Add code to the primes.rb file, that finds the sum of all prime numbers less than one hundred. Can you refactor the implementation so that you can pass in higher numbers to act as the limit? Test your implementation by running the rspec command ```rspec```. Find the sum of all prime numbers up to two million. Add a field to your profile named ```trainees[primes_sum]``` and enter in your answer.
