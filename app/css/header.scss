@@ -1,0 +1,58 @@
+#header {
+  font-family: "Poiret One",Helvetica,Arial,sans-serif;
+  height: 170px;
+  background: #ECF0F1;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 1000;
+
+  #main-nav {
+    margin-top: 15px;
+  }
+
+  #main-nav > ul > li:first-of-type {
+   margin-left: 0;
+  }
+
+  #main-nav > ul > li {
+   position: relative;
+   display: inline-block;
+   vertical-align: middle;
+   font-size: 18px;
+   margin-left: 50px;
+  }
+}
+
+#header hr {
+  color:  #A17917;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#header h1 {
+  color: #333;
+  font-size: 58px;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+#header a {
+  color: #333;
+}
+
+#header a:hover {
+  color:  #A17917;
+}
+
+#header .mugshot a {
+  width: 300px;
+  height: 200px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  background: url('/images/me_medium.jpg') no-repeat;
+  position: absolute;
+  left: 50px;
+  top: 10px;
+}

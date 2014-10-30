@@ -1,0 +1,39 @@
+%section#logic
+  %h4= 'Add prime numbers'
+  .small-wonder
+    %a{href: 'https://www.youtube.com/watch?v=lTTc8KpHsSg'}
+      %img.alone{ src: 'images/smallwonder.jpg', alt: 'small-wonder'}
+    %img.family{ src: 'images/smallwonderfamily.jpg', alt: 'small-wonder'}
+  .primes-sum
+
+  %ul
+    %li
+      %label{for: "number"}= "Enter positive integer number:"
+      %input#upper-limit{type: "text", name: "number", value: "100"}
+
+  %p
+    %a.btn.btn-primary.btn-primes-sum= 'GO!'
+
+%hr
+
+:javascript
+  function primesSum() {
+    $('.btn-primes-sum').click(function(){
+      limit =  $('#upper-limit').val();
+      if (limit == "") {
+        $('.primes-sum').html(0);
+      }
+      else if (limit > 2000000) {
+        $('.primes-sum').html("Don't push it!!");
+      }
+      else {
+        $('.small-wonder .alone').toggle()
+        $('.small-wonder .family').toggle()
+        $.get('/primes?ajax=true&limit=' + limit, function(data) {
+          console.log('data', data)
+          $('.primes-sum').html(data);
+        })
+      }
+  });
+  }
+  primesSum();

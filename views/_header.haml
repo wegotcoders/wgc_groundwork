@@ -1,0 +1,30 @@
+- if !@profile
+  %div.welcome
+    %p= 'Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.'
+    %a{href: '/authorise'}= 'Authorise'
+- else
+  %header#header
+    %h1= @profile['first_name'] + ' ' + @profile['last_name']
+    .mugshot
+      %a{href: '#about'}
+    %hr
+    %nav#main-nav
+      %ul
+        - if @sum
+          %li.active
+            %a{href: '/#about'}= 'About'
+          %li
+            %a{href: '/#tracks'}= 'Tracks'
+          %li
+            %a{href: '/#logic'}= 'Logic'
+          %li.scrollTop
+            %a{href: '/#contact'}= 'Contact'
+        - else
+          %li.active
+            %a{href: '#about'}= 'About'
+          %li
+            %a{href: '#tracks'}= 'Tracks'
+          %li
+            %a{href: '#logic'}= 'Logic'
+          %li.scrollTop
+            %a{href: '#contact'}= 'Contact'

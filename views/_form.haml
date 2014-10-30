@@ -1,0 +1,48 @@
+%section#form
+  %h4= "Edit Profile"
+
+  %form{action: "/update", method: "POST"}
+    %fieldset
+      %div.form-group
+        %ul
+          %li
+            %label{for: "trainee[about]"}= "About:"
+            %textarea{rows: "5", cols: "50", name: "trainee[about]"}= @profile["about"]
+
+          %li
+            %label{for: "trainee[ambition]"}= "Ambition:"
+            %textarea{rows: "5", cols: "50", name: "trainee[ambition]"}= @profile["ambition"]
+
+          %li
+            %label{for: "trainee[codecademy]"}= "Codecademy:"
+            %input{type: "text", name: "trainee[codecademy]", value: "#{@profile["codecademy"]}"}
+
+          %li
+            %label{for: "trainee[js_track_completedness]"}= "JS Track:"
+            %input{type: "text", name: "trainee[js_track_completedness]", value: "#{@profile["js_track_completedness"]}"}
+
+          %li
+            %label{for: "trainee[ruby_track_completedness]"}= "Ruby Track:"
+            %input{type: "text", name: "trainee[ruby_track_completedness]", value: "#{@profile["ruby_track_completedness"]}"}
+
+          %li
+            %label{for: "trainee[web_track_completedness]"}= "Web Track:"
+            %input{type: "text", name: "trainee[web_track_completedness]", value: "#{@profile["web_track_completedness"]}"}
+
+          %li
+            %label{for: "trainee[primes_sum]"}= "Primes Sum:"
+            %input{type: "text", name: "trainee[primes_sum]", value: "#{@profile["primes_sum"]}"}
+
+          %li
+            %label{for: "trainee[phone_number]"}= "Phone Number:"
+            %input{type: "text", name: "trainee[phone_number]", value: "#{@profile["phone_number"]}"}
+
+          %li
+            %label{for: "trainee[twitter]"}= "Twitter:"
+            %input{type: "text", name: "trainee[twitter]", value: "#{@profile["twitter"]}"}
+
+          %li
+            %label{for: "trainee[github]"}= "Github:"
+            %input{type: "text", name: "trainee[github]", value: "#{@profile["github"]}"}
+
+      %input{type: "submit", value: "Update Profile", class: "btn btn-primary"}

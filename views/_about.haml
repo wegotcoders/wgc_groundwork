@@ -1,0 +1,15 @@
+%section#about
+  %h4= 'About'
+  %button.btn-form.btn.btn-default
+    %span.glyphicon.glyphicon-pencil
+  %p= @profile['about']
+  %p= @profile['ambition']
+  %p= @profile['rationale']
+
+  %h4= 'Learning'
+  %p= @profile['learning_experience']
+
+  %h4= 'Recent Project'
+  %p= @profile['projects']
+
+%hr

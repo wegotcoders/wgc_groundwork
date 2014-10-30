@@ -1,0 +1,58 @@
+.inner {
+  width: 550px;
+  margin: 0 auto;
+}
+
+#content h4 {
+  font-family: "Poiret One",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#content p {
+  font-size: 1.3em;
+  line-height: 1.635em;
+}
+
+#content section:first-of-type {
+  margin-top: 0;
+}
+
+#content section {
+  margin-top: 20px;
+}
+
+section#about, section#primes {
+  padding-top: 170px;
+}
+
+#content .btn-default:hover {
+  background-color: #A17917;
+}
+
+#content .form-group {
+  ul > li {
+    margin-bottom: 10px;
+  }
+  ul > li > label {
+    width: 20%;
+    display: block;
+    float: left;
+  }
+}
+
+#logic ul > li {
+  margin-top: 10px;
+}
+#logic .primes-sum {
+  font-family: Roboto;
+  font-size: 2em;
+}
+#logic .small-wonder img {
+  width: 350px;
+}
+#logic .family {
+  display: none;
+}
