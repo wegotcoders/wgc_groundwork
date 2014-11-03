@@ -1,47 +1,310 @@
-<% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
     </div>
-  <% end %>
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ 
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li><a data-scroll-nav="1" href="#">About</a></li>
+        <li><a data-scroll-nav="2" href="#">Codecademy</a></li>
+        <li><a data-scroll-nav="3" href="#">Projects</a></li>
+        <li><a data-scroll-nav="4" href="#">Programming Problems</a></li>
+        <li><a data-scroll-nav="5" href="#">Edit Profile</a></li>
+        <li><a data-scroll-nav="6" href="#">Profile</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+<div data-scroll-index="0" class="banner text-center"> 
+  <% if @profile then%>
+  <h1 id="profile"><span class="profile_values" id="myname"><%= @profile["first_name"] %>'s</span> Amazing Profile </h1>
+</div>
+
+
+
+<div class="container">
+  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+ 
+ 
+<div data-scroll-index="1" class="about text-center">
+
+<div class="row">
+  <div class = "col-md-12">
+<h3 class="text-left">About</h3>
+</div>
+</div>
+  <ul class="slides_nav">
+    <li><a href="#">Motivation</a></li>
+    <li><a href="#">Ambition</a></li>
+    <li><a href="#">Learning</a></li>
+  </ul>
+
+
+<ul class="rslides">
+  <li>
+    <h3>Motivation</h3>
+    <div class="quote"></div>
+    <p class="profile-value"><%= @profile["about"]%></p>
+  </li>
+  <li>
+    <h3>Ambition</h3>
+    <div class="quote"></div>
+    <p class="profile-value"><%= @profile["ambition"]%></p>
+  </li>
+  <li>
+    <h3>Learning Experience</h3>
+      <div class="quote"></div>
+  <p class="profile-value"><%= @profile["learning_experience"]%></p>
+  </li>
+  </ul>
+</div> <!--About End -->
+
+
+<!--Codecademy -->
+
+<div data-scroll-index="2" class="codecademy">
+<div class="row">
+<div class="col-md-12">
+<h3>Codecademy</h3>
+<h5 class="profile-value"><a href="<%=@profile["codecademy"]%>"> <%=@profile["codecademy"]%></a></h5>
+</div>
+</div>
+  <div class="row  text-center circles"> 
+  <div class="col-md-4"> 
+     <h3>HTML/CSS</h3>
+     <%html_css = @profile["web_track_completedness"] * 100 %>
+     <input type="text" value="<%=html_css.round.to_s %>" class="dial">
   </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
+
+  <div class="col-md-4">
+    <h3>JAVASCRIPT</h3>
+    <%js_perc = @profile["js_track_completedness"] * 100%>
+     <input type="text" value="<%=js_perc.round.to_s %>" class="dial">
+  </div>
+  <div class="col-md-4">
+    <h3>RUBY</h3>
+    <%ruby_perc = @profile["ruby_track_completedness"] * 100 %>
+     <input type="text" value="<%= ruby_perc.round.to_s %>" class="dial">
+  </div>
+</div>
+</div>
+
+
+<!--Projects -->
+
+<div data-scroll-index="3" class="projects">
+<div class="row">
+<div class="col-md-12">
+<h3>Projects</h3>
+</div>
+</div>
+<div class="row">
+ <div class="col-md-12"> 
+<p class="profile-value"><%=@profile["projects"]%></p>
+</div>
+
+</div>
+</div> 
+
+<!--Projects end -->
+
+<!--Programming Problems-->
+
+<div data-scroll-index="4" class="problems">
+
+<h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
+
+</div>
+<!--End-->
+
+
+
+<!--Edit Profile-->
+
+<div data-scroll-index="5" class="update">
+
+<div class="row">
+<div class="col-md-12">
+<h3>Edit Profile</h3>
+</div>
+</div>
+
+  <form action="/update" method="POST">
+  <div class="form-group">
+
+<div class="row text-right">
+<div class="col-md-12">
+
+<input type="submit" value="Update Profile" class="btn btn-primary" />
+
+</div>
+
+</div>
+
+
+<div class="row">
+  <div class="col-md-4">
+   <label for="trainee[first_name]">First name</label>
+   <input class="form-control" type="text" name="trainee[first_name]" value= "<%= @profile["first_name"]%>"/>
+
+   <label for="trainee[last_name]">Last name</label>
+   <input class="form-control" type="text" name="trainee[last_name]" value= "<%= @profile["last_name"]%>"/>
+
+   <label for="trainee[dob]">Date of Birth</label>
+   <input class="form-control" type="date" name="trainee[dob]" value= "<%= @profile["dob"]%>"/>
+
+   <label for="trainee[employment_status]">Employement status</label>
+   <input class="form-control" type="text" name="trainee[employment_status]" value= "<%= @profile["employment_status"]%>"/>
+
+   <label for="trainee[how_did_you_hear]">Where did I hear about WeGotCoders?</label>
+   <input class="form-control" type="text" name="trainee[how_did_you_hear]" value= "<%= @profile["how_did_you_hear"]%>"/>
+
+   <label for="trainee[homepage]">Homepage</label>
+   <input class="form-control" type="url" name="trainee[homepage]" value= "<%= @profile["homepage"]%>"/>
+
+   <label for="trainee[codecademy]">Codecademy</label>
+   <input class="form-control" type="url" name="trainee[codecademy]" value= "<%= @profile["codecademy"]%>"/>
+
+   <label for="trainee[twitter]">Twitter</label>
+   <input class="form-control" type="url" name="trainee[twitter]" value= "<%= @profile["twitter"]%>"/>
+
+   <label for="trainee[github]">Github</label>
+   <input class="form-control" type="url" name="trainee[github]" value= "<%= @profile["github"]%>"/>
+
+   <label for="trainee[email]">Email</label>
+   <input class="form-control" type="email" name="trainee[email]" value= "<%= @profile["email"]%>"/>
+
+   <label for="trainee[homepage]">Phone number</label>
+   <input class="form-control" type="text" name="trainee[phone_number]" value= "<%= @profile["phone_number"]%>"/>
+
+
+
+
+   <label for="trainee[primes_sum]">Prime Numbers Solution</label>
+   <input class="form-control" type="text" name="trainee[primes_sum]" value= "<%= @profile["primes_sum"]%>"/>
+
+</div>
+
+  
+
+  <div class = "col-md-4">
+   <label for="trainee[about]">Motivation</label>
+   <textarea class="form-control" rows="16" name="trainee[about]"><%= @profile["about"] %></textarea>
+
+   
+   <label for="trainee[ambition]">Ambition</label>
+   <textarea class="form-control" rows="16" name="trainee[ambition]"><%= @profile["ambition"] %></textarea>
   </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+  <div class="col-md-4">
+   <label for="trainee[rationale]">Learning</label>
+   <textarea class="form-control" rows="16" name="trainee[rationale]"><%= @profile["rationale"] %></textarea>
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
+   <label for="trainee[projects]">Projects</label>
+   <textarea class="form-control" rows="16" name="trainee[projects]"><%= @profile["projects"] %></textarea>
   </div>
+
+
+</div>
+   
+</div><!--Form group end -->
+</form><!--Form end -->
+</div><!--Me class end -->
+<!--End-->
+
+
+
+
+
+
+
+<!--Profile-->
+
+<div data-scroll-index="6" class="me">
+
+<div class="row">
+  <div class="col-md-12">
+    <h3>Profile</h3>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-12 text-center">
+  <img class="img-circle" src="../images/me.jpg" alt="Serafeim's picture"/>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-5 details">
+<h3>First Name</h3>
+<h4><%=@profile["first_name"]%></h4>
+<h3>Last Name</h3>
+<h4><%=@profile["last_name"]%></h4>
+<h3>Employement Status</h3>
+<h4><%=@profile["employment_status"]%></h4>
+<h3>Date of Birth</h3>
+<h4><%=@profile["dob"]%></h4>
+<h3>How did I hear?</h3>
+<h4><%=@profile["how_did_you_hear"]%></h4>
+<h3>Words found:</h3>
+<h3>Stats</h3>
+<!-- TODO - Set the contents of this span with JavaScript -->
+<h4><span id="word-count">0</span> words found</h4>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-12 text-center">
+
+    <div class="social_icons">
+
+      <a href="<%=@profile["codecademy"]  %>"><div id="codecademy"></div></a>
+      <a href="<%=@profile["twitter"] %>"><div id="twitter"></div></a>
+      <a href="<%=@profile["homepage"] %>"><div id="dunked"></div></a>
+      <a href="mailto:<%=@profile["email"]%>"><div id="mail"></div></a>
+      <a href="<%=@profile["github"]%>"><div id="github"></div></a>
+   </div> 
+</div> 
+
+
+
+</div>
+<!--End-->
+
+
+
+
+
+
+
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
     <a href="/authorise">Authorise</a>
   </div>
+ </div>
 <% end %>
 
 
@@ -52,8 +315,25 @@
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
 
+
+  text = profile_values[0].innerHTML.split(" ");
+  
+  
+
+  for(var i=0; i<profile_values.length; i++){
+    
+      var item = profile_values[i].innerHTML.split(' ');
+
+      for(var j=0; j<item.length; j++){
+          total_words+=1
+      }
+
+  }
+
+ 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
+
