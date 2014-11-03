@@ -9,14 +9,26 @@
   <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
 <body>
-
-  <div id="logo">
-    <img src="/images/logo.png" alt="We Got Coders"  />
-  </div>
-
-  <div id="content">
+  <div id="head">         
+    <div id="topnav">
+      <div id="logo">IMAGINE SOME AWESOME LOGO HERE</div>
+      <div id="slogan">... some cheesy slogan here.</div>
+      <ul id="menu">
+        <li><a href="/">COOL</a></li>
+        <li><a href="/">MENU</a></li>
+        <li><a href="/">HERE</a></li>   
+        <li><a href="/blog">| BLOG |</a></li>      
+      </ul>
+    </div>        
+  </div>    
+  <div id="content" class="shadow">
+    <div class="profile-section box" style="float:right; background: none;">
+      <img class="me" src="/images/me.jpg" alt="me"  />
+      <h3 style="font-style: italic; text-transform: none;">ME</h3>
+    </div>
     <%= yield %>
   </div>
-
+  <div id="footer" class="shadow"><img src="/images/logo.png" alt="We Got Coders"  /></div>   
+</body>
 </body>
 </html>

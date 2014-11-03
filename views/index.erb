@@ -1,11 +1,18 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+   <!--<h3><%= @profile["first_name"] %>'s Amazing Profile</h3>-->  
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
-      <h4><%= field %></h4>
+      <!-- tettible ' know, but neehhh...-->
+      <h3><%= field %>: </h3>
+      <% if field == "js_track_completedness" || 
+            field == "web_track_completedness" || 
+            field == "ruby_track_completedness" %>      
+      <p class="meter" style="width:<%= value*100 %>%" > <%= (value*100).to_i %>%</p>
+      <% else %>
       <p class="profile-value"><%= value %></p>
+      <% end %>
     </div>
   <% end %>
 
@@ -26,11 +33,36 @@
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <label for="trainee[about]">About: </label>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>    
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition: </label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+        </div>   
+        <div class="form-group">
+          <label for="trainee[first_name]">Name: </label>
+          <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
+        </div> 
+        <div class="form-group">
+          <label for="trainee[last_name]">Surname: </label>
+          <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+        </div> 
+        <div class="form-group">
+          <label for="trainee[github]">Github: </label>
+          <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
+        </div> 
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codeacademy: </label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>  
+        <div class="form-group">
+          won't accept my answer (keeps 'converting' it?): 142913828922
+          <label for="trainee[primes_sum]">Primes sum: </label>
+          <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
+        </div>  
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
@@ -54,6 +86,16 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  for (var i = 0 ; i < profile_values.length ; ++i)
+  {  
+    // to avoid '.length on null' error (if a given section has no data)
+    // 'll be first checking for content.    
+    var v = profile_values[i].innerHTML.match(/\S+/g);
+    if(v !== null)
+    {
+      total_words += v.length;
+    }
+  }
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
