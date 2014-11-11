@@ -5,8 +5,21 @@
  <ol >
   <% @profile.each do |field, value| %>
    <li><span> <div class="profile-section box">
+
      <h4 class="field"><%= field %></h4>
-      <p class="profile-value" id="d"><%= value %></p>
+      <p class="profile-value"><%= value %></p>
+
+      <% if field == "codecademy" %>
+      
+      <div id= '<%= field %>' >
+
+          <input type= "text" id= 'text' >
+          <input type= "submit" value= "Add User Name" id= 'add' onclick='add_text()'>
+
+      </div>
+
+
+    <%end %>
     </div></span> </li>
   <% end %>
 </ol> 
@@ -16,20 +29,14 @@
     <!-- TODO - Set the contents of this span with JavaScript -->
 
 <script>
-    function get_text(el) {
-    ret = "";
-    var length = el.childNodes.length;
-    for(var i = 0; i < length; i++) {
-        var node = el.childNodes[i];
-        if(node.nodeType != 8) {
-            ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
-        }
-    }
-    return ret;
-}
-var words = get_text(document.getElementById('d'));
-var count = words.split(' ').length;
-f = getElementById('word-count').innerHTML =  "ddd"
+  
+  function add_text() {
+   
+   var codecademy_add = document.getElementById('codecademy');
+   var text = document.getElementById('text');
+   codecademy_add.innerHTML = text.value;
+  }
+
 </script>
 
     <span id="word-count">0</span> words found.
