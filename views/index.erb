@@ -12,6 +12,7 @@
       <% if field == "codecademy" %>
       
       <div id= '<%= field %>' >
+
         <div id = "cd_name">
           <input type= "text" id= 'text' >
           <input type= "submit" value= "Add User Name" id= 'add' onclick='add_text()'><br />
@@ -39,9 +40,27 @@
   
   function add_text() {
    
-   var codecademy_add = document.getElementById('cd_name');
-   var text = document.getElementById('text');
-   codecademy_add.innerHTML = text.value;
+     var codecademy_add = document.getElementById('cd_name');
+     var text = document.getElementById('text');
+     var user_input = text.value;
+
+    // removes text field and add button
+     while (codecademy_add.firstChild) {  
+        codecademy_add.removeChild(codecademy_add.firstChild);
+    }
+
+    // creates a href link using the username the user as input
+     var new_el = document.createElement('a');
+     var att = document.createAttribute('href');
+     att.value =  "http://www.codecademy.com/" + user_input ; 
+
+      new_el.setAttributeNode(att)
+      var text_input = document.createTextNode(user_input); 
+      new_el.appendChild(text_input);
+
+
+      codecademy_add.appendChild(new_el) ;
+
   }
 
 </script>
