@@ -12,11 +12,18 @@
       <% if field == "codecademy" %>
       
       <div id= '<%= field %>' >
-
+        <div id = "cd_name">
           <input type= "text" id= 'text' >
-          <input type= "submit" value= "Add User Name" id= 'add' onclick='add_text()'>
-
+          <input type= "submit" value= "Add User Name" id= 'add' onclick='add_text()'><br />
+          
       </div>
+        <a href= "http://www.codecademy.com/adenna" > My Codecademy</a><br />
+
+          <b>Ruby Progress: </b> <progress id="rubyProgress" value="99" max="100"></progress> 99% <br />
+          <b>Ruby JavaScript: </b> <progress id="javaProgress" value="0" max="100"></progress> 0% <br />
+          <b>Web: </b> <progress id="rubyProgress" value="33" max="100"></progress> 99%
+        </div>
+      
 
 
     <%end %>
@@ -32,7 +39,7 @@
   
   function add_text() {
    
-   var codecademy_add = document.getElementById('codecademy');
+   var codecademy_add = document.getElementById('cd_name');
    var text = document.getElementById('text');
    codecademy_add.innerHTML = text.value;
   }
