@@ -3,7 +3,7 @@
   <div id="logo">
     <img src="/images/logo.png" alt="We Got Coders"  />
   </div>
-  <header>
+  <header >
     <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
   </header>
 </div>  
@@ -38,22 +38,22 @@
 
     <div class="box">
       <h3>Edit Profile</h3>
-
-      <form action="/update" method="POST">
+      <!-- erb helper to change text input size... -->
+      <form action="/update" method="POST" id="edtForm">
         <fieldset>
           <div class="form-group">
             <label for="trainee[about]">About</label>
-            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>" size="40"/>
+            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/> 
           </div>
         </fieldset>  
         <fieldset>
           <div class="form-group">
             <label for="trainee[ambition]">Ambition</label>
-            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>" size="40"/>
+            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>" />
           </div>
         </fieldset>  
         <fieldset>
-          <div class="form-group">
+          <div class="form-group"> 
             <label for="trainee[learning_experience]">Learning Experience</label>
             <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
           </div> 
