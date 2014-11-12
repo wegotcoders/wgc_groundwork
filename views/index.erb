@@ -2,9 +2,9 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
- <ol >
+ <ol id= "list">
   <% @profile.each do |field, value| %>
-   <li><span> <div class="profile-section box">
+   <li><span > <div class="profile-section box" id= "list">
 
      <h4 class="field"><%= field %></h4>
       <p class="profile-value"><%= value %></p>
@@ -18,16 +18,27 @@
           <input type= "submit" value= "Add User Name" id= 'add' onclick='add_text()'><br />
           
       </div>
-        <a href= "http://www.codecademy.com/adenna" > My Codecademy</a><br />
+      <br />
 
-          <b>Ruby Progress: </b> <progress id="rubyProgress" value="99" max="100"></progress> 99% <br />
-          <b>Ruby JavaScript: </b> <progress id="javaProgress" value="0" max="100"></progress> 0% <br />
-          <b>Web: </b> <progress id="rubyProgress" value="33" max="100"></progress> 99%
+        
+     <br />
+         
         </div>
       
-
-
     <%end %>
+
+       <% if field == "js_track_completedness" %>
+              <b>Ruby JavaScript: </b> <progress id="javaProgress" value="10" max="100"></progress> 0%
+       <% end %>
+
+        <% if field == "ruby_track_completedness" %>
+               <b>Ruby Progress: </b> <progress id="rubyProgress" value="99" max="100"></progress> 99% 
+       <% end %>
+
+        <% if field == "web_track_completedness" %>
+                <b>Web Track Progres: </b> <progress id="rubyProgress" value="33" max="100"></progress> 99%
+       <% end %>
+
     </div></span> </li>
   <% end %>
 </ol> 
@@ -62,6 +73,31 @@
       codecademy_add.appendChild(new_el) ;
 
   }
+
+
+    function word_count(){
+
+      var wrapper = document.getElementById("list") ;
+      var divcount = wrapper.children.length
+
+      for(i = 0 ; i < divcount; i++){
+
+          var stext = wrapper.getElementsByTagName('p')[i].innerHTML
+          var title = wrapper.getElementsByTagName('h4')[i].innerHTML
+          var word_c = document.getElementById("word-count") ;
+      
+
+         if (stext.match(/\s/g) !== null) {
+             stext_count = stext.match(/\s/g).length  ;
+         
+               if (stext_count > 20) {
+                  alert(title + " : has more than 20 words")
+                }
+          } 
+       }     
+        
+    }
+   
 
 </script>
 
