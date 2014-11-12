@@ -3,6 +3,67 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background-color: black;
+
+}
+
+#logo {
+  text-align: center;
+}
+
+#content {
+  padding: 1em;
+}
+
+.box {
+  border: 1px solid #999;
+  background: #FCFCFC;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}
+
+.welcome {
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.error {
+  text-align: center;
+}
+
+.error h2 {
+  font-size: 1.5em;
+}
+
+/* TODO - Add your own styles here */
+header{
+  text-align: center;
+  text-decoration: underline;
+
+}
+.profile-image-container{
+  text-align: center;
+}
+
+#grad {
+  background: -webkit-radial-gradient( #F5ECCD 5%, green 15%, #7F0710 60%); /* Safari 5.1-6.0 */
+  background: -o-radial-gradient(red 5%, green 15%, blue 60%); /* For Opera 11.6-12.0 */
+  background: -moz-radial-gradient(red 5%, green 15%, blue 60%); /* For Firefox 3.6-15 */
+  background: radial-gradient(#FFFEFF 5%, #38B5B6 15%, #007789 60%); /* Standard syntax */
+}
+.profile-container{
+  width:100%;
+  height:300px;
+  overflow: scroll;
+}
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
 }
 
 #logo {

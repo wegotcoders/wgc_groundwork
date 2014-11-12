@@ -1,59 +1,133 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
-
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+<div class="row" id="grad">
+  <div id="logo">
+    <img src="/images/logo.png" alt="We Got Coders"  />
   </div>
-
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
-
-  <div class="box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+  <header>
+    <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  </header>
+</div>  
+<div class="row">
+  <div class="col-md-4">
+    <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+    <div class="profile-container">
+      <% @profile.each do |field, value| %>
+        <div class="profile-section box">
+          <h4><%= field %></h4>
+          <p class="profile-value"><%= value %></p>
         </div>
+      <% end %>
+    </div>  
+  </div><!-- .col-md-4 -->
+  <div class="col-md-4">
+    <div class="profile-image-container">
+      <img class="profileImage" src="/images/photo.jpg"/>
+    </div>
+  </div> <!-- image goes here -->  
+  <div class="col-md-4">
+    <div id="stats" class="box">
+      <h3>Stats</h3>
+      <!-- TODO - Set the contents of this span with JavaScript -->
+      <span id="word-count">0</span> words found.
+    </div>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+    <div id="problems" class="box">
+      <h3>Programming Problems</h3>
+      <a href="/primes">My Prime Number Solution</a>
+    </div>
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
+    <div class="box">
+      <h3>Edit Profile</h3>
+
+      <form action="/update" method="POST">
+        <fieldset>
+          <div class="form-group">
+            <label for="trainee[about]">About</label>
+            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          </div>
+        </fieldset>  
+        <fieldset>
+          <div class="form-group">
+            <label for="trainee[ambition]">Ambition</label>
+            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          </div>
+        </fieldset>  
+        <fieldset>
+          <div class="form-group">
+            <label for="trainee[learning_experience]">Learning Experience</label>
+            <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+          </div> 
+        </fieldset>
+        <fieldset>
+          <div class="form-group">
+            <label for="trainee[codecademy]">Code academy link</label>
+            <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+          </div>
+        <input type="submit" value="Update Profile" class="btn btn-primary" />  
+        </fieldset>
+          <!-- TODO - Add more fields so that your profile can be edited -->
+
+          
+        
+      </form>
+    </div> <!-- box -->
+  </div> <!-- .col-md-4 --> 
+</div>  <!-- row -->
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
     <a href="/authorise">Authorise</a>
   </div>
+</div>  
 <% end %>
 
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
   console.log("I am Javascript!");
+  // 
 
   var profile_values = document.getElementsByClassName('profile-value');
+  console.log(profile_values.length)
   var total_words = 0;
+  // profile_values.forEach(function(element){
+  //   console.log(element);
+  // });
+for(i=0; i<profile_values.length; i++){
+  
+  // var j = 0
+  var profile = profile_values[i].innerHTML
+  console.log(profile.length)
+  // profile.charAt()
+  console.log(profile)
+  // console.log(profile.charAt(j))
 
+  // console.log(profile)
+  for(j=0; j<profile.length; j++){
+
+    if(profile.charAt(j) === " "){
+      total_words +=1 
+    }
+    // console.log(words)
+    console.log(total_words)
+  }
+  // console.log(profile.charAt())
+
+}
+
+
+  // includevalidation max 20 words...
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
+
+
+
   document.getElementById('word-count').innerHTML = total_words;
+
+
+  console.log(total_words)
+
+
 </script>

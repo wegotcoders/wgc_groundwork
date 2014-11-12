@@ -1,5 +1,5 @@
 require 'oauth2'
-require 'pry'
+# require 'pry'
 require 'httparty'
 require 'json'
 require './lib/sinatra/oauth_routes'
