@@ -2,7 +2,12 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  background: #0099CC;
+}
+
+#info_table {
+  display: inline-block;
+  text-align: center;
 }
 
 #logo {
@@ -14,8 +19,6 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
 }
@@ -37,3 +40,41 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+#About_Me {
+  height: 130px;
+  width: 2500px;
+  display: inline-block;
+}
+
+#photo {
+  height: 130px;
+  width: 200px;
+  display: inline-block;
+}
+
+.graph {
+  width: 200px; 
+  height: 30px;
+  border: 1px solid #888; 
+  background: rgb(168,168,168);
+  background: -moz-linear-gradient(top, rgba(168,168,168,1) 0%, rgba(204,204,204,1) 23%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(168,168,168,1)), color-stop(23%,rgba(204,204,204,1)));
+  background: -webkit-linear-gradient(top, rgba(168,168,168,1) 0%,rgba(204,204,204,1) 23%);
+  background: -o-linear-gradient(top, rgba(168,168,168,1) 0%,rgba(204,204,204,1) 23%);
+  background: -ms-linear-gradient(top, rgba(168,168,168,1) 0%,rgba(204,204,204,1) 23%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8a8a8', endColorstr='#cccccc',GradientType=0 );
+  background: linear-gradient(top, rgba(168,168,168,1) 0%,rgba(204,204,204,1) 23%);
+  position: relative;
+}
+
+#bar {
+  height: 15px;
+  background: rgb(255,197,120); 
+  background: -moz-linear-gradient(top, rgba(255,197,120,1) 0%, rgba(244,128,38,1) 100%); 
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,197,120,1)), color-stop(100%,rgba(244,128,38,1))); 
+  background: -webkit-linear-gradient(top, rgba(255,197,120,1) 0%,rgba(244,128,38,1) 100%); 
+  background: -o-linear-gradient(top, rgba(255,197,120,1) 0%,rgba(244,128,38,1) 100%); 
+  background: -ms-linear-gradient(top, rgba(255,197,120,1) 0%,rgba(244,128,38,1) 100%); 
+  background: linear-gradient(top, rgba(255,197,120,1) 0%,rgba(244,128,38,1) 100%); 
+  border-top: 1px solid #fceabb;
+}
