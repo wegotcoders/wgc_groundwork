@@ -3,7 +3,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   background: #0099CC;
-}-
+}
 
 #info_table {
   display: inline-block;
@@ -22,7 +22,6 @@ body {
   padding: 1em;
   margin-bottom: 0.5em;
 }
-
 
 .welcome {
   text-align: center;
