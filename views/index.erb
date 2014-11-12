@@ -7,71 +7,72 @@
     <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
   </header>
 </div>  
-<div class="row">
-  <div class="col-md-4">
-    <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-    <div class="profile-container">
-      <% @profile.each do |field, value| %>
-        <div class="profile-section box">
-          <h4><%= field %></h4>
-          <p class="profile-value"><%= value %></p>
-        </div>
-      <% end %>
-    </div>  
-  </div><!-- .col-md-4 -->
-  <div class="col-md-4">
-    <div class="profile-image-container">
-      <img class="profileImage" src="/images/photo.jpg"/>
-    </div>
-  </div> <!-- image goes here -->  
-  <div class="col-md-4">
-    <div id="stats" class="box">
-      <h3>Stats</h3>
-      <!-- TODO - Set the contents of this span with JavaScript -->
-      <span id="word-count">0</span> words found.
-    </div>
-
-    <div id="problems" class="box">
-      <h3>Programming Problems</h3>
-      <a href="/primes">My Prime Number Solution</a>
-    </div>
-
-    <div class="box">
-      <h3>Edit Profile</h3>
-      <!-- erb helper to change text input size... -->
-      <form action="/update" method="POST" id="edtForm">
-        <fieldset>
-          <div class="form-group">
-            <label for="trainee[about]">About</label>
-            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/> 
+<div class="row test">
+  <div class="main-content-container">
+    <div class="col-md-4">
+      <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+      <div class="profile-container">
+        <% @profile.each do |field, value| %>
+          <div class="profile-section box" id="profileSectionShow">
+            <h4><%= field %></h4>
+            <p class="profile-value"><%= value %></p>
           </div>
-        </fieldset>  
-        <fieldset>
-          <div class="form-group">
-            <label for="trainee[ambition]">Ambition</label>
-            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>" />
-          </div>
-        </fieldset>  
-        <fieldset>
-          <div class="form-group"> 
-            <label for="trainee[learning_experience]">Learning Experience</label>
-            <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
-          </div> 
-        </fieldset>
-        <fieldset>
-          <div class="form-group">
-            <label for="trainee[codecademy]">Code academy link</label>
-            <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
-          </div>
-        <input type="submit" value="Update Profile" class="btn btn-primary" />  
-        </fieldset>
-          <!-- TODO - Add more fields so that your profile can be edited -->
+        <% end %>
+      </div>  
+    </div><!-- .col-md-4 -->
+    <div class="col-md-4">
+      <div class="profile-image-container">
+        <img class="profileImage" src="/images/photo.jpg"/>
+      </div>
+      <div id="stats" class="box">
+        <h3>Stats</h3>
+        <!-- TODO - Set the contents of this span with JavaScript -->
+        <span id="word-count">0</span> words found.
+      </div>
 
-          
-        
-      </form>
-    </div> <!-- box -->
-  </div> <!-- .col-md-4 --> 
+      <div id="problems" class="box">
+        <h3>Programming Problems</h3>
+        <a href="/primes">My Prime Number Solution</a>
+      </div>
+    </div> <!-- image goes here -->  
+    <div class="col-md-4">
+      
+
+      <div class="box">
+        <h3>Edit Profile</h3>
+        <!-- erb helper to change text input size... -->
+        <form action="/update" method="POST" id="edtForm">
+          <fieldset>
+            <div class="form-group">
+              <label for="trainee[about]">About</label>
+              <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/> 
+            </div>
+          </fieldset>  
+          <fieldset>
+            <div class="form-group">
+              <label for="trainee[ambition]">Ambition</label>
+              <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>" />
+            </div>
+          </fieldset>  
+          <fieldset>
+            <div class="form-group"> 
+              <label for="trainee[learning_experience]">Learning Experience</label>
+              <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+            </div> 
+          </fieldset>
+          <fieldset>
+            <div class="form-group">
+              <label for="trainee[codecademy]">Code academy link</label>
+              <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+            </div>
+          <input type="submit" value="Update Profile" class="btn btn-primary" />  
+          </fieldset>
+            <!-- TODO - Add more fields so that your profile can be edited -->
+
+        </form>
+      </div> <!-- box -->
+    </div> <!-- .col-md-4 -->
+  </div><!-- content container -->   
 </div>  <!-- row -->
 <% else %>
   <div class="welcome">
@@ -87,7 +88,6 @@
 <script language="javascript">
   console.log("I am Javascript!");
   // 
-
   var profile_values = document.getElementsByClassName('profile-value');
   console.log(profile_values.length)
   var total_words = 0;
@@ -95,14 +95,12 @@
   //   console.log(element);
   // });
 for(i=0; i<profile_values.length; i++){
-  
   // var j = 0
   var profile = profile_values[i].innerHTML
   console.log(profile.length)
   // profile.charAt()
   console.log(profile)
   // console.log(profile.charAt(j))
-
   // console.log(profile)
   for(j=0; j<profile.length; j++){
 
@@ -113,7 +111,6 @@ for(i=0; i<profile_values.length; i++){
     console.log(total_words)
   }
   // console.log(profile.charAt())
-
 }
 
 
