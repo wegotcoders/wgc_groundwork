@@ -17,9 +17,11 @@ body {
 
 .box {
   border: 1px solid #999;
-  background: #FCFCFC;
+  background: #088090;
   padding: 1em;
   margin-bottom: 0.5em;
+  color:white;
+  text-align: center;
 }
 
 .welcome {
@@ -103,6 +105,12 @@ header{
   text-transform: capitalize;
   color:white;
   opacity: 1;
+
+}
+.form-container fieldset{
+  padding: 10px;
+
+
 
 }
 

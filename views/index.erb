@@ -12,6 +12,7 @@
     <div class="col-md-4">
       <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
       <div class="profile-container">
+        <!-- where are these fields coming from??? -->
         <% @profile.each do |field, value| %>
           <div class="profile-section box" id="profileSectionShow">
             <h4><%= field %></h4>
@@ -27,7 +28,10 @@
       <div id="stats" class="box">
         <h3>Stats</h3>
         <!-- TODO - Set the contents of this span with JavaScript -->
-        <span id="word-count">0</span> words found.
+        <span id="word-count">
+          <!-- <p class="word-count-result"></p> -->
+
+          </span> words found.
       </div>
 
       <div id="problems" class="box">
@@ -39,36 +43,50 @@
       
 
       <div class="box">
-        <h3>Edit Profile</h3>
-        <!-- erb helper to change text input size... -->
-        <form action="/update" method="POST" id="edtForm">
-          <fieldset>
-            <div class="form-group">
-              <label for="trainee[about]">About</label>
-              <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/> 
-            </div>
-          </fieldset>  
-          <fieldset>
-            <div class="form-group">
-              <label for="trainee[ambition]">Ambition</label>
-              <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>" />
-            </div>
-          </fieldset>  
-          <fieldset>
-            <div class="form-group"> 
-              <label for="trainee[learning_experience]">Learning Experience</label>
-              <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
-            </div> 
-          </fieldset>
-          <fieldset>
-            <div class="form-group">
-              <label for="trainee[codecademy]">Code academy link</label>
-              <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
-            </div>
-          <input type="submit" value="Update Profile" class="btn btn-primary" />  
-          </fieldset>
-            <!-- TODO - Add more fields so that your profile can be edited -->
-
+        <div class="form-container">
+          <h3>Edit Profile</h3>
+          <!-- erb helper to change text input size... -->
+          <form action="/update" method="POST" id="edtForm">
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[about]">About</label>
+                <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/> 
+              </div>
+            </fieldset>  
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[ambition]">Ambition</label>
+                <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>" />
+              </div>
+            </fieldset>  
+            <fieldset>
+              <div class="form-group"> 
+                <label for="trainee[learning_experience]">Learning Experience</label>
+                <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+              </div> 
+            </fieldset>
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[codecademy]">Code academy link</label>
+                <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+              </div>
+           
+            </fieldset>
+            <fieldset>
+              <div class="form-group"> 
+                <label for="trainee[projects]">Projects</label>
+                <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+              </div> 
+            </fieldset>
+            <fieldset>
+              <div class="form-group"> 
+                <label for="trainee[rationale]">Rational</label>
+                <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+              </div> 
+              <input type="submit" value="Update Profile" class="btn btn-primary" />  
+            </fieldset>
+              <!-- TODO - Add more fields so that your profile can be edited -->
+          </div> <!-- form container -->     
         </form>
       </div> <!-- box -->
     </div> <!-- .col-md-4 -->
@@ -89,40 +107,39 @@
   console.log("I am Javascript!");
   // 
   var profile_values = document.getElementsByClassName('profile-value');
+  console.log(profile_values[0])
   console.log(profile_values.length)
   var total_words = 0;
+  // below does no work, usigg document , getElements by class name which is a colleciton. 
   // profile_values.forEach(function(element){
-  //   console.log(element);
-  // });
+  //   console.log(element)
+  // })
+
+
+
 for(i=0; i<profile_values.length; i++){
   // var j = 0
   var profile = profile_values[i].innerHTML
-  console.log(profile.length)
-  // profile.charAt()
-  console.log(profile)
-  // console.log(profile.charAt(j))
-  // console.log(profile)
-  for(j=0; j<profile.length; j++){
-
-    if(profile.charAt(j) === " "){
-      total_words +=1 
+  var words = 0
+  // console.log(profile.length)
+  $("#word-count").append("<p id="+i+ "></p>")
+  for(j=0; j<profile.length;j++){
+    if(profile.charAt(j) == " "){
+      words +=1       
     }
-    // console.log(words)
-    console.log(total_words)
   }
-  // console.log(profile.charAt())
+  $("#"+i+"").append(words)
+  console.log($("#"+0+"").text())
+  if($("#"+i+"").text() == 0){
+    $("#"+i+"").hide()
+  }
 }
-
-
-  // includevalidation max 20 words...
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-
-
-
-  document.getElementById('word-count').innerHTML = total_words;
-
+$("#0").append(" Words in about")
+$("#1").append(" Words in Ambition")
+$("#9").append(" Words in How did you hear")
+$("#12").append(" Words in Learning Experience")
+$("#15").append(" Words in Projects")
+$("#16").append(" Words in Rationale")
 
   console.log(total_words)
 
