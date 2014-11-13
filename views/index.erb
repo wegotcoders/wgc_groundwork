@@ -1,59 +1,141 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
-
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+<div class="row" id="grad">
+  <div id="logo">
+    <img src="/images/logo.png" alt="We Got Coders"  />
   </div>
+  <header >
+    <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  </header>
+</div>  
+<div class="row animated-gif-backround">
+  <div class="main-content-container">
+    <div class="col-md-4">
+      <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+      <div class="profile-container">
+        <!-- where are these fields coming from??? -->
+        <% @profile.each do |field, value| %>
+          <div class="profile-section box" id="profileSectionShow">
+            <h4><%= field %></h4>
+            <p class="profile-value"><%= value %></p>
+          </div>
+        <% end %>
+      </div>  
+    </div><!-- .col-md-4 -->
+    <div class="col-md-4">
+      <div class="profile-image-container">
+        <img class="profileImage" src="/images/photo.jpg"/>
+      </div>
+      <div id="stats" class="box">
+        <h3>Stats</h3>
+        <!-- TODO - Set the contents of this span with JavaScript -->
+        <span id="word-count">
+          <!-- <p class="word-count-result"></p> -->
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
+          </span> 
+      </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+      <div id="problems" class="box">
+        <h3>Programming Problems</h3>
+        <a href="/primes">My Prime Number Solution</a>
+      </div>
+    </div> <!-- image goes here -->  
+    <div class="col-md-4">
+      
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
+      <div class="box">
+        <div class="form-container">
+          <h3>Edit Profile</h3>
+          <!-- erb helper to change text input size... -->
+          <!-- cannot make input fields bigger, text area does not have value attribute, -->  
+          <!-- cannot fine in sinatra where database values point too --> 
+          <!-- cannot make github, linked in etc links with a tag, need to find where data points too -->
+          <form action="/update" method="POST" id="edtForm">
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[about]">About</label>
+                <input class="input-value" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/> 
+              </div>
+            </fieldset>  
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[ambition]">Ambition</label>
+                <input class="input-value" type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>" />
+              </div>
+            </fieldset>  
+            <fieldset>
+              <div class="form-group"> 
+                <label for="trainee[learning_experience]">Learning Experience</label>
+                <input class="input-value" type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+              </div> 
+            </fieldset>
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[codecademy]">Code academy link</label>
+                <input class="input-value" type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+              </div>
+           
+            </fieldset>
+            <fieldset>
+              <div class="form-group"> 
+                <label for="trainee[projects]">Projects</label>
+                <input class="input-value" type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+              </div> 
+            </fieldset>
+            <fieldset>
+              <div class="form-group"> 
+                <label for="trainee[rationale]">Rational</label>
+                <input class="input-value" type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+              </div> 
+              <input type="submit" value="Update Profile" class="btn btn-primary" />  
+            </fieldset>
+              <!-- TODO - Add more fields so that your profile can be edited -->
+          </div> <!-- form container -->     
+        </form>
+      </div> <!-- box -->
+    </div> <!-- .col-md-4 -->
+  </div><!-- content container -->   
+</div>  <!-- row -->
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
     <a href="/authorise">Authorise</a>
   </div>
+</div>  
 <% end %>
 
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
   console.log("I am Javascript!");
-
+  // 
   var profile_values = document.getElementsByClassName('profile-value');
+  console.log(profile_values[0])
+  console.log(profile_values.length)
   var total_words = 0;
+  //.forEach does not work as we profile_values returns a collection of elements rather than an array. 
+  for(i=0; i<profile_values.length; i++){
+    var profile = profile_values[i].innerHTML // set current html from collection to variable
+    var words = 0
+    // console.log(profile.length)
+    $("#word-count").append("<p id="+i+ "></p>")
+    for(j=0; j<profile.length;j++){
+      if(profile.charAt(j) == " "){
+        words +=1       
+      }
+    }
+    $("#"+i+"").append(words)
+    console.log($("#"+0+"").text())
+    if($("#"+i+"").text() == 0){
+      $("#"+i+"").hide()
+    }
+  }
+  // manually append class created with jQuery. 
+  $("#0").append(" Words in about")
+  $("#1").append(" Words in Ambition")
+  $("#9").append(" Words in How did you hear")
+  $("#12").append(" Words in Learning Experience")
+  $("#15").append(" Words in Projects")
+  $("#16").append(" Words in Rationale")
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
 </script>

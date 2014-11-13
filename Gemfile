@@ -6,6 +6,6 @@ gem 'httparty'
 gem 'json'
 
 group :development, :test do
-  gem 'pry'
+  # gem 'pry'
   gem 'rspec'
 end
