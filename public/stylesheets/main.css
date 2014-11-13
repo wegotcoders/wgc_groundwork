@@ -18,14 +18,35 @@ body {
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
+  margin-right: 10em;
+ 
 }
+.field{
+background: #F0D9FF;
+font-size: 17px;
+font-family: Impact;
 
+
+}
+ol {
+list-style-type:decimal;
+margin-left: 5em;
+margin-top: 2em;
+
+}
+h3{
+  color: blue;
+  margin-left: 3em;
+}
 .welcome {
   text-align: center;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 2em;
+  font-family: Georgia;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .error {
@@ -37,3 +58,7 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+body {
+
+  background-color: lightblue;
+}

@@ -1,12 +1,4 @@
-<h3>Prime Numbers</h3>
 
-<h1 style=" font-size: 15px;font-weight: bold ">Numbers to be Seived</h1>
-
-<p id="numlist">x</p>
-<p style=" font-size: 15px;font-weight: bold ">Sum : <p><p id="primes">x</p>
-
-<script >
-	
 function count_prime(arg){
 
 	 arg = typeof arg !== 'undefined' ? arg : 20; //default value
@@ -14,13 +6,16 @@ function count_prime(arg){
 	var list2 = [0,1]
 	var real_prime = []
 
+
 	counter = 2
 	while (counter < arg ){
 		if (counter % 2 !== 0) {
-			list.push(counter)			
+			list.push(counter)
+			
 		}
 	list2.push(counter)  // will be used to display list of numbers to be seived
 	counter++
+
 	}
 
 	for (i = 0; i < list.length - 1; i++){
@@ -38,16 +33,8 @@ function count_prime(arg){
 
 	var sum = real_prime.reduce( function(total, num){ return total + num }, 0) ;
 
-	var display1 = document.getElementById("numlist");
-		display1.innerHTML = "0 - " + list2.length ;
-
-	var display2 = document.getElementById("primes");
-		display2.innerHTML = real_prime + " = " + sum ;
-}
+ 	var ccc = document.getElementById("primesum") ;
+ 		ccc.innerHTML = sum;
+   }
 
 window.onload=count_prime(100);
-</script>
-
-<div>
-  <a href="/">Back</a>
-</div>
