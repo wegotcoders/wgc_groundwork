@@ -16,19 +16,11 @@
         <div id = "cd_name">
           <input type= "text" id= 'text' >
           <input type= "submit" value= "Add User Name" id= 'add' onclick='add_text()'><br />
-          
-      </div>
-      <br />
-
-        
-     <br />
-         
-        </div>
       
     <%end %>
 
        <% if field == "js_track_completedness" %>
-              <b>Ruby JavaScript: </b> <progress id="javaProgress" value="10" max="100"></progress> 0%
+              <b>JavaScript: </b> <progress id="javaProgress" value="99" max="100"></progress> 99%
        <% end %>
 
         <% if field == "ruby_track_completedness" %>
@@ -36,7 +28,7 @@
        <% end %>
 
         <% if field == "web_track_completedness" %>
-                <b>Web Track Progres: </b> <progress id="rubyProgress" value="33" max="100"></progress> 99%
+                <b>Web Track Progres: </b> <progress id="rubyProgress" value="99" max="100"></progress> 99%
        <% end %>
 
     </div></span> </li>
@@ -58,50 +50,25 @@
     // removes text field and add button
      while (codecademy_add.firstChild) {  
         codecademy_add.removeChild(codecademy_add.firstChild);
-    }
+     }
 
     // creates a href link using the username the user as input
      var new_el = document.createElement('a');
      var att = document.createAttribute('href');
      att.value =  "http://www.codecademy.com/" + user_input ; 
 
-      new_el.setAttributeNode(att)
-      var text_input = document.createTextNode(user_input); 
-      new_el.appendChild(text_input);
-
+     new_el.setAttributeNode(att)
+     var text_input = document.createTextNode(user_input); 
+     new_el.appendChild(text_input);
 
       codecademy_add.appendChild(new_el) ;
-
   }
 
 
-    function word_count(){
-
-      var wrapper = document.getElementById("list") ;
-      var divcount = wrapper.children.length
-
-      for(i = 0 ; i < divcount; i++){
-
-          var stext = wrapper.getElementsByTagName('p')[i].innerHTML
-          var title = wrapper.getElementsByTagName('h4')[i].innerHTML
-          var word_c = document.getElementById("word-count") ;
-      
-
-         if (stext.match(/\s/g) !== null) {
-             stext_count = stext.match(/\s/g).length  ;
-         
-               if (stext_count > 20) {
-                  alert(title + " : has more than 20 words")
-                }
-          } 
-       }     
-        
-    }
-   
-
+    
 </script>
 
-    <span id="word-count">0</span> words found.
+    <span id="word-count" ><b><u>Sections with More Than 20 Words<u></b></span>
   </div>
 
   <div id="problems" class="box">
@@ -136,13 +103,35 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
+  function word_count(){
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+      var word_c = document.getElementById("word-count") ;
+      var wrapper = document.getElementById("list") ;
+      var divcount = wrapper.children.length;
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
 
-  document.getElementById('word-count').innerHTML = total_words;
+      for(i = 0 ; i < divcount; i++){
+
+          var stext = wrapper.getElementsByTagName('p')[i].innerHTML
+          var title = wrapper.getElementsByTagName('h4')[i].innerHTML
+
+         if (stext.match(/\s/g) !== null) {
+             stext_count = stext.match(/\s/g).length  ;
+         
+               if (stext_count > 20) {
+       
+                  //display list of sectons with more than 20 words
+                  var new_el2 = document.createElement('p');
+                  var text2 = document.createTextNode(title + " section : has  " + stext_count + " words");
+                  new_el2.appendChild(text2);
+
+                  word_c.appendChild(new_el2);
+
+                }
+          } 
+      }     
+        
+     }
+   
+
 </script>
