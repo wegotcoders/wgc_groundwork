@@ -60,7 +60,7 @@ h3 {
 .profile-image-container{
   text-align: center;
 }
-
+/* animated gif used for content section, commented out as could gif blows mac processor */
 .animated-gif-backround{
 /*  width:inherit;
   height:inherit;*/
@@ -75,7 +75,7 @@ h3 {
 
 .profile-container{
   width:100%;
-  height:530px;
+  height:550px;
   overflow: scroll;
 }
 
@@ -113,8 +113,7 @@ h3 {
 }
 /* form container ==========================================================================================*/
 .form-container fieldset{
-  padding: 19px;
-/*  height:500px;*/
+  padding: 17px;
   width:100%;
 }
 .input-value{

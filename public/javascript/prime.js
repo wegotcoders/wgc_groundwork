@@ -1,8 +1,5 @@
 $(function(){
 
-console.log("poo")
-
-
   function getPrimeNumbers(){
   // we need another copy of number 
   // a prime number....
@@ -22,6 +19,7 @@ console.log("poo")
         // return false
       }
       // three and two? why do we need thes? ..... 
+      // return true... 
     }
     console.log(primeNumbers)
   }
