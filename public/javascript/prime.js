@@ -5,7 +5,6 @@ $(function(){
   // a prime number....
     // two factors are 1 and itself... 
       // we need to devide by something....
-      
   var primeNumbers = []
     num = 100
     // find square route of num... 
@@ -23,7 +22,5 @@ $(function(){
     }
     console.log(primeNumbers)
   }
-   
   getPrimeNumbers()
-
 })
