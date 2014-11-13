@@ -1,3 +1,5 @@
+
+
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
@@ -15,7 +17,7 @@
 
         <div id = "cd_name">
           <input type= "text" id= 'text' >
-          <input type= "submit" value= "Add User Name" id= 'add' onclick='add_text()'><br />
+          <input type= "submit" value= "Add User Name" id= 'add' onclick='add_text()'><br /><i>(mine is adenna)</i>
       
     <%end %>
 
@@ -31,13 +33,18 @@
                 <b>Web Track Progres: </b> <progress id="rubyProgress" value="99" max="100"></progress> 99%
        <% end %>
 
+
+        <% if field == "primes_sum" %>
+                <div id = "primesum" > xx </div>
+       <% end %>
+
+
     </div></span> </li>
   <% end %>
 </ol> 
 
   <div id="stats" class="box">
     <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
 
 <script>
   
@@ -63,8 +70,6 @@
 
       codecademy_add.appendChild(new_el) ;
   }
-
-
     
 </script>
 
@@ -100,11 +105,12 @@
   </div>
 <% end %>
 
-
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
+
   function word_count(){
 
+ //display list of sectons with more than 20 words
       var word_c = document.getElementById("word-count") ;
       var wrapper = document.getElementById("list") ;
       var divcount = wrapper.children.length;
@@ -119,19 +125,18 @@
              stext_count = stext.match(/\s/g).length  ;
          
                if (stext_count > 20) {
-       
-                  //display list of sectons with more than 20 words
+                        
                   var new_el2 = document.createElement('p');
                   var text2 = document.createTextNode(title + " section : has  " + stext_count + " words");
                   new_el2.appendChild(text2);
 
                   word_c.appendChild(new_el2);
-
                 }
           } 
       }     
         
      }
-   
+   window.onload= word_count();
 
 </script>
+<script type="text/javascript" src= "prime.js"></script>
