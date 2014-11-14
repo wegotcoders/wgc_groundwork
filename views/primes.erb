@@ -1,7 +1,19 @@
-<h1>Prime Numbers</h1>
+require 'prime'
 
-Sum : <%= @sum %>
+# initialize the sum
+sum = 0
 
-<div>
-  <a href="/">Back</a>
-</div>
+#ask the number from the user
+puts "Give number"
+
+#store the number to the variable x
+#and make it an integer
+x = gets.chomp.to_i
+
+#for every prime element up to the x number
+#print the prime numbers and their sum
+
+Prime.each(x) do |prime|
+   if p prime then sum += 1
+   end
+end
