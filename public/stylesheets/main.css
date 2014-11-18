@@ -3,6 +3,8 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background-color: #257E78;
+
 }
 
 #logo {
@@ -10,12 +12,14 @@ body {
 }
 
 #content {
-  padding: 1em;
+  padding: 3em 14em;
+  background-color: #F6B17F ;
+
 }
 
 .box {
   border: 1px solid #999;
-  background: #FCFCFC;
+  background: #DEDEDE;
   padding: 1em;
   margin-bottom: 0.5em;
 }
@@ -37,3 +41,14 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+h3 {
+  color:blue;
+  text-align:center; 
+  background-color: #257E78; 
+  color:white;
+}
+
+h4 {
+
+}
