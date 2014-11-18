@@ -7,10 +7,17 @@
 #   return total   	
 # end
 
-def sum(lim_num=100)
-	nums = [1...lim_num]
-	total = 0
-	for i in nums
-	  nums.each { |x| total += x unless x % nums[i] == 0}
-    end
+# def sum(lim_num=100)
+# 	nums = [1...lim_num]
+# 	total = 0
+# 	for i in nums
+# 	  nums.each { |x| total += x unless x % nums[i] == 0}
+#     end
+# end
+
+class Primes
+def self.sum_to(limit = 100)
+ 
+ "I'm working on it!"
+end
 end
