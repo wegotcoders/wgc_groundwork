@@ -51,9 +51,29 @@
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+  var content = "";
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+for(i=0;i<profile_values.length;i++){
+  content = profile_values[i].innerHTML;
+  var contentLength = content.split(" ").length;
+  total_words = total_words + contentLength;
+}
 
   document.getElementById('word-count').innerHTML = total_words;
+
+   //fomatting titles
+  var sub_title = document.getElementsByTagName('h4');
+  for(j=0; j<sub_title.length;j++){
+    var content =  sub_title[j].innerHTML;
+    var wordList = content.split("_");
+
+    for(k=0;k<wordList.length;k++){
+      wordList[k]= wordList[k].charAt(0).toUpperCase() + wordList[k].substr(1, wordList[k].length-1);
+      }
+
+    var newString = wordList.join();
+    var updated = newString.replace(/,/g, " ");
+    sub_title[j].innerHTML = updated;
+  }
+
 </script>
