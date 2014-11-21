@@ -1,10 +1,16 @@
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
+
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
-    <div class="profile-section box">
+    <div class="profile-section box" id="<%= field %>_section" >
       <h4><%= field %></h4>
+      <% if field == "about" %>
+        <div id="profilePic">
+    <img src="/images/profile.jpg">
+  </div>
+  <% end %>
       <p class="profile-value"><%= value %></p>
     </div>
   <% end %>
@@ -17,7 +23,7 @@
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+    <a href="/primes" >My Prime Number Solution</a>
   </div>
 
   <div class="box">
@@ -26,8 +32,20 @@
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <ul>
+            <li>
+              <label for="trainee[about]">About</label>
+              <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+            </li>
+            <li>
+              <label for="trainee[ambition]">Ambition</label>
+              <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+            </li>
+            <li>
+              <label for="trainee[projects]">Projects</label>
+              <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+            </li>
+          </ul>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->

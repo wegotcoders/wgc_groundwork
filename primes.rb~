@@ -1,0 +1,18 @@
+class Primes
+  def self.sum_to(limit = 100)
+	var num = 0
+    for num in 2..limit
+ 	#prime_test(num)
+	
+    end
+
+  end
+=begin
+ def prime_test (pNum)
+	if pNum % 2 == 0
+	print "test"
+        end
+ end
+=end
+
+end
