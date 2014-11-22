@@ -3,6 +3,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background-color: #E1EAFC;
 }
 
 #logo {
@@ -11,13 +12,17 @@ body {
 
 #content {
   padding: 1em;
+  overflow: auto;
+  color: #FFFFFF;
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
+  border: 2px solid #F77534;
+  background: #294FA1;
+  padding: 15px;
+  margin:25px; 
+  font-family: Arial,sans-serif;
+  position: static;
 }
 
 .welcome {
@@ -25,7 +30,7 @@ body {
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .error {
@@ -37,3 +42,49 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+.thumbnail img { 
+    float: left;
+    overflow: auto;
+    padding: 20px 15px 0px 20px;
+    }
+
+h2 {
+  font-family: Helvetica, sans-serif;
+  font-size: 30px;
+  color: #9C2B2B;
+}
+
+.form-group {
+  width: 275px;
+  border: 2px dashed #F77534;
+  background-color: #294FA1;
+  padding: 15px;
+  margin:25px;
+  float: left;
+}
+
+.btn-primary {
+  float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
