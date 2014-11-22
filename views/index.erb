@@ -1,13 +1,93 @@
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
+<!--   <div id="my_image"><img src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/069/305/3518a31.jpg"/></div>
+ -->
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field.capitalize %></h4>
-      <p class="profile-value"><%= value %></p>
+
+
+  <div class="profile-section box" id="personal_details">
+    <div id="my_image"><img src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/069/305/3518a31.jpg"/>
     </div>
-  <% end %>
+    <div id="details">
+    <h4>Personal Details</h4>
+    <div class="properties">
+      <h5>First Name: </h5>
+      <p class="profile-value"><%= @profile["first_name"] %></p>
+    </div>
+    <div class="properties">
+      <h5>Last Name: </h5>
+      <p class="profile-value"><%= @profile["last_name"] %></p>
+    </div>
+    <div class="properties">
+      <h5>Date of Birth: </h5>
+      <p class="profile-value"><%= @profile["dob"] %></p>
+    </div>
+    <div class="properties">
+      <h5>Gender: </h5>
+      <p class="profile-value"><%= @profile["gender"] %></p>
+    </div>
+    <div class="properties">
+      <h5>Employment Status: </h5>
+      <p class="profile-value"><%= @profile["employment_status"] %></p>
+    </div>
+    <div class="properties">
+      <h5>Mobile: </h5>
+      <p class="profile-value"><%= @profile["phone_number"] %></p>
+    </div>
+    <div class="properties">
+      <h5>Twitter: </h5>
+      <p class="profile-value properties"><a href="https://twitter.com/GlykeriaPe"><%= @profile["twitter"] %></a></p>
+    </div>
+    <div class="properties">
+      <h5>Github: </h5>
+      <p class="profile-value"><a href="https://github.com/Lyra-B"><%= @profile["github"] %></a></p>
+    </div>
+    <div class="properties">
+      <h5>Homepage: </h5>
+      <p class="profile-value"><%= @profile["homepage"] %></p>
+    </div>
+  </div>
+  </div>
+
+  <div class="profile-section box" id="about_ambition">
+    <h4>About</h4>
+    <p class="profile-value"><%= @profile["about"] %></p>
+    <h4>Ambition</h4>
+    <p class="profile-value"><%= @profile["ambition"] %></p>
+  </div>
+
+  <div class="profile-section box" id="course">
+    <h4>We got Coders</h4>
+    <p class="profile-value"><%= @profile["how_did_you_hear"] %></p>
+    <p class="profile-value"><%= @profile["rationale"] %></p>    
+  </div>
+
+  <div class="profile-section box" id="projects">
+    <h4>Projects</h4>
+    <p class="profile-value"><%= @profile["projects"] %></p>
+  </div>
+
+  <div class="profile-section box" id="learning_experience">
+    <h4>What is a positive learning experience according to me</h4>    
+    <p class="profile-value"><%= @profile["learning_experience"] %></p>
+  </div>
+
+  <div class="profile-section box" id="complete">
+    <h4>Track Completedness</h4>
+    <p class="profile-value"><%= @profile["ruby_track_completedness"] %></p>
+    <p class="profile-value"><%= @profile["web_track_completedness"] %></p>
+  </div>
+
+  <div class="profile-section box" id="codecademy">
+    <h4>Codecademy</h4>
+    <p class="profile-value"><%= @profile["codecademy"] %></p>
+  </div>
+
+  <div class="profile-section box" id="primes">
+    <h4>Primes Sum</h4>
+    <p class="profile-value"><%= @profile["primes_sum"] %></p>
+  </div>
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -20,14 +100,24 @@
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
-  <div class="box">
+  <div class="box" id="update">
     <h3>Edit Profile</h3>
 
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
-          <label for="trainee[about]">About me</label>
+          <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
@@ -47,13 +137,68 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
+   var total_words = 0;
+  document.addEventListener('DOMContentLoaded', function() {
+    var profile_values = document.getElementsByClassName('profile-value');
+ 
+    for (var i=0; i< profile_values.length; i++) {
+      var count = profile_values[i].innerHTML.split(" ").length;
+        total_words += count;
+    }
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
+    document.getElementById('word-count').innerHTML = total_words;
+  });
 </script>
+<!--
+// document.addEventListener('DOMContentLoaded', function() {
+//   total_words = alert(profile_value.split(/\S+/g).length);
+// });
+// function getWordCount(profile_values) {
+//   var words = profile_values.split(" ");
+//   total_words = words.filter(function(words) { 
+//     return words.length > 20
+//   }).length;
+//   return total_words;
+// }
+//  alert("hello world");
+  //   var wordSum = function(){
+  //     counter = profile_values.innerHTML.split(/\S+/g);
+
+  //     for(i in counter) {
+  //       total_words += counter.length;
+  //     }
+  //     return total_words;
+  //   }
+//   $( document ).ready(function() {
+//     var total_words = 0;
+//     var counter = profile_values.innerHTML.split(/\S+/g);
+
+//     for(i in counter) {
+//       total_words += counter.length;
+//  }
+// });
+  // console.log("I am Javascript!");
+
+  // var profile_values = document.getElementsByClassName('profile-value');
+  // //total_words = alert(profile_values.split(/\S+/g).length);
+  // var total_words = 0;
+  // var counter = profile_values.innerHTML.split(/\S+/g);
+
+  // for(i in counter) {
+  //   total_words += counter.length;
+  // }
+  // // TODO - Count the number of words in the profile.
+  // // hint - look at what the innerHTML property provides.
+  // stats.getElementsByTagName('script')-->
+  
+
+<!-- // $(function() {
+//   $( "#profile_value" ).hide();
+//   $( "#show" ).click(function(){
+//     $( "#profile_value" ).slideDown();
+//     $( this ).hide('normal');
+//   });
+//   $( "#hide" ).click(function(){
+//     $( "#profile_value" ).slideUp();
+//     $( "#profile_value" ).show('normal');
+//   }); -->

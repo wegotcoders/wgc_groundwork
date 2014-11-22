@@ -3,18 +3,29 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
-  background-color: #257E78;
-
+  background-color:#257E78;
 }
 
 #logo {
   text-align: center;
 }
+#my_image {
+  float:left;
+  padding: 1em;
+}
 
 #content {
   padding: 3em 14em;
-  background-color: #F6B17F ;
-
+  background: #feccb1; /* Old browsers */
+  background: -moz-linear-gradient(top, #feccb1 0%, #f17432 55%, #ea5507 100%, #fb955e 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feccb1), color-stop(55%,#f17432), color-stop(100%,#ea5507), color-stop(100%,#fb955e)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #feccb1 0%,#f17432 55%,#ea5507 100%,#fb955e 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #feccb1 0%,#f17432 55%,#ea5507 100%,#fb955e 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #feccb1 0%,#f17432 55%,#ea5507 100%,#fb955e 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #feccb1 0%,#f17432 55%,#ea5507 100%,#fb955e 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=0 ); /* IE6-9 */
+  /*background-color: #F6B17F ;*/
+  border: 2em;
 }
 
 .box {
@@ -22,14 +33,11 @@ body {
   background: #DEDEDE;
   padding: 1em;
   margin-bottom: 0.5em;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .welcome {
   text-align: center;
-}
-
-h3 {
-  font-size: 1.5em;
 }
 
 .error {
@@ -43,12 +51,55 @@ h3 {
 /* TODO - Add your own styles here */
 
 h3 {
+  font-size: 1.5em;
   color:blue;
   text-align:center; 
   background-color: #257E78; 
   color:white;
 }
 
-h4 {
+.profile-section {
+  min-height: 20px;
+  max-width: 440px;
+  /*columns: 100px 3;*/
+}
 
+/*.profile-section h4 {
+  text-transform: capitalize;
+}*/
+
+.form-group {
+}
+
+#about_ambition {
+  display:block;
+}
+
+#personal_details {
+  display:inline-block;
+}
+
+
+div h4 {
+  font-weight: bold;
+}
+
+#my_image {
+  display: inline-block;
+}
+
+#details {
+  display: inline-block;
+}
+
+#update {
+  min-height: 20px;
+  max-width: 440px;
+}
+
+.properties h5 {
+  display: inline-block;
+}
+.properties p {
+  display: inline-block;
 }
