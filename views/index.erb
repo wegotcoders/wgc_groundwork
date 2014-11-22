@@ -1,7 +1,12 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <h2><%= @profile["first_name"] %>'s Amazing Profile</h2>
+
+  <div class="thumbnail">
+<img src="http://i1371.photobucket.com/albums/ag302/aprildc01/test/1cc97109-bfce-476d-b647-573190053e28_zps94a2ba71.jpg" width="150" height="175">
+</div>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
       <h4><%= field %></h4>
@@ -9,39 +14,62 @@
     </div>
   <% end %>
 
-  <div id="stats" class="box">
+  <div id="stats" class="box" >
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <span id="word-count">     </span> words found.
   </div>
 
-  <div id="problems" class="box">
+  <div id="problems" class="box" >
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+    <h2>Edit Profile</h2>
 
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
+      </div>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+<div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+    </div>
+
+   <div class="form-group">
+          <label for="trainee[projects]">Projects</label>
+          <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+    </div>
+
+  <div class="form-group">
+          <label for="trainee[rationale]">Rationale</label>
+          <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+      </div>
+
+    <div class="form-group">
+          <label for="trainee[learning_experience]">Learning Experience</label>
+          <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+    </div>
+
+    <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+    </div> 
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
-  </div>
+
+
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
-
     <a href="/authorise">Authorise</a>
   </div>
+
 <% end %>
 
 
@@ -49,11 +77,63 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+
+var profile_values = document.getElementsByClassName('profile-value');
+  var total_words = 
+
+for (var i = 0; i < profile-value.length; i++) {
+  if (word-counter[i]) {
+    for(var j = i; j < (word-count.length + i); j++) {
+      hits.push(word-counter[j]);
+    }
+  }
+}
+
+document.getElementById('word-count').innerHTML = total_words;
+
+
+  /* var profile_values = document.getElementsByClassName('profile-value');
+  var total_words = function () {
+    var word-counter = 'profile-value' == 'word-count';
+    return 'word-count';
+
+    document.getElementById('word-count').innerHTML = total_words;
+  } */
+
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
