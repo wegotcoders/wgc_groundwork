@@ -26,6 +26,15 @@ get '/' do
   erb :index, :layout => :main
 end
 
+
+get '/edit' do
+  if signed_in?
+    @profile = trainee.get_profile
+  end
+  erb :edit, :layout => :main
+end
+
+
 post '/update' do
   response = trainee.update_profile(params)
 

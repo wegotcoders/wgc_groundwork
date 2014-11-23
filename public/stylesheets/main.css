@@ -68,11 +68,9 @@ h3 {
   text-transform: capitalize;
 }*/
 
-.form-group {
-}
-
 #about_ambition {
   display:block;
+  float:right;
 }
 
 #personal_details {
@@ -94,7 +92,47 @@ div h4 {
 
 #update {
   min-height: 20px;
-  max-width: 440px;
+  max-width: 875px;
+  margin: 0 auto;
+}
+
+.form-group {
+/*  font-weight: bold;
+  display:inline-block;*/
+/*background: -webkit-gradient(linear, bottom, left 175px, from(#CCCCCC), to(#EEEEEE));
+background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);*/
+margin: 0.5em;
+position:relative;
+width:370px;
+height:20px;
+font-family: Tahoma, Geneva, sans-serif;
+font-size: 14px;
+font-style: italic;
+font-weight: bold;
+color: #09C;
+text-decoration: none;
+border-radius: 10px;
+padding:24px;
+border: 1px solid #999;
+border: inset 1px solid #333;
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+display:inline-block;
+text-align: left;
+}
+
+input {
+  /*float:right;
+  display:inline-block;*/
+width:130px;
+display:inline-block;
+border: 1px solid #999;
+height: 25px;
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+float:right;
+}
+
+.btn-primary {
+  text-align: center;
 }
 
 .properties h5 {
@@ -103,3 +141,15 @@ div h4 {
 .properties p {
   display: inline-block;
 }
+
+a:link {
+    color: #0000EE;
+}
+
+a:visited {
+    color: #551A8B;
+}
+
+a:hover {
+    color: #FF00FF;
+
