@@ -1,6 +1,5 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-  <div class="profile-section box" id="personal_details">
+    <div class="profile-section box" id="personal_details">
     <div id="my_image"><img src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/069/305/3518a31.jpg"/>
     </div>
     <div id="details">
@@ -51,10 +50,42 @@
     <p class="profile-value"><%= @profile["ambition"] %></p>
   </div>
 
+  <div class="profile-section box" id="rationale">
+    <h4>Rationale</h4> 
+    <p class="profile-value"><%= @profile["rationale"] %></p>    
+  </div>
+
   <div class="profile-section box" id="course">
     <h4>We got Coders</h4>
     <p class="profile-value"><%= @profile["how_did_you_hear"] %></p>
     <p class="profile-value"><%= @profile["learning_experience"] %></p>   
+  </div>
+
+  <div class="profile-section box" id="codecademy">
+    <h4>Codecademy</h4>
+    <p class="profile-value"><a href="http://www.codecademy.com/Greenfairy_gp" target="_blank"><%= @profile["codecademy"] %></a>></p>
+    <h4>Track Completedness</h4>
+    <p class="profile-value"><a href="http://www.codecademy.com/en/tracks/ruby">Ruby: </a><progress value="100" max="100"></progress> 100%<%= @profile["ruby_track_completedness"] %></p>
+    <p class="profile-value"><a href="http://www.codecademy.com/en/tracks/web">Html/Css: </a><progress value="100" max="100"></progress> 100%<%= @profile["web_track_completedness"] %></p>
+    <p class="profile-value"><a href="http://www.codecademy.com/en/tracks/javascript">Javascript: </a><progress value="100" max="100"></progress> 100%<%= @profile["javascript_track_completedness"] %></p>
+  </div>
+  
+  <div class="profile-section box" id="probs_stats_primes">
+    <div id="stats" class="box">
+      <h4>Stats</h4>
+      <span id="word-count">0</span> words found.
+    </div>
+
+    <div id="problems" class="box">
+      <h4>Programming Problems</h4>
+      <a href="/primes">My Prime Number Solution</a>
+    </div>
+
+    <div class="profile-section box" id="primes">
+      <h4>Primes Sum</h4>
+      <p class="profile-value"><%= @profile["primes_sum"] %></p>
+    </div>
+
   </div>
 
   <div class="profile-section box" id="projects">
@@ -62,34 +93,8 @@
     <p class="profile-value"><%= @profile["projects"] %></p>
   </div>
 
-  <div class="profile-section box" id="rationale">
-    <h4>Rationale</h4> 
-    <p class="profile-value"><%= @profile["rationale"] %></p>    
-  </div>
+  
 
-  <div class="profile-section box" id="codecademy">
-    <h4>Codecademy</h4>
-    <p class="profile-value"><a href="http://www.codecademy.com/Greenfairy_gp" target="_blank"><%= @profile["codecademy"] %></a>></p>
-    <h4>Track Completedness</h4>
-    <p class="profile-value"><%= @profile["ruby_track_completedness"] %></p>
-    <p class="profile-value"><%= @profile["web_track_completedness"] %></p>
-  </div>
-
-  <div class="profile-section box" id="primes">
-    <h4>Primes Sum</h4>
-    <p class="profile-value"><%= @profile["primes_sum"] %></p>
-  </div>
-
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
-
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
