@@ -9,10 +9,15 @@ set :session_secret, 'secret'
 enable :sessions
 
 get '/primes' do
-  # TODO - Can we make this dynamic?
+
+  if signed_in?
+    @profile = trainee.get_profile
+  end
+# TODO - Can we make this dynamic?
   limit = 100
 
-  # TODO - add your prime number solution in the primes.rb file.
+# TODO - add your prime number solution in the primes.rb file.
+
   @sum = Primes.sum_to(limit)
 
   erb :primes, :layout => :main
@@ -31,6 +36,7 @@ get '/edit' do
   if signed_in?
     @profile = trainee.get_profile
   end
+
   erb :edit, :layout => :main
 end
 
