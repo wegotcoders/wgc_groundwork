@@ -14,9 +14,20 @@
     <img src="/images/logo.png" alt="We Got Coders"  />
   </div>
 
+  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <nav id="main_nav">
+    <ul>
+      <li><a href='/'> Home </a></li>
+      <li><a href='/edit'> Update </a></li>
+      <li><a href='/primes'> Primes </a></li>
+    </ul>
+  </nav>
+
   <div id="content">
     <%= yield %>
-  </div>
+  </div> 
+
+  <footer id="main_footer"><h4>&copy<%= @profile["first_name"] %><%= @profile["last_name"] %></h4></footer>
 
 </body>
 </html>

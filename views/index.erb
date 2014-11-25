@@ -1,41 +1,100 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+    <div class="profile-section box" id="personal_details">
+    <div id="my_image"><img src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/069/305/3518a31.jpg"/>
     </div>
-  <% end %>
-
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <div id="details">
+      <h4>Personal Details</h4>
+      <div class="properties">
+        <h5>First Name: </h5>
+        <p class="profile-value"><%= @profile["first_name"] %></p>
+      </div>
+      <div class="properties">
+        <h5>Last Name: </h5>
+        <p class="profile-value"><%= @profile["last_name"] %></p>
+      </div>
+      <div class="properties">
+        <h5>Date of Birth: </h5>
+        <p class="profile-value"><%= @profile["dob"] %></p>
+      </div>
+      <div class="properties">
+        <h5>Gender: </h5>
+        <p class="profile-value"><%= @profile["gender"] %></p>
+      </div>
+      <div class="properties">
+        <h5>Employment Status: </h5>
+        <p class="profile-value"><%= @profile["employment_status"] %></p>
+      </div>
+      <div class="properties">
+        <h5>Mobile: </h5>
+        <p class="profile-value"><%= @profile["phone_number"] %></p>
+      </div>
+      <div class="properties">
+        <h5>Twitter: </h5>
+        <p class="profile-value properties"><a href="https://twitter.com/GlykeriaPe" target="_blank"><%= @profile["twitter"] %></a></p>
+      </div>
+      <div class="properties">
+        <h5>Github: </h5>
+        <p class="profile-value"><a href="https://github.com/Lyra-B" target="_blank"><%= @profile["github"] %></a></p>
+      </div>
+      <div class="properties">
+        <h5>Homepage: </h5>
+        <p class="profile-value"><%= @profile["homepage"] %></p>
+      </div>
+  </div>
   </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+  <div class="profile-section box" id="about_ambition">
+    <h4>About</h4>
+    <p class="profile-value"><%= @profile["about"] %></p>
+    <h4>Ambition</h4>
+    <p class="profile-value"><%= @profile["ambition"] %></p>
   </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
+  <div class="profile-section box" id="rationale">
+    <h4>Rationale</h4> 
+    <p class="profile-value"><%= @profile["rationale"] %></p>    
   </div>
+
+  <div class="profile-section box" id="course">
+    <h4>We got Coders</h4>
+    <p class="profile-value"><%= @profile["how_did_you_hear"] %></p>
+    <p class="profile-value"><%= @profile["learning_experience"] %></p>   
+  </div>
+
+  <div class="profile-section box" id="codecademy">
+    <h4>Codecademy</h4>
+    <p class="profile-value"><a href="http://www.codecademy.com/Greenfairy_gp" target="_blank"><%= @profile["codecademy"] %></a>></p>
+    <h4>Track Completedness</h4>
+    <p class="profile-value"><a href="http://www.codecademy.com/en/tracks/ruby">Ruby: </a><progress value="100" max="100"></progress> 100%<%= @profile["ruby_track_completedness"] %></p>
+    <p class="profile-value"><a href="http://www.codecademy.com/en/tracks/web">Html/Css: </a><progress value="100" max="100"></progress> 100%<%= @profile["web_track_completedness"] %></p>
+    <p class="profile-value"><a href="http://www.codecademy.com/en/tracks/javascript">Javascript: </a><progress value="100" max="100"></progress> 100%<%= @profile["javascript_track_completedness"] %></p>
+  </div>
+  
+  <div class="profile-section box" id="probs_stats_primes">
+    <div id="stats" class="box">
+      <h4>Stats</h4>
+      <span id="word-count">0</span> words found.
+    </div>
+
+    <div id="problems" class="box">
+      <h4>Programming Problems</h4>
+      <a href='/primes'>My Prime Number Solution</a>
+    </div>
+
+    <div class="profile-section box" id="primes">
+      <h4>Primes Sum</h4>
+      <p class="profile-value"><%= @profile["primes_sum"] %></p>
+    </div>
+
+  </div>
+
+  <div class="profile-section box" id="projects">
+    <h4>Projects</h4>
+    <p class="profile-value"><%= @profile["projects"] %></p>
+  </div>
+
+  
+
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -44,16 +103,16 @@
   </div>
 <% end %>
 
-
-<!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
+   var total_words = 0;
+  document.addEventListener('DOMContentLoaded', function() {
+    var profile_values = document.getElementsByClassName('profile-value');
+ 
+    for (var i=0; i< profile_values.length; i++) {
+      var count = profile_values[i].innerHTML.split(" ").length;
+        total_words += count;
+    }
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
+    document.getElementById('word-count').innerHTML = total_words;
+  });
 </script>
