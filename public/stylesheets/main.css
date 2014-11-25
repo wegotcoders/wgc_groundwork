@@ -3,6 +3,8 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+    background: #99CCFF;
+
 }
 
 #logo {
@@ -15,9 +17,11 @@ body {
 
 .box {
   border: 1px solid #999;
-  background: #FCFCFC;
+  border-radius: 1em;
   padding: 1em;
   margin-bottom: 0.5em;
+  background: linear-gradient(#75A3A3, #85ADAD);
+      box-shadow: 5px 5px 5px #888888;
 }
 
 .welcome {
@@ -26,6 +30,9 @@ body {
 
 h3 {
   font-size: 1.5em;
+    font-style: italic;
+  color: white;
+  text-shadow: 2px 2px grey;
 }
 
 .error {
@@ -37,3 +44,70 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+h4 {
+  font-size:1.25em;
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px grey;
+}
+
+img {
+  border-radius: 2px;
+}
+
+input {
+  margin-left: 10px;
+
+}
+
+li {
+margin: 5px 10px 5px 25px;
+text-align: right;
+}
+
+.form-group {
+  min-width: 300px  ;  
+  width: 20%;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.btn{
+margin: auto;
+}
+.profile-section{
+display: inline-table;
+min-height: 60px;
+margin:auto;
+min-width: 100px;
+margin-bottom: 10px;
+
+}
+
+#profilePic {
+  display:inline-block;
+  max-height: 90px;
+  float:left;
+  margin-right: 20px;
+}
+
+#profilePic img {
+ max-height: inherit;
+  float:left;
+  border-radius: 15px;
+  border: solid black 1px;
+}
+
+#about_section {
+
+display:inline-block;
+}
+
+#ambition_section{
+display:block;
+}
+
+a {
+  text-decoration: none;
+  color: purple;
+}

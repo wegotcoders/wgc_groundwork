@@ -1,0 +1,53 @@
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+  background: linear-gradient(#99CCFF, white);
+
+
+}
+
+#logo {
+  text-align: center;
+}
+
+#content {
+  padding: 1em;
+}
+
+.box {
+  border: 1px solid #999;
+  border-radius: 1em;
+  background: #FCFCFC;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}
+
+.welcome {
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.error {
+  text-align: center;
+}
+
+.error h2 {
+  font-size: 1.5em;
+}
+
+/* TODO - Add your own styles here */
+h4 {
+  font-size:1.25em;
+  margin-left: 2%;
+  font-style: italic;
+}
+
+img {
+  border-radius: 2px;
+}
+
