@@ -3,7 +3,8 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
-  background: linear-gradient(#99CCFF, #75A3A3);
+    background: #99CCFF;
+
 }
 
 #logo {
@@ -17,9 +18,10 @@ body {
 .box {
   border: 1px solid #999;
   border-radius: 1em;
-  background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
+  background: linear-gradient(#75A3A3, #85ADAD);
+      box-shadow: 5px 5px 5px #888888;
 }
 
 .welcome {
@@ -28,6 +30,9 @@ body {
 
 h3 {
   font-size: 1.5em;
+    font-style: italic;
+  color: white;
+  text-shadow: 2px 2px grey;
 }
 
 .error {
@@ -42,6 +47,8 @@ h3 {
 h4 {
   font-size:1.25em;
   font-style: italic;
+  color: white;
+  text-shadow: 2px 2px grey;
 }
 
 img {
@@ -69,13 +76,12 @@ text-align: right;
 margin: auto;
 }
 .profile-section{
-    box-shadow: 5px 5px 5px #888888;
 display: inline-table;
 min-height: 60px;
 margin:auto;
 min-width: 100px;
 margin-bottom: 10px;
-background: linear-gradient(#75A3A3, #85ADAD);
+
 }
 
 #profilePic {
@@ -99,4 +105,9 @@ display:inline-block;
 
 #ambition_section{
 display:block;
+}
+
+a {
+  text-decoration: none;
+  color: purple;
 }

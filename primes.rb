@@ -8,6 +8,7 @@ class Primes
         primeTotal += numberRange
       end
   	end
+
   	return primeTotal
   end
 
@@ -19,7 +20,7 @@ class Primes
       next
     end
         if a % i == 0
-          test += 1
+          test += 2
         end
     end
     if test == 0

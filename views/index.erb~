@@ -46,7 +46,7 @@
               <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
             </li>
             <li>
-              <label for="trainee[projects]">Primes(100)</label>
+              <label for="trainee[projects]">Primes</label>
               <input type="text" name="trainee[primes_sum]" value="<%= Primes.sum_to(100) %>"/>
             </li>
           </ul>
