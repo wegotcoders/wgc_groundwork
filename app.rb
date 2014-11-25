@@ -10,9 +10,9 @@ enable :sessions
 
 get '/primes' do
 
-  # if signed_in?
-  #   @profile = trainee.get_profile
-  # end
+  if signed_in?
+    @profile = trainee.get_profile
+  end
 # TODO - Can we make this dynamic?
   limit = 100
 # puts "What is the limit?"
