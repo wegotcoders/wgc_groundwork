@@ -22,4 +22,5 @@ module WeGotCoders
       response = self.class.put("/trainees/profile?access_token=#{access_token}", :body => params)
     end
   end
+  
 end
