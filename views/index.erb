@@ -63,7 +63,7 @@
   	</div> <!--end of profile tab-->
   	<div role="tabpanel" class="tab-pane" id="Stats">
   		  <div class="clear"></div>
-  			<div id="stats" class="box">
+  			<div id="stats" class="fullbox">
     			<h3>Stats</h3>
 		    <!-- TODO - Set the contents of this span with JavaScript -->
 		    <span id="word-count">0</span> words found.
@@ -71,7 +71,7 @@
   	</div> <!-- end of stats tab -->
   	<div role="tabpanel" class="tab-pane" id="PrimeNumber">
   		  <div class="clear"></div>
-  			<div id="problems" class="box">
+  			<div id="problems" class="fullbox">
     			<h3>Programming Problems</h3>
    			 <a href="/primes">My Prime Number Solution </a>
   			</div>
@@ -101,6 +101,19 @@
   var total_words = 0;
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  var  countWords = function (s){
+	
+	s = s.replace(/(^\s*)|(\s*$)/gi,"");
+	s = s.replace(/[ ]{2,}/gi," ");
+	s = s.replace(/\n /,"\n");
+	return s.split(' ').length;
+	};
+
+	for (var i = 0; i < profile_values.length; i++) {	
+		console.log(profile_values[i].innerHTML);
+  		total_words = total_words + countWords(profile_values[i].innerHTML);
+	}
   
+
   document.getElementById('word-count').innerHTML = total_words;
 </script>

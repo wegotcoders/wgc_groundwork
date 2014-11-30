@@ -1,10 +1,17 @@
 class Primes
+include Math
 
 def self.isprime(n)
 
+	if n == 2 
+      return true
+    elsif n % 2 == 0 
+      return false
+    end
+    
   is_prime = true
   
-  for i in 2..n-1
+  for i in 2..Math.sqrt(n)
     if n % i == 0
       is_prime = false
   	end
@@ -20,6 +27,7 @@ def self.isprime(n)
 
   def self.sum_to(limit = 100)
     # TODO - add your prime number solution here...
+    
 	sum = 0
 	num = 2
     while num < limit
