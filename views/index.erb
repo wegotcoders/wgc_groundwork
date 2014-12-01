@@ -1,41 +1,90 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <h1><%= @profile["first_name"] %>'s Amazing Profile</h1>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+  <div class="profile-section box " id='about'>
+     <div id="photo">
+      <img src="/images/profile.png">
+     </div>
+     <div  >
+     <h3>About</h3>
+     <p class="profile-value lead"><%= @profile['about']  %></p>
+     </div>
+  </div>
+  
+  <div class="profile-section box leftcolumn">
+  <div role="tabpanel">
+	  <!-- Nav tabs -->
+  	<ul class="nav nav-tabs" role="tablist">
+    	<li role="presentation" class="active"><a href="#Details" aria-controls="Details" role="tab" data-toggle="tab">Details</a></li>
+    	<li role="presentation"><a href="#editprofile" aria-controls="editprofile" role="tab" data-toggle="tab">Edit Profile</a></li>
+    	<li role="presentation"><a href="#Stats" aria-controls="Stats" role="tab" data-toggle="tab">Stats</a></li>
+    	<li role="presentation"><a href="#PrimeNumber" aria-controls="PrimeNumber" role="tab" data-toggle="tab">PrimeNumber</a></li>
+  	</ul>
+  	
+  	  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="Details">       
+	  <% @profile.each do |field, value|
+   		if field!='about'  %>
+    		<div class = "detailsleft" id="<%= field %>">
+      			<h3><%= field.capitalize %></h3>
+    		</div>
+    		<div class="detailsright">
+      		<p class="profile-value lead"><%= value %></p>
+    		</div>
+    		<div class="clear"></div>
+  		<% end
+  	  end %>
+  	</div> <!--end of details tab-->
+  	
+  	<div role="tabpanel" class="tab-pane" id="editprofile">
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+ 		 <div class="fullbox">
+    		<h3>Edit Profile</h3>
+    		<form class = "form-horizontal" role="form" action="/update" method="POST">
+      			<fieldset>
+      			<div class="form-group">
+      				<% @profile.each do |field, value| %>
+		      		<label for="trainee[<%= field %>]" class="col-sm-2 control-label"><%= field %></label>
+	      			<div class="col-sm-10">
+	      			  <% if value.to_s.length < 40 %>
+			      		<input type="text" class="form-control" name="trainee[<%= field %>]" id="trainee[<%= field %>]" value="<%= value %>"/>
+			      	  <% else %>
+			      	  	<textarea class="form-control" rows="3" name="trainee[<%= field %>]" id="trainee[<%= field %>]"><%= value %></textarea>
+			      	  <%end%>
+	  	  			</div>
+		  		<% end %>
+		  		</div>
+				<input type="submit" value="Update Profile" class="btn btn-primary" />
+		      </fieldset>
+    		</form>
+  		</div>
+  	</div> <!--end of profile tab-->
+  	<div role="tabpanel" class="tab-pane" id="Stats">
+  		  <div class="clear"></div>
+  			<div id="stats" class="fullbox">
+    			<h3>Stats</h3>
+		    <!-- TODO - Set the contents of this span with JavaScript -->
+		    <span id="word-count">0</span> words found.
+		  </div>
+  	</div> <!-- end of stats tab -->
+  	<div role="tabpanel" class="tab-pane" id="PrimeNumber">
+  		  <div class="clear"></div>
+  			<div id="problems" class="fullbox">
+    			<h3>Programming Problems</h3>
+   			 <a href="/primes">My Prime Number Solution </a>
+  			</div>
+
+  	</div> <!-- end of PrimeNumber tab -->
+    </div> <!-- end of tab-content-->
+	</div> <!-- end of tab panel -->
   </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
+  
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -48,12 +97,23 @@
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
   console.log("I am Javascript!");
-
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
-
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  var  countWords = function (s){
+	
+	s = s.replace(/(^\s*)|(\s*$)/gi,"");
+	s = s.replace(/[ ]{2,}/gi," ");
+	s = s.replace(/\n /,"\n");
+	return s.split(' ').length;
+	};
+
+	for (var i = 0; i < profile_values.length; i++) {	
+		console.log(profile_values[i].innerHTML);
+  		total_words = total_words + countWords(profile_values[i].innerHTML);
+	}
+  
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>

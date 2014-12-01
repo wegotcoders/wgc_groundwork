@@ -6,19 +6,23 @@ body {
 }
 
 #logo {
-  text-align: center;
+  text-align: left;
+  background-color:rgba(64, 156, 168, 0.64);
 }
 
 #content {
-  padding: 1em;
 }
 
 .box {
-  border: 1px solid #999;
+  /* border: 1px solid #999; */
   background: #FCFCFC;
   padding: 1em;
-  margin-bottom: 0.5em;
+  /* margin-bottom: 0.5em; */
+  width:67%;
+  float:right;
+  
 }
+
 
 .welcome {
   text-align: center;
@@ -26,6 +30,7 @@ body {
 
 h3 {
   font-size: 1.5em;
+
 }
 
 .error {
@@ -37,3 +42,79 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+p.lead{
+	color:#7645A3;
+	font-size:1.2em;
+}
+
+.container {
+width:100%
+}
+
+
+#about{
+width:33%;
+float:left;
+}
+
+.clear{
+clear:both;
+}
+
+
+
+
+.leftcolumn h3{
+ margin:0;
+ padding-top:3px;
+ font-size:20px;
+}
+
+.detailsleft{
+	float:left;
+	width:33%;
+/*	border-right:1px solid #999;*/
+ 	margin: 5px 5px 0 5px;
+ 	padding : 5px 0 5px 5px;
+}
+
+
+.detailsright{
+	float:right;
+	width:50%;
+	padding-left : 5px;
+	margin: 5px 5px 0 5px
+/*	border:1px solid #999;*/
+	
+}
+
+h1{
+	margin:0;
+	text-align:center;
+	font-size:2em;
+	background: -webkit-linear-gradient(left, rgba(186, 31, 101, 0.4), rgba(255,0,0,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgba(186, 31, 101, 0.4), rgba(255,0,0,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgba(186, 31, 101, 0.4), rgba(255,0,0,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgba(186, 31, 101, 0.4), rgba(255,0,0,1)); /* Standard syntax (must be last) */
+	padding-top:10px;
+}
+
+#logo {
+
+    background: -webkit-linear-gradient(left, rgba(255,0,0,0), rgba(255,0,0,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgba(255,0,0,0), rgba(255,0,0,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgba(255,0,0,0), rgba(255,0,0,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /* Standard syntax (must be last) */
+}
+
+.fullbox {
+  /* border: 1px solid #999; */
+  background: #FCFCFC;
+  padding: 1em;
+  width:100%;
+  float:left;
+  
+}
+.leftcolumn .clear {
+	border:1px solid #999;
+}
