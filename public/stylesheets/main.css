@@ -37,3 +37,43 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+#content {
+
+  max-width: 900px;
+  min-width: 600px;
+  
+
+}
+
+.box {
+  
+  border-style: none;
+}
+
+.box p {
+  border-radius: 5px;
+  border: solid 1px black;
+  padding: 5px;
+  
+}
+
+div.profile-section-left {
+
+  width: 20%;
+  float: left;
+  clear:left;
+  margin-left:50px;
+
+}
+
+div.profile-section-right {
+
+  width: 20%;
+  float: right;
+  margin-right: 50px;
+ 
+
+}
+
+
