@@ -60,7 +60,6 @@ h3 {
 
 div.profile-section-left {
 
-  width: 20%;
   float: left;
   clear:left;
   margin-left:50px;
@@ -72,8 +71,32 @@ div.profile-section-right {
   width: 20%;
   float: right;
   margin-right: 50px;
- 
+ }
+
+div.profile-section-details div.profile-section-left {
+
+  width: 30%;
+  
 
 }
 
+div.profile-section-datils div.profile-section-right {
+
+  width: 30%;
+  
+}
+
+div.profile-section-trainee div.profile-section-left {
+
+  width: 90%;
+  
+
+}
+
+div.profile-section-codeacademy {
+  clear: both;
+  float: left;
+  margin-left:50px;
+
+}
 
