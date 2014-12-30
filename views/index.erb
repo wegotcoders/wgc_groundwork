@@ -2,10 +2,10 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
    
    <div class="profile-section-details">
-     <% ["first_name","twitter","last_name","homepage","dob","github","gender","employee_status","phone_number"].each do |field| %>
+     <% ["first_name","twitter","last_name","homepage","dob","github","gender","employment_status","phone_number"].each do |field| %>
        <div class="profile-section-<%= @a =  @a == "left" ? "right" : "left"  %> box">
          <h4><%= field.split("_").map{|b| b.capitalize}.join(" ")  %></h4>
-         <p class="profile-value"><%=   @profile[field] && ! @profile[field].empty?  ?  @profile[field] : "&nbsp;"%></p>
+         <p class="profile-value details"><%=   @profile[field] %></p>
        </div>
      <%end%>    
    </div>
@@ -20,11 +20,15 @@
   </div>
 
     <div class="profile-section-codeacademy">
-      <ul>
-     <% ["web_track_completedness","js_track_completedness","ruby_track_completedness"].each do |field| %>
-          <li><p><%= field.split("_")[0,2].map{|b| b.capitalize}.join(" ")  %></p></li>
-     <%end%>
-     </ul>    
+      
+      <div class="profile-section-left box">
+      <h4>Codeacademy</h4>
+        <ul>
+          <% ["web_track_completedness","js_track_completedness","ruby_track_completedness"].each do |field| %>
+          <li><p><%= field.split("_")[0,2].map{|b| b.capitalize}.join(" ")  %></p><p>&#10004</p></li>
+          <%end%>
+        </ul>
+     </div>    
   </div>
 
   <div id="stats" class="box">
@@ -67,8 +71,21 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
+  var CountWords = function(text)
+  {
+    return text.replace(/\W+/g,' ').trim().split(' ').length;
+  }
+
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+  console.log(profile_values.length);
+  for ( var i=0; i < profile_values.length; i += 1 ) {
+    
+    var this_item = CountWords(profile_values.item(i).innerHTML);
+    total_words += this_item;
+    
+  }
+
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.

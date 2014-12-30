@@ -51,11 +51,16 @@ h3 {
   border-style: none;
 }
 
-.box p {
+div.box > p {
   border-radius: 5px;
   border: solid 1px black;
   padding: 5px;
   
+}
+div.box > p.details {
+  
+  height: 1em;
+  padding-bottom: 9px; 
 }
 
 div.profile-section-left {
@@ -96,7 +101,32 @@ div.profile-section-trainee div.profile-section-left {
 div.profile-section-codeacademy {
   clear: both;
   float: left;
-  margin-left:50px;
+}
+
+ul {
+
+  border-radius: 5px;
+  border: solid 1px black;
+  padding: 5px;
+  float:left;
+}
+
+li > p:first-child {
+
+  display: inline;
+  margin-right: 5em;
+  float:left;
 
 }
+
+li > p:last-child {
+  color: green;
+  float: right;
+}
+
+#stats {
+
+  clear: both;
+}
+
 
