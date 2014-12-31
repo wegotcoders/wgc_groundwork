@@ -39,17 +39,19 @@ h3 {
 /* TODO - Add your own styles here */
 
 #content {
-
   max-width: 900px;
   min-width: 600px;
-  
-
 }
 
 .box {
-  
   border-style: none;
 }
+
+input {
+  width: 100%;
+}
+
+
 
 div.box > p {
   border-radius: 5px;
@@ -57,7 +59,7 @@ div.box > p {
   padding: 5px;
   
 }
-div.box > p.details {
+p#details {
   
   height: 1em;
   padding-bottom: 9px; 
@@ -73,25 +75,38 @@ div.profile-section-left {
 
 div.profile-section-right {
 
-  width: 20%;
   float: right;
   margin-right: 50px;
  }
 
-div.profile-section-details div.profile-section-left {
-
+div#details > div.box {
   width: 30%;
-  
+}
+
+
+div.profile-section {
+
+  border: solid 1px;
+  border-radius: 20px;
+  float:left;
+  margin-bottom:40px;
+  width: 100%;
 
 }
 
-div.profile-section-datils div.profile-section-right {
+a#edit {
 
-  width: 30%;
-  
+  clear:both;
+  float: right;
+  margin-top: -54px;
+  border: solid 1px black;
+  border-radius: 10px;
+  background-color: white;
+  margin-right:30px;
+  text-decoration: none;
+  padding: 0.5em;
 }
-
-div.profile-section-trainee div.profile-section-left {
+div#trainee div.box {
 
   width: 90%;
   
@@ -128,5 +143,14 @@ li > p:last-child {
 
   clear: both;
 }
+
+input.btn {
+
+  width:60px;
+  float: right;
+  margin-left:10px;
+  margin-top: -15px;
+}
+
 
 
