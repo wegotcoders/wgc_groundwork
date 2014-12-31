@@ -3,6 +3,9 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  margin-left: auto;
+    margin-right: auto;
+    width: 75%;
 }
 
 #logo {
@@ -13,12 +16,7 @@ body {
   padding: 1em;
 }
 
-.box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
-}
+
 
 .welcome {
   text-align: center;
@@ -36,4 +34,43 @@ h3 {
   font-size: 1.5em;
 }
 
+
 /* TODO - Add your own styles here */
+
+.profileDiv {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color: #DDDDDD;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+}
+
+td, tr {
+  padding: 10px;
+}
+
+.newbox {
+  float:left;
+  height:80px;
+  border: 1px solid #999;
+  background: #FCFCFC;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}
+
+.css-input { padding:3px; margin:10px;font-size:16px; border-width:2px; border-color:#cccccc; border-style:solid; box-shadow: 1px 1px 5px 0px #444444;  } 
+.css-input:focus { outline:none; }
+
+.box {
+  border: 1px solid #999;
+  background: #FCFCFC;
+  padding: 1em;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
