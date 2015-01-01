@@ -38,6 +38,9 @@ h3 {
 
 /* TODO - Add your own styles here */
 
+.invalid {
+color: red;
+}
 #content {
   max-width: 900px;
   min-width: 600px;
@@ -59,6 +62,8 @@ div.box > p {
   padding: 5px;
   
 }
+
+
 p#details {
   
   height: 1em;
@@ -95,7 +100,7 @@ div.profile-section {
 }
 
 a#edit {
-
+  color: inherit;
   clear:both;
   float: right;
   margin-top: -54px;

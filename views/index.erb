@@ -67,16 +67,22 @@
 
   var CountWords = function(text)
   {
-    return text.replace(/\W+/g,' ').trim().split(' ').length;
+    text=text.replace(/\W+/g,' ').trim();
+    if ( text === "" ) {
+      return 0;
+    } else {
+      return text.replace(/\W+/g,' ').trim().split(' ').length;
+    } 
   }
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
   console.log(profile_values.length);
   for ( var i=0; i < profile_values.length; i += 1 ) {
-    
     var this_item = CountWords(profile_values.item(i).innerHTML);
     total_words += this_item;
+    console.log(profile_values.item(i).innerHTML);
+    console.log("Last: " + this_item + " Total: " + total_words);
     
   }
 

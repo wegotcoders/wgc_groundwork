@@ -36,7 +36,7 @@
 
         <!-- TODO - Add more fields Disso that your profile can be edited -->
         <input id="cancel" onclick="DiscardChanges()" type="button" value="Cancel" class="btn btn-primary"/>
-        <input id="submit "type="submit" value="Update" class="btn btn-primary" />
+        <input id="submit" onclick="CheckTextAreaLenght()" type="submit" value="Update" class="btn btn-primary" />
       </fieldset>
     </form>
   </div>
@@ -51,17 +51,48 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
+
+
+  var CountWords = function(text)
+  {
+    text=text.replace(/\W+/g,' ').trim();
+    if ( text === "" ) {
+      return 0;
+    } else {
+      return text.replace(/\W+/g,' ').trim().split(' ').length;
+    } 
+  }
   
   function DiscardChanges () {
     console.log("I am Javascript!");
     var r = confirm("Discard changes?");
     if ( r === true) {
-    window.location.href ='/';
+      window.location.href ='/';
     } else {
-
-    return false;
-
+     return false;
     }
   }
-  
+
+  function CheckTextAreaLenght() {
+    var profile_values = document.getElementsByTagName('textarea');
+    
+    console.log("Dentro");
+    for ( var i=0; i < profile_values.length; i += 1 ) {
+      
+      var this_item = CountWords(profile_values.item(i).value);
+      console.log("Aqui " + this_item);
+      profile_values.item(i).className =  profile_values.item(i).className.replace(/ invalid/,'');
+      console.log("Hola " + profile_values.item(i).className);
+      if ( this_item < 20) {
+        
+        profile_values.item(i).className += " invalid";
+        profile_values.item(i).focus();
+        confirm("You need to write at leas 20 words");
+        event.returnValue=false;
+        return false;     
+      }
+    }
+  }
+
+
 </script>
