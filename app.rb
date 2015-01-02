@@ -21,6 +21,7 @@ end
 post '/primes' do
   # TODO - Can we make this dynamic?
   @limit = params.has_key?("limit") ? params["limit"].to_i  : 100
+  @limit = ( @limit > 10000000 ) ? 10000000 : @limit;
 
   # TODO - add your prime number solution in the primes.rb file.
   @sum = Primes.sum_to(@limit)
