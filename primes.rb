@@ -1,5 +1,5 @@
 class Primes
-  def self.sum_to(limit = 100)
+  def self.sum_to(limit = 2000000)
     require 'prime'
 
 	total = 0

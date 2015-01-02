@@ -11,12 +11,8 @@ set :session_secret, 'secret'
 enable :sessions
 
 get '/primes' do
-  # TODO - Can we make this dynamic?
-	uri = Addressable::URI.parse("http://example.com/?var=value")
-	uri.query_values # => {"var"=>"value"}
-	puts uri.to_s # => "http://example.com/?two=2&one=1"
-  # TODO - add your prime number solution in the primes.rb file.
-  @sum = Primes.sum_to(1000)
+
+  @sum = Primes.sum_to(params['number'].to_i)
 
   erb :primes, :layout => :main
 end
@@ -30,8 +26,15 @@ get '/' do
 end
 
 post '/update' do
-	response = trainee.update_profile(params)
+	puts params
 
+	updateObj = { }
+
+	updateObj[('trainee[' + params['updateSection'].to_s + ']')] = params['updateInfo']
+
+	puts updateObj
+
+	response = trainee.update_profile(updateObj)
 	if @errors = response["errors"]
 		erb :error, :layout => :main
 	else
@@ -44,3 +47,6 @@ include Sinatra::OauthRoutes
 def trainee
 	@trainee ||= WeGotCoders::Trainee.new(settings.site_url, session[:access_token])
 end
+
+
+

@@ -8,7 +8,7 @@
   <% @profile.each do |field, value| %>
 
       <tr class="tableRow"><td><%= field %></td>
-      <td class="tableData"><%= value %></td></tr>
+      <td><%= value %></td></tr>
 
   <% end %>
   </table>
@@ -36,16 +36,17 @@
         <div class="form-group">
           Update
           <select id="updateSelector" name="updateSection">
-          <option for="trainee[about]" value="About">About</option>
-          <option for="trainee[ambition]" value="Ambition">Ambition</option>
-          <option for="trainee[codecademy]" value="Codecademy">Codecademy</option>
-          <option for="trainee[primes_sum]" value="Primes Sum">Primes Sum</option>
+          <option for="trainee[about]" value="about">About</option>
+          <option for="trainee[dob]" value="dob">D.O.B.</option>
+          <option for="trainee[ambition]" value="ambition">Ambition</option>
+          <option for="trainee[codecademy]" value="codecademy">Codecademy</option>
+          <option for="trainee[primes_sum]" value="primes_sum">Primes Sum</option>
           </select>
           with
           <input type="text" name="updateInfo" value=""/>
         </div>
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
+        <input type="submit" target="_self" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
   </div>
@@ -87,6 +88,5 @@ function normalise(s)
   })
 
   console.log('Not displaying ' + parentsRemoved + ' empty boxes.')
-  $('#word-count').innerHTML = total_words;
-
+  $('#word-count').html(total_words)
 </script>
