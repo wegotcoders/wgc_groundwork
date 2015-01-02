@@ -1,0 +1,44 @@
+class Primes
+  def self.sum_to(limit = 100)
+    # TODO - add your prime number solution here...
+    
+    sum=0
+    primes=[]
+    primes_pos=Hash.new
+
+    case limit
+    when 1
+    	return 0
+    when 2 
+    	return 2
+    end
+
+
+    (3..limit).step(2).each do |n|
+    	
+    	prime=true
+    		
+    	primes.each do |f|
+    		#r=n.divmod(f)
+	    	 if ( (n % f).zero? ) 
+	    	 	prime=false
+	    	 	
+	    	 	break
+	    	 #elsif ( false )
+	    	 #	
+	    	 #	break
+	    	 end
+    	end
+    	
+    	if  prime 
+
+    	  primes << n
+    	  sum += n
+    	end	
+    	
+
+    end
+    return sum + 2 
+  end
+
+end
