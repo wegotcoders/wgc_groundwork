@@ -38,16 +38,44 @@ h3 {
 
 /* TODO - Add your own styles here */
 
+h3 {
+
+  margin-left: 20px;
+  margin-top: -15px;
+
+}
+
+body {
+  font-family: "Century Gothic";
+  font-size: 15px;
+}
+
 .invalid {
 color: red;
 }
 #content {
-  max-width: 900px;
-  min-width: 600px;
+  width: 900px;
+  margin-right:auto;
+  margin-left:auto;
+  
+}
+
+#picture {
+
+  width:200px;
+  height:267px;
+  border: none;
+  position: absolute;
+  margin-left: 350px;
+  margin-top: 50px;
+  padding:3px;
+  background-color: white;
+
 }
 
 .box {
   border-style: none;
+  background-color: inherit;
 }
 
 input {
@@ -58,16 +86,21 @@ input {
 
 div.box > p {
   border-radius: 5px;
-  border: solid 1px black;
-  padding: 5px;
+  border: solid 1px #F0F0F0;
+  padding: 10px;
+  background-color:white;
+
   
 }
 
 
 p#details {
   
-  height: 1em;
-  padding-bottom: 9px; 
+  height: 1.5em;
+  padding-bottom: 9px;
+  vertical-align: center;
+  
+
 }
 
 div.profile-section-left {
@@ -86,6 +119,7 @@ div.profile-section-right {
 
 div#details > div.box {
   width: 25%;
+  
 }
 
 
@@ -95,7 +129,14 @@ div.profile-section {
   border-radius: 20px;
   float:left;
   margin-bottom:40px;
+  margin-top:40px;
   width: 100%;
+  margin-right:auto;
+  margin-left:auto;
+  background-color: #ececec;
+  padding-top:50px;
+  padding-bottom: 15px;
+  box-shadow: 4px 4px 10px #A0A0A0;
 
 }
 
@@ -103,32 +144,43 @@ a#edit {
   color: inherit;
   clear:both;
   float: right;
-  margin-top: -54px;
+  margin-top: -58px;
   border: solid 1px black;
   border-radius: 10px;
   background-color: white;
   margin-right:30px;
   text-decoration: none;
   padding: 0.5em;
+  background-color: #E0E0E0;
+  
 }
 div#trainee div.box {
 
-  width: 90%;
+  width: 85%;
   
 
 }
 
-div.profile-section-codeacademy {
+div#footer {
   clear: both;
   float: left;
 }
 
-ul {
+div#footer > div.box {
+  width: 20%;
+  display:inline-block;
+  float: left;
+  margin-left:5%; 
+  margin-right:4%; 
+}
+
+div#footer > div.box > ul,a  {
 
   border-radius: 5px;
-  border: solid 1px black;
+  border: solid 1px #F0F0F0;
   padding: 5px;
   float:left;
+  background-color: white;
 }
 
 li > p:first-child {
@@ -149,12 +201,49 @@ li > p:last-child {
   clear: both;
 }
 
-input.btn {
+div#edit input.btn {
 
   width:60px;
   float: right;
   margin-left:10px;
   margin-top: -15px;
+}
+
+
+
+
+div#primes > div.box {
+  width:50%;
+  margin-left:50px;
+}
+
+div#primes table {
+
+  background-color: white;
+
+}
+
+td#result {
+
+  font-size:2em;
+  text-align: center;
+  vertical-align: middle;
+  
+}
+div#primes input  {
+
+  width:90%;
+  border-radius: 5px;
+  border: solid 1px #F0F0F0;
+  padding: 5px;
+  background-color: white;
+  text-align:center;
+  
+}
+
+div#primes input#submit  {
+  width:100%;
+  background-color: #E0E0E0;
 }
 
 
