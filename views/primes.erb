@@ -1,6 +1,29 @@
 <h1>Prime Numbers</h1>
 
-Sum : <%= @sum %>
+Sum of primes upto <%= @limit %> : <%= @sum %>
+
+
+<form action="/primes" method="GET">
+      <fieldset>
+        <div class="form-group">
+          
+          
+       <div class="primes box">
+         <h4>Any other number? </h4>
+         <input type="text" name="limit" id="limit" class="prime" value="" /> 
+
+   	   </div>
+
+  
+
+
+
+
+
+        </div>
+        <input id="submit"  type="submit" value="Update" class="btn btn-primary" />
+      </fieldset>
+    </form>
 
 <div>
   <a href="/">Back</a>
