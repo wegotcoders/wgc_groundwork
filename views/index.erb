@@ -1,23 +1,31 @@
 <% if @profile %>
+  <center>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
+  <img id="profile" src="/images/pic.jpg" width="150px"/> 
+  </center>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  <table class="profileDiv">
   <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
+
+      <tr class="tableRow"><td><%= field %></td>
+      <td><%= value %></td></tr>
+
   <% end %>
+  </table>
 
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    There are <span id="word-count">0</span> words in the table's contents (excl. headers).
   </div>
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+    <form method="GET" action="primes" target="primes">
+      <input name="number" class="css-input" placeholder="Caluclate sum of primes < n"/>
+      <button type="submit">Go</button>
+    </form>
+    <a href="https://github.com/dansteele/Project-Euler">Project-Euler solutions</a>
   </div>
 
   <div class="box">
@@ -26,13 +34,19 @@
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          Update
+          <select id="updateSelector" name="updateSection">
+          <option for="trainee[about]" value="about">About</option>
+          <option for="trainee[dob]" value="dob">D.O.B.</option>
+          <option for="trainee[ambition]" value="ambition">Ambition</option>
+          <option for="trainee[codecademy]" value="codecademy">Codecademy</option>
+          <option for="trainee[primes_sum]" value="primes_sum">Primes Sum</option>
+          </select>
+          with
+          <input type="text" name="updateInfo" value=""/>
         </div>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
+        <input type="submit" target="_self" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
   </div>
@@ -46,14 +60,33 @@
 
 
 <!-- Add your Javascript to this script tag -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script language="javascript">
-  console.log("I am Javascript!");
+function normalise(s)
+  {
+      return s.slice(0,1).toUpperCase() + s.slice(1).replace(/_/g," ")
+  }
 
-  var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+  var parentsRemoved = 0
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+  $('.tableRow').each(function(index) {
+    var chil = $(this).children();
+    chil.each(function(index) {
+      if ($(this).text() == '') {
+        $(this).parent().remove()
+        parentsRemoved += 1
+    } else {
+      total_words += $(this).text().split(" ").length
+    }
+  })
+  })
 
-  document.getElementById('word-count').innerHTML = total_words;
+  $('td').each(function(index) {
+    var caps = String(normalise($(this).text()))
+    $(this).text(caps)
+  })
+
+  console.log('Not displaying ' + parentsRemoved + ' empty boxes.')
+  $('#word-count').html(total_words)
 </script>
