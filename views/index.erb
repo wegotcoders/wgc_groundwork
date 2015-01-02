@@ -34,8 +34,15 @@
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          Update
+          <select id="updateSelector" name="updateSection">
+          <option for="trainee[about]" value="About">About</option>
+          <option for="trainee[ambition]" value="Ambition">Ambition</option>
+          <option for="trainee[codecademy]" value="Codecademy">Codecademy</option>
+          <option for="trainee[primes_sum]" value="Primes Sum">Primes Sum</option>
+          </select>
+          with
+          <input type="text" name="updateInfo" value=""/>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
@@ -82,7 +89,6 @@ function normalise(s)
   })
 
   console.log('Not displaying ' + parentsRemoved + ' empty boxes.')
+  $('#word-count').innerHTML = total_words;
 
-
-  document.getElementById('word-count').innerHTML = total_words;
 </script>
