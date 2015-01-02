@@ -46,6 +46,7 @@ h3 {
     background-color: #DDDDDD;
     border: 2px solid #FFFFFF;
     border-radius: 10px;
+    box-shadow: 5px 5px #888888;
 }
 
 td, tr {
@@ -59,18 +60,28 @@ td, tr {
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
+
 }
 
 .css-input { padding:3px; margin:10px;font-size:16px; border-width:2px; border-color:#cccccc; border-style:solid; box-shadow: 1px 1px 5px 0px #444444;  } 
 .css-input:focus { outline:none; }
 
 .box {
-  border: 1px solid #999;
+  border: 1px solid #444444;
   background: #FCFCFC;
   padding: 1em;
   width: 75%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  box-shadow: 5px 5px #888888;
 }
 
+#profile {
+  border: 2px solid #555555;
+  padding: 4px;
+  margin-top: 10px;
+  /*background: -webkit-radial-gradient(circle, #FFA6B2, white);
+  background: -moz-radial-gradient(circle, #FFA6B2, white);*/
+  box-shadow: 5px 5px #888888;
+}

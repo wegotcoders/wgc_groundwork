@@ -1,6 +1,8 @@
 <% if @profile %>
+  <center>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
+  <img id="profile" src="/images/pic.jpg" width="150px"/> 
+  </center>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <table class="profileDiv">
   <% @profile.each do |field, value| %>
