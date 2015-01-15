@@ -3,10 +3,12 @@
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
+  <% unless value.nil? %>
     <div class="profile-section box">
-      <h4><%= field %></h4>
+      <h4><%= field.capitalize.gsub("_", " ") %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
+    <% end %>
   <% end %>
 
   <div id="stats" class="box">
