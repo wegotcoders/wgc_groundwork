@@ -6,7 +6,7 @@
   <% @profile.each do |field, value| %>
   <% unless value.nil? or value.gsub(" ", "").empty? %>
     <div class="col-xs-6">
-      <%= "<div class=\"alert alert-#{['info', 'danger', 'warning'].sample}\">" %>
+      <%= "<div class=\"alert alert-#{['info', 'danger', 'warning', 'success'].sample}\">" %>
         <h4><%= field.capitalize.gsub("_", " ") %></h4>
         <p class="profile-value"><%= value %></p>
       </div>
