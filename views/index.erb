@@ -2,7 +2,7 @@
   <h1><%= @profile["first_name"] %>'s Amazing Profile</h1>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <div class= "row">
+  <div class= "row" id ="profile-value">
   <% @profile.each do |field, value| %>
   <% unless value.nil? or value.gsub(" ", "").empty? %>
     <div class="col-xs-6">
@@ -15,11 +15,15 @@
   <% end %>
 </div>
 
-  <div id="stats" class="box">
+  <div id="stats" class="alert">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
+
+  <hr />
+
+
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
@@ -59,6 +63,9 @@
   var total_words = 0;
 
   // TODO - Count the number of words in the profile.
+  for (var i = 0; i < profile_values.length; i++) {
+    total_words += profile_values[i].textContent.split(" ").length
+  }
   // hint - look at what the innerHTML property provides.
 
   document.getElementById('word-count').innerHTML = total_words;
