@@ -1,11 +1,13 @@
 var CountWords = function(text)
   {
-    text=text.replace(/\<br\>/g,'').replace(/\W+/g,' ').trim();
-    if ( text === "" ) {
-      return 0;
-    } else {
-      return text.split(' ').length;
-    } 
+    console.log(text)
+     var number = 0;
+     if  ( text.match(/\w/) ) {
+      var gaps = text.replace(/\<br\>/g,'').match(/\W+\w/g);
+      number = gaps ? gaps.length + 1 : 1;    
+     }
+   
+     return number;
   }
 
   function DiscardChanges () {
