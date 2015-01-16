@@ -1,7 +1,27 @@
-<h1>Prime Numbers</h1>
 
-Sum : <%= @sum %>
+
+<div id="primes" class="profile-section">
+  <h3>Sum of primes &lt;&#61; n</h3>
+  <div class="box">
+    <form action="/primes" method="POST">
+      <fieldset>
+        <div class="form-group">
+          <table>
+            <tr>
+              <td width="30%"><input type="text" name="limit" id="limit" class="prime" value="<%= @limit %>" /></td>
+              <td id="result" width="70%" rowspan="2"><%= @sum %></td>
+            </tr>   
+            <tr>
+              <td><input id="submit"  type="submit" value="Update" class="btn btn-primary" /></td>                
+            </tr>
+          </table>
+        </div>
+      </fieldset>
+    </form> 
+  </div>
+</div>
 
 <div>
   <a href="/">Back</a>
 </div>
+

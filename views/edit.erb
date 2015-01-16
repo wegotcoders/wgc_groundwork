@@ -1,0 +1,51 @@
+<% if @profile %>
+  
+  <div id="edit" class="box">
+    <h3>Edit Profile</h3>
+    <form action="/update" method="POST">
+      <fieldset>
+        <div class="form-group">            
+          <div id="details" class="profile-section">
+            <% ["first_name","twitter","last_name","homepage","dob","github","gender","employment_status","phone_number","codecademy"].each do |field| %>
+              <div class="profile-section-<%= @a =  @a == "left" ? "right" : "left"  %> box">
+                <h4><%= field.split("_").map{|b| b.capitalize}.join(" ")  %></h4>
+                <input type="text" name="trainee[<%=field%>]" id="details" class="profile-value" value="<%= @profile[field] %>" />
+              </div>
+            <%end%>    
+          </div>
+
+          <div id="trainee" class="profile-section">
+            <% ["about","ambition","projects","learning_experience","rationale"].each do |field| %>
+              <div class="profile-section-left box">
+                <h4><%= field.split("_").map{|b| b.capitalize}.join(" ")  %></h4>
+                <textarea rows=10 cols=60 name="trainee[<%=field%>]" class="profile-value trainee" onClick="ClearInvalid(this)"><%= @profile[field] %> </textarea>
+              </div>   
+            <%end%>    
+          </div>
+        </div>
+        <input id="cancel" onclick="DiscardChanges()" type="button" value="Cancel" class="btn btn-primary"/>
+        <input id="submit" onclick="CheckTextAreaLenght()" type="submit" value="Update" class="btn btn-primary" />
+      </fieldset>
+    </form>
+  </div>
+<% else %>
+  <div class="welcome">
+    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+    <a href="/authorise">Authorise</a>
+  </div>
+<% end %>
+
+
+<!-- Add your Javascript to this script tag -->
+<script language="javascript">
+
+  var CountWords = function(text)  {
+    text=text.replace(/\<br\>/g,'').replace(/\W+/g,' ').trim();
+    if ( text === "" ) {
+      return 0;
+    } else {
+      return text.split(' ').length;
+    } 
+  }
+  
+</script>

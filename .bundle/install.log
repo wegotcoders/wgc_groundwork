@@ -1,0 +1,23 @@
+# Logfile created on 2014-12-22 23:10:44 +0000 by logger.rb/44203
+I, [2014-12-22T23:10:44.203593 #1062]  INFO -- : 0:  coderay (1.0.9) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/coderay-1.0.9.gemspec
+I, [2014-12-22T23:10:44.204139 #1062]  INFO -- : 0:  diff-lcs (1.2.5) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/diff-lcs-1.2.5.gemspec
+I, [2014-12-22T23:10:46.161153 #1062]  INFO -- : 0:  multipart-post (2.0.0) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/multipart-post-2.0.0.gemspec
+I, [2014-12-22T23:10:48.231349 #1062]  INFO -- : 0:  faraday (0.9.0) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/faraday-0.9.0.gemspec
+I, [2014-12-22T23:10:48.232043 #1062]  INFO -- : 0:  multi_json (1.8.4) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/multi_json-1.8.4.gemspec
+I, [2014-12-22T23:10:49.790980 #1062]  INFO -- : 0:  multi_xml (0.5.5) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/multi_xml-0.5.5.gemspec
+I, [2014-12-22T23:10:51.452147 #1062]  INFO -- : 0:  httparty (0.8.3) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/httparty-0.8.3.gemspec
+I, [2014-12-22T23:10:51.452812 #1062]  INFO -- : 0:  json (1.8.1) from /Users/Manu/.rvm/rubies/ruby-2.1.0/lib/ruby/gems/2.1.0/specifications/default/json-1.8.1.gemspec
+I, [2014-12-22T23:10:53.175059 #1062]  INFO -- : 0:  jwt (0.1.11) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/jwt-0.1.11.gemspec
+I, [2014-12-22T23:10:53.175605 #1062]  INFO -- : 0:  method_source (0.8.2) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/method_source-0.8.2.gemspec
+I, [2014-12-22T23:10:53.175952 #1062]  INFO -- : 0:  rack (1.5.2) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/rack-1.5.2.gemspec
+I, [2014-12-22T23:10:55.342395 #1062]  INFO -- : 0:  oauth2 (0.9.3) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/oauth2-0.9.3.gemspec
+I, [2014-12-22T23:10:57.154126 #1062]  INFO -- : 0:  slop (3.4.6) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/slop-3.4.6.gemspec
+I, [2014-12-22T23:11:02.307456 #1062]  INFO -- : 0:  pry (0.9.12.2) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/pry-0.9.12.2.gemspec
+I, [2014-12-22T23:11:04.188562 #1062]  INFO -- : 0:  rack-protection (1.5.2) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/rack-protection-1.5.2.gemspec
+I, [2014-12-22T23:11:04.189377 #1062]  INFO -- : 0:  rspec-core (2.14.7) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/rspec-core-2.14.7.gemspec
+I, [2014-12-22T23:11:04.189807 #1062]  INFO -- : 0:  rspec-expectations (2.14.5) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/rspec-expectations-2.14.5.gemspec
+I, [2014-12-22T23:11:04.190210 #1062]  INFO -- : 0:  rspec-mocks (2.14.5) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/rspec-mocks-2.14.5.gemspec
+I, [2014-12-22T23:11:06.996798 #1062]  INFO -- : 0:  rspec (2.14.1) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/rspec-2.14.1.gemspec
+I, [2014-12-22T23:11:06.997408 #1062]  INFO -- : 0:  tilt (1.4.1) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/tilt-1.4.1.gemspec
+I, [2014-12-22T23:11:10.086920 #1062]  INFO -- : 0:  sinatra (1.4.4) from /Users/Manu/.rvm/gems/ruby-2.1.0/specifications/sinatra-1.4.4.gemspec
+I, [2014-12-22T23:11:10.087387 #1062]  INFO -- : 0:  bundler (1.5.1) from /Users/Manu/.rvm/gems/ruby-2.1.0@global/specifications/bundler-1.5.1.gemspec
