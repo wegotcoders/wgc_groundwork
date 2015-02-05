@@ -1,14 +1,26 @@
-<% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<% if @profile %>
+  <h3 class="text-center"><%= @profile["first_name"] %>'s Amazing Profile
+  <img src="images/me.jpg" alt="..." class="img-circle" width="60" height="60">
+  </h3>
+<div class="row">
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
+  <div class="col-md-6 nopadding white">
     <div class="profile-section box">
-      <h4><%= field %></h4>
+      <strong><h4><%= field.capitalize %></h4></strong>
       <p class="profile-value"><%= value %></p>
     </div>
+  </div>
   <% end %>
-
+</div>
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
@@ -27,7 +39,13 @@
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <textarea class="form-control" rows="3" name="trainee[about]"><%= @profile["about"] %></textarea>
+          <label for="trainee[ambition]">Ambition</label>
+          <textarea class="form-control" rows="3" name="trainee[ambition]"><%= @profile["ambition"] %></textarea>
+          <label for="trainee[codecademy]">Codecademy Account</label>
+          <input type="text" class="form-control" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+          <label for="trainee[primes_sum]">primes_sum</label>
+          <input type="text" class="form-control" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
@@ -50,7 +68,7 @@
   console.log("I am Javascript!");
 
   var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+  var total_words = profile_values.length;
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
