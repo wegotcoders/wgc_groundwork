@@ -1,0 +1,42 @@
+class Primes
+  #this is me putting stuff here
+  x = 10
+ 
+def prime? x
+  (2...x).each { |i| return false if x % i == 0 }
+  true
+end
+ 
+def primes upto
+  a = []
+  (2..upto).each { |i| a << i if prime? i ; puts i }
+  a
+end
+ 
+def array_sum a
+  sum = 0
+  a.each { |i| sum += i }
+  sum
+end
+ 
+ #puts "#{array_sum primes x}"
+  
+ #my stuff ends here
+	
+		
+ def self.sum_to(limit = 100)
+    # TODO - add your prime number solution here...
+    "I'm working on it!"
+    
+    #this is me putting stuff in
+    #"#{2*6}"    
+   #puts "This is Ruby"
+   #return "#{array_sum primes x}"
+   "#{array_sum 10}"
+    #mystuff has ended here
+    
+    
+  end
+end
+
+
