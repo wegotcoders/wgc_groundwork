@@ -34,7 +34,19 @@
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
-
+        
+        <!-- my fields added here -->
+        <div class="form-group">
+          <label for="trainee[employment_status]">Employment status</label>
+          <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[phone_number]">Phone number</label>
+          <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+        </div>
+        
+        <!-- my adding ended here -->
+        
         <input type="submit" value="X Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>

@@ -1,5 +1,6 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+
+<h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
   
   <img src="http://s3.amazonaws.com/codeacademy-blog//assets/ninja_zpsa5dbe37a.jpg" />
 
