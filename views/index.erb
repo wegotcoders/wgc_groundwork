@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
@@ -8,7 +7,9 @@
 
 <% if @profile %>
   <h3 class="text-center"><%= @profile["first_name"] %>'s Amazing Profile
-  <img src="images/me.jpg" alt="..." class="img-circle" width="60" height="60">
+  	<div class="plot">
+  <img src="images/me.jpg" alt="..." class="img-circle" id="myimg" width="60" height="60">
+  </div>
   </h3>
 <div class="row">
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
@@ -54,6 +55,14 @@
       </fieldset>
     </form>
   </div>
+  <div class="row">
+  	<div class="col-md-12">
+  		<div class="profile-section box">
+  			<strong>JavaScript EventListeners</strong>
+      		<div id="log"></div>
+      	</div>
+     </div>
+  </div>
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -62,19 +71,5 @@
   </div>
 <% end %>
 
-
-<!-- Add your Javascript to this script tag -->
-<script language="javascript">
-  console.log("I am Javascript!");
-
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = profile_values.length;
-  for (var i = 0; i < profile_values.length; i++) {
-    total_words += profile_values[i].textContent.split(" ").length
-  }
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
+<script src="javascripts/custom.js" type="text/javascript">
 </script>

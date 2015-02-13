@@ -37,4 +37,13 @@ h3 {
   font-size: 1.5em;
 }
 
-/* TODO - Add your own styles here */
+.plot {
+  /*position:absolute;*/
+  /*background:rgb(175,50,50);
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;*/
+  display: block;
+  /*top:0;
+  left:0;*/
+}
