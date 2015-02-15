@@ -72,6 +72,28 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
-
+  
+  //nasar1
+    var count =0;
+    var total = 0;
+    var myresult=0;
+    
+    var i;
+    for (i=0; i<profile_values.length; i++)
+    {
+     //for (j=0; j<profile_values[i].length; j++)
+     //  {
+     //    count++;
+     //  }
+     
+     profile_values[i].style.backgroundColor = "red";
+     count = profile_values[i].value.split(" "); 
+     total += count.length;
+    }
+        
+  
+    
+  //nasar2     
+  
   document.getElementById('word-count').innerHTML = total_words;
 </script>
