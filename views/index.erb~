@@ -68,16 +68,16 @@
   console.log("I am Javascript!");
 
   var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 23;
+  var total_words = 0;
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
   
   //nasar1
-    var count;
+    var count =0;
     var total = 0;
     var myresult=0;
-    var z=0;
+    
     var i;
     for (i=0; i<profile_values.length; i++)
     {
@@ -85,17 +85,15 @@
      //  {
      //    count++;
      //  }
-     z=15;
+     
      profile_values[i].style.backgroundColor = "red";
-     //count = profile_values[i].value.split(" "); 
-     //total = total + count.length;
+     count = profile_values[i].value.split(" "); 
+     total += count.length;
     }
-        //count = profile_values.value.split(" "); 
-        //count = count.length;
-  //total_words = 17;
+        
+  
     
-  //nasar2
-      
+  //nasar2     
   
   document.getElementById('word-count').innerHTML = total_words;
 </script>
