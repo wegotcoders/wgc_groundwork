@@ -1,13 +1,21 @@
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <div><img class="ninja" src="http://www.analytics-ninja.com/wordpress/wp-content/uploads/2009/07/ninja2.jpg" /></div>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+
+<!-- ------------------------------------------- -->
+    <div><table >
+      <% @profile.each do |field, value| %>
+          <tr>
+          <td><%= field %></td>
+          <td class="profile-value"><%= value %></td>
+          </tr>
+      <% end %>
+   
+    </table></div>
+
+<!-- ------------------------------------------- -->
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -31,6 +39,36 @@
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <label for="trainee[github]">Github</label>
+          <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[twitter]">Twitter</label>
+          <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[primes_sum]">Primes sum</label>
+          <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>
+
+
+<!-- This loop was written to edit all fields, but doesn't quite work. -->
+<!--         <% @profile.each do |field, values| %>
+          <div class="form-group">
+            <label for="trainee["<%= field %>"]"> "<%= field %>" </label>
+            <input type="text" name="trainee["<%= field %>"]" value="<%= values %>" />
+          </div>
+        <% end %>
+ -->
+
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
@@ -39,21 +77,20 @@
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
-
     <a href="/authorise">Authorise</a>
   </div>
 <% end %>
 
-
-<!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
-
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
+  // function myFunction() {
+    console.log("I am Javascript!");
+    var profile_values = document.getElementsByClassName('profile-value');
+    var total_words = 0;
+    // TODO - Count the number of words in the profile.
+    // hint - look at what the innerHTML property provides.
+    for (i=0;i < profile_values.length; i++){
+      temp_var = profile_values.item(i).innerHTML;
+      total_words += temp_var.split(" ").length;
+    };
+    document.getElementById('word-count').innerHTML = total_words;  
 </script>
