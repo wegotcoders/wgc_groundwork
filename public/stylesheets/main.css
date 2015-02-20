@@ -24,9 +24,7 @@ body {
   text-align: center;
 }
 
-h3 {
-  font-size: 1.5em;
-}
+
 
 .error {
   text-align: center;
@@ -37,3 +35,43 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+td {
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: black;
+  color:white;
+}
+
+.profile-value{
+  font-size: 1em;
+  font-weight: normal;
+}
+
+table {
+    border-spacing: 5px;
+    border: 1px solid black;
+
+}
+
+h3 {
+  font-size: 2.0em;
+  text-align: center;
+}
+
+img {
+    text-align: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border: 1px solid #0000ff;
+    height: auto;
+    width: auto;
+}
+
+.ninja {
+    height: 200px;
+    width: 150px;
+}
