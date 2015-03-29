@@ -1,11 +1,18 @@
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
+  <!--Add a profile picture-->
+
+  <div class="myPic">
+    <img src="/images/img.jpg" alt="Profile picture" width="200" height="190">
+</div>
+
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
       <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+     <p class="profile-value"><%= value %></p></fieldset> 
     </div>
   <% end %>
 
@@ -31,8 +38,18 @@
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+        </div>
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>
+
+        <input type="submit" value="Update Profile" class="btn btn-primary" style="cursor:pointer"/>
+        
       </fieldset>
     </form>
   </div>
@@ -54,6 +71,8 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+
+
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
