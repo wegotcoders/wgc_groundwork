@@ -69,6 +69,22 @@
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
 
+for (i = 0; i < profile_values.length; i++) { 
+    e = profile_values[i];
+    console.log("element no : " + i);
+    count = countWords(e);
+    console.log("count : " + count);
+    total_words = total_words + count;
+}
+
+
+function countWords(ele){
+  s = ele.innerHTML;
+  s = s.replace(/(^\s*)|(\s*$)/gi,"");
+  s = s.replace(/[ ]{2,}/gi," ");
+  s = s.replace(/\n /,"\n");
+  return s.split(' ').length;
+}
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
