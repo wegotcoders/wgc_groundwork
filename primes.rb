@@ -1,13 +1,16 @@
 
+class Primes
+  def self.sum_to(limit = 100)
+    # TODO - add your prime number solution here...
+    require 'prime'
 
-def prime?(n)
-  (2..n/2).none?{ |x| n % x == 0 }
+    total = 0
+
+    Prime.each(limit) do |prime|
+        total += prime
+    end
+
+    return total
+  end
 end
-
-primes = []
-for i in 2...100
-  primes.push(i) if prime?(i)
-end
-
-primes.inject(:+)
 
