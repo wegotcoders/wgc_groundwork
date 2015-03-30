@@ -4,7 +4,7 @@
   <!--Add a profile picture-->
 
   <div class="myPic">
-    <img src="/images/img.jpg" alt="Profile picture" width="200" height="190">
+    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="/images/img.jpg" alt="Profile picture" width="200" height="190">
 </div>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
@@ -34,22 +34,27 @@
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>" onfocus="myFunction(this)"/>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
         <div class="form-group">
           <label for="trainee[ambition]">Ambition</label>
-          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>" onfocus="myFunction(this)"/>
         </div>
 
         <div class="form-group">
           <label for="trainee[codecademy]">Codecademy</label>
-          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>" onfocus="myFunction(this)"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[primes_sum]">Primes_sum</label>
+          <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>" onfocus="myFunction(this)"/>
         </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" style="cursor:pointer"/>
-        
+
       </fieldset>
     </form>
   </div>
@@ -88,7 +93,12 @@ function countWords(ele){
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
-
+//change input colour to yellow
+function myFunction(x) {
+    x.style.background = "yellow";
+}
 
   document.getElementById('word-count').innerHTML = total_words;
+
+
 </script>
