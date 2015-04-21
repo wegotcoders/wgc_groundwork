@@ -1,5 +1,7 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <h3><%= @profile["first_name"] %>Squire's Profile</h3>
+
+  <img src="ds.jpg" alt="David Squire" />
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
@@ -14,6 +16,8 @@
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
+
+  <img src="ds.jpg" alt="David Squire" />
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
