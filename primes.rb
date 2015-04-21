@@ -1,6 +1,5 @@
 class Primes
   def self.sum_to(limit = 100)
-    # TODO - add your prime number solution here...
-    "I'm working on it!!!!!!!!!! Still"
+    (1..limit).select{|i| Prime.prime?(i)}
   end
 end

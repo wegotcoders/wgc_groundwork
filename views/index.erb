@@ -1,7 +1,8 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>Squire's Profile</h3>
+  
+  <h3><%= @profile["first_name"] %> Squire</h3>
 
-  <img src="ds.jpg" alt="David Squire" />
+  <img id="profpic" src="images/ds.jpg" alt="David Squire" />
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
@@ -17,8 +18,6 @@
     <span id="word-count">0</span> words found.
   </div>
 
-  <img src="ds.jpg" alt="David Squire" />
-
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
@@ -33,13 +32,36 @@
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
         </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[learning_experience]">Learning Experience</label>
+          <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[project]">Projects</label>
+          <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[rationale]">Rationale</label>
+          <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+        </div>
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
+      <br>
+      <fieldset>
+        <div class="form-group">
+          <label for="trainee[codecademy]">Add Codecademy Account</label>
+          <input type="url" name="trainee[codecademy]" />
+        </div>
+      </fieldset>
+      <input type="submit" value="Submit">
     </form>
   </div>
+
+
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>

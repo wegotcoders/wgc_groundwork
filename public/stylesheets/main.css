@@ -1,5 +1,5 @@
 body {
-  font-family: Courier,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
@@ -15,8 +15,6 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
 }
@@ -26,7 +24,17 @@ body {
 }
 
 h3 {
+  font-size: 2em;
+}
+
+h4{
+  text-transform: capitalize;
   font-size: 1.5em;
+  font-family: sans-serif;
+}
+
+#profpic {
+  margin: 10px;
 }
 
 .error {
