@@ -7,25 +7,42 @@ body {
 
 #logo {
   text-align: center;
+  background-color: #e4e4e4;
+}
+
+#profile-pic{
+  display: block;
+  margin: auto;
 }
 
 #content {
+  width: 1000px;
+  margin: 2em auto;
   padding: 1em;
 }
 
 .box {
-  border: 1px solid #999;
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
+
 }
 
 .welcome {
   text-align: center;
 }
 
-h3 {
-  font-size: 1.5em;
+h1{
+  font-size: 2.5em;
+  text-align: center;
+  padding-top: 0.25em;
+  font-family: Lobster, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h4{
+  font-weight: bold;
+  font-size: 1.75em;
+  font-family: Lobster, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .error {
