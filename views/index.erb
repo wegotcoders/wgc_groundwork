@@ -16,26 +16,26 @@
 <div class="profile container-fluid">
   <div class="profile-section box col-md-12"> 
     <h3>About</h3>
-      <p><%= @profile["about"] %></p>
+      <p class="profile-value"><%= @profile["about"] %></p>
   </div>
   <div class="row">
       <div class="profile-section box col-md-6">
         <h3>Projects</h3>  
-          <p><%= @profile["projects"] %></p>
+          <p class="profile-value"><%= @profile["projects"] %></p>
       </div>
       <div class="profile-section box col-md-6">
         <h3>Learning Experience</h3> 
-          <p><%= @profile["learning_experience"] %></p>
+          <p class="profile-value"><%= @profile["learning_experience"] %></p>
       </div>
   </div>
   <div class="row">
       <div class="profile-section box col-md-6">
         <h3>Ambition</h3>
-          <p><%= @profile["ambition"] %></p>
+          <p class="profile-value"><%= @profile["ambition"] %></p>
       </div>
       <div class="profile-section box col-md-6">
         <h3>Rationale</h3>
-          <p><%= @profile["rationale"] %></p>
+          <p class="profile-value"><%= @profile["rationale"] %></p>
       </div>
   </div>
 </div>
@@ -45,7 +45,7 @@
   <div id="stats" class="col-md-6 box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <span id="word-count"></span> words found.
   </div>
 
   <div id="problems" class="col-md-6 box">
@@ -80,13 +80,24 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+  // Double check I can get length in the manner I want to.
+  // console.log(profile_values[1].innerHTML.split(" ").length)
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+  // Get the number of profile values elements for my for loop.
+  // console.log(profile_values.length);
+
+  for (var i = 0; i < profile_values.length; i++) {
+    // Double check my for loop works as I want it to.
+    // console.log(profile_values[i].innerHTML.split(" ").length);
+
+    // Add each loop to the total words variable.
+    total_words += profile_values[i].innerHTML.split(" ").length;
+    // Log to console.
+    console.log(total_words)
+  };
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
