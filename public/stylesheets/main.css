@@ -10,6 +10,11 @@ body {
 
 }
 
+hr {
+  margin: 0;
+  padding: 0;
+}
+
 #profile-photo {
   text-align: center;
 }
@@ -25,6 +30,18 @@ body {
 
 #sub-header {
 
+}
+
+#badge-well {
+  margin-top: 1em;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1em;
+}
+
+.website-badge {
+  max-height: 20px;
+  margin: 0 1em;
 }
 
 #logo {
