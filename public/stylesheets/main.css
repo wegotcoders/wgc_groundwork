@@ -2,7 +2,29 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  color: #f7f7f7;
+  background-image: linear-gradient(#302F3B, #5E6373);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+}
+
+#profile-photo {
+  text-align: center;
+}
+
+.profile-img {
+  border-radius: 100%;
+  max-height: 20vh;
+}
+
+#name-header {
+
+}
+
+#sub-header {
+
 }
 
 #logo {
@@ -13,15 +35,28 @@ body {
   padding: 1em;
 }
 
+.box-header {
+  font-variant: small-caps;
+}
+
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
+  color: #f7f7f7;
   padding: 1em;
   margin-bottom: 0.5em;
+  border-radius: 2px;
+  text-align: justify;
 }
 
 .welcome {
   text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.7em;
 }
 
 h3 {

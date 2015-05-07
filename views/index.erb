@@ -1,21 +1,54 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
+  <div id="profile-photo" class="col-md-12">
+      <img class="profile-img" src="/images/137bb71.jpg" alt="Chris" />
+  </div>
+<div class="col-md-12">
+    <h1 id="name-header" class="text-center"><%= @profile["first_name"] %> <%= @profile["last_name"] %></h1>
+    <h3 id="sub-header" class="text-center">We Got Coders Profile</h3>
+</div>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+<div class="col-md-6 col-md-offset-3">
+    <hr>
+</div>
 
-  <div id="stats" class="box">
+<div class="container">
+  
+<div class="profile container-fluid">
+  <div class="profile-section box col-md-12"> 
+    <h3>About</h3>
+      <p><%= @profile["about"] %></p>
+  </div>
+  <div class="row">
+      <div class="profile-section box col-md-6">
+        <h3>Projects</h3>  
+          <p><%= @profile["projects"] %></p>
+      </div>
+      <div class="profile-section box col-md-6">
+        <h3>Learning Experience</h3> 
+          <p><%= @profile["learning_experience"] %></p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="profile-section box col-md-6">
+        <h3>Ambition</h3>
+          <p><%= @profile["ambition"] %></p>
+      </div>
+      <div class="profile-section box col-md-6">
+        <h3>Rationale</h3>
+          <p><%= @profile["rationale"] %></p>
+      </div>
+  </div>
+</div>
+
+</div>
+
+  <div id="stats" class="col-md-6 box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
 
-  <div id="problems" class="box">
+  <div id="problems" class="col-md-6 box">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
   </div>
