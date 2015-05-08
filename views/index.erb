@@ -1,22 +1,20 @@
 <% if @profile %>
-  <div id="profile-photo" class="col-md-12">
+<header id="header-wrap" class="container-fluid">
+  <div id="profile-photo" class="col-md-12 hidden-xs">
       <a href="http://<%= @profile["homepage"] %>" target="_blank"><img class="profile-img" src="/images/137bb71.jpg" alt="Chris" /></a>
   </div>
-<div class="col-md-12">
-    <h1 id="name-header" class="text-center"><a href="http://<%= @profile["homepage"] %>" target="_blank"><%= @profile["first_name"] %> <%= @profile["last_name"] %></a></h1>
-    <h3 id="sub-header" class="text-center"><small>We Got Coders Profile</small></h3>
-    <div id="badge-well" class="col-md-6 col-md-offset-3">
-      <a href="http://github.com/<%= @profile["github"] %>" target="_blank"><img class="website-badge" src="/images/GitHub_Logo.png" /></a>
-      <a href="http://www.codecademy.com/<%= @profile["codecademy"] %>" target="_blank"><img class="website-badge" src="/images/codecademy_logo.png" /></a>
-    </div>
-</div>
-<div class="col-md-6">
-  
-</div>
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-<div class="col-md-6 col-md-offset-3">
+  <div id="details" class="row">
+      <h1 id="name-header" class="text-center"><a href="http://<%= @profile["homepage"] %>" target="_blank"><%= @profile["first_name"] %> <%= @profile["last_name"] %></a></h1>
+      <h3 class="text-center">We Got Coders Profile</h3>
+      <div id="badge-well">
+        <a href="http://github.com/<%= @profile["github"] %>" target="_blank"><img class="website-badge" src="/images/GitHub_Logo.png" /></a>
+        <a href="http://www.codecademy.com/<%= @profile["codecademy"] %>" target="_blank"><img class="website-badge" src="/images/codecademy_logo.png" /></a>
+      </div>
+  </div>
+</header>
+<!-- <div class="col-md-6 col-md-offset-3">
     <hr>
-</div>
+</div> -->
 
 <div class="profile container-fluid">
   

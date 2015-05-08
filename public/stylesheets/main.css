@@ -66,6 +66,18 @@ h3 {
   font-size: 1.5em;
 }
 
+#content {
+  padding: 0;
+}
+
+#header-wrap {
+  background-image: url("/images/coast.jpg");
+  background-position: bottom;
+  background-size: cover;
+  padding-top: 1em;
+  color: #fff;
+}
+
 #logo {
   position: fixed;
   right: -150px;
@@ -89,7 +101,7 @@ h3 {
 
 .profile-img {
   border-radius: 100%;
-  max-height: 20vh;
+  max-height: 20vw;
 }
 
 #name-header {
@@ -102,14 +114,14 @@ h3 {
   color: #fff;
 }
 
-#sub-header {
-
+#details {
+  padding: 0;
 }
 
 #badge-well {
   margin-top: 1em;
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.5);
   padding: 1em;
 }
 
@@ -138,5 +150,4 @@ h3 {
 
 .edit-profile-button {
   cursor: pointer;
-  font-weight: 900;
 }
