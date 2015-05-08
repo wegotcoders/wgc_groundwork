@@ -7,7 +7,7 @@
     <h3 id="sub-header" class="text-center"><small>We Got Coders Profile</small></h3>
     <div id="badge-well" class="col-md-6 col-md-offset-3">
       <a href="http://github.com/<%= @profile["github"] %>" target="_blank"><img class="website-badge" src="/images/GitHub_Logo.png" /></a>
-      <a href="http://www.codecademy.com/chrapp" target="_blank"><img class="website-badge" src="/images/codecademy_logo.png" /></a>
+      <a href="http://www.codecademy.com/<%= @profile["codecademy"] %>" target="_blank"><img class="website-badge" src="/images/codecademy_logo.png" /></a>
     </div>
 </div>
 <div class="col-md-6">
@@ -22,69 +22,80 @@
   
   <div class="row">
       <div class="profile-section box col-md-12"> 
-        <h3>About</h3>
+        <h3 class="box-header">about</h3>
           <p class="profile-value"><%= @profile["about"] %></p>
       </div>
       <div class="profile-section box col-md-6">
-        <h3>Projects</h3>  
+        <h3 class="box-header">projects</h3>  
           <p class="profile-value"><%= @profile["projects"] %></p>
       </div>
       <div class="profile-section box col-md-6">
-        <h3>Learning Experience</h3> 
+        <h3 class="box-header">learning Experience</h3> 
           <p class="profile-value"><%= @profile["learning_experience"] %></p>
       </div>
   </div>
   <div class="row">
       <div class="profile-section box col-md-6">
-        <h3>Ambition</h3>
+        <h3 class="box-header">ambition</h3>
           <p class="profile-value"><%= @profile["ambition"] %></p>
       </div>
       <div class="profile-section box col-md-6">
-        <h3>Rationale</h3>
+        <h3 class="box-header">rationale</h3>
           <p class="profile-value"><%= @profile["rationale"] %></p>
       </div>
   </div>
 </div>
 
 <div class="other container-fluid">
-
-  <div id="stats" class="col-md-6 box">
-    <h3>Stats</h3>
-    <span id="word-count"></span> words found.
-  </div>
-
-  <div id="problems" class="col-md-6 box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
-
-  <div class="cold-md-6 box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-          <input type="text" name="trainee[github]" value="" />
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
-
-<!-- DEV: This is just to see what the fields are. -->
-  <% @profile.each do |field, value| %>
-    <div id="<%= field %>-box" class="col-md-12 profile-section box">
-      <h3 class="box-header"><%= field %></h3>
+  <div class="row">
+    <div id="stats" class="col-md-6 box">
+      <h3>Stats</h3>
+      <span id="word-count"></span> words found.
     </div>
-  <% end %>
-<!-- END -->
+
+    <div id="problems" class="col-md-6 box">
+      <h3>Programming Problems</h3>
+      <a href="/primes">My Prime Number Solution</a>
+    </div>
+
+    <div class="col-md-12">
+        <small class="edit-profile-button" data-toggle="modal" data-target="#edit-modal">Edit Profile</small>
+    </div>
+</div>
+
+<div id="edit-modal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form action="/update" method="POST">
+          <fieldset>
+            <div class="form-group">
+              <label for="trainee[about]">About</label>
+              <input class="form-control" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+              <label for="trainee[github]">Github Username</label>
+              <input class="form-control" type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
+              <label for="trainee[codecademy]">Codecademy Username</label>
+              <input class="form-control" type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+              <label for="trainee[homepage]">Web Address</label>
+              <div class="input-group">
+                <div class="input-group-addon">http://</div>
+                <input class="form-control" type="text" name="trainee[homepage]" value="<%= @profile["homepage"] %>"/>
+              </div>
+            </div>
+            <input type="submit" value="Update Profile" class="btn btn-primary" />
+          </fieldset>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
+
+
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -115,3 +126,5 @@
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>

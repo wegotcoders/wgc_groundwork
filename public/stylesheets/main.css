@@ -2,17 +2,85 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
+  color: #333;
+}
+
+#logo {
+  text-align: center;
+}
+
+#content {
+  padding: 1em;
+}
+
+.box {
+  border: 1px solid #999;
+  background: #FCFCFC;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}
+
+.welcome {
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.error {
+  text-align: center;
+}
+
+.error h2 {
+  font-size: 1.5em;
+}
+
+/* TODO - Add your own styles here */
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
   color: #f7f7f7;
   background-image: linear-gradient(#302F3B, #5E6373);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-
 }
 
 hr {
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+#logo {
+  position: fixed;
+  right: -150px;
+  z-index: 999;
+  -webkit-transition: right 0.5s ease;
+  transition: right 0.5s ease;
+}
+
+#logo:hover {
+  right: 10px;
+}
+
+#logo img {
+  max-height: 50px;
+  opacity: 0.5;
 }
 
 #profile-photo {
@@ -25,7 +93,13 @@ hr {
 }
 
 #name-header {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  color: #fff;
+}
 
+#name-header a {
+  color: #fff;
 }
 
 #sub-header {
@@ -44,19 +118,9 @@ hr {
   margin: 0 1em;
 }
 
-#logo {
-  text-align: center;
-}
-
-#content {
-  padding: 1em;
-}
-
-.box-header {
-  font-variant: small-caps;
-}
-
 .box {
+  border: none;
+  background-color: transparent;
   color: #f7f7f7;
   padding: 1em;
   margin-bottom: 0.5em;
@@ -64,28 +128,15 @@ hr {
   text-align: justify;
 }
 
-.welcome {
-  text-align: center;
+.box-header {
+  font-variant: small-caps;
 }
 
-h1 {
-  font-size: 2em;
+.modal {
+  color: #232323;
 }
 
-h2 {
-  font-size: 1.7em;
+.edit-profile-button {
+  cursor: pointer;
+  font-weight: 900;
 }
-
-h3 {
-  font-size: 1.5em;
-}
-
-.error {
-  text-align: center;
-}
-
-.error h2 {
-  font-size: 1.5em;
-}
-
-/* TODO - Add your own styles here */
