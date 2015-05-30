@@ -1,13 +1,34 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+
+  <div id="picNheader">
+    <div id="profilePic" >
+      <img src='https://graph.facebook.com/37109651/picture?width=200&height=200' />
+    </div>
+
+    <h3 id="profileHeader"><%= @profile["first_name"] %>'s Amazing Profile<br><%= @profile["about"] %></h3>
+  </div>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+
   <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
+    <% unless field == "about" %>
+      <div class="profile-section box">
+        <% if field == "dob" %>
+          <h4>Date of Birth</h4>
+          <p class="profile-value"><%= Time.parse(value).strftime("%d %B %Y") %></p>
+        <% else %>
+        <h4><%= field.capitalize.gsub("_", " ").split.map(&:capitalize).join(' ') %></h4>
+          <% if field == "primes_sum" %>
+            <p class="profile-value"><%= Primes.sum_to(value.to_i) %></p>
+          <% else %>
+            <p class="profile-value"><%= value %></p>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
+
+  
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -27,10 +48,24 @@
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <textarea class="bigInput" name="trainee[about]"><%= @profile["about"] %></textarea>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <textarea class="bigInput" name="trainee[ambition]" ><%= @profile["ambition"] %></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[primes_sum]">Primes Sum</label>
+          <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
+        </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
@@ -54,6 +89,12 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  var profileWords = document.getElementsByClassName("profile-value");
 
+  var total_words = 0;
+
+  for (var i = profileWords.length - 1; i >= 0; i--) {
+    total_words += profileWords[i].innerHTML.split(/\s+/).length;
+  };
   document.getElementById('word-count').innerHTML = total_words;
 </script>

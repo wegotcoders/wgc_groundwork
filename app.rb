@@ -1,8 +1,8 @@
 require 'sinatra'
 require './lib/profile'
 
-set :application_id, 'EDIT_ME'
-set :secret, 'EDIT_ME'
+set :application_id, '5150520d432c7b6e9ce0ca0bef1e0e02dfb8f87f9241bcd11ca50f82eacd77a1'
+set :secret, 'eb3c89fb33f3c6e26883011f3e108cb71398ab1e991a23dfc014c1aa65f88fcd'
 set :redirect_uri, 'http://localhost:4567/callback'
 set :site_url, 'http://wegotcoders.com'
 set :session_secret, 'secret'

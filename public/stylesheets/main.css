@@ -2,7 +2,8 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  color: #000;
+  background-color: #E50049;
 }
 
 #logo {
@@ -14,10 +15,13 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
   background: #FCFCFC;
   padding: 1em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.5em;
+  margin-right: 1.5em;
+  width: calc(49.5% - 5em);
+  display: inline-block;
+  vertical-align: top;
 }
 
 .welcome {
@@ -26,6 +30,22 @@ body {
 
 h3 {
   font-size: 1.5em;
+  margin-bottom: 1.5em;
+  font-family: "PT Sans", sans-serif
+}
+
+#profilePic, #profileHeader {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 3em;
+}
+
+#profileHeader {
+  color: white;
+  margin-left: 1em;
+  text-align: left;
+  width: calc(100% - 1em - 500px);
 }
 
 .error {
@@ -37,3 +57,29 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+h4 {
+  font-weight: bold;
+  color: #E50049;
+  font-family: "PT Sans", sans-serif;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+.bigInput {
+  height: 6em;
+  width: 100%;
+  resize:none;
+}
+
+.btn {
+  border: none;
+  background-color: #E50049;
+  border-radius: none;
+  color: white;
+  font-size: 1.25em;
+  padding: .75em;
+  font-family: "PT Sans", sans-serif;
+}
