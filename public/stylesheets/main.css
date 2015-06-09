@@ -114,7 +114,7 @@ h4 {
 }
 
 #ambition:hover {
-  background-image: linear-gradient(to bottom, #A9F5A9, #00FF00 20%, #0B610B 95%);
+  background-image: linear-gradient(to bottom, #A9F5A9, #00FF00 10%, #0B610B 95%);
   box-shadow: 0px 0px 100px #82FA58;
   cursor: crosshair;
 }
@@ -198,7 +198,8 @@ h4 {
   background: url('../images/nametag.jpg');
   background-position: center;
   background-size: 110%;
-  border-radius: 10%;
+  border-radius: 10px;
+  border: 2px solid black;
   -ms-transform: rotate(5deg);
   -webkit-transform: rotate(5deg);
   transform: rotate(5deg);
@@ -212,9 +213,10 @@ h4 {
 #learning_experience {
   width: 400px;
   margin: auto;
-  background: radial-gradient(rgba(0,255,0,0.2), #FFF 70%), url(../images/studying.jpg);
+  background: radial-gradient(rgba(0,255,0,0.2), #FFF 70%), url('../images/studying.jpg');
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center;
+  background-size: 100%;
 }
 
 #tertiarycontent {
@@ -222,7 +224,19 @@ h4 {
   margin: auto;
 }
 
-#twitterbird {
+#twitter {
+  position: absolute;
+  top: 380px;
+  left: 50px;
+  font-size: 20px;
+  font-family: Courier;
+}
+
+#twitter .sectiontitle {
+  display: none;
+}
+
+#twitterlogo {
   height: 100px;
   position: absolute;
   top: 300px;
@@ -242,3 +256,40 @@ h4 {
   color: transparent;
   font-size: 36px;
 }
+
+#projects {
+  height: 200px;
+  background: radial-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../images/code.JPG');
+  background-size: 110%;
+  background-position: center;
+  color: white;
+  border: 2px solid black;
+  text-align: left;
+}
+
+.btn {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 20px;
+  background-color: #286090;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #00FF00;
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: green;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
