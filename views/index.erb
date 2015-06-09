@@ -15,7 +15,6 @@
       <div id="tertiarycontent">
       <% end %>
     <div class="profile-section box" id="<%= field %>">
-      <!-- Format the keys to capitalize and replace the underscores with spaces -->
       <% field_formatted = field.capitalize %>
       <% field_formatted.gsub!("_"," ") %>
       <h4 class ="sectiontitle" ><%= field_formatted %></h4>
@@ -45,33 +44,46 @@
         <div class="form-group">
           <label for="trainee[about]">About</label>
           <textarea name="trainee[about]" rows="10" cols="100"><%= @profile["about"] %></textarea>
+          <br />
+          <div class="wordcount">Words: <span id="about_wordcount"></span></div>
         </div>
+        <br />
         <!-- TODO - Add more fields so that your profile can be edited -->
 
         <div class="form-group">
           <label for="trainee[ambition]">Ambition</label>
           <textarea name="trainee[ambition]" rows="10" cols="100"><%= @profile["ambition"] %></textarea>
+          <div class="wordcount">Words: <span id="ambition_wordcount"></span></div>
         </div>
+        <br />
 
         <div class="form-group">
           <label for="trainee[learning_experience]">Learning Experience</label>
           <textarea name="trainee[learning_experience]" rows="10" cols="100"><%= @profile["learning_experience"] %></textarea>
+          <div class="wordcount">Words: <span id="learningexperience_wordcount"></span></div>
         </div>
+        <br />
 
         <div class="form-group">
           <label for="trainee[projects]">Projects</label>
           <textarea name="trainee[projects]" rows="10" cols="100"><%= @profile["projects"] %></textarea>
+          <div class="wordcount">Words: <span id="projects_wordcount"></span></div>
         </div>
+        <br />
 
         <div class="form-group">
           <label for="trainee[rationale]">Rationale</label>
           <textarea name="trainee[rationale]" rows="10" cols="100"><%= @profile["rationale"] %></textarea>
+          <div class="wordcount">Words: <span id="rationale_wordcount"></span></div>
         </div>
+        <br />
 
         <div class="form-group">
           <label for="trainee[how_did_you_hear]">How did you hear about us?</label>
           <textarea name="trainee[how_did_you_hear]" rows="10" cols="100"><%= @profile["how_did_you_hear"] %></textarea>
+          <div class="wordcount">Words: <span id="howdidyouhear_wordcount"></span></div>
         </div>
+        <br />
 
         <div class="form-group">
           <label for="trainee[first_name]">First Name</label>
@@ -149,6 +161,37 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+
+  var about = profile_values[0].innerHTML;
+  var about_words = about.split(" ");
+  document.getElementById("about_wordcount").innerHTML = about_words.length;
+  total_words += about_words.length;
+
+  var ambition = profile_values[1].innerHTML;
+  var ambition_words = ambition.split(" ");
+  document.getElementById("ambition_wordcount").innerHTML = ambition_words.length;
+  total_words += ambition_words.length;
+
+  var how_did_you_hear = profile_values[9].innerHTML;
+  var how_did_you_hear_words = how_did_you_hear.split(" ");
+  document.getElementById("howdidyouhear_wordcount").innerHTML = how_did_you_hear_words.length;
+  total_words += how_did_you_hear_words.length;
+
+  var learning_experience = profile_values[12].innerHTML;
+  var learning_experience_words = learning_experience.split(" ");
+  document.getElementById("learningexperience_wordcount").innerHTML = learning_experience_words.length;
+  total_words += learning_experience_words.length;
+
+  var projects = profile_values[15].innerHTML;
+  var projects_words = projects.split(" ");
+  document.getElementById("projects_wordcount").innerHTML = projects_words.length;
+  total_words += projects_words.length;
+
+  var rationale = profile_values[16].innerHTML;
+  var rationale_words = rationale.split(" ");
+  document.getElementById("rationale_wordcount").innerHTML = rationale_words.length;
+  total_words += rationale_words.length;
+
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>

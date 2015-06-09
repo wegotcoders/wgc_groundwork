@@ -293,3 +293,13 @@ label {
   font-size: 18px;
 }
 
+textarea {
+  width: 100%;
+}
+
+.wordcount {
+  display: inline;
+  float: right;
+  font-size: 16px;
+}
+
