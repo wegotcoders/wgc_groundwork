@@ -157,7 +157,7 @@ h4 {
   font-family: Courier;
 }
 
-#gender {
+/*#gender {
   position: absolute;
   top: 20px;
   right: 250px;
@@ -182,7 +182,7 @@ h4 {
 #gender p {
   font-size: 24px;
   font-family: Courier;
-}
+}*/
 
 #first_name {
   position: absolute;
@@ -301,5 +301,18 @@ textarea {
   display: inline;
   float: right;
   font-size: 16px;
+}
+
+#inksplat {
+  position: absolute;
+  right: 30px;
+  top: 620px;
+}
+
+#peel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100px;
 }
 
