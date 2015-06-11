@@ -142,7 +142,8 @@ h4 {
 
 #dob {
   position: absolute;
-  top: 20px;
+  top: 40px;
+  left: 250px;
   font-family: Courier;
   font-weight: bold;
   color: #DF0101;
@@ -156,33 +157,6 @@ h4 {
 #dob .sectiontitle {
   font-family: Courier;
 }
-
-/*#gender {
-  position: absolute;
-  top: 20px;
-  right: 250px;
-  font-family: Arial;
-  height: 80px;
-  font-weight: bold;
-  color: white;
-  text-shadow: 0 0 5px black;
-  background: url('../images/male.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 45%;
-  -ms-transform: rotate(20deg);
-  -webkit-transform: rotate(20deg);
-  transform: rotate(20deg);
-}
-
-#gender .sectiontitle {
-  font-family: Arial;
-}
-
-#gender p {
-  font-size: 24px;
-  font-family: Courier;
-}*/
 
 #first_name {
   position: absolute;
@@ -226,7 +200,7 @@ h4 {
 
 #twitter {
   position: absolute;
-  top: 380px;
+  top: 450px;
   left: 50px;
   font-size: 20px;
   font-family: Courier;
@@ -239,7 +213,7 @@ h4 {
 #twitterlogo {
   height: 100px;
   position: absolute;
-  top: 300px;
+  top: 370px;
   left: 60px;
 }
 
@@ -315,4 +289,68 @@ textarea {
   right: 0;
   height: 100px;
 }
+
+#nav_button {
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  background-color: #5882FA;
+  color: white;
+  font-family: Courier, sans-serif;
+  font-weight: bold;
+  padding: 5px 5px 5px 20px;
+  height: 30px;
+  width: 150px;
+}
+
+#nav_button:hover {
+  cursor: pointer;
+}
+
+#nav_button h3 {
+  display: inline-block;
+  font-size: 22px;
+}
+
+.arrow {
+  height: 30px;
+  vertical-align: middle;
+  position: fixed;
+  top: 5px;
+  left: 130px;
+}
+
+.hidden {
+  display: none;
+}
+
+#navbar {
+  position: fixed;
+  z-index: 1;
+  top: 40px;
+  left: 0px;
+  width: 150px;
+  padding: 5px 5px 5px 20px;
+  background-color: #5882FA;
+  color: white;
+  font-size: 20px;
+  display: none;
+  font-family: Courier, sans-serif;
+}
+
+#navbar li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#navbar li:hover {
+  background-color: #58ACFA;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: white;
+}
+
 

@@ -2,6 +2,24 @@
   <h2 id="profile_title"><%= @profile["first_name"] %>'s Amazing Profile</h2>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  <div id="navdiv">
+    <div id="nav_button">
+        <h3>Navigate</h3>
+          <img class = "arrow" id="downarrow" src="images/downarrow.png" />
+          <img class = "arrow hidden" id="uparrow" src="images/uparrow.png" />
+    </div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#ambition">Ambition</a></li>
+        <li><a href="#codecademy">General</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#rationale">Rationale</a></li>
+        <li><a href="#problems">Problems</a></li>
+        <li><a href="#editbox">Edit</a></li>
+      </ul>
+    </nav>
+  </div>
   <div id="maincontent">
   <img id="profile-pic" src="images/me.JPG" />
   <img id="inksplat" src="images/inksplat.jpg" />
@@ -159,6 +177,8 @@
   </div>
 <% end %>
 
+<script type="text/javascript" src="/js/jquery-2.1.4.min.js">
+</script>
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
@@ -200,6 +220,33 @@
   document.getElementById("rationale_wordcount").innerHTML = rationale_words.length;
   total_words += rationale_words.length;
 
-
   document.getElementById('word-count').innerHTML = total_words;
+
+
+/***************************** jQuery stuff *****************************/
+
+$(function() {
+
+  var $navButton = $('#nav_button');
+  var $navBar = $('#navbar');
+  var $navDiv = $('#navdiv');
+  var $upArrow = $('#uparrow');
+  var $downArrow = $('#downarrow');
+
+  $navButton.mouseover(function() {
+    $navBar.slideDown(500);
+    $upArrow.removeClass('hidden');
+    $downArrow.addClass('hidden');
+  });
+
+  $navDiv.mouseleave(function() {
+    $navBar.slideUp(500);
+    $('#downarrow').delay(500).removeClass('hidden');
+    $('#uparrow').delay(500).addClass('hidden');
+  });
+
+});
+
+  
+
 </script>
