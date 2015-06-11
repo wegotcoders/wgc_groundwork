@@ -10,13 +10,14 @@ enable :sessions
 
 get '/primes' do
   # TODO - Can we make this dynamic?
-  limit = 2000000
+  @limit = params[:limit].to_i
 
   # TODO - add your prime number solution in the primes.rb file.
-  @sum = Primes.sum_to(limit)
+  @sum = Primes.sum_to(@limit)
 
   erb :primes, :layout => :main
 end
+
 
 get '/' do
   if signed_in?

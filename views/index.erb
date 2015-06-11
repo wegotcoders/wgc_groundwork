@@ -233,16 +233,31 @@ $(function() {
   var $upArrow = $('#uparrow');
   var $downArrow = $('#downarrow');
 
+  // when the mouse is moved over the navigation button
   $navButton.mouseover(function() {
+    $navButton.css('border-bottom-right-radius', '0');
     $navBar.slideDown(500);
     $upArrow.removeClass('hidden');
     $downArrow.addClass('hidden');
   });
 
+  // when the mouse is moved off of the navbar
   $navDiv.mouseleave(function() {
-    $navBar.slideUp(500);
-    $('#downarrow').delay(500).removeClass('hidden');
-    $('#uparrow').delay(500).addClass('hidden');
+    $navBar.slideUp('500');
+    $navButton.delay(375).queue(function() {
+      $(this).css('border-bottom-right-radius', '10px');
+      $(this).dequeue();
+    });
+    $downArrow.delay(375).queue(function() {
+      $(this).removeClass('hidden');
+      $('#uparrow').addClass('hidden');
+      $(this).dequeue();
+      $('#uparrow').dequeue();
+    });
+
+
+    
+    
   });
 
 });

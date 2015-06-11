@@ -143,7 +143,7 @@ h4 {
 #dob {
   position: absolute;
   top: 40px;
-  left: 250px;
+  left: 280px;
   font-family: Courier;
   font-weight: bold;
   color: #DF0101;
@@ -302,6 +302,7 @@ textarea {
   padding: 5px 5px 5px 20px;
   height: 30px;
   width: 150px;
+  border-bottom-right-radius: 10px;
 }
 
 #nav_button:hover {
@@ -337,6 +338,7 @@ textarea {
   font-size: 20px;
   display: none;
   font-family: Courier, sans-serif;
+  border-bottom-right-radius: 10px;
 }
 
 #navbar li {
@@ -353,4 +355,34 @@ textarea {
   color: white;
 }
 
+/*************************** primes.erb ***************************/
 
+#primesdiv {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+#primesdiv input {
+  font-size: 18px;
+}
+
+#primesdiv input[type=submit] {
+  color: #fff;
+  background-color: #286090;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+#primesdiv input[type=submit]:hover {
+  background-color: #58ACFA;
+  cursor: pointer;
+}
+
+#primesdiv input[type=submit]:active {
+  background-color: green;
+  cursor: pointer;
+}
