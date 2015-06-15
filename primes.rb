@@ -5,11 +5,11 @@ require 'prime'
 class Primes
   def self.sum_to(limit = 100)
     # TODO - add your prime number solution here...
-    @sum = 0
+    sum = 0
     Prime.each(limit) do |prime|
-      @sum += prime
+      sum += prime
     end
-    return @sum
+    return sum
   end
 end
 

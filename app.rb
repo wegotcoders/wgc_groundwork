@@ -18,6 +18,13 @@ get '/primes' do
   erb :primes, :layout => :main
 end
 
+get '/palindrome' do
+
+  @largest_palindrome = Palindrome.calculate
+
+  erb :palindrome, :layout => :main
+end
+
 
 get '/' do
   if signed_in?

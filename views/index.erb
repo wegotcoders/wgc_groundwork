@@ -52,7 +52,8 @@
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+    <a href="/primes">My Prime Number Solution</a><br />
+    <a href="/palindrome">Largest Palindrome Product</a>
   </div>
 
   <hr />
@@ -250,9 +251,9 @@ $(function() {
     });
     $downArrow.delay(375).queue(function() {
       $(this).removeClass('hidden');
-      $('#uparrow').addClass('hidden');
+      $upArrow.addClass('hidden');
       $(this).dequeue();
-      $('#uparrow').dequeue();
+      $upArrow.dequeue();
     });
 
 
