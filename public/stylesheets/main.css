@@ -6,7 +6,7 @@ body {
   background-color: #FBF8EF;
   background-image: url(../images/burnt_paper.png);
   background-repeat: no-repeat;
-  background-position: 60px 80px;
+  background-position: 50px 80px;
   background-size: 85%;
 }
 
@@ -65,6 +65,14 @@ h4 {
   font-size: 1.4em;
   text-transform: uppercase;
   text-shadow: 2px 1px 0px #FBF8EF;
+}
+
+#profile-pic {
+  position: absolute;
+  z-index: 100;
+  top: 130px;
+  right: 250px;
+  box-shadow: 3px 3px 8px #FBF8EF;
 }
 
 .info {
