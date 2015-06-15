@@ -22,7 +22,7 @@
     <% @profile.each do |field, value| %>
      <% if field == "codecademy" || field == "github" || field == "homepage" || field == "twitter" %> 
           <div class="profile-section">
-            <li><span class="list"><%= field %></span>: <span class="list-entry"><%= value %></span></li>
+            <li><span class="list profile-value"><%= field %></span>: <span class="list-entry"><%= value %></span></li>
           </div>
         <% end %>
       <% end %>
@@ -85,6 +85,13 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  for(var i = 0; i < profile_values.length; i++) {
+    //profile_values are HTML Elements. Get value.
+    var text = profile_values[i].innerHTML;
+    console.log(text);
+    total_words += text.split(' ').length;
+  }
+
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
