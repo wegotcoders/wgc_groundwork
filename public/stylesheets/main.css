@@ -19,8 +19,6 @@ body {
 }
 
 .box {
-  padding: 1em;
-  margin-bottom: 0.5em;
   margin: 0 220px 0.5em 100px;
 }
 
@@ -98,4 +96,13 @@ h4 {
 
 #stats {
   margin-top: 1.5em;
+}
+
+.form-group label {
+  display: inline-block;
+  width: 180px;
+}
+
+.form-group textarea, input {
+  width: 260px;
 }
