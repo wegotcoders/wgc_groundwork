@@ -25,6 +25,13 @@ get '/palindrome' do
   erb :palindrome, :layout => :main
 end
 
+get '/pandigital' do
+
+  @pandigital_sum = Pandigital.calculate
+
+  erb :pandigital, :layout => :main
+end
+
 
 get '/' do
   if signed_in?
