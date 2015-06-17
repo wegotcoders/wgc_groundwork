@@ -88,10 +88,8 @@
   for(var i = 0; i < profile_values.length; i++) {
     //profile_values are HTML Elements. Get value.
     var text = profile_values[i].innerHTML;
-    console.log(text);
     total_words += text.split(' ').length;
   }
-
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
