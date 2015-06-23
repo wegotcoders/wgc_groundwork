@@ -110,7 +110,8 @@ h4 {
   color: white;
   padding: 50px 5px;
   margin: auto;
-  width: 60%;
+  width: 80%;
+  margin-top: 20px;
 }
 
 #ambition:hover {
@@ -125,11 +126,23 @@ h4 {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
+  padding: 20px;
+}
+
+#secondarycontent .sectiontitle {
+  font-family: Arial;
+  font-size: 18px;
 }
 
 #rationale {
+  margin-top: 30px;
   border: 5px dotted grey;
   border-radius: 20px;
+}
+
+#rationale .sectiontitle {
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 24px;
 }
 
 #rationale  p {
@@ -137,7 +150,9 @@ h4 {
   text-align: justify;
   -webkit-column-count: 2;
   -moz-column-count: 2;
-  column-count: 2
+  column-count: 2;
+  font-family: 'Times New Roman';
+  font-size: 16px;
 }
 
 #dob {
@@ -184,15 +199,6 @@ h4 {
   color: transparent;
 }
 
-#learning_experience {
-  width: 400px;
-  margin: auto;
-  background: radial-gradient(rgba(0,255,0,0.2), #FFF 70%), url('../images/studying.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-}
-
 #tertiarycontent {
   width: 70%;
   margin: auto;
@@ -217,6 +223,48 @@ h4 {
   left: 60px;
 }
 
+#githublogo {
+  height: 100px;
+  position: absolute;
+  top: 1000px;
+  left: 80px;
+}
+
+#github {
+  position: absolute;
+  top: 1085px;
+  left: 60px;
+  font-size: 18px;
+  font-family: Courier;
+  word-wrap: break-word;
+  width: 125px;
+}
+
+#github .sectiontitle {
+  display: none;
+}
+
+#codecademylogo {
+  height: 100px;
+  position: absolute;
+  top: 1250px;
+  right: 60px;
+}
+
+#codecademy {
+  position: absolute;
+  top: 1315px;
+  right: 10px;
+  font-size: 18px;
+  font-family: Courier;
+  word-wrap: break-word;
+  width: 170px;
+}
+
+#codecademy .sectiontitle {
+  display: none;
+}
+
 #projects {
   height: 200px;
   background: radial-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../images/code.JPG');
@@ -225,20 +273,21 @@ h4 {
   color: white;
   border: 2px solid black;
   text-align: left;
+  font-family: monospace;
 }
 
 .btn {
   color: #fff;
   font-size: 20px;
   margin-top: 20px;
-  background-color: #286090;
+  background-color: #5882FA;
   border: none;
   padding: 6px 12px;
   border-radius: 4px;
 }
 
 .btn:hover {
-  background-color: #00FF00;
+  background-color: #58ACFA;
   cursor: pointer;
 }
 
@@ -265,15 +314,8 @@ textarea {
 
 #inksplat {
   position: absolute;
-  right: 30px;
-  top: 620px;
-}
-
-#peel {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100px;
+  right: 20px;
+  top: 700px;
 }
 
 #nav_button {
@@ -341,7 +383,16 @@ textarea {
   color: white;
 }
 
-/*************************** primes.erb ***************************/
+#js_track_completedness, #web_track_completedness, #ruby_track_completedness {
+  display: none;
+}
+
+#editbox {
+  margin-top: 30px;
+}
+
+
+/*************************** programming problems ***************************/
 
 .problemdiv {
   width: 70%;

@@ -12,7 +12,7 @@
       <ul>
         <li><a href="#">About</a></li>
         <li><a href="#ambition">Ambition</a></li>
-        <li><a href="#codecademy">General</a></li>
+        <li><a href="#secondarycontent">General</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#rationale">Rationale</a></li>
         <li><a href="#problems">Problems</a></li>
@@ -21,11 +21,12 @@
     </nav>
   </div>
   <div id="maincontent">
-  <img id="profile-pic" src="images/me.JPG" />
+  <img id="profile-pic" src="images/me3.JPG" />
   <img id="inksplat" src="images/inksplat.jpg" />
-  <img id="peel" src="images/peel.jpg" />
 
   <a href="http://twitter.com/ctweedz"><img id="twitterlogo" src="images/twitterlogo.png" alt="twitter" /></a>
+  <a href="http://github.com/cltweedie"><img id="githublogo" src="images/github.png" alt="github" /></a>
+  <a href="http://codecademy.com/cltweedie"><img id="codecademylogo" src="images/codecademy.jpg" alt="codecademy" /></a>
   <% @profile.each do |field, value| %>
     <% if (field == "codecademy") %>
       </div>
@@ -57,11 +58,11 @@
     <a href="/pandigital">Pandigital Products</a><br />
   </div>
 
-  <hr />
 
   <div id="editbox" class="box">
+   <hr />
+   <br /><br />
     <h3>Edit Profile</h3>
-
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
@@ -246,20 +247,13 @@ $(function() {
   // when the mouse is moved off of the navbar
   $navDiv.mouseleave(function() {
     $navBar.slideUp('500');
-    $navButton.delay(375).queue(function() {
-      $(this).css('border-bottom-right-radius', '10px');
-      $(this).dequeue();
-    });
-    $downArrow.delay(375).queue(function() {
-      $(this).removeClass('hidden');
+    // wait until the animation is complete, then change the border radius and the arrow back
+    $navBar.promise().done(function() {
+      $navButton.css('border-bottom-right-radius', '10px');
+      $downArrow.removeClass('hidden');
       $upArrow.addClass('hidden');
-      $(this).dequeue();
-      $upArrow.dequeue();
     });
 
-
-    
-    
   });
 
 });
