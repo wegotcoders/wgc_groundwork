@@ -1,8 +1,12 @@
+
+
+
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
+
     <div class="profile-section box">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
@@ -17,7 +21,7 @@
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+    <a href="/primes?limit=100">My Prime Number Solution</a>
   </div>
 
   <div class="box">
@@ -28,8 +32,10 @@
         <div class="form-group">
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+           <label for="trainee[ambition]">Ambition</label>
+          <input class="inputbox" type="text" name="trainee[ambition" value="<%= @profile["ambition"] %>"/>
         </div>
-
+      
         <!-- TODO - Add more fields so that your profile can be edited -->
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
@@ -49,11 +55,11 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
+  var profile_values =  document.getElementsByClassName('profile-value');
   var total_words = 0;
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
+  for (i=0;i<profile_values.length;i++){
+    total_words += profile_values[i].innerHTML.split(/\S+/g).length;//profile_values.length();
+  };
   document.getElementById('word-count').innerHTML = total_words;
 </script>

@@ -37,3 +37,10 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+h4 {font-size:1.25em};
+
+.inputbox {
+  width:100%;
+  position: relative;                   
+}

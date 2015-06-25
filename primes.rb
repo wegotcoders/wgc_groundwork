@@ -1,15 +1,16 @@
 class Primes
-  def self.sum_to(limit = 100)
+  def self.sum_to(limit)
 #----------------------------------------
 	#--There's a built in class for this but I'm guessing that's not what you're after
 	 # require 'prime'
-	 # built_arr = Prime.take_while {|n| n <= limit }
+	 # arr = Prime.take_while {|n| n <= limit }
+     # arr.compact.inject{|sum,x| sum + x }
 	#----------------------------------------
 
 	#----------------------------------------
 	# Aimed for tradeoff of code simplicity and computational efficiency. 
 	# Could have done it in less code but couldn't have taken advantage of properties such as being able to begin each inner loop from the x^2 instead of 2x.
-	# Altering array in place as opposed to pushing to new array probably saves operations as the single compact! will be well optimised.
+	# Altering array in place as opposed to pushing to new array probably saves operations as the single compact will be well optimised.
 	#----------------------------------------
 
 	arr=(2...limit).to_a 
@@ -21,7 +22,7 @@ class Primes
             i+=x
         end
     }
-    arr.compact!
+    arr.compact.inject{|sum,x| sum + x }
 
      # puts "#{arr.length} primes up to #{limit}"
      # # print arr
@@ -29,3 +30,4 @@ class Primes
 
   end
 end
+
