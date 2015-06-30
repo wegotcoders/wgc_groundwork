@@ -97,6 +97,7 @@ h4 {
 
 #about {
   text-align: left;
+  margin-bottom: 60px;
 }
 
 #ambition .sectiontitle {
@@ -122,7 +123,7 @@ h4 {
 
 #secondarycontent {
   width: 70%;
-  margin: auto;
+  margin: 50px auto 0px;
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
@@ -200,8 +201,14 @@ h4 {
 }
 
 #tertiarycontent {
-  width: 70%;
+  width: 100%;
   margin: auto;
+  padding: 50px 0;
+}
+
+#tertiarycontent .box {
+  margin: 50px 0;
+  width: 100%;
 }
 
 #twitter {
@@ -226,13 +233,13 @@ h4 {
 #githublogo {
   height: 100px;
   position: absolute;
-  top: 1000px;
+  top: 940px;
   left: 80px;
 }
 
 #github {
   position: absolute;
-  top: 1085px;
+  top: 1025px;
   left: 60px;
   font-size: 18px;
   font-family: Courier;
@@ -247,14 +254,14 @@ h4 {
 #codecademylogo {
   height: 100px;
   position: absolute;
-  top: 1250px;
-  right: 60px;
+  top: 1100px;
+  right: 80px;
 }
 
 #codecademy {
   position: absolute;
-  top: 1315px;
-  right: 10px;
+  top: 1175px;
+  right: 30px;
   font-size: 18px;
   font-family: Courier;
   word-wrap: break-word;
@@ -383,14 +390,37 @@ textarea {
   color: white;
 }
 
-#js_track_completedness, #web_track_completedness, #ruby_track_completedness {
-  display: none;
-}
-
 #editbox {
   margin-top: 30px;
 }
 
+.detail-form {
+  margin: 30px 0;
+}
+
+#learning_experience {
+  background: radial-gradient(transparent, white 70%), url('../images/studying.jpg') right no-repeat;
+  background-size: 100%;
+  padding: 50px 15px;
+  color: #1C1C1C;
+}
+
+#treehouse {
+  position: absolute;
+  top: 1225px;
+  left: 30px;
+  font-size: 18px;
+  font-family: Courier;
+  word-wrap: break-word;
+  width: 195px;
+}
+
+#treehouselogo {
+  height: 80px;
+  position: absolute;
+  top: 1160px;
+  left: 100px;
+}
 
 /*************************** programming problems ***************************/
 
@@ -405,10 +435,15 @@ textarea {
   font-size: 24px;
   font-weight: bold;
   text-decoration: underline;
+  margin-bottom: 20px;
 }
 
 .problemdiv h3 {
   font-size: 30px;
+}
+
+.problemdiv p {
+  margin-bottom: 20px;
 }
 
 .problemdiv input {
@@ -433,3 +468,4 @@ textarea {
   background-color: green;
   cursor: pointer;
 }
+

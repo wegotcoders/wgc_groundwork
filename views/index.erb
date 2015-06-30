@@ -1,113 +1,222 @@
 <% if @profile %>
-  <h2 id="profile_title"><%= @profile["first_name"] %>'s Amazing Profile</h2>
+<h2 id="profile_title"><%= @profile["first_name"] %>'s Amazing Profile</h2>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <div id="navdiv">
-    <div id="nav_button">
-        <h3>Navigate</h3>
-          <img class = "arrow" id="downarrow" src="images/downarrow.png" />
-          <img class = "arrow hidden" id="uparrow" src="images/uparrow.png" />
-    </div>
-    <nav id="navbar">
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#ambition">Ambition</a></li>
-        <li><a href="#secondarycontent">General</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#rationale">Rationale</a></li>
-        <li><a href="#problems">Problems</a></li>
-        <li><a href="#editbox">Edit</a></li>
-      </ul>
-    </nav>
+<!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+<div id="navdiv">
+  <div id="nav_button">
+    <h3>Navigate</h3>
+    <img class = "arrow" id="downarrow" src="images/downarrow.png" />
+    <img class = "arrow hidden" id="uparrow" src="images/uparrow.png" />
   </div>
-  <div id="maincontent">
+  <nav id="navbar">
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#ambition">Ambition</a></li>
+      <li><a href="#secondarycontent">General</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#rationale">Rationale</a></li>
+      <li><a href="#problems">Problems</a></li>
+      <li><a href="#editbox">Edit</a></li>
+    </ul>
+  </nav>
+</div>
+<div id="maincontent">
   <img id="profile-pic" src="images/me3.JPG" />
   <img id="inksplat" src="images/inksplat.jpg" />
 
   <a href="http://twitter.com/ctweedz"><img id="twitterlogo" src="images/twitterlogo.png" alt="twitter" /></a>
   <a href="http://github.com/cltweedie"><img id="githublogo" src="images/github.png" alt="github" /></a>
-  <a href="http://codecademy.com/cltweedie"><img id="codecademylogo" src="images/codecademy.jpg" alt="codecademy" /></a>
-  <% @profile.each do |field, value| %>
-    <% if (field == "codecademy") %>
-      </div>
-      <div id="secondarycontent">
-      <% end %>
-    <% if (field == "projects") %>
-      </div>
-      <div id="tertiarycontent">
-      <% end %>
-    <div class="profile-section box" id="<%= field %>">
-      <% field_formatted = field.capitalize %>
-      <% field_formatted.gsub!("_"," ") %>
-      <h4 class ="sectiontitle" ><%= field_formatted %></h4>
-      <p class="profile-value"><%= value %></p>
+  <a href="http://codecademy.com/cltweedie"><img id="codecademylogo" src="images/codecademy.jpg" alt="codecademy" />
+  <a href="http://teamtreehouse.com/christweedie"><img id="treehouselogo" src="images/treehouse.png" alt="treehouse" /></a>
+  </a>
+
+    <div class="profile-section box" id="about">
+      <div class="profile-value">
+        <%= @profile["about"] %>
+      </div>   
     </div>
-    <br />
-  <% end %>
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
+    <div class="profile-section box" id="ambition">
+      <h4 class="sectiontitle">Ambition</h4>
+      <div class="profile-value">
+        <%= @profile["ambition"] %>
+      </div>
+    </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a><br />
-    <a href="/palindrome">Largest Palindrome Product</a><br />
-    <a href="/pandigital">Pandigital Products</a><br />
-  </div>
+    <div id="secondarycontent">
+
+      <div class="profile-section box" id="last_name">
+        <h4 class="sectiontitle">Last Name</h4>
+        <div class="profile-value">
+          <%= @profile["last_name"] %>
+        </div>
+      </div>
+
+      <div class="profile-section box" id="gender">
+        <h4 class="sectiontitle">Gender</h4>
+        <div class="profile-value">
+          <%= @profile["gender"] %>
+        </div>
+      </div>
+
+      <div class="profile-section box" id="homepage">
+        <h4 class="sectiontitle">Homepage</h4>
+        <div class="profile-value">
+          <%= @profile["homepage"] %>
+        </div>
+      </div>
+
+      <div class="profile-section box" id="phone_number">
+        <h4 class="sectiontitle">Phone Number</h4>
+        <div class="profile-value">
+          <%= @profile["phone_number"] %>
+        </div>
+      </div>
+
+      <div class="profile-section box" id="primes_sum">
+        <h4 class="sectiontitle">Primes Sum</h4>
+        <div class="profile-value">
+          <%= @profile["primes_sum"] %>
+        </div>
+      </div>
+
+      <div class="profile-section box" id="employment_status">
+        <h4 class="sectiontitle">Employment Status</h4>
+        <div class="profile-value">
+          <%= @profile["employment_status"] %>
+        </div>
+      </div>
+
+      <div class="profile-section box" id="how_did_you_hear">
+        <h4 class="sectiontitle">How Did You Hear About Us?</h4>
+        <div class="profile-value">
+          <%= @profile["how_did_you_hear"] %>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="tertiarycontent">
+
+      <div class="profile-section box" id="projects">
+        <h4 class="sectiontitle">Projects</h4>
+        <div class="profile-value">
+          <%= @profile["projects"] %>
+        </div>
+      </div>
+
+      <div class="profile-section box" id="learning_experience">
+        <h4 class="sectiontitle">Learning Experience</h4>
+        <div class="profile-value">
+          <%= @profile["learning_experience"] %>
+        </div>
+      </div>
+
+      <div class="profile-section box" id="rationale">
+        <h4 class="sectiontitle">Rationale</h4>
+        <div class="profile-value">
+          <p><%= @profile["rationale"] %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="profile-section box" id="first_name">
+      <h4 class="sectiontitle">First Name</h4>
+      <div class="profile-value">
+        <%= @profile["first_name"] %>
+      </div>
+    </div>
+
+    <div class="profile-section box" id="dob">
+      <h4 class="sectiontitle">DOB</h4>
+      <div class="profile-value">
+        <%= @profile["dob"] %>
+      </div>
+    </div>
+
+    <div class="profile-section box" id="github">
+      <h4 class="sectiontitle">github</h4>
+      <div class="profile-value">
+        <%= @profile["github"] %>
+      </div>
+    </div>
+
+    <div class="profile-section box" id="codecademy">
+      <h4 class="sectiontitle">Codecademy</h4>
+      <div class="profile-value">
+        <%= @profile["codecademy"] %>
+      </div>
+    </div>
+
+    <div class="profile-section box" id="twitter">
+      <h4 class="sectiontitle">Twitter</h4>
+      <div class="profile-value">
+        <%= @profile["twitter"] %>
+      </div>
+    </div>
+
+    <div class="profile-section box" id="treehouse">
+      <div>
+        teamtreehouse.com/christweedie
+      </div>
+    </div>
+
+    <div id="stats" class="box">
+      <h3>Stats</h3>
+      <!-- TODO - Set the contents of this span with JavaScript -->
+      <span id="word-count">0</span> words found.
+    </div>
+
+    <div id="problems" class="box">
+      <h3>Programming Problems</h3>
+      <h5><a href="/primes">My Prime Number Solution</a></h5>
+      <h5><a href="/palindrome">Largest Palindrome Product</a></h5>
+      <h5><a href="/pandigital">Pandigital Products</a></h5>
+    </div>
 
 
-  <div id="editbox" class="box">
-   <hr />
-   <br /><br />
-    <h3>Edit Profile</h3>
-    <form action="/update" method="POST">
+    <div id="editbox" class="box">
+     <hr />
+     <h3>Edit Profile</h3>
+     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
           <textarea name="trainee[about]" rows="10" cols="100"><%= @profile["about"] %></textarea>
-          <br />
           <div class="wordcount">Words: <span id="about_wordcount"></span></div>
         </div>
-        <br />
         <!-- TODO - Add more fields so that your profile can be edited -->
 
-        <div class="form-group">
+        <div class="form-group detail-form">
           <label for="trainee[ambition]">Ambition</label>
           <textarea name="trainee[ambition]" rows="10" cols="100"><%= @profile["ambition"] %></textarea>
           <div class="wordcount">Words: <span id="ambition_wordcount"></span></div>
         </div>
-        <br />
 
-        <div class="form-group">
+        <div class="form-group detail-form">
           <label for="trainee[learning_experience]">Learning Experience</label>
           <textarea name="trainee[learning_experience]" rows="10" cols="100"><%= @profile["learning_experience"] %></textarea>
           <div class="wordcount">Words: <span id="learningexperience_wordcount"></span></div>
         </div>
-        <br />
 
-        <div class="form-group">
+        <div class="form-group detail-form">
           <label for="trainee[projects]">Projects</label>
           <textarea name="trainee[projects]" rows="10" cols="100"><%= @profile["projects"] %></textarea>
           <div class="wordcount">Words: <span id="projects_wordcount"></span></div>
         </div>
-        <br />
 
-        <div class="form-group">
+        <div class="form-group detail-form">
           <label for="trainee[rationale]">Rationale</label>
           <textarea name="trainee[rationale]" rows="10" cols="100"><%= @profile["rationale"] %></textarea>
           <div class="wordcount">Words: <span id="rationale_wordcount"></span></div>
         </div>
-        <br />
 
-        <div class="form-group">
+        <div class="form-group detail-form">
           <label for="trainee[how_did_you_hear]">How did you hear about us?</label>
           <textarea name="trainee[how_did_you_hear]" rows="10" cols="100"><%= @profile["how_did_you_hear"] %></textarea>
           <div class="wordcount">Words: <span id="howdidyouhear_wordcount"></span></div>
         </div>
-        <br />
 
         <div class="form-group">
           <label for="trainee[first_name]">First Name</label>
@@ -121,9 +230,13 @@
 
         <div class="form-group">
           <label for="trainee[gender]">Gender</label>
-          <select name="trainee[gender]">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
+          <select name="trainee[gender]" value="<%= @profile["gender"] %>">
+            <option value="Male"
+            <%= 'selected="selected"' if @profile["gender"] == "Male" %>
+            >Male</option>
+            <option value="Female"
+            <%= 'selected="selected"' if @profile["gender"] == "Female" %>
+            >Female</option>
           </select>
         </div>
 
@@ -171,13 +284,14 @@
       </fieldset>
     </form>
   </div>
-  </div>
-<% else %>
-  <div class="welcome">
-    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+</div>
 
-    <a href="/authorise">Authorise</a>
-  </div>
+<% else %>
+<div class="welcome">
+  <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+  <a href="/authorise">Authorise</a>
+</div>
 <% end %>
 
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js">
@@ -193,48 +307,33 @@
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
-  var about = profile_values[0].innerHTML;
-  var about_words = about.split(" ");
-  document.getElementById("about_wordcount").innerHTML = about_words.length;
-  total_words += about_words.length;
+  function countWords(section, index) {
+    var section_id = section + "_wordcount";
+    var content = profile_values[index].innerText;
+    var content_words = content.split(" ");
+    document.getElementById(section_id).innerHTML = content_words.length;
+    total_words += content_words.length;
+  };
 
-  var ambition = profile_values[1].innerHTML;
-  var ambition_words = ambition.split(" ");
-  document.getElementById("ambition_wordcount").innerHTML = ambition_words.length;
-  total_words += ambition_words.length;
-
-  var how_did_you_hear = profile_values[9].innerHTML;
-  var how_did_you_hear_words = how_did_you_hear.split(" ");
-  document.getElementById("howdidyouhear_wordcount").innerHTML = how_did_you_hear_words.length;
-  total_words += how_did_you_hear_words.length;
-
-  var learning_experience = profile_values[12].innerHTML;
-  var learning_experience_words = learning_experience.split(" ");
-  document.getElementById("learningexperience_wordcount").innerHTML = learning_experience_words.length;
-  total_words += learning_experience_words.length;
-
-  var projects = profile_values[15].innerHTML;
-  var projects_words = projects.split(" ");
-  document.getElementById("projects_wordcount").innerHTML = projects_words.length;
-  total_words += projects_words.length;
-
-  var rationale = profile_values[16].innerHTML;
-  var rationale_words = rationale.split(" ");
-  document.getElementById("rationale_wordcount").innerHTML = rationale_words.length;
-  total_words += rationale_words.length;
+  countWords("about", 0);
+  countWords("ambition", 1);
+  countWords("howdidyouhear", 8);
+  countWords("learningexperience", 10);
+  countWords("projects", 9);
+  countWords("rationale", 11);
 
   document.getElementById('word-count').innerHTML = total_words;
 
 
-/***************************** jQuery stuff *****************************/
+  /***************************** jQuery stuff *****************************/
 
-$(function() {
+  $(function() {
 
-  var $navButton = $('#nav_button');
-  var $navBar = $('#navbar');
-  var $navDiv = $('#navdiv');
-  var $upArrow = $('#uparrow');
-  var $downArrow = $('#downarrow');
+    var $navButton = $('#nav_button');
+    var $navBar = $('#navbar');
+    var $navDiv = $('#navdiv');
+    var $upArrow = $('#uparrow');
+    var $downArrow = $('#downarrow');
 
   // when the mouse is moved over the navigation button
   $navButton.mouseover(function() {

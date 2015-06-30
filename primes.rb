@@ -9,7 +9,6 @@ class Primes
     Prime.each(limit) do |prime|
       sum += prime
     end
-    return sum
   end
 end
 
