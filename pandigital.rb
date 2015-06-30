@@ -37,8 +37,7 @@ class Pandigital
         end
       end
     end
-    # when this return is removed, function returns "1..2000"
-    return sum
+    sum
   end
 end
 

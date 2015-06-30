@@ -14,7 +14,7 @@ class Palindrome
         end
       end
     end
-    # when this return is removed, function returns "100..999"
-    return largest_palindrome
+    largest_palindrome
   end 
 end
+
