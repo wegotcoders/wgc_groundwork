@@ -1,46 +1,44 @@
 
 
 
-<% if @profile %>
-  <h3 id="bigName" class="field-values"><%= "#{@profile["first_name"]} #{@profile["last_name"]}"
-    %></h3>
 
-  <div id="dob"><%= dob_date = Date.parse @profile["dob"]
-                          dob_date.strftime('%d %b %Y') %>
-                          <p>(<%= kids_age(Date.parse(@profile["dob"])) %>)</p>
+  <% if @profile %>
+    <!-- <div id="fixed-body"> -->
 
-  </div>
-  
-
-  <table id="table-small">
-     <tr> 
-      <td><1111</td>
-    </tr>
-    <tr> 
-      <td><%=  %> </td>
-    </tr>
-    <tr> 
-      <td><%= @profile["web_track_completedness"] %> </td>
-    </tr>
-  </table>  
-
-
-<!--my TODO to capitalize and replace underscores in field names-->
-<!-- Question answers -->
-  <% 
-    ["about","rationale","projects","learning_experience","ambition","how_did_you_hear"].each do |y|
-      item = @profile.select{|x| x==y}
-      item.each do |field, value| 
-  %>
-    <div class="profile-section box"> 
-      <h4 id="fieldname"><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+     <div id="pic-div" >
+        <img id="me-pic" src="/images/MeSerious.jpg" alt="Me"  />
     </div>
-  <%  end 
-    end 
-  %>
+
+      <h3 id="bigName" class="field-values"><%= "#{@profile["first_name"]} #{@profile["last_name"]}"
+        %></h3>
+
+      <div id="dob"><%= dob_date = Date.parse @profile["dob"]
+                              dob_date.strftime('%d %b %Y') %>
+                              <p>(<%= kids_age(Date.parse(@profile["dob"])) %>)</p>
+
+      </div>
+      
 
 
+
+    <!--myTODO to capitalize and replace underscores in field names-->
+    <!-- Question answers -->
+     <!--  <% 
+          @profile.each do |field, value| 
+            if ["about","rationale","projects","learning_experience","ambition","how_did_you_hear"].include? field
+      %>
+        <div class="profile-section box"> 
+          <h4 id="fieldname"><%= field.gsub("_"," ").capitalize %></h4>
+          <p class="profile-value"><%= value %></p>
+        </div>
+      <%  end 
+        end 
+      %>
+     -->
+     </div> <!--ends .content -->
+  </div> <!-- close the fixed-body class-->
+  
+  <div id="the-form">
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
@@ -52,25 +50,37 @@
     <a href="/primes?limit=100">My Prime Number Solution</a>
   </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+  
 
-    <form action="/update" method="POST">
+    <!-- </div> -->
+  <!-- <div id "big-Q-box" class="box"> -->
+    <!-- <h3>Edit Profile</h3> -->
+  
+    <form  style="position:relative"action="/update" method="POST">
       <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-          <!-- TODO - Add more fields so that your profile can be edited (try to do it dynamically) -->
-           <label class="testlabel" for="trainee[ambition]">Ambition</label>
-          <input class="inputbox" type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
-        </div>
-      
-        
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
+        <!-- <div class="form-group"> -->
+          <table style="width:100%;">
+            
+              <%  ["about","rationale","projects","learning_experience","ambition","how_did_you_hear"].each do |y| # doing all this to get fields in specified order
+                    @profile.select{|x| x==y}.each do |field, value| 
+              %>           <tr>
+                          <td class="big-q-td">
+                            <p style="vertical-align:bottom;" class="profile-field-label" ><%= field.gsub("_"," ").capitalize %></p> <!-- gave up trying to get the layout of this to work as a label -->
+                            <textarea name="trainee[<%= field %>]" class="profile-value-input"><%= value %></textarea>
+                          </td>
+                        </tr>
+                  <!-- DID - Add more fields so that your profile can be edited (try to do it dynamically) -->
+              <%  
+                    end
+                  end 
+              %>
+          </table>
+        <!-- </div> -->
+        <input type="submit" value="Save" class="btn btn-primary" />
       </fieldset>
     </form>
   </div>
+  <!-- </div> -->
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -84,11 +94,11 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values =  document.getElementsByClassName('profile-value');
+  var profile_values = document.getElementsByClassName('profile-value-input');
   var total_words = 0;
 
   for (i=0;i<profile_values.length;i++){
-    total_words += profile_values[i].innerHTML.split(/\S+/g).length;//profile_values.length();
+    total_words += profile_values[i].value.split(/\S+/g).length;//profile_values.length();
   };
   document.getElementById('word-count').innerHTML = total_words;
 </script>

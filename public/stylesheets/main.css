@@ -3,19 +3,41 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background-color: #FAFAFA;
+  width:100%;
+}
+
+#pic-div {
+  text-align: center;
+}
+
+#me-pic {
+    float:center;
+    max-width: 20%;
+    max-height: 20%;
+    border-radius: 100%;
+    border-width: 3px;
+    border-color: 
+}
+#fixed-body{
+    position: fixed;
+    width:100%;
+    background-color: #FAFAFA;
 }
 
 #dob {font-style: italic;
    text-align: center;}
 
-#dob p {font-size: 0.75em;}
+/*#dob p {font-size: 0.em;}*/
 
 #logo {
   text-align: center;
 }
 
 #content {
-  padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+
 }
 
 .box {
@@ -46,11 +68,48 @@ h3 {
 
 h4 {font-size:1.25em};
 
-.form-group {font-family:Cursive;}
 
-.inputbox {color: red;
+/*.inputbox {color: red;
             width:33%;
-          }
+          }*/
 
-table {float: center;}
+
+table {float: center;
+       width: 100%;}
+
+#the-form {
+  float:center;
+  position:relative;
+  z-index:-1;
+  top:35em;
+  /*width:100%;*/
+}
+
+
+
+.big-q-td {
+  border-style: solid;
+  border:1px;
+  width:100%;
+  display: inline;
+}
+
+.big-q-td p {
+  font-size: 1.5em;
+}
+.profile-field-label {
+  text-align:center;
+}
+
+.profile-value-input {
+  width: 80%;
+  font-size: 1em;
+  text-align: center;
+  height:10em;
+  padding-left:3em;
+  padding-right:3em;
+  margin: 5em;
+
+}
+
 

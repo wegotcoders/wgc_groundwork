@@ -10,10 +10,12 @@
 </head>
 <body>
 
-  <div id="logo">
-    <img src="/images/logo.png" alt="We Got Coders"  />
-  </div>
 
+<div id="fixed-body"> <!--close this inside index erb -->
+    <div id="logo">
+      <img src="/images/logo.png" alt="We Got Coders"  />
+    </div>
+    
   <div id="content">
     <%= yield %>
   </div>
