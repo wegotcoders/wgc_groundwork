@@ -5,6 +5,11 @@ body {
   color: #333;
 }
 
+#dob {font-style: italic;
+   text-align: center;}
+
+#dob p {font-size: 0.75em;}
+
 #logo {
   text-align: center;
 }
@@ -26,6 +31,7 @@ body {
 
 h3 {
   font-size: 1.5em;
+  text-align: center;
 }
 
 .error {
@@ -40,7 +46,11 @@ h3 {
 
 h4 {font-size:1.25em};
 
-.inputbox {
-  width:100%;
-  position: relative;                   
-}
+.form-group {font-family:Cursive;}
+
+.inputbox {color: red;
+            width:33%;
+          }
+
+table {float: center;}
+
