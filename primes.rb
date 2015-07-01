@@ -5,10 +5,9 @@ require 'prime'
 class Primes
   def self.sum_to(limit = 100)
     # TODO - add your prime number solution here...
-    sum = 0
-    Prime.each(limit) do |prime|
-      sum += prime
-    end
+    Prime.each(limit).reduce do |sum, prime|
+    	sum + prime
+  	end
   end
 end
 
