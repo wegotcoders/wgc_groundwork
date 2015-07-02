@@ -8,6 +8,8 @@ set :site_url, 'http://wegotcoders.com'
 set :session_secret, 'secret'
 enable :sessions
 
+ ADDITIONAL_SOCIALS = {:linkedin => "https://uk.linkedin.com/pub/adam-misrahi/45/216/a4a", :codewars => "http://www.codewars.com/users/Adamantish", :mail => "mailto:miss.rahee@gmail.com"}
+
 def kids_age(dob, as_of = Time.now.utc.to_date ) 
   adjuster = (as_of.month > dob.month || (as_of.month == dob.month && as_of.day >= dob.day)) ? 0 : 1
   dob_years = as_of.year - dob.year - adjuster
@@ -17,12 +19,20 @@ def kids_age(dob, as_of = Time.now.utc.to_date )
   "Age #{dob_years}" << (quarter>0 ? ' and ' << number_words[quarter] : "")
 end
 
+# def semicolumn(semicolon_delim_str,col)
+#   semicolon_delim_str.split(";")[col-1]
+# end
+
 get '/primes' do
   # DID - Can we make this dynamic?
   @limit = params[:limit].to_i
 
   # DID - add your prime number solution in the primes.rb file.
   @sum = Primes.sum_to(@limit)
+
+  if signed_in? 
+    @profile = trainee.get_profile #to avoid repeating this for every page I would have put the social badges in index and just positioned them up but just had too much trouble figuring how to do that with fixed position
+  end
 
   erb :primes, :layout => :main
 end
@@ -50,3 +60,14 @@ include Sinatra::OauthRoutes
 def trainee
   @trainee ||= WeGotCoders::Trainee.new(settings.site_url, session[:access_token])
 end
+
+
+          # ["codecademy","github","twitter"].each do |y| # doing all this to get fields in specified order
+                  # @profile.each do |k, v|
+                  #     puts v
+                  #   end
+                  # end
+                    # socials.each do |value| 
+
+
+#puts (WeGotCoders::Trainee.methods - Object.methods).sort # trying to see what methods are available

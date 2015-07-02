@@ -3,13 +3,13 @@
 
 
   <% if @profile %>
-    <!-- <div id="fixed-body"> -->
 
-     <div id="pic-div" >
-        <img id="me-pic" src="/images/MeSerious.jpg" alt="Me"  />
+
+     <div id="me-pic-div" class="pic-div">
+        <img id="me-pic" src="/images/square_me_on_green.jpg" alt="Me"  />
     </div>
 
-      <h3 id="bigName" class="field-values"><%= "#{@profile["first_name"]} #{@profile["last_name"]}"
+      <h3 id="big-name" class="field-values"><%= "#{@profile["first_name"]} #{@profile["last_name"]}".upcase
         %></h3>
 
       <div id="dob"><%= dob_date = Date.parse @profile["dob"]
@@ -21,24 +21,8 @@
 
 
 
-    <!--myTODO to capitalize and replace underscores in field names-->
-    <!-- Question answers -->
-     <!--  <% 
-          @profile.each do |field, value| 
-            if ["about","rationale","projects","learning_experience","ambition","how_did_you_hear"].include? field
-      %>
-        <div class="profile-section box"> 
-          <h4 id="fieldname"><%= field.gsub("_"," ").capitalize %></h4>
-          <p class="profile-value"><%= value %></p>
-        </div>
-      <%  end 
-        end 
-      %>
-     -->
-     </div> <!--ends .content -->
-  </div> <!-- close the fixed-body class-->
   
-  <div id="the-form">
+
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
@@ -52,20 +36,19 @@
 
   
 
-    <!-- </div> -->
-  <!-- <div id "big-Q-box" class="box"> -->
-    <!-- <h3>Edit Profile</h3> -->
+
+    <h3>Edit Profile</h3>
   
     <form  style="position:relative"action="/update" method="POST">
       <fieldset>
         <!-- <div class="form-group"> -->
           <table style="width:100%;">
             
-              <%  ["about","rationale","projects","learning_experience","ambition","how_did_you_hear"].each do |y| # doing all this to get fields in specified order
+              <%  ["codecademy","github","twitter","about","rationale","projects","learning_experience","ambition","how_did_you_hear"].each do |y| # doing all this to get fields in specified order
                     @profile.select{|x| x==y}.each do |field, value| 
               %>           <tr>
                           <td class="big-q-td">
-                            <p style="vertical-align:bottom;" class="profile-field-label" ><%= field.gsub("_"," ").capitalize %></p> <!-- gave up trying to get the layout of this to work as a label -->
+                            <div style="font-family:Futura;" class="profile-field-label" ><%= field.gsub("_"," ").capitalize %></div> <!-- gave up trying to get the layout of this to work as a label -->
                             <textarea name="trainee[<%= field %>]" class="profile-value-input"><%= value %></textarea>
                           </td>
                         </tr>
@@ -79,7 +62,7 @@
         <input type="submit" value="Save" class="btn btn-primary" />
       </fieldset>
     </form>
-  </div>
+  <!-- </div> -->
   <!-- </div> -->
 <% else %>
   <div class="welcome">

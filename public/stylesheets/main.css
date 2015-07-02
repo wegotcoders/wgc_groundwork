@@ -1,5 +1,5 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: Futura, "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
@@ -7,36 +7,127 @@ body {
   width:100%;
 }
 
-#pic-div {
-  text-align: center;
+img {
+  max-width: 100%;
+}
+
+#nav-bar {
+  height: 6em;
+  background-color: #242424;
+  width: 100%%;
+  position: fixed;
+  z-index: 2;
+  margin-right: 2em;
+}
+
+#logo {
+  text-align: left;
+    position: fixed;
+    width: auto;
+    z-index:3;
+    padding: 0.6em 1em 0.5em 2em;
+}
+
+
+
+#social-badge-bar{
+   float: right;
+   margin-right: 1em;
+     z-index: 10;
+     height: 100%;
+     width: auto;
+}
+
+
+ 
+
+.social-badges {
+  margin: 1em 0.5em 1em 0em;
+  float: right;
+  border-radius: 100%;
+  overflow: hidden;
+  height: 50px;
+  width: 50px;
+
+
+
+}
+
+.gradient-div {
+  height: 50px;
+  height: 50px;
+  opacity: 0.5;
+  z-index: 5;
+
+  background: -moz-linear-gradient(-45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.22) 22%, rgba(38,22,3,1) 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(22%,rgba(255,255,255,0.22)), color-stop(100%,rgba(38,22,3,1)));
+  background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.22) 22%,rgba(38,22,3,1) 100%);
+  background: -o-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.22) 22%,rgba(38,22,3,1) 100%);
+  background: -ms-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.22) 22%,rgba(38,22,3,1) 100%);
+  background: linear-gradient(135deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.22) 22%,rgba(38,22,3,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#261603',GradientType=1 );
+
+}
+
+.social-badge-img {
+  min-width: 100%;
+  min-height: 100%;
+ 
+}
+
+/*can't get the hover working*/
+.gradient-div:hover {
+      cursor: hand;
+    cursor: pointer;
+    
+    -webkit-transition: 0.2s ease-out;  
+    -moz-transition:  0.2s ease-out;  
+    -o-transition: 0.2s ease-out;  
+    transition:  0.2s ease-out;  
+    opacity :.0;
+}
+
+
+#me-pic-div {
+  margin-left: auto ;
+  margin-right: auto;
+ width:20%;
+ height: 20%;
+
+
 }
 
 #me-pic {
-    float:center;
-    max-width: 20%;
-    max-height: 20%;
-    border-radius: 100%;
-    border-width: 3px;
-    border-color: 
-}
-#fixed-body{
-    position: fixed;
-    width:100%;
-    background-color: #FAFAFA;
+
+  /*  max-width: 100%;
+    max-height: 100%;*/
+       border-radius: 100%;
+    border-width: 2px;
+    border-color: lightgrey;
+    border-style: solid;
+
+  
+    /*float:center;*/
+   
 }
 
+
+
+#big-name {
+  font-size: 2em;
+}
 #dob {font-style: italic;
    text-align: center;}
 
 /*#dob p {font-size: 0.em;}*/
 
-#logo {
-  text-align: center;
-}
+
 
 #content {
   padding-left: 2em;
   padding-right: 2em;
+   padding-top: 7em;
+   text-align:center;
 
 }
 
@@ -94,8 +185,10 @@ table {float: center;
   display: inline;
 }
 
-.big-q-td p {
+.big-q-td div {
+   position:relative;
   font-size: 1.5em;
+  vertical-align: text-bottom;
 }
 .profile-field-label {
   text-align:center;
@@ -106,9 +199,9 @@ table {float: center;
   font-size: 1em;
   text-align: center;
   height:10em;
-  padding-left:3em;
-  padding-right:3em;
-  margin: 5em;
+/*  padding-left:3em;
+  padding-right:3em;*/
+  margin: 1em auto 3em auto;
 
 }
 

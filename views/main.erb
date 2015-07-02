@@ -11,14 +11,38 @@
 <body>
 
 
-<div id="fixed-body"> <!--close this inside index erb -->
-    <div id="logo">
-      <img src="/images/logo.png" alt="We Got Coders"  />
+<div id="nav-bar"> 
+
+    <div id="social-badge-bar">
+
+      <%    
+     
+
+        socials = @profile.merge(ADDITIONAL_SOCIALS)
+
+      [:mail,"codecademy","github","twitter",:linkedin,:codewars].each do |y| # doing all this to get fields in specified order. In a proper app, these hard-coded bits would come from a DB
+                    socials.select{|x| x==y}.each do |field, value| 
+              %>
+
+       <div class="social-badges" style="background-image: url('/images/<%= field %>.png')">
+            <div class="gradient-div" onclick="window.open('<%= value %>'); return false;"></div>
+       </div>
+
+      <% end 
+       end
+      %>
+
     </div>
-    
+  </div>
+
+  <div id="logo">
+    <img src="/images/logo_whitetext.png" alt="We Got Coders"  />
+  </div>
+
   <div id="content">
     <%= yield %>
   </div>
 
 </body>
 </html>
+
