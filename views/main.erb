@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>We Got Coders - <%= @profile['first_name'] << " " << @profile['last_name'] %>'s Application</title>
+  <title>We Got Coders - My Amazing Application</title>
   <link rel="stylesheet" href="/stylesheets/reset.css">
   <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
@@ -16,7 +16,7 @@
       <div id="social-badge-bar">
 
         <%    
-          socials = @profile.merge(ADDITIONAL_SOCIALS)
+          socials = ADDITIONAL_SOCIALS.merge(@profile || {})
           [:mail,"codecademy",:github,"twitter",:linkedin,:codewars].each do |y| # doing all this to get fields in specified order. In a proper app, these hard-coded bits would come from a DB
           
           socials.select{|x| x==y}.each do |field, value| 
@@ -40,6 +40,7 @@
   <div id="content">
     <%= yield %>
   </div>
+
 
 </body>
 </html>
