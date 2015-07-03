@@ -4,32 +4,33 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>We Got Coders - My Amazing Application</title>
+  <title>We Got Coders - <%= @profile['first_name'] << " " << @profile['last_name'] %>'s Application</title>
   <link rel="stylesheet" href="/stylesheets/reset.css">
   <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
 <body>
 
 
-<div id="nav-bar"> 
+  <div id="nav-bar"> 
 
-    <div id="social-badge-bar">
+      <div id="social-badge-bar">
 
-      <%    
-        socials = @profile.merge(ADDITIONAL_SOCIALS)
-      [:mail,"codecademy",:github,"twitter",:linkedin,:codewars].each do |y| # doing all this to get fields in specified order. In a proper app, these hard-coded bits would come from a DB
-                    socials.select{|x| x==y}.each do |field, value| 
-      %>
+        <%    
+          socials = @profile.merge(ADDITIONAL_SOCIALS)
+          [:mail,"codecademy",:github,"twitter",:linkedin,:codewars].each do |y| # doing all this to get fields in specified order. In a proper app, these hard-coded bits would come from a DB
+          
+          socials.select{|x| x==y}.each do |field, value| 
+        %>
+         <div  class="social-badges"  style="background-image: url('/images/<%= field %>.png')">
+            <!-- transparency gradient overlay eases out on hover -->
+              <div class="gradient-div" onclick="window.open('<%= value %>'); return false;"></div>
+         </div>
+        <% 
+          end 
+         end
+        %>
 
-       <div  class="social-badges"  style="background-image: url('/images/<%= field %>.png')">
-          <!-- transparency gradient overlay eases out on hover -->
-            <div class="gradient-div" onclick="window.open('<%= value %>'); return false;"></div>
-       </div>
-      <% end 
-       end
-      %>
-
-    </div>
+      </div>
   </div>
 
   <div id="logo">

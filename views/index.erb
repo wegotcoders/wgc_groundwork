@@ -2,80 +2,78 @@
 
 
 
-  <% if @profile %>
+<% if @profile %>
 
 
-     <div id="me-pic-div" class="pic-div">
-        <img id="me-pic" src="/images/MeSillyGrinSquare.jpg" alt="Me"  />
-    </div>
+<div id="me-pic-div" class="pic-div">
+  <img id="me-pic" src="/images/MeSillyGrinSquare.jpg" alt="Me"  />
+</div>
 
-      <h3 id="big-name" class="field-values"><%= "#{@profile["first_name"]} #{@profile["last_name"]}".upcase
-        %></h3>
+<h3 id="big-name" class="field-values"><%= "#{@profile["first_name"]} #{@profile["last_name"]}".upcase %></h3>
 
-      
-      <!-- <div id="dob"> -->
-        <ul>
-          <li><%= dob_date = Date.parse @profile["dob"]
-                              dob_date.strftime('%d %b %Y') %> (<%= kids_age(Date.parse(@profile["dob"])) %>)</li>
-                              <li><%= @profile["employment_status"] %></li>
-                              <li><%= @profile["gender"] %></li>
+<!-- <div id="dob"> -->
+  <ul>
+    <li><%= dob_date = Date.parse @profile["dob"]
+                        dob_date.strftime('%d %b %Y') %> (<%= kids_age(Date.parse(@profile["dob"])) %>)</li>
+                        <li><%= @profile["employment_status"] %></li>
+                        <li><%= @profile["gender"] %></li>
 
-        </ul>
-      <!-- </div> -->
-      
-
-  <!-- <div id="problems" class="box"> -->
-    <hr>
-    <h3>Programming Problems</h3>
-    <br>
-      <%    
-          # [:primes,:snail_sort,:double_cola].each do |y| # doing all this to get fields in specified order. In a proper app, these hard-coded bits would come from a DB
-                        PROJECTS.each do |field, value| # this line and part of the above one are copy and pasted from another section. Not sure how to modularise it. 
-      %>
-       <div class="project-badges" onclick="location.href='<%= value %>'; return false;" style="background-image: url('/images/<%= field %>.png')">
-
-            <div class="project-titles" ><%= field.to_s.gsub("_"," ") %></div>
-            <div class="gradient-div"></div>
-       </div>
-      <% end 
-       
-      %>
-      <hr>
-  <!-- </div> -->
+  </ul>
+<!-- </div> -->
 
 
-    <!-- <h3>Edit Profile</h3> -->
-  
-    <form  style="position:relative"action="/update" method="POST">
-      <input class ="submit-button" type="submit" value="Save" class="btn btn-primary" />
-      <fieldset>
-        <!-- <div class="form-group"> -->
-          <table style="width:100%;">
-            
-              <%  ["about","rationale","projects","learning_experience","ambition","how_did_you_hear"].each do |y| # doing all this to get fields in specified order
-                    @profile.select{|x| x==y}.each do |field, value| 
-              %>           <tr>
-                          <td class="big-q-td">
-                            <div style="font-family:Futura;" class="profile-field-label" ><%= field.gsub("_"," ").capitalize %></div> <!-- gave up trying to get the layout of this to work as a label -->
-                            <textarea name="trainee[<%= field %>]" class="profile-value-input"><%= value %></textarea>
-                          </td>
-                        </tr>
-                  <!-- DID - Add more fields so that your profile can be edited (try to do it dynamically) -->
-              <%  
-                    end
-                  end 
-              %>
-          </table>
-        <!-- </div> -->
-      </fieldset>
-    </form>
+<!-- <div id="problems" class="box"> -->
+<hr>
+<h3>Programming Problems</h3>
+<br>
+<%    
+    # [:primes,:snail_sort,:double_cola].each do |y| # doing all this to get fields in specified order. In a proper app, these hard-coded bits would come from a DB
+                  PROJECTS.each do |field, value| # this line and part of the above one are copy and pasted from another section. Not sure how to modularise it. 
+%>
+<div class="project-badges" onclick="location.href='<%= value %>'; return false;" style="background-image: url('/images/<%= field %>.png')">
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- DID - Set the contents of this span with JavaScript -->
-    <span id="word-count"></span> words found. <br>
-    Ego: <span id="me-count"></span> mentions of "I"/"my".
-  </div>
+    <div class="project-titles" ><%= field.to_s.gsub("_"," ") %></div>
+    <div class="gradient-div"></div>
+</div>
+<% end 
+ 
+%>
+<hr>
+<!-- </div> -->
+
+
+<!-- <h3>Edit Profile</h3> -->
+
+<form  style="position:relative"action="/update" method="POST">
+  <input class ="submit-button" type="submit" value="Save" class="btn btn-primary" />
+  <fieldset>
+    <!-- <div class="form-group"> -->
+      <table style="width:100%;">
+        
+          <%  ["about","rationale","projects","learning_experience","ambition","how_did_you_hear"].each do |y| # doing all this to get fields in specified order
+                @profile.select{|x| x==y}.each do |field, value| 
+          %>           <tr>
+                      <td class="big-q-td">
+                        <h3 style="font-family:Futura;" class="profile-field-label" ><%= field.gsub("_"," ").capitalize %></h3> <!-- gave up trying to get the layout of this to work as a label -->
+                        <textarea name="trainee[<%= field %>]" class="profile-value-input"><%= value %></textarea>
+                      </td>
+                    </tr>
+              <!-- DID - Add more fields so that your profile can be edited (try to do it dynamically) -->
+          <%  
+                end
+              end 
+          %>
+      </table>
+    <!-- </div> -->
+  </fieldset>
+</form>
+
+<div id="stats" class="box">
+  <h3>Stats</h3>
+  <!-- DID - Set the contents of this span with JavaScript -->
+  <span id="word-count"></span> words found. <br>
+  Ego: <span id="me-count"></span> mentions of "I"/"my".
+</div>
 
 
 <% else %>
@@ -97,13 +95,13 @@
       var total_words = 0;
       for (i=0;i<arr.length;i++){
         total_words += arr[i].value.split(regex).length;//arr.length();
-    };
-    return total_words;
-  };
+       };
+      return total_words;
+   };
 
 
-  document.getElementById('word-count').innerHTML = matchCount(profile_values,/\S+/g);
-  document.getElementById('me-count').innerHTML = matchCount(profile_values,/\b(I|(m|M)y)\b/g);
+document.getElementById('word-count').innerHTML = matchCount(profile_values,/\S+/g);
+document.getElementById('me-count').innerHTML = matchCount(profile_values,/\b(I|(m|M)y)\b/g);
 // \b(I|(m|M)y)\b/g
 
 </script>
