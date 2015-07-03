@@ -8,7 +8,7 @@ set :site_url, 'http://wegotcoders.com'
 set :session_secret, 'secret'
 enable :sessions
 
-ADDITIONAL_SOCIALS = {:github => "https://github.com/Adamantish", :linkedin => "https://uk.linkedin.com/pub/adam-misrahi/45/216/a4a", :codewars => "http://www.codewars.com/users/Adamantish", :mail => "mailto:miss.rahee@gmail.com"}
+ADDITIONAL_SOCIALS = {:github => "https://github.com/Adamantish", :coderwall => "https://coderwall.com/Adamantish", :linkedin => "https://uk.linkedin.com/pub/adam-misrahi/45/216/a4a", :codewars => "http://www.codewars.com/users/Adamantish", :mail => "mailto:miss.rahee@gmail.com"}
 # included github in the additionals because its field on the profile seems to be read-only.
 PROJECTS = {:primes => "/primes?limit=100", :platform => "/platform", :snail_sort => "/snail_sort", :double_cola => "/double_cola"}
 
