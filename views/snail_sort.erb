@@ -1,0 +1,99 @@
+<body >
+
+<h3>Array manipulation JS challenge</h3>
+
+Hosted <a href="http://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1">here</a> on codewars. 
+<br>
+<img src="/images/snail_sort_screenshot.png">
+
+
+
+<br>
+<p>Test this 2d array:</p>
+[ <br>
+[7, 2, 3, 6, 10, 6], <br>
+[20, 21, 22, 23, 24, 7], <br> 
+[19, 32, 20, 34, 25, 8], <br>
+[18, 31, 71, 35, 26, 16], <br>
+[17, 30, 29, 28, 27, 10], <br>
+[16, 15, 80, 13, 12, 11] <br>
+] <br>
+
+
+<br>
+<input type="button" class ="submit-button" value="Go!" onclick='getResult();'></input>
+<br>
+<h3 id="snail-result">-</h3>
+
+</body>
+<script language="javascript">
+	
+	
+	function getResult() {
+		//var times = document.getElementById('platform-test-array').value;
+
+
+		var arr = [ 
+					[7, 2, 3, 6, 10, 6], 
+					[20, 21, 22, 23, 24, 7],  
+					[19, 32, 20, 34, 25, 8], 
+					[18, 31, 71, 35, 26, 16], 
+					[17, 30, 29, 28, 27, 10], 
+					[16, 15, 80, 13, 12, 11] 
+				   ] 
+							 
+		document.getElementById('snail-result').innerHTML = snail(arr)
+	};
+
+	// Fairly pleased with this but this was before I found out about how to mutate arrays. Would have made simpler by stripping off the sides of the square in turn, had I known.
+
+	snail = function(array) {
+  
+   var  x = 0,
+        y = 0,
+       direcX = 1,
+       direcY = 0,
+       momentumX = -1,
+       numRepeats = 3;
+  
+   if (array[0][0]==null ) return []
+
+	  function move() {x += direcX,y += direcY;}
+
+	  function osc() {
+	    direcX += momentumX;
+	    if (direcX!==0) momentumX = momentumX*-1;
+	    return direcX;
+	  }
+
+	  var n = array.length;
+	  var dist = n - 1;
+	  var out = [];
+	 
+	  //initial push
+	  out.push(array[y][x]);
+	  
+	  while (dist>0)
+	  {
+	    for (j=1;j<=numRepeats;j++)
+	        {
+	          for (i=0;i<dist;i++)
+	              {
+	                move();
+	                out.push(array[y][x]);
+	              }
+	           //change direction
+	           direcY = direcX;
+	           direcX = osc();
+	        }
+	     numRepeats = 2;
+	     dist--; 
+	    } 
+	  return out;
+	 };
+	
+</script>
+
+<div>
+  <a href="/">Back</a>
+</div>

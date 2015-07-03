@@ -1,0 +1,59 @@
+<body >
+
+<h3>Math focussed JS challenge</h3>
+
+Hosted <a href="http://www.codewars.com/kata/double-cola/">here</a> on codewars. Hope you like screenshots.
+
+<img src="/images/double_cola_screenshot.png">
+
+<div class="left-align">
+
+
+</div>
+
+
+
+	<div id="test-array"></div>
+
+
+
+<br>
+<p>Enter the nth cola to find out who gets it</p>
+<input type="textbox" id="colaNum"  value="35773459787234"></input>
+
+<br>
+<input type="button" class ="submit-button" value="Go!" onclick='getResult();'></input>
+<br>
+<h3 id="cola-result">-</h3>
+
+</body>
+<script language="javascript">
+	
+	
+names = ["Sheldon","Leonard","Penny","Rajesh","Howard"]
+
+	function getResult() {
+		//var times = document.getElementById('platform-test-array').value;
+
+		 var colaNum = document.getElementById('colaNum').value 
+		document.getElementById('cola-result').innerHTML = whoIsNext(names, parseInt(colaNum))
+	};
+
+	function whoIsNext(names, r){
+
+	  var numOfGeeks = names.length;
+	  var loga = Math.log((r/numOfGeeks)+1) / Math.log(2);
+	  var completeCycles = Math.floor(loga)
+	  var fullCycleColas = (Math.pow(2,completeCycles)-1) * numOfGeeks;
+	  var currCycleSize  =  Math.pow(2,completeCycles)    * numOfGeeks;
+	  var geekCode = Math.ceil((r - fullCycleColas)/currCycleSize * numOfGeeks);
+	  
+	  return names[geekCode-1]
+	}
+
+	
+</script>
+
+<div>
+  <a href="/">Back</a>
+</div>

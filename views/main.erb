@@ -10,13 +10,38 @@
 </head>
 <body>
 
+
+  <div id="nav-bar"> 
+
+      <div id="social-badge-bar">
+
+        <%    
+          socials = ADDITIONAL_SOCIALS.merge(@profile || {})
+          [:mail,"twitter",:linkedin,:coderwall,"codecademy",:github,:codewars].each do |y| # doing all this to get fields in specified order. In a proper app, these hard-coded bits would come from a DB
+          
+          socials.select{|x| x==y}.each do |field, value| 
+        %>
+         <div  class="social-badges"  style="background-image: url('/images/<%= field %>.png')">
+            <!-- transparency gradient overlay eases out on hover -->
+              <div class="gradient-div" onclick="window.open('<%= value %>'); return false;"></div>
+         </div>
+        <% 
+          end 
+         end
+        %>
+
+      </div>
+  </div>
+
   <div id="logo">
-    <img src="/images/logo.png" alt="We Got Coders"  />
+    <img src="/images/logo_whitetext.png" alt="We Got Coders"  />
   </div>
 
   <div id="content">
     <%= yield %>
   </div>
 
+
 </body>
 </html>
+

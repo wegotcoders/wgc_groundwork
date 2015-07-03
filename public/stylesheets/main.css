@@ -1,16 +1,184 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: Futura, "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background-color: #FAFAFA;
+  width:100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+ list-style-position: inside;
+}
+
+li {
+  list-style-type: disc;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+.left-align {
+  text-align: left;
+}
+
+#nav-bar {
+  height: 6em;
+  background-color: #242424;
+  width: 100%%;
+  position: fixed;
+  z-index: 2;
+  margin-right: 2em;
 }
 
 #logo {
-  text-align: center;
+  text-align: left;
+    position: fixed;
+    width: auto;
+    z-index:3;
+    padding: 0.6em 1em 0.5em 2em;
 }
 
+
+
+#social-badge-bar{
+   float: right;
+   margin-right: 1em;
+     z-index: 10;
+     height: 100%;
+     width: auto;
+}
+
+.social-badges {
+  border-radius: 100%;
+  overflow: hidden;
+  float: right;
+  margin: 1em 0.5em 1em 0em;
+  height: 50px;
+  width: 50px;
+}
+
+.project-badges {
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0.5em 1em;
+  height: 100px;
+  width: 100px;
+
+   -webkit-transition: opacity 0.2s ease-out;  
+    -moz-transition:  opacity 0.2s ease-out;  
+    -o-transition: opacity 0.2s  ease-out;  
+    transition:  opacity 0.2s ease-out;  
+
+
+}
+
+.project-badges:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: 0.5;
+    
+}
+
+.project-titles {
+  color: black ;
+  z-index:11;
+  width: 100%;
+  height: 100%;
+  font-size: 1.25em;
+  padding-top: 35px;
+  opacity: 0;
+
+ 
+
+    -webkit-transition: opacity 0.2s ease-in;  
+    -moz-transition:  opacity 0.2s ease-in;  
+    -o-transition: opacity 0.2s  ease-in;  
+    transition:  opacity 0.2s ease-in;  
+
+}
+
+.project-titles:hover {
+  opacity:1;
+   
+}
+
+.gradient-div {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  opacity: 0.4;
+  z-index: 5;
+
+  
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(20%,rgba(255,255,255,0.16)), color-stop(100%,rgba(38,22,3,0.8)));
+  background: -moz-linear-gradient(-45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.16) 20%, rgba(38,22,3,0.8) 100%);
+  background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.16) 20%,rgba(38,22,3,0.8) 100%);
+  background: -o-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.16) 20%,rgba(38,22,3,0.8) 100%);
+  background: -ms-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.16) 20%,rgba(38,22,3,0.8) 100%);
+  background: linear-gradient(135deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.16) 20%,rgba(38,22,3,0.8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#cc261603',GradientType=1 );
+
+}
+
+.social-badge-img {
+  min-width: 100%;
+  min-height: 100%;
+ 
+}
+
+/*can't get the hover working*/
+.gradient-div:hover {
+    cursor: hand;
+    cursor: pointer;
+    
+    -webkit-transition: 0.2s ease-out;  
+    -moz-transition:  0.2s ease-out;  
+    -o-transition: 0.2s ease-out;  
+    transition:  0.2s ease-out;  
+    opacity :.0;
+}
+
+
+#me-pic-div {
+  margin-left: auto ;
+  margin-right: auto;
+ width:20%;
+ height: 20%;
+
+
+}
+
+#me-pic {
+
+    border-radius: 100%;
+    border-width: 2px;
+    border-color: lightgrey;
+    border-style: solid;
+
+}
+
+#big-name {
+  font-size: 2em;
+}
+
+#dob {font-style: italic;
+   text-align: center;}
+
+/*#dob p {font-size: 0.em;}*/
+
+
 #content {
-  padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+   padding-top: 7em;
+   text-align:center;
+
 }
 
 .box {
@@ -26,6 +194,8 @@ body {
 
 h3 {
   font-size: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .error {
@@ -37,3 +207,81 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+h4 {font-size:1.25em};
+
+
+/*.inputbox {color: red;
+            width:33%;
+          }*/
+
+#codecademy-table {
+
+ 
+}
+
+table {float: center;
+       width: 100%;}
+
+textarea {
+  border-radius: 4px;
+  font-family: Futura;
+}
+
+#the-form {
+  float:center;
+  position:relative;
+  z-index:-1;
+  top:35em;
+  /*width:100%;*/
+}
+
+.submit-button {
+    color: #fcf9fc;
+  background: #F9650E;
+  border-radius: 58px;
+  font-size: 20px;
+  padding: 30px 20px 30px 20px;
+  margin: 1em;
+  border: solid #1f628d 10px;
+  text-decoration: none;
+  opacity: 1
+}
+
+.submit-button:hover {
+    -webkit-transition: 0.2s ease-out;  
+    -moz-transition:  0.2s ease-out;  
+    -o-transition: 0.2s ease-out;  
+    transition:  0.2s ease-out;  
+  opacity: 0.7
+}
+
+
+.big-q-td {
+  border-style: solid;
+  border:1px;
+  width:100%;
+  display: inline;
+}
+
+.big-q-td div {
+   position:relative;
+  font-size: 1.5em;
+  vertical-align: text-bottom;
+}
+.profile-field-label {
+  text-align:center;
+}
+
+.profile-value-input {
+  width: 80%;
+  font-size: 1em;
+  text-align: center;
+  height:10em;
+/*  padding-left:3em;
+  padding-right:3em;*/
+  margin: 1em auto 3em auto;
+
+}
+
+
