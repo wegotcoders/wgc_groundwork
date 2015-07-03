@@ -1,8 +1,5 @@
 class Primes
 
-  def self.sum_to(limit)
-        list_to(limit).inject{|sum,x| sum + x }
-  end 
 #----------------------------------------
 	#--There's a built in class for this but I'm guessing that's not what you're after
 	 # require 'prime'
@@ -28,5 +25,9 @@ class Primes
     arr.compact
   end
 
+  def self.sum_to(limit)
+        list_to(limit).inject{|sum,x| sum + x }
+  end
+   
 end
 

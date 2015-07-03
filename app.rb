@@ -8,7 +8,9 @@ set :site_url, 'http://wegotcoders.com'
 set :session_secret, 'secret'
 enable :sessions
 
- ADDITIONAL_SOCIALS = {:linkedin => "https://uk.linkedin.com/pub/adam-misrahi/45/216/a4a", :codewars => "http://www.codewars.com/users/Adamantish", :mail => "mailto:miss.rahee@gmail.com"}
+ADDITIONAL_SOCIALS = {:github => "https://github.com/Adamantish", :linkedin => "https://uk.linkedin.com/pub/adam-misrahi/45/216/a4a", :codewars => "http://www.codewars.com/users/Adamantish", :mail => "mailto:miss.rahee@gmail.com"}
+# included github in the additionals because its field on the profile seems to be read-only.
+PROJECTS = {:primes => "/primes?limit=100", :snail_sort => "/snail_sort/", :double_cola => "/double_cola/"}
 
 def kids_age(dob, as_of = Time.now.utc.to_date ) 
   adjuster = (as_of.month > dob.month || (as_of.month == dob.month && as_of.day >= dob.day)) ? 0 : 1
@@ -31,11 +33,32 @@ get '/primes' do
   @sum = Primes.sum_to(@limit)
 
   if signed_in? 
-    @profile = trainee.get_profile #to avoid repeating this for every page I would have put the social badges in index and just positioned them up but just had too much trouble figuring how to do that with fixed position
+    @profile = trainee.get_profile #not sure how to avoid having to repeat this for every erb
   end
 
   erb :primes, :layout => :main
 end
+
+
+get '/snail_sort' do
+
+  if signed_in? 
+    @profile = trainee.get_profile 
+  end
+
+  erb :snail_sort, :layout => :main
+end
+
+
+get '/double_cola' do
+
+  if signed_in? 
+    @profile = trainee.get_profile 
+  end
+
+  erb :double_cola, :layout => :main
+end
+
 
 get '/' do
   if signed_in?

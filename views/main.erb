@@ -16,18 +16,13 @@
     <div id="social-badge-bar">
 
       <%    
-     
-
         socials = @profile.merge(ADDITIONAL_SOCIALS)
-
-      [:mail,"codecademy","github","twitter",:linkedin,:codewars].each do |y| # doing all this to get fields in specified order. In a proper app, these hard-coded bits would come from a DB
+      [:mail,"codecademy",:github,"twitter",:linkedin,:codewars].each do |y| # doing all this to get fields in specified order. In a proper app, these hard-coded bits would come from a DB
                     socials.select{|x| x==y}.each do |field, value| 
-              %>
-
-       <div class="social-badges" style="background-image: url('/images/<%= field %>.png')">
+      %>
+       <div  class="social-badges"  style="background-image: url('/images/<%= field %>.png')">
             <div class="gradient-div" onclick="window.open('<%= value %>'); return false;"></div>
        </div>
-
       <% end 
        end
       %>
