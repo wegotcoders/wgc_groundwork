@@ -19,13 +19,26 @@
     </div>
     <div class="accounts">
     <h4>Accounts</h4>
-    <% @profile.each do |field, value| %>
-     <% if field == "codecademy" || field == "github" || field == "homepage" || field == "twitter" %> 
-          <div class="profile-section">
-            <li><span class="list profile-value"><%= field %></span>: <span class="list-entry"><%= value %></span></li>
-          </div>
-        <% end %>
-      <% end %>
+    <% if @profile["codecademy"] %>
+	  <div class="profile-section">
+	    <li><span class="list profile-value">codecademy</span>: <span class="list-entry"><%= @profile["codecademy"] %></span></li>
+	  </div>
+	<% end %>
+	<% if @profile["github"] %>
+	  <div class="profile-section">
+	    <li><span class="list profile-value">github</span>: <span class="list-entry"><%= @profile["github"] %></span></li>
+	  </div>
+	<% end %>
+	<% if @profile["homepage"] %>
+	  <div class="profile-section">
+	    <li><span class="list profile-value">homepage</span>: <span class="list-entry"><%= @profile["homepage"] %></span></li>
+	  </div>
+	<% end %>
+	<% if @profile["twitter"] %>
+	  <div class="profile-section">
+	   <li><span class="list profile-value">twitter</span>: <span class="list-entry"><%= @profile["twitter"] %></span></li>
+	  </div>
+	<% end %>
     </div>
   </div>
   <div id="stats" class="box">
