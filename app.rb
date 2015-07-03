@@ -10,7 +10,7 @@ enable :sessions
 
 ADDITIONAL_SOCIALS = {:github => "https://github.com/Adamantish", :linkedin => "https://uk.linkedin.com/pub/adam-misrahi/45/216/a4a", :codewars => "http://www.codewars.com/users/Adamantish", :mail => "mailto:miss.rahee@gmail.com"}
 # included github in the additionals because its field on the profile seems to be read-only.
-PROJECTS = {:primes => "/primes?limit=100", :snail_sort => "/snail_sort/", :double_cola => "/double_cola/"}
+PROJECTS = {:primes => "/primes?limit=100", :platform => "/platform", :snail_sort => "/snail_sort/", :double_cola => "/double_cola/"}
 
 def kids_age(dob, as_of = Time.now.utc.to_date ) 
   adjuster = (as_of.month > dob.month || (as_of.month == dob.month && as_of.day >= dob.day)) ? 0 : 1
@@ -39,6 +39,14 @@ get '/primes' do
   erb :primes, :layout => :main
 end
 
+get '/platform' do
+
+  if signed_in? 
+    @profile = trainee.get_profile 
+  end
+
+  erb :platform, :layout => :main
+end
 
 get '/snail_sort' do
 

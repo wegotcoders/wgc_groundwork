@@ -19,6 +19,13 @@ li {
   list-style-type: disc;
 }
 
+h2 {
+  font-size: 1.75em;
+}
+.left-align {
+  text-align: left;
+}
+
 #nav-bar {
   height: 6em;
   background-color: #242424;
@@ -222,6 +229,29 @@ textarea {
   z-index:-1;
   top:35em;
   /*width:100%;*/
+}
+
+.submit-button {
+  background: #F9650E;
+  background-image: -webkit-linear-gradient(top, #F9650E, #F9650E);
+  background-image: -moz-linear-gradient(top, #F9650E, #F9650E);
+  background-image: -ms-linear-gradient(top, #F9650E, #F9650E);
+  background-image: -o-linear-gradient(top, #F9650E, #F9650E);
+  background-image: linear-gradient(to bottom, #F9650E, #F9650E);
+  border-radius: 58px;
+  color: #fcf9fc;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 10px;
+  text-decoration: none;
+  opacity: 0.8
+}
+
+.submit-button:hover {
+
+  text-decoration: none;
+
+  opacity: 1
 }
 
 

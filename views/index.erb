@@ -29,8 +29,8 @@
     <h3>Programming Problems</h3>
     <br>
       <%    
-          [:primes,:snail_sort,:double_cola].each do |y| # doing all this to get fields in specified order. In a proper app, these hard-coded bits would come from a DB
-                        PROJECTS.select{|x| x==y}.each do |field, value| # this line and part of the above one are copy and pasted from another section. Not sure how to modularise it. 
+          # [:primes,:snail_sort,:double_cola].each do |y| # doing all this to get fields in specified order. In a proper app, these hard-coded bits would come from a DB
+                        PROJECTS.each do |field, value| # this line and part of the above one are copy and pasted from another section. Not sure how to modularise it. 
       %>
        <div class="project-badges" onclick="location.href='<%= value %>'; return false;" style="background-image: url('/images/<%= field %>.png')">
 
@@ -38,18 +38,16 @@
             <div class="gradient-div"></div>
        </div>
       <% end 
-       end
+       
       %>
       <hr>
   <!-- </div> -->
 
-  
 
-
-    <h3>Edit Profile</h3>
+    <!-- <h3>Edit Profile</h3> -->
   
     <form  style="position:relative"action="/update" method="POST">
-      <input type="submit" value="Save" class="btn btn-primary" />
+      <input class ="submit-button" type="submit" value="Save" class="btn btn-primary" />
       <fieldset>
         <!-- <div class="form-group"> -->
           <table style="width:100%;">
@@ -78,6 +76,7 @@
     <span id="word-count"></span> words found. <br>
     Ego: <span id="me-count"></span> mentions of "I"/"my".
   </div>
+
 
 <% else %>
   <div class="welcome">
