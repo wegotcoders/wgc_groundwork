@@ -2,7 +2,7 @@
 
 <h3>Simplish self-authored JS challenge</h3>
 
-Hosted <a href="http://www.codewars.com/kata/5592e2f038f7c1dde700003b/train/javascript">here</a> on codewars
+Hosted <a href="http://www.codewars.com/kata/5592e2f038f7c1dde700003b/train/javascript">here</a> on codewars (though apparently ou'll need to be logged in to see it.)
 
 
 <div class="left-align">
@@ -10,7 +10,7 @@ Hosted <a href="http://www.codewars.com/kata/5592e2f038f7c1dde700003b/train/java
 	You are in charge of services for National Rail. You want to maximise station utilisation so you've been trying to fiddle with the timetables. However, just shifting the times of one train can cause a station down the line to have too many trains trying to stop at the same time. It doesn't have enough platforms. Either the timetable needs changing or maybe a station needs expanding. This sounds like a job for a computer!
 	<br>
 	<h2>Your Mission</h2>
-	Write a function which takes the day’s timetable for a single station passed as an unsorted 2D array. Each item of the outer array is a train. The train is an array of arrival time followed by its departure time. Timings are listed as minute integers counting from midnight <p></p><i>e.g. 1am = 60 min, 2am = 120 min </i> Assume that trains occupy the platform for the whole minute i.e. a train leaving at 722 and one leaving at 722 do overlap. Assume you will always be passed a 2d array with valid departure and arrival times.
+	Write a function which takes the day’s timetable for a single station passed as an unsorted 2D array. Each item of the outer array is a train. The train is an array of arrival time followed by its departure time. Timings are listed as minute integers counting from midnight <p></p><i>e.g. 1am = 60 min, 2am = 120 min </i> Assume that trains occupy the platform for the whole minute i.e. a train leaving at 722 and one arriving at 722 overlap. Assume you will always be passed a 2d array with valid departure and arrival times.
 	<br>
 	Your function should return an integer of the number of station platforms required to accomodate the timetable. 
 	<br>
@@ -59,7 +59,7 @@ Hosted <a href="http://www.codewars.com/kata/5592e2f038f7c1dde700003b/train/java
 					]
 
 
-					
+
 	function requiredPlatforms(timetable, optMaxPlatforms) {
 
 		// Rearrange arrivals and departures into a new 2 column 2D array.
