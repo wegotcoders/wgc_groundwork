@@ -1,8 +1,10 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Quicksand", "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background: #FFFBF8;
 }
 
 #logo {
@@ -17,6 +19,8 @@ body {
 .box {
   padding: 1em;
   margin-bottom: 0.5em;
+  display: block;
+  height: 300px;
 }
 
 .welcome {
@@ -24,17 +28,32 @@ body {
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 3em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2%;
+  letter-spacing: 20px;
+  text-shadow: 3px 3px 5px #888888;
 }
 
 h4{
   text-transform: capitalize;
   font-size: 1.5em;
-  font-family: sans-serif;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  border-bottom: solid 1px #888888;
 }
 
 #profpic {
   margin: 10px;
+  border-radius: 5%;
+  box-shadow: 10px 1px 5px #888888;
 }
 
 .error {
@@ -45,4 +64,7 @@ h4{
   font-size: 1.5em;
 }
 
+p {
+  padding-top: 1em;
+}
 /* TODO - Add your own styles here */
