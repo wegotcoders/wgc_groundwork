@@ -1,13 +1,84 @@
 <% if @profile %>
+  <div class="section-one">
   <div class="intro"><h3><%= @profile["first_name"] %>'s Amazing Profile</h3></div>
+</div>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
+ <!--  <% @profile.each do |field, value| %>
     <div class="profile-section box">
       <h3><%= field %></h3>
       <p class="profile-value"><%= value %></p>
     </div>
-  <% end %>
+  <% end %> -->
+
+  <div class="section-two">
+    <div class="title">
+      <h2>About</h2>
+        <div class="content">
+          <h3><%=@profile["about"] %></h3>
+        </div>
+    </div>
+
+    <div class="info-container">
+      <div id="name" class="basic-info">
+        <h2>Name</h2>
+        <h3><%=@profile["first_name"] %> <%=@profile["last_name"] %></h3>
+      </div>
+
+      <div id="dob" class="basic-info">
+        <h2>DOB</h2>
+        <h3><%=@profile["dob"] %></h3>
+      </div>
+
+      <div id="phone" class="basic-info">
+        <h2>Phone Number</h2>
+        <h3><%=@profile["phone_number"] %></h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-three">
+    <div class="title">
+      <h2>Ambition</h2>
+        <div class="content">
+          <h3><%=@profile["ambition"] %></h3>
+        </div>
+    </div>
+  </div>
+
+  <div class="section-four">
+    <div class="title">
+      <h2>Codecademy</h2>
+        <div class="content">
+          <h3><%=@profile["codecademy"] %></h3>
+        </div>
+    </div>
+
+    <div class="info-container">
+      <div id="htmlcss" class="basic-info">
+        <h2>HTML & CSS </h2>
+        <h3>100%</h3>
+      </div>
+
+      <div id="javascript" class="basic-info">
+        <h2>Javascript</h2>
+        <h3>100%</h3>
+      </div>
+
+      <div id="ruby" class="basic-info">
+        <h2>Ruby</h2>
+        <h3>100%</h3>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<h3><%=@profile.keys[0] %></h3>
+<h3><%=@profile["about"] %></h3>
+<h3><%=@profile%></h3>
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -28,6 +99,10 @@
         <div class="form-group">
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
