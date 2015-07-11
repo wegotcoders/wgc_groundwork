@@ -1,12 +1,15 @@
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.428571429;
   color: #333;
+  background-color:#49a7e9;
 }
 
 #logo {
   text-align: center;
+  float:left;
+  margin-top:1em;
 }
 
 #content {
@@ -14,19 +17,29 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
+  column-count:2;
+  border:10px solid #49a7e9;
+  text-align:center;
   padding: 1em;
-  margin-bottom: 0.5em;
+  margin: 1em 0em;
+  width:50%;
+  margin:0 auto;
+}
+
+.box h3 {
+font-size: 2em;
+margin-bottom:0.75em;
+text-transform: capitalize;
+
 }
 
 .welcome {
   text-align: center;
 }
 
-h3 {
+/*h3 {
   font-size: 1.5em;
-}
+}*/
 
 .error {
   text-align: center;
@@ -37,3 +50,33 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+.intro{
+
+  font-size:3em;
+  font-family:impact;
+  text-align:center;
+  clear:both;
+}
+
+.profile-section{
+
+  
+}
+
+.profile-section h4{
+ 
+}
+
+.profile-value{
+
+
+}
+
+#my-picture img{
+  width:250px;
+  float:right;
+  margin:1em;
+  border-radius:25%;
+
+}
