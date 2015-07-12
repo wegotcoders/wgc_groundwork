@@ -49,7 +49,7 @@ text-transform: capitalize;
 
 /* TODO - Add your own styles here */
 
-.title h2{
+.title h2 {
 
   font-size:3em;
   text-align: center;
@@ -64,21 +64,27 @@ text-transform: capitalize;
 
 }
 
-.section-one{
+.section-one {
 
   height: 100vh;
   width:100vw;
   background-color:#49a7e9;
 }
 
-.section-two{
+.section-two, .section-three, .section-four, .section-five, .section-six{
   height: 50vh;
   width:100vw;
-  background-color: #fab125;
   text-align: center;
+
 }
 
-.section-two .content{
+.section-two, .section-six {
+
+  background-color: #fab125;
+
+}
+
+.section-two .content, .section-five .content, .section-six .content{
   width: 70%;
   margin:auto;
   padding-top:1em;
@@ -86,22 +92,29 @@ text-transform: capitalize;
 }
 
 .section-three{
-  height: 50vh;
-  width:100vw;
-  background-color: #63BD2F;
-  text-align: center;
 
+  background-color: #63BD2F;
 
 }
 
 .section-four{
-  height: 50vh;
-  width:100vw;
-  background-color: #c869bf;
-  text-align: center;
 
+  background-color: #c869bf;
 
 }
+
+.section-five{
+
+  background-color: #0fbfcf;
+
+}
+
+.section-six label{
+
+padding-left:1em;
+
+}
+
 
 .info-container{
   margin:0;
