@@ -14,37 +14,34 @@ I am aware there is a prime gem I could use, but seems to defeat the purpose of 
 
 class Primes
 
-$factor = Array.new
-$count = 0
-  
- def self.sum_to(limit)
+	$factor = Array.new
+	$count = 0
+	$prime = false
 
-	(2..limit).each do |i|
+	def self.sum_to(limit)
+		
+		(2..limit).each do |i|
 
-  	$factor << Math.sqrt(i).to_i
-  	$factor = $factor.uniq
-	end
-
-	(2..limit).each do |i|
-
-		$factor.each do |x|
-
-			if i % x != 0
-				$count = $count + i
-			end
+  		$factor << Math.sqrt(i).to_i
+  		$factor = $factor.uniq
 		end
-	end
 
+		$factor.each do |i|
+			
+			(2...limit).each do |x|
+				if x % i != 0 && x != i
+					puts x
+				end
+			end
 
-
-
+		end
 
 
 	
-puts $factor.inspect
-puts $count
+		# puts $factor.inspect
+		# puts $count
 
-  end
+	end
 
 end
  

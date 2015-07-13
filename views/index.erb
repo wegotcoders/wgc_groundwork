@@ -1,6 +1,6 @@
 <% if @profile %>
   <div class="section-one">
-  <div class="intro"><h3><%= @profile["first_name"] %>'s Amazing Profile</h3></div>
+  <div class="intro"><h3  class ="profile-value"><%= @profile["first_name"] %>'s Amazing Profile</h3></div>
 </div>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
@@ -15,24 +15,24 @@
     <div class="title">
       <h2><%=@profile.keys[0].capitalize%></h2>
         <div class="content">
-          <h3><%=@profile["about"] %></h3>
+          <h3 class ="profile-value"><%=@profile["about"] %></h3>
         </div>
     </div>
 
     <div class="info-container">
       <div id="name" class="basic-info">
         <h2><%=@profile.keys[5].capitalize%></h2>
-        <h3><%=@profile["first_name"] %> <%=@profile["last_name"] %></h3>
+        <h3 class ="profile-value"><%=@profile["first_name"] %> <%=@profile["last_name"] %></h3>
       </div>
 
       <div id="dob" class="basic-info">
         <h2><%=@profile.keys[3].capitalize%></h2>
-        <h3><%=@profile["dob"] %></h3>
+        <h3 class ="profile-value"><%=@profile["dob"] %></h3>
       </div>
 
       <div id="phone" class="basic-info">
         <h2><%=@profile.keys[13].capitalize%></h2>
-        <h3><%=@profile["phone_number"] %></h3>
+        <h3 class ="profile-value"><%=@profile["phone_number"] %></h3>
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@
     <div class="title">
       <h2><%=@profile.keys[1].capitalize%></h2>
         <div class="content">
-          <h3><%=@profile["ambition"] %></h3>
+          <h3 class ="profile-value"><%=@profile["ambition"] %></h3>
         </div>
     </div>
   </div>
@@ -50,24 +50,24 @@
     <div class="title">
       <h2>Codecademy</h2>
         <div class="content">
-          <h3>Username: <%=@profile["codecademy"] %></h3>
+          <h3 class ="profile-value">Username: <%=@profile["codecademy"] %></h3>
         </div>
     </div>
 
     <div class="info-container">
       <div id="htmlcss" class="basic-info">
         <h2>HTML & CSS </h2>
-        <h3><%=@profile["web_track_completedness"] %></h3>
+        <h3 class ="profile-value"><%=@profile["web_track_completedness"] %></h3>
       </div>
 
       <div id="javascript" class="basic-info">
         <h2>Javascript</h2>
-        <h3><%=@profile["js_track_completedness"] %></h3>
+        <h3 class ="profile-value"><%=@profile["js_track_completedness"] %></h3>
       </div>
 
       <div id="ruby" class="basic-info">
         <h2>Ruby</h2>
-        <h3><%=@profile["ruby_track_completedness"] %></h3>
+        <h3 class ="profile-value"><%=@profile["ruby_track_completedness"] %></h3>
       </div>
     </div>
   </div>
@@ -76,7 +76,7 @@
     <div class="title">
       <h2><%=@profile.keys[15].capitalize%></h2>
         <div class="content">
-          <h3><%=@profile["projects"] %></h3>
+          <h3 class ="profile-value"><%=@profile["projects"] %></h3>
         </div>
     </div>
 </div>
@@ -156,15 +156,16 @@
 
 <!-- Add your Javascript to this script tag -->
 
-<!-- Word Count Not Finish / Working Yet-->
+<!-- Fixed to count words with all elements with class name 'profile-value'-->
 <script language="javascript">
   console.log("I am Javascript!");
 
   var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
-  var count = document.getElementsByClassName('content');
-  var count_split = count.toString().split(' ').length;
-  console.log(count_split);
+  total_words = 0
+  for (i=0; i < profile_values.length; i++){
+  total_words += profile_values[i].innerText.toString().split(' ').length;}
+  console.log(profile_values);
+
 
   
   // TODO - Count the number of words in the profile.
