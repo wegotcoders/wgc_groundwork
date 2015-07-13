@@ -79,73 +79,70 @@
           <h3><%=@profile["projects"] %></h3>
         </div>
     </div>
-  </div>
+</div>
 
   <div class="section-six">
     <div class="box">
       <div class="content">
-      <div class="title">
-      <h2>Edit Profile</h2>
+        <div class="title">
+          <h2>Edit Profile</h2>
 
-      <form action="/update" method="POST">
-        <fieldset>
-          <div class="form-group">
-            <label for="trainee[about]">About</label>
-            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <form action="/update" method="POST">
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[about]">About</label>
+                <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/><p>
 
-            <label for="trainee[ambition]">Ambition</label>
-            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+                <label for="trainee[ambition]">Ambition</label>
+                <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/><p>
 
-            <label for="trainee[first_name]">First Name</label>
-            <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
+                <label for="trainee[projects]">Projects</label>
+                <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/><p>
 
-             <label for="trainee[last_name]">Last Name</label>
-            <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+                <label for="trainee[first_name]">First Name</label>
+                <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/><p>
 
-             <label for="trainee[dob]">DOB</label>
-            <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+                 <label for="trainee[last_name]">Last Name</label>
+                <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/><p>
 
-            <label for="trainee[projects]">Projects</label>
-            <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
-            
-            <label for="trainee[codecademy]">Codecademy Username</label>
-            <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
-            
-            <label for="trainee[webtrack]">Codecademy HTML & CSS Completed</label>
-            <input type="text" name="trainee[webtrack]" value="<%= @profile["web_track_completedness"] %>"/>
-            
-            <label for="trainee[jstrack]">Codecademy Javascript Completed</label>
-            <input type="text" name="trainee[jstrack]" value="<%= @profile["js_track_completedness"] %>"/>
-           
-            <label for="trainee[ruby_track_completedness]">Codecademy Ruby Completed</label>
-            <input type="text" name="trainee[ruby_track_completedness]" value="<%= @profile["ruby_track_completedness"] %>"/>
-          </div>
-      </div>
+                 <label for="trainee[dob]">DOB</label>
+                <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/><p>
+                
+                <label for="trainee[codecademy]">Codecademy Username</label>
+                <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/><p>
+              </div>
+        </div>
     </div>
         <!-- TODO - Add more fields so that your profile can be edited -->
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
+         <input type="submit" value="Update Profile" class="btn btn-primary" />
+        </fieldset>
+      </form>
+    </div>
   </div>
-  </div>
 
+<div class="section-seven">
+    <div class="title">
+      <h2>Stats</h2>
+        <div class="content">
+          <h3><span id="word-count">0</span> words found.</h3>
+        </div>
+    </div>
+</div>
 
-
-<h3><%=@profile.keys[0] %></h3>
+<!-- <h3><%=@profile.keys[0] %></h3>
 <h3><%=@profile["about"] %></h3>
-<h3><%=@profile%></h3>
+<h3><%=@profile%></h3> -->
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
+<div class="section-eight">
+    <div class="title">
+      <div id="problems" class="box">
+    <h2>Programming Problems</h2>
     <a href="/primes">My Prime Number Solution</a>
   </div>
+    </div>
+</div>
 
   
 <% else %>
@@ -158,12 +155,18 @@
 
 
 <!-- Add your Javascript to this script tag -->
+
+<!-- Word Count Not Finish / Working Yet-->
 <script language="javascript">
   console.log("I am Javascript!");
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+  var count = document.getElementsByClassName('content');
+  var count_split = count.toString().split(' ').length;
+  console.log(count_split);
 
+  
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 

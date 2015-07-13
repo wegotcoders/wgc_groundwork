@@ -71,7 +71,7 @@ text-transform: capitalize;
   background-color:#49a7e9;
 }
 
-.section-two, .section-three, .section-four, .section-five, .section-six{
+.section-two, .section-three, .section-four, .section-five, .section-six, .section-seven, .section-eight{
   height: 50vh;
   width:100vw;
   text-align: center;
@@ -84,20 +84,20 @@ text-transform: capitalize;
 
 }
 
-.section-two .content, .section-five .content, .section-six .content{
+.section-two .content, .section-five .content, .section-six .content, .section-eight .content{
   width: 70%;
   margin:auto;
   padding-top:1em;
 
 }
 
-.section-three{
+.section-three, .section-seven{
 
   background-color: #63BD2F;
 
 }
 
-.section-four{
+.section-four, .section-eight{
 
   background-color: #c869bf;
 
@@ -109,9 +109,15 @@ text-transform: capitalize;
 
 }
 
-.section-six label{
+.section-six{
+  margin:0 auto;
+}
+
+.section-six .form-group{
 
 padding-left:1em;
+padding-bottom:2em;
+
 
 }
 
