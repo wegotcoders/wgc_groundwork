@@ -29,7 +29,7 @@ class Primes
 		$factor.each do |i|
 			
 			(2...limit).each do |x|
-				if x % i != 0 && x != i
+				if x % i == 0 && x % x == i
 					puts x
 				end
 			end
