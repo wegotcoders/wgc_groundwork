@@ -16,24 +16,28 @@ class Primes
 
 	$factor = Array.new
 	$count = 0
-	$prime = false
+	$prime = Array.new
 
 	def self.sum_to(limit)
 		
 		(2..limit).each do |i|
 
-  		$factor << Math.sqrt(i).to_i
+  		$factor << Math.sqrt(i).to_i		
   		$factor = $factor.uniq
+  		
 		end
 
-		$factor.each do |i|
+		$factor.delete(1)
+
 			
 			(2...limit).each do |x|
-				if x % i == 0 && x % x == 1
-					puts x
+			
+			$factor.each do |i|		
+			
+				if x % i == 0 && i > x
+					$prime << x
 				end
 			end
-
 		end
 
 
@@ -47,3 +51,5 @@ end
  
 
 Primes.sum_to(100)
+$prime = $prime.uniq
+puts $prime.inspect

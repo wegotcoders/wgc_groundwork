@@ -11,33 +11,10 @@ body {
   margin-top:1em;
 }
 
-#content {
-  /*padding: 1em;*/
-}
-
-/*.box {
-  border:10px solid #49a7e9;
-  text-align:center;
-  padding: 1em;
-  margin: 1em 0em;
-  width:50%;
-  margin:0 auto;
-}
-
-.box h3 {
-font-size: 2em;
-margin-bottom:0.75em;
-text-transform: capitalize;
-
-}*/
-
 .welcome {
   text-align: center;
 }
 
-/*h3 {
-  font-size: 1.5em;
-}*/
 
 .error {
   text-align: center;
@@ -50,22 +27,14 @@ text-transform: capitalize;
 /* TODO - Add your own styles here */
 
 .title h2 {
-
   font-size:3em;
   text-align: center;
   padding-top:0.5em;
 
   font-weight:700;
-
-}
-
-.content h3{
- 
-
 }
 
 .section-one {
-
   height: 100vh;
   width:100vw;
   background-color:#49a7e9;
@@ -75,50 +44,37 @@ text-transform: capitalize;
   height: 50vh;
   width:100vw;
   text-align: center;
-
 }
 
 .section-two, .section-six {
-
   background-color: #fab125;
-
 }
 
-.section-two .content, .section-five .content, .section-six .content, .section-eight .content{
+.section-two .content, .section-five .content, .section-six .content, .section-eight .content{ 
   width: 70%;
   margin:auto;
   padding-top:1em;
-
 }
 
 .section-three, .section-seven{
-
   background-color: #63BD2F;
-
 }
 
 .section-four, .section-eight{
-
   background-color: #c869bf;
-
 }
 
 .section-five{
-
   background-color: #0fbfcf;
-
 }
 
-.section-six{
+.section-six{  
   margin:0 auto;
 }
 
 .section-six .form-group{
-
-padding-left:1em;
-padding-bottom:2em;
-
-
+  padding-left:1em;
+  padding-bottom:2em;
 }
 
 
@@ -126,24 +82,18 @@ padding-bottom:2em;
   margin:0;
   width:100vw;
   padding-top:4em;
-
 }
 
 .basic-info{
-  
   float:left;
   width:33%;
-
 }
 
 .basic-info h2{
- 
   font-size:1.5em;
-
 }
 
 .intro{
-
   font-size:6em;
   font-family:impact;
   text-align:center;
@@ -158,5 +108,4 @@ padding-bottom:2em;
   float:right;
   margin:1em;
   border-radius:25%;
-
 }
