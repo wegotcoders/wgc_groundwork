@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:4567/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>We Got Coders - My Amazing Application</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body background="bg.jpg">
+
+  <div id="logo">
+    <img src="logo.png" alt="We Got Coders">
+    
+  </div>
+
+  <div id="content">
+  <h1>   <img src="Bewerbungsfoto.jpg" width="400" height="520" alt="Denis Doan"></h1>
+       <h3>Denis Doan</h3>
+
+  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+ 
+     <div class="profile-section box">
+        <div class="profile-section box">  <h2>Objective</h2>
+    <h5> My first coding experience was with Java. Now, I'm learning HTML, CSS and Javascript for the Front End Development and the Back End development later on.    </h5>
+      <h5>My ambition ist at least to work as a permanent Junior Web Developer. Either as a Front End Developer or as a full stack developer.</h5>
+           My expectation to this bootcamp is to do as many real projects as possible. Building useful websites like Doodle etc. Also pair programming can boost your motivation. The instructers could share their work experiences, so that the lesson sounds more lively than theoretically.
+            The reason why I would like to become a Web developer: During the Odin Project I've noticed, that I like Web Development, so I would like to start a career in Web development.
+      </div>
+      
+      
+      <div class="profile-section box">
+        <div class="profile-section box">  <h2>About</h2>
+    <h5>Gender: Male</h5>
+    <h5>Date of Birth: 1989-06-13 </h5>
+            Facebook: Dennis Man
+        </div>
+  
+    <div class="profile-section box">
+        <h2>Education</h2>
+      <h5>BA, Business Management, University of Applied Sciences in Kiel</h5>
+        <ul>
+        <li> Bachelor Thesis: Process models in the software engineering for example for Apps</li>
+        <li> Graduation: Approx. end of July 2015</li></ul>  
+        Codeacademy, Courses:
+        <ul>
+        <li> Make a Website</li>
+        <li> HTML & CSS </li>
+        <li> Javascript </li>
+        <li> Ruby </li>
+        </ul>
+      <p class="profile-value"></p>
+          </div>
+  
+   
+    <div class="profile-section box">
+      <h2>Learning experience</h2>
+      <p class="profile-value">
+          <h5> My first coding experience was with Java at the Augsburg University. Now, I'm learning HTML, CSS and Javascript for the Front End Development and the Back End development later on.    </h5>
+My expectation for this bootcamp is to do many real projects as possible. Building useful websites like Doodle etc. Also pair programming can boost your motivation. The instructers could share their work experiences, so that the lesson sounds more lively than theoretically. I did hear form you via www.coursreport.com
+        <p> These are my projects:</p>
+  <ul>
+        <li> www.github.com/denis89</li>
+        <li> westudy.org </li>
+        </ul>      </p>
+      <p class="profile-value">It was to clone the Google Website, so that it looks like a Google Website.</p>
+          My Website, that I've developed is student forum, which is called Westudy.
+    </div>
+   
+  
+
+  <div id="stats" class="box">
+    <h5>Stats</h5>
+    <!-- TODO - Set the contents of this span with JavaScript -->
+    <span id="word-count">0</span> words found.
+  </div>
+
+  <div id="problems" class="box">
+    <h5>Programming Problems</h5>
+    <a href="http://localhost:4567/primes">My Prime Number Solution</a>
+  </div>
+
+  <div class="box">
+    <h5>Edit Profile</h5>
+
+    <form action="http://localhost:4567/update" method="POST">
+      <fieldset>
+        <div class="form-group">
+          <label for="trainee[about]">About</label>
+          <input type="text" name="trainee[about]" value="My first coding experience was with Java. Now, I&#39;m learning HTML, CSS and Javascript for the Front End Development and the Back End development later on.">
+        </div>
+
+        <!-- TODO - Add more fields so that your profile can be edited -->
+
+        <input type="submit" value="Update Profile" class="btn btn-primary">
+      </fieldset>
+    </form>
+  </div>
+
+
+<!-- Add your Javascript to this script tag -->
+<script language="javascript">
+  console.log("I am Javascript!");
+
+  var profile_values = document.getElementsByClassName('profile-value');
+  
+
+ // TODO - Count the number of words in the profile.
+  // hint - look at what the innerHTML property provides.
+$(document).ready(function() {
+    $('p').each(function(i) {
+        var iTotalWords = $(this).text().split(' ').length;
+        $(this).append("<b> " + iTotalWords + " words </b>");
+    });
+});
+
+
+  document.getElementById('word-count').innerHTML = total_words;
+</script>
+  </div>
+
+    </div>	
+	<div id="footer">
+			<p>Wiesenamm 135, Hamburg 22303, Germany | Tel: (0049) 176-47372322</p>
+		</div>	
+
+</body></html>
