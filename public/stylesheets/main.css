@@ -15,7 +15,6 @@ body {
   text-align: center;
 }
 
-
 .error {
   text-align: center;
 }
@@ -77,7 +76,6 @@ body {
   padding-bottom:2em;
 }
 
-
 .info-container{
   margin:0;
   width:100vw;
@@ -101,7 +99,6 @@ body {
   padding-top:6%;
   position:relative;
 }
-
 
 #my-picture img{
   width:250px;
