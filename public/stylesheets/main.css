@@ -36,4 +36,17 @@ h3 {
   font-size: 1.5em;
 }
 
+ul.menu{
+    display: block;
+    margin:auto;
+}
+
 /* TODO - Add your own styles here */
+ul.menu li {
+    float: right;
+    padding: 10px;
+}
+
+span.clearboth{
+    clear:both;
+}
