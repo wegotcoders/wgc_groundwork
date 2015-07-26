@@ -14,4 +14,8 @@ describe Primes do
     expect(Primes.sum_to(10_000)).to eq(5736396)
   end
 
+  it "should caculate the sum of prime numbers to 100000" do
+    expect(Primes.sum_to(20_000)).to eq(21171191)
+  end
+
 end
