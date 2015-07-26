@@ -90,26 +90,14 @@
           <form action="/update" method="POST">
             <fieldset>
               <div class="form-group">
-                <label for="trainee[about]">About</label>
-                <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/><p>
 
-                <label for="trainee[ambition]">Ambition</label>
-                <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/><p>
+                 <% @profile.each do |field, value| %>
+            
 
-                <label for="trainee[projects]">Projects</label>
-                <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/><p>
-
-                <label for="trainee[first_name]">First Name</label>
-                <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/><p>
-
-                <label for="trainee[last_name]">Last Name</label>
-                <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/><p>
-
-                <label for="trainee[dob]">DOB</label>
-                <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/><p>
-                
-                <label for="trainee[codecademy]">Codecademy Username</label>
-                <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/><p>
+                      <label for="trainee[<%= field %>]"><%= field.capitalize %></label>
+                      <input type="text" name="trainee[<%= field %>]" value="<%= value %>"/>
+          
+                  <% end %>
               </div>
         </div>
     </div>
