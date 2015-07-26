@@ -12,6 +12,7 @@
 
     <div class="box">
         <h3>Edit Profile</h3>
+
         <form action="/update" method="POST">
             <table class="edit-table">
                 <tr>
@@ -25,10 +26,10 @@
                             <label for="trainee[<%= field %>]"><%= field.split('_').join(' ').capitalize() %></label>
                         </td>
                         <td>
-                            <input type="text" name="trainee[<%= field %>]" value="<%= @profile[field] %>"/>
+                            <input id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value="<%= @profile[field] %>"/>
                         </td>
                         <td>
-                            TODO
+                            <span id="trainee_<%= field %>_counter" class="word-counter" type="number"></span>
                         </td>
                     </tr>
                 <% end %>
@@ -44,16 +45,30 @@
     </div>
 <% end %>
 
-
-<!-- Add your Javascript to this script tag -->
 <script language="javascript">
-    console.log("I am Javascript!");
 
-    var profile_values = document.getElementsByClassName('profile-value');
-    var total_words = 0;
+    
+    
+    var refreshCounter = function (e) {
+        var profileValues = document.getElementsByClassName('profile-value');
+        for (var index = 0; index < profileValues.length; index++) {
+            var input = profileValues[index],
+                    inputId = input.id,
+                    spanId = inputId + '_counter',
+                    inputSplitWords = input.value.split(' '),
+                    span = document.getElementById(spanId);
 
-    // TODO - Count the number of words in the profile.
-    // hint - look at what the innerHTML property provides.
+            if (input.value === '') {
+                span.textContent = 0;
+                continue;
+            }
 
-    document.getElementById('word-count').innerHTML = total_words;
+            span.textContent = inputSplitWords.length;
+        }
+    };
+
+    window.onload = refreshCounter;
+
+    //document.getElementsByClassName('profile-value').addEventListener('keypress', refreshCounter);
+
 </script>
