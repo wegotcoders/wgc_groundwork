@@ -32,6 +32,10 @@ end
 get '/edit' do
   if signed_in?
     @profile = trainee.get_profile
+    
+    @codeacademyAccount = 'skibinska'
+    @primeNumberSumForTwoMilionLimit = Primes.sum_to(1000);
+    
   end
 
   erb :edit, :layout => :main

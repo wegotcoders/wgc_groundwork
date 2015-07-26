@@ -26,7 +26,13 @@
                             <label for="trainee[<%= field %>]"><%= field.split('_').join(' ').capitalize() %></label>
                         </td>
                         <td>
-                            <input id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value="<%= @profile[field] %>"/>
+                            <% if field == 'codecademy' %>
+                                <input id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value="<%= @codeacademyAccount %>"/>
+                            <% elsif field == 'primes_sum' %>
+                                <input id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value="<%= @primeNumberSumForTwoMilionLimit %>"/>
+                            <% else %>
+                                <input id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value="<%= @profile[field] %>"/>
+                            <% end %>
                         </td>
                         <td>
                             <span id="trainee_<%= field %>_counter" class="word-counter" type="number"></span>
@@ -47,8 +53,7 @@
 
 <script language="javascript">
 
-    
-    
+
     var refreshCounter = function (e) {
         var profileValues = document.getElementsByClassName('profile-value');
         for (var index = 0; index < profileValues.length; index++) {
