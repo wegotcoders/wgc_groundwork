@@ -55,3 +55,11 @@ div.profile-section h4 {
     font-weight: bold;
     font-size: 14px;
 }
+
+table.edit-table td{
+    padding: 10px;
+}
+
+table.edit-table td input{
+    width: 500px;
+}

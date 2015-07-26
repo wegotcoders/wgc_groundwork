@@ -1,7 +1,7 @@
 <% if @profile %>
 
     <!--<%= @profile.inspect %>-->
-    
+
     <h3>Edit Profile</h3>
 
     <div id="stats" class="box">
@@ -12,18 +12,28 @@
 
     <div class="box">
         <h3>Edit Profile</h3>
-
         <form action="/update" method="POST">
-            <fieldset>
-                <div class="form-group">
-                    <label for="trainee[about]">About</label>
-                    <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-                </div>
-
-                <!-- TODO - Add more fields so that your profile can be edited -->
-
-                <input type="submit" value="Update Profile" class="btn btn-primary"/>
-            </fieldset>
+            <table class="edit-table">
+                <tr>
+                    <th>Field name</th>
+                    <th>Value</th>
+                    <th>Word count</th>
+                </tr>
+                <% @profile.each do |field, value| %>
+                    <tr>
+                        <td>
+                            <label for="trainee[<%= field %>]"><%= field.split('_').join(' ').capitalize() %></label>
+                        </td>
+                        <td>
+                            <input type="text" name="trainee[<%= field %>]" value="<%= @profile[field] %>"/>
+                        </td>
+                        <td>
+                            TODO
+                        </td>
+                    </tr>
+                <% end %>
+            </table>
+            <input type="submit" value="Update Profile" class="btn btn-primary"/>
         </form>
     </div>
 <% else %>
