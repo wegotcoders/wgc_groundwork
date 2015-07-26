@@ -5,9 +5,14 @@
 
 class Primes
 
-	@factor = Array.new
-	@primes = Array.new
-	@sum = 0
+# Initialize all the variables, also used to reset variable for each calculation
+	def self.initialize
+		@factor = Array.new
+		@primes = Array.new
+		@sum = 0
+
+	end
+	
 
 # Determine the factors of limit to make program more efficient 
 	def self.factor(limit)
@@ -21,7 +26,7 @@ class Primes
 
 # Remove even numbers
 	def self.evens(limit)
-		
+
 		@primes << 2
 
 		(2..limit).each do |i|
@@ -31,9 +36,8 @@ class Primes
 		end	
 	end
 
-
 # Iterate through to remove non prime numbers
-	def self.getPrime(limit)
+	def self.getPrime
 
 		@factor.each do |i|
 			@primes.each do |x|
@@ -45,7 +49,7 @@ class Primes
 	end
 
 # Add up prime numbers left in the array
-	def self.addPrime(limit)
+	def self.addPrime
 		@sum = 0
 
 		@primes.each { |x| @sum += x}	
@@ -53,12 +57,15 @@ class Primes
 
   	def self.sum_to(limit = 100)
 
+  		initialize
   		factor(limit)
   		evens(limit)
-  		getPrime(limit)
-  		addPrime(limit)
-  		puts @sum
+  		getPrime
+  		addPrime
   		return @sum
+
+  
+
 	end
 
 end
