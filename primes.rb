@@ -13,18 +13,15 @@ class Primes
 	def self.factor(limit)
 
 		(2..limit).each do |i|
-
 	  		@factor << Math.sqrt(i).to_i
-	  		@factor = @factor.uniq
-	  			  		
+	  		@factor = @factor.uniq	  		
 	  	end
 	  	@factor.delete(1)
-
-
 	end
 
 # Remove even numbers
 	def self.evens(limit)
+		
 		@primes << 2
 
 		(2..limit).each do |i|
@@ -32,7 +29,6 @@ class Primes
 				@primes << i
 			end
 		end	
-
 	end
 
 
@@ -46,15 +42,13 @@ class Primes
 				end
 			end
 		end
-
 	end
 
 # Add up prime numbers left in the array
 	def self.addPrime(limit)
 		@sum = 0
 
-		@primes.each { |x| @sum += x}
-		
+		@primes.each { |x| @sum += x}	
 	end
 
   	def self.sum_to(limit = 100)
@@ -65,9 +59,6 @@ class Primes
   		addPrime(limit)
   		puts @sum
   		return @sum
-
-
-
 	end
 
 end
