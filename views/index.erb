@@ -3,14 +3,6 @@
   <div class="intro"><h3  class ="profile-value"><%= @profile["first_name"] %>'s Amazing Profile</h3></div>
 </div>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
- <!--  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h3><%= field %></h3>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %> -->
-
   <div class="section-two">
     <div class="title">
       <h2><%=@profile.keys[0].capitalize%></h2>
@@ -90,12 +82,17 @@
           <form action="/update" method="POST">
             <fieldset>
               <div class="form-group">
-
+                  <% count=0 %>
                  <% @profile.each do |field, value| %>
             
-
+                      
                       <label for="trainee[<%= field %>]"><%= field.capitalize %></label>
                       <input type="text" name="trainee[<%= field %>]" value="<%= value %>"/>
+                      <% count+=1 %>
+                      <% if count == 3 %>
+                      <p>
+                      <% count = 0 %>
+                      <% end %>
           
                   <% end %>
               </div>

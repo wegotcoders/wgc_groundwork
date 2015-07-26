@@ -107,9 +107,11 @@ body {
   border-radius:25%;
 }
 
-.form-group label input{
+.form-group label {
+  padding-left:2em;
+  text-align: left;
 
-  float:left;
+
 
 
 }
