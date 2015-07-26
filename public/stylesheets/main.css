@@ -50,3 +50,8 @@ ul.menu li {
 span.clearboth{
     clear:both;
 }
+
+div.profile-section h4 {
+    font-weight: bold;
+    font-size: 14px;
+}

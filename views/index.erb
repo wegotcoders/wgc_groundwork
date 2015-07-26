@@ -8,7 +8,7 @@
     <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
     <% @profile.each do |field, value| %>
         <div class="profile-section box">
-            <h4><%= field %></h4>
+            <h4><%= field.split('_').join(' ').capitalize() %>:</h4>
 
             <p class="profile-value"><%= value %></p>
         </div>
