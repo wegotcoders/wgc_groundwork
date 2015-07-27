@@ -63,3 +63,7 @@ table.edit-table td{
 table.edit-table td input{
     width: 500px;
 }
+#profile-picture{
+    float: right;
+    margin: 10px;
+}
