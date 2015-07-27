@@ -60,8 +60,9 @@ table.edit-table td{
     padding: 10px;
 }
 
-table.edit-table td input{
+table.edit-table td textarea{
     width: 500px;
+    min-height: 50px;
 }
 #profile-picture{
     float: right;

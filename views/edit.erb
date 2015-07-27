@@ -20,11 +20,11 @@
                         </td>
                         <td>
                             <% if field == 'codecademy' %>
-                                <input id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value="<%= @codeacademyAccount %>"/>
+                                <textarea id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value=""><%= @codeacademyAccount %></textarea>
                             <% elsif field == 'primes_sum' %>
-                                <input id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value="<%= @primeNumberSumForTwoMilionLimit %>"/>
+                                <textarea id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value=""><%= @primeNumberSumForTwoMilionLimit %></textarea>
                             <% else %>
-                                <input id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value="<%= @profile[field] %>"/>
+                                <textarea id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value=""><%= @profile[field] %></textarea>
                             <% end %>
                         </td>
                         <td>
