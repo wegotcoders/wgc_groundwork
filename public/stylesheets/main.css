@@ -17,7 +17,8 @@ body {
   border: 1px solid #999;
   background: #FCFCFC;
   padding: 1em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5em;  
+    width: 80%;
 }
 
 .welcome {
@@ -65,6 +66,20 @@ table.edit-table td textarea{
     min-height: 50px;
 }
 #profile-picture{
-    float: right;
+    float: left;
     margin: 10px;
+}
+.menu a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #000;
+    
+}
+.menu li:first-child {
+    margin-right: 40px;
+}
+.menu a:hover{
+    font-weight: 900;
+    
 }
