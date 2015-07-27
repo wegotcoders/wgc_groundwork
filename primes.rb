@@ -64,10 +64,30 @@ class Primes
   		addPrime
   		return @sum
 
-  
+	end
+
+	def self.primeFactor(number)
+		initialize
+		factor(number)
+		evens(number)
+		getPrime
+		maxPrime(number)
+		puts @i
+
+	end
+
+	def self.maxPrime(number)
+		@i = 0
+		@primes.each do |x|
+			if number % x == 0 && x > @i 
+			@i = x
+			end
+			
+		end
 
 	end
 
 end
 
 Primes.sum_to
+Primes.primeFactor(600851475143)
