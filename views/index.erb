@@ -3,14 +3,15 @@
     <!--<%= @profile.inspect %> -->
 
 
-    <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+    <h3 class="header-text clearboth"><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
     <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 
-    <div class="profile-info box">
+    <div class="container">
         <div id="profile-picture"><img src="images/rsz_ewelina.jpg" alt="ewelina's profile picture"/></div>
         <div>
-            <h3>About me</h3>
+            <!--<h3 class="header-about">About me</h3>-->
+            <div class="profile-info">
             <table>
                 <tr>
                     <td><h4>First name:  </h4></td>
@@ -30,31 +31,44 @@
                 </tr>
                 <tr>
                     <td><h4>Employment status:  </h4></td>
-                    <td><%= @profile["employment_status:"] %></td>
+                    <td><%= @profile["employment_status"] %></td>
                 </tr>
             </table>
-            <div>
-                <h4>Phone number: <%= @profile["phone_number"] %></h4>
             </div>
-            <div><h4><%= @profile["about"] %></h4></div>
+            <div class="right">
+                <table>
+                    <tr>
+                        <td><h4>Phone number: </h4></td>
+                        <td><%= @profile["phone_number"] %></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Github: </h4></td>
+                        <td><%= @profile["github"] %></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Twitter: </h4></td>
+                        <td><%= @profile["twitter"] %></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Codecademy: </h4></td>
+                        <td><%= @profile["codecademy"] %></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Homepage: </h4></td>
+                        <td><%= @profile["homepage"] %></td>
+                    </tr>
+                </table>
+            </div>
         </div>
+        <div class="clearboth profile-value"><%= @profile["about"] %></div>
         <div>
-            <h4>My Ambition: <br><%= @profile["ambition"] %></h4>
-            <h4>Projects: <br><%= @profile["projects"] %></h4>
+            <h4 class="box gradients headings">My Ambition</h4><p class="profile-value"><%= @profile["ambition"] %></p>
+            <h4 class="box gradients headings">Projects</h4><p class="profile-value"><%= @profile["projects"] %></p>
+            <h4 class="box gradients headings">Rationale</h4><p class="profile-value"><%= @profile["rationale"] %></p>
+            <h4 class="box gradients headings">Learning experience</h4><p class="profile-value"><%= @profile["learning_experience"] %></p>
+            <h4 class="box gradients headings">How did you hear</h4><p class="profile-value"><%= @profile["how_did_you_hear"] %></p>
         </div>
-        <div>
-            <h4>Rationale: <br><%= @profile["rationale"] %></h4>
-            <h4>Learning experience: <br><%= @profile["learning_experience"] %></h4>
-            <h4>How did you hear: <br><%= @profile["how_did_you_hear"] %></h4>
-        </div>
-           <div>
-               <h3>You can find me</h3>
-               <ul>
-                   <li>Github: <%= @profile["github"] %> </li>
-                   <li>Twitter: <%= @profile["twitter"] %> </li>
-                   <li>Codecademy: <%= @profile["codcademy"] %> </li>
-               </ul>
-           </div>
+           
         
         <!--<% @profile.each do |field, value| %>-->
             <!--<div class="profile-section box">-->
