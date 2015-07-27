@@ -1,4 +1,3 @@
-#Works on my computer fine, but on the website it seems to be adding multiples of @sum and I can figure out why atm.
 #Tried to make this OOP...
 
 
@@ -76,6 +75,7 @@ class Primes
 
 	end
 
+#Figures out the max prime factor of a given number
 	def self.maxPrime(number)
 		@i = 0
 		@primes.each do |x|
@@ -90,4 +90,6 @@ class Primes
 end
 
 Primes.sum_to
-Primes.primeFactor(600851475143)
+
+#Remove comment below to work out largest prime factor (takes an insanely long time to calculate using current method)
+#Primes.primeFactor(600851475143)
