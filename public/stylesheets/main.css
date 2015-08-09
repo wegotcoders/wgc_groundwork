@@ -38,6 +38,7 @@ h3 {
 
 /* TODO - Add your own styles here */
 
+<<<<<<< HEAD
 body{
   background-color: #C8DBD5;
 }
@@ -56,3 +57,6 @@ h3 {
     -moz-column-count: 2; /* Firefox */
     column-count: 2;
 }
+=======
+
+>>>>>>> origin/master
