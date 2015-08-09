@@ -3,6 +3,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background-color: #C8DBD5;
 }
 
 #logo {
@@ -14,7 +15,7 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
+  
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
@@ -25,7 +26,10 @@ body {
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 2em;
+  color: #A7141B;
+  text-align: center;
+
 }
 
 .error {
@@ -39,16 +43,16 @@ h3 {
 /* TODO - Add your own styles here */
 
 <<<<<<< HEAD
-body{
-  background-color: #C8DBD5;
-}
 
-h3 {
-  color: red
-}
+
+
 
 .profile-section{
   background-color: #B4DAD7;
+}
+
+.box{
+  background-color: #77BCB4;
 }
 
 .box:nth-of-type(1) {
