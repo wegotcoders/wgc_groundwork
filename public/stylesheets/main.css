@@ -37,3 +37,22 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+body{
+  background-color: #C8DBD5;
+}
+
+h3 {
+  color: red
+}
+
+.profile-section{
+  background-color: #B4DAD7;
+}
+
+.box:nth-of-type(1) {
+  background-color: #55A4AA; 
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+}
