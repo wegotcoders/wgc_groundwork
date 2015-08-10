@@ -55,13 +55,14 @@ body {
   text-decoration: underline;
   padding: 0.5em;
   font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: bold;
 }
 
 #value {
   padding: 1em;
   padding-left: 0px;
   padding-right: 50px;
-  font-size: 110%;
+  font-size: 130%;
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
