@@ -1,23 +1,48 @@
-<% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+<div class="container">
+<div class="row">
+  
+  <div class="col-md-4"> 
+    <img src="/images/pro_pic.jpg" id="pic" width="150" height="250">
+  </div> 
+  <div class="col-md-8">
+    <div class="">
+      <% if @profile %>
+         <h3 id="heading"><%= @profile["first_name"] %>'s Profile</h3>
     </div>
-  <% end %>
-
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
   </div>
-
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+  
+</div>
+  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  
+  <% @profile.each do |field, value| %>
+    
+    <div class="row">
+      <div class="field_value">
+        <div class="col-md-3">
+          <h4 id="field"> <%= field.capitalize %></h4>
+        </div>
+        <div class="col-md-9">
+          <p id="value"><%= value %></p>
+        </div>
+      </div>
+    </div>
+     
+  <% end %>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <div id="stats" class="box">
+        <h3>Stats</h3>
+        <!-- TODO - Set the contents of this span with JavaScript -->
+        <span id="word-count">0</span> words found.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div id="problems" class="box">
+        <h3>Programming Problems</h3>
+        <a href="/primes">My Prime Number Solution</a>
+      </div>
+    </div>
   </div>
 
   <div class="box">
@@ -31,10 +56,25 @@
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[rationale]">Rationale</label>
+          <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+        </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
+    
   </div>
 <% else %>
   <div class="welcome">
@@ -43,7 +83,7 @@
     <a href="/authorise">Authorise</a>
   </div>
 <% end %>
-
+</div>
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
