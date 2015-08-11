@@ -38,9 +38,12 @@ h3 {
 
 /* TODO - Add your own styles here */
 
-#about {
-  font-size: 20px;
+.form-group {
   color: red;
+}
+
+#about {
+  
 }
 
 #ambition {
