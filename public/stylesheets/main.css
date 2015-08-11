@@ -39,7 +39,8 @@ h3 {
 /* TODO - Add your own styles here */
 
 #about {
-  
+  font-size: 20px;
+  color: red;
 }
 
 #ambition {
