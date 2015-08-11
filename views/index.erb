@@ -12,7 +12,6 @@
   </div>
   
 </div>
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   
   <% @profile.each do |field, value| %>
     
@@ -22,7 +21,7 @@
           <h4 id="field"> <%= field.capitalize %></h4>
         </div>
         <div class="col-md-9">
-          <p id="value"><%= value %></p>
+          <p class="profile-value"><%= value %></p>
         </div>
       </div>
     </div>
@@ -33,7 +32,6 @@
     <div class="col-md-6">
       <div id="stats" class="box">
         <h3>Stats</h3>
-        <!-- TODO - Set the contents of this span with JavaScript -->
         <span id="word-count">0</span> words found.
       </div>
     </div>
@@ -78,22 +76,31 @@
   </div>
 <% else %>
   <div class="welcome">
-    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
-
+    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.
+    </p>
     <a href="/authorise">Authorise</a>
   </div>
 <% end %>
 </div>
 
-<!-- Add your Javascript to this script tag -->
+
 <script language="javascript">
   console.log("I am Javascript!");
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+  for (i = 0; i < profile_values.length; i++) { 
+    x = profile_values[i];
+    count = wordCount(x);
+    total_words += count;
+  }
+
+  function wordCount(wc){
+    m = wc.innerHTML;
+    m = m.split(" ").length;
+    return m;
+  }
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
