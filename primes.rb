@@ -7,6 +7,7 @@ class Primes
 	Prime.each(limit) { |x| total += x }
 
 	return total
+    
 
   end
 end

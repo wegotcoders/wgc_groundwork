@@ -29,8 +29,16 @@ body {
   padding: 1em;
   margin-bottom: 0.5em;
   border-radius: 10px;
+  height:120px;
 }
 
+.boxx{
+  border: 1px solid #999;
+  background: #FCFCFC;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  border-radius: 10px;
+}
 #pic {
   border-radius: 10px;
   margin-left: 75px;
