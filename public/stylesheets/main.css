@@ -5,10 +5,6 @@ body {
   color: #333;
 }
 
-#logo {
-  text-align: center;
-}
-
 #content {
   padding: 1em;
 }
@@ -28,6 +24,12 @@ h3 {
   font-size: 1.5em;
 }
 
+#title {
+  font-size: 2em;
+  padding: 1em;
+  text-align: center;
+}
+
 .error {
   text-align: center;
 }
@@ -37,6 +39,36 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+#logo {
+    position: relative;
+    left: 600px;
+}
+
+#photo {
+    position: relative;
+    left: 700px;
+}
+
+.profile-field {
+  color: red;
+  text-align: center;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.profile-value {
+  color: blue;
+  text-align: center;
+}
+
+.profile-section box {
+
+}
+
+#edittitle {
+  margin-bottom: 0.5em;
+}
 
 .form-group {
   color: red;
