@@ -1,18 +1,33 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <h3 id="title" ><%= @profile["first_name"] %>'s Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
-      <h4><%= field %></h4>
+      <h4 class="profile-field"><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
   <% end %>
 
   <div id="stats" class="box">
     <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+
+  <form name="myform">
+  <textarea rows="15" name="w" cols="45"
+  onkeyup="cnt(this,document.myform.c)"></textarea>
+  <br />Word Count: <input type="text" name="c" value="0" size="5"
+  onkeyup="cnt(document.myform.w,this)" />
+  </form> 
+
+  </div>
+
+  <div id="websites" class="box">
+    <h3>Helpful Website</h3>
+<ul>
+    <li><a href="http://wegotcoders.com/">We Got Coders Website</a></li>
+    <li><a href="http://stackoverflow.com/">Stack Overflow Website</a></li>
+    <li><a href="https://www.codecademy.com/">Codeacademy Website</a></li>
+</ul>
   </div>
 
   <div id="problems" class="box">
@@ -21,7 +36,7 @@
   </div>
 
   <div class="box">
-    <h3>Edit Profile</h3>
+    <h3 id="edittitle">Edit Profile</h3>
 
     <form action="/update" method="POST">
       <fieldset>
@@ -32,7 +47,7 @@
 
         <!-- TODO - Add more fields so that your profile can be edited -->
 
-        <div id="ambition" class="form-group">
+<div id="ambition" class="form-group">
           <label for="trainee[ambition]">Ambition</label>
           <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
         </div>
@@ -126,7 +141,7 @@
           <label for="trainee[web_track_completedness]">Web Track Completedness</label>
           <input type="text" name="trainee[web_track_completedness]" value="<%= @profile["web_track_completedness"] %>"/>
         </div>
-        
+
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
@@ -144,11 +159,13 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+function cnt(w,x){
+var y=w.value;
+var r = 0;
+a=y.replace(/\s/g,' ');
+a=a.split(' ');
+for (z=0; z<a.length; z++) {if (a[z].length > 0) r++;}
+x.value=r;
+} 
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
 </script>
