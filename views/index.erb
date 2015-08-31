@@ -11,12 +11,9 @@
 
   <div id="stats" class="box">
     <h3>Stats</h3>
+  <!-- TODO - Set the contents of this span with JavaScript -->
 
-  <form name="myform">
-  <textarea rows="15" name="w" cols="45"
-  onkeyup="cnt(this,document.myform.c)"></textarea>
-  <br />Word Count: <input type="text" name="c" value="0" size="5"
-  onkeyup="cnt(document.myform.w,this)" />
+  <span id="word-count">0</span> words found.
   </form> 
 
   </div>
@@ -158,14 +155,15 @@
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
   console.log("I am Javascript!");
+  
+  var profile_values = document.getElementsByClassName('profile-value');
+  var total_words = 0;
 
-function cnt(w,x){
-var y=w.value;
-var r = 0;
-a=y.replace(/\s/g,' ');
-a=a.split(' ');
-for (z=0; z<a.length; z++) {if (a[z].length > 0) r++;}
-x.value=r;
-} 
+total_words = function() {
+var profile_values = document.getElementsByTagName('profile-value')[0].innerHTML.replace(/( | )/,' ').replace(/[\n\r]/g, ' ').replace(//g, '').replace(/<.*?>/g, '');
+return profile_values.match(/\S+/g).length;
+}
+
+document.getElementById('word-count').innerHTML = total_words;
 
 </script>
