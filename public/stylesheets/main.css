@@ -13,21 +13,49 @@ body {
 }
 
 #content {
-  padding: 1em;
   background-color: #FFD1A3;
-  width: 80%;
-  float: right;
+  width: 95%;
+  margin: auto;
 }
 #menu{
-  width: 15%;
+  height: 1800px;
+  width: 18%;
   background-color: #CECEF3;
+  float: left;
+  /*position: absolute;
+  margin-left: 32px;*/
 }
+#menu p {
+  padding: 1em;
+  margin: 3px;
+  border: 2px solid gray;
+  text-align: center;
+}
+table {
+  border: 2px solid white;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 5px;
+  padding: 2px;
+}
+th {
+  font-family: Garamond, serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-align: center;
+}
+td {
+  padding: 3px 3px 3px 3px;
+  font-size: 0.98em;
+  font-family: Garamond, serif;
+}
+
 #footer{
   height: 100px;
   width: 95%;
   background-color: #CECEF3;
-  clear: both;
-  margin: auto;
+  position: absolute;
+  margin: 2840px 33px 0px 33px;
 }
 
 .box {
@@ -47,7 +75,6 @@ body {
   border: 2px solid #FFFFFF;
   display: inline-block;
   margin: 5px 0px 5px 0px;
-  float: left;
 }
 .profile-value{
   color: #00143D;
@@ -79,9 +106,9 @@ body {
 }
 
 h4 {
-  font-family: Vivaldi,cursive;
+  font-family: Arial, sans-serif;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 0.98em;
   color:#334C4C;
 }
 .error {

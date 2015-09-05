@@ -1,48 +1,126 @@
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  <!-- TODO- Perhaps re-jig this to fit your new design / layout 
   <% @profile.each do |field, value| %> 
     <div class="profile-section box" id="<%= field %>">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
+  <% end %> -->
+   <div id="menu">
+    <p> Home </p>
+    <p> About </p>
+  </div>
+
+  <div id="container">
+    <table id="personal_data">
+      <thead>
+        <th colspan = "2">Patricia's Personal Data</th>
+      </thead>
+      <tbody>
+        <% lista = ["first_name", "last_name","dob", "gender", "phone_number","github", "twitter"] %>
+        <% lista.each do |field| %> 
+          <tr>
+            <td><h4><%= field %></h4></td>
+            <td><%= @profile[field]%></td>
+          </tr>
+        <% end %>
+      </tbody> 
+    </table>
+
+    <table id="employment_status">
+      <thead>
+        <th colspan = "2">Employment Status</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><h4>Status</h4></td>
+          <td><%= @profile["employment_status"] %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <% courses_completedness = ["web_track_completedness", "js_track_completedness", "ruby_track_completedness"] %> 
+    <table>
+      <thead>
+        <th colspan = "2">Course's completedness in Codeacademy</th>
+      </thead>
+      <tbody>
+        <% courses_completedness.each do |field| %>
+          <tr>
+            <td><h4><%= field %></h4></td>
+            <td><div>100%</div></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <table id="learning_experience">
+      <thead>
+          <th>Learning Experience</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @profile["learning_experience"] %></td>
+        </tr>
+      </tbody>
+    </table>
+      
+    <% about_me = ["about", "projects", "ambition"] %> 
+      <ul>
+        <% about_me.each do |field| %>
+          <li>
+            <h4><%= field %></h4>
+            <p><%= @profile[field] %></p>
+          </li>
+        <% end %>
+      </ul>
+
+    <h5>How did you hear from us</h5>
+    <p><%= @profile["how_did_you_hear"] %></p>
+
+    <h5>Prime sum</h5>
+    <p><%= @profile["prime_sum"] %></p>
+    
+    <div id="stats" class="box">
+      <h3>Stats</h3>
+      <!-- TODO - Set the contents of this span with JavaScript -->
+      <span id="word-count">0</span> words found.
+    </div>
+
+    <div id="problems" class="box">
+      <h3>Programming Problems</h3>
+      <a href="/primes">My Prime Number Solution</a>
+    </div>
+
+    <div class="box">
+      <h3>Edit Profile</h3>
+
+      <form action="/update" method="POST">
+        <fieldset>
+          <div class="form-group">
+            <label for="trainee[about]">About</label>
+            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          </div>
+
+          <!-- TODO - Add more fields so that your profile can be edited -->
+
+          <input type="submit" value="Update Profile" class="btn btn-primary" />
+        </fieldset>
+      </form>
+    </div>
+  <% else %>
+    <div class="welcome">
+      <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+      <a href="/authorise">Authorise</a>
+    </div>
   <% end %>
-
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
   </div>
-
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+  <div id="footer">
   </div>
-
-  <div class="box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
-<% else %>
-  <div class="welcome">
-    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
-
-    <a href="/authorise">Authorise</a>
-  </div>
-<% end %>
+  
 
 
 <!-- Add your Javascript to this script tag -->
@@ -53,7 +131,7 @@
   };
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
-
+  
   /*Capitalize the headers h4 of the profile section box*/
   var headers_4 = document.getElementsByTagName("h4");
   var headers_4_text = [];
@@ -68,6 +146,7 @@
   for (var i = 0; i < headers_4.length; i++) {
     headers_4[i].innerHTML = capitalize_headers_4[i];
   };
+  /*Remove underlines from words*/
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
