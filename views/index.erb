@@ -2,8 +2,8 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
+  <% @profile.each do |field, value| %> 
+    <div class="profile-section box" id="<%= field %>">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
@@ -48,12 +48,28 @@
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
   console.log("I am Javascript!");
-
+  function capitalize (string){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
 
+  /*Capitalize the headers h4 of the profile section box*/
+  var headers_4 = document.getElementsByTagName("h4");
+  var headers_4_text = [];
+  var capitalize_headers_4 = [];
+  for (var i = 0; i < headers_4.length; i++) {
+    headers_4_text.push(headers_4[i].innerHTML);
+  };
+  for (var i = 0; i < headers_4_text.length; i++) {
+    capitalize_headers_4.push(capitalize(headers_4_text[i]));
+  };
+  console.log(capitalize_headers_4);
+  for (var i = 0; i < headers_4.length; i++) {
+    headers_4[i].innerHTML = capitalize_headers_4[i];
+  };
+
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
-
   document.getElementById('word-count').innerHTML = total_words;
 </script>

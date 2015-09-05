@@ -7,10 +7,27 @@ body {
 
 #logo {
   text-align: center;
+  background-color: #666699;
+  width: 95%;
+  margin: auto;
 }
 
 #content {
   padding: 1em;
+  background-color: #FFD1A3;
+  width: 80%;
+  float: right;
+}
+#menu{
+  width: 15%;
+  background-color: #CECEF3;
+}
+#footer{
+  height: 100px;
+  width: 95%;
+  background-color: #CECEF3;
+  clear: both;
+  margin: auto;
 }
 
 .box {
@@ -18,16 +35,55 @@ body {
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
+  clear: both;
 }
 
 .welcome {
   text-align: center;
 }
-
-h3 {
+.profile-section {
+  background-color: #CECEF3;
+  height: 80px;
+  border: 2px solid #FFFFFF;
+  display: inline-block;
+  margin: 5px 0px 5px 0px;
+  float: left;
+}
+.profile-value{
+  color: #00143D;
+}
+#content > h3 {
   font-size: 1.5em;
+  font-family: Garamond, serif;
+  background-color: #7A7A70;
+  color:#E4E4E2;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.5em;
+  border: 2px solid #FFFFFF;
+}
+#stats {
+  clear:both;
+}
+#problems {
+  clear: both;
+}
+#stats > h3 {
+  font-size: 1.5em;
+  background-color: #7A7A70;
+  color:#E4E4E2;
+  text-align: center;
+  font-weight: bold;
+  padding: 1em;
+  margin-bottom: 0.5em;
 }
 
+h4 {
+  font-family: Vivaldi,cursive;
+  font-weight: bold;
+  font-size: 1.2em;
+  color:#334C4C;
+}
 .error {
   text-align: center;
 }
