@@ -1,6 +1,4 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
   <!-- TODO- Perhaps re-jig this to fit your new design / layout 
   <% @profile.each do |field, value| %> 
     <div class="profile-section box" id="<%= field %>">
@@ -9,11 +7,13 @@
     </div>
   <% end %> -->
    <div id="menu">
-    <p> Home </p>
-    <p> About </p>
+    <p><a href="/home">Home </p></a>
+    <p> About </p> 
   </div>
 
   <div id="container">
+    <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+    <img id= "me" src="/images/Patricia.jpg" />
     <table id="personal_data">
       <thead>
         <th colspan = "2">Patricia's Personal Data</th>
@@ -22,7 +22,7 @@
         <% lista = ["first_name", "last_name","dob", "gender", "phone_number","github", "twitter"] %>
         <% lista.each do |field| %> 
           <tr>
-            <td><h4><%= field %></h4></td>
+            <td><h5><%= field %></h5></td>
             <td><%= @profile[field]%></td>
           </tr>
         <% end %>
@@ -35,66 +35,62 @@
       </thead>
       <tbody>
         <tr>
-          <td><h4>Status</h4></td>
+          <td><h5>Status</h5></td>
           <td><%= @profile["employment_status"] %></td>
         </tr>
       </tbody>
     </table>
 
-    <% courses_completedness = ["web_track_completedness", "js_track_completedness", "ruby_track_completedness"] %> 
-    <table>
+     
+    <table id="codeacademy">
       <thead>
-        <th colspan = "2">Course's completedness in Codeacademy</th>
+        <th colspan = "2"><h4>Codeacademy</h4></th>
       </thead>
       <tbody>
+        <tr>
+          <td><h5>Account</h5></td>
+          <td><%= @profile["codeacademy"]%></td>
+        </tr>
+        <tr><td><h4>Course's completedness Codeacademy<h4></tr>
+        <% courses_completedness = ["web_track_completedness", "js_track_completedness", "ruby_track_completedness"] %>
         <% courses_completedness.each do |field| %>
           <tr>
-            <td><h4><%= field %></h4></td>
+            <td><h5><%= field %></h5></td>
             <td><div>100%</div></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+    <h4>Learning experience</h4>
+    <p><%= @profile["learning_experience"] %></p>
+          
+    <% about_me = ["about", "projects", "ambition", "rationale"] %> 
+    <ul>
+      <% about_me.each do |field| %>
+        <li>
+          <h4><%= field %></h4>
+          <p><%= @profile[field] %></p>
+        </li>
+      <% end %>
+    </ul>
 
-    <table id="learning_experience">
-      <thead>
-          <th>Learning Experience</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td><%= @profile["learning_experience"] %></td>
-        </tr>
-      </tbody>
-    </table>
-      
-    <% about_me = ["about", "projects", "ambition"] %> 
-      <ul>
-        <% about_me.each do |field| %>
-          <li>
-            <h4><%= field %></h4>
-            <p><%= @profile[field] %></p>
-          </li>
-        <% end %>
-      </ul>
-
-    <h5>How did you hear from us</h5>
+    <h4>How did you hear from us</h4>
     <p><%= @profile["how_did_you_hear"] %></p>
-
-    <h5>Prime sum</h5>
-    <p><%= @profile["prime_sum"] %></p>
     
     <div id="stats" class="box">
       <h3>Stats</h3>
       <!-- TODO - Set the contents of this span with JavaScript -->
-      <span id="word-count">0</span> words found.
+      <p><span id="word-count">0</span> words found.</p>
     </div>
 
     <div id="problems" class="box">
       <h3>Programming Problems</h3>
       <a href="/primes">My Prime Number Solution</a>
+      <h5>Prime sum</h5>
+      <p><%= @profile["prime_sum"]%>
     </div>
 
-    <div class="box">
+    <div id="edit_profile" class="box">
       <h3>Edit Profile</h3>
 
       <form action="/update" method="POST">
@@ -103,9 +99,8 @@
             <label for="trainee[about]">About</label>
             <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
           </div>
-
           <!-- TODO - Add more fields so that your profile can be edited -->
-
+          
           <input type="submit" value="Update Profile" class="btn btn-primary" />
         </fieldset>
       </form>
@@ -118,7 +113,9 @@
     </div>
   <% end %>
   </div>
+
   <div id="footer">
+    <h5>CSS, HTML, JS and Ruby exercises by Patricia Cupueran</h5>
   </div>
   
 
@@ -126,29 +123,45 @@
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
   console.log("I am Javascript!");
+
+  /*Function that capitalize a given string*/
   function capitalize (string){
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+  /*Function tha removes underlines from a given string*/
+  function removeUnderlines (string){
+    //console.log("yes, I am defined");
+    var newString = "";
+    var index = string.indexOf("_");
+    while(index !== -1){
+      index = string.indexOf("_");
+      if(index != -1){
+        newString = string.substring(0,index) + " " + string.substring(index + 1);
+        string = newString; 
+      }
+    }
+    return string;
+  };
   
-  /*Capitalize the headers h4 of the profile section box*/
-  var headers_4 = document.getElementsByTagName("h4");
-  var headers_4_text = [];
-  var capitalize_headers_4 = [];
-  for (var i = 0; i < headers_4.length; i++) {
-    headers_4_text.push(headers_4[i].innerHTML);
-  };
-  for (var i = 0; i < headers_4_text.length; i++) {
-    capitalize_headers_4.push(capitalize(headers_4_text[i]));
-  };
-  console.log(capitalize_headers_4);
-  for (var i = 0; i < headers_4.length; i++) {
-    headers_4[i].innerHTML = capitalize_headers_4[i];
-  };
-  /*Remove underlines from words*/
+  /*Function that renders properly (capitalize and without underlines) HTML elements when a tag name is given*/
+  function renderElement (html_element_tag) {
+    // body...
+    var array_html_elements = document.getElementsByTagName(html_element_tag);
+
+    for (var i = 0; i < array_html_elements.length; i++) {
+      var element_text = array_html_elements[i].innerHTML;
+      array_html_elements[i].innerHTML = removeUnderlines(capitalize(element_text));
+    }
+  }
+
+  renderElement("h5");
+  renderElement("h4");
+
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+
   document.getElementById('word-count').innerHTML = total_words;
 </script>
