@@ -1,13 +1,7 @@
 <% if @profile %>
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout 
-  <% @profile.each do |field, value| %> 
-    <div class="profile-section box" id="<%= field %>">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %> -->
+  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
    <div id="menu">
-    <p><a href="/home">Home </p></a>
+    <p>Home</a>
     <p> About </p> 
   </div>
 
@@ -80,7 +74,7 @@
     <div id="stats" class="box">
       <h3>Stats</h3>
       <!-- TODO - Set the contents of this span with JavaScript -->
-      <p><span id="word-count">0</span> words found.</p>
+      <div><p><span id="word-count">0</span> words found.</p></div>
     </div>
 
     <div id="problems" class="box">
@@ -174,6 +168,33 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  /*Function that counts the words in a given string*/
+  function countWords(string){
+    if(string === ""){
+      return 0;
+    }
+    else{
+      var numberWords = 1;
+      var index = string.indexOf(" ");
+      while(index !== -1){
+        numberWords += 1;
+        var newString = string.substring(index + 1 , string.length);
+        string = newString;
+        index = newString.indexOf(" ");
+      }
+      return numberWords;
+    }
+    
+  };
 
+  
+  /*Function that counts the number of words in the page, in all the profile*/
+  function countWordsOfProfile(){
+
+    var words = document.getElementsByTagName("body")[0].innerHTML.replace(/(|)/,'').replace(/[\n\r]/g,'').replace(/script.*?<\/script>/g,'').replace(/<.*?>/g,'').replace("_",'');
+    return words.match(/\S +/g).length;
+  }
+
+  var total_words = countWordsOfProfile();
   document.getElementById('word-count').innerHTML = total_words;
 </script>

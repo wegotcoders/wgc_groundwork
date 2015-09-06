@@ -10,27 +10,32 @@ body {
   background-color: #666699;
   width: 95%;
   margin: auto;
+  border-radius: 5px;
 }
 
 #me{
-   height: 180px;
-   width: 135px;
+   height: 225px;
+   width: 160px;
    border: 2px solid white;
    border-radius: 10px;
-   margin: 0px 5px 5px 10px;
+   margin: 10px 10px 10px 350px;
+   padding: 0.1em;
 }
 
 #content {
   background-color: #FFD1A3;
   width: 95%;
   margin: auto;
+  border-radius: 5px;
+}
+#container > p {
+  padding: 1em;
 }
 #menu{
   width: 18%;
   background-color: #CECEF3;
   float: left;
-  /*position: absolute;
-  margin-left: 32px;*/
+  border-radius: 5px;
 }
 #menu p {
   padding: 1em;
@@ -50,6 +55,28 @@ table {
   margin: 5px;
   padding: 2px;
 }
+#personal_data {
+  position: absolute;
+  margin-left: -450px;
+  margin-top: 10px;
+  margin-left: -500px;
+  padding: 1em;
+}
+#employment_status {
+  position: absolute;
+  margin-right: 5px;
+  margin-left: 50px;
+  margin-top: 10px;
+  padding-right: 6em; 
+  padding-left: 6em;
+}
+#codeacademy {
+  position: absolute;
+  padding: 1em;
+  margin-left: 50px;
+  margin-top: 65px;
+}
+
 th {
   font-family: Garamond, serif;
   font-weight: bold;
@@ -68,6 +95,7 @@ td {
   background-color: #CECEF3;
   margin: auto;
   clear: both;
+  border-radius: 5px;
 }
 #footer > h5 {
   display: inline-block;
@@ -142,9 +170,9 @@ h3 {
   margin-top: -30px;
 }
 
-#stats > p {
+#stats div  > p {
   color: #3D3D5C;
-  display: inline;
+  display: inline-block;
   position:absolute;
   margin-left: 20px;
   margin-top: 20px;
@@ -163,9 +191,9 @@ h5 {
   font-weight: bold;
 }
 
-li{
-  margin: 6px;
-  padding: 6px;
+
+li p {
+  padding: 1em;
 }
 
 #edit_profile {
