@@ -162,11 +162,12 @@ h3 {
 #problems > p {
   border: 2px solid #7A7A70;
   border-radius: 5px;
-  display: inline-block;
   background-color: #99FFFF;
   height: 40px;
-  width: 40px;
-  margin-left: 390px;
+  width: 150px;
+  text-align: center;
+  position: absolute;
+  margin-left: 380px;
   margin-top: -30px;
 }
 

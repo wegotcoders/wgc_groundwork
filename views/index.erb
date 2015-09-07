@@ -38,14 +38,14 @@
      
     <table id="codeacademy">
       <thead>
-        <th colspan = "2"><h4>Codeacademy</h4></th>
+        <th colspan = "2"><h4>Codecademy</h4></th>
       </thead>
       <tbody>
         <tr>
           <td><h5>Account</h5></td>
-          <td><%= @profile["codeacademy"]%></td>
+          <td><%= @profile["codecademy"]%></td>
         </tr>
-        <tr><td><h4>Course's completedness Codeacademy<h4></tr>
+        <tr><td><h4>Course's completedness Codecademy<h4></tr>
         <% courses_completedness = ["web_track_completedness", "js_track_completedness", "ruby_track_completedness"] %>
         <% courses_completedness.each do |field| %>
           <tr>
@@ -81,7 +81,7 @@
       <h3>Programming Problems</h3>
       <a href="/primes">My Prime Number Solution</a>
       <h5>Prime sum</h5>
-      <p><%= @profile["prime_sum"]%>
+      <p><%= @profile["primes_sum"]%>
     </div>
 
     <div id="edit_profile" class="box">
@@ -103,8 +103,12 @@
             <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
           </div>
           <div class="form-group">
-            <label for="trainee[codeacademy]">Codeacademy</label>
-            <input type="text" name="trainee[codeacademy]" value="<%= @profile["codeacademy"] %>"/>
+            <label for="trainee[primes_sum]">Primes Sum</label>
+            <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[codecademy]">Codecademy</label>
+            <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
           </div>
 
           <input type="submit" value="Update Profile" class="btn btn-primary" />
