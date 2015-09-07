@@ -50,7 +50,7 @@
         <% courses_completedness.each do |field| %>
           <tr>
             <td><h5><%= field %></h5></td>
-            <td><div>100%</div></td>
+            <td><%= @profile[field] %></td>
           </tr>
         <% end %>
       </tbody>

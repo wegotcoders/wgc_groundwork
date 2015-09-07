@@ -14,12 +14,14 @@ body {
 }
 
 #me{
-   height: 225px;
-   width: 160px;
+   height: 260px;
+   width: 190px;
    border: 2px solid white;
    border-radius: 10px;
-   margin: 10px 10px 10px 350px;
-   padding: 0.1em;
+   padding: 0.2em;
+   float: left;
+   margin-left: 255px;
+   margin-top: 1.5em;
 }
 
 #content {
@@ -52,31 +54,28 @@ table {
   border: 2px solid white;
   border-radius: 10px;
   display: inline-block;
-  margin: 5px;
+  margin: 2px;
   padding: 2px;
 }
 #personal_data {
-  position: absolute;
-  margin-left: -450px;
-  margin-top: 10px;
-  margin-left: -500px;
-  padding: 1em;
+  padding: 0.8em;
+  float: left;
+  margin-top: 1.5em;
+  margin-left: -445px;
 }
 #employment_status {
-  position: absolute;
-  margin-right: 5px;
-  margin-left: 50px;
-  margin-top: 10px;
-  padding-right: 6em; 
-  padding-left: 6em;
+  margin-top: 1.5em;
+  padding-right: 13em; 
+  padding-left: 13em;
+  margin-left: 15px;
 }
 #codeacademy {
-  position: absolute;
-  padding: 1em;
-  margin-left: 50px;
-  margin-top: 65px;
+  padding: 0.8em;
+  margin-left: 15px;
 }
-
+#codeacademy th {
+  color: blue;
+} 
 th {
   font-family: Garamond, serif;
   font-weight: bold;
@@ -84,7 +83,7 @@ th {
   text-align: center;
 }
 td {
-  padding: 3px 3px 3px 3px;
+  padding: 0.5em;
   font-size: 0.98em;
   font-family: Garamond, serif;
 }
@@ -98,6 +97,7 @@ td {
   border-radius: 5px;
 }
 #footer > h5 {
+  width: 95%;
   display: inline-block;
   padding: 1em;
   margin-left: 500px;
@@ -130,15 +130,10 @@ h3 {
   color:#E4E4E2;
   text-align: center;
   font-weight: bold;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 2em;
-  padding-right: 5em;
+  padding: 1em 5em 1em 5em;
+  margin: 0em -1.8em 1em 0em;
   border: 2px solid #FFFFFF;
-  display: block;
   border-radius: 5px;
-  position: relative;
-  margin-right: -20px;
 }
 #problems > a{
   color: green;
@@ -198,7 +193,7 @@ li p {
 }
 
 #edit_profile {
-  height: 250px;
+  height: 270px;
 }
 label {
   color: #3D3D5C;
