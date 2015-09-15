@@ -25,14 +25,48 @@
 
     <form action="/update" method="POST">
       <fieldset>
-        <div class="form-group">
+        <div id="formLayer" class="form-group">
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+          <label for="trainee[dob]">Date Of Birth</label>
+          <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+          <label for="trainee[employment_status]">Employment Status</label>
+          <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
+          <label for="trainee[first_name]">First Name</label>
+          <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
+          <label for="trainee[gender]">Gender</label>
+          <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/>
+          <label for="trainee[github]">Github</label>
+          <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
+          <label for="trainee[homepage]">Homepage</label>
+          <input type="text" name="trainee[homepage]" value="<%= @profile["homepage"] %>"/>
+          <label for="trainee[how_did_you_hear]">How Did You Hear</label>
+          <input type="text" name="trainee[how_did_you_hear]" value="<%= @profile["how_did_you_hear"] %>"/>
+          <label for="trainee[js_track_completedness]">JS Track Completedness</label>
+          <input type="text" name="trainee[js_track_completedness]" value="<%= @profile["js_track_completedness"] %>"/>
+          <label for="trainee[last_name]">Last Name</label>
+          <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+          <label for="trainee[learning_experience]">Learning Experience</label>
+          <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+          <label for="trainee[phone_number]">Phone Number</label>
+          <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+          <label for="trainee[projects]">Projects</label>
+          <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+          <label for="trainee[rationale]">Rationale</label>
+          <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+          <label for="trainee[twitter]">Twitter</label>
+          <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
+          <label for="trainee[primes_sum]">Sum of the prime number up to two millions</label>
+          <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
+        <input type="submit" id="submitButton" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
   </div>
@@ -47,10 +81,20 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
+  console.log("I am Miguel!");
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+  var i;
+
+
+  for (i=0; i<profile_values.length; i++){
+
+    textoArea = profile_values[i].innerText;
+
+    textoAreaDividido = textoArea.split(" ");
+    total_words += textoAreaDividido.length;
+  }
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
