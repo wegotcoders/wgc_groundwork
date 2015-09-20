@@ -159,10 +159,15 @@
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
 
-total_words = function() {
-var profile_values = document.getElementsByTagName('profile-value')[0].innerHTML.replace(/( | )/,' ').replace(/[\n\r]/g, ' ').replace(//g, '').replace(/<.*?>/g, '');
-return profile_values.match(/\S+/g).length;
+function countWords(){
+
+var profile_values= document.getElementsByTagName("body");
+var total_words = Element[0].textContent.split(' ').length;
+
+document.write("Number of words: "+count);
 }
+
+countWords();
 
 document.getElementById('word-count').innerHTML = total_words;
 
