@@ -1,0 +1,115 @@
+<form action="/update" method="POST">
+    <fieldset>
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                      <h1>Edit Details</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="trainee[about]">About</label>
+                            <input class = "form-control" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[about]">Ambition</label>
+                            <input class = "form-control" type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[codecademy]">Codecademy</label>
+                            <input class = "form-control" type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[dob]">Date of Birth</label>
+                            <input class = "form-control" type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[employment_status]">Employment Status</label>
+                            <input class = "form-control" type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[first_name]">First Name</label>
+                            <input class = "form-control" type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[gender]">Gender</label>
+                            <input class = "form-control" type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[github]">Github</label>
+                            <input class = "form-control" type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[homepage]">Homepage</label>
+                            <input class = "form-control" type="text" name="trainee[homepage]" value="<%= @profile["homepage"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[how_did_you_hear]">How Did You Hear</label>
+                            <input class = "form-control" type="text" name="trainee[how_did_you_hear]" value="<%= @profile["how_did_you_hear"] %>"/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trainee[js_track_completedness]">JavaScript Completeness</label>
+                            <input class = "form-control" type="text" name="trainee[js_track_completedness]" value="<%= @profile["js_track_completedness"] %>"/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trainee[last_name]">Last Name</label>
+                            <input class = "form-control" type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[learning_experience]">Learning Experience</label>
+                            <input class = "form-control" type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trainee[phone_number]">07851394680</label>
+                            <input class = "form-control" type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+                        </div>
+                            
+                        <div class="form-group">    
+                            <label for="trainee[primes_sum]">Primes Sum</label>
+                            <input class = "form-control" type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[projects]">Projects</label>
+                            <input class = "form-control" type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[rationale]">Rationale</label>
+                            <input class = "form-control" type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[ruby_track_completedness]">Ruby Track Completedness</label>
+                            <input class = "form-control" type="text" name="trainee[ruby_track_completedness]" value="<%= @profile["ruby_track_completedness"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[twitter]">Twitter</label>
+                            <input class = "form-control" type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="trainee[web_track_completedness]">Web Track Completedness</label>
+                            <input class = "form-control" type="text" name="trainee[web_track_completedness]" value="<%= @profile["web_track_completedness"] %>"/>
+                        </div>
+                    </div>
+                    <input type="submit" value="Update Profile" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>

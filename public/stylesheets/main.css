@@ -3,14 +3,23 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background: -webkit-linear-gradient(#ADD8E6, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#ADD8E6, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#ADD8E6, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#ADD8E6, white); /* Standard syntax */
 }
 
 #logo {
-  text-align: center;
+  width: 250px;
+  height: 50px;
 }
 
-#content {
-  padding: 1em;
+#face{
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .box {
@@ -24,6 +33,9 @@ body {
   text-align: center;
 }
 
+h1{
+  font-size: 4em;
+}
 h3 {
   font-size: 1.5em;
 }
