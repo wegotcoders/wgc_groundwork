@@ -14,11 +14,11 @@ body {
 }
 
 .box {
-  border: 5px solid #999;
+  border: 5px solid black;
   border-radius: 5%;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
+  background: gray;
+  padding: 2em;
+  margin: 1em;
 }
 
 .welcome {
@@ -44,6 +44,13 @@ h3 {
 #page-title {
 font-style: italic;
 font-size: 3em;
+text-align: center;
+}
+
+#stats {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
 }
 
 /*images*/
@@ -52,18 +59,33 @@ font-size: 3em;
   width: 200px;
   height: 300px;
   display: inline-block;
- clear: auto;
 }
 
+/*Edit profile*/
+div h3 {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+
+}
+.form-group {
+  height: 200px;
+  width: 100px:;
+}
+
+
 p {
-color: red;
+color: white;
+text-align: center;
+font-size: 20px;
 
 }
 
 div h1 {
 text-align: center;
-font-size: 2em;
+font-size: 5em;
 font-weight: bold;
-
+margin-bottom: 10px;
 }
+
 
