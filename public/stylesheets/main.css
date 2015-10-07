@@ -14,7 +14,8 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
+  border: 5px solid #999;
+  border-radius: 5%;
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
@@ -37,3 +38,32 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+/* Headings */
+
+#page-title {
+font-style: italic;
+font-size: 3em;
+}
+
+/*images*/
+
+#kiran {
+  width: 200px;
+  height: 300px;
+  display: inline-block;
+ clear: auto;
+}
+
+p {
+color: red;
+
+}
+
+div h1 {
+text-align: center;
+font-size: 2em;
+font-weight: bold;
+
+}
+
