@@ -8,7 +8,7 @@
 
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
-      <h1><%= field.capitalize %></h1>
+      <h2><%= field.split("_").join(" ").capitalize%></h2>
       <p class="profile-value"><%= value %></p>
     </div>
   <% end %>
@@ -25,29 +25,29 @@
   </div>
 
   <div class="box">
-    <h3>Edit Profile</h3>
+    <h3 id="profile">Edit Profile</h3>
 
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <textarea>"<%= @profile["about"] %>" </textarea>
         </div>
         <div class="form-group">
           <label for="trainee[about]">Ambition</label>
-          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          <textarea>"<%= @profile["ambition"] %>" </textarea>
         </div>
         <div class="form-group">
           <label for="trainee[about]">Learning Experience</label>
-          <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+          <textarea>"<%= @profile["learning_experience"] %>" </textarea>
         </div>
         <div class="form-group">
           <label for="trainee[about]">Projects</label>
-          <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+          <textarea>"<%= @profile["projects"] %>" </textarea>
         </div>
         <div class="form-group">
           <label for="trainee[about]">Rationale</label>
-          <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+          <textarea>"<%= @profile["rationale"] %>" </textarea>
         </div>
 
 
