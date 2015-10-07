@@ -2,8 +2,9 @@
   <h1 id="page-title"><%= @profile["first_name"] %>'s Amazing Profile!</h1>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-
-  <img id="kiran" src="/images/me.png" />
+<div>
+    <img id="me" src="/images/me.png" />
+</div>
 
 
   <% @profile.each do |field, value| %>
@@ -52,8 +53,7 @@
 
 
         <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
+          <input type="submit" value="Update Profile" id="btn" />
       </fieldset>
     </form>
   </div>
