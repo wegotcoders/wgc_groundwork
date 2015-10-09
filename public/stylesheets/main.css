@@ -60,6 +60,13 @@ div h2 {
   font-weight: bold;
 }
 
+nav {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  text-align: center;
+
+}
+
 /*Profile Content*/
 
 
@@ -67,7 +74,6 @@ div h2 {
 color: white;
 text-align: center;
 font-size: 20px;
-column-count: 2;
 }
 
 

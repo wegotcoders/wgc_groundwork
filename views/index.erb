@@ -2,10 +2,19 @@
   <h1 id="page-title"><%= @profile["first_name"] %>'s Amazing Profile!</h1>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  <!--Image of myself-->
 <div>
     <img id="me" src="/images/me.png" />
 </div>
+  <!--Navigation-->
+<nav>
+  <ul>
+    <li><a href="#profile">Edit Profile</a></li>
+    <li><a href="https://twitter.com/kiranwoochit">Twitter</a></li>
+  </ul>
+</nav>
 
+  <!--Load profile-->
 
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
@@ -25,6 +34,9 @@
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
+<!--Edit profile-->
+
+
   <div class="box">
     <h3 id="profile">Edit Profile</h3>
 
@@ -35,25 +47,29 @@
           <textarea>"<%= @profile["about"] %>" </textarea>
         </div>
         <div class="form-group">
-          <label for="trainee[about]">Ambition</label>
+          <label for="trainee[ambition]">Ambition</label>
           <textarea>"<%= @profile["ambition"] %>" </textarea>
         </div>
         <div class="form-group">
-          <label for="trainee[about]">Learning Experience</label>
+          <label for="trainee[learning_experience]">Learning Experience</label>
           <textarea>"<%= @profile["learning_experience"] %>" </textarea>
         </div>
         <div class="form-group">
-          <label for="trainee[about]">Projects</label>
+          <label for="trainee[projects]">Projects</label>
           <textarea>"<%= @profile["projects"] %>" </textarea>
         </div>
         <div class="form-group">
-          <label for="trainee[about]">Rationale</label>
+          <label for="trainee[rationale]">Rationale</label>
           <textarea>"<%= @profile["rationale"] %>" </textarea>
+        </div>
+        <div class="form-group">
+          <label for="trainee[codeacademy]">Code Academy Profile</label>
+          <textarea>"<%= @profile["codeacademy"] %>" </textarea>
         </div>
 
 
         <!-- TODO - Add more fields so that your profile can be edited -->
-          <input type="submit" value="Update Profile" id="btn" />
+          <input type="submit" value="Update Profile" />
       </fieldset>
     </form>
   </div>
@@ -72,7 +88,7 @@
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
-
+  total_words = total_words + profile_values.length;
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
