@@ -1,6 +1,7 @@
 <% if @profile %>
   <div  id="title">
-    <h3><%= @profile["first_name"] %>'s Amazing Profile</h3><br/></br/>
+    <img src="images/profile_image.jpeg"/>
+    <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
   </div>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
@@ -35,32 +36,20 @@
 
     <br/>
   </div>
-  <!-- <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %> -->
-
-
-
-  <div class="right-column">
-
-  </div>
 
   <div id="stats" class="box">
-    <h3>Stats</h3>
+    <h4>Stats</h4>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
 
   <div id="problems" class="box">
-    <h3>Programming Problems</h3>
+    <h4>Programming Problems</h4>
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
   <div class="box">
-    <h3>Edit Profile</h3>
+    <h4>Edit Profile</h4>
 
     <form action="/update" method="POST">
       <fieldset>
