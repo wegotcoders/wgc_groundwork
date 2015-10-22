@@ -18,14 +18,12 @@ body {
   color: #333;
   border: 1px solid #999;
   background: #FCFCFC;
-  padding: 1em;
+  /*padding: 1em;*/
+  margin-top: 0.25em;
   margin-bottom: 0.5em;
+  margin-right: 0.25em;
+  margin-left: 0.25em;
   border-radius: 6px;
-}
-
-.box h4 {
-  font-size: 24px;
-  text-transform: uppercase;
 }
 
 .welcome {
@@ -48,4 +46,42 @@ h3 {
 #title {
   color: white;
   text-align: center;
+}
+
+.wrapper {
+  width: auto;
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+  background-color: #eee;
+}
+
+.left-column {
+  width: auto;;
+  overflow: hidden;
+  /*float: left;*/
+}
+
+.right-column {
+  /*display: inline-block;*/
+  float: right;
+  width: 40%;
+}
+
+.box {
+  border:2px solid #666;
+}
+
+.box h4 {
+  background:#aaa;
+  color:white;
+  padding:10px;
+  font-size: 24px;
+  margin: 0;
+  /*text-transform: uppercase;*/
+}
+
+.box p {
+  color:#333;
+  padding:10px;
 }
