@@ -1,8 +1,9 @@
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.428571429;
   color: #333;
+  background-color: #333;
 }
 
 #logo {
@@ -14,10 +15,17 @@ body {
 }
 
 .box {
+  color: #333;
   border: 1px solid #999;
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
+  border-radius: 6px;
+}
+
+.box h4 {
+  font-size: 24px;
+  text-transform: uppercase;
 }
 
 .welcome {
@@ -37,3 +45,7 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+#title {
+  color: white;
+  text-align: center;
+}
