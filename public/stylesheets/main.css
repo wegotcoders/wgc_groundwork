@@ -8,6 +8,7 @@ body {
 
 #logo {
   text-align: center;
+  background-color: #eee;
 }
 
 #content {
@@ -78,10 +79,39 @@ h3 {
   padding:10px;
   font-size: 24px;
   margin: 0;
-  /*text-transform: uppercase;*/
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .box p {
   color:#333;
   padding:10px;
+}
+
+/* List of fields in right columns */
+
+.profile-item {
+  list-style: none;
+  border-bottom: 1px solid #666;
+  padding: 5px;
+  margin: 3px;
+  padding-left: 5px;
+  /*background-color: red;*/
+}
+
+.profile-item li {
+  display: inline;
+}
+
+.profile-item:last-child { /* remove unecessary bottom styling on last item in profile-item list */
+  border-bottom: none;
+}
+
+.item-field {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.item-value {
+
 }

@@ -7,14 +7,19 @@
   <div class="wrapper">
 
     <div class="right-column">
-      <% @profile.each do |field, value| %>
-        <% unless ['about', 'ambition', 'projects', 'rationale'].include? field %>
-        <div class="profile-section box">
-          <h4><%= field %></h4>
-          <p class="profile-value"><%= value %></p>
-        </div>
+      <div class="box">
+        <h4>Info</h4>
+
+        <% @profile.each do |field, value| %>
+          <% unless ['about', 'ambition', 'projects', 'rationale'].include? field %>
+          <ul class="profile-item">
+            <li class="item-field"><%= field %>: </li>
+            <li class="item-value"><%= value %></li>
+          </ul>
+          <% end %>
         <% end %>
-      <% end %>
+
+      </div>
     </div>
 
     <div class="left-column">
@@ -28,7 +33,7 @@
       <% end %>
     </div>
 
-
+    <br/>
   </div>
   <!-- <% @profile.each do |field, value| %>
     <div class="profile-section box">
