@@ -34,12 +34,25 @@ def even_fibonacci_numbers
   return sum_of_even_numbers
 end
 
-puts("Problem 1: Sum of Fibonacci even numbers less than 4 million: #{even_fibonacci_numbers}") #very slow
+#puts("Problem 1: Sum of Fibonacci even numbers less than 4 million: #{even_fibonacci_numbers}") #very slow
 
 # Problem 3 - Largest prime factor
 
+def get_prime_factors(num)
+  factors_found = []
+  current_prime = 2
 
+  while num > 1
+    while num % current_prime == 0
+      factors_found.push(current_prime)
+      num /= current_prime
+    end
+    current_prime += 1
+  end
 
-# Problem 4 - Largest palindrome product
+  return factors_found
+end
 
-# Problem 5 - Smallest multiple
+number = 600851475143
+primes = get_prime_factors(number)
+puts ("Largest prime factor of #{number} is #{primes.max}" )
