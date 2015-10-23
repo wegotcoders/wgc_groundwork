@@ -192,6 +192,16 @@
       //resultField = "The sum of primes for the number " + number + "is " + result;
       resultField = "Could not figure this bit out, I need to make some sort of server request to call the prime fucntion";
     }
+
   });
+
+  // Hardcoded my github url as it would not save in my profile
+  var profileItems = document.getElementsByClassName('item-value');
+
+  for(var i = 0; i < profileItems.length; i++) {
+    if(profileItems[i].innerHTML.toLowerCase() === "spidey1") {
+      profileItems[i].innerHTML="<a href='https://github.com/spidey1'>https://github.com/spidey1</a>"
+    }
+  }
 
 </script>
