@@ -58,7 +58,6 @@ h3 {
   background-image: url("/images/header.jpg");
   background-size: 100% auto;
   border: 2px solid #666;
-
 }
 
 #title img {
@@ -82,11 +81,9 @@ h3 {
 .left-column {
   width: auto;;
   overflow: hidden;
-  /*float: left;*/
 }
 
 .right-column {
-  /*display: inline-block;*/
   float: right;
   width: 40%;
 }
