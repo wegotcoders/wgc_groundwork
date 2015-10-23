@@ -14,8 +14,13 @@
         <% @profile.each do |field, value| %>
           <% unless ['about', 'ambition', 'projects', 'rationale'].include? field %>
           <ul class="profile-item">
-            <li class="item-field"><%= field %>: </li>
-            <li class="item-value"><%= value %></li>
+              <li class="item-field"><%= field %>: </li>
+            <!-- Add hyperlinks to profile fields where applicable  -->
+             <% if value.to_s.strip.start_with?("http") %>
+              <li class="item-value"><a href="<%= value %>"><%= value %></a></li>
+            <% else %>
+              <li class="item-value"><%= value %></li>
+            <% end %>
           </ul>
           <% end %>
         <% end %>
@@ -182,10 +187,10 @@
       resultField.innerHTML = "Invalid number, please enter a number larger than 2"
     }
     else {
-      //Could not giure this bit out, I need to make some sort of server request to call the prime fucntion
-      //var result = "<%= Primes.sum_to(" + trainee + ")%>";
+      //Could not figure this bit out, I need to make some sort of server request to call the prime fucntion
+
       //resultField = "The sum of primes for the number " + number + "is " + result;
-      resultField = "Could not giure this bit out, I need to make some sort of server request to call the prime fucntion";
+      resultField = "Could not figure this bit out, I need to make some sort of server request to call the prime fucntion";
     }
   });
 
