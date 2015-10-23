@@ -157,3 +157,13 @@ h3 {
 #word-count {
   margin-left: 5px;
 }
+
+/* Styling for primes result page */
+
+.primes-result {
+  color: #eee;
+}
+
+.primes-result a {
+  color: #eee;
+}
