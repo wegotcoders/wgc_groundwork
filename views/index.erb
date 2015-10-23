@@ -53,7 +53,11 @@
 
   <div id="problems" class="box">
     <h4>Programming Problems</h4>
-    <a href="/primes">My Prime Number Solution"</a>
+    <a href="/primes">My Prime Number Solution</a>
+    <br/>
+    Enter number <input type="text" id="upper-number" value=""/>
+    <Button id="primes-button" class="btn btn-primary">Get Sum of Primes</button>
+    <span id="primes-result"></span>
   </div>
 
   <div class="box">
@@ -156,6 +160,7 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
+  //primes solution --------------------------------------------------
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
 
@@ -167,4 +172,21 @@
   }
 
   document.getElementById('word-count').innerHTML = total_words;
+
+  //inline primes function
+  document.getElementById('primes-button').addEventListener("click", function() {
+    var number = document.getElementById('upper-number').innerHTML;
+    var resultField = document.getElementById('primes-result');
+
+    if (isNaN(number) || number < 2) {
+      resultField.innerHTML = "Invalid number, please enter a number larger than 2"
+    }
+    else {
+      //Could not giure this bit out, I need to make some sort of server request to call the prime fucntion
+      //var result = "<%= Primes.sum_to(" + trainee + ")%>";
+      //resultField = "The sum of primes for the number " + number + "is " + result;
+      resultField = "Could not giure this bit out, I need to make some sort of server request to call the prime fucntion";
+    }
+  });
+
 </script>
