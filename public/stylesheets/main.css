@@ -151,8 +151,8 @@ h3 {
 
 /* Word cound styling */
 
-#word-count {
-  margin-left: 5px;
+.pad-text {
+  padding-left: 5px;
 }
 
 /* Styling for primes result page */
@@ -163,4 +163,20 @@ h3 {
 
 .primes-result a {
   color: #eee;
+}
+
+/* Styling for profile update box */
+
+.notify {
+  width: auto;%;
+  height: 100px;
+  background-color: #cde9cf;
+  border: 1px solid #4b8b50;
+  color: #4b8b50;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+  border-radius: 6px;
+  margin: 5px;
+  font-size: 24px;
 }

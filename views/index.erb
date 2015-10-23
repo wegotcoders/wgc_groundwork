@@ -1,4 +1,8 @@
 <% if @profile %>
+  <!-- <div class="notify">
+    You profile was updated.
+  </div> -->
+
   <div  id="title">
     <img src="images/profile_image.jpeg"/>
     <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
@@ -47,7 +51,7 @@
   <div id="stats" class="box">
     <h4>Stats</h4>
     <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found
+    <span id="word-count" class="pad-text">0</span> words found
     <!-- <ul>
       <li><span id="word-count">0</span> words found in about section.</li>
       <li><span id="word-count">0</span> words found in about section.</li>
@@ -58,11 +62,13 @@
 
   <div id="problems" class="box">
     <h4>Programming Problems</h4>
-    <a href="/primes">My Prime Number Solution</a>
-    <br/>
-    Enter number <input type="text" id="upper-number" value=""/>
-    <Button id="primes-button" class="btn btn-primary">Get Sum of Primes</button>
-    <span id="primes-result"></span>
+    <div class="pad-text">
+      <a href="/primes">My Prime Number Solution</a>
+      <br/>
+      Enter number <input type="text" id="upper-number" value=""/>
+      <Button id="primes-button" class="btn btn-primary">Get Sum of Primes</button>
+      <span id="primes-result"></span>
+    </div>
   </div>
 
   <div class="box">
@@ -180,17 +186,16 @@
 
   //inline primes function
   document.getElementById('primes-button').addEventListener("click", function() {
-    var number = document.getElementById('upper-number').innerHTML;
+    var number = document.getElementById('upper-number').value;
     var resultField = document.getElementById('primes-result');
+    console.log(number);
 
     if (isNaN(number) || number < 2) {
-      resultField.innerHTML = "Invalid number, please enter a number larger than 2"
+      resultField.innerHTML = "Invalid number, please enter a number larger than 1"
     }
     else {
-      //Could not figure this bit out, I need to make some sort of server request to call the prime fucntion
-
-      //resultField = "The sum of primes for the number " + number + "is " + result;
-      resultField = "Could not figure this bit out, I need to make some sort of server request to call the prime fucntion";
+      //Could not figure this bit out, I need to make some sort of server request to call the prime fucntion.
+      resultField.innerHTML = "Could not figure this bit out, I need to make some sort of server request to call the prime fucntion";
     }
 
   });
