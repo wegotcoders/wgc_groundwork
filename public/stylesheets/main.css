@@ -91,7 +91,7 @@ h3 {
   width: 40%;
 }
 
-/* One box is a panel with a header and content area */
+/* box panel with a header and content area */
 
 .box {
   border:2px solid #666;
@@ -150,4 +150,10 @@ h3 {
   width: 60%;
   height: 20px;
   font-size: 16px;
+}
+
+/* Word cound styling */
+
+#word-count {
+  margin-left: 5px;
 }

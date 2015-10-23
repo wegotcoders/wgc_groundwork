@@ -37,10 +37,18 @@
     <br/>
   </div>
 
+  <div class="wrapper">
+
   <div id="stats" class="box">
     <h4>Stats</h4>
     <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <span id="word-count">0</span> words found
+    <!-- <ul>
+      <li><span id="word-count">0</span> words found in about section.</li>
+      <li><span id="word-count">0</span> words found in about section.</li>
+      <li><span id="word-count">0</span> words found in about section.</li>
+      <li><span id="word-count">0</span> words found in about section.</li>
+    </ul> -->
   </div>
 
   <div id="problems" class="box">
@@ -50,6 +58,7 @@
 
   <div class="box">
     <h4>Edit Profile</h4>
+    <!-- TODO - Add more fields so that your profile can be edited -->
 
     <form action="/update" method="POST">
       <fieldset>
@@ -98,40 +107,38 @@
             <label for="trainee[twitter]">Twitter</label>
             <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
           </div>
-
+          <div class="form-group">
+            <label for="trainee[codeacademy]">Code Academy</label>
+            <input type="text" name="trainee[codeacademy]" value="<%= @profile["codeacademy"] %>"/>
+          </div>
         </div>
-
         <div class="left-column">
-
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-        <div class="form-group">
-          <label for="trainee[ambition]">Ambition</label>
-          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
-        </div>
-        <div class="form-group">
-          <label for="trainee[projects]">Projects</label>
-          <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
-        </div>
-        <div class="form-group">
-          <label for="trainee[rationale]">Rationale</label>
-          <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
-        </div>
-        <div class="form-group">
-          <label for="trainee[ambition]">Ambition</label>
-          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
-        </div>
-
+          <div class="form-group">
+            <label for="trainee[about]">About</label>
+            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[ambition]">Ambition</label>
+            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[projects]">Projects</label>
+            <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[rationale]">Rationale</label>
+            <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[ambition]">Ambition</label>
+            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          </div>
         <input type="submit" value="Update Profile" class="btn btn-primary" />
-
       </div>
       </fieldset>
     </form>
   </div>
+</div>
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -150,6 +157,10 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  for(var i = 0; i < profile_values.length; i++) {
+    var innerText = profile_values[i].innerHTML;
+    total_words += innerText.split(" ").length;
+  }
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
