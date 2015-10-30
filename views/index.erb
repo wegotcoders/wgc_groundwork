@@ -52,12 +52,6 @@
     <h4>Stats</h4>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count" class="pad-text">0</span> words found
-    <!-- <ul>
-      <li><span id="word-count">0</span> words found in about section.</li>
-      <li><span id="word-count">0</span> words found in about section.</li>
-      <li><span id="word-count">0</span> words found in about section.</li>
-      <li><span id="word-count">0</span> words found in about section.</li>
-    </ul> -->
   </div>
 
   <div id="problems" class="box">
@@ -65,8 +59,8 @@
     <div class="pad-text">
       <a href="/primes">My Prime Number Solution</a>
       <br/>
-      Enter number <input type="text" id="upper-number" value=""/>
-      <Button id="primes-button" class="btn btn-primary">Get Sum of Primes</button>
+      <!-- Enter number <input type="text" id="upper-number" value=""/> -->
+      <Button id="primes-button" class="btn btn-primary">Get Sum of Primes up to 100</button>
       <span id="primes-result"></span>
     </div>
   </div>
@@ -186,18 +180,8 @@
 
   //inline primes function
   document.getElementById('primes-button').addEventListener("click", function() {
-    var number = document.getElementById('upper-number').value;
-    var resultField = document.getElementById('primes-result');
-    console.log(number);
-
-    if (isNaN(number) || number < 2) {
-      resultField.innerHTML = "Invalid number, please enter a number larger than 1"
-    }
-    else {
-      //Could not figure this bit out, I need to make some sort of server request to call the prime fucntion.
-      resultField.innerHTML = "Could not figure this bit out, I need to make some sort of server request to call the prime fucntion";
-    }
-
+    var resultField = document.getElementById('primes-result'); 
+    resultField.innerHTML = <%= Primes.sum_to(100) %>
   });
 
   // Hardcoded my github url as it would not save in my profile
