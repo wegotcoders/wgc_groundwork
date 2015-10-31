@@ -5,18 +5,20 @@ body {
   color: #333;
 }
 
+
 #logo {
   text-align: center;
 }
 
 #content {
-  padding: 1em;
+//WE GOT CODERS ID - WRAPS THE WHOLE PAGE
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
   padding: 1em;
+  text-align: left;
+  width: 70%;
+  margin: 0 auto;
   margin-bottom: 0.5em;
 }
 
@@ -37,3 +39,40 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+#header-text {
+  color: white;
+  text-align: center;
+  color: #423d3a;
+  padding: 6%;
+  font-size: 2.4em;
+  font-weight: 700;
+}
+
+#profile-pic {
+  border-radius: 100%;
+  margin: 0 auto;
+  display: block;
+
+}
+
+#section1 {
+
+  width: 100%;
+  height: 100vh;
+  background-image: url("/images/background1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.box h4 {
+  font-size: 2.4em;
+  color: #feac5b;
+  font-weight: 700;
+}
+
+.box p {
+  font-size: 1.1em;
+  color: #423d3a;
+}
