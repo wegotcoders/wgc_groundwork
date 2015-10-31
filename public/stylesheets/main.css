@@ -17,9 +17,11 @@ body {
 .box {
   padding: 1em;
   text-align: left;
-  width: 70%;
+  width: 40%;
   margin: 0 auto;
   margin-bottom: 0.5em;
+  padding: 0 5%;
+  float: left;
 }
 
 .welcome {
@@ -70,6 +72,7 @@ h3 {
   font-size: 2.4em;
   color: #feac5b;
   font-weight: 700;
+  margin-top: 20px;
 }
 
 .box p {
