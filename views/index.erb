@@ -1,9 +1,11 @@
 <% if @profile %>
   <div id="section1">
       <h3 id="header-text"><%= @profile["first_name"] %>'s Profile</h3>
-    </div>
-
+      <div id="scroll-down"> <a href="#down">&#9660;</a> </div>
+  </div>
+<a name="down"></a>
 <img id="profile-pic" src="/images/me.jpg" alt="Picture of Sam Sargent"/>
+
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
