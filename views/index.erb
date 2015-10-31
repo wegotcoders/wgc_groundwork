@@ -1,10 +1,9 @@
 <% if @profile %>
   <div id="section1">
-
       <h3 id="header-text"><%= @profile["first_name"] %>'s Profile</h3>
-      <img id="profile-pic" src="/images/me.jpg" alt="Picture of Sam Sargent"/>
-
     </div>
+
+<img id="profile-pic" src="/images/me.jpg" alt="Picture of Sam Sargent"/>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
@@ -29,15 +28,23 @@
 
     <form action="/update" method="POST">
       <fieldset>
+        <!--  about form -->
         <div class="form-group">
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <!--  codecademy form -->
         <div class="form-group">
-          <label for="trainee[codecademy]">codecademy</label>
+          <label for="trainee[codecademy]">Codecademy</label>
           <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>
+
+        <!--  ambition form -->
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
         </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
@@ -60,8 +67,13 @@
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
 
+
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+
+  for (var i = 0; i < profile_values.length; i++) {
+      total_words = total_words + profile_values[i].innerText.split(" ").length;
+  };
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
