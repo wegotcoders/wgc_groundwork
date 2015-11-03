@@ -22,7 +22,7 @@
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+    <a href="/primes">Prime Number Challenge</a>
   </div>
 
   <div class="box">
@@ -48,6 +48,13 @@
           <label for="trainee[ambition]">Ambition</label>
           <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
         </div>
+
+        <!--Prime solution -->
+        <div class="form-group">
+          <label for="trainee[primes_sum]">Primes Sum</label>
+          <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
+        </div>
+
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
