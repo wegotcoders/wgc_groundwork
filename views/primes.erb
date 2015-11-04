@@ -8,4 +8,10 @@
   <div id="primes">
     <a href="/">Back</a>
   </div>
+<script>
+  window.onbeforeunload = function(){
+   // Do somethin
+   return "Leaving or refreshing this page will mean you cannot view the correct result of the primes anymore (bug is being looked in to).";
+}
+</script>
 </div>
