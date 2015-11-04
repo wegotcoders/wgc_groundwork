@@ -89,4 +89,24 @@
   };
 
   document.getElementById('word-count').innerHTML = total_words;
+
+
+</script>
+
+<!-- JQUERY TO HIDE ALL THE EMPTY FIELDS ON THE PAGE AND REPLACE _ IN TITLES WITH A SPACE -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+  var $h4 = $('h4').text();
+  $('h4').each(function(){
+    var string = $(this).html();
+    var newString = string.replace(/_/g, ' ');
+    $(this).html(newString);
+    if ( $(this).siblings('.profile-value').text().length === 0 ) {
+      $(this).parent('.profile-section').hide();
+    }
+  });
+});
 </script>
