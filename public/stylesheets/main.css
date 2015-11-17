@@ -37,3 +37,18 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+#wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  color: brown;
+  font-family: 'Tangerine';
+  font-size: 24px;
+}
+
