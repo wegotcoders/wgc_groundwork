@@ -11,7 +11,6 @@
                     <li>
                         <div id="stats" class="box">
                             <h3>Stats</h3>
-                            
                             <!-- TODO - Set the contents of this span with JavaScript -->
                             <span id="word-count">0</span> words found.
                           </div>
@@ -29,7 +28,10 @@
             </nav>
         </div>
 
+        <!--CONTENT SECTION-->
         <div id="profile">
+
+            <!--ALL BOXES-->
             <% @profile.each do |field, value| %>
                 <div class="profile-section box">
                     <div class="inner-box">
@@ -39,20 +41,26 @@
                 </div>
             <% end %>
 
+            <!--EDIT BOX-->
             <div class="box">
                 <h3>Edit Profile</h3>
 
                 <form action="/update" method="POST">
                   <fieldset>
-
-                    <!-- TODO - Add more fields so that your profile can be edited -->
-
+                
+                    <!--ALL FIELDS-->
                     <% @profile.each do |field, value| %>
                         <div class="form-group">
                             <label for="trainee[<%= field %>]"><%= field %></label>
                             <input type="text" name="trainee[<%= field %>]" value="<%= value %>"/>
                         </div>
                     <% end %>
+
+                    <!--CODEACADEMY FIELD-->
+                    <div class="form-group">
+                      <label for="trainee[codeacademy]">About</label>
+                      <input type="text" name="trainee[codacademy]" value="<%= @profile["codacademy"] %>"/>
+                    </div>
 
                     <input type="submit" value="Update Profile" class="btn btn-primary" />
                   </fieldset>
@@ -61,6 +69,8 @@
         </div>
     </div>
 
+    
+
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -68,7 +78,6 @@
     <a href="/authorise">Authorise</a>
   </div>
 <% end %>
-
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
