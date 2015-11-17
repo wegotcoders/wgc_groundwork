@@ -33,7 +33,24 @@
                     </div>
                   <p class="profile-value"><%= value %></p>
                 </div>
-              <% end %>
+            <% end %>
+
+            <div class="box">
+                <h3>Edit Profile</h3>
+
+                <form action="/update" method="POST">
+                  <fieldset>
+                    <div class="form-group">
+                      <label for="trainee[about]">About</label>
+                      <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+                    </div>
+
+                    <!-- TODO - Add more fields so that your profile can be edited -->
+
+                    <input type="submit" value="Update Profile" class="btn btn-primary" />
+                  </fieldset>
+                </form>
+            </div>
         </div>
     </div>
 

@@ -14,7 +14,7 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
+  border: 1px solid BurlyWood;
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
@@ -56,7 +56,7 @@ h3 {
 }
 
 #navbar {
-  width: 320px;
+  width: 330px;
   height: 90px;
   margin-right: auto;
   margin-left: auto;
@@ -68,9 +68,14 @@ h3 {
   display: block;
   float: left;
 
-  color: brown;
   font-family: Arial;
   font-size: 10px;
+  font-weight: bold;
+}
+
+#stats, #problems {
+  border: 3px solid black;
+  border-radius: 6px;
 }
 
 #profile h4 {
@@ -86,8 +91,11 @@ h3 {
 }
 
 #profile .box {
-  width: 300px;
+  min-width: 200px;
   float: left;
   margin: 10px;
   text-align: justify;
+  background: 
+  linear-gradient(to right, BurlyWood, white);
+  border-radius: 6px;
 }
