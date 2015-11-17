@@ -73,6 +73,21 @@ h3 {
   font-size: 10px;
 }
 
-#profile {
-  height: 600px;
+#profile h4 {
+  color: brown;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#profile .inner-box {
+  text-align: center;
+}
+
+#profile .box {
+  width: 300px;
+  float: left;
+  margin: 10px;
+  text-align: justify;
 }

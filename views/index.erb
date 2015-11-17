@@ -26,7 +26,14 @@
         </div>
 
         <div id="profile">
-            
+            <% @profile.each do |field, value| %>
+                <div class="profile-section box">
+                    <div class="inner-box">
+                        <h4><%= field %></h4>
+                    </div>
+                  <p class="profile-value"><%= value %></p>
+                </div>
+              <% end %>
         </div>
     </div>
 
