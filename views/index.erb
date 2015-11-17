@@ -61,13 +61,8 @@
                         </div>
                     <% end %>
 
-                    <!--CODEACADEMY FIELD-->
-                    <div class="form-group">
-                      <label for="trainee[codeacademy]">About</label>
-                      <input type="text" name="trainee[codacademy]" value="<%= @profile["codacademy"] %>"/>
-                    </div>
-
                     <input type="submit" value="Update Profile" class="btn btn-primary" />
+
                   </fieldset>
                 </form>
             </div>
@@ -87,16 +82,14 @@
 
 
 
-
+<!--JAVASCRIPT-->
 <script language="javascript">
-
     var profile_values = document.getElementsByClassName('profile-value')
-    var total_words = 0
 
+    var total_words = 0
     for (var i = 0; i < profile_values.length; i += 1) {
         total_words += profile_values[i].innerHTML.split(' ').length
     }
 
     document.getElementById('word-count').innerHTML = total_words
-
 </script>
