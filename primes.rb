@@ -1,6 +1,14 @@
+require 'prime'
+
 class Primes
   def self.sum_to(limit = 100)
-    # TODO - add your prime number solution here...
-    "I'm working on it!"
+
+    sum = 0
+
+    Prime.each(100) do |prime|
+	  sum += prime
+	end
+
+    return sum
   end
 end
