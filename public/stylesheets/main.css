@@ -96,7 +96,8 @@ img {
 }
 
 #profile .box {
-  min-width: 200px;
+  width: 300px;
+  min-height: 60px;
   float: left;
   margin: 10px;
   text-align: justify;

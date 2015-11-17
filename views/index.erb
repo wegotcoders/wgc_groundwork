@@ -11,6 +11,7 @@
                     <li>
                         <div id="stats" class="box">
                             <h3>Stats</h3>
+                            
                             <!-- TODO - Set the contents of this span with JavaScript -->
                             <span id="word-count">0</span> words found.
                           </div>
@@ -43,22 +44,15 @@
 
                 <form action="/update" method="POST">
                   <fieldset>
-                    <div class="form-group">
-                      <label for="trainee[about]">About</label>
-                      <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-                    </div>
 
                     <!-- TODO - Add more fields so that your profile can be edited -->
 
-                    <div class="form-group">
-
-                      <label for="trainee[ambition]">Ambition</label>
-
-                      <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
-                      
-                    </div>
-
-                    
+                    <% @profile.each do |field, value| %>
+                        <div class="form-group">
+                            <label for="trainee[<%= field %>]"><%= field %></label>
+                            <input type="text" name="trainee[<%= field %>]" value="<%= value %>"/>
+                        </div>
+                    <% end %>
 
                     <input type="submit" value="Update Profile" class="btn btn-primary" />
                   </fieldset>
