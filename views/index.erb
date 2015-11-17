@@ -1,27 +1,32 @@
 <% if @profile %>
 
     <div id="wrapper">
+
+        <!--TITLE-->
         <div id="header">
             <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
         </div>
 
+        <!--NAVIGATION-->
         <div id="navbar">
             <nav>
                 <ul>
                     <li>
+                        <!--WORD COUNT-->
                         <div id="stats" class="box">
                             <h3>Stats</h3>
-                            <!-- TODO - Set the contents of this span with JavaScript -->
                             <span id="word-count">0</span> words found.
-                          </div>
+                        </div>
                     </li>
                     <li>
+                        <!--EXERCISE-->
                         <div id="problems" class="box">
                             <h3>Programming Problems</h3>
                             <a href="/primes">My Prime Number Solution</a>
-                          </div>
+                        </div>
                     </li>
                     <li>
+                        <!--PROFILE PICTURE-->
                         <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/1/005/0a5/299/2e1420c.jpg">
                     </li>
                 </ul>
@@ -69,7 +74,7 @@
         </div>
     </div>
 
-    
+
 
 <% else %>
   <div class="welcome">
@@ -81,10 +86,16 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+
+  var profile_values = document.getElementsByClassName('profile-value')
+  var total_words = 0
+
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
-  document.getElementById('word-count').innerHTML = total_words;
+
+  for (var i = 0; i < profile_values.length; i++) {
+      total_words += profile_values[i].innerHTML.split(' ').length
+  }
+
+  document.getElementById('word-count').innerHTML = total_words
 </script>
