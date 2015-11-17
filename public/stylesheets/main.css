@@ -9,27 +9,32 @@ body {
   text-align: center;
 }
 
-#content {
+/*#content {
   padding: 1em;
 }
 
 .box {
   border: 1px solid #999;
   background: #FCFCFC;
-  padding: 1em;
   margin-bottom: 0.5em;
-}
+}*/
 
 .profile-section .box {
+  border: 1px solid #999;
+  display: block;
+  float: left;
   position: relative;
   overflow: hidden;
-  height: 200px;
+  height: 300px;
+  width: 300px;
 }
 
 .profile-section .inner-box {
   position: absolute;
   bottom: -200px;
-  transition: bottom 500ms ease-out 0.5s;
+  background-color: skyblue;
+  transition: bottom 500ms ease-out;
+  text-align: justify;
 }
 
 .profile-section .box:hover .inner-box {
