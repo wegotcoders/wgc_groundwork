@@ -20,8 +20,20 @@ body {
   margin-bottom: 0.5em;
 }
 
-.main-content {
-  
+.profile-section .box {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.profile-section .inner-box {
+  position: absolute;
+  bottom: -200px;
+  transition: bottom 500ms ease-out 0.5s;
+}
+
+.profile-section .box:hover .inner-box {
+  bottom: 0;
 }
 
 .welcome {

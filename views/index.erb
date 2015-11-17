@@ -5,11 +5,13 @@
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 
-  <div class="main-content">
+  <div class="profile-section">
     <% @profile.each do |field, value| %>
       <div class="profile-section box">
         <h4><%= field %></h4>
-        <p class="profile-value"><%= value %></p>
+        <div class="profile-section inner-box">
+          <p class="profile-value"><%= value %></p>
+        </div>
       </div>
     <% end %>
   </div>
