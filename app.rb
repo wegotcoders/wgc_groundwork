@@ -9,11 +9,8 @@ set :session_secret, 'secret'
 enable :sessions
 
 get '/primes' do
-  
-  # TODO - Can we make this dynamic?
-  limit = 2000000
-
-  @sum = Primes.sum_to(limit)
+  limit = gets.chomp
+  @sum = Primes.sum_to(limit.to_i)
 
   erb :primes, :layout => :main
 end
