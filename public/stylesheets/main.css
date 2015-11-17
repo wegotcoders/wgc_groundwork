@@ -56,13 +56,21 @@ h3 {
 }
 
 #navbar {
+  width: 320px;
   height: 90px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-nav ul li {
+#navbar nav ul li {
+  margin: 10px;
   list-style-type: none;
   display: block;
   float: left;
+
+  color: brown;
+  font-family: Arial;
+  font-size: 10px;
 }
 
 #profile {
