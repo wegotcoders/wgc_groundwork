@@ -1,20 +1,13 @@
 <% if @profile %>
-  <div class="main-heading">
-    <h3><%= @profile["first_name"] %>'s Profile</h3>
-  </div>
+  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-
-  <div class="profile-section">
-    <% @profile.each do |field, value| %>
-      <div class="profile-section box">
-        <h4><%= field %></h4>
-        <div class="profile-section inner-box">
-          <p class="profile-value"><%= value %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <% @profile.each do |field, value| %>
+    <div class="profile-section box">
+      <h4><%= field %></h4>
+      <p class="profile-value"><%= value %></p>
+    </div>
+  <% end %>
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -55,12 +48,9 @@
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
   console.log("I am Javascript!");
-
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
-
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
-
   document.getElementById('word-count').innerHTML = total_words;
 </script>
