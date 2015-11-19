@@ -16,7 +16,7 @@
   background-color: #dfe3ee;
 }
 
-h2, a, p {
+h4, h3, h2, a, p {
   font-family: Oswald;
 }
 
@@ -96,4 +96,24 @@ img {
 
 .box:hover .inner-box {
   top: 0px;
+}
+
+/***********************************************/
+
+.content {
+  border: 1px solid #3b5998;
+  font-size: 16px;
+  margin: 10px;
+
+  height: 200px;
+  width: 300px;
+  float: left;
+  overflow-y: scroll;
+}
+
+h4 {
+  background-color: #3b5998;
+  color: white;
+  text-transform: capitalize;
+  padding: 2px;
 }

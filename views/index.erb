@@ -20,7 +20,12 @@
         </ul>
     </div>
 
-
+    <% @profile.each do |field, value| %>
+        <div class="content">
+            <h4><%= field %></h4>
+            <p><%= value %></p>
+        </div>
+    <% end %>
 
 <% else %>
     <div class="welcome">
