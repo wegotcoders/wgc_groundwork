@@ -1,31 +1,5 @@
-body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333;
-}
-
 #logo {
   text-align: center;
-}
-
-#content {
-  padding: 1em;
-}
-
-.box {
-  border: 1px solid BurlyWood;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
-}
-
-.welcome {
-  text-align: center;
-}
-
-h3 {
-  font-size: 1.5em;
 }
 
 .error {
@@ -38,71 +12,88 @@ h3 {
 
 /* TODO - Add your own styles here */
 
-#content {
-  background: 
-  linear-gradient(to right, Beige , white);
+* {
+  background-color: #dfe3ee;
 }
-#wrapper {
-  margin-left: auto;
-  margin-right: auto;
+
+h2, a, p {
+  font-family: Oswald;
 }
 
 #header {
-  width: 260px;
-  margin-left: auto;
-  margin-right: auto;
-  color: brown;
-  font-family: 'Tangerine';
-  font-size: 24px;
+  height: 35px;
+}
+
+h1 {
+  text-align: center;
+  font-family: Tangerine;
+  font-size: 28px;
 }
 
 #navbar {
-  width: 570px;
-  height: 150px;
-  margin-right: auto;
-  margin-left: auto;
+  background-color: #3b5998;
+  height: 100px;
+  overflow: hidden;
 }
 
-#navbar nav ul li {
-  margin: 10px;
+#navbar ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+#navbar ul li {
   list-style-type: none;
-  display: block;
   float: left;
 
-  font-family: Arial;
-  font-size: 10px;
-  font-weight: bold;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 100px;
+
+  position: relative;
+  overflow: hidden;
 }
 
-#stats, #problems {
-  border: 3px solid black;
-  border-radius: 6px;
-  background-color: lightGrey;
+#navbar ul li:nth-child(3) {
+  float: right;
 }
 
 img {
-  width: 50%;
+  width: 100%;
 }
 
-#profile h4 {
-  color: brown;
-  font-family: Arial;
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: capitalize;
+#navbar ul li a {
+  background-color: #3b5998;
+  text-decoration: none;
+  display: block;
+  color: white;
 }
 
-#profile .inner-box {
-  text-align: center;
+#navbar ul li a:hover {
+  background-color: #8b9dc3;
+  color: black;
 }
 
-#profile .box {
-  width: 300px;
-  min-height: 60px;
-  float: left;
-  margin: 10px;
-  text-align: justify;
-  background: 
-  linear-gradient(to right, BurlyWood, white);
-  border-radius: 6px;
+/***********************************************/
+
+.box {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.inner-box {
+  height: 100px;
+  width: 100px;
+  background-color: #8b9dc3;
+
+  position: absolute;
+  top: 100px;
+
+  -webkit-transition: top 0.5s ease-out 0s;
+}
+
+.box:hover .inner-box {
+  top: 0px;
 }
