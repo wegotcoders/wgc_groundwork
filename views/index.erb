@@ -6,16 +6,18 @@
 
     <div id="navbar">
         <ul>
-            <li>
+            <li class="box">
                 <a href="#">Stats</a>
+                <div class="inner-box">
+                    <span id="word-count">0</span> words
+                </div>
             </li>
             <li>
                 <a href="/primes">Primes</a>
             </li>
             <li class="box">
                 <img src="/images/profile.jpg"/>
-                <a href="/pictures" style="color: black"><div class="inner-box">More Pictures
-                </div></a>
+                <a href="/pictures" style="color: black"><div class="inner-box">More Pictures</div></a>
             </li>
         </ul>
     </div>
@@ -23,7 +25,7 @@
     <% @profile.each do |field, value| %>
         <div class="content">
             <h4><%= field %></h4>
-            <p><%= value %></p>
+            <p class="profile-value"><%= value %></p>
         </div>
     <% end %>
 
