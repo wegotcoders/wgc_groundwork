@@ -27,6 +27,27 @@
         </div>
     <% end %>
 
+    <div class="content big-content">
+        <h4>Edit Profile</h4>
+
+        <form action="/update" method="POST">
+          <fieldset>
+        
+            <% @profile.each do |field, value| %>
+                <div class="form-group">
+                    <label for="trainee[<%= field %>]"><%= field %></label>
+                    <input type="text" name="trainee[<%= field %>]" value="<%= value %>"/>
+                </div>
+            <% end %>
+
+            <div class="align">
+                <input type="submit" value="Update Profile" class="btn"/>
+            </div>
+
+          </fieldset>
+        </form>
+    </div>
+
 <% else %>
     <div class="welcome">
         <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>

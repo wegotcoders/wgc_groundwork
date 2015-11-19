@@ -16,7 +16,7 @@
   background-color: #dfe3ee;
 }
 
-h4, h3, h2, a, p {
+h4, h3, h2, a, p, input, label {
   font-family: Oswald;
 }
 
@@ -121,4 +121,49 @@ h4 {
 p {
   padding: 4px;
   text-align: justify;
+}
+
+/**********************************************/
+
+.big-content {
+  height: 100%;
+  width: 97%;
+  overflow-y: hidden;
+}
+
+.form-group {
+  border-bottom: 1px solid #3b5998;
+  height: 40px;
+}
+
+label, input {
+  margin: 4px;
+}
+
+label {
+  float: left;
+  text-transform: capitalize;
+}
+
+input {
+  float: right;
+  width: 50%;
+}
+
+.btn {
+  background-color: #3b5998;
+  color: white;
+  width: 100px;
+  height: 100px;
+  float: none;
+  margin: 20px;
+}
+
+.btn:hover {
+  background-color: #8b9dc3;
+  color: black;
+}
+
+.align {
+  text-align: center;
 }
