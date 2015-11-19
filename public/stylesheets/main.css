@@ -150,6 +150,8 @@ input {
   width: 50%;
 }
 
+/******************************************/
+
 .btn {
   background-color: #3b5998;
   color: white;
@@ -166,4 +168,10 @@ input {
 
 .align {
   text-align: center;
+}
+
+/*************************************/
+
+td {
+  padding: 10px;
 }

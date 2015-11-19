@@ -15,6 +15,10 @@ get '/primes' do
   erb :primes, :layout => :main
 end
 
+get '/pictures' do
+  erb :pictures, :layout => :main
+end
+
 get '/' do
   if signed_in?
     @profile = trainee.get_profile
