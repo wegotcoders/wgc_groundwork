@@ -177,3 +177,16 @@ input {
 td {
   padding: 10px;
 }
+
+/*************************************/
+
+.new-box {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.new-box:active .inner-box {
+  top: 0px;
+}
