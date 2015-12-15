@@ -1,5 +1,5 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: Georgia, serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
@@ -7,6 +7,8 @@ body {
 
 #logo {
   text-align: right;
+position: fixed;
+right: 10px;
 }
 
 #content {
@@ -14,7 +16,7 @@ body {
 }
 
 .box {
-  border: 1px dashed #999;
+ // border: 1px dashed #999;
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
@@ -37,3 +39,20 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+h4 {
+  font-size: 1.75em;
+  text-transform: capitalize;
+
+}
+
+.box {
+ width: 25%;
+ float: left;
+}
+
+#avatar{
+
+/*position: fixed; */
+top: -10px;
+
+}
