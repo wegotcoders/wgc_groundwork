@@ -6,7 +6,7 @@ body {
 }
 
 #logo {
-  text-align: center;
+  text-align: right;
 }
 
 #content {
@@ -14,7 +14,7 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
+  border: 1px dashed #999;
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
