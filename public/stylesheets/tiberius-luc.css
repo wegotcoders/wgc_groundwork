@@ -1,10 +1,10 @@
-/*This is the original*/
+/*This is the alternate */
 body {
   font-family: Georgia, serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: gray;
-  background-color: silver;
+  background-color: #908985;
 }
 
 #logo {

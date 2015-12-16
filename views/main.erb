@@ -6,7 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>We Got Coders - My Amazing Application</title>
   <link rel="stylesheet" href="/stylesheets/reset.css">
-  <link rel="stylesheet" href="/stylesheets/main.css">
+  <link id="pagestyle" rel="stylesheet" href="/stylesheets/main.css">
+
+<script>
+function swapStyleSheet(sheet){
+  document.getElementById('pagestyle').setAttribute('href', sheet);
+}
+</script>
+
+
 </head>
 <body>
 
@@ -17,6 +25,7 @@
   <div id="content">
     <%= yield %>
   </div>
-
+<button onclick="swapStyleSheet('/stylesheets/tiberius-luc.css')">Dark Side</button>
+<button onclick="swapStyleSheet('/stylesheets/main.css')">Clean(er)</button>
 </body>
 </html>
