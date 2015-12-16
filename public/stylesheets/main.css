@@ -50,12 +50,20 @@ h4 {
 .box {
  width: 25%;
  float: left;
+ border: dashed 1px white;
 }
 
 #avatar{
 
 /*position: fixed; */
 top: -10px;
+
+}
+
+li {
+list-style-type: circle;
+list-style-position: inside;
+
 
 }
 
