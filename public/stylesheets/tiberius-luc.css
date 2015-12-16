@@ -4,7 +4,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: gray;
-  background-color: #908985;
+  background:gray;
 }
 
 #logo {
@@ -18,7 +18,7 @@ right: 10px;
 }
 
 .box {
-//border: 1px dashed black;
+
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
@@ -29,7 +29,8 @@ right: 10px;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.75em;
+  color: white;
 }
 
 .error {
