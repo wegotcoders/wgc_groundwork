@@ -36,4 +36,130 @@ h3 {
   font-size: 1.5em;
 }
 
+
+
+
+
+
 /* TODO - Add your own styles here */
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: helvetica, arial, sans-serif;
+}
+
+#content {
+    background-color: #E9EAED;
+}
+
+.jumbotron {
+    height: 427px;
+    background-image: url('/images/yosemite.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.prof-container {
+    position: relative;
+    border-radius: 5px;
+}
+
+.prof-container h1 {
+    position: absolute;
+    top: -50px;
+    left: 260px;
+    font-size: 2em;
+    color: #fff;
+}
+
+.prof-image {
+    position: absolute;
+    top: -180px;
+    left: 25px;
+    border: 1px solid #DFE0E4;
+    border-radius: 5px;
+    height: 210px;
+}
+
+.prof {
+    border-radius: 5px;
+    border: 5px solid #fff;
+}
+
+nav {
+    height: 50px;
+    border: 1px solid #DFE0E4;
+    border-top: 0;
+    background-color: #fff;
+}
+
+nav ul {
+    margin-left: 300px;
+}
+
+nav ul li a {
+    float: left;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    width: auto;
+    padding: 0 20px; 
+    border-right: 1px solid #DFE0E4;
+    text-decoration: none;
+    color: #AB1F27;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #f2f2f2;
+}
+
+nav ul li:nth-child(1) a {
+    border-left: 1px solid #DFE0E4;
+}
+
+.clear {
+    clear: both;
+}
+
+.left-container {
+    width: 30%;
+    float: left; 
+}
+
+.right-container {
+    width: 68%;
+    float: right; 
+}
+
+.left-content {
+    background-color: #fff;  
+    margin-top: 20px; 
+    border: 1px solid #DFE0E4;
+    padding: 30px;
+}
+
+.right-content {
+    background-color: #fff;  
+    margin-top: 20px; 
+    border: 1px solid #DFE0E4;
+    padding: 30px;
+}
+
+dt {
+    float: left;
+    width: 130px;   
+}
+
+
+
+
+
+
+
+
+

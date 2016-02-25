@@ -1,26 +1,121 @@
+
+
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+
+
+
+
+
+
+
+    <div class="jumbotron">
     </div>
-  <% end %>
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
+    <div class="prof-container">
+        <div class="prof-image">
+            <img class="prof" src="/images/profile.jpg" alt="Profile Picture" width="200px" height="200px">
+        </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
+        <h1>Danny Santos</h1>
+    </div>
 
-  <div class="box">
+    <nav>
+        <ul>
+
+            <li><a href="#about">About</a></li>
+            <li><a href="#ambitions">Ambitions</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#rationale">Rationale</a></li>
+            <li><a href="#learning-experience">Learning Experience</a></li>
+
+        </ul>
+
+        <p class="clear"></p>
+    </nav>
+
+<div class="left-container">
+    
+    <div class="left-content">
+        
+        <h2>Info</h2>
+
+        <dl>
+
+            <dt>Name:</dt>
+            <dd>Danny Santos</dd>
+
+            <dt>Date of Birth:</dt>
+            <dd>16/02/1988</dd>
+
+            <dt>Gender:</dt>
+            <dd>Male</dd>
+
+            <dt>Phone Number:</dt>
+            <dd>07711955084</dd>
+
+            <dt>Employment Status:</dt>
+            <dd>Self-Employed</dd>
+
+            <dt>Homepage:</dt>
+            <dd><a href="www.dannysantos.com">www.dannysantos.com</a></dd>
+
+            <dt>Twitter:</dt>
+            <dd>@dannysantos</dd>
+
+            <dt>GitHub:</dt>
+            <dd>DannySantos</dd>
+
+        </dl>
+
+    </div>
+
+
+    <div id="stats" class="left-content">
+        <h2>Stats</h2>
+        <!-- TODO - Set the contents of this span with JavaScript -->
+        <span id="word-count">0</span> words found.
+    </div>
+
+    <div id="problems" class="left-content">
+        <h2>Programming Problems</h2>
+        <a href="/primes">My Prime Number Solution</a>
+    </div>
+
+</div>
+
+<div class="right-container">
+    
+    <div id="about" class="right-content">
+        <h2>About</h2>
+        <p><%= @profile["about"] %></p>
+    </div>
+
+    <div id="ambitions" class="right-content">
+        <h2>Ambitions</h2>
+        <p><%= @profile["ambition"] %></p>
+    </div>
+
+    <div id="projects" class="right-content">
+        <h2>Projects</h2>
+        <p><%= @profile["projects"] %></p>
+    </div>
+
+    <div id="rationale" class="right-content">
+        <h2>Rationale</h2>
+        <p><%= @profile["rationale"].sub('<marquee>', 'marquee') %></p>
+    </div>
+
+    <div id="learning-experience" class="right-content">
+        <h2>Learning Experience</h2>
+        <p><%= @profile["learning_experience"] %></p>
+    </div>
+    
+</div>
+
+    <p class="clear"></p>
+
+  <div class="right-content">
     <h3>Edit Profile</h3>
 
     <form action="/update" method="POST">
@@ -31,6 +126,10 @@
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <label for="trainee[rationale]">Rationale</label>
+          <input style="width:500px" type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+        </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>

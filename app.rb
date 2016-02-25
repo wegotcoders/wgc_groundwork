@@ -1,8 +1,8 @@
 require 'sinatra'
 require './lib/profile'
 
-set :application_id, 'EDIT_ME'
-set :secret, 'EDIT_ME'
+set :application_id, '36337108d63bb81c5f6595a505d3e8e4df44daa765bac25daaad51220892b8a4'
+set :secret, 'efcd3c84411ba2a1771221f3035f4f6cb517f36b4ab11847ca1b89478e4b8187'
 set :redirect_uri, 'http://localhost:4567/callback'
 set :site_url, 'http://wegotcoders.com'
 set :session_secret, 'secret'
@@ -41,3 +41,4 @@ include Sinatra::OauthRoutes
 def trainee
   @trainee ||= WeGotCoders::Trainee.new(settings.site_url, session[:access_token])
 end
+
