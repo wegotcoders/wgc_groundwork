@@ -42,3 +42,4 @@ def trainee
   @trainee ||= WeGotCoders::Trainee.new(settings.site_url, session[:access_token])
 end
 
+
