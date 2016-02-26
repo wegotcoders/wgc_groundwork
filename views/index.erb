@@ -1,16 +1,4 @@
-<% @profile.each do |key, value| %>
-    <%= puts key %>
-    <%= puts value %>
-<% end %>
-
 <% if @profile %>
-
-
-
-
-
-
-
 
     <div class="jumbotron">
     </div>
@@ -86,10 +74,20 @@
 
     <div id="problems" class="left-content">
         <h2>Programming Problems</h2>
-        <a href="/primes">My Prime Number Solution</a>
+        
+        <p>Find the sum of all prime numbers below:</p>
+        
+        <form action="/primes">
+            <input type="text" name="prime_limit" value="<%= @limit %>">
+            <input type="submit" value="Get Answer">
+        </form>
     </div>
 
 </div>
+
+
+
+
 
 <div class="right-container">
     
