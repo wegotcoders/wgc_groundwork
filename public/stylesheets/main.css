@@ -155,6 +155,12 @@ dt {
     width: 130px;   
 }
 
+label span {  
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #999;
+}
+
 label { 
     display: block; 
     margin: 10px 0 5px 0;   

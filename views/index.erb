@@ -70,6 +70,9 @@
             <dt>GitHub:</dt>
             <dd><%= @profile["github"] %></dd>
 
+            <dt>Code Academy:</dt>
+            <dd><%= @profile["code_academy"] %></dd>
+
         </dl>
 
     </div>
@@ -92,22 +95,27 @@
     
     <div id="about" class="right-content">
         <h2>About</h2>
-        <p><%= @profile["about"] %></p>
+        <p class="profile-value"><%= @profile["about"] %></p>
     </div>
 
     <div id="ambitions" class="right-content">
         <h2>Ambitions</h2>
-        <p><%= @profile["rationale"].sub('<marquee>', 'marquee') %></p>
+        <p class="profile-value"><%= @profile["rationale"].sub('<marquee>', 'marquee') %></p>
+    </div>
+
+    <div id="projects" class="right-content">
+        <h2>Projects</h2>
+        <p class="profile-value"><%= @profile["projects"] %></p>
     </div>
     
     <div id="rationale" class="right-content">
         <h2>Rationale</h2>
-        <p><%= @profile["rationale"].sub('<marquee>', 'marquee') %></p>
+        <p class="profile-value"><%= @profile["rationale"].sub('<marquee>', 'marquee') %></p>
     </div>
 
     <div id="learning-experience" class="right-content">
         <h2>Learning Experience</h2>
-        <p><%= @profile["learning_experience"] %></p>
+        <p class="profile-value"><%= @profile["learning_experience"] %></p>
     </div>
     
     <div id="edit-profile" class="right-content">
@@ -162,35 +170,40 @@
             </div>
 
             <div class="form-group">
-              <label for="trainee[about]">About</label>
+              <label for="trainee[code_academy]">Code Academy</label>
+              <input type="text" name="trainee[code_academy]" value="<%= @profile["code_academy"] %>"/>
+            </div>
+
+            <div class="form-group">
+              <label for="trainee[about]">About <span>(Minimum 20 words)</span></label>
               <textarea type="text" name="trainee[about]" cols="80" rows="10">
                 <%= @profile["about"] %>
               </textarea>
             </div>
 
             <div class="form-group">
-              <label for="trainee[ambition]">Ambitions</label>
+              <label for="trainee[ambition]">Ambitions <span>(Minimum 20 words)</span></label>
               <textarea type="text" name="trainee[ambition]" cols="80" rows="10">
                 <%= @profile["ambition"] %>
               </textarea>
             </div>
 
             <div class="form-group">
-              <label for="trainee[projects]">Projects</label>
+              <label for="trainee[projects]">Projects <span>(Minimum 20 words)</span></label>
               <textarea type="text" name="trainee[projects]" cols="80" rows="10">
                 <%= @profile["projects"] %>
               </textarea>
             </div>
 
             <div class="form-group">
-              <label for="trainee[rationale]">Rationale</label>
+              <label for="trainee[rationale]">Rationale <span>(Minimum 20 words)</span></label>
               <textarea type="text" name="trainee[rationale]" cols="80" rows="10">
                 <%= @profile["rationale"] %>
               </textarea>
             </div>
 
             <div class="form-group">
-              <label for="trainee[learning_experience]">Learning Experience</label>
+              <label for="trainee[learning_experience]">Learning Experience <span>(Minimum 20 words)</span></label>
               <textarea type="text" name="trainee[learning_experience]" cols="80" rows="10">
                 <%= @profile["learning_experience"] %>
               </textarea>
@@ -215,13 +228,25 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+  console.log(profile_values[0]);
+    
+  var about_value = profile_values[0];
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+    
+  function WordCount(words) {
+      return words.innerHTML.split(" ").length;
+  }
+    
+  total_words  = WordCount(profile_values[0]);
+  total_words += WordCount(profile_values[1]);
+  total_words += WordCount(profile_values[2]);
+  total_words += WordCount(profile_values[3]);
+  total_words += WordCount(profile_values[4]);
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
