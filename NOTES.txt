@@ -1,0 +1,24 @@
+#################################################!##################################################
+##                                                                                                ##
+##                                             Notes                                              ##
+##                                                                                                ##
+#################################################!##################################################
+
+
+               The layout is based on that of a relatively popular website. I made it              
+               responsive for multiple devices and browsers.
+
+               I never did figure out why I couldn't get certain fields to update. As
+               a result the 5 question fields can't be updated and the Code Academy &
+               Prime Sum fields of the profile are hard-coded.
+
+               My Code Academy profile shows one of the HTML & CSS courses not having
+               been completed. This is just because they changed the course. I didn't
+               complete the long one though as I have very recently taken 2 very long
+               and detailed HTML & CSS courses on Lynda.com and figured that would be
+               enough.
+
+               The homepage DannySantos.com doesn't currently exist...
+
+
+                                                 *                           

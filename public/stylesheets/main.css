@@ -36,4 +36,315 @@ h3 {
   font-size: 1.5em;
 }
 
+
+
+
+
+
 /* TODO - Add your own styles here */
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: helvetica, arial, sans-serif;
+}
+
+#content {
+    background-color: #E9EAED;
+}
+
+.jumbotron {
+    height: 427px;
+    background-image: url('/images/yosemite.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.prof-container {
+    position: relative;
+    border-radius: 5px;
+}
+
+.prof-container h1 {
+    position: absolute;
+    top: -50px;
+    left: 260px;
+    font-size: 2em;
+    color: #fff;
+}
+
+.prof-image {
+    position: absolute;
+    top: -180px;
+    left: 25px;
+    border: 1px solid #DFE0E4;
+    border-radius: 5px;
+    height: 210px;
+}
+
+.prof {
+    border-radius: 5px;
+    border: 5px solid #fff;
+}
+
+nav {
+    height: 50px;
+    border: 1px solid #DFE0E4;
+    border-top: 0;
+    background-color: #fff;
+}
+
+nav ul {
+    margin-left: 300px;
+}
+
+nav ul li a {
+    float: left;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    width: auto;
+    padding: 0 20px; 
+    border-right: 1px solid #DFE0E4;
+    text-decoration: none;
+    color: #AB1F27;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #f2f2f2;
+}
+
+nav ul li:nth-child(1) a {
+    border-left: 1px solid #DFE0E4;
+}
+    
+nav h1 {
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.left-container {
+    width: 30%;
+    float: left; 
+}
+
+.right-container {
+    width: 68%;
+    float: right; 
+}
+
+.left-content {
+    background-color: #fff;  
+    margin-top: 20px; 
+    border: 1px solid #DFE0E4;
+    padding: 30px;
+}
+
+.left-content p {
+    margin-bottom: 10px; 
+}
+
+.right-content {
+    background-color: #fff;  
+    margin-top: 20px; 
+    border: 1px solid #DFE0E4;
+    padding: 30px;
+}
+
+dl:nth-child(3) {
+    margin-top: 10px;
+}
+
+dt {
+    float: left;
+    width: 100%;   
+    font-weight: bold;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+dt:nth-child(1) {
+    margin-top: 0;
+}
+
+dd {
+    text-indent: 10px;
+}
+
+label span {  
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #999;
+}
+
+label { 
+    display: block; 
+    margin: 10px 0 5px 0;   
+    font-weight: bold;
+}
+
+input { 
+    display: block; 
+    font-size: 1em;    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input[type="text"] { 
+    width: 100%;
+    padding: 10px;
+}
+
+input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+textarea { 
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+textarea.focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+input[type="submit"] { 
+    width: 100%;
+    height: 40px;
+    border: 0;
+    margin-top: 10px;
+    background-color: #AB1F27;
+    color: #fff;
+}
+
+.word-error {
+    text-align: right;
+    color: #BD0404;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+#aboutError {
+    display: none;
+}
+
+#ambitionError {
+    display: none;
+}
+
+#projectsError {
+    display: none;
+}
+
+#rationaleError {
+    display: none;
+}
+
+#learningError {
+    display: none;
+}
+
+#formError {
+    display: none;
+    text-align: center;
+    margin-top: 5px;
+}
+
+input:disabled {
+    background-color: #999;
+}
+
+.left-title {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width:1080px) {
+    nav ul {
+        margin-left: 250px;
+    }
+}
+
+@media only screen and (max-width:987px) {
+    nav ul li a {
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width:866px) {
+    nav ul {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    
+    .left-container {
+        width: 100%;
+    }
+    
+    .right-container {
+        width: 100%;
+    }
+
+    dl {
+        float: left;
+        width: 50%;
+    }
+
+    dl:nth-child(3) {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    
+    #logo img {
+        width: 100%;
+    }
+    
+    .prof-image {
+        position: relative;   
+        text-align: center;
+        width: 210px;
+        top: -260px;
+        left: 0;
+        margin: auto;
+    }
+    
+    .prof-container {
+        height: 0;
+    }
+    
+    .prof-container h1 {
+        display: none;  
+    }
+    
+    nav {
+        line-height: 50px;
+    }
+    
+    nav h1 {
+        display: block;
+        text-align: center;
+        font-size: 1.8em;
+    }
+}
+
+
+
+
+
