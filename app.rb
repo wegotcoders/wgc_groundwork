@@ -8,14 +8,22 @@ set :site_url, 'http://wegotcoders.com'
 set :session_secret, 'secret'
 enable :sessions
 
-get '/primes' do
-  # TODO - Can we make this dynamic?
-
-  # TODO - add your prime number solution in the primes.rb file.
-    
+get '/primes' do    
   @sum = Primes.sum_to(params[:prime_limit].to_i)
 
   erb :primes, :layout => :main
+end
+
+get '/multiples' do
+    @sumMultiples = Multiples.multiples(params[:multiples_limit].to_i)
+
+    erb :multiples, :layout => :main
+end
+
+get '/fibonacci' do
+    @sumFibonacci = Fibonacci.fibonacci(params[:fibonacci_limit].to_i)
+
+    erb :fibonacci, :layout => :main
 end
 
 get '/' do

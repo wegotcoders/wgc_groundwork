@@ -78,13 +78,33 @@
         <span id="word-count">0</span> words found.
     </div>
 
-    <div id="problems" class="left-content">
-        <h2>Programming Problems</h2>
-        
+    <div class="left-content">
+        <h2>Programming Problems:</h2>
+    </div>
+
+    <div class="left-content">
         <p>Find the sum of all prime numbers below:</p>
         
         <form action="/primes">
             <input type="text" name="prime_limit" value="<%= @limit %>">
+            <input type="submit" value="Get Answer">
+        </form>
+    </div>
+
+    <div class="left-content">
+        <p>Find the sum of all multiples of 3 or 5 below:</p>
+        
+        <form action="/multiples">
+            <input type="text" name="multiples_limit" value="<%= @limit %>">
+            <input type="submit" value="Get Answer">
+        </form>
+    </div>
+
+    <div class="left-content">
+        <p>Find the sum of all even Fibonacci numbers below:</p>
+        
+        <form action="/fibonacci">
+            <input type="text" name="fibonacci_limit" value="<%= @limit %>">
             <input type="submit" value="Get Answer">
         </form>
     </div>
@@ -125,7 +145,7 @@
     <div id="edit-profile" class="right-content">
         <h3>Edit Profile</h3>
 
-        <form action="/update" method="POST">
+    <form action="/update" method="POST">
           <fieldset>
 
             <div class="form-group">
