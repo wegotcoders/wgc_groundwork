@@ -121,6 +121,10 @@ nav ul li a:hover {
 nav ul li:nth-child(1) a {
     border-left: 1px solid #DFE0E4;
 }
+    
+nav h1 {
+    display: none;
+}
 
 .clear {
     clear: both;
@@ -208,7 +212,95 @@ input[type="submit"] {
     color: #fff;
 }
 
+.word-error {
+    text-align: right;
+    color: #BD0404;
+    font-size: 0.8em;
+    font-weight: bold;
+}
 
+#aboutError {
+    display: none;
+}
+
+#ambitionsError {
+    display: none;
+}
+
+#projectsError {
+    display: none;
+}
+
+#rationaleError {
+    display: none;
+}
+
+#learningError {
+    display: none;
+}
+
+@media only screen and (max-width:1080px) {
+    nav ul {
+        margin-left: 250px;
+    }
+}
+
+@media only screen and (max-width:987px) {
+    nav ul li a {
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width:866px) {
+    nav ul {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    
+    .left-container {
+        width: 100%;
+    }
+    
+    .right-container {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    
+    #logo img {
+        width: 100%;
+    }
+    
+    .prof-image {
+        position: relative;   
+        text-align: center;
+        width: 210px;
+        top: -260px;
+        left: 0;
+        margin: auto;
+    }
+    
+    .prof-container {
+        height: 0;
+    }
+    
+    .prof-container h1 {
+        display: none;  
+    }
+    
+    nav {
+        line-height: 50px;
+    }
+    
+    nav h1 {
+        display: block;
+        text-align: center;
+        font-size: 1.8em;
+    }
+}
 
 
 

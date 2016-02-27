@@ -12,6 +12,9 @@
     </div>
 
     <nav>
+        
+        <h1>Danny Santos</h1>
+        
         <ul>
 
             <li><a href="#about">About</a></li>
@@ -59,7 +62,10 @@
             <dd><%= @profile["github"] %></dd>
 
             <dt>Code Academy:</dt>
-            <dd><%= @profile["code_academy"] %></dd>
+            <dd><a href="https://www.codecademy.com/Danny_Santos" target="_blank">Danny_Santos</a></dd>
+
+            <dt>Prime Sum:</dt>
+            <dd>142,913,828,922</dd>
 
         </dl>
 
@@ -92,27 +98,27 @@
 <div class="right-container">
     
     <div id="about" class="right-content">
-        <h2>About</h2>
+        <h2>Please tell us a bit about yourself</h2>
         <p class="profile-value"><%= @profile["about"] %></p>
     </div>
 
     <div id="ambitions" class="right-content">
-        <h2>Ambitions</h2>
-        <p class="profile-value"><%= @profile["rationale"].sub('<marquee>', 'marquee') %></p>
+        <h2>Where do you see your career in 1 year's time?</h2>
+        <p class="profile-value"><%= @profile["ambition"] %></p>
     </div>
 
     <div id="projects" class="right-content">
-        <h2>Projects</h2>
+        <h2>Tell us about a programming project that you worked on and what your role was</h2>
         <p class="profile-value"><%= @profile["projects"] %></p>
     </div>
     
     <div id="rationale" class="right-content">
-        <h2>Rationale</h2>
+        <h2>Why do you want to apply for this program?</h2>
         <p class="profile-value"><%= @profile["rationale"].sub('<marquee>', 'marquee') %></p>
     </div>
 
     <div id="learning-experience" class="right-content">
-        <h2>Learning Experience</h2>
+        <h2>What do you think makes for a positive learning and training experience?</h2>
         <p class="profile-value"><%= @profile["learning_experience"] %></p>
     </div>
     
@@ -173,38 +179,48 @@
             </div>
 
             <div class="form-group">
+              <label for="trainee[prime_sum]">Prime Sum</label>
+              <input type="text" name="trainee[prime_sum]" value="<%= @profile["prime_sum"] %>"/>
+            </div>
+
+            <div class="form-group">
               <label for="trainee[about]">About <span>(Minimum 20 words)</span></label>
-              <textarea type="text" name="trainee[about]" cols="80" rows="10">
+              <textarea id="aboutText" type="text" name="trainee[about]" cols="80" rows="10" onkeypress="activateSubmit('#aboutText', 'aboutError');">
                 <%= @profile["about"] %>
               </textarea>
+              <p id="aboutError" class="word-error"><span id="aboutCount">20</span> words (min. 20)</p>
             </div>
 
             <div class="form-group">
               <label for="trainee[ambition]">Ambitions <span>(Minimum 20 words)</span></label>
-              <textarea type="text" name="trainee[ambition]" cols="80" rows="10">
+              <textarea id="ambitionText" type="text" name="trainee[ambition]" cols="80" rows="10" onkeypress="activateSubmit('#ambitionText', 'ambitionError', 'ambitionCount');">
                 <%= @profile["ambition"] %>
               </textarea>
+              <p id="ambitionError" class="word-error"><span id="ambitionCount">20</span> words (min. 20)</p>
             </div>
 
             <div class="form-group">
               <label for="trainee[projects]">Projects <span>(Minimum 20 words)</span></label>
-              <textarea type="text" name="trainee[projects]" cols="80" rows="10">
+              <textarea id="projectsText" type="text" name="trainee[projects]" cols="80" rows="10" onkeypress="activateSubmit('#projectsText', 'projectsError', 'projectsCount');">
                 <%= @profile["projects"] %>
               </textarea>
+              <p id="projectsError" class="word-error"><span id="projectsCount">20</span> words (min. 20)</p>
             </div>
 
             <div class="form-group">
               <label for="trainee[rationale]">Rationale <span>(Minimum 20 words)</span></label>
-              <textarea type="text" name="trainee[rationale]" cols="80" rows="10">
+              <textarea id="rationaleText" type="text" name="trainee[rationale]" cols="80" rows="10" onkeypress="activateSubmit('#rationaleText', 'rationaleError', 'rationaleCount');">
                 <%= @profile["rationale"] %>
               </textarea>
+              <p id="rationaleError" class="word-error"><span id="rationaleCount">20</span> words (min. 20)</p>
             </div>
 
             <div class="form-group">
               <label for="trainee[learning_experience]">Learning Experience <span>(Minimum 20 words)</span></label>
-              <textarea type="text" name="trainee[learning_experience]" cols="80" rows="10">
+              <textarea id="learningText" type="text" name="trainee[learning_experience]" cols="80" rows="10" onkeypress="activateSubmit('#learningText', 'learningError', 'learningCount');">
                 <%= @profile["learning_experience"] %>
               </textarea>
+              <p id="learningError" class="word-error"><span id="learningCount">20</span> words (min. 20)</p>
             </div>          
 
             <input type="submit" value="Update Profile" class="btn btn-primary" />
@@ -229,7 +245,7 @@
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
-  console.log(profile_values[0]);
+  var current_words = 0;
     
   var about_value = profile_values[0];
 
@@ -247,4 +263,16 @@
   total_words += WordCount(profile_values[4]);
 
   document.getElementById('word-count').innerHTML = total_words;
+
+  function activateSubmit(idText, idError, idCount){
+    var len = $(idText).val().split(" ").length;
+      console.log(len);
+    document.getElementById(idCount).innerHTML = len;
+    if(len >= 20) { 
+      document.getElementById(idError).style.display = "none";
+    } else {
+      document.getElementById(idError).style.display = "block";
+    }
+  }
+    
 </script>
