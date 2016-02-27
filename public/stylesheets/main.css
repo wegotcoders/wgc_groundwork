@@ -156,7 +156,18 @@ nav h1 {
 
 dt {
     float: left;
-    width: 130px;   
+    width: 100%;   
+    font-weight: bold;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+dt:nth-child(1) {
+    margin-top: 0;
+}
+
+dd {
+    text-indent: 10px;
 }
 
 label span {  
@@ -223,7 +234,7 @@ input[type="submit"] {
     display: none;
 }
 
-#ambitionsError {
+#ambitionError {
     display: none;
 }
 
@@ -237,6 +248,20 @@ input[type="submit"] {
 
 #learningError {
     display: none;
+}
+
+#formError {
+    display: none;
+    text-align: center;
+    margin-top: 5px;
+}
+
+input:disabled {
+    background-color: #999;
+}
+
+.left-title {
+    margin-bottom: 0;
 }
 
 @media only screen and (max-width:1080px) {
@@ -265,6 +290,11 @@ input[type="submit"] {
     
     .right-container {
         width: 100%;
+    }
+
+    dl {
+        float: left;
+        width: 50%;
     }
 }
 

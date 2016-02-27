@@ -49,8 +49,12 @@
             <dt>Phone Number:</dt>
             <dd><%= @profile["phone_number"] %></dd>
 
-            <dt>Employment Status:</dt>
+            <dt>Employment:</dt>
             <dd><%= @profile["employment_status"] %></dd>
+        
+        </dl>
+        
+        <dl>
 
             <dt>Homepage:</dt>
             <dd><a href="http://<%= @profile["homepage"] %>" target="_blank"><%= @profile["homepage"] %></a></dd>
@@ -69,6 +73,8 @@
 
         </dl>
 
+        <p class="clear"></p>
+        
     </div>
 
 
@@ -79,7 +85,7 @@
     </div>
 
     <div class="left-content">
-        <h2>Programming Problems:</h2>
+        <h2 class="left-title">Programming Problems:</h2>
     </div>
 
     <div class="left-content">
@@ -205,7 +211,7 @@
 
             <div class="form-group">
               <label for="trainee[about]">About <span>(Minimum 20 words)</span></label>
-              <textarea id="aboutText" type="text" name="trainee[about]" cols="80" rows="10" onkeypress="activateSubmit('#aboutText', 'aboutError');">
+              <textarea id="aboutText" type="text" name="trainee[about]" cols="80" rows="10" onkeypress="activateSubmit('#aboutText', 'aboutError', 'aboutCount');">
                 <%= @profile["about"] %>
               </textarea>
               <p id="aboutError" class="word-error"><span id="aboutCount">20</span> words (min. 20)</p>
@@ -243,7 +249,9 @@
               <p id="learningError" class="word-error"><span id="learningCount">20</span> words (min. 20)</p>
             </div>          
 
-            <input type="submit" value="Update Profile" class="btn btn-primary" />
+            <input type="submit" value="Update Profile" class="btn btn-primary" id="submitButton" disabled="disabled" />
+              
+            <p id="formError" class="word-error">Make sure all answers have at least 20 words</p>
           </fieldset>
         </form>
    </div>
@@ -284,14 +292,20 @@
 
   document.getElementById('word-count').innerHTML = total_words;
 
+  $('#submitButton').removeAttr('disabled');
+    
   function activateSubmit(idText, idError, idCount){
     var len = $(idText).val().split(" ").length;
       console.log(len);
     document.getElementById(idCount).innerHTML = len;
     if(len >= 20) { 
       document.getElementById(idError).style.display = "none";
+      document.getElementById('formError').style.display = "none";
+      $('#submitButton').removeAttr('disabled');
     } else {
       document.getElementById(idError).style.display = "block";
+      document.getElementById('formError').style.display = "block";
+      $('#submitButton').attr('disabled', 'disabled');
     }
   }
     
