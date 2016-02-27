@@ -147,11 +147,19 @@ nav h1 {
     padding: 30px;
 }
 
+.left-content p {
+    margin-bottom: 10px; 
+}
+
 .right-content {
     background-color: #fff;  
     margin-top: 20px; 
     border: 1px solid #DFE0E4;
     padding: 30px;
+}
+
+dl:nth-child(3) {
+    margin-top: 10px;
 }
 
 dt {
@@ -295,6 +303,10 @@ input:disabled {
     dl {
         float: left;
         width: 50%;
+    }
+
+    dl:nth-child(3) {
+        margin-top: 0;
     }
 }
 

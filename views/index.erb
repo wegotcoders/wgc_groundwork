@@ -41,7 +41,7 @@
             <dd><%= @profile["first_name"] %> <%= @profile["last_name"] %></dd>
 
             <dt>Date of Birth:</dt>
-            <dd><%= @profile["dob"] %></dd>
+            <dd><%= time_format(@profile["dob"]) %></dd>
 
             <dt>Gender:</dt>
             <dd><%= @profile["gender"] %></dd>
@@ -166,7 +166,7 @@
 
             <div class="form-group">
               <label for="trainee[dob]">Date of Birth</label>
-                <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+                <input type="text" name="trainee[dob]" value="<%= time_format(@profile["dob"]) %>"/>
             </div>
 
             <div class="form-group">
@@ -207,10 +207,10 @@
             <div class="form-group">
               <label for="trainee[prime_sum]">Prime Sum</label>
               <input type="text" name="trainee[prime_sum]" value="<%= @profile["prime_sum"] %>"/>
-            </div>
-
+            </div>              
+              
             <div class="form-group">
-              <label for="trainee[about]">About <span>(Minimum 20 words)</span></label>
+              <label for="trainee[about]">Please tell us a bit about yourself <span>(Minimum 20 words)</span></label>
               <textarea id="aboutText" type="text" name="trainee[about]" cols="80" rows="10" onkeypress="activateSubmit('#aboutText', 'aboutError', 'aboutCount');">
                 <%= @profile["about"] %>
               </textarea>
@@ -218,7 +218,7 @@
             </div>
 
             <div class="form-group">
-              <label for="trainee[ambition]">Ambitions <span>(Minimum 20 words)</span></label>
+              <label for="trainee[ambition]">Where do you see your career in 1 year's time? <span>(Minimum 20 words)</span></label>
               <textarea id="ambitionText" type="text" name="trainee[ambition]" cols="80" rows="10" onkeypress="activateSubmit('#ambitionText', 'ambitionError', 'ambitionCount');">
                 <%= @profile["ambition"] %>
               </textarea>
@@ -226,7 +226,7 @@
             </div>
 
             <div class="form-group">
-              <label for="trainee[projects]">Projects <span>(Minimum 20 words)</span></label>
+              <label for="trainee[projects]">Tell us about a programming project that you worked on and what your role was <span>(Minimum 20 words)</span></label>
               <textarea id="projectsText" type="text" name="trainee[projects]" cols="80" rows="10" onkeypress="activateSubmit('#projectsText', 'projectsError', 'projectsCount');">
                 <%= @profile["projects"] %>
               </textarea>
@@ -234,7 +234,7 @@
             </div>
 
             <div class="form-group">
-              <label for="trainee[rationale]">Rationale <span>(Minimum 20 words)</span></label>
+              <label for="trainee[rationale]">Why do you want to apply for this program? <span>(Minimum 20 words)</span></label>
               <textarea id="rationaleText" type="text" name="trainee[rationale]" cols="80" rows="10" onkeypress="activateSubmit('#rationaleText', 'rationaleError', 'rationaleCount');">
                 <%= @profile["rationale"] %>
               </textarea>
@@ -242,7 +242,7 @@
             </div>
 
             <div class="form-group">
-              <label for="trainee[learning_experience]">Learning Experience <span>(Minimum 20 words)</span></label>
+              <label for="trainee[learning_experience]">What do you think makes for a positive learning and training experience? <span>(Minimum 20 words)</span></label>
               <textarea id="learningText" type="text" name="trainee[learning_experience]" cols="80" rows="10" onkeypress="activateSubmit('#learningText', 'learningError', 'learningCount');">
                 <%= @profile["learning_experience"] %>
               </textarea>

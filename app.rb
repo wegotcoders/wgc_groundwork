@@ -8,6 +8,12 @@ set :site_url, 'http://wegotcoders.com'
 set :session_secret, 'secret'
 enable :sessions
 
+def time_format(date)
+    require 'date'
+    new_date = Date.parse(date).strftime('%d/%m/%Y')
+    return new_date
+end
+
 get '/primes' do    
   @sum = Primes.sum_to(params[:prime_limit].to_i)
 
