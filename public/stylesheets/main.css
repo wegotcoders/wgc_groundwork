@@ -1,11 +1,58 @@
+html { 
+    font-size: 93.8%;    
+    background-color: #f1f2f3; 
+    background-image: 
+      -webkit-linear-gradient(0deg, transparent .05em, rgba(0,0,0,.05) .05em, rgba(0,0,0,.05) .125000em, transparent .125000em),
+      -webkit-linear-gradient(rgba(0,0,0,.05) .062500em, transparent .062500em);
+    background-image: 
+      -moz-linear-gradient(0deg, transparent .05em, rgba(0,0,0,.05) .05em, rgba(0,0,0,.05) .125000em, transparent .125000em),
+      -moz-linear-gradient(rgba(0,0,0,.05) .062500em, transparent .062500em);
+    background-image: 
+      -ms-linear-gradient(0deg, transparent .05em, rgba(0,0,0,.05) .05em, rgba(0,0,0,.05) .125000em, transparent .125000em),
+      -ms-linear-gradient(rgba(0,0,0,.05) .062500em, transparent .062500em);
+    background-image: 
+      -o-linear-gradient(0deg, transparent .05em, rgba(0,0,0,.05) .05em, rgba(0,0,0,.05) .125000em, transparent .125000em),
+      -o-linear-gradient(rgba(0,0,0,.05) .062500em, transparent .062500em);
+    background-image: 
+      linear-gradient(0deg, transparent .05em, rgba(0,0,0,.05) .05em, rgba(0,0,0,.05) .125000em, transparent .125000em),
+      inear-gradient(rgba(0,0,0,.05) .062500em, transparent .062500em);
+    background-size: .75em .75em;  
+    background-position: 0 -0.5em; 
+}
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: arial;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
 }
 
-#logo {
+/*Tamlyn's styling*/
+
+
+li {
+  padding: 5px;
+  
+}
+
+.tab-content {
+  margin-bottom: 100px;
+
+}
+
+.dropdown {
+
+margin: 10px;
+
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+/*Tamlyn's styling*/
+
+
+
+/*#logo {
   text-align: center;
 }
 
@@ -34,6 +81,10 @@ h3 {
 
 .error h2 {
   font-size: 1.5em;
-}
+}*/
 
 /* TODO - Add your own styles here */
+
+
+
+

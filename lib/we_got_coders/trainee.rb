@@ -10,9 +10,15 @@ module WeGotCoders
     end
 
     def get_profile
-      response = self.class.get("/trainees/profile?access_token=#{access_token}")
+      response = self.class.get("/trainees/profile?access_token=#{access_token}") ## this is where they've collected the redacted information.
+        
+        #hidden_stuff = curl 'http://wegotcoders.com/trainees/secret?access_token=#{access_token}'
+        
+        puts "The access token is:   #{:access_token}"
+        #puts "hidden_stuff is #{hidden_stuff}"
+        
       if response.code == 200
-        @get_profile ||= JSON.parse(response.body)
+          @get_profile ||= JSON.parse(response.body) #
       else
         raise Exception.new("Could not find profile. Is the site_url correct?")
       end
@@ -23,3 +29,6 @@ module WeGotCoders
     end
   end
 end
+
+       
+        

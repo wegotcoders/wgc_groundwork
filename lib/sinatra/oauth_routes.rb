@@ -1,8 +1,9 @@
 require 'sinatra/base'
 
 module Sinatra
-  module OauthRoutes
+    module OauthRoutes ## new module
     def self.registered(app)
+        
 
       def client
         OAuth2::Client.new(
@@ -12,6 +13,8 @@ module Sinatra
           :token_method => :post,
         )
       end
+        
+        #post "#{settings.secret}"
 
       def access_token
         OAuth2::AccessToken.new(client, session[:access_token], :refresh_token => session[:refresh_token])
