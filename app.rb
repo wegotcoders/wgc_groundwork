@@ -9,16 +9,16 @@ set :site_url, 'http://wegotcoders.com'
 set :session_secret, 'secret'
 enable :sessions
 
-
+include Sinatra::OauthRoutes
 
 get '/primes' do
-  # TODO - Can we make this dynamic?
-  limit = 100
 
-  # TODO - add your prime number solution in the primes.rb file.
+  limit = 2000 
   @sum = Primes.sum_to(limit)
+  @prime = Primes.is_prime(1062);
 
   erb :primes, :layout => :main
+
 end
 
 
@@ -31,12 +31,35 @@ get '/' do
   erb :index, :layout => :main
 end
 
+
+
 post '/update' do
+  
+  puts "trainee body before"
+  puts trainee.get_profile
+  puts "params"
+  puts params
+
+  # params = {"trainee"=>{"first_name"=>"Tamlyn"}}
+  # puts "new params"
+  # puts params
+
   response = trainee.update_profile(params)
+
+  puts "response body after"
+  puts response.body
+  puts "errors"
+  puts response["errors"]
+
+  puts "check response referencing:"
+  puts "response[first_name]"
+  puts response["first_name"]
 
   if @errors = response["errors"]
     erb :error, :layout => :main
   else
+    puts "response.body has no errors..!!"
+    puts response.body
     redirect '/'
   end
 end

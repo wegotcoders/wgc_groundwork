@@ -1,7 +1,7 @@
 <!-- @profile = {"about":null,"ambition":null,"codecademy":null,"dob":"1978-09-23","employment_status":"Self-employed","first_name":"TAMLYN","gender":"FEMALE","github":"tamlyn10","homepage":"","how_did_you_hear":"Course Report!","js_track_completedness":null,"last_name":"RUDOLPH","learning_experience":null,"phone_number":"07471286289","primes_sum":null,"projects":null,"rationale":null,"ruby_track_completedness":null,"twitter":"","web_track_completedness":null}
  -->
 
-<% puts @cont[:ambition] %>
+<%# puts @cont[:ambition] %>
 
     <!-- Page Content -->
         <% if @profile %>
@@ -75,7 +75,7 @@
             <div class="row">
                 <!--Programming Problems -->
                 <div class="col-md-6 prog-probs">
-                    <a href="#">
+                    <a href="/primes">My Prime Number Solution</a>
                         <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                     </a>
                     <h3>
@@ -92,74 +92,171 @@
 
                         <!-- Want this dropdown choice to pre-populate the form / text-box below -->
                         <div class="dropdown">
-                          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Section to Edit
-                          <span class="caret"></span></button>
+                          
+                          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Section to Edit<span class="caret"></span></button>
+                          
                           <ul class="dropdown-menu">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Ambition</a></li>
-                            <li><a href="#">Learning</a></li>                            
-                            <li><a href="#">Rationale</a></li>                            
-                            <li><a href="#">Projects</a></li>
+                            <li><a href="#" onclick="pre_pop('about')">About</a></li>
+                            <li><a href="#" onclick="#">Ambition</a></li>
+                            <li><a href="#" onclick="pre_pop()">Learning</a></li>                            
+                            <li><a href="#" onclick="pre_pop()">Rationale</a></li>                            
+                            <li><a href="#" onclick="pre_pop()">Projects</a></li>
                           </ul>
+                        
                         </div>
 
 
 
-                        <form class="form-horizontal" role="form">
+                        <form class="form-horizontal" role="form" action="update" method="post">
                           <div class="form-group edit-txt">
                             <div class="col-sm-10"> 
-                              <input type="text" class="form-control" id="edit-txt" placeholder="Edit text">
+                            <textarea class="form-control" type="text" name = "trainee[first_name]" value="Update Profile" rows="15" id="change" placeholder="Edit Text"></textarea>
                             </div>
                           </div>
                           
                           <div class="form-group"> 
-                            <div class="col-sm-offset-2 col-sm-10">
-                              <button type="submit" class="btn btn-default">Submit</button>
+                            <div class="col-lg-2">
+                              <button type="submit" value="Update Profile" class="btn btn-default">Submit</button>
                             </div>
                           </div>
                         </form>
+                        
+
+<!-- 
+                        <form role="form">
+                            <div class="form-group">
+                              <label for="comment">Comment:</label>
+                              <textarea class="form-control" rows="5" id="comment"></textarea>
+                            </div>
+                          </form> -->
 
                 </div>
                 <!-- /form -->
             
             </div>
             <!-- /.row -->
+
+<!-- TODO - Add more fields so that your profile can be edited -->
+<!-- <div class="box">
+    <h3>Edit Profile</h3>
+
+    <form action="/update" method="POST">
+      
+      <fieldset>
+
+        <div class="form-group">
+          <label for="trainee[about]">About</label>
+          <input type="text" name="trainee[about]" value="Update Profile"/>
+        </div>
+
         
+
+        <input type="submit" value="Update Profile" class="btn btn-primary" />
+      
+      </fieldset>
+    </form>
+  </div> -->
+<!-- end profile update -->  
+
+
             <!-- Page Footer -->
             <div class="footer">
                 <div class="row">
                     <div class="col-lg-12 well">
-                        <p>You may be interested to know that there are <span id="word-count"></span> words on this page.  The most mentioned word is Lorem, with 15 mentions"</p>
+                        <p>You may be interested to know that there are <span id="word-count"></span> words in the profile content on this page.</p>
                     </div>
                 </div>
             </div>
             <!-- /.row -->
 
-       <% end %> 
+
+<!-- Else for @profile == false --> 
+
+<% else %>
+  <div class="welcome">
+    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+    <a href="/authorise">Authorise</a>
+
+<% end %> 
 
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
 
+    // count total words by counting spaces that immediately follow a letter.
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_content=[];
+    function countwords(text_block){
+      var total_words = 0;
+      var text = text_block;
+          
+          if(text_block.length > 0){
+            total_words = 1;
+            for (var j = 1; j <= text.length-1; j++){
+              if ((text[j] === " ")&&(text[j-1]!= " ")) {
+                total_words ++;
+              }
+            }
+          }
+        
+    return total_words;
+  }
 
-    for(i = 0; i < profile_values.length; i++){
-    total_content += profile_values[i].innerHTML + " ";  
+    console.log(document.getElementById('change').innerHTML);
+
+    function pre_pop(key){
+      var k = key;
+      console.log(k);
+      var pre_cont = "<%=@cont[:about]%>";
+      console.log("the pre-cont is " + pre_cont);
+      document.getElementById('change').innerHTML = "<%=@cont[:about]%>";
+  
     }
 
-  var total_words = 0;
+    function generate_params(key){
+      
+      var k = key;
+      var str = "trainee[" + k + "]";
 
-    // count total words by counting spaces that immediately follow a letter.
-    for (var j = 0; j <= total_content.length; j++){
-        if ((total_content[j] === " ")&&(total_content[j-1]!= " ")) {
-          total_words ++;
-        }
-      }
+      return str
+
+    }
+
+    var y = generate_params("first_name");
+    console.log(y);
+
+    function post_update(key){
+
+      update_txt = document.getElementById('change').innerHTML;
+
+    }
+
+
+  // count all words in the profile sections of the document
+  var profile_values = document.getElementsByClassName('profile-value');
+  var total_content=[]; //one long string of whole page content
+  var profile_content=[]; //array of content for each section - not sure if it's needed or whether i'll just call the funciton directly on the innerHTML
+
+    for(i = 0; i < profile_values.length; i++){
+    var P = profile_values[i].innerHTML;
+    profile_content.push(P);
+    total_content += P + " ";  
+    }
+
+  var total_words = countwords(total_content); //whole page words
+  console.log(profile_content);
 
   console.log("Number of words is :" + total_words);
   document.getElementById('word-count').innerHTML = total_words;
+
+// ## Num words histogram....
+
+// words = total_words.split(" ")
+// frequencies = Hash.new(0)
+// words.each { |word| frequencies[word] += 1 }
+// frequencies = frequencies.sort_by {|a, b| b }
+// frequencies.reverse!
+// frequencies.each { |word, frequency| puts word + " " + frequency.to_s }
 
 </script>
 

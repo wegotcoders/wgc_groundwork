@@ -1,7 +1,32 @@
-<h1>Prime Numbers</h1>
 
-Sum : <%= @sum %>
+<div class = "container math-style">
 
-<div>
-  <a href="/">Back</a>
+	<div class="row" style="margin-bottom: 15px;">             
+	    <div class="col-lg-3 well">
+			<button href="/">Back to Profile</button>
+		</div>
+	</div>
+
+	<div class="row" style="margin-bottom: 15px;">             
+	    <div class="col-lg-3 well">
+			<h1>Scratchpad</h1>
+		</div>
+	</div>
+	<div class="row" style="margin-bottom: 15px;">             
+	    <div class="col-lg-3 well">
+			<h1><%=Primes.sum_to(1000) %> </h1>
+		</div>
+	</div>
+	<div class="row" style="margin-bottom: 15px;">             
+	    <div class="col-lg-3 well">
+			<h1>Sum : <%= @sum %></h1>
+		</div>
+	</div>
+	<div class="row" style="margin-bottom: 15px;">             
+	    <div class="col-lg-3 well">
+			<h1>Sum : <%= @prime %></h1>
+		</div>
+	</div>
+
+	  		
 </div>
