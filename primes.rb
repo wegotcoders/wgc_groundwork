@@ -4,7 +4,7 @@ class Primes
 # function returns true if prime, false if not
 
 
-  def self.sum_to(limit = 100)
+  def self.sum_to(limit)
 	sum=0
 	for i in 1..limit
 		# puts "#{i}  "
@@ -38,14 +38,23 @@ class Primes
   end
 
 
-
+  def self.count_to(limit)
+	count=0
+	for i in 1..limit
+		puts "#{i}  "
+		v = is_prime(i)
+		if v			
+			count += 1
+		end
+	end
+	count
+  end
 
 end
 
+coun = Primes.count_to(1000)
 
-
-
-
+puts coun
 
 
 

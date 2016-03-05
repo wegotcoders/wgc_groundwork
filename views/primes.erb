@@ -1,32 +1,72 @@
 
+
 <div class = "container math-style">
 
-	<div class="row" style="margin-bottom: 15px;">             
-	    <div class="col-lg-3 well">
-			<button href="/">Back to Profile</button>
-		</div>
-	</div>
-
-	<div class="row" style="margin-bottom: 15px;">             
-	    <div class="col-lg-3 well">
+	<div class="scratchpad">  
 			<h1>Scratchpad</h1>
-		</div>
-	</div>
+			
+			<a href="/" >Back to Profile</a>
+	</div>           
+
+
 	<div class="row" style="margin-bottom: 15px;">             
-	    <div class="col-lg-3 well">
-			<h1><%=Primes.sum_to(1000) %> </h1>
+	    
+	    <div class="col-lg-3 col-sm-offset-1 well">
+
+	    	<p>Enter a number to find the sum of its primes:</p>
+
+	    	<form action="/primes" method="get">
+
+				<div class="form-group">
+		    		<input type="number" name="prime_sums" class="form-control">
+		    	</div>
+
+				<p>Answer: <%= @sum %> </p>
+
+				<input type="submit" value="Calculate">
+
+			</form>
+
+		</div>    
+
+  
+	    <div class="col-sm-3 col-sm-offset-1 well">
+
+	    	<form action="/primes" method="get">
+
+				<p>Enter a number to test if prime</p>
+				<div class="form-group">
+				  <input type="number" name="is_prime" class="form-control">
+				</div>
+				
+				<p>Answer: <span><%= @prime %></span></p>   
+
+
+				<input type="submit" value="Calculate"> 
+	 
+	    	</form>
+
+		</div>       
+
+
+	    <div class="col-sm-2 col-sm-offset-1 well">
+			<form action="/primes" method="get">
+
+				<p>How many primes below..?</p>
+				<div class="form-group">
+				  <input type="number" name="count_primes" class="form-control">
+				</div>
+				
+				<p>Answer: <span><%= @count %></span></p>   
+
+
+				<input type="submit" value="Calculate"> 
+	 
+	    	</form>
 		</div>
-	</div>
-	<div class="row" style="margin-bottom: 15px;">             
-	    <div class="col-lg-3 well">
-			<h1>Sum : <%= @sum %></h1>
-		</div>
-	</div>
-	<div class="row" style="margin-bottom: 15px;">             
-	    <div class="col-lg-3 well">
-			<h1>Sum : <%= @prime %></h1>
-		</div>
+	
+
 	</div>
 
-	  		
-</div>
+
+</div>	

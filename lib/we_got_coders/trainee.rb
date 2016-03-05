@@ -13,6 +13,7 @@ module WeGotCoders
       response = self.class.get("/trainees/profile?access_token=#{access_token}") 
         
       puts access_token
+      puts "response.body after GET & before JSON"
       puts response.body
         
       if response.code == 200

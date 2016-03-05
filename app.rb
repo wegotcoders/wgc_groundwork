@@ -13,9 +13,15 @@ include Sinatra::OauthRoutes
 
 get '/primes' do
 
-  limit = 2000 
+ 
+  params[:prime_sums] ? limit = params[:prime_sums].to_i : limit = 1
   @sum = Primes.sum_to(limit)
-  @prime = Primes.is_prime(1062);
+
+  params[:is_prime] ? input = params[:is_prime].to_i : input = 1
+  Primes.is_prime(input) ? @prime = "Prime" : @prime = "Not Prime"
+
+  params[:count_primes] ? number = params[:count_primes].to_i : number = 1
+  @count = Primes.count_to(number)
 
   erb :primes, :layout => :main
 
@@ -52,8 +58,8 @@ post '/update' do
   puts response["errors"]
 
   puts "check response referencing:"
-  puts "response[first_name]"
-  puts response["first_name"]
+  puts "response[rationale]"
+  puts response["rationale"]
 
   if @errors = response["errors"]
     erb :error, :layout => :main
