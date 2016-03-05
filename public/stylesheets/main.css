@@ -62,16 +62,44 @@ margin: 10px;
 }
 
 .scratchpad h1{
-  color: red;
+  color: #AB1F27;
   text-align: center;
   font-family: cursive;
-  font-size: 2em;
+  font-size: 2.5em;
   display: inline;
 }
 
 .scratchpad a {
   float: right;
+  padding-right: 1em;
+  /*border: solid .2px;*/
+  /*padding: 1em;*/
 }
+
+.quickinfo span{
+  font-weight: bold;
+
+}
+
+.word_section {
+  color: gray;
+  font-size: .75em;
+}
+
+.button {
+  margin-top: 1.5em; 
+}
+
+.box {
+  margin-top: 1em;
+
+}
+
+.prime-row {
+  margin-top: 3em;
+
+}
+
 
 
 /*Tamlyn's styling*/

@@ -1,3 +1,5 @@
+include Math
+
 class Primes
 
 
@@ -9,8 +11,7 @@ class Primes
 	for i in 1..limit
 		# puts "#{i}  "
 		v = is_prime(i)
-		if v
-			# puts "prime!"			
+		if v		
 			sum += i
 		end
 	end
@@ -19,18 +20,24 @@ class Primes
 
 
   def self.is_prime(number) 
+  	## improvement for future - to make efficient
+  	## - - - - - - - - - exclude testing all even numbers or (more generally) multiples of excluded factors.
+  	## - - - - - - - - - consider using a pre-populated list of prime factors?
   	bool = false
   	if number == 1
   	bool = false
   	else
   	j = 1
 	  	loop do
-	  		j+=1
-	  		if (j> number / 2)
-	  			bool = true
-	  			break
-	  		end
-	  		break if (number % j == 0)
+	  		j = j+1
+		  		if (j> sqrt(number))
+		  			bool = true
+		  			break
+
+		  		else
+		  		break if (number % j == 0)
+		  		end
+
 	  	end
 	end
 
@@ -41,7 +48,7 @@ class Primes
   def self.count_to(limit)
 	count=0
 	for i in 1..limit
-		puts "#{i}  "
+		# puts "#{i}  "
 		v = is_prime(i)
 		if v			
 			count += 1
@@ -50,11 +57,9 @@ class Primes
 	count
   end
 
+
 end
 
-coun = Primes.count_to(1000)
-
-puts coun
 
 
 

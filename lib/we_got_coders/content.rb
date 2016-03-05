@@ -3,7 +3,7 @@ module MyContent
 # attr_reader = :content_o
 
 VAR = {
-     # 1 => "testing this out once and for all, people"
+    
     about: "Hi, I’m Tamlyn.  I was born in Africa and lived my early years there until my family immigrated to Australia, where I studied, worked and lived in Melbourne. I’m now in the UK, staying with my brother in Shoreditch and scoping out coding schools! I’m a passionate traveller, interested in world issues, love to cook and hang out in nature. At university, I studied applied maths to Masters level. I then worked as a financial trader in the highly volatile energy markets.  My career was successful, which has provided me the opportunity to consider alternate paths going forward.  I remember telling someone I wanted to code over 20 years ago, and while I've done bits and pieces ad-hoc over the years, I'm now ready to dig into it properly.And thus, my motivation for reaching out to you!  I’m really excited about this next phase of my life and hungry to learn.",
     ambition: "In 1 year’s time, I’d like to be working with a small / medium size company, contributing and learning as a developer.  I realise that even with a LOT of hard work between now and then, I’ll still be on a very steep learning curve and actually this is incredibly appealing to me.  I have a passion for learning and never want to plateau in my life.  In 1 year’s time, I’d also like to be exploring areas of coding like machine-learning and other operations research algorithms.  Finally, having relocated from Australia to the UK (thanks to an EU passport), I’m keen to grow networks with like-minded people here, so in one year I'd love to know a bunch of developers and other digital types!",
     codecademy: "tamlyn10",

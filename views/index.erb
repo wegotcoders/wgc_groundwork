@@ -1,7 +1,7 @@
 <!-- @profile = {"about":null,"ambition":null,"codecademy":null,"dob":"1978-09-23","employment_status":"Self-employed","first_name":"TAMLYN","gender":"FEMALE","github":"tamlyn10","homepage":"","how_did_you_hear":"Course Report!","js_track_completedness":null,"last_name":"RUDOLPH","learning_experience":null,"phone_number":"07471286289","primes_sum":null,"projects":null,"rationale":null,"ruby_track_completedness":null,"twitter":"","web_track_completedness":null}
  -->
 
-<%# puts @cont[:ambition] %>
+<% puts @profile %>
 
 <!-- Page Content -->
 <% if @profile %>
@@ -13,18 +13,20 @@
         <img class="img-responsive img-circle" src="images/tam.png" />
     </div>
                   
-    <div class="col-sm-7 col-sm-offset-1  well">
+    <div class="col-sm-7 col-sm-offset-1  well quickinfo">
 
         <p>
             <ul>
-                <li class = "profile-value" id="name">Name: <%=@profile["first_name"]%> <%=@profile["last_name"]%> </li>
-                <li class = "profile-value">Dob: <%=@profile["dob"]%> </li>
-                <li class = "profile-value">Gender: <%=@profile["gender"]%></li>
-                <li class = "profile-value">Employment Status: <%=@profile["employment_status"]%> </li>
-                <li class = "profile-value">GitHub: <%=@profile["github"]%> </li>
-                <li class = "profile-value">Phone Number: <%=@profile["phone_number"]%> </li>                            
-                <li class = "profile-value">CodeAcademy: <%=@profile["codecademy"]%> </li>
-                <li class = "profile-value">Homepage: <%=@profile["homepage"]%> </li>
+                <li class = "profile-value" id="name"><span>Name:</span> <%=@profile["first_name"]%> <%=@profile["last_name"]%> </li>
+                <li class = "profile-value"><span>Dob:</span> <%=@profile["dob"]%> </li>
+                <li class = "profile-value"><span>Gender:</span> <%=@profile["gender"]%></li>
+                <li class = "profile-value"><span>Employment Status:</span> <%=@profile["employment_status"]%> </li>
+                <li class = "profile-value"><span>GitHub:</span> <%=@profile["github"]%> </li>
+                <li class = "profile-value"><span>Phone Number:</span> <%=@profile["phone_number"]%> </li>                            
+                <li class = "profile-value"><span>Codecademy:</span> <%=@profile["codecademy"]%> </li>
+                <li class = "profile-value"><span>Homepage:</span> <%=@profile["homepage"]%> </li>
+                <li class = "profile-value"><span>Geeky fact:</span> <%=@profile["primes_sum"]%> is the sum of prime numbers under 2 million!! </li>
+
             </ul>
         </p>
 
@@ -97,7 +99,8 @@
                 <li><a href="#change" onclick="pre_pop('gender')">Gender</a></li>
                 <li><a href="#change" onclick="pre_pop('employment_status')">Employment Status</a></li>
                 <li><a href="#change" onclick="pre_pop('github')">GitHub</a></li>                            
-                <li><a href="#change" onclick="pre_pop('codeacademy')">Codecademy</a></li>                        
+                <li><a href="#change" onclick="pre_pop('codecademy')">Codecademy</a></li>
+                <li><a href="#change" onclick="pre_pop('homepage')">Homepage</a></li>                         
                 <li><a href="#change" onclick="pre_pop('primes_sum')">Primes Sum</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Un-editable</li>
@@ -106,12 +109,6 @@
                 <li><a href="#change" onclick="pre_pop('learning')">Learning</a></li>                            
                 <li><a href="#change" onclick="pre_pop('rationale')">Rationale</a></li>                            
                 <li><a href="#change" onclick="pre_pop('projects')">Projects</a></li>
-                <li class="dropdown-header">Hidden (uneditable)</li>
-                <li><a href="" onclick=""></a></li>
-                <li><a href="" onclick=""></a></li>
-                <li><a href="" onclick=""></a></li>                            
-                <li><a href="" onclick="">Invited for Interview</a></li>                            
-                <li><a href="" onclick="">Hot</a></li>
             </ul>
 
         </div>
@@ -139,8 +136,8 @@
         </form>
 
         <!-- word count -->
-        <div class="col-sm-4 col-sm-offset-5"> 
-            <p><span id="wc"></span> words (minimum 20)</p>
+        <div class="col-sm-6 col-sm-offset-4 word_section"> 
+            <p id="wc"></p>
         </div>
         <!-- /word count -->
 
@@ -204,7 +201,9 @@
 
     function pre_pop(key){
       var inner;
-      switch (key){
+      document.getElementById("wc").innerHTML = "";
+
+      switch (key){          
           case "first_name":
           inner = "<%= @profile['first_name'] %>";
           document.getElementById("change").setAttribute("name", "trainee[first_name]");
@@ -219,36 +218,56 @@
           break;
           case "phone_number":
           inner = "<%= @profile['phone_number'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[phone_number]");
           break;
           case "gender":
           inner = "<%= @profile['gender'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[gender]");
           break;
           case "employment_status":
           inner = "<%= @profile['employment_status'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[employment_status]");
           break;
-          case "GitHub":
-          inner = "<%= @profile['GitHub'] %>";
+          case "github":
+          inner = "<%= @profile['github'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[github]");
           break;
           case "codecademy":
           inner = "<%= @profile['codecademy'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[codecademy]");
+          break;
+          case "homepage":
+          inner = "<%= @profile['homepage'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[homepage]");
           break;
           case "primes_sum":
           inner = "<%= @profile['primes_sum'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[primes_sum]");
           break;
           case "about":
           inner = "<%= @cont[:about] %>";
+          document.getElementById("change").setAttribute("name", "trainee[about]");
+          document.getElementById("wc").innerHTML = countwords(inner) + " words (min 20 required)";
           break;
           case "ambition":
           inner = "<%= @cont[:ambition] %>";
+          document.getElementById("change").setAttribute("name", "trainee[ambition]");
+          document.getElementById("wc").innerHTML = countwords(inner) + " words (min 20 required)";
           break;
           case "learning":
           inner = "<%= @cont[:learning_experience] %>";
+          document.getElementById("change").setAttribute("name", "trainee[learning_experience]");
+          document.getElementById("wc").innerHTML = countwords(inner) + " words (min 20 required)";
           break;
           case "rationale":
           inner = "<%= @cont[:rationale] %>";
+          document.getElementById("change").setAttribute("name", "trainee[rationale]");
+          document.getElementById("wc").innerHTML = countwords(inner) + " words (min 20 required)";
           break;
           case "projects":
           inner = "<%= @cont[:projects] %>";
+          document.getElementById("change").setAttribute("name", "trainee[projects]");
+          document.getElementById("wc").innerHTML = countwords(inner) + " words (min 20 required)";
           break; 
 
 
@@ -256,10 +275,10 @@
           inner = "case does not exist";
 
       }
+      
       wc = countwords(inner);
 
       document.getElementById('change').innerHTML = inner;
-      document.getElementById('wc').innerHTML = wc;
   
     }
 
@@ -289,7 +308,7 @@
   // count all words in the profile sections of the document
   var profile_values = document.getElementsByClassName('profile-value');
   var total_content=[]; //one long string of whole page content
-  var profile_content=[]; //array of content for each section - not sure if it's needed or whether i'll just call the funciton directly on the innerHTML
+  var profile_content=[]; 
 
     for(i = 0; i < profile_values.length; i++){
     var P = profile_values[i].innerHTML;
