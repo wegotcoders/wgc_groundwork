@@ -1,41 +1,37 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+	<div class = "wrapper">
+	  <h2><%= @profile["first_name"] %>'s Amazing Profile</h2>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+	  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+	  <div class = "col col-left">
+		  <%= erb(:profile_properties) %>
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
+		  <div id="stats" class="box">
+			 <h3>Stats</h3>
+			 <!-- TODO - Set the contents of this span with JavaScript -->
+			 <span id="word-count">0</span> words found.
+		  </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
+		  <div id="problems" class="box">
+			 <h3>Programming Problems</h3>
+			 <a href="/primes">My Prime Number Solution</a>
+		  </div>
+	  </div>
+	  <div class = "col col-right">
+		  <div class="box">
+			  <a href = "#"><h3 id = "editFields">Edit Profile</h3></a>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+			 <form action="/update" method="POST">
+				<fieldset id = "fields">
+					<!-- TODO - Add more fields so that your profile can be edited -->
+				  <%= erb(:form) %>
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
+				  <input type="submit" value="Update Profile" class="btn btn-primary" />
+				</fieldset>
+			 </form>
+		  </div>
+	  </div>
+	</div>
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -56,4 +52,15 @@
   // hint - look at what the innerHTML property provides.
 
   document.getElementById('word-count').innerHTML = total_words;
+	
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#fields").hide();
+
+		$( "#editFields" ).click(function() {
+		  $( "#fields" ).toggle( "slow");
+		});
+	});
 </script>
