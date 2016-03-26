@@ -1,6 +1,7 @@
 <% if @profile %>
 	<div class = "wrapper">
-	  <h2><%= @profile["first_name"] %>'s Amazing Profile</h2>
+		<h2><%= @profile["first_name"] %>'s Amazing Profile</h2>
+		<br />
 
 	  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 	  <div class = "col col-left">
@@ -18,8 +19,11 @@
 		  </div>
 	  </div>
 	  <div class = "col col-right">
+		  <div class = "box" id = "photo">
+			  <center><img src = "/images/photo.jpg" width= "100%"></center>
+		  </div>
 		  <div class="box">
-			  <a href = "#"><h3 id = "editFields">Edit Profile</h3></a>
+			  <a href = "#", title = "Click Me!"><h3 id = "editFields">Edit Profile</h3></a>
 
 			 <form action="/update" method="POST">
 				<fieldset id = "fields">
@@ -59,8 +63,9 @@
 	$(document).ready(function(){
 		$("#fields").hide();
 
-		$( "#editFields" ).click(function() {
-		  $( "#fields" ).toggle( "slow");
+		$("#editFields").click(function() {
+			$("#fields").toggle( "slow");
+			$("#photo").toggle("slow");
 		});
 	});
 </script>

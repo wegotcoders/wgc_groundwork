@@ -87,3 +87,8 @@ a:link, a:visited, a:hover, a:active{
 a:hover{
 	font-weight: bold;
 }
+
+#photo img {
+	opacity: 0.8;
+	border-radius: 3%;
+}
