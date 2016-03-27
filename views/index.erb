@@ -52,7 +52,7 @@
 	var profile_values = document.getElementsByClassName('profile-value');
 	var total_words = 0;
 	var word_list = "";
-	for (i in profile_values) {
+	for (var i in profile_values) {
 		if (profile_values[i].textContent != undefined) {
 			word_list += (profile_values[i].textContent + " ");
 		}
@@ -65,6 +65,51 @@
   // hint - look at what the innerHTML property provides.
 
 	document.getElementById('word-count').innerHTML = total_words.toString();
+	
+	var colRight = document.getElementsByClassName("col-right");
+	var colLeft = document.getElementsByClassName("col-left");
+	var wrap = document.getElementsByClassName("wrapper");
+
+	var smallWindow = function() {
+			for (var i=0; i < colRight.length; i++){
+				colRight.innerHTML += colRight[i].style.float="left";
+				colRight.innerHTML += colRight[i].style.width="100%";
+			}
+			for (var i=0; i < colLeft.length; i++){
+				colLeft.innerHTML += colLeft[i].style.width="100%";
+			}
+			for (var i=0; i < wrap.length; i++){
+				wrap.innerHTML += wrap[i].style.width="60%";
+			}
+	}
+
+	/* Responsive Layout */
+	var largeWindow = function(){
+		for (var i=0; i < colRight.length; i++){
+			colRight.innerHTML += colRight[i].style.float="right";
+			colRight.innerHTML += colRight[i].style.width="45%";
+		}
+		for (var i=0; i < colLeft.length; i++){
+			colLeft.innerHTML += colLeft[i].style.width="50%";
+		}
+		for (var i=0; i < wrap.length; i++){
+			wrap.innerHTML += wrap[i].style.width="55%";
+		}
+	}
+	window.onload = function(){
+		if (window.innerWidth <= 755){
+			smallWindow();
+		}else{
+			largeWindow();
+		}
+	};
+	window.addEventListener('resize', function(){
+		if (window.innerWidth <= 755){
+			smallWindow();
+		}else{
+			largeWindow();
+		}
+	}, true);
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 <script>

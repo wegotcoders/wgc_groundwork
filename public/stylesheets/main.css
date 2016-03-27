@@ -49,6 +49,7 @@ body {
   background: rgba(252,252,252, 0.7);
   padding: 1em;
   margin-bottom: 1em;
+  word-wrap: break-word;
 }
 
 .box textarea, input {
