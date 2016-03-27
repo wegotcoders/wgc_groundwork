@@ -1,99 +1,103 @@
 <div class="form-group">
-	<label for="trainee[first_name]">First name</label><br>
+	<label for="trainee[first_name]">First name:</label><br>
 	<input name="trainee[first_name]" value="<%= @profile["first_name"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[last_name]">Last name</label><br>
+	<label for="trainee[last_name]">Last name:</label><br>
 	<input name="trainee[last_name]" value="<%= @profile["last_name"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[dob]">Date of Birth</label><br>
+	<label for="trainee[dob]">Date of Birth:</label><br>
 	<input name="trainee[dob]" value="<%= @profile["dob"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[gender]">Gender</label><br>
+	<label for="trainee[gender]">Gender:</label><br>
 	<input name="trainee[gender]" value="<%= @profile["gender"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[about]">About</label><br>
-	<input name="trainee[about]" value="<%= @profile["about"]%>" type="text">
+	<label for="trainee[about]">About:</label><br>
+	<textarea name="trainee[about]" value="<%= @profile["about"]%>" type="text" rows = "7"><%= @profile["about"]%></textarea>
 </div>
 
 <div class="form-group">
-	<label for="trainee[ambition]">Ambition</label><br>
+	<label for="trainee[ambition]">Ambition:</label><br>
 	<input name="trainee[ambition]" value="<%= @profile["ambition"]%>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[phone_number]">Phone number</label><br>
+	<label for="trainee[phone_number]">Phone number:</label><br>
 	<input name="trainee[phone_number]" value="<%= @profile["phone_number"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[homepage]">Homepage</label><br>
+	<label for="trainee[homepage]">Homepage:</label><br>
 	<input name="trainee[homepage]" value="<%= @profile["homepage"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[github]">Github</label><br>
+	<label for="trainee[github]">Github:</label><br>
 	<input name="trainee[github]" value="<%= @profile["github"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[twitter]">Twitter</label><br>
+	<label for="trainee[twitter]">Twitter:</label><br>
 	<input name="trainee[twitter]" value="<%= @profile["twitter"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[codecademy]">Code Academy</label><br>
+	<label for="trainee[codecademy]">Code Academy:</label><br>
 	<input name="trainee[codecademy]" value="<%= @profile["codecademy"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[how_did_you_hear]">How Did You Hear About Us?</label><br>
+	<label for="trainee[how_did_you_hear]">How Did You Hear About Us?:</label><br>
 	<input name="trainee[how_did_you_hear]" value="<%= @profile["how_did_you_hear"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[ruby_track_completedness]">Ruby Track Completedness</label><br>
+	<label for="trainee[ruby_track_completedness]">Ruby Track Completedness:</label><br>
 	<input name="trainee[ruby_track_completedness]" value="<%= @profile["ruby_track_completedness"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[js_track_completedness]">JS Track Completedness</label><br>
+	<label for="trainee[js_track_completedness]">JS Track Completedness:</label><br>
 	<input name="trainee[js_track_completedness]" value="<%= @profile["js_track_completedness"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[web_track_completedness]">Web Track Completedness</label><br>
+	<label for="trainee[web_track_completedness]">Web Track Completedness:</label><br>
 	<input name="trainee[web_track_completedness]" value="<%= @profile["web_track_completedness"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[learning_experience]">Learning Experience</label><br>
+	<label for="trainee[learning_experience]">Learning Experience:</label><br>
 	<input name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[employment_status]">Employment Status</label><br>
-	<input name="trainee[employment_status]" value="<%= @profile["employment_status"] %>" type="text">
+	<label for="trainee[employment_status]">Employment Status:</label><br>
+	<select name="trainee[employment_status]" type="text-input">
+		<% ["Employed", "Self-employed", "Unemployed", "Student"].each do |i| %>
+			<option value=<%=i%> <%= 'selected = "selected"' unless @profile["employment_status"] != i %>><%= i %></option>
+		<%end%>
+	</select>
 </div>
 
 <div class="form-group">
-	<label for="trainee[primes_sum]">Primes Sum</label><br>
+	<label for="trainee[primes_sum]">Primes Sum:</label><br>
 	<input name="trainee[primes_sum]" value="<%= @profile["prime_sum"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[projects]">Projects</label><br>
+	<label for="trainee[projects]">Projects:</label><br>
 	<input name="trainee[projects]" value="<%= @profile["projects"] %>" type="text">
 </div>
 
 <div class="form-group">
-	<label for="trainee[rationale]">Rationale</label><br>
+	<label for="trainee[rationale]">Rationale:</label><br>
 	<input name="trainee[rationale]" value="<%= @profile["rationale"] %>" type="text">
 </div>

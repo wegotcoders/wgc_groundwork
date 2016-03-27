@@ -51,6 +51,18 @@ body {
   margin-bottom: 1em;
 }
 
+.box textarea, input {
+	width: 94%;
+}
+
+.btn-primary {
+	color: #FCFCFC;
+	background-color: #19557A;
+	font-family: ralewaymedium, Helvetica, Arial;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
 .welcome {
   text-align: center;
 }
