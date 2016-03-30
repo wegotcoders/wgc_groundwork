@@ -66,6 +66,8 @@
 
 	document.getElementById('word-count').innerHTML = total_words.toString();
 	
+	
+	/* Responsive Layout */
 	var colRight = document.getElementsByClassName("col-right");
 	var colLeft = document.getElementsByClassName("col-left");
 	var wrap = document.getElementsByClassName("wrapper");
@@ -83,7 +85,6 @@
 			}
 	}
 
-	/* Responsive Layout */
 	var largeWindow = function(){
 		for (var i=0; i < colRight.length; i++){
 			colRight.innerHTML += colRight[i].style.float="right";
