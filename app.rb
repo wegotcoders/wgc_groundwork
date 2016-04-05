@@ -23,7 +23,7 @@ get '/' do
     @profile = trainee.get_profile
   end
 
-  erb :index, :layout => :main
+  erb :index, :layout => :home
 end
 
 post '/update' do
