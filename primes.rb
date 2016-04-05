@@ -1,5 +1,8 @@
 class Primes
   
+	# I understand how to make this run with input from the user throught the terminal (limit = gets.chomp)
+	# But I couldn't succesfull get it to work with the .erb files
+
 	require 'prime'
 
 	def self.sum_to(limit = 100)
@@ -14,6 +17,7 @@ class Primes
   #   It's slower and for some reason doesn't work in this app,
   #   even though it runs fine in it's own ruby file
 
+  # private
 	# def prime_range(number)
 	# 	sqrt = Math.sqrt(number).to_i
 	# 	primes = [2]
@@ -34,6 +38,7 @@ class Primes
 	# 	return primes
 	# end
 
+	# public
  #  def self.sum_to(limit = 100)
  #    return 0 if limit < 2
 	# 	sum = 0
