@@ -2,6 +2,8 @@
 
 # Programming Challenge
 
+Steve wos 'ere (check to see if commits are working)
+
 This is the application that you will be using to demonstrate your preparedness for the course. If you've already applied and are ready to get started, follow the instructions below. If you haven't yet applied, please read about We Got Coders and apply on our website, http://wegotcoders.com/trainees.
 
 ## INSTALL
