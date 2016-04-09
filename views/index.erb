@@ -31,14 +31,56 @@
   <% end %>
 -->
 
+
+<div id="Personal">
+
+
 <% @profile.each do |field, value| %>
-<%if appFields.include? field%>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-<% end %>
-  <% end %>
+	<%if persDetFields.include? field%>
+	    <div class="profile-section box">
+	      <h4><%= field %></h4>
+	      <p class="profile-value"><%= value %></p>
+	    </div>
+	<% end %>
+	  <% end %>
+
+
+</div>
+
+<div id="Contact">
+
+
+	<% @profile.each do |field, value| %>
+	<%if contFields.include? field%>
+	    <div class="profile-section box">
+	      <h4><%= field %></h4>
+	      <p class="profile-value"><%= value %></p>
+	    </div>
+	<% end %>
+	  <% end %>
+
+
+</div>
+
+<div id="Application">
+
+<!--
+	<% @profile.each do |field, value| %>
+	<%if appFields.include? field%>
+	    <div class="profile-section box">
+	      <h4><%= field %></h4>
+	      <p class="profile-value"><%= value %></p>
+	    </div>
+	<% end %>
+	  <% end %>
+-->
+
+
+</div>
+
+
+<div id="Codecademy"></div>
+
 
 
   <div id="stats" class="box">
