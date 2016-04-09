@@ -1,14 +1,33 @@
 <% if @profile %>
 <!--  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>-->
 
+<% class FieldVal
+value
+	def initialiaze(field, question=nil, value=nil)
+		@field = field
+		@question = question
+	end
+end
+%>
+
 <!-- Personal Details -->
 <!--//first_name, last_name, gender, dob, employment_status-->
 <% persDetFields = ['first_name', 'last_name', 'gender', 'dob', 'employment_status'] %>
 
 
 <!-- Application -->
-<!--//about, ambition, learning_experience, projects, rationale, how_did_you_hear-->
-<% appFields = ['about','ambition', 'learning_experience', 'projects', 'rationale', 'how_did_you_hear'] %>
+<!--//about, projects, rationale, ambition, learning_experience, how_did_you_hear-->
+<!--
+<%about = FieldVal.new("about", "Please tell us a bit about yourself")%>
+<%projects = FieldVal.new("projects", "Please tell us about a programming project that you worked on and what your role was") %>
+<%rationale = FieldVal.new("rationale","Why do you want to apply for this program?") %>
+<%ambition = FieldVal.new("ambition", "Where do you see your carrer in 1 year's time?") %>
+<%learning_experience = FieldVal.new("learning_experience", "What do you think makes for a positive learning and training experience?") %>
+<%how_did_you_hear = FieldVal.new("how_did_you_hear", "How did you hear about us?") %>
+-->
+<% appFields = [about, projects, rationale, ambition, learning_experience, how_did_you_hear] %>
+
+
 
 <!-- Contact -->
 <!--//phone_number, twitter, github, homepage, -->
@@ -17,9 +36,17 @@
 
 <!-- Codecademy -->
 <!--//codecademy, web_track_completedness, js_track_completedness, ruby_track_completedness, -->
-<% contFields = ['codecademy', 'web_track_completedness', 'js_track_completedness', 'ruby_track_completedness'] %>
+<% codeFields = ['codecademy', 'web_track_completedness', 'js_track_completedness', 'ruby_track_completedness'] %>
 
 
+<!-- loop through the above arrays so that their data is to hand -->
+<!--
+<% @profile.each do |field, value| %>
+	appfields.each do |afield|
+	if afield.@field = field, afield.value = value
+	end
+end %>
+-->
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 <!--
@@ -34,7 +61,7 @@
 
 <div id="Personal">
 
-
+<!--
 <% @profile.each do |field, value| %>
 	<%if persDetFields.include? field%>
 	    <div class="profile-section box">
@@ -46,10 +73,11 @@
 
 
 </div>
+-->
 
 <div id="Contact">
 
-
+<!--
 	<% @profile.each do |field, value| %>
 	<%if contFields.include? field%>
 	    <div class="profile-section box">
@@ -58,17 +86,16 @@
 	    </div>
 	<% end %>
 	  <% end %>
-
+-->
 
 </div>
 
 <div id="Application">
 
 <!--
-	<% @profile.each do |field, value| %>
-	<%if appFields.include? field%>
+	<% appFields.each do |field,| %>
 	    <div class="profile-section box">
-	      <h4><%= field %></h4>
+	      <h4><%= field.@question %></h4>
 	      <p class="profile-value"><%= value %></p>
 	    </div>
 	<% end %>
@@ -122,10 +149,12 @@
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
   console.log("I am Javascript!");
+
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+
   document.getElementById('word-count').innerHTML = total_words;
 </script>
-
