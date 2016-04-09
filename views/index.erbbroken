@@ -14,6 +14,8 @@ end
 <!--//first_name, last_name, gender, dob, employment_status-->
 <% persDetFields = ['first_name', 'last_name', 'gender', 'dob', 'employment_status'] %>
 
+<% appFields = [['about', 'Please tell us a bit about yourself'],['projects','Please tell us about a programming project that you worked on and what your role was'],['rationale','Why do you want to apply for this program?'],['ambition','Where do you see your career in 1 year's time?'],['learning_experience','What do you think makes for a positive learning and training experience?'],['how_did_you_hear', 'How did you hear about us?']]%>
+
 
 <!-- Application -->
 <!--//about, projects, rationale, ambition, learning_experience, how_did_you_hear-->
