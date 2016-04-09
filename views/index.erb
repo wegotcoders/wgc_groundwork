@@ -1,14 +1,30 @@
 <% if @profile %>
 <!--  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>-->
 
+<!-- <% class FieldVal
+	def initialiaze(field)
+		@field = field 
+	end
+end
+%>-->
+
 <!-- Personal Details -->
 <!--//first_name, last_name, gender, dob, employment_status-->
 <% persDetFields = ['first_name', 'last_name', 'gender', 'dob', 'employment_status'] %>
 
 
 <!-- Application -->
-<!--//about, ambition, learning_experience, projects, rationale, how_did_you_hear-->
-<% appFields = ['about','ambition', 'learning_experience', 'projects', 'rationale', 'how_did_you_hear'] %>
+<!--//about, projects, rationale, ambition, learning_experience, how_did_you_hear-->
+<%about.question = "Please tell us a bit about yourself" %>
+<%projects.question = "Please tell us about a programming project that you worked on and what your role was" %>
+<%rationale.question = "Why do you want to apply for this program?" %>
+<%ambition.question = "Where do you see your carrer in 1 year's time?" %>
+<%learning_experience.question = "What do you think makes for a positive learning and training experience?" %>
+<%how_did_you_hear.question = "How did you hear about us?" %>
+
+<% appFields = [about, projects, rationale, ambition, learning_experience, how_did_you_hear] %>
+
+
 
 <!-- Contact -->
 <!--//phone_number, twitter, github, homepage, -->
@@ -17,8 +33,16 @@
 
 <!-- Codecademy -->
 <!--//codecademy, web_track_completedness, js_track_completedness, ruby_track_completedness, -->
-<% contFields = ['codecademy', 'web_track_completedness', 'js_track_completedness', 'ruby_track_completedness'] %>
+<% codeFields = ['codecademy', 'web_track_completedness', 'js_track_completedness', 'ruby_track_completedness'] %>
 
+
+<!-- loop through the above arrays so that their data is to hand -->
+
+<% @profile.each do |field, value| %>
+	appfields.each do |afield|
+	if afield = field, afield.value = value
+	end
+end %>
 
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
