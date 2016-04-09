@@ -40,19 +40,21 @@
 <!-- Why didn't I do this earlier?
   <%= p @profile%>
   -->
-  
-  <% persDetFields.each do |field| %>
-  <div class="profile-section box">
-   <h4><%= field %></h4>
-   <p class="profile-value"><%= @profile[field] %></p>
-   </div>
-  <% end %>
+
+  	<% persDetFields.each do |field| %>
+	  	<div class="profile-section box">
+	   		<h4><%= field %></h4>
+	   		<p class="profile-value"><%= @profile[field] %></p>
+	   </div>
+  	<% end %>
+
+
 
 	<% appFields.each do |field, question| %>
 		<div class="profile-section box">
-	   	<h4><%= field %></h4>
-	   	<h5><%= question%></h5>
-	   	<p class="profile-value"><%= @profile[field] %></p>
+	   		<h4><%= field %></h4>
+	   		<h5><%= question%></h5>
+	   		<p class="profile-value"><%= @profile[field] %></p>
    		</div>
   	<% end %>
   
