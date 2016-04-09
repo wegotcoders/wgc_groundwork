@@ -11,7 +11,14 @@
 
 <!-- Application -->
 <!--//about, projects, rationale, ambition, learning_experience, how_did_you_hear-->
-<% appFields = ['about', 'projects', 'rationale', 'ambition', 'learning_experience', 'how_did_you_hear'] %>
+<% appFields = [
+		['about','Please tell us a bit about yourself'],
+		['projects','Please tell us about a programming project that you worked on and what your role was'],
+		['rationale',"Why do you want to apply for this program?"],
+		['ambition',"Where do you see your carrer in 1 year's time?"],
+		['learning_experience',"What do you think makes for a positive learning and training experience?"],
+		['how_did_you_hear',"How did you hear about us?"]
+	] %>
 
 <!-- Contact -->
 <!--//phone_number, twitter, github, homepage, -->
@@ -30,6 +37,10 @@
     </div>
   <% end %>-->
 
+<!-- Why didn't I do this earlier?
+  <%= p @profile%>
+  -->
+  
   <% persDetFields.each do |field| %>
   <div class="profile-section box">
    <h4><%= field %></h4>
@@ -37,6 +48,14 @@
    </div>
   <% end %>
 
+	<% appFields.each do |field, question| %>
+		<div class="profile-section box">
+	   	<h4><%= field %></h4>
+	   	<h5><%= question%></h5>
+	   	<p class="profile-value"><%= @profile[field] %></p>
+   		</div>
+  	<% end %>
+  
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
