@@ -1,133 +1,118 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+<h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
-
-
-  <!-- Personal Details -->
+<!-- Personal Details -->
 <!--//first_name, last_name, gender, dob, employment_status-->
-<!--<% persDetFields = ['first_name', 'last_name', 'gender', 'dob', 'employment_status'] %>-->
+
 <% persDetFields = ['first_name', 'last_name', 'gender', 'dob', 'employment_status'] %>
 
 
 <!-- Application -->
 <!--//about, projects, rationale, ambition, learning_experience, how_did_you_hear-->
 <% appFields = [
-		['about','Please tell us a bit about yourself'],
-		['projects','Please tell us about a programming project that you worked on and what your role was'],
-		['rationale',"Why do you want to apply for this program?"],
-		['ambition',"Where do you see your carrer in 1 year's time?"],
-		['learning_experience',"What do you think makes for a positive learning and training experience?"],
-		['how_did_you_hear',"How did you hear about us?"]
+	['about','Please tell us a bit about yourself'],
+	['projects','Please tell us about a programming project that you worked on and what your role was'],
+	['rationale',"Why do you want to apply for this program?"],
+	['ambition',"Where do you see your carrer in 1 year's time?"],
+	['learning_experience',"What do you think makes for a positive learning and training experience?"],
+	['how_did_you_hear',"How did you hear about us?"]
 	] %>
 
-<!-- Contact -->
-<!--//phone_number, twitter, github, homepage, -->
-<% contFields = ['phone_number', 'twitter', 'github', 'homepage'] %>
+	<!-- Contact -->
+	<!--//phone_number, twitter, github, homepage, -->
+	<% contFields = ['phone_number', 'twitter', 'github', 'homepage'] %>
 
-<!-- Codecademy -->
-<!--//codecademy, web_track_completedness, js_track_completedness, ruby_track_completedness, -->
-<% codeFields = ['codecademy', 'web_track_completedness', 'js_track_completedness', 'ruby_track_completedness'] %>
+	<!-- Codecademy -->
+	<!--//codecademy, web_track_completedness, js_track_completedness, ruby_track_completedness, -->
+	<% codeFields = ['codecademy', 'web_track_completedness', 'js_track_completedness', 'ruby_track_completedness'] %>
 
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <!--<% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>-->
+	<!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 
-<!-- Why didn't I do this earlier?
-  <%= p @profile%>
-  -->
-
-  	<% persDetFields.each do |field| %>
-	  	<div class="profile-section box">
-	   		<h4><%= field %></h4>
-	   		<p class="profile-value"> <%= @profile[field] %> </p>
-	   </div>
-  	<% end %>
+<% persDetFields.each do |field| %>
+<div class="profile-section box">
+	<h4><%= field %></h4>
+	<p class="profile-value"> <%= @profile[field] %> </p>
+</div>
+<% end %>
 
 
 <div class="container">
-<ul class="nav nav-tabs">
-<% @first = true %>
-<% appFields.each do |field, question|%>
-<% if @first %>
-<li 'class = "active"'><a data-toggle="tab" href="#<%=field%>"> <%=field%> </a></li>
-	<% @first = false %>
-<% else %>
-<li><a data-toggle="tab" href="#<%=field%>"> <%=field%> </a></li>
-<%end%>
-<% end %>
-</ul>
+	<ul class="nav nav-tabs">
+		<% @count = 0 %>
+		<% appFields.each do |field, question|%>
+		<% if @count < 1 %>
+		<li class = "active"><a data-toggle="tab" href="#home"> <%=field%> </a></li>
+		<% else %>
+		<li>
+			<a data-toggle="tab" href="<%="#"<<"menu"<<@count.to_s%>"><%=field%></a></li>
+			<%end%>
+			<% @count = @count+1 %>
+			<% end %>
+		</ul>
 
-<div class="tab-content">
-<% @first = true %>
-<%appFields.each do |field, question|%>
-  	<% if @first %>
-  <div id="<%=field%>" class="tab-pane fade in active">
-  	<% @first = false %>
-	<% else %>
-	<div id="<%=field%>" class="tab-pane fade">
-	<%end%>
-    <h3><%=question%></h3>
-    <p><%= @profile[field] %></p>
-  </div>
-</div>
-<%end%>
-</div>
+		<div class="tab-content">
+			<% @count = 0 %>
+			<%appFields.each do |field, question|%>
+			<% if @count < 1%>
+			<div id="home" class="tab-pane fade in active">
+			<h3><%=question%></h3>
+			<p><%= @profile[field] %></p>
+			</div>
+			<% else %>
+			<div id="<%="menu"<<@count.to_s%>" class="tab-pane fade">
+			<h3><%=question%></h3>
+			<p><%= @profile[field] %></p>
+			</div>
+			<%end%>
+			<% @count = @count +1 %>
+			<%end%>
+		</div>
+	</div>
 
-	<!--<% appFields.each do |field, question| %>
-		<div class="profile-section box">
-	   		<h4><%= field %></h4>
-	   		<h5><%= question%></h5>
-	   		<p class="profile-value"><%= @profile[field] %></p>
+
+   		<div id="stats" class="box">
+   			<h3>Stats</h3>
+   			<!-- TODO - Set the contents of this span with JavaScript -->
+   			<span id="word-count">0</span> words found.
    		</div>
-  	<% end %>-->
-  
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
+   		<div id="problems" class="box">
+   			<h3>Programming Problems</h3>
+   			<a href="/primes">My Prime Number Solution</a>
+   		</div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+   		<div class="box">
+   			<h3>Edit Profile</h3>
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
+   			<form action="/update" method="POST">
+   				<fieldset>
+   					<div class="form-group">
+   						<label for="trainee[about]">About</label>
+   						<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+   					</div>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+   					<!-- TODO - Add more fields so that your profile can be edited -->
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
-<% else %>
-  <div class="welcome">
-    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+   					<input type="submit" value="Update Profile" class="btn btn-primary" />
+   				</fieldset>
+   			</form>
+   		</div>
+   		<% else %>
+   		<div class="welcome">
+   			<p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
-    <a href="/authorise">Authorise</a>
-  </div>
-<% end %>
+   			<a href="/authorise">Authorise</a>
+   		</div>
+   		<% end %>
 
 
-<!-- Add your Javascript to this script tag -->
-<script language="javascript">
-  console.log("I am Javascript!");
+   		<!-- Add your Javascript to this script tag -->
+   		<script language="javascript">
+   			console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+   			var profile_values = document.getElementsByClassName('profile-value');
+   			var total_words = 0;
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
