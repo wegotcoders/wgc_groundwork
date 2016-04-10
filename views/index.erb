@@ -44,32 +44,47 @@
   	<% persDetFields.each do |field| %>
 	  	<div class="profile-section box">
 	   		<h4><%= field %></h4>
-	   		<p class="profile-value"><%= @profile[field] %></p>
+	   		<p class="profile-value"> <%= @profile[field] %> </p>
 	   </div>
   	<% end %>
 
-<% appFields.each do |field, other|%>
-<ul class="nav nav-tabs">
-  <li><a data-toggle="tab" href=#<%=field%>><%=field%></a></li>
-</ul>
-<%end%>
 
-<%appFields.each do |field, question|%>
+<div class="container">
+<ul class="nav nav-tabs">
+<% @first = true %>
+<% appFields.each do |field, question|%>
+<% if @first %>
+<li 'class = "active"'><a data-toggle="tab" href="#<%=field%>"> <%=field%> </a></li>
+	<% @first = false %>
+<% else %>
+<li><a data-toggle="tab" href="#<%=field%>"> <%=field%> </a></li>
+<%end%>
+<% end %>
+</ul>
+
 <div class="tab-content">
-  <div id=<%=field%> class="tab-pane fade in active">
-    <h3><%=field%></h3>
-    <p><%=question%></p>
+<% @first = true %>
+<%appFields.each do |field, question|%>
+  	<% if @first %>
+  <div id="<%=field%>" class="tab-pane fade in active">
+  	<% @first = false %>
+	<% else %>
+	<div id="<%=field%>" class="tab-pane fade">
+	<%end%>
+    <h3><%=question%></h3>
+    <p><%= @profile[field] %></p>
   </div>
 </div>
 <%end%>
+</div>
 
-	<% appFields.each do |field, question| %>
+	<!--<% appFields.each do |field, question| %>
 		<div class="profile-section box">
 	   		<h4><%= field %></h4>
 	   		<h5><%= question%></h5>
 	   		<p class="profile-value"><%= @profile[field] %></p>
    		</div>
-  	<% end %>
+  	<% end %>-->
   
   <div id="stats" class="box">
     <h3>Stats</h3>
