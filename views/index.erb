@@ -48,7 +48,20 @@
 	   </div>
   	<% end %>
 
+<% appFields.each do |field, other|%>
+<ul class="nav nav-tabs">
+  <li><a data-toggle="tab" href=#<%=field%>><%=field%></a></li>
+</ul>
+<%end%>
 
+<%appFields.each do |field, question|%>
+<div class="tab-content">
+  <div id=<%=field%> class="tab-pane fade in active">
+    <h3><%=field%></h3>
+    <p><%=question%></p>
+  </div>
+</div>
+<%end%>
 
 	<% appFields.each do |field, question| %>
 		<div class="profile-section box">
