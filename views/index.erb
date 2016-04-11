@@ -1,9 +1,18 @@
 <% if @profile %>
 <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
+<% def TitleCaseField(fieldText) #turns field_text into Title Case Text, returning this new string without modifying original.
+	outstring = fieldText.gsub('_', ' ') #remove all underscores and replace with spaces, store in new string
+	outstring.gsub!(/\w+/) do |word| #loop through all these words created in newstring, using in place functions
+		word.capitalize! #capitalize each word in place
+	end
+	return outstring #output this new string
+end%>
+
+
+
 <!-- Personal Details -->
 <!--//first_name, last_name, gender, dob, employment_status-->
-
 <% persDetFields = ['first_name', 'last_name', 'gender', 'dob', 'employment_status'] %>
 
 
@@ -13,7 +22,7 @@
 	['about','Please tell us a bit about yourself'],
 	['projects','Please tell us about a programming project that you worked on and what your role was'],
 	['rationale',"Why do you want to apply for this program?"],
-	['ambition',"Where do you see your carrer in 1 year's time?"],
+	['ambition',"Where do you see your career in 1 year's time?"],
 	['learning_experience',"What do you think makes for a positive learning and training experience?"],
 	['how_did_you_hear',"How did you hear about us?"]
 	] %>
@@ -42,10 +51,10 @@
 		<% @count = 0 %>
 		<% appFields.each do |field, question|%>
 		<% if @count < 1 %>
-		<li class = "active"><a data-toggle="tab" href="#home"> <%=field%> </a></li>
+		<li class = "active"><a data-toggle="tab" href="#home"> <%=TitleCaseField(field)%> </a></li>
 		<% else %>
 		<li>
-			<a data-toggle="tab" href="<%="#"<<"menu"<<@count.to_s%>"><%=field%></a></li>
+			<a data-toggle="tab" href="<%="#"<<"menu"<<@count.to_s%>"><%=TitleCaseField(field)%></a></li>
 			<%end%>
 			<% @count = @count+1 %>
 			<% end %>
