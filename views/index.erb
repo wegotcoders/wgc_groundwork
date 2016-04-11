@@ -105,21 +105,25 @@ end%>
    		<div id="problems" class="box">
    			<h3>Programming Problems</h3>
    			<a href="/primes">My Prime Number Solution</a>
+   			<p><%= @profile["prime_sum"] %><p>
    		</div>
 
    		<div class="box">
    			<h3>Edit Profile</h3>
 
-   			<form action="/update" method="POST">
+   			<form action="/update" method="POST" id="AboutForm">
    				<fieldset>
-   					<div class="form-group">
+   					<div class="form-group" >
    						<label for="trainee[about]">About</label>
    						<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
    					</div>
 
+
+
    					<!-- TODO - Add more fields so that your profile can be edited -->
 
    					<input type="submit" value="Update Profile" class="btn btn-primary" />
+   					<input type="reset" value="Reset" class="btn btn-primary" />
    				</fieldset>
    			</form>
    		</div>
