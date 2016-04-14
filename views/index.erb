@@ -2,155 +2,102 @@
 
 
 <% def TitleCaseField(fieldText) #turns field_text into Title Case Text, returning this new string without modifying original.
-	outstring = fieldText.gsub('_', ' ') #remove all underscores and replace with spaces, store in new string
-	outstring.gsub!(/\w+/) do |word| #loop through all these words created in newstring, using in place functions
-		word.capitalize! #capitalize each word in place
-	end
-	return outstring #output this new string
+outstring = fieldText.gsub('_', ' ') #remove all underscores and replace with spaces, store in new string
+outstring.gsub!(/\w+/) do |word| #loop through all these words created in newstring, using in place functions
+word.capitalize! #capitalize each word in place
+end
+return outstring #output this new string
 end%>
 
 
+	<div class="container">
+<div class="row">
+		<%= erb :"subs/amazingProfile" %>
 
-<!-- Personal Details -->
-<!--//first_name, last_name, gender, dob, employment_status-->
-<% persDetFields = ['first_name', 'last_name', 'gender', 'dob', 'employment_status'] %>
+			<!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 
-
-<!-- Application -->
-<!--//about, projects, rationale, ambition, learning_experience, how_did_you_hear-->
-<% appFields = [
-	['about','Please tell us a bit about yourself'],
-	['projects','Please tell us about a programming project that you worked on and what your role was'],
-	['rationale',"Why do you want to apply for this program?"],
-	['ambition',"Where do you see your career in 1 year's time?"],
-	['learning_experience',"What do you think makes for a positive learning and training experience?"],
-	['how_did_you_hear',"How did you hear about us?"]
-	] %>
-
-	<!-- Contact -->
-	<!--//phone_number, twitter, github, homepage, -->
-	<% contFields = ['phone_number', 'twitter', 'github', 'homepage'] %>
-
-	<!-- Codecademy -->
-	<!--//codecademy, web_track_completedness, js_track_completedness, ruby_track_completedness, -->
-	<% codeFields = ['codecademy', 'web_track_completedness', 'js_track_completedness', 'ruby_track_completedness'] %>
-
-
-
-<h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
-
-
-	<!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-
-<% persDetFields.each do |field| %>
-<div class="profile-section box">
-	<h4><%= field %></h4>
-	<p class="profile-value"> <%= @profile[field] %> </p>
+<div class="col-lg-2">
+<!--test1-->
+	<%= erb :"subs/personalDetails"%>
 </div>
-<% end %>
 
 
-<div class="container" id="about-tabs">
-	<ul class="nav nav-tabs">
-		<% @count = 0 %>
-		<% appFields.each do |field, question|%>
-		<% if @count < 1 %>
-		<li class = "active"><a data-toggle="tab" href="#home"> <%=TitleCaseField(field)%> </a></li>
-		<% else %>
-		<li>
-			<a data-toggle="tab" href="<%="#"<<"menu"<<@count.to_s%>"><%=TitleCaseField(field)%></a></li>
-			<%end%>
-			<% @count = @count+1 %>
-			<% end %>
-		</ul>
+<div class ="col-lg-8">
+<!--test2-->
+	<%= erb :"subs/aboutTabs"%>
+</div>
 
-		<div class="tab-content">
-			<% @count = 0 %>
-			<%appFields.each do |field, question|%>
-			<% if @count < 1%>
-			<div id="home" class="tab-pane fade in active">
-			<h3><%=question%></h3>
-			<p class="profile-value"><%= @profile[field] %></p>
-			</div>
-			<% else %>
-			<div id="<%="menu"<<@count.to_s%>" class="tab-pane fade">
-			<h3><%=question%></h3>
-			<p class="profile-value"> <%= @profile[field] %></p>
-			</div>
-			<%end%>
-			<% @count = @count +1 %>
-			<%end%>
-		</div>
+<div class ="col-lg-2">
+	<%= erb :"subs/contactDetails"%>
+</div>
+
+
+</div>
+
+<div class="ccademy-row">
+	<%= erb :"subs/codecademy"%>
+</div>
+
+<div class="challenge-row">
+	<div id="stats" class="box">
+		<h3>Stats</h3>
+		<!-- TODO - Set the contents of this span with JavaScript -->
+		<span id="word-count">0</span> words found.
 	</div>
 
 
+	<div id="problems" class="box">
+		<h3>Programming Problems</h3>
+		<a href="/primes">My Prime Number Solution</a>
+		<p><%= @profile["prime_sum"] %><p>
+		</div>
+	</div>
 
-<% codeFields.each do |field| %>
-<div class="profile-section box">
-	<h4><%= field %></h4>
-	<p class="profile-value"> <%= @profile[field] %> </p>
+	<div class ="edit-row">	
+		<div class="box">
+			<h3>Edit Profile</h3>
+			<!--keep getting an internal server error...-->
+			<form action="/update" method="POST" id="AboutForm">
+				<fieldset>
+					<div class="form-group" >
+						<label for="trainee[about]">About</label>
+						<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+					</div> 
+
+
+					<!-- TODO - Add more fields so that your profile can be edited -->
+
+					<input type="submit" value="Update Profile" class="btn btn-primary" />
+					<input type="reset" value="Reset" class="btn btn-primary" />
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>   		
+<% else %>
+<div class="welcome">
+	<p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+	<a href="/authorise">Authorise</a>
 </div>
 <% end %>
 
 
-   		<div id="stats" class="box">
-   			<h3>Stats</h3>
-   			<!-- TODO - Set the contents of this span with JavaScript -->
-   			<span id="word-count">0</span> words found.
-   		</div>
+<!-- Add your Javascript to this script tag -->
+<script language="javascript">
+	console.log("I am Javascript!");
 
+	var profile_values = document.getElementsByClassName('profile-value');
+	var total_words = 0;
 
+//for loop time... Should have guessed earlier due to total_words being initialised to 0;
+for (var i = 0; i<profile_values.length; i++)
+{
+	total_words	+= profile_values[i].innerText.split(" ").length;
+}
 
-   		<div id="problems" class="box">
-   			<h3>Programming Problems</h3>
-   			<a href="/primes">My Prime Number Solution</a>
-   			<p><%= @profile["prime_sum"] %><p>
-   		</div>
+// TODO - Count the number of words in the profile.
+// hint - look at what the innerHTML property provides.
 
-   		<div class="box">
-   			<h3>Edit Profile</h3>
-
-   			<form action="/update" method="POST" id="AboutForm">
-   				<fieldset>
-   					<div class="form-group" >
-   						<label for="trainee[about]">About</label>
-   						<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-   					</div>
-
-
-
-   					<!-- TODO - Add more fields so that your profile can be edited -->
-
-   					<input type="submit" value="Update Profile" class="btn btn-primary" />
-   					<input type="reset" value="Reset" class="btn btn-primary" />
-   				</fieldset>
-   			</form>
-   		</div>
-   		<% else %>
-   		<div class="welcome">
-   			<p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
-
-   			<a href="/authorise">Authorise</a>
-   		</div>
-   		<% end %>
-
-
-   		<!-- Add your Javascript to this script tag -->
-   		<script language="javascript">
-   			console.log("I am Javascript!");
-
-   			var profile_values = document.getElementsByClassName('profile-value');
-   			var total_words = 0;
-
-   			//for loop time... Should have guessed earlier due to total_words being initialised to 0;
-   			for (var i = 0; i<profile_values.length; i++)
-   			{
-   				total_words	+= profile_values[i].innerText.split(" ").length;
-   			}
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
+document.getElementById('word-count').innerHTML = total_words;
 </script>

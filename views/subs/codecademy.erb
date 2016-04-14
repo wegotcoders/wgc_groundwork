@@ -1,0 +1,12 @@
+
+	<!-- Codecademy -->
+	<!--//codecademy, web_track_completedness, js_track_completedness, ruby_track_completedness, -->
+	<% codeFields = ['codecademy', 'web_track_completedness', 'js_track_completedness', 'ruby_track_completedness'] %>
+
+
+<% codeFields.each do |field| %>
+	<div class="profile-section box">
+		<h4><%= field %></h4>
+		<p class="profile-value"> <%= @profile[field] %> </p>
+	</div>
+	<% end %>

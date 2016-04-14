@@ -1,0 +1,10 @@
+	<!-- Contact -->
+	<!--//phone_number, twitter, github, homepage, -->
+	<% contFields = ['phone_number', 'twitter', 'github', 'homepage'] %>
+
+<% contFields.each do |field| %>
+<div class="profile-section box">
+	<h4><%= field %></h4>
+	<p class="profile-value"> <%= @profile[field] %> </p>
+</div>
+<% end %>			

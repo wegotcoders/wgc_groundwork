@@ -1,0 +1,41 @@
+<!-- Application -->
+<!--//about, projects, rationale, ambition, learning_experience, how_did_you_hear-->
+<% appFields = [
+	['about','Please tell us a bit about yourself'],
+	['projects','Please tell us about a programming project that you worked on and what your role was'],
+	['rationale',"Why do you want to apply for this program?"],
+	['ambition',"Where do you see your career in 1 year's time?"],
+	['learning_experience',"What do you think makes for a positive learning and training experience?"],
+	['how_did_you_hear',"How did you hear about us?"]
+	] %>
+
+	<ul class="nav nav-tabs">
+		<% @count = 0 %>
+		<% appFields.each do |field, question|%>
+		<% if @count < 1 %>
+		<li class = "active"><a data-toggle="tab" href="#home"> <%=TitleCaseField(field)%> </a></li>
+		<% else %>
+		<li>
+			<a data-toggle="tab" href="<%="#"<<"menu"<<@count.to_s%>"><%=TitleCaseField(field)%></a></li>
+			<%end%>
+			<% @count = @count+1 %>
+			<% end %>
+		</ul>
+
+		<div class="tab-content">
+			<% @count = 0 %>
+			<%appFields.each do |field, question|%>
+			<% if @count < 1%>
+			<div id="home" class="tab-pane fade in active">
+				<h3><%=question%></h3>
+				<p class="profile-value"><%= @profile[field] %></p>
+			</div>
+			<% else %>
+			<div id="<%="menu"<<@count.to_s%>" class="tab-pane fade">
+				<h3><%=question%></h3>
+				<p class="profile-value"> <%= @profile[field] %></p>
+			</div>
+			<%end%>
+			<% @count = @count +1 %>
+			<%end%>
+		</div>

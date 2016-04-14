@@ -1,0 +1,10 @@
+<!-- Personal Details -->
+<!--//first_name, last_name, gender, dob, employment_status-->
+<% persDetFields = ['first_name', 'last_name', 'gender', 'dob', 'employment_status'] %>
+
+<% persDetFields.each do |field| %>
+<div class="profile-section box">
+	<h4><%= field %></h4>
+	<p class="profile-value"> <%= @profile[field] %> </p>
+</div>
+<% end %>				
