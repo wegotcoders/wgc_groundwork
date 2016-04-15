@@ -1,5 +1,16 @@
 <!-- Application -->
 <!--//about, projects, rationale, ambition, learning_experience, how_did_you_hear-->
+<% def ShortWords(theString, maxLength)
+	if theString.length > maxLength
+		outstring = theString[0..maxLength-3]+"..."
+		return outstring
+	else
+		return theString
+	end
+end%>
+
+<%maxLength = 8%>
+
 <% appFields = [
 	['about','Please tell us a bit about yourself'],
 	['projects','Please tell us about a programming project that you worked on and what your role was'],
@@ -12,11 +23,12 @@
 	<ul class="nav nav-tabs">
 		<% @count = 0 %>
 		<% appFields.each do |field, question|%>
+		<% thisTitle = TitleCaseField(field) %>
 		<% if @count < 1 %>
-		<li class = "active"><a data-toggle="tab" href="#home"> <%=TitleCaseField(field)%> </a></li>
+		<li class = "active"><a data-toggle="tab" href="#home" title=<%="'"+thisTitle+"'"%>> <%=ShortWords(thisTitle,maxLength)%> </a></li>
 		<% else %>
 		<li>
-			<a data-toggle="tab" href="<%="#"<<"menu"<<@count.to_s%>"><%=TitleCaseField(field)%></a></li>
+			<a data-toggle="tab" href="<%="#"<<"menu"<<@count.to_s%>" title=<%="'"+thisTitle+"'"%>><%=ShortWords(thisTitle,maxLength)%></a></li>
 			<%end%>
 			<% @count = @count+1 %>
 			<% end %>

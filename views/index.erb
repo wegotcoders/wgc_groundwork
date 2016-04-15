@@ -16,26 +16,27 @@ end%>
 
 		<!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 
-		<div class="test col-lg-2">
+		<div class="test col-lg-3">
 			<!--test1-->
-			<h2>About Me</h2>
+			<h2 class="areaTitle">About Me</h2>
 			<%= erb :"subs/personalDetails"%>
 		</div>
 
 
-		<div class ="col-lg-8">
+		<div class ="col-lg-6">
 			<!--test2-->
+			<h2 class="areaTitle">Your Questions, My Answers</h2>
 			<%= erb :"subs/aboutTabs"%>
 		</div>
 
-		<div class ="col-lg-2">
-			<h2>Contact Me</h2>
+		<div class ="col-lg-3">
+			<h2 class="areaTitle">Contact Me</h2>
 			<%= erb :"subs/contactDetails"%>
 		</div>
 	</div>
 
 	<div class="row">
-	<h2 style="text-align: center">Programming Problems</h2>
+	<h2 class="areaTitle">Programming Challenges</h2>
 		<div class="col-lg-4">
 			<%= erb :"subs/codecademy"%>
 		</div>

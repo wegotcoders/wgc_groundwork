@@ -1,8 +1,23 @@
+Hi Dan and WGC crowd.
+
+Wanted to thank you for the opportunity this challenge presented, as it gave me a good exposure to a number of technologies, most new and a few familiar. It also showed me just how rusty I am on linux systems, something I'll work on in the coming weeks!
+
+I set myself a rough time limit of 12 hours for this project, timing myself with a stopwatch, and aside from a little googling between sessions, and one incident where I stupidly left the clock running, I'm mostly within that margin, doing small sessions over roughly a week since April 8th to (today) April 15th.
+
+That included all time spent googling solutions and installing any addons.
+
+Overall, I'm quite pleased with my work, though definitely ended up focussing more on the code-aspect than the design, and there's a hundred small things I could have done to polish the look of the profile. I also annoyingly hit a few dead-ends, such as being able to update the profile manually, so had to "cheat" a little on those.
+
+In any event, I thank you for this opportunity, and look forward to hearing back from you!
+
+Thanks again.
+
+Steve 
+
+
 ![We Got Coders Logo](http://wegotcoders.com/assets/logos/WEGOTCODERS_color.png "We Got Coders")
 
 # Programming Challenge
-
-Steve wos 'ere (check to see if commits are working)
 
 This is the application that you will be using to demonstrate your preparedness for the course. If you've already applied and are ready to get started, follow the instructions below. If you haven't yet applied, please read about We Got Coders and apply on our website, http://wegotcoders.com/trainees.
 
