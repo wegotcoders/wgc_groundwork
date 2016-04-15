@@ -1,0 +1,43 @@
+
+	<!-- Codecademy -->
+	<!--//codecademy, web_track_completedness, js_track_completedness, ruby_track_completedness, -->
+	<% codeFields = ['codecademy', 'web_track_completedness', 'js_track_completedness', 'ruby_track_completedness'] %>
+<!--can't update profile so having to do this manually-->
+<!--<% codeFields.each do |field| %>
+	<div class="profile-section box">
+		<h4><%= field %></h4>
+		<p class="profile-value"> <%= @profile[field] %> </p>
+	</div>
+	<% end %>-->
+
+<% @profile["codecademy"] = "http://www.codecademy.com/teh_steve" %>
+
+	<div class="profile-section box">
+	<a href = <%=@profile["codecademy"]%>><img id="cc_image" src="https://codecademy.com/assets/logo/logo--dark-blue.svg"></a>
+	</div>
+
+	<!--On reflection, it doesn't look like codecademy has any way to actually display your progress in a specific track, so instead I'll just do a link to my codecademy profile
+
+	<div class ="row">
+
+	<div class="col-lg-4">
+	<div class="profile-section box">
+	<h4>Web Track Completedness</h4>
+	<p class ="profile-value"></p>
+	</div>
+	</div>
+	
+	<div class="col-lg-4">
+	<div class="profile-section box">
+	<h4>Javascript Track Completedness</h4>
+	<p class ="profile-value"></p>
+	</div>
+	</div>
+
+	<div class="col-lg-4">
+	<div class="profile-section box">
+	<h4>Ruby Track Completedness</h4>
+	<p class="profile-value"></p>
+	</div>
+	</div>
+	-->

@@ -1,0 +1,162 @@
+<% if @profile %>
+<!--  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>-->
+
+<% class FieldVal
+value
+	def initialiaze(field, question=nil, value=nil)
+		@field = field
+		@question = question
+	end
+end
+%>
+
+<!-- Personal Details -->
+<!--//first_name, last_name, gender, dob, employment_status-->
+<% persDetFields = ['first_name', 'last_name', 'gender', 'dob', 'employment_status'] %>
+
+<% appFields = [['about', 'Please tell us a bit about yourself'],['projects','Please tell us about a programming project that you worked on and what your role was'],['rationale','Why do you want to apply for this program?'],['ambition','Where do you see your career in 1 year's time?'],['learning_experience','What do you think makes for a positive learning and training experience?'],['how_did_you_hear', 'How did you hear about us?']]%>
+
+
+<!-- Application -->
+<!--//about, projects, rationale, ambition, learning_experience, how_did_you_hear-->
+<!--
+<%about = FieldVal.new("about", "Please tell us a bit about yourself")%>
+<%projects = FieldVal.new("projects", "Please tell us about a programming project that you worked on and what your role was") %>
+<%rationale = FieldVal.new("rationale","Why do you want to apply for this program?") %>
+<%ambition = FieldVal.new("ambition", "Where do you see your carrer in 1 year's time?") %>
+<%learning_experience = FieldVal.new("learning_experience", "What do you think makes for a positive learning and training experience?") %>
+<%how_did_you_hear = FieldVal.new("how_did_you_hear", "How did you hear about us?") %>
+-->
+<% appFields = [about, projects, rationale, ambition, learning_experience, how_did_you_hear] %>
+
+
+
+<!-- Contact -->
+<!--//phone_number, twitter, github, homepage, -->
+<% contFields = ['phone_number', 'twitter', 'github', 'homepage'] %>
+
+
+<!-- Codecademy -->
+<!--//codecademy, web_track_completedness, js_track_completedness, ruby_track_completedness, -->
+<% codeFields = ['codecademy', 'web_track_completedness', 'js_track_completedness', 'ruby_track_completedness'] %>
+
+
+<!-- loop through the above arrays so that their data is to hand -->
+<!--
+<% @profile.each do |field, value| %>
+	appfields.each do |afield|
+	if afield.@field = field, afield.value = value
+	end
+end %>
+-->
+
+  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+<!--
+<% @profile.each do |field, value| %>
+    <div class="profile-section box">
+      <h4><%= field %></h4>
+      <p class="profile-value"><%= value %></p>
+    </div>
+  <% end %>
+-->
+
+
+<div id="Personal">
+
+<!--
+<% @profile.each do |field, value| %>
+	<%if persDetFields.include? field%>
+	    <div class="profile-section box">
+	      <h4><%= field %></h4>
+	      <p class="profile-value"><%= value %></p>
+	    </div>
+	<% end %>
+	  <% end %>
+
+
+</div>
+-->
+
+<div id="Contact">
+
+<!--
+	<% @profile.each do |field, value| %>
+	<%if contFields.include? field%>
+	    <div class="profile-section box">
+	      <h4><%= field %></h4>
+	      <p class="profile-value"><%= value %></p>
+	    </div>
+	<% end %>
+	  <% end %>
+-->
+
+</div>
+
+<div id="Application">
+
+<!--
+	<% appFields.each do |field,| %>
+	    <div class="profile-section box">
+	      <h4><%= field.@question %></h4>
+	      <p class="profile-value"><%= value %></p>
+	    </div>
+	<% end %>
+	  <% end %>
+-->
+
+
+</div>
+
+
+<div id="Codecademy"></div>
+
+
+
+  <div id="stats" class="box">
+    <h3>Stats</h3>
+    <!-- TODO - Set the contents of this span with JavaScript -->
+    <span id="word-count">0</span> words found.
+  </div>
+
+  <div id="problems" class="box">
+    <h3>Programming Problems</h3>
+    <a href="/primes">My Prime Number Solution</a>
+  </div>
+
+  <div class="box">
+    <h3>Edit Profile</h3>
+
+    <form action="/update" method="POST">
+      <fieldset>
+        <div class="form-group">
+          <label for="trainee[about]">About</label>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+        </div>
+
+        <!-- TODO - Add more fields so that your profile can be edited -->
+
+        <input type="submit" value="Update Profile" class="btn btn-primary" />
+      </fieldset>
+    </form>
+  </div>
+<% else %>
+  <div class="welcome">
+    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+    <a href="/authorise">Authorise</a>
+  </div>
+<% end %>
+
+
+<!-- Add your Javascript to this script tag -->
+<script language="javascript">
+  console.log("I am Javascript!");
+
+  var profile_values = document.getElementsByClassName('profile-value');
+  var total_words = 0;
+
+  // TODO - Count the number of words in the profile.
+  // hint - look at what the innerHTML property provides.
+
+  document.getElementById('word-count').innerHTML = total_words;
+</script>

@@ -1,0 +1,16 @@
+<!-- Personal Details -->
+<!--//first_name, last_name, gender, dob, employment_status-->
+<% persDetFields = ['first_name', 'last_name', 'gender', 'dob', 'employment_status'] %>
+<%@profile["employment_status"] += ", teaching"%>
+
+<div class="profile-section box">
+<img id="myImage" src="/images/1ac0f1f.jpg">
+<table>
+<% persDetFields.each do |field| %>
+<tr>	
+	<td class="cell1"><%= TitleCaseField(field) %> :</td>
+	<td class="cell2 profile-value"> <%= @profile[field] %> </td>
+</tr>
+<% end %>
+</table>				
+</div>
