@@ -2,9 +2,14 @@
 <!--//first_name, last_name, gender, dob, employment_status-->
 <% persDetFields = ['first_name', 'last_name', 'gender', 'dob', 'employment_status'] %>
 
-<% persDetFields.each do |field| %>
 <div class="profile-section box">
-	<h4><%= field %></h4>
-	<p class="profile-value"> <%= @profile[field] %> </p>
+<img id="myImage" src="/images/1ac0f1f.jpg">
+<table>
+<% persDetFields.each do |field| %>
+<tr>	
+	<td><%= TitleCaseField(field) %> :</td>
+	<td class="profile-value"> <%= @profile[field] %> </td>
+</tr>
+<% end %>
+</table>				
 </div>
-<% end %>				

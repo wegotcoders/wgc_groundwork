@@ -2,9 +2,19 @@
 	<!--//phone_number, twitter, github, homepage, -->
 	<% contFields = ['phone_number', 'twitter', 'github', 'homepage'] %>
 
-<% contFields.each do |field| %>
+<% @profile["homepage"] = "<a href='http://www.stevejharland.wordpress.com'>stevejharland</a>" %>
+<% @profile["twitter"] = "<a href='http://www.twitter.com/"+@profile["twitter"]+"'>"+@profile["twitter"]+"</a>" %>
+<% @profile["github"] = "<a href='http://www.github.com/"+@profile["github"]+"'>"+@profile["github"]+"</a>" %>
+
+<!--working this out made me feel awesome-->
+
 <div class="profile-section box">
-	<h4><%= field %></h4>
-	<p class="profile-value"> <%= @profile[field] %> </p>
+<table>
+<% contFields.each do |field| %>
+<tr>	
+	<td class="cell1"><%= TitleCaseField(field) %> :</td>
+	<td class="profile-value"> <%= @profile[field] %> </td>
+</tr>
+<% end %>
+</table>				
 </div>
-<% end %>			

@@ -38,4 +38,15 @@ h3 {
 
 /* TODO - Add your own styles here */
 
+#cc_image{
 
+}
+
+#profTitle{
+text-align: center;  
+}
+
+#myImage{
+  max-width: 100%;
+  max-height: 100%;
+}

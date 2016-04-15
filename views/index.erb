@@ -10,85 +10,90 @@ return outstring #output this new string
 end%>
 
 
-	<div class="container">
-<div class="row">
+<div class="container">
+	<div class="row">
 		<%= erb :"subs/amazingProfile" %>
 
-			<!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+		<!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 
-<div class="col-lg-2">
-<!--test1-->
-	<%= erb :"subs/personalDetails"%>
-</div>
-
-
-<div class ="col-lg-8">
-<!--test2-->
-	<%= erb :"subs/aboutTabs"%>
-</div>
-
-<div class ="col-lg-2">
-	<%= erb :"subs/contactDetails"%>
-</div>
+		<div class="test col-lg-2">
+			<!--test1-->
+			<h2>About Me</h2>
+			<%= erb :"subs/personalDetails"%>
+		</div>
 
 
-</div>
+		<div class ="col-lg-8">
+			<!--test2-->
+			<%= erb :"subs/aboutTabs"%>
+		</div>
 
-<div class="ccademy-row">
-	<%= erb :"subs/codecademy"%>
-</div>
-
-<div class="challenge-row">
-	<div id="stats" class="box">
-		<h3>Stats</h3>
-		<!-- TODO - Set the contents of this span with JavaScript -->
-		<span id="word-count">0</span> words found.
-	</div>
-
-
-	<div id="problems" class="box">
-		<h3>Programming Problems</h3>
-		<a href="/primes">My Prime Number Solution</a>
-		<p><%= @profile["prime_sum"] %><p>
+		<div class ="col-lg-2">
+			<h2>Contact Me</h2>
+			<%= erb :"subs/contactDetails"%>
 		</div>
 	</div>
 
-	<div class ="edit-row">	
-		<div class="box">
-			<h3>Edit Profile</h3>
-			<!--keep getting an internal server error...-->
-			<form action="/update" method="POST" id="AboutForm">
-				<fieldset>
-					<div class="form-group" >
-						<label for="trainee[about]">About</label>
-						<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-					</div> 
+	<div class="row">
+	<h2 style="text-align: center">Programming Problems</h2>
+		<div class="col-lg-4">
+			<%= erb :"subs/codecademy"%>
+		</div>
 
+		<div class="col-lg-4">
+			<div id="stats" class="profile-section box">
+				<h3>Stats</h3>
+				<!-- TODO - Set the contents of this span with JavaScript -->
+				<span id="word-count">0</span> words found.
+			</div>
+		</div>
 
-					<!-- TODO - Add more fields so that your profile can be edited -->
-
-					<input type="submit" value="Update Profile" class="btn btn-primary" />
-					<input type="reset" value="Reset" class="btn btn-primary" />
-				</fieldset>
-			</form>
+		<div class="col-lg-4">
+			<div id="problems" class="profile-section box">
+				<h3>Programming Problems</h3>
+				<a href="/primes">My Prime Number Solution</a>
+				<p><%= @profile["prime_sum"] %></p>
+			</div>
 		</div>
 	</div>
-</div>   		
-<% else %>
-<div class="welcome">
-	<p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
-	<a href="/authorise">Authorise</a>
-</div>
-<% end %>
+		<div class ="row">	
+			<div class="profile-section box">
+				<h3>Edit Profile</h3>
+				<!--keep getting an internal server error...-->
+				<form action="/update" method="POST" id="AboutForm">
+					<fieldset>
+						<div class="form-group" >
+							<label for="trainee[about]">About</label>
+							<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+						</div> 
 
 
-<!-- Add your Javascript to this script tag -->
-<script language="javascript">
-	console.log("I am Javascript!");
+						<!-- TODO - Add more fields so that your profile can be edited -->
 
-	var profile_values = document.getElementsByClassName('profile-value');
-	var total_words = 0;
+						<!--<input type="submit" value="Update Profile" class="btn btn-primary" />-->
+						<input type="button" value="Update Profile" onClick="alert('Not implemented, as kept getting server errors')" class="btn btn-primary"/>
+						<input type="reset" value="Reset" class="btn btn-primary" />
+					</fieldset>
+				</form>
+			</div>
+		</div>
+</div>	  		
+	<% else %>
+	<div class="welcome">
+		<p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+		<a href="/authorise">Authorise</a>
+	</div>
+	<% end %>
+
+
+	<!-- Add your Javascript to this script tag -->
+	<script language="javascript">
+		console.log("I am Javascript!");
+
+		var profile_values = document.getElementsByClassName('profile-value');
+		var total_words = 0;
 
 //for loop time... Should have guessed earlier due to total_words being initialised to 0;
 for (var i = 0; i<profile_values.length; i++)
