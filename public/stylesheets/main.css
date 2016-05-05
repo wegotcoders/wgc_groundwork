@@ -62,7 +62,7 @@ h3 {
     font-size: 18px;
 }
 
-#my_heading {
+.my_heading {
     font-family: cursive;
     font-size: 22px;
     font-weight: bold;

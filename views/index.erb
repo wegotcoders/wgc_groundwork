@@ -4,27 +4,27 @@
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <br/>
   <div id="my_pic">  </div>
-  <div id="my_heading">Personal Information</div>
+  <div class="my_heading">Personal Information</div>
   <br/>
   <div class="personal_info">
-    <p><b>Name:</b> <%=@profile["first_name"]%> <%=@profile["last_name"]%></p>
-    <p><b>Date Of Birth:</b> <%=@profile["dob"]%></p>
-    <p><b>Gender:</b> <%=@profile["gender"]%></p>
-    <p><b>Phone Number:</b> <%=@profile["phone_number"]%></p>
-    <p><b>Employment Status:</b> <%=@profile["employment_status"]%></p>
-    <p><b>Ambition:</b> To be the world's greatest coder, to build apps
+    <p class="profile-value"><b>Name:</b> <%=@profile["first_name"]%> <%=@profile["last_name"]%></p>
+    <p class="profile-value"><b>Date Of Birth:</b> <%=@profile["dob"]%></p>
+    <p class="profile-value"><b>Gender:</b> <%=@profile["gender"]%></p>
+    <p class="profile-value"><b>Phone Number:</b> <%=@profile["phone_number"]%></p>
+    <p class="profile-value"><b>Employment Status:</b> <%=@profile["employment_status"]%></p>
+    <p class="profile-value"><b>Ambition:</b> To be a great coder, to build apps
     that change the world...oh...and to be an incredible dancer!</p>
-    <p><b>Github:</b> <a href="https://github.com/zedlang">zedlang</a></p>
-    <p><b>Twitter:</b><i> @zedlangridge</i><p>
-   <p><img src="images/architect.png" style="displsy:inline-block;
+    <p class="profile-value"><b>Github:</b> <a href="https://github.com/zedlang">zedlang</a></p>
+    <p class="profile-value"><b>Twitter:</b><i> @zedlangridge</i><p class="profile-value">
+   <p><img src="images/architect.png" style="display:inline-block;
    float:right; clear:both; margin-right:550px; width:75px; height:50px;"/>
      <b>Home page:</b> Still in the design phase!</p>
 </div>
 <br/>
 <br/>
-  <div id="my_heading">Other Information</div>
+  <div class="my_heading">Other Information</div>
   <div class="other_info box">
-    <p><b>Code Academy</b> tracks taken</p>
+    <p class="profile-value"><b>Code Academy</b> tracks taken</p>
     <br/>
     <div id="trackname">
       <h4>Name of track</h4>
@@ -44,6 +44,7 @@
     </div>
   </div>
   <br/>
+<p>About: <% @trainee.public_methods %></p>
   <!--<% @profile.each do |field, value| %>
     <div class="profile-section">
       <h4><%= field %></h4>
@@ -54,7 +55,7 @@
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    There are roughly <span id="word-count">0</span> words found above.
   </div>
 
   <div id="problems" class="box">
@@ -70,15 +71,18 @@
         <div class="form-group">
           <label for="trainee[about]">More about yourself</label>
 	  <br/>
-          <input name="trainee[about]" value="<%= @profile["about"] %>">
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>">
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
-	<div>
+	<div class="form-group">
           <label for="trainee[codeacademy]">Further Code Academy details</label>
 	  <br/>
-          <textarea name="trainee[codeacademy]" rows=3 value="<%= @profile["codeacademy"] %>"></textarea>
+          <input type="text" name="trainee[codeacademy]" value="<%= @profile["codeacademy"] %>"></input>
 	</div>
+	<input type="submit" value="Update Profile" class="btn btn-primary" />
+      </fieldset>
+    </form>
   </div>
 <% else %>
   <div class="welcome">
@@ -91,13 +95,26 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
-
-  var profile_values = document.getElementsByClassName('profile-value');
+  window.onload = function () {
+  
   var total_words = 0;
+  var doc_words = 0;
+  var title_words = 0;
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+  var document_text =  document.getElementsByClassName('profile-value');
+  for (var i=0; i < document_text.length; i++) {
+		    var docString = document_text[i].textContent;
+		    doc_words += docString.split(' ').length;
+		    }
+//Now count titles and miscellaneous things
+var title_text =  document.getElementsByClassName('my_heading');
+  for (var i=0; i < title_text.length; i++) {
+		    var titleString = title_text[i].textContent;
+		    title_words += titleString.split(' ').length;
+		    }
 
+var total_words=doc_words+title_words;
+  
 document.getElementById('word-count').innerHTML = total_words;
+  }
 </script>
