@@ -14,9 +14,9 @@
     <p class="profile-value"><b>Employment Status:</b> <%=@profile["employment_status"]%></p>
     <p class="profile-value"><b>Ambition:</b> To be a great coder, to build apps
     that change the world...oh...and to be an incredible dancer!</p>
-    <p class="profile-value"><b>Github:</b> <a href="https://github.com/zedlang">zedlang</a></p>
-    <p class="profile-value"><b>Twitter:</b><i> @zedlangridge</i><p class="profile-value">
-   <p><img src="images/architect.png" style="display:inline-block;
+    <p class="profile-value"><b>Github:</b> <a href="https://github.com/<%=@profile['github']%>"><%=@profile["github"]%></a></p>
+    <p class="profile-value"><b>Twitter:</b><i> <%=@profile["twitter"]%></i></p>
+   <p class="profile-value"><img src="images/architect.png" style="display:inline-block;
    float:right; clear:both; margin-right:550px; width:75px; height:50px;"/>
      <b>Home page:</b> Still in the design phase!</p>
 </div>
@@ -31,7 +31,9 @@
       <ul>
 	<li>Ruby</li>
 	<li>JavaScript</li>
-	<li>Web Fundamentals</li>
+	<li>HTML &amp CSS</li>
+	<li>Learn Git</li>
+	<li>Learn the Command Line</li>
       </ul>
     </div>
     <div id="percentage">
@@ -40,11 +42,12 @@
 	<li>100</li>
 	<li>100</li>
 	<li>100</li>
+	<li>100</li>
+	<li>100</li>
       </ul>
     </div>
   </div>
   <br/>
-<p>About: <% @trainee.public_methods %></p>
   <!--<% @profile.each do |field, value| %>
     <div class="profile-section">
       <h4><%= field %></h4>
@@ -79,6 +82,11 @@
           <label for="trainee[codeacademy]">Further Code Academy details</label>
 	  <br/>
           <input type="text" name="trainee[codeacademy]" value="<%= @profile["codeacademy"] %>"></input>
+	</div>
+	<div class="form-group">
+          <label for="trainee[twitter]">Update Twitter handle</label>
+	  <br/>
+          <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"></input>
 	</div>
 	<input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
