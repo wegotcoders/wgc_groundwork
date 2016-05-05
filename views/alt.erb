@@ -13,20 +13,22 @@
     <thead>
       <tr>
         <th id="logobox">
-          <div>
-            <img id="logo" src="/images/logo.png" alt="We Got Coders"/>
+          <div class="pic">
+            <img src="/images/logo.png" alt="We Got Coders"/>
           </div>
         </th>
         <th id="profilebox">
-          <div>
-            <img id="profile" src="/images/profile.jpg" alt="Profile" height="190px" width="150px" />
+          <div class="pic">
+            <div id="profile">
+              <!-- <img id="profile" src="/images/profile.jpg" alt="Profile" height="190px" width="150px" /> -->
+            </div>
           </div>
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td colspan="2">
+    <tr>
+      <td colspan="2">
           <div id="content">
             <%= yield %>
           </div>

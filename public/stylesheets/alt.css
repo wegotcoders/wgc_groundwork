@@ -1,0 +1,108 @@
+body {
+  font-family: "Corbel","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+  width: 80%;
+  height: 100%;
+  background-color: black;
+}
+
+table {
+  width: inherit;
+  height: inherit;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 12px;
+}
+
+#logobox {
+  width: 440px;
+  height: 110px;
+  padding-left: 50px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.pic {
+  background-color: white;
+  -webkit-box-shadow: inset 0px 0px 25px 20px rgba(0, 0, 0, 1);
+  -moz-box-shadow:    inset 0px 0px 25px 20px rgba(0, 0, 0, 1);
+  box-shadow:         inset 0px 0px 25px 20px rgba(0, 0, 0, 1);
+/*  -webkit-box-shadow: 0px 0px 25px 20px rgba(255, 255, 255, 1);
+  -moz-box-shadow:    0px 0px 25px 20px rgba(255, 255, 255, 1);
+  box-shadow:         0px 0px 25px 20px rgba(255, 255, 255, 1); */
+}
+
+#logobox .pic img {
+  padding-top: 2.5px;
+  padding-left: 10px;
+}
+
+#profilebox .pic {
+  height: 260px;
+  width: 220px;
+  margin-top: 3em;
+  margin-left: 5em;
+}
+
+#profilebox .pic div {
+  position: relative;
+  padding-top: 3em;
+  margin-left: 2.5em;
+  padding-bottom: 2em;
+  height: 180px;
+  width: 150px;
+  background-size: 150px;
+  background-image: url("/images/profile.jpg");
+  -webkit-box-shadow: inset 0px 0px 30px 20px rgba(255, 255, 255, 1);
+  -moz-box-shadow:    inset 0px 0px 30px 20px rgba(255, 255, 255, 1);
+  box-shadow:         inset 0px 0px 30px 20px rgba(255, 255, 255, 1);
+}
+
+#profile {
+  padding-top: 10px;
+}
+
+#content {
+  padding-top: 50px;
+  padding: 1em;
+}
+
+.box {
+  border: 1px solid #999;
+  background: #FCFCFC;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}
+
+.welcome {
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.error {
+  text-align: center;
+}
+
+.error h2 {
+  font-size: 1.5em;
+}
+
+/* TODO - Add your own styles here */
+.progressbar {
+  background-color: #34b3a0;
+  border-radius: 15px;
+  padding: 3px;
+}
+
+.progressbar > div {
+   width: 100%;
+   height: 5px;
+   border-radius: 7px;
+}
