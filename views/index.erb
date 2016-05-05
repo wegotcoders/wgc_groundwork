@@ -2,12 +2,46 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+
+  <!-- Couldn't get the field to take inputs from about or amibiton. Unsure why so entered manually in order to do word count -->
+
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+      <% if field == "about" %>
+        <h4><%= field.capitalize %></h4>
+        <ul class="profile-value">
+<li>Gained History BA(hons) from Sussex University; Special subject: "The Politics of Play: DIY activism in 1990s Britain".</li>
+<li>Lifelong gamer, physical + virtual. Leads live games of Capture the Flag in central London challenging POPS (Privately<br>Owned Public Space) + reclaiming the streets.</li>
+<li>Tai Chi + Qi Gong Tutor; seated meditation practice; mental + physical well-being; self-awareness + martial prowess.</li>
+<li>Mycophile: inspiration for networked-thinking, interconnected systems + social ecology. Tweets <a href="http://twitter.com/@fungioftheday">@fungioftheday</a>.</li></ul>
+      <% elsif field == "ambition" %>
+        <h4><%= field.capitalize %></h4>
+        <ul class="profile-value">
+<li>Perpetual learning</li>
+<li>Web development; app development; game development. Creative conception + front to back end design.<br></li>
+<li>Systemic social innovation, semi-automation and time for playful creativity.</li></ul>
+      <% elsif field == "js_track_completedness" %>
+        <h4>JavaScript Codecademy Progress</h4>
+        <div class="progressbar">
+          <div></div>
+        </div>
+      <% elsif field == "web_track_completedness" %>
+        <h4>Web Fundamentals Codecademy Progress</h4>
+        <div class="progressbar">
+          <div></div>
+        </div>
+      <% elsif field == "ruby_track_completedness" %>
+        <h4>Ruby Codecademy Progress</h4>
+        <div class="progressbar">
+          <div></div>
+        </div>
+      <% else %>
+        <h4><%= field.capitalize.tr("_"," ") %></h4>
+        <p class="profile-value"><%= value %></p>
+      <% end %>
     </div>
   <% end %>
+
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -25,13 +59,19 @@
 
     <form action="/update" method="POST">
       <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
+        <% @profile.each do |field, value| %>
+          <% if field == "primes_sum" %>
+            <div class="form-group">
+              <label for="trainees[<%= field %>]"><%= field.capitalize.tr("_"," ")%></label>
+                <input type="text" name="trainees[<%= field %>]" value="<%= @profile[ value ] %>"/>
+            </div>
+          <% else %>
+            <div class="form-group">
+              <label for="trainee[<%= field %>]"><%= field.capitalize.tr("_"," ")%></label>
+              <input type="text" name="trainee[<%= field %>]" value="<%= @profile[ value ] %>"/>
+            </div>
+          <% end %>
+        <% end %>
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
