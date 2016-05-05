@@ -2,13 +2,55 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
+  <br/>
+  <div id="my_pic">  </div>
+  <div id="my_heading">Personal Information</div>
+  <br/>
+  <div class="personal_info">
+    <p><b>Name:</b> <%=@profile["first_name"]%> <%=@profile["last_name"]%></p>
+    <p><b>Date Of Birth:</b> <%=@profile["dob"]%></p>
+    <p><b>Gender:</b> <%=@profile["gender"]%></p>
+    <p><b>Phone Number:</b> <%=@profile["phone_number"]%></p>
+    <p><b>Employment Status:</b> <%=@profile["employment_status"]%></p>
+    <p><b>Ambition:</b> To be the world's greatest coder, to build apps
+    that change the world...oh...and to be an incredible dancer!</p>
+    <p><b>Github:</b> <a href="https://github.com/zedlang">zedlang</a></p>
+    <p><b>Twitter:</b><i> @zedlangridge</i><p>
+   <p><img src="images/architect.png" style="displsy:inline-block;
+   float:right; clear:both; margin-right:550px; width:75px; height:50px;"/>
+     <b>Home page:</b> Still in the design phase!</p>
+</div>
+<br/>
+<br/>
+  <div id="my_heading">Other Information</div>
+  <div class="other_info box">
+    <p><b>Code Academy</b> tracks taken</p>
+    <br/>
+    <div id="trackname">
+      <h4>Name of track</h4>
+      <ul>
+	<li>Ruby</li>
+	<li>JavaScript</li>
+	<li>Web Fundamentals</li>
+      </ul>
+    </div>
+    <div id="percentage">
+      <h4>Percentage complete</h4>
+      <ul>
+	<li>100</li>
+	<li>100</li>
+	<li>100</li>
+      </ul>
+    </div>
+  </div>
+  <br/>
+  <!--<% @profile.each do |field, value| %>
+    <div class="profile-section">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
-  <% end %>
-
+  <% end %>-->
+<br/>
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
@@ -26,15 +68,17 @@
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <label for="trainee[about]">More about yourself</label>
+	  <br/>
+          <input name="trainee[about]" value="<%= @profile["about"] %>">
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
+	<div>
+          <label for="trainee[codeacademy]">Further Code Academy details</label>
+	  <br/>
+          <textarea name="trainee[codeacademy]" rows=3 value="<%= @profile["codeacademy"] %>"></textarea>
+	</div>
   </div>
 <% else %>
   <div class="welcome">
@@ -55,5 +99,5 @@
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
-  document.getElementById('word-count').innerHTML = total_words;
+document.getElementById('word-count').innerHTML = total_words;
 </script>
