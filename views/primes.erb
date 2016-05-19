@@ -1,4 +1,11 @@
 <h1>Prime Numbers</h1>
+<form>
+  <fieldset>
+    Set a limit for the sum of Prime Numbers:<br>
+    <input type="number" step="1" value="<%= @profile["primes_sum"] %>" >
+    <input type="submit" value="Finalise" class="btn btn-primary" />
+  </fieldset>
+</form>
 
 Sum : <%= @sum %>
 

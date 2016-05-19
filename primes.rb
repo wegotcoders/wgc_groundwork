@@ -1,15 +1,21 @@
 class Primes
   def self.sum_to(limit)
-    sum = 0
+    sum = 2
     n = 1
     while n < limit
         n += 1
         is_prime = true
         if n == 1
             is_prime = false
+            next
         end
 
-        for i in 2..n-1
+        if n.even?
+          is_prime = false
+          next
+        end
+
+        for i in 2..Math.sqrt(n)
             if n % i == 0
                 is_prime = false
             end

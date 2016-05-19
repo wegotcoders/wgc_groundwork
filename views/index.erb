@@ -63,8 +63,8 @@
         <% @profile.each do |field, value| %>
           <% if field == "primes_sum" %>
             <div class="form-group">
-              <label for="trainees[<%= field %>]"><%= field.capitalize.tr("_"," ")%></label>
-                <input type="text" name="trainees[<%= field %>]" value="<%= @profile[ value ] %>"/>
+              <label for="trainee[<%= field %>]"><%= field.capitalize.tr("_"," ")%></label>
+                <input type="text" name="trainee[<%= field %>]" value="<%= @profile[ value ] %>"/>
             </div>
           <% else %>
             <div class="form-group">

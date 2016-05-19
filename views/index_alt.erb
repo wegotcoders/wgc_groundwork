@@ -1,0 +1,81 @@
+<% if @profile %>
+
+  <h3><%= @profile["first_name"] %> <%= @profile["last_name"] %>'s Online Profile</h3>
+
+  <% @profile.each do |field, value| %>
+    <div class="profile-section box">
+      <h4>His Past:</h4>
+        <p class="profile-value"><% @profile["about"] %></p>
+      <h4>His Future:</h4>
+        <p class="profile-value"><% @profile["ambition"] %></p>
+      <h4>Hello World:</h4>
+        <p class="profile-value"><% @profile["dob"] %></p>
+      <h4>Gender</h4>
+        <p class="profile-value"><% @profile["gender"] %></p>
+      <h4>His Code:</h4>
+        <p class="profile-value">See <a href="https://github.com/KGibb8"><% @profile["github"] %></a>
+      <h4>Transmissions:</h4>
+        <p class="profile-value"><a href="https://twitter.com/Kyphae"><% @profile["twitter"] %></a></p>
+      <h4>Direct Line:</h4>
+        <p class="profile-value"><% @profile["phone_number"] %></p>
+      <h4>Email:</h4>
+        <p class="profile-value"><a href="">kyphae@riseup.net</a></p>
+    </div>
+  <% end %>
+
+  <div id="stats" class="box">
+    <h3>Stats</h3>
+    <span id="word-count">0</span> words found.
+    <input type='button' onclick='total_words();' value='Wordcount'/>
+  </div>
+
+  <div id="problems" class="box">
+    <h3>Programming Problems</h3>
+    <a href="/primes">My Prime Number Solution</a>
+    <a href="https://github.com/KGibb8/project_euler">Project Euler: Solutions</a>
+  </div>
+
+  <div class="box">
+    <h3>Edit Profile</h3>
+
+    <form action="/update" method="POST">
+      <fieldset>
+          <div class="form-group">
+            <label for="trainee[about]">About</label>
+            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          </div>
+        <input type="submit" value="Update Profile" class="btn btn-primary" />
+      </fieldset>
+    </form>
+  </div>
+<% else %>
+  <div class="welcome">
+    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+    <a href="/authorise">Authorise</a>
+  </div>
+<% end %>
+
+
+<!-- Add your Javascript to this script tag -->
+<script language="javascript">
+  console.log("I am Javascript!");
+
+  var profile_values = document.getElementsByClassName('profile-value');
+  var total_words = 0;
+
+  // TODO - Count the number of words in the profile.
+  // hint - look at what the innerHTML property provides.
+
+  function total_words() {
+    profile_values = document.getElementsByClassName("profile-value");
+    total_words = 0;
+    for (i = 0; i < profile_values.length; i++) {
+      elem_content = profile_values[i].textContent;
+      elem_words = elem_content.split(" ");
+      total_words += (elem_words.length)
+    };
+    document.getElementById('word-count').innerHTML = total_words;
+  };
+
+</script>
