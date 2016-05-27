@@ -6,14 +6,53 @@
   <div class="col-md-4" id="profile">
      <img src="./images/nic.jpg">
         <h4><%= @profile["first_name"] %>'s Profile</h4> 
-          <div class="button1">
-            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-          </div>
-          <div class="button2">
-            <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
-          </div>
-    </div>
-  <div class="col-md-4">
+
+        <div class="button">
+          <table>
+            <tr>
+              <td>
+                <% if @profile["gender"] === "Male" %>
+                  <i class="fa fa-male" aria-hidden="true"></i>
+                  <% else %>
+                  <i class="fa fa-female" aria-hidden="true"></i>
+                <% end %>
+
+              </td>
+              <td><%= @profile["gender"] %></td> 
+            </tr>
+           </table>
+        </div>
+
+          <div class="button">
+          <table>
+            <tr>
+              <td><i class="fa fa-github" aria-hidden="true"></i></td>
+              <td><%= @profile["github"] %></td> 
+            </tr>
+           </table>
+        </div>
+
+        <div class="button">
+          <table>
+            <tr>
+              <td ><i class="fa fa-twitter" aria-hidden="true"></i></td>
+              <td><%= @profile["twitter"] %></td> 
+            </tr>
+           </table>
+        </div>
+
+        <div class="button">
+          <table>
+            <tr>
+              <td><i class="fa fa-globe" aria-hidden="true"></i></td>
+              <td><%= @profile["homepage"] %></td> 
+            </tr>
+           </table>
+        </div>
+ </div>
+    
+  <div class="col-md-4" id="bio1">
+
     <div class="element">
       <p>Name</p>
       <div class="field"> 
@@ -21,14 +60,94 @@
           <div class="block"></div>
       </div>
     </div>
+
+    <div class="element">
+      <p>Date of Birth</p>
+      <div class="field"> 
+        <p><%= @profile["dob"] %></p>
+          <div class="block"></div>
+      </div>
+    </div>
+
+    <div class="element">
+      <p>Employment Status</p>
+      <div class="field"> 
+        <p><%= @profile["employment_status"] %></p>
+          <div class="block"></div>
+      </div>
+    </div>
+
+     <div class="element">
+      <p>Phone Number</p>
+      <div class="field"> 
+        <p><%= @profile["phone_number"] %></p>
+          <div class="block"></div>
+      </div>
+    </div>
+
+<div class="update">
+<h4>Edit Profile</h4>
+<div class="edit">
+    
+
+    <form action="/update" method="POST">
+      <fieldset>
+        <div class="form-group">
+          <label for="trainee[about]">About</label>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+        </div>
+
+        <!-- TODO - Add more fields so that your profile can be edited -->
+
+        <input type="submit" value="Update Profile" class="btn btn-primary" />
+      </fieldset>
+    </form>
+  </div>
+
+</div>
+
   </div>
 
 
   <div class="col-md-4" id= "bio2">.</div>
+
 </div>
 </div>
  
+</div>  
+
+<!-- Add your Javascript to this script tag -->
+<script language="javascript">
+  console.log("I am Javascript!");
+
+  var profile_values = document.getElementsByClassName('profile-value');
+  var total_words = 0;
+
+  // TODO - Count the number of words in the profile.
+  // hint - look at what the innerHTML property provides.
+
+  document.getElementById('word-count').innerHTML = total_words;
+</script>
+
+<script type="text/javascript">
   
+  $(document).ready(function(){
+
+  $('.button').hover(
+    function(){
+        $(this).addClass('active');
+          $(this).addClass('invert');
+    },
+    function(){
+        $(this).removeClass('active');
+         $(this).removeClass('invert');
+    }
+
+
+  );
+
+});
+</script>
 
 
 
