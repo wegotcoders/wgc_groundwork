@@ -2,8 +2,14 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  
 }
+
+.content {
+  background-color: #f9f9f9;
+  height: 80vh;
+}
+
 
 #logo {
   text-align: center;
@@ -13,27 +19,100 @@ body {
   padding: 1em;
 }
 
-.box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
-}
-
-.welcome {
+#profile {
+  
   text-align: center;
+  font-family:'Oswald';
+  position: relative;
+  float: left;
+  margin-top: 50px;
+  
+  height: 400px;
+  background-color: #e7e7e7;
+  margin-bottom: 10px;
+  
+  color: grey;
+  padding: 0 ;
 }
 
-h3 {
-  font-size: 1.5em;
+#profile h4{
+  font-size: 2em;
 }
 
-.error {
+#profile img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+
+}
+
+ .button1 {
+  background-color: #e0e0e0;
+  border: 1px solid #dbdbdb;
+  width: 50%;
+  height: 15%;
+  float: left;
+  margin-top: 30px;
+
+
+
+}
+
+ .button2 {
+  background-color: #d0d0d0;
+  border: 1px solid #dbdbdb;
+  width: 50%;
+  height: 15%;
+  float: right;
+  margin-top: 30px;
+}
+
+.button1 span {
+  font-size: 2.5em;
   text-align: center;
+  padding: 10px;
+
+}
+.button2 span {
+ font-size: 2.5em;
+  text-align: center;
+  padding: 10px;
 }
 
-.error h2 {
-  font-size: 1.5em;
+
+/*BIO START*/
+
+.element {
+  font-family:'Oswald';
+  font-size: 1.75em;
+  text-align: left;
+  margin-top: 50px;
+  color: grey;
+  float: left;
+  position: relative;
+  margin-left: 20px;
+
 }
 
-/* TODO - Add your own styles here */
+.field {
+  background-color: #e7e7e7;
+  width: 300px;
+  height: 50px;
+
+}
+.block {
+  background-color: #A8202E;
+  width: 60px;
+  height: 50px;
+  
+}
+.field p {
+  font-size: .75em;
+  float: left;
+  margin-left: 90px;
+  margin-top: 12px;
+  
+}
+
