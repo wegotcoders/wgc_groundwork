@@ -1,82 +1,33 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <h3><%= @profile["first_name"] %> <%= @profile["last_name"] %></h3>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  <h3 id="quote">"Pessimism of the Intellect, Optimism of the Will"</h3>
+  <br>
+  <%= erb :"/personal_info" %>
+  <br>
 
-  <!-- Couldn't get the field to take inputs from about or amibiton. Unsure why so entered manually in order to do word count -->
-
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <% if field == "about" %>
-        <h4><%= field.capitalize %></h4>
-        <ul class="profile-value">
-<li>Gained History BA(hons) from Sussex University; Special subject: "The Politics of Play: DIY activism in 1990s Britain".</li>
-<li>Lifelong gamer, physical + virtual. Leads live games of Capture the Flag in central London challenging POPS (Privately<br>Owned Public Space) + reclaiming the streets.</li>
-<li>Tai Chi + Qi Gong Tutor; seated meditation practice; mental + physical well-being; self-awareness + martial prowess.</li>
-<li>Mycophile: inspiration for networked-thinking, interconnected systems + social ecology. Tweets <a href="http://twitter.com/@fungioftheday">@fungioftheday</a>.</li></ul>
-      <% elsif field == "ambition" %>
-        <h4><%= field.capitalize %></h4>
-        <ul class="profile-value">
-<li>Perpetual learning</li>
-<li>Web development; app development; game development. Creative conception + front to back end design.<br></li>
-<li>Systemic social innovation, semi-automation and time for playful creativity.</li></ul>
-      <% elsif field == "js_track_completedness" %>
-        <h4>JavaScript Codecademy Progress</h4>
-        <div class="progressbar">
-          <div></div>
-        </div>
-      <% elsif field == "web_track_completedness" %>
-        <h4>Web Fundamentals Codecademy Progress</h4>
-        <div class="progressbar">
-          <div></div>
-        </div>
-      <% elsif field == "ruby_track_completedness" %>
-        <h4>Ruby Codecademy Progress</h4>
-        <div class="progressbar">
-          <div></div>
-        </div>
-      <% else %>
-        <h4><%= field.capitalize.tr("_"," ") %></h4>
-        <p class="profile-value"><%= value %></p>
-      <% end %>
-    </div>
-  <% end %>
-
-
+  <h3>Stats</h3>
   <div id="stats" class="box">
-    <h3>Stats</h3>
     <span id="word-count">0</span> words found.
     <input type='button' onclick='total_words();' value='Wordcount'/>
   </div>
 
+  <h3>Programming Problems</h3>
   <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-    <a href="https://github.com/KGibb8/project_euler">Project Euler: Solutions</a>
-  </div>
-
-  <div class="box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
+    <h5>Sum of Prime Numbers</h5>
+    <form action="/primes" method="GET">
       <fieldset>
-        <% @profile.each do |field, value| %>
-          <% if field == "primes_sum" %>
-            <div class="form-group">
-              <label for="trainee[<%= field %>]"><%= field.capitalize.tr("_"," ")%></label>
-                <input type="text" name="trainee[<%= field %>]" value="<%= @profile[ value ] %>"/>
-            </div>
-          <% else %>
-            <div class="form-group">
-              <label for="trainee[<%= field %>]"><%= field.capitalize.tr("_"," ")%></label>
-              <input type="text" name="trainee[<%= field %>]" value="<%= @profile[ value ] %>"/>
-            </div>
-          <% end %>
-        <% end %>
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
+        <p>Set a limit:</p>
+        <input id="input" type="number" step="1" name="limit"/>
+        <input id="input" type="submit" onclick="window.location='/primes;" class="btn btn-primary"/>
       </fieldset>
     </form>
+    <br>
+    <h5><a href="https://github.com/KGibb8/project_euler">Maths is fun</a></h5>
   </div>
+
+  <%= erb :"/fieldinput" %>
+
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -85,105 +36,4 @@
   </div>
 <% end %>
 
-
-<!-- Add your Javascript to this script tag -->
-<script language="javascript">
-  console.log("I am Javascript!");
-
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-
-  // ATTEMPT No. 5
-
-  function total_words() {
-    profile_values = document.getElementsByClassName("profile-value");
-    total_words = 0;
-    for (i = 0; i < profile_values.length; i++) {
-      elem_content = profile_values[i].textContent;
-      elem_words = elem_content.split(" ");
-      total_words += (elem_words.length)
-    };
-    document.getElementById('word-count').innerHTML = total_words;
-  };
-
-
-
-  // ATTEMPT No. 4
-
-
-    // document.getElementsByClassName("") Returns an array-like object of all child elements
-    // which have all of the given class names.
-    // The innerHTML property sets or returns the HTML content (inner HTML) of an element.
-    // When we call innerHTML on document.getElementsByClassName("profile-value") we ascribe the content of
-    // each instance of profile-value to profile_values.
-    // THEREFORE Profile_values is a Live HTML Collection of the content of all profile-value elements.
-    // To access specific node at the given zero-based index into the list call item()
-    // Loop length of object profile_values, for each index, access the node of that index using item()
-    // (should return complete string)
-    // to count words in string, convert to array using split() and iterate over array
-    // for each item(word) in array, add to count total_words.
-
-  //function total_words() {
-  //  profile_values = document.getElementsByClassName("profile-value").innerHTML
-  //  total_words = 0
-  //  for (i = 0; i < profile_values.length; i++) {
-  //    content = profile_values.item(i)
-  //    wordlist = content.split(" ")
-  //    for (i = 0; i < wordlist.length; i++) {
-  //      total_words++;
-  //    };
-  //  };
-  //  document.getElementById('word-count').innerHTML = total_words;
-  //}
-
-
-  // Returns an array-like object of all child elements which have all of the given class names
-  // returns array-like object 'profile_values' containing index[key] + strings[value] of all 'profile-value' elements
-  // to get total_words, for loop over the object 'profile_values'
-  // for each key/value pair, separate the value (a string) and store total words in string to var total_words
-  // return total_words after for loop for total_words in all profile-value elements
-
-  // ATTEMPT NO. 3
-
-  //function total_words() {
-  //  var profile_values = document.getElementsByClassName('profile-value');
-  //  total_words = 0
-  //  for (i = 0; i < profile_values.length; i++) {
-  //    if (profile_values[i].value != "") {
-  //      total_words++
-  //    };
-  //  }
-  //  document.getElementById('word-count').innerHTML = total_words;
-  // }
-
-  // ATTEMPT NO. 2
-
-  //function total_words() {
-  //    var profile_values = document.getElementsByClassName('profile-value');
-  //    words = ""
-  //    realwords = ""
-  //    for (i = 0; i < profile_values.length; i++) {
-  //	    words = profile_values[i]
-  //	    realwords += words[1] + " ";
-  //    }
-  //    total_words = realwords.split(" ");
-  //    document.getElementById('word-count').innerHTML = total_words.length;
-  //}
-  // clearly too complex and still doesn't return the answer I want, returns 18 (36 at the moment)
-  // if ran without .length it returns an array [undefined, ... , x17]
-
-  // ATTEMPT NO. 1
-
-  //function total_words() {
-  //  var profile_values = document.getElementsByClassName('profile-value');
-  //  total_words = profile_values.length;
-  //  document.getElementById('word-count').innerHTML = total_words;
-  //}
-
-
-
-</script>
+  <%= erb :"/javascript" %>

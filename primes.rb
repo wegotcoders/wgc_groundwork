@@ -1,5 +1,14 @@
 class Primes
+  def even?(n)
+    if n % 2 == 0
+      even = true
+    else
+      even = false
+    end
+  end
+
   def self.sum_to(limit)
+    start = Time.now
     sum = 2
     n = 1
     while n < limit
@@ -25,7 +34,8 @@ class Primes
             sum += n
         end
     end
-
+    finish = Time.now
+    "Calculation took #{finish - start} seconds"
     return sum
   end
 end

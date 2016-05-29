@@ -1,13 +1,10 @@
 html {
-        background: url('/images/background.png') no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+        background: url('/images/background.png');
+        background-repeat: repeat;
 }
 
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Corbel",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
@@ -26,30 +23,17 @@ ul {
     padding-left: 12px;
 }
 
-#logobox {
-  width: 440px;
-  height: 110px;
-  /* padding-left: 50px; */
-  text-align: left;
-  vertical-align: middle;
-}
-
 
 #logo {
   padding-top: 2.5px;
   padding-left: 10px;
 }
 
-#profilebox {
-  height: 260px;
-  width: 220px;
-  margin-left: 5em;
+#profile-pic {
+  height: 340px;
+  border: 3px solid white;
 }
 
-#profilebox div {
-  margin-top: 2em;
-  padding-top: 10px;
-}
 
 #profile {
   border: 1px solid black;
@@ -59,6 +43,35 @@ ul {
 #content {
   padding-top: 50px;
   padding: 1em;
+}
+
+#quote {
+  font-size: 2.5em;
+}
+
+#input {
+  text-align: center;
+}
+
+h3 {
+  font-size: 5em;
+  text-align: center;
+  color: white;
+  text-shadow: #000 0px 0px 8px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h4 {
+  font-size: 2em;
+  text-align: center;
+}
+
+td {
+  padding: 10px;
+}
+
+.profile-value {
+  text-align: center;
 }
 
 .box {
@@ -72,10 +85,6 @@ ul {
   text-align: center;
 }
 
-h3 {
-  font-size: 1.5em;
-}
-
 .error {
   text-align: center;
 }
@@ -84,7 +93,6 @@ h3 {
   font-size: 1.5em;
 }
 
-/* TODO - Add your own styles here */
 .progressbar {
   background-color: #34b3a0;
   border-radius: 15px;

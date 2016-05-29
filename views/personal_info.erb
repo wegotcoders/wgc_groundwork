@@ -1,0 +1,68 @@
+<% @personal_info = {
+  "about" => "Aspiring Taiji master, Code Gongfu, Mycophile & Widegamer",
+  "ambition" => "Systemic social innovation, counter-hegemonic projects, fully automated luxury communism + time for playful creativity.",
+##  "first_name" => "Kieran",
+##  "last_name" => "Gibb",
+##  "codecademy" => "Kyphae",
+##  "dob" => "08.06.1988",
+##  "gender" => "Android",
+##  "github" => "Kyphae",
+##  "twitter" => "Kyphae",
+  "email" => "kyphae@riseup.net",
+##  "phone_number" => "07525260446"
+} %>
+
+<table>
+  <tbody>
+  <tr>
+    <td colspan="2">
+<div class="profile-section box">
+  <h4>His Past:</h4>
+    <p class="profile-value"><%= @personal_info["about"] %></p>
+</div>
+    </td>
+    <td>
+<div class="profile-section box">
+  <h4>His Future:</h4>
+    <p class="profile-value"><%= @personal_info["ambition"] %></p>
+</div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<div class="profile-section box">
+  <h4>Spawned on:</h4>
+    <p class="profile-value"><%= @profile["dob"] %></p>
+</div>
+    </td>
+    <td>
+<div class="profile-section box">
+  <h4>Species:</h4>
+    <p class="profile-value"><%= @profile["gender"] %></p>
+</div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<div class="profile-section box">
+  <h4>His Code:</h4>
+    <p class="profile-value">Github: <a href="https://github.com/<%= @profile["github"] %>"><%= @profile["github"] %></a></p>
+    <p class="profile-value">Codecademy: <a href="https://www.codecademy.com/<%= @profile["codecademy"] %>"><%= @profile["codecademy"] %></a></p>
+</div>
+    </td>
+    <td>
+<div class="profile-section box">
+  <h4>Transmissions:</h4>
+    <p class="profile-value">Twitter: <a href="https://twitter.com/Kyphae"><%= @profile["twitter"] %></a></p>
+    <p class="profile-value">Email: <a href=""><%= @personal_info["email"] %></a></p>
+</div>
+    </td>
+    <td>
+<div class="profile-section box">
+  <h4>Direct Line:</h4>
+    <p class="profile-value"><%= @profile["phone_number"] %></p>
+</div>
+    <td>
+  </tr>
+</tbody>
+</table>
