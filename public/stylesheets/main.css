@@ -1,8 +1,17 @@
+
+
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
   line-height: 1.428571429;
-  
+
+}
+.header {
+  position: fixed;
+  background-color: white;
+   width: 100%;
+   top: 0px;
+   z-index: 1;
+
 }
 
 @font-face {
@@ -16,159 +25,188 @@ body {
     font-style: normal;
 }
 
+#logo {
+  text-align: center;
+  background-color: white;
+}
 
 
 .content {
   background-color: #f9f9f9;
-  height: 90vh;
-}
-
-
-#logo {
-  text-align: center;
-}
-
-#content {
-  padding: 1em;
-}
-
-#profile {
-  
-  text-align: center;
-  font-family:'Oswald';
-  position: relative;
-  float: left;
-  margin-top: 50px;
-  
-  height: 600px;
-  background-color: #e7e7e7;
-  margin-bottom: 10px;
-  
-  color: grey;
-  padding: 0 ;
-}
-
-#profile h4{
-  font-size: 2em;
-  margin-bottom: 50px;
-}
-
-#profile img {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  margin-top: 50px;
-  margin-bottom: 10px;
-
-}
-
-/*BUTTONS START*/
-
- .button {
-  background-color: #e0e0e0;
-  border-top: 1px solid #dbdbdb;
-  width: 100%;
-  height: 15%;
-  font-weight: 50;
-  border-left: 10px solid #A8202E;
-  
-  
-}
-
-.button table {
-
-font-size: 2em;
-
-
-}
-
-
-.button table td i{
-  font-size: 2em;
-margin-left: 20px;
-margin-top: 10px;
-margin-bottom: 10px;
-margin-right: 50px;
-
-
-}
-
-.button table td :next{
-  background-color: black;
-}
-
-
-/*BIO START*/
-
-#bio1 {
-  
   padding: 0;
+  margin: 0;
+  height: 1250px;
+  margin-top: 100px
+
+}
+
+
+.container {
+    max-width: 1170px;
+    margin: 0;
+    padding: 0;
+
+}
+
+/*****************  PROFILE START  *****************/
+
+
+
+
+.profile {
+   background-color: #e7e7e7;
+
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
   margin-top: 50px;
- 
-}
-
-.element {
-  font-family:'Oswald';
-  font-size: 1.75em;
-  text-align: left;
-  margin-top: 5px;
-  color: grey;
-  float: left;
-  position: relative;
-  margin-left: 40px;
   margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
-
-
-.field {
-  background-color: #e7e7e7;
-  width: 400px;
-  height: 50px;
-
-
-}
-.block {
-  background-color: #A8202E;
-  width: 60px;
-  height: 50px;
-  
-}
-.field p {
-  font-size: .75em;
-  float: left;
-  margin-left: 90px;
-  margin-top: 12px;
-  
-}
-
-.edit {
-  background-color: #e7e7e7; 
-  height: 175px;
-  width: 400px;
+.profile h4 {
+   text-align: center;
    font-family:'Oswald';
-  
-  text-align: left;
-  margin-top: 5px;
-  color: grey;
-  float: left;
-  position: relative;
-  margin-left: 40px;
-  margin-bottom: 20px;
+   color: grey;
+   font-size: 3em;
+   font-weight: 300;
+   margin-bottom: 30px;
+
 }
 
-.update h4 {
-   font-family:'Oswald';
-  font-size: 1.75em;
-  text-align: left;
-  margin-top: 5px;
+.icon {
+  border-left: 10px solid #A8202E;
+  background-color: #e0e0e0;
+  border-top: 2px solid #dbdbdb;
+
+  text-align: center;
+  font-size: 4em;
   color: grey;
-  float: left;
-  position: relative;
-  margin-left: 40px;
-  margin-bottom: 20px;
+  height: 80px;
+
+
 }
+
+.icon-field {
+
+  font-family: 'Oswald';
+  color: grey;
+  font-size: 2em;
+  padding-top: 20px;
+  background-color: #e0e0e0;
+  border-top: 2px solid #dbdbdb;
+  height: 80px;
+
+
+}
+/*****************  CODE START  *****************/
+
+
+.other {
+  background-color: #f2f2f2;
+  height: 370px;
+  font-family: 'Oswald';
+  color: grey;
+  font-size: 4em;
+
+  border-right: 10px solid #A8202E;
+
+}
+
+.other #primes {
+  background-color: black;
+  height: 100px;
+}
+
+.other #codecademy {
+
+  text-align: center;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.other #javascript{
+
+  text-align: center;
+   margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0;
+
+}
+
+
+
+.other #ruby{
+
+  text-align: center;
+   margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+.other #web{
+
+  text-align: center;
+   margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+.other h2 {
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.other h3 {
+  font-family: 'Oswald';
+  color: grey;
+  font-size: .45em;
+  text-align: left;
+
+}
+
+#treehouse {
+
+  font-family: 'Oswald';
+  color: grey;
+  font-size: .25em;
+  height: 150px;
+  display: block;
+
+
+}
+
+#treehouse h3 {
+  font-family: 'Oswald';
+  color: grey;
+  font-size: 2em;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*JQUERY*/
 
@@ -179,3 +217,4 @@ margin-right: 50px;
 .invert {
   color: #FFF;
 }
+

@@ -1,120 +1,267 @@
-  
+
+
+<% if @profile %>
 
 <div class="container">
+
+
+
   <div class="row">
 
-  <div class="col-md-4" id="profile">
+<!--   ++++++++++++ PROFILE START +++++++++++  -->
+
+    <div class="col-md-4 profile ">
      <img src="./images/nic.jpg">
-        <h4><%= @profile["first_name"] %>'s Profile</h4> 
+          <h4>Profile</h4>
 
-        <div class="button">
-          <table>
-            <tr>
-              <td>
-                <% if @profile["gender"] === "Male" %>
-                  <i class="fa fa-male" aria-hidden="true"></i>
+            <div class="row">
+
+          <!--   ++++++++++++ BUTTON 1 START +++++++++++  -->
+              <div class=" col-md-3 icon ">
+
+                  <% if @profile["gender"] === "Male" %>
+                    <i class="fa fa-male" aria-hidden="true" data-toggle="modal" data-target="#myModal"></i><!-- icon trigger modal -->
                   <% else %>
-                  <i class="fa fa-female" aria-hidden="true"></i>
-                <% end %>
+                    <i class="fa fa-female" aria-hidden="true"></i>
+                  <% end %>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["first_name"] +' '+ @profile["last_name"] %></p>
+              </div>
 
-              </td>
-              <td><%= @profile["gender"] %></td> 
-            </tr>
-           </table>
+          <!--   ++++++++++++ BUTTON 2 START +++++++++++  -->
+
+              <div class=" col-md-3 icon ">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["github"] %></p>
+              </div>
+
+          <!--   ++++++++++++ BUTTON 3 START +++++++++++  -->
+
+              <div class=" col-md-3 icon ">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["twitter"] %></p>
+              </div>
+
+           <!--   ++++++++++++ BUTTON 4 START +++++++++++  -->
+
+              <div class=" col-md-3 icon ">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["homepage"] %></p>
+              </div>
+
+
+          <!--   ++++++++++++ BUTTON 5 START +++++++++++  -->
+
+              <div class=" col-md-3 icon ">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["phone_number"] %></p>
+              </div>
+
+          <!--   ++++++++++++ BUTTON 6 START +++++++++++  -->
+
+              <div class=" col-md-3 icon ">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["dob"] %></p>
+              </div>
+
+          <!--   ++++++++++++ BUTTON 7 START +++++++++++  -->
+
+              <div class=" col-md-3 icon ">
+               <i class="fa fa-usd" aria-hidden="true"></i>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["employment_status"] %></p>
+              </div>
+
+      </div>
+    </div> <!-- profile -->
+
+<!--   ++++++++++++ CODE START +++++++++++  -->
+
+<!--   ++++++++++++ Other +++++++++++  -->
+
+  <div class="col-md-8 other">
+      <div class="row">
+        <h2>Code Progress</h2>
+
+        <div class="col-md-3" id="codecademy">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">JavaScript</h3>
+            </div>
+            <div class="panel-body">
+              <a href="https://www.codecademy.com/njmulleroutlook.com">
+              <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+            </a>
+            </div>
+          </div>
         </div>
 
-          <div class="button">
-          <table>
-            <tr>
-              <td><i class="fa fa-github" aria-hidden="true"></i></td>
-              <td><%= @profile["github"] %></td> 
-            </tr>
-           </table>
+        <div class="col-md-3" id="javascript">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+
+              <h3 class="panel-title">Codecademy</h3>
+            </div>
+            <div class="panel-body">
+            <a href="https://www.codecademy.com/njmulleroutlook.com">
+              <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+            </a>
+            </div>
+          </div>
         </div>
 
-        <div class="button">
-          <table>
-            <tr>
-              <td ><i class="fa fa-twitter" aria-hidden="true"></i></td>
-              <td><%= @profile["twitter"] %></td> 
-            </tr>
-           </table>
-        </div>
+      <div class="col-md-3" id="ruby">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Ruby</h3>
+            </div>
+            <div class="panel-body">
+            <a href="https://www.codecademy.com/njmulleroutlook.com">
+              <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+            </a>
+            </div>
+          </div>
+      </div>
 
-        <div class="button">
-          <table>
-            <tr>
-              <td><i class="fa fa-globe" aria-hidden="true"></i></td>
-              <td><%= @profile["homepage"] %></td> 
-            </tr>
-           </table>
-        </div>
+      <div class="col-md-3" id="web">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Web</h3>
+            </div>
+            <div class="panel-body">
+            <a href="https://www.codecademy.com/njmulleroutlook.com">
+              <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+            </a>
+            </div>
+          </div>
+      </div>
+          <div class="row">
+           <div class="col-md-12" id="treehouse">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Treehouse</h3>
+                  </div>
+                  <div class="panel-body">
+                    <div class="report-card treehouse"></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+
+
+      </div>
+  </div> <!-- other -->
+
+
+
+
+
+
+ </div> <!-- row (first)-->
+
+
+
+
+
+</div> <!-- container -->
+
+
+
+
+
+
+
+
+
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">About <%= @profile["first_name"] %> </h4>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel vehicula erat. Phasellus vestibulum leo eu mi tempor blandit. Suspendisse eget iaculis lectus. Donec vitae tempus enim, quis tristique magna. Donec lobortis, sem ac pretium viverra, leo nisl consequat arcu, sit amet ullamcorper nunc turpis ac erat. In rutrum auctor ligula, quis mattis enim lacinia eu. Aliquam at mag
+
  </div>
-    
-  <div class="col-md-4" id="bio1">
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-    <div class="element">
-      <p>Name</p>
-      <div class="field"> 
-        <p><%= @profile["first_name"] +' '+ @profile["last_name"] %></p>
-          <div class="block"></div>
-      </div>
-    </div>
-
-    <div class="element">
-      <p>Date of Birth</p>
-      <div class="field"> 
-        <p><%= @profile["dob"] %></p>
-          <div class="block"></div>
-      </div>
-    </div>
-
-    <div class="element">
-      <p>Employment Status</p>
-      <div class="field"> 
-        <p><%= @profile["employment_status"] %></p>
-          <div class="block"></div>
-      </div>
-    </div>
-
-     <div class="element">
-      <p>Phone Number</p>
-      <div class="field"> 
-        <p><%= @profile["phone_number"] %></p>
-          <div class="block"></div>
-      </div>
-    </div>
-
-<div class="update">
-<h4>Edit Profile</h4>
-<div class="edit">
-    
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+            </div>
         </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% else %>
+  <div class="welcome">
+    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+    <a href="/authorise">Authorise</a>
   </div>
+<% end %>
 
-</div>
-
-  </div>
-
-
-  <div class="col-md-4" id= "bio2">.</div>
-
-</div>
-</div>
- 
-</div>  
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
@@ -130,13 +277,15 @@
 </script>
 
 <script type="text/javascript">
-  
+
   $(document).ready(function(){
 
-  $('.button').hover(
+  $('.icon').hover(
     function(){
         $(this).addClass('active');
           $(this).addClass('invert');
+            $(this).css('cursor', 'pointer');
+
     },
     function(){
         $(this).removeClass('active');
@@ -147,15 +296,35 @@
   );
 
 });
+
+
+</script>
+<script src="/js/reportcard/js/reportcard.js"></script>
+
+<script>
+$('.report-card.treehouse').reportCard({
+    userName: 'nicjmuller',
+    site: 'treehouse',
+    badgesAmount: 7
+});
 </script>
 
+ <script type="text/javascript">
 
 
+$(function() {
+   var window_height = $(window).height(),
+   content_height = window_height - 200;
+   $('.mygrid-wrapper-div').height(content_height);
+});
+
+$( window ).resize(function() {
+   var window_height = $(window).height(),
+   content_height = window_height - 200;
+   $('.mygrid-wrapper-div').height(content_height);
+});
+
+ </script>
 
 
-
-
-
-
-
-     
+<%= @profile.inspect %>
