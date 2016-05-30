@@ -110,19 +110,15 @@ body {
 
 .other {
   background-color: #f2f2f2;
-  height: 370px;
+  height: 925px;
   font-family: 'Oswald';
   color: grey;
   font-size: 4em;
-
+  text-decoration: none;
   border-right: 10px solid #A8202E;
 
 }
 
-.other #primes {
-  background-color: black;
-  height: 100px;
-}
 
 .other #codecademy {
 
@@ -161,6 +157,7 @@ body {
 
 .other h2 {
   padding-left: 15px;
+  padding-top: 5px;
   margin-bottom: 10px;
 }
 
@@ -177,7 +174,7 @@ body {
   font-family: 'Oswald';
   color: grey;
   font-size: .25em;
-  height: 150px;
+
   display: block;
 
 

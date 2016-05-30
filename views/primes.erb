@@ -1,7 +1,17 @@
+<%= Prime.each(100) { |i| @primes.push(i) }%>
+
+<% @sum = 0 %>
+
+<%= Prime.each(2_000_000) {|i| @sum += i} %>
+
+<%= Primes.sum_to(2_000_000) %>
+
+
 <h1>Prime Numbers</h1>
 
 Sum : <%= @sum %>
 
 <div>
   <a href="/">Back</a>
+</div>="/">Back</a>
 </div>

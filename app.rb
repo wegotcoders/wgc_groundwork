@@ -1,5 +1,11 @@
 require 'sinatra'
 require './lib/profile'
+require 'prime'
+
+def initialize
+  @counter
+  @primes = []
+end
 
 set :application_id, 'b5f294c431d513071d67200d65a4136602e7161d5b6688fbb88a2923a2bf5850'
 set :secret, '7f8d1053a50ab54dde9134ae5427aca0bdcd115e7c4d5c45fbec5b073f2963e7'
