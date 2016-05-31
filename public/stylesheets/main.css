@@ -5,6 +5,8 @@ body {
   line-height: 1.428571429;
 
 }
+
+
 .header {
   position: fixed;
   background-color: white;
@@ -26,8 +28,9 @@ body {
 }
 
 #logo {
-  text-align: center;
+  text-align: left;
   background-color: white;
+
 }
 
 
@@ -36,7 +39,8 @@ body {
   padding: 0;
   margin: 0;
   height: 1250px;
-  margin-top: 100px
+  margin-top: 100px;
+
 
 }
 
@@ -55,7 +59,7 @@ body {
 
 .profile {
    background-color: #e7e7e7;
-
+   padding-right: 20px;
 }
 
 .profile img {
@@ -73,7 +77,7 @@ body {
 .profile h4 {
    text-align: center;
    font-family:'Oswald';
-   color: grey;
+   color: #404040;
    font-size: 3em;
    font-weight: 300;
    margin-bottom: 30px;
@@ -81,22 +85,21 @@ body {
 }
 
 .icon {
-  border-left: 10px solid #A8202E;
+  border-left: 10px solid #337ab7;
   background-color: #e0e0e0;
   border-top: 2px solid #dbdbdb;
-
   text-align: center;
   font-size: 4em;
-  color: grey;
+  color: #337ab7;
   height: 80px;
 
-
 }
+
 
 .icon-field {
 
   font-family: 'Oswald';
-  color: grey;
+  color: #404040;
   font-size: 2em;
   padding-top: 20px;
   background-color: #e0e0e0;
@@ -112,12 +115,12 @@ body {
   background-color: #f2f2f2;
   height: 925px;
   font-family: 'Oswald';
-  color: grey;
+  color: #404040;
   font-size: 4em;
   text-decoration: none;
-  border-right: 10px solid #A8202E;
-
+  margin-left: 20px;
 }
+
 
 
 .other #codecademy {
@@ -137,6 +140,10 @@ body {
 
 }
 
+.other #wrapper {
+  width: 90%;
+  margin-left: 5%;
+}
 
 
 .other #ruby{
@@ -156,14 +163,14 @@ body {
 }
 
 .other h2 {
-  padding-left: 15px;
+  padding-left: 35px;
   padding-top: 5px;
   margin-bottom: 10px;
 }
 
 .other h3 {
   font-family: 'Oswald';
-  color: grey;
+  color: #404040;
   font-size: .45em;
   text-align: left;
 
@@ -172,26 +179,69 @@ body {
 #treehouse {
 
   font-family: 'Oswald';
-  color: grey;
+  color: #404040;
   font-size: .25em;
-
+  width: 90%;
   display: block;
-
+  margin-left: 5%;
 
 }
 
 #treehouse h3 {
   font-family: 'Oswald';
-  color: grey;
+  color: #404040;
   font-size: 2em;
 
 }
 
+.other #wrapper_bottom {
+  width: 90%;
+  margin-left: 5%;
+}
 
+#prime {
+  text-align: center;
+}
 
+#prime i {
+  padding-top: 20px;
+  font-size: 1.3em;
+}
 
+#count {
+  text-align: center;
 
+}
 
+#count .words {
+  font-size: 1.35em;
+  color: #337ab7;
+}
+
+.jumbotron {
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+.jumbotron h3 {
+  font-family: 'Oswald';
+  color: #404040;
+  font-size: 4em;
+}
+
+.jumbotron h4 {
+   font-family: 'Oswald';
+  color: #404040;
+  font-size: 2em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.icon a i:hover {
+
+  text-decoration: none!important;
+}
 
 
 
@@ -208,10 +258,12 @@ body {
 /*JQUERY*/
 
 .active {
-    background-color:#A8202E;
+    background-color:#337ab7;
 }
 
 .invert {
   color: #FFF;
-}
 
+
+
+}

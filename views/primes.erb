@@ -1,17 +1,18 @@
-<%= Prime.each(100) { |i| @primes.push(i) }%>
+<div class="container">
 
-<% @sum = 0 %>
+<div class="jumbotron">
+  <h3>Prime Numbers Challenge</h3>
+  <h4>Prime numbers from 0 -100:</h4>
+  	<p> <%= Prime.each(100) { |i| @primes.push(i) }%></p>
 
-<%= Prime.each(2_000_000) {|i| @sum += i} %>
+  <h4>Sum of all  prime number up until 2 million:</h4>
 
-<%= Primes.sum_to(2_000_000) %>
+	<% @sum = 0 %>
 
+  	<p><%= Prime.each(2_000_000) {|i| @sum += i} %></p>
 
-<h1>Prime Numbers</h1>
-
-Sum : <%= @sum %>
-
-<div>
-  <a href="/">Back</a>
-</div>="/">Back</a>
+  <p><a class="btn btn-primary btn-lg" href="/" role="button">Back to Profile</a></p>
 </div>
+
+
+

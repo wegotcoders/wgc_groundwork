@@ -5,6 +5,7 @@ require 'prime'
 def initialize
   @counter
   @primes = []
+  @total_words = 0
 end
 
 set :application_id, 'b5f294c431d513071d67200d65a4136602e7161d5b6688fbb88a2923a2bf5850'

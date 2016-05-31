@@ -3,9 +3,6 @@
 <% if @profile %>
 
 <div class="container">
-
-
-
   <div class="row">
 
 <!--   ++++++++++++ PROFILE START +++++++++++  -->
@@ -31,8 +28,10 @@
 
           <!--   ++++++++++++ BUTTON 2 START +++++++++++  -->
 
-              <div class=" col-md-3 icon ">
+              <div class=" col-md-3 icon">
+                <a href="https://github.com/NicMuller">
                   <i class="fa fa-github" aria-hidden="true"></i>
+                  </a>
               </div>
               <div class=" col-md-9 icon-field">
                 <p><%= @profile["github"] %></p>
@@ -41,7 +40,9 @@
           <!--   ++++++++++++ BUTTON 3 START +++++++++++  -->
 
               <div class=" col-md-3 icon ">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <a href="https://twitter.com/OutlierNic">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
               </div>
               <div class=" col-md-9 icon-field">
                 <p><%= @profile["twitter"] %></p>
@@ -50,7 +51,9 @@
            <!--   ++++++++++++ BUTTON 4 START +++++++++++  -->
 
               <div class=" col-md-3 icon ">
-                <i class="fa fa-globe" aria-hidden="true"></i>
+                <a href="http://www.nicm.eu">
+                  <i class="fa fa-globe" aria-hidden="true"></i>
+                </a>
               </div>
               <div class=" col-md-9 icon-field">
                 <p><%= @profile["homepage"] %></p>
@@ -78,7 +81,9 @@
           <!--   ++++++++++++ BUTTON 7 START +++++++++++  -->
 
               <div class=" col-md-3 icon ">
-               <i class="fa fa-usd" aria-hidden="true"></i>
+                <a href="https://www.linkedin.com/in/nicmba">
+                  <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                </a>
               </div>
               <div class=" col-md-9 icon-field">
                 <p><%= @profile["employment_status"] %></p>
@@ -91,10 +96,10 @@
 
 <!--   ++++++++++++ Other +++++++++++  -->
 
-  <div class="col-md-8 other">
+  <div class="col-md-7 other">
       <div class="row">
         <h2>Code Progress</h2>
-
+      <div id="wrapper">
         <div class="col-md-3" id="codecademy">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -147,6 +152,7 @@
             </div>
           </div>
       </div>
+    </div>
           <div class="row">
            <div class="col-md-12" id="treehouse">
                 <div class="panel panel-default">
@@ -159,14 +165,23 @@
                 </div>
             </div>
           </div>
+     <div id="wrapper_bottom">
       <div class="row">
               <div class="col-md-6" id="prime">
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Prime</h3>
+                    <h3 class="panel-title">Sum of Primes Challenge</h3>
                   </div>
                   <div class="panel-body">
-                    <div></div>
+                    <div>
+                      <a href="/primes">
+                       <% if @sum =! nil %>
+                          <p> <i class="fa fa-check-circle-o" aria-hidden="true"></i> </p>
+                        <% else %>
+                          <i class="fa fa-times" aria-hidden="true"></i>
+                        <% end %>
+                      </a>
+                    </div>
                   </div>
                 </div>
             </div>
@@ -174,36 +189,40 @@
             <div class="col-md-6" id="count">
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Word Count</h3>
+                    <h3 class="panel-title">Word Count Challenge</h3>
                   </div>
                   <div class="panel-body">
-                    <div></div>
+                    <div class="words">
+                      word count change
+                    </div>
                   </div>
                 </div>
             </div>
+      </div>
+  </div> <!-- wrapper_bottom -->
 
       </div>
 
+<!--   ++++++++++++ Edit Profile Start +++++++++++  -->
 
-      </div>
-  </div> <!-- other -->
+    <h3>Edit Profile</h3>
 
+    <form action="/update" method="POST">
+      <fieldset>
+        <div class="form-group">
+          <label for="trainee[about]">About</label>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+        </div>
 
+        <!-- TODO - Add more fields so that your profile can be edited -->
 
+        <input type="submit" value="Update Profile" class="btn btn-primary" />
+      </fieldset>
+    </form>
 
-
-
- </div> <!-- row (first)-->
-</div> <!-- container -->
-
-
-
-
-
-
-
-
-
+  </div> <!-- /other -->
+ </div> <!-- /row (first)-->
+</div> <!-- /container -->
 
 <div id="myModal" class="modal fade">
     <div class="modal-dialog">
@@ -213,64 +232,16 @@
                 <h4 class="modal-title">About <%= @profile["first_name"] %> </h4>
             </div>
             <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel vehicula erat. Phasellus vestibulum leo eu mi tempor blandit. Suspendisse eget iaculis lectus. Donec vitae tempus enim, quis tristique magna. Donec lobortis, sem ac pretium viverra, leo nisl consequat arcu, sit amet ullamcorper nunc turpis ac erat. In rutrum auctor ligula, quis mattis enim lacinia eu. Aliquam at mag
+                <p> <%=@profile %> </p>
 
- </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
             </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <% else %>
   <div class="welcome">
@@ -283,15 +254,17 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+  $(document).ready(function(){
+    var profile_section = $.trim($(".profile").text()).length;
+      console.log(profile_section);
+    var code_section = $.trim($(".other").text()).length;
+      console.log(code_section);
+    var total_words = profile_section + code_section;
+      console.log(total_words);
+    $(".words").html(total_words);
+  });
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
 </script>
 
 <script type="text/javascript">
@@ -341,6 +314,12 @@ $( window ).resize(function() {
    content_height = window_height - 200;
    $('.mygrid-wrapper-div').height(content_height);
 });
+
+ </script>
+
+ <script type="text/javascript">
+
+
 
  </script>
 
