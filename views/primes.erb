@@ -1,7 +1,19 @@
-<h1>Prime Numbers</h1>
+<div class="container">
 
-Sum : <%= @sum %>
+<div class="jumbotron">
+  <h3>Prime Numbers Challenge</h3>
+  <h4>Prime numbers from 0 -100:</h4>
+  	<p> <%= Prime.each(100) { |i| @primes.push(i) }%></p>
 
-<div>
-  <a href="/">Back</a>
+  <h4>Sum of all  prime number up until 2 million:</h4>
+
+	<% @sum = 0 %>
+
+<!--  memory issue here, need to refactor as the array is 2mil.  -->
+  	<p><%= Prime.each(2_000_000) {|i| @sum += i} %></p>
+
+  <p><a class="btn btn-primary btn-lg" href="/" role="button">Back to Profile</a></p>
 </div>
+
+
+

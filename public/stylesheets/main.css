@@ -1,39 +1,269 @@
+
+
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+
+}
+
+
+.header {
+  position: fixed;
+  background-color: white;
+   width: 100%;
+   top: 0px;
+   z-index: 1;
+
+}
+
+@font-face {
+    font-family: 'fontawesome';
+    src:url('../fonts/fontawesome-webfont.eot');
+    src:url('../fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+        url('../fonts/fontawesome-webfont.woff') format('woff'),
+        url('../fonts/fontawesome-webfont.ttf') format('truetype'),
+        url('../fonts/fontawesome-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 #logo {
   text-align: center;
+  background-color: white;
+
 }
 
-#content {
-  padding: 1em;
+
+.content {
+  background-color: #f9f9f9;
+  padding: 0;
+  margin: 0;
+  height: 940px;
+  margin-top: 100px;
+
+
 }
 
-.box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
+
+.container {
+    max-width: 1170px;
+    margin: 0;
+    padding: 0;
+
 }
 
-.welcome {
+/*****************  PROFILE START  *****************/
+
+
+
+
+.profile {
+   background-color: #e7e7e7;
+   padding-right: 20px;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.profile h4 {
+   text-align: center;
+   font-family:'Oswald';
+   color: #404040;
+   font-size: 3em;
+   font-weight: 300;
+   margin-bottom: 30px;
+
+}
+
+.icon {
+  border-left: 10px solid #337ab7;
+  background-color: #e0e0e0;
+  border-top: 2px solid #dbdbdb;
+  text-align: center;
+  font-size: 4em;
+  color: #337ab7;
+  height: 80px;
+
+}
+
+
+.icon-field {
+
+  font-family: 'Oswald';
+  color: #404040;
+  font-size: 2em;
+  padding-top: 20px;
+  background-color: #e0e0e0;
+  border-top: 2px solid #dbdbdb;
+  height: 80px;
+
+
+}
+/*****************  CODE START  *****************/
+
+
+.other {
+  background-color: #f2f2f2;
+  height: 925px;
+  font-family: 'Oswald';
+  color: #404040;
+  font-size: 4em;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+
+
+.other #codecademy {
+
+  text-align: center;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.other #javascript{
+
+  text-align: center;
+   margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0;
+
+}
+
+.other #wrapper {
+  width: 90%;
+  margin-left: 5%;
+}
+
+
+.other #ruby{
+
+  text-align: center;
+   margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+.other #web{
+
+  text-align: center;
+   margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+.other h2 {
+  padding-left: 35px;
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+
+.other h3 {
+  font-family: 'Oswald';
+  color: #404040;
+  font-size: .45em;
+  text-align: left;
+
+}
+
+#treehouse {
+
+  font-family: 'Oswald';
+  color: #404040;
+  font-size: .25em;
+  width: 90%;
+  display: block;
+  margin-left: 5%;
+
+}
+
+#treehouse h3 {
+  font-family: 'Oswald';
+  color: #404040;
+  font-size: 2em;
+
+}
+
+.other #wrapper_bottom {
+  width: 90%;
+  margin-left: 5%;
+}
+
+#prime {
   text-align: center;
 }
 
-h3 {
-  font-size: 1.5em;
+#prime i {
+  padding-top: 20px;
+  font-size: 1.3em;
 }
 
-.error {
+#count {
+  text-align: center;
+
+}
+
+#count .words {
+  font-size: 1.35em;
+  color: #337ab7;
+}
+
+.jumbotron {
+  margin-top: 20px;
+
   text-align: center;
 }
 
-.error h2 {
-  font-size: 1.5em;
+.jumbotron h3 {
+  font-family: 'Oswald';
+  color: #404040;
+  font-size: 4em;
 }
 
-/* TODO - Add your own styles here */
+.jumbotron h4 {
+   font-family: 'Oswald';
+  color: #404040;
+  font-size: 2em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.icon a i:hover {
+
+  text-decoration: none!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*JQUERY*/
+
+.active {
+    background-color:#337ab7;
+}
+
+.invert {
+  color: #FFF;
+
+
+
+}

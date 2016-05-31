@@ -1,41 +1,260 @@
+
+
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+<div class="container">
+  <div class="row">
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
+<!--   ++++++++++++ PROFILE START +++++++++++  -->
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
+    <div class="col-md-4 profile ">
+     <img src="./images/nic.jpg">
+          <h4>Profile</h4>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+            <div class="row">
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <!--   ++++++++++++ BUTTON 1 START +++++++++++  -->
+              <div class=" col-md-3 icon ">
+
+                  <% if @profile["gender"] === "Male" %>
+                    <i class="fa fa-male" aria-hidden="true" data-toggle="modal" data-target="#myModal"></i><!-- icon trigger modal -->
+                  <% else %>
+                    <i class="fa fa-female" aria-hidden="true"></i>
+                  <% end %>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["first_name"] +' '+ @profile["last_name"] %></p>
+              </div>
+
+          <!--   ++++++++++++ BUTTON 2 START +++++++++++  -->
+
+              <div class=" col-md-3 icon">
+                <a href="https://github.com/NicMuller">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["github"] %></p>
+              </div>
+
+          <!--   ++++++++++++ BUTTON 3 START +++++++++++  -->
+
+              <div class=" col-md-3 icon ">
+                <a href="https://twitter.com/OutlierNic">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["twitter"] %></p>
+              </div>
+
+           <!--   ++++++++++++ BUTTON 4 START +++++++++++  -->
+
+              <div class=" col-md-3 icon ">
+                <a href="http://www.nicm.eu">
+                  <i class="fa fa-globe" aria-hidden="true"></i>
+                </a>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["homepage"] %></p>
+              </div>
+
+
+          <!--   ++++++++++++ BUTTON 5 START +++++++++++  -->
+
+              <div class=" col-md-3 icon ">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["phone_number"] %></p>
+              </div>
+
+          <!--   ++++++++++++ BUTTON 6 START +++++++++++  -->
+
+              <div class=" col-md-3 icon ">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["dob"] %></p>
+              </div>
+
+          <!--   ++++++++++++ BUTTON 7 START +++++++++++  -->
+
+              <div class=" col-md-3 icon ">
+                <a href="https://www.linkedin.com/in/nicmba">
+                  <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                </a>
+              </div>
+              <div class=" col-md-9 icon-field">
+                <p><%= @profile["employment_status"] %></p>
+              </div>
+
+      </div>
+    </div> <!-- profile -->
+
+<!--   ++++++++++++ CODE START +++++++++++  -->
+
+<!--   ++++++++++++ Other +++++++++++  -->
+
+  <div class="col-md-7 other">
+      <div class="row">
+        <h2>Code Progress</h2>
+      <div id="wrapper">
+        <div class="col-md-3" id="codecademy">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">JavaScript</h3>
+            </div>
+            <div class="panel-body">
+              <a href="https://www.codecademy.com/njmulleroutlook.com">
+              <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+            </a>
+            </div>
+          </div>
         </div>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="col-md-3" id="javascript">
+          <div class="panel panel-default">
+            <div class="panel-heading">
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
+              <h3 class="panel-title">Codecademy</h3>
+            </div>
+            <div class="panel-body">
+            <a href="https://www.codecademy.com/njmulleroutlook.com">
+              <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+            </a>
+            </div>
+          </div>
+        </div>
+
+      <div class="col-md-3" id="ruby">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Ruby</h3>
+            </div>
+            <div class="panel-body">
+            <a href="https://www.codecademy.com/njmulleroutlook.com">
+              <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+            </a>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-md-3" id="web">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Web</h3>
+            </div>
+            <div class="panel-body">
+            <a href="https://www.codecademy.com/njmulleroutlook.com">
+              <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+            </a>
+            </div>
+          </div>
+      </div>
+    </div>
+          <div class="row">
+           <div class="col-md-12" id="treehouse">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Treehouse</h3>
+                  </div>
+                  <div class="panel-body">
+                    <div class="report-card treehouse"></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+     <div id="wrapper_bottom">
+      <div class="row">
+              <div class="col-md-6" id="prime">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Sum of Primes Challenge</h3>
+                  </div>
+                  <div class="panel-body">
+                    <div>
+                      <a href="/primes">
+                       <% if @sum =! nil %>
+                          <p> <i class="fa fa-check-circle-o" aria-hidden="true"></i> </p>
+                        <% else %>
+                          <i class="fa fa-times" aria-hidden="true"></i>
+                        <% end %>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-6" id="count">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Word Count Challenge</h3>
+                  </div>
+                  <div class="panel-body">
+                    <div class="words">
+                      word count change
+                    </div>
+                  </div>
+                </div>
+            </div>
+      </div>
+  </div> <!-- wrapper_bottom -->
+
+      </div>
+
+<!--   ++++++++++++ Edit Profile Start +++++++++++  -->
+
+<!-- <h3>Edit Profile</h3>
+
+<form action="/update" method="POST">
+    <fieldset>
+      <div class="form-group">
+        <label for="trainee[about]">About</label>
+        <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+      </div>
+
+      No experience with hooking up a bootstrap dropdown and updating different fields with one submit button.  Need to investigate. Can hard code to add and remove from hash in Ruby.
+      train of thought as a basis
+
+      @profile.each_key do |key|
+
+      if key == input
+        @profile[key] = change
+      end
+      end
+
+
+      <!-- TODO - Add more fields so that your profile can be edited -->
+
+<!--       <input type="submit" value="Update Profile" class="btn btn-primary" />
+    </fieldset>
+  </form> -->
+
+
+  </div> <!-- /other -->
+ </div> <!-- /row (first)-->
+</div> <!-- /container -->
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">About <%= @profile["first_name"] %> </h4>
+            </div>
+            <div class="modal-body">
+                <p> <%=@profile %> </p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -47,13 +266,62 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+  $(document).ready(function(){
+    var profile_section = $.trim($(".profile").text()).length;
+      console.log(profile_section);
+    var code_section = $.trim($(".other").text()).length;
+      console.log(code_section);
+    var total_words = profile_section + code_section;
+      console.log(total_words);
+    $(".words").html(total_words);
+  });
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
 </script>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+
+  $('.icon').hover(
+    function(){
+        $(this).addClass('active');
+          $(this).addClass('invert');
+            $(this).css('cursor', 'pointer');
+
+    },
+    function(){
+        $(this).removeClass('active');
+         $(this).removeClass('invert');
+    }
+  );
+});
+
+
+</script>
+<script src="/js/reportcard/js/reportcard.js"></script>
+
+<script>
+$('.report-card.treehouse').reportCard({
+    userName: 'nicjmuller',
+    site: 'treehouse',
+    badgesAmount: 7
+});
+</script>
+
+ <script type="text/javascript">
+
+
+$(function() {
+   var window_height = $(window).height(),
+   content_height = window_height - 200;
+   $('.mygrid-wrapper-div').height(content_height);
+});
+
+$( window ).resize(function() {
+   var window_height = $(window).height(),
+   content_height = window_height - 200;
+   $('.mygrid-wrapper-div').height(content_height);
+});
+
+
