@@ -205,20 +205,32 @@
 
 <!--   ++++++++++++ Edit Profile Start +++++++++++  -->
 
-    <h3>Edit Profile</h3>
+<!-- <h3>Edit Profile</h3>
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
+<form action="/update" method="POST">
+    <fieldset>
+      <div class="form-group">
+        <label for="trainee[about]">About</label>
+        <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+      </div>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+      No experience with hooking up a bootstrap dropdown and updating different fields with one submit button.  Need to investigate. Can hard code to add and remove from hash in Ruby.
+      train of thought as a basis
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
+      @profile.each_key do |key|
+
+      if key == input
+        @profile[key] = change
+      end
+      end
+
+
+      <!-- TODO - Add more fields so that your profile can be edited -->
+
+<!--       <input type="submit" value="Update Profile" class="btn btn-primary" />
+    </fieldset>
+  </form> -->
+
 
   </div> <!-- /other -->
  </div> <!-- /row (first)-->
@@ -282,10 +294,7 @@
         $(this).removeClass('active');
          $(this).removeClass('invert');
     }
-
-
   );
-
 });
 
 
@@ -315,13 +324,4 @@ $( window ).resize(function() {
    $('.mygrid-wrapper-div').height(content_height);
 });
 
- </script>
 
- <script type="text/javascript">
-
-
-
- </script>
-
-
-<%= @profile.inspect %>

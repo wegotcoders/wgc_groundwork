@@ -3,7 +3,6 @@ require './lib/profile'
 require 'prime'
 
 def initialize
-  @counter
   @primes = []
   @total_words = 0
 end
@@ -49,6 +48,9 @@ def trainee
   @trainee ||= WeGotCoders::Trainee.new(settings.site_url, session[:access_token])
 end
 
-def input
-    @my_input = params['my_input']
-end
+public
+
+
+
+
+

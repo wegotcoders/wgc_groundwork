@@ -9,6 +9,7 @@
 
 	<% @sum = 0 %>
 
+<!--  memory issue here, need to refactor as the array is 2mil.  -->
   	<p><%= Prime.each(2_000_000) {|i| @sum += i} %></p>
 
   <p><a class="btn btn-primary btn-lg" href="/" role="button">Back to Profile</a></p>
