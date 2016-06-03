@@ -91,11 +91,15 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
+
+  //console.log("I am Javascript!");
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
-  var profile_array= profile_values.split(" ")
-  total_words=profile_array.length
+    for (var i = 0; i < profile_values.length; i++) {
+      string_array= profile_values[i].innerHTML.split(" ");
+      total_words += string_array.length;
+    }
+  //total_words=profile_array.length
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
   document.getElementById('word-count').innerHTML = total_words;
