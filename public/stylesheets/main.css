@@ -18,6 +18,7 @@ body {
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
+  background-color: #FFFFF;
 }
 
 .welcome {
@@ -52,6 +53,32 @@ h3 {
   width: 40px;
 }
 
+.profile-section  {
+  background-color: #FFFFFF;
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+}
 
+.profile-value {
+  font-family: Times, serif;
+  font-size: 1em;
+  
+}
+li {
+  font-family: Times, serif;
+  font-size: 1em;
+}
+
+#stats
+{
+  background-color: #FFFFFF;
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+}
+#problems{
+  background-color: #FFFFFF;
+  font-weight: bold;
+  font-family: Verdana, sans-serif; 
+}
 
 /* TODO - Add your own styles here */

@@ -10,6 +10,14 @@
       <h4>Name</h4>
       <p class="profile-value"> <%= @profile["first_name"] + ' ' + @profile["last_name"] %></p>
     </div>
+    <div class="profile-section box">
+      <h4>About</h4>
+        <ul>
+          <li >Obtained Masters in Embedded Systems from University of Essex</li>
+          <li >Thesis: 3D Reconstruction</li>
+          <li >Interested in Running</li>
+        </ul>      
+    </div>      
   <div class="profile-section box">
       <h4>Gender</h4>
       <p class="profile-value"> <%= @profile["gender"] %></p>
@@ -55,7 +63,7 @@
   </div>
 
   <div id="problems" class="box">
-    <h3>Programming Problems</h3>
+    <h3>Programming Problems</h3>   
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
@@ -69,9 +77,13 @@
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
         </div>
         <div class="form-group">
-          <label for="trainee[about]">Employment status</label>
-          <input type="text" name="trainee[Employment status]" value="<%= @profile["employment_status"] %>"/>
-        </div>        
+          <label for="trainee[employment_status]">Employment status</label>
+          <input type="text" name="trainee[employment_status]" />
+        </div>     
+        <div class="form-group">
+          <label for="trainee[phone_number]">Phone Number</label>
+          <input type="text" name="trainee[phone_number]" />
+        </div>   
 
 
         <!-- TODO - Add more fields so that your profile can be edited -->
