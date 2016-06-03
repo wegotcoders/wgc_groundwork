@@ -2,7 +2,7 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  background-color: #b7d1c4;
 }
 
 #logo {
@@ -35,5 +35,23 @@ h3 {
 .error h2 {
   font-size: 1.5em;
 }
+
+h3 {
+  font-size: 1.0em;
+}
+ .profile_pic {
+  height: 200px;
+  width: 200px;
+}
+ .profile_logo {
+  height: 40px;
+  width: 40px;
+}
+ .codecademy_logo {
+  height: 40px;
+  width: 40px;
+}
+
+
 
 /* TODO - Add your own styles here */
