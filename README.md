@@ -1,4 +1,4 @@
-![We Got Coders Logo](http://wegotcoders.com/assets/logos/WEGOTCODERS_color.png "We Got Coders")
+![We Got Coders Logo](http://wegotcoders.com/assets/logos/WEGOTCODERS_color_linked_in.png "We Got Coders")
 
 # Programming Challenge
 
