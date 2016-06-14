@@ -4,7 +4,7 @@ require './lib/profile'
 set :application_id, 'EDIT_ME'
 set :secret, 'EDIT_ME'
 set :redirect_uri, 'http://localhost:4567/callback'
-set :site_url, 'http://wegotcoders.com'
+set :site_url, 'https://wegotcoders.com'
 set :session_secret, 'secret'
 enable :sessions
 
