@@ -2,10 +2,11 @@
   <h3>Welcome to <%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+   
 
+ <div class="jumbotron">
    <div class="row">
-
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3" >
    
    
           <div class="panel panel-info">
@@ -17,42 +18,91 @@
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>
-                      
-                      <% @profile.each do |field, value| %>
-                      <tr> 
-                        <td>
-                          <h4><%= field %></h4>
-                        </td>
-                        <td>
-                          <p class="profile-value"><%= value %></p>
-                        </td>
-                      </tr>
-                      <% end %>
-                    </tbody>
+
+                        <div class="profile-section">
+                          <h4>Full Name:</h4>
+                          <p class="profile-value"> <%= @profile["first_name"] + ' ' + @profile["last_name"] %></p>
+                        </div>
+
+                        <div class="profile-section">
+                          <h4>Gender:</h4>
+                          <p class="profile-value"> <%= @profile["gender"] %></p>
+                        </div>   
+
+                        <div class="profile-section">
+                          <h4>Date of Birth:</h4>
+                          <p class="profile-value"> <%= @profile["dob"] %></p>
+                        </div> 
+
+                        <div class="profile-section">
+                          <h4>Phone Number:</h4>
+                          <p class="profile-value"> <%= @profile["phone_number"] %></p>
+                        </div>
+
+                        <div class="profile-section">
+                          <h4>Codecademy Account:</h4>
+                          <p class="profile-value"> <%= @profile["codecademy"] %></p>
+                        </div> 
+                      </div>
+
+                     </tbody>
                   </table>
                 </div>
               </div>
+              </div>
             </div>
-                 <div class="panel-footer">
-                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
-                        <span class="pull-right">
-                            <a href="edit.erb" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
-                        </span>
-                    </div>
-            
           </div>
         </div>
+
+        <h2 align="center">Let's Connect</h2>
+         <ul class="center list-inline">
+                    <li>
+                        <a href="https://twitter.com/TafDev1" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-twitter fa-5x"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/TafDev" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-github fa-5x"></i> <span class="network-name">Github</span></a>
+                    </li>
+                </ul>
+
+                <br>
+                <br>
+
+       <h2 align="center">Skills</h2>
+       <hr>
+
+      <h4>Ruby Fundamentals:</h4>
+        <div class="progress">
+        <div class="progress-bar progress-bar-striped active" role="progressbar"
+      aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+        Complete
       </div>
+    </div>
+
+    <h4>Javascript Fundamentals:</h4>
+        <div class="progress">
+        <div class="progress-bar progress-bar-striped active" role="progressbar"
+      aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+        Complete
+      </div>
+    </div>
+
+      <h4>Web Fundamentals:</h4>
+        <div class="progress">
+        <div class="progress-bar progress-bar-striped active" role="progressbar"
+      aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+        Complete
+      </div>
+    </div>
+  </div>
 
 
-
-  <div id="stats" class="box">
+  <div id="stats" class=">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
 
-  <div id="problems" class="box">
+  <div id="problems" class=">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
   </div>
@@ -74,11 +124,6 @@
 
           <br>
 
-          <label for="trainee[dob]" class="col-sm-3 control-label">Edit DOB: </label>
-          <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
-
-          <br>
-
           <label for="trainee[first_name]" class="col-sm-3 control-label">First Name: </label>
           <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
 
@@ -86,11 +131,6 @@
 
           <label for="trainee[employment_status]" class="col-sm-3 control-label">Employment Status: </label>
           <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
-
-          <br>
-
-          <label for="trainee[gender]" class="col-sm-3 control-label">Gender: </label>
-          <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/>
 
           <br>
 
@@ -114,28 +154,8 @@
 
           <br>
 
-          <label for="trainee[primes_sum]" class="col-sm-3 control-label">Primes Sum: </label>
-          <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
-
-          <br>
-
           <label for="trainee[twitter]" class="col-sm-3 control-label">Twitter: </label>
           <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
-
-          <br>
-
-          <label for="trainee[js_track_completedness]" class="col-sm-3 control-label">Codecademy Javascript progress: </label>
-          <input type="text" name="trainee[js_track_completedness]" value="<%= @profile["js_track_completedness"] %>"/>
-
-          <br>
-
-          <label for="trainee[ruby_track_completedness]" class="col-sm-3 control-label">Codecademy Ruby progress: </label>
-          <input type="text" name="trainee[ruby_track_completedness]" value="<%= @profile["ruby_track_completedness"] %>"/>
-
-          <br>
-
-          <label for="trainee[web_track_completedness]" class="col-sm-3 control-label">Codecademy Web progress: </label>
-          <input type="text" name="trainee[web_track_completedness]" value="<%= @profile["web_track_completedness"] %>"/>
 
         </div>
       </div>
@@ -161,6 +181,10 @@
   var total_words = 0;
 
   // TODO - Count the number of words in the profile.
+      for (var i = 0; i < profile_values.length; i++) {
+        string_array= profile_values[i].innerHTML.split(" ");
+        total_words += string_array.length;
+      }
   // hint - look at what the innerHTML property provides.
 
   document.getElementById('word-count').innerHTML = total_words;
