@@ -10,7 +10,7 @@
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Tafadzwa</h3>
+              <h3 class="panel-title">Tafadzwa Chombo</h3>
             </div>
             <div class="panel-body">
               <div class="row">
@@ -31,9 +31,6 @@
                       <% end %>
                     </tbody>
                   </table>
-                  
-                  <a href="#" class="btn btn-primary">My Sales Performance</a>
-                  <a href="#" class="btn btn-primary">Team Sales Performance</a>
                 </div>
               </div>
             </div>
@@ -62,7 +59,7 @@
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
-  <div class="box">
+  <div class="jumbotron">
     <h3>Edit Profile</h3>
 
     <form action="/update" method="POST">
@@ -73,6 +70,10 @@
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy Username: </label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>

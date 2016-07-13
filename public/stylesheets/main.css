@@ -4,9 +4,8 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
-  background-image: url('images/3.jpg');
+background: -webkit-linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), -webkit-linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), -webkit-linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), -webkit-linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); background: -ms-linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), -ms-linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), -ms-linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), -ms-linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); background: linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); 
 }
-
 #logo {
   text-align: center;
 }
@@ -53,6 +52,10 @@ h4 {
   border-radius: 99em;
   border: 5px solid #eee;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);  
+}
+
+.table{
+  opacity: 0.6;
 }
 
 .welcome {
