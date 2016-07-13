@@ -4,8 +4,11 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
-background: -webkit-linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), -webkit-linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), -webkit-linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), -webkit-linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); background: -ms-linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), -ms-linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), -ms-linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), -ms-linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); background: linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); 
+  background: -webkit-linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), -webkit-linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), -webkit-linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), -webkit-linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); background: -ms-linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), -ms-linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), -ms-linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), -ms-linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); background: linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
 #logo {
   text-align: center;
 }
@@ -56,7 +59,11 @@ h4 {
 
 .table{
   opacity: 0.6;
+  background-color: transparent;
+  height: 100px !important;
+  overflow: scroll;
 }
+
 
 .welcome {
   text-align: center;
