@@ -1,12 +1,25 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <h3>Welcome to <%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  <div class="circle" style="background-image: 
+       url('images/me.jpg')">
+  </div>
+  
   <% @profile.each do |field, value| %>
-    <div class="profile-section box">
+    <div class="profile-section">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
+    <hr>
+  <% end %>
+
+  <% @profile.each do |field, value| %>
+    <div class="profile-section">
+      <h4><%= field %></h4>
+      <p class="profile-value"><%= value %></p>
+    </div>
+    <hr>
   <% end %>
 
   <div id="stats" class="box">
