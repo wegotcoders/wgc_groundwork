@@ -18,32 +18,30 @@
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>
+                      <tr>
+                          <td><h4>Full Name:</h4></td>
+                          <td><p> <%= @profile["first_name"] + ' ' + @profile["last_name"] %></p></td>              
+                      </tr>
 
-                        <div class="profile-section">
-                          <h4>Full Name:</h4>
-                          <p class="profile-value"> <%= @profile["first_name"] + ' ' + @profile["last_name"] %></p>
-                        </div>
+                      <tr>
+                          <td><h4>Gender:</h4></td>
+                          <td><p> <%= @profile["gender"] %></p></td>
+                      </tr>  
 
-                        <div class="profile-section">
-                          <h4>Gender:</h4>
-                          <p class="profile-value"> <%= @profile["gender"] %></p>
-                        </div>   
+                      <tr>
+                          <td><h4>Date of Birth:</h4></td>
+                          <td><p> <%= @profile["dob"] %></p></td>
+                      </td>
 
-                        <div class="profile-section">
-                          <h4>Date of Birth:</h4>
-                          <p class="profile-value"> <%= @profile["dob"] %></p>
-                        </div> 
+                      <tr>
+                          <td><h4>Phone Number:</h4></td>
+                          <td><p> <%= @profile["phone_number"] %></p></td>
+                      </tr>
 
-                        <div class="profile-section">
-                          <h4>Phone Number:</h4>
-                          <p class="profile-value"> <%= @profile["phone_number"] %></p>
-                        </div>
-
-                        <div class="profile-section">
-                          <h4>Codecademy Account:</h4>
-                          <p class="profile-value"> <%= @profile["codecademy"] %></p>
-                        </div> 
-                      </div>
+                      <tr>
+                          <td><h4>Codecademy Account:</h4><td>
+                          <td><p><a href="https://www.codecademy.com/tafdev" target="_blank"><%= @profile["codecademy"] %> </p></td>
+                      </tr>                     
 
                      </tbody>
                   </table>
@@ -56,13 +54,16 @@
 
         <h2 align="center">Let's Connect</h2>
          <ul class="center list-inline">
+
                     <li>
                         <a href="https://twitter.com/TafDev1" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-twitter fa-5x"></i> <span class="network-name">Twitter</span></a>
                     </li>
+
                     <li>
                         <a href="https://github.com/TafDev" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-github fa-5x"></i> <span class="network-name">Github</span></a>
                     </li>
-                </ul>
+
+          </ul>
 
                 <br>
                 <br>
@@ -96,13 +97,13 @@
   </div>
 
 
-  <div id="stats" class=">
+  <div id="stats">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
 
-  <div id="problems" class=">
+  <div id="problems">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
   </div>
@@ -177,14 +178,10 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
+  var profile_values = document.getElementsByClassName('row');
   var total_words = 0;
 
   // TODO - Count the number of words in the profile.
-      for (var i = 0; i < profile_values.length; i++) {
-        string_array= profile_values[i].innerHTML.split(" ");
-        total_words += string_array.length;
-      }
   // hint - look at what the innerHTML property provides.
 
   document.getElementById('word-count').innerHTML = total_words;
