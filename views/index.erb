@@ -7,70 +7,58 @@
 <div class="jumbotron">
  <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3" >
-   
-   
-    <div class="panel panel-info">
-      
+    <div class="panel">     
       <div class="panel-body">
         <div class="row">
-          <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="images/me.jpg" class="img-circle img-responsive circle"> </div>
-          
-          <div class=" col-md-9 col-lg-9 "> 
-            <table class="table table-user-information">
-              <tbody>
-                <tr>
-                  
-                  <td><h4>Full Name:</h4></td>
-                  <div class="profile-value">
-                    <td><p> <%= @profile["first_name"] + ' ' + @profile["last_name"] %></p>
-                    </div>
-                  </td>  
-                  
-                </tr>
+          <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="images/me.jpg" class="img-responsive circle"> </div>
+            <div class=" col-md-9 col-lg-9 "> 
+              <table class="table">
+                <tbody>
 
-                <tr>
-                  <td><h4>Gender:</h4></td>
-                  <div class="profile-value">
-                    <td><p> <%= @profile["gender"] %></p></td>
-                  </div>
-                </tr>  
+                  <tr>
+                    <td><h4>Full Name:</h4></td>
+                    <td><p class="profile-value"> <%= @profile["first_name"] + ' ' + @profile["last_name"] %></p>
+                    </td>  
+                  </tr>
 
-                <tr>
-                  <td><h4>Date of Birth:</h4></td>
-                  <div class="profile-value">
-                    <td><p> <%= @profile["dob"] %></p></td>
-                  </div>
-                </td>
+                  <tr>
+                    <td><h4>Gender:</h4></td>
+                    <td><p class="profile-value"> <%= @profile["gender"] %></p></td>
+                  </tr>  
 
-                <tr>
-                  <td><h4>Phone Number:</h4></td>
-                  <div class="profile-value">
-                    <td><p> <%= @profile["phone_number"] %></p></td>
-                  </div>
-                </tr>
+                  <tr>
+                    <td><h4>Date of Birth:</h4></td>
+                    <td><p class="profile-value"> <%= @profile["dob"] %></p></td>
+                  </td>
 
-                <tr>
-                  <td><h4>Primes:</h4></td>
-                  <div class="profile-value">
-                    <td><p> <%= @profile["primes_sum"] %></p></td>
-                  </div>
-                </tr>
+                  <tr>
+                    <td><h4>Phone Number:</h4></td>
+                    <td><p class="profile-value"> <%= @profile["phone_number"] %></p></td>
+                  </tr>
 
-                <tr>
-                  <td><h4>Codecademy Account:</h4><td>
-                    <div class="profile-value">
-                      <td><p><a href="https://www.codecademy.com/tafdev" target="_blank"><%= @profile["codecademy"] %> </p></td>
-                    </div>
-                  </tr>                     
+                  <tr>
+                    <td><h4>Primes:</h4></td>
+                    <td><p class="profile-value"> <%= @profile["primes_sum"] %></p></td>
+                  </tr>
 
-                </tbody>
-              </table>
+                  <tr>
+                    <td><h4>Codecademy Account:</h4></td>
+                    <td><p class="profile-value"><a href="https://www.codecademy.com/tafdev" target="_blank"><%= @profile["codecademy"] %> </a></p></td>
+                  </tr> 
+
+                  <tr>
+                    <td><h4>About:</h4></td>
+                    <td><p class="profile-value"> <%= @profile["about"] %></p></td>
+                  </tr>                    
+
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
   <h2 align="center">Let's Connect</h2>
   <ul class="center list-inline">
@@ -178,14 +166,14 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-console.log("I am Javascript!");
+//console.log("I am Javascript!");
 
 var profile_values = document.getElementsByClassName('profile-value');
 var total_words = 0;
 
   // TODO - Count the number of words in the profile.
-  for (i=0; i<profile_values.length; i++){
-    total_words += profile_values[i].innerHTML.split(' ').length;
+  for (i = 0; i < profile_values.length; i++) {
+    total_words += profile_values[i].innerHTML.trim().split(/\s+/).length;
   }
 
   // hint - look at what the innerHTML property provides.
