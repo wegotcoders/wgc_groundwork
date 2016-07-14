@@ -15,3 +15,7 @@ Primes.sum_to(100)
 Primes.sum_to(1000)
 Primes.sum_to(10000)
 
+#puts Primes.sum_to(2000000)
+#commented out the 2 million soloution as it takes a while to run but it does work
+
+
