@@ -1,8 +1,12 @@
+
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background: -webkit-linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), -webkit-linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), -webkit-linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), -webkit-linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); background: -ms-linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), -ms-linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), -ms-linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), -ms-linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); background: linear-gradient(45deg, hsl(59, 100%, 68%) 0%, transparent 70%), linear-gradient(135deg, hsl(328, 94%, 70%) 10%, transparent 80%), linear-gradient(225deg, hsl(84, 91%, 75%) 10%, transparent 80%), linear-gradient(315deg, hsl(329, 99%, 74%) 50%, transparent 100%); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #logo {
@@ -13,27 +17,89 @@ body {
   padding: 1em;
 }
 
-.box {
+/*.box {
   border: 1px solid #999;
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
-}
+  }*/
 
-.welcome {
-  text-align: center;
-}
+  h3 {
+    font-size: 1.5em;
+    text-align: center;
+  }
 
-h3 {
-  font-size: 1.5em;
-}
+  h4 {
+    font-size: 1.2em;
+  }
 
-.error {
-  text-align: center;
-}
+  .error {
+    text-align: center;
+  }
 
-.error h2 {
-  font-size: 1.5em;
-}
+  .error h2 {
+    font-size: 1.5em;
+  }
 
-/* TODO - Add your own styles here */
+  /* TODO - Add your own styles here */
+  .circle {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 1em auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    border-radius: 99em;
+    border: 5px solid #eee;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);  
+  }
+
+
+  .table{
+    opacity: 0.6;
+    background-color: transparent;
+    height: 100px !important;
+    width: 100%;
+  }
+
+  .style {
+    background-color: #f5f5f5;
+    width: 600px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .center {
+    text-align: center;
+  }
+
+  .welcome {
+    text-align: center;
+  }
+
+  #problems {
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  #problems a {
+    border: 1px solid #428bca;
+    padding: 10px;
+  }
+
+  #problems a:hover{
+    border: 1px solid #5cb85c;
+    text-decoration: none;
+    color: #5cb85c;
+  }
+
+  #stats {
+    text-align: center;
+  }
+
+  .large {
+    font-size: 70px;
+    color: green;
+  }
