@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="http://wegotcoders.com/assets/logos/WEGOTCODERS_color_linked_in.png" alt="We Got Coders" />
-</p>
 
 # Programming Challenge
 

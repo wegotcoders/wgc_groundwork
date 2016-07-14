@@ -1,8 +1,8 @@
 require 'sinatra'
 require './lib/profile'
 
-set :application_id, 'EDIT_ME'
-set :secret, 'EDIT_ME'
+set :application_id, '965768a2ca1bfdc1abec97f9f2b1dd15ce73cd7e4482e70b2ab6003459711ec3'
+set :secret, 'a008c5ed517b7b8767afafc5824b88e46d789cd67f18557eec9144d0f48424de'
 set :redirect_uri, 'http://localhost:4567/callback'
 set :site_url, 'https://wegotcoders.com'
 set :session_secret, 'secret'
@@ -35,6 +35,7 @@ post '/update' do
     redirect '/'
   end
 end
+
 
 include Sinatra::OauthRoutes
 
