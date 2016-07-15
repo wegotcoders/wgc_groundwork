@@ -4,7 +4,7 @@
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %> <!-- N: Creates boxes with H4 profile fields (e.g. first_name) and p profile values (e.g. "Nicole") on next line -->
     <div class="profile-section box">
-      <h4 class="profile_field"><%= field "+ " %></h4>
+      <h4 class="profile_field"><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
   <% end %>
