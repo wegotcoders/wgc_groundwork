@@ -26,6 +26,7 @@ body {
 
 h3 {
   font-size: 1.5em;
+  font-color: red;
 }
 
 .error {
@@ -37,3 +38,7 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+#header {
+  font-family: "Braggadocio", sans-serif; 
+  color: red;
+}

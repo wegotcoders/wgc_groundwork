@@ -1,4 +1,4 @@
-module WeGotCoders
+ module WeGotCoders
   class Trainee
     include HTTParty
 

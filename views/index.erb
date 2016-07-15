@@ -1,13 +1,29 @@
 <% if @profile %>   <!-- N: @profile = instance variable that stores a hash -->
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <h3 id="header"><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %> <!-- N: Creates boxes with H4 profile fields (e.g. first_name) and p profile values (e.g. "Nicole") on next line -->
-    <div class="profile-section box">
-      <h4 class="profile_field"><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+    <div class="profile-section box" id="basic_info">
+  		<h2>Basic Information</h2>
+  		<br> </br>
+  		<h4>First Name: Nicole</h4>
+  		<h4>Last Name: Sentis</h4>
+  		<h4>Gender: Female</h4>
+  		<h4>Date of Birth: 23 April 1986</h4> 
+  		<h4>Employment Status: Volunteer</h4> 
+    </div>  
+    
+    <div class="profile-section box" id="contact_info">
+  		<h2>Contact Information</h2>
+  		<h4>Email Address: nicole.sentis@gmail.com</h4>
+  		<h4>Phone Number: 07845587309</h4>
+  		<h4>Find me on: </h4>
+  		<ul> 
+  			<li> <a href="https://uk.linkedin.com/in/nicolesentis">LinkedIn</a> </li> 
+  			<li> <a href="https://www.facebook.com/nicole.sentis">Facebook</a> </li>
+  			<li> <a href="https://www.codecademy.com/gigaMaster22806">Codecademy</a> </li>
+  			<li> <a href="https://github.com/NicoleAMS">GitHub</a> </li>  
+  		</ul> 
     </div>
-  <% end %>
 
   <div id="stats" class="box"> <!-- N: Creates H3 Stats box for word count code -->
     <h3>Stats</h3>
@@ -37,6 +53,7 @@
     </form>
     
   </div>
+  
   
 <% else %>
   <div class="welcome">

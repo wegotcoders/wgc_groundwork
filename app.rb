@@ -1,8 +1,8 @@
 require 'sinatra'
 require './lib/profile'
 
-set :application_id, 'EDIT_ME'
-set :secret, 'EDIT_ME'
+set :application_id, 'e4af0fd01826797ceb44903c46dd21fda63b3e2c4a288e6b9a7f115daaec7e11'
+set :secret, 'a0c90aa4f8c539db9833ea9a1fb3e429556b05389ec2ab6f6e8b165b7f94f3bd'
 set :redirect_uri, 'http://localhost:4567/callback'
 set :site_url, 'https://wegotcoders.com'
 set :session_secret, 'secret'
@@ -22,7 +22,8 @@ get '/' do
   if signed_in?
     @profile = trainee.get_profile
   end
-
+  
+  
   erb :index, :layout => :main
 end
 
