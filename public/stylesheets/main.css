@@ -2,20 +2,41 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  color: #333335;
+  font-weight: bold;
 }
 
 #logo {
-  text-align: center;
+  text-align: center; 
+  background-color: #FCFCFC;
+}
+
+#cover-photo {
+  height: 21em;
+  background:url(https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/935256_597938700218265_424213745_n.jpg?oh=4d0e24ff718ca965cb7ba860a970408c&oe=5822404C);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0em -20em; 
+  padding: 1em;
+  margin-bottom: 0.5em;
+  border: 2px solid #FCFCFC;
+
+}
+
+#me {
+  border: 4px solid #FCFCFC;
+  float: right;
+  margin-top: -10em;
 }
 
 #content {
   padding: 1em;
+  background-color: #1A1A1A; 
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
+  border: 2px solid #09992a;
+  background-color: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
 }
@@ -26,7 +47,8 @@ body {
 
 h3 {
   font-size: 1.5em;
-  font-color: red;
+  color: #B51B28;
+  font-family: "PT Sans";
 }
 
 .error {
@@ -39,6 +61,16 @@ h3 {
 
 /* TODO - Add your own styles here */
 #header {
-  font-family: "Braggadocio", sans-serif; 
-  color: red;
+  font-family: "PT Sans Bold", sans-serif; 
+  color: #09992a;
+  font-size: 2em;
+  padding: 0.6em;
+}
+
+.profile-section {
+  font-family: "PT Sans";
+}
+
+.profile-section h2 {
+
 }

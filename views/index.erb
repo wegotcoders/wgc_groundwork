@@ -1,10 +1,13 @@
 <% if @profile %>   <!-- N: @profile = instance variable that stores a hash -->
-  <h3 id="header"><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <h3 id="header"><%= @profile["first_name"].upcase %>'S AMAZING PROFILE</h3>
+  
+  <div id="cover-photo">
+  	<img src="/images/me2.jpg" width="15%" id="me"/>
+  </div> 
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
     <div class="profile-section box" id="basic_info">
-  		<h2>Basic Information</h2>
-  		<br> </br>
+  		<h3><b>Basic Information</b></h3>
   		<h4>First Name: Nicole</h4>
   		<h4>Last Name: Sentis</h4>
   		<h4>Gender: Female</h4>
@@ -13,16 +16,17 @@
     </div>  
     
     <div class="profile-section box" id="contact_info">
-  		<h2>Contact Information</h2>
+  		<h3>Contact Information</h3>
   		<h4>Email Address: nicole.sentis@gmail.com</h4>
   		<h4>Phone Number: 07845587309</h4>
-  		<h4>Find me on: </h4>
-  		<ul> 
+  		<p>Find me on: 
+  		  <ul> 
   			<li> <a href="https://uk.linkedin.com/in/nicolesentis">LinkedIn</a> </li> 
   			<li> <a href="https://www.facebook.com/nicole.sentis">Facebook</a> </li>
   			<li> <a href="https://www.codecademy.com/gigaMaster22806">Codecademy</a> </li>
   			<li> <a href="https://github.com/NicoleAMS">GitHub</a> </li>  
-  		</ul> 
+  		  </ul> 
+  		 </p>
     </div>
 
   <div id="stats" class="box"> <!-- N: Creates H3 Stats box for word count code -->
