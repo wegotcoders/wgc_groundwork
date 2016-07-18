@@ -3,7 +3,6 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333335;
-  font-weight: bold;
 }
 
 #logo {
@@ -19,7 +18,7 @@ body {
   background-position: 0em -20em; 
   padding: 1em;
   margin-bottom: 0.5em;
-  border: 2px solid #FCFCFC;
+  /*border: 2px solid #FCFCFC;*/
 
 }
 
@@ -35,10 +34,11 @@ body {
 }
 
 .box {
-  border: 2px solid #09992a;
+  /*border: 2px solid #09992a;*/
   background-color: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
+  clear: both;
 }
 
 .welcome {
@@ -49,6 +49,7 @@ h3 {
   font-size: 1.5em;
   color: #B51B28;
   font-family: "PT Sans";
+  font-weight: bold; 
 }
 
 .error {
@@ -69,8 +70,42 @@ h3 {
 
 .profile-section {
   font-family: "PT Sans";
+  position: relative;
+  float: left;
+  /*border: 2px solid #09992a;*/
 }
 
-.profile-section h2 {
-
+.main {
+  position: relative;
+  float: right;
+  height: 25em;
+  width: 67.5em;
+  padding: 1em;
+  /*border: 2px solid #FCFCFC;*/
+  background-color: #FCFCFC; 
+  margin-bottom: 0.5em;
 }
+
+th {
+  text-align: left;
+}
+
+td:first-child {
+  font-weight: bold; 
+  padding-right: 0.5em;
+}
+
+.link {
+  color: #09992a;
+  text-decoration: none; 
+}
+
+.link:hover {
+  font-weight: bold; 
+}
+
+.link:visited {
+  color: #333335; 
+}
+
+

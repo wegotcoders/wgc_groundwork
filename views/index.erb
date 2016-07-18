@@ -6,28 +6,61 @@
   </div> 
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-    <div class="profile-section box" id="basic_info">
-  		<h3><b>Basic Information</b></h3>
-  		<h4>First Name: Nicole</h4>
-  		<h4>Last Name: Sentis</h4>
-  		<h4>Gender: Female</h4>
-  		<h4>Date of Birth: 23 April 1986</h4> 
-  		<h4>Employment Status: Volunteer</h4> 
-    </div>  
-    
-    <div class="profile-section box" id="contact_info">
-  		<h3>Contact Information</h3>
-  		<h4>Email Address: nicole.sentis@gmail.com</h4>
-  		<h4>Phone Number: 07845587309</h4>
-  		<p>Find me on: 
-  		  <ul> 
-  			<li> <a href="https://uk.linkedin.com/in/nicolesentis">LinkedIn</a> </li> 
-  			<li> <a href="https://www.facebook.com/nicole.sentis">Facebook</a> </li>
-  			<li> <a href="https://www.codecademy.com/gigaMaster22806">Codecademy</a> </li>
-  			<li> <a href="https://github.com/NicoleAMS">GitHub</a> </li>  
-  		  </ul> 
-  		 </p>
+    <div class="profile-section box">
+    	<table> 
+    		<tr> <th colspan="2"> <h3> Basic Information </h3> </th> </tr>
+	 		<tr> <td> First Name: </td>
+				 <td> Nicole </td> </tr>
+    		<tr> <td> Last Name: </td> 
+    			 <td> Sentis </td> </tr>
+    		<tr> <td> Gender: </td>
+    			 <td> Female </td> </tr>
+    		<tr> <td> Date of Birth: </td>
+    		     <td> 23 April 1986 </td> </tr>
+    		<tr> <td> Work: </td>
+    		     <td> Volunteer </td> </tr>
+    	</table> 
+  		<br> </br>
+    	<table> 
+    		<tr> <th colspan="2"> <h3> Contact Information </h3> </th> </tr>
+	 		<tr> <td> Email: </td>
+				 <td> nicole.sentis@gmail.com </td> </tr>
+    		<tr> <td> Phone: </td> 
+    			 <td> 07845587309 </td> </tr>
+    		<tr> <td> Find me on: </td>
+  		  		 <td> <ul> 
+  						<li> <a href="https://uk.linkedin.com/in/nicolesentis" class="link">LinkedIn</a> </li> 
+  						<li> <a href="https://www.facebook.com/nicole.sentis" class="link">Facebook</a> </li>
+  						<li> <a href="https://www.codecademy.com/gigaMaster22806" class="link">Codecademy</a> </li>
+  						<li> <a href="https://github.com/NicoleAMS" class="link">GitHub </a> </li>  
+  		  			</ul> 
+    			</td>		  
+    	</table> 
+    	<br> </br>
+    	
+        <h3>Edit Profile</h3>
+
+        <form action="/update" method="POST"> <!-- N: <form> is used to create an HTML form for user input -->
+          <fieldset>                          <!-- N: <fieldset> is used to group related elements in a form. It draws a box around related elements. -->
+            <div class="form-group">
+              <label for="trainee[about]">About</label>  <!-- N: <label> defines a label for an <input> element. Its for attribute should be equal to the id attribute of the related element. -->
+              <input id="trainee[about]" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/> <!-- N: <input> specifies an input field where the user can enter data. Type can be things like text, button, password, checkbox. -->
+            </div>
+
+        <!-- TODO - Add more fields so that your profile can be edited -->
+        
+            <div class="form-group">
+            	<label for="trainee[address]">Address</lable>
+            	<input id="trainee[address]" type="text" name="trainee[address]" value="<%= @profile["address"] %>" /> 
+            </div> 
+            
+            <input type="submit" value="Update Profile" class="btn btn-primary" /> 
+          </fieldset>
+         </form>
     </div>
+    
+    <div class="main">
+    </div> 
 
   <div id="stats" class="box"> <!-- N: Creates H3 Stats box for word count code -->
     <h3>Stats</h3>
@@ -37,26 +70,9 @@
 
   <div id="problems" class="box"> <!-- N: Creates H3 Programming Problems box for Prime Number code -->
     <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+    <a href="/primes" class="link">My Prime Number Solution</a>
   </div>
 
-  <div class="box"> <!-- N: Creates H3 Edit Profile box for adding more fields; also includes an 'About' label -->
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST"> <!-- N: <form> is used to create an HTML form for user input -->
-      <fieldset>                          <!-- N: <fieldset> is used to group related elements in a form. It draws a box around related elements. -->
-        <div class="form-group">
-          <label for="trainee[about]">About</label>  <!-- N: <label> defines a label for an <input> element. Its for attribute should be equal to the id attribute of the related element. -->
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/> <!-- N: <input> specifies an input field where the user can enter data. Type can be things like text, button, password, checkbox. -->
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-    
-  </div>
   
   
 <% else %>

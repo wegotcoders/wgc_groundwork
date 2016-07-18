@@ -29,6 +29,8 @@ end
 
 post '/update' do
   response = trainee.update_profile(params)
+  puts trainee
+  puts params
 
   if @errors = response["errors"]
     erb :error, :layout => :main
