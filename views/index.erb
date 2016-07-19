@@ -38,20 +38,25 @@
     	</table> 
     	<br> </br>
     	
-        <h3>Edit Profile</h3>
+        <h3>Edit Profile: Address</h3>
 
         <form action="/update" method="POST"> <!-- N: <form> is used to create an HTML form for user input -->
           <fieldset>                          <!-- N: <fieldset> is used to group related elements in a form. It draws a box around related elements. -->
             <div class="form-group">
-              <label for="trainee[about]">About</label>  <!-- N: <label> defines a label for an <input> element. Its for attribute should be equal to the id attribute of the related element. -->
-              <input id="trainee[about]" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/> <!-- N: <input> specifies an input field where the user can enter data. Type can be things like text, button, password, checkbox. -->
+              <label for="trainee[address]">Street: </label> <!-- N: <label> defines a label for an <input> element. Its for attribute should be equal to the id attribute of the related element. -->
+              <input id="trainee[address]" type="text" name="trainee[address]" value="16 Churchill Gardens"/> <!-- N: <input> specifies an input field where the user can enter data. Type can be things like text, button, password, checkbox. -->
             </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
         
             <div class="form-group">
-            	<label for="trainee[address]">Address</lable>
-            	<input id="trainee[address]" type="text" name="trainee[address]" value="<%= @profile["address"] %>" /> 
+            	<label for="trainee[town]">Town/City: </label>
+            	<input id="trainee[town]" type="text" name="trainee[town]" value="Newcastle upon Tyne" /> 
+            </div> 
+            
+            <div class="form-group">
+            	<label for="trainee[postcode]">Postcode: </label>
+            	<input id="trainee[postcode]" type="text" name="trainee[postcode]" value="NE2 1HB" /> 
             </div> 
             
             <input type="submit" value="Update Profile" class="btn btn-primary" /> 

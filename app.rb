@@ -10,9 +10,15 @@ enable :sessions
 
 get '/primes' do
   # TODO - Can we make this dynamic?
-  limit = 100
-
+  #N: Code works, but takes forever to load the primes page and for now input only in terminal 
+  def limit
+      puts "Choose a limit: "
+      limit = gets.to_i
+      return limit
+  end
+  
   # TODO - add your prime number solution in the primes.rb file.
+  
   @sum = Primes.sum_to(limit)
 
   erb :primes, :layout => :main
@@ -29,8 +35,8 @@ end
 
 post '/update' do
   response = trainee.update_profile(params)
-  puts trainee
-  puts params
+  #puts trainee
+  #puts params
 
   if @errors = response["errors"]
     erb :error, :layout => :main

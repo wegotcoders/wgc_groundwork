@@ -90,7 +90,7 @@ th {
   text-align: left;
 }
 
-td:first-child {
+td:first-child, label {
   font-weight: bold; 
   padding-right: 0.5em;
 }
@@ -108,4 +108,26 @@ td:first-child {
   color: #333335; 
 }
 
+.form-group {
+  padding-bottom: 0.5em; 
+}
 
+.btn {
+  background-color: #09992a;
+  color: #FCFCFC; 
+  padding:  0.5em 1em 0.5em 1em;
+}
+
+.btn:hover {
+  background-color: #333335;
+}
+
+/*Prime Numbers*/
+h1 {
+  color: #FCFCFC;
+  font-size: 2em; 
+}
+
+p {
+  color: #FCFCFC;
+}
