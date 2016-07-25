@@ -23,9 +23,9 @@ body {
 }
 
 #me {
-  border: 4px solid #FCFCFC;
+  border: 0.5em solid #FCFCFC;
   float: right;
-  margin-top: -10em;
+  margin-top: -12em;
 }
 
 #content {
@@ -34,10 +34,12 @@ body {
 }
 
 .box {
-  /*border: 2px solid #09992a;*/
+  border: 2px solid #09992a;
   background-color: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
+  color: #333335;
+  padding: 0.5em;
+  padding-top: 1em;
+  margin: 0.5em;
   clear: both;
 }
 
@@ -45,7 +47,7 @@ body {
   text-align: center;
 }
 
-h3 {
+.col-md-4 h3, .left h3 {
   font-size: 1.5em;
   color: #B51B28;
   font-family: "PT Sans";
@@ -61,34 +63,43 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
-#header {
+
+.page-header {
   font-family: "PT Sans Bold", sans-serif; 
   color: #09992a;
   font-size: 2em;
-  padding: 0.6em;
 }
 
-.profile-section {
+/*.profile-section {
   font-family: "PT Sans";
   position: relative;
   float: left;
-  /*border: 2px solid #09992a;*/
-}
+  border: 2px solid #09992a;
+}*/
+
 
 .main {
-  position: relative;
-  float: right;
-  height: 25em;
-  width: 67.5em;
-  padding: 1em;
-  /*border: 2px solid #FCFCFC;*/
-  background-color: #FCFCFC; 
-  margin-bottom: 0.5em;
+  color: #FCFCFC;
+  background-color: #333333; 
+  padding: 0.5em;
+  margin: 0.5em;
 }
 
-th {
-  text-align: left;
+.right {
+  background-color: #FCFCFC;
+  color: #333333;
+  padding: 0.5em; 
+  margin: 0.5em; 
+  margin-right: -0.5em; 
+  border: 2px solid #09992a;
 }
+
+.col-md-8 h1 {
+  font-family: "PT Sans Bold", sans-serif; 
+  color: #09992a;
+  font-size: 2em;
+}
+
 
 td:first-child, label {
   font-weight: bold; 
@@ -112,7 +123,15 @@ td:first-child, label {
   padding-bottom: 0.5em; 
 }
 
-.btn {
+.table li {
+  list-style: none; 
+}
+
+.left ul {
+ padding: 0.5em;
+}
+
+/*.btn {
   background-color: #09992a;
   color: #FCFCFC; 
   padding:  0.5em 1em 0.5em 1em;
@@ -120,14 +139,15 @@ td:first-child, label {
 
 .btn:hover {
   background-color: #333335;
-}
+}*/
+
 
 /*Prime Numbers*/
-h1 {
+/*h1 {
   color: #FCFCFC;
   font-size: 2em; 
 }
 
 p {
   color: #FCFCFC;
-}
+}*/
