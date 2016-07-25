@@ -29,7 +29,6 @@ get '/' do
     @profile = trainee.get_profile
   end
   
-  
   erb :index, :layout => :main
 end
 
