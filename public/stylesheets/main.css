@@ -13,19 +13,18 @@ body {
   padding: 1em;
 }
 
-.box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
+.welcome {
+  text-align: center;
 }
 
-.welcome {
+h2 {
+  font-size: 2em;
   text-align: center;
 }
 
 h3 {
   font-size: 1.5em;
+  margin: 0.6em;
 }
 
 .error {
@@ -36,4 +35,42 @@ h3 {
   font-size: 1.5em;
 }
 
-/* TODO - Add your own styles here */
+p, img {
+  margin: 1em;
+}
+
+.profile, .tracks_sums, .extras {
+  width: 960px;
+  margin: 0 auto;
+  clear: both;
+}
+
+.profile_picture, .profile_details, .profile_contact {
+  font-size: 1em;
+  background-color: #e6e6e6;
+  background: -webkit-linear-gradient(#e6e6e6, #f2f2f2);
+  background: -o-linear-gradient(#e6e6e6, #f2f2f2);
+  background: -moz-linear-gradient(#e6e6e6, #f2f2f2);
+  background: linear-gradient(#e6e6e6, #f2f2f2);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  width: 300px;
+  margin: 10px;
+  float: left;
+}
+
+.tracks_sums_details, .box {
+  font-size: 1em;
+  background-color: #e6e6e6;
+  background: -webkit-linear-gradient(#e6e6e6, #f2f2f2);
+  background: -o-linear-gradient(#e6e6e6, #f2f2f2);
+  background: -moz-linear-gradient(#e6e6e6, #f2f2f2);
+  background: linear-gradient(#e6e6e6, #f2f2f2);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  width: 940px;
+  margin: 10px;
+  float: left;
+}
