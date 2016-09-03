@@ -35,13 +35,13 @@ h3 {
   font-size: 1.5em;
 }
 
-ul, p, img, label, input {
+li, p, img, label, input {
   margin: 1em;
 }
 
 /* outer 960px column styling */
 
-.profile, .extras {
+.body, .profile, .extras {
   width: 960px;
   margin: 0 auto;
   clear: both;
