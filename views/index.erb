@@ -11,20 +11,24 @@
 
     <div class="profile_details">
       <h3>Profile Details</h3>
-      <p>First Name: <%= @profile["first_name"] %> </p>
-      <p>Last Name: <%= @profile["last_name"] %></p>
-      <p>Gender: <%= @profile["gender"] %></p>
-      <p>DOB: <%= @profile["dob"] %></p>
-      <p>Employment Status: <%= @profile["employment_status"] %></p>
+      <ul>
+        <li>First Name: <%= @profile["first_name"] %> </li>
+        <li>Last Name: <%= @profile["last_name"] %></li>
+        <li>Gender: <%= @profile["gender"] %></li>
+        <li>DOB: <%= @profile["dob"] %></li>
+        <li>Employment Status: <%= @profile["employment_status"] %></li>
+      </ul>
     </div>
 
     <div class="profile_contact">
       <h3>Contact Details</h3>
-      <p>Phone Number: <%= @profile["phone_number"] %></p>
-      <p>Home Page: <%= @profile["homepage"] %></p>
-      <p>Twitter: <%= @profile["twitter"] %></p>
-      <p>Github: <%= @profile["github"] %></p>
-      <p>Codecademy: <%= @profile["codecademy"] %></p>
+      <ul>
+        <li>Phone Number: <%= @profile["phone_number"] %></li>
+        <li>Home Page: <%= @profile["homepage"] %></li>
+        <li>Twitter: <%= @profile["twitter"] %></li>
+        <li>Github: <%= @profile["github"] %></li>
+        <li>Codecademy: <%= @profile["codecademy"] %></li>
+      </ul>
     </div>
 
   </div>
@@ -33,10 +37,12 @@
 
     <div class="tracks_sums_details">
       <h3>Tracks and Sums</h3>
-      <p>JS Track: <%= @profile["js_track_completedness"] %></p>
-      <p>RUBY Track: <%= @profile["ruby_track_completedness"] %></p>
-      <p>WEB Track: <%= @profile["web_track_completedness"] %></p>
-      <p>Primes Sum: <%= @profile["primes_sum"] %></p>
+      <ul>
+        <li>JS Track: <%= @profile["js_track_completedness"] %></li>
+        <li>RUBY Track: <%= @profile["ruby_track_completedness"] %></li>
+        <li>WEB Track: <%= @profile["web_track_completedness"] %></li>
+        <li>Primes Sum: <%= @profile["primes_sum"] %></li>
+      </ul>
     </div>
 
   </div>
@@ -55,19 +61,68 @@
     </div>
 
     <div class="box">
+
       <h3>Edit Profile</h3>
       <form action="/update" method="POST">
+
         <fieldset>
+
           <div class="form-group">
-            <label for="trainee[about]">About</label>
-            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+            <label for="trainee[first_name]">First Name</label>
+            <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
           </div>
 
-          <!-- TODO - Add more fields so that your profile can be edited -->
+          <div class="form-group">
+            <label for="trainee[last_name]">Last Name</label>
+            <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[gender]">Gender</label>
+            <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[dob]">DOB</label>
+            <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[employment_status]">Employment Status</label>
+            <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[phone_number]">Phone Number</label>
+            <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[homepage]">Home Page</label>
+            <input type="text" name="trainee[homepage]" value="<%= @profile["homepage"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[twitter]">Twitter</label>
+            <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[github]">Github</label>
+            <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[codecademy]">Codecademy</label>
+            <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+          </div>
 
           <input type="submit" value="Update Profile" class="btn btn-primary" />
+
         </fieldset>
+
       </form>
+
     </div>
 
   </div>

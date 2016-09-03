@@ -35,15 +35,19 @@ h3 {
   font-size: 1.5em;
 }
 
-p, img {
+ul, p, img, label, input {
   margin: 1em;
 }
+
+/* outer 960px column styling */
 
 .profile, .tracks_sums, .extras {
   width: 960px;
   margin: 0 auto;
   clear: both;
 }
+
+/* inner 300px column styling */
 
 .profile_picture, .profile_details, .profile_contact {
   font-size: 1em;
@@ -59,6 +63,8 @@ p, img {
   margin: 10px;
   float: left;
 }
+
+/* inner 940px column styling */
 
 .tracks_sums_details, .box {
   font-size: 1em;
