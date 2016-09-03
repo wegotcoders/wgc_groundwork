@@ -9,39 +9,25 @@
       <img src="/images/profile_picture.jpg" alt="Profile Photo" width="270" height="270" />
     </div>
 
-    <div class="profile_details">
+    <div class="profile_info">
       <h3>Profile Details</h3>
       <ul>
-        <li>First Name: <%= @profile["first_name"] %> </li>
-        <li>Last Name: <%= @profile["last_name"] %></li>
-        <li>Gender: <%= @profile["gender"] %></li>
-        <li>DOB: <%= @profile["dob"] %></li>
-        <li>Employment Status: <%= @profile["employment_status"] %></li>
+        <li class="profile_list">First Name: <%= @profile["first_name"] %></li>
+        <li class="profile_list">Last Name: <%= @profile["last_name"] %></li>
+        <li class="profile_list">Gender: <%= @profile["gender"] %></li>
+        <li class="profile_list">DOB: <%= @profile["dob"] %></li>
+        <li class="profile_list">Employment Status: <%= @profile["employment_status"] %></li>
       </ul>
     </div>
 
-    <div class="profile_contact">
+    <div class="profile_info">
       <h3>Contact Details</h3>
       <ul>
-        <li>Phone Number: <%= @profile["phone_number"] %></li>
-        <li>Home Page: <%= @profile["homepage"] %></li>
-        <li>Twitter: <%= @profile["twitter"] %></li>
-        <li>Github: <%= @profile["github"] %></li>
-        <li>Codecademy: <%= @profile["codecademy"] %></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="tracks_sums">
-
-    <div class="tracks_sums_details">
-      <h3>Tracks and Sums</h3>
-      <ul>
-        <li>JS Track: <%= @profile["js_track_completedness"] %></li>
-        <li>RUBY Track: <%= @profile["ruby_track_completedness"] %></li>
-        <li>WEB Track: <%= @profile["web_track_completedness"] %></li>
-        <li>Primes Sum: <%= @profile["primes_sum"] %></li>
+        <li class="profile_list">Phone Number: <%= @profile["phone_number"] %></li>
+        <li class="profile_list">Home Page: <%= @profile["homepage"] %></li>
+        <li class="profile_list">Twitter: <%= @profile["twitter"] %></li>
+        <li class="profile_list">Github: <%= @profile["github"] %></li>
+        <li class="profile_list">Codecademy: <%= @profile["codecademy"] %></li>
       </ul>
     </div>
 
@@ -52,7 +38,7 @@
     <div id="stats" class="box">
       <h3>Stats</h3>
       <!-- TODO - Set the contents of this span with JavaScript -->
-      <p><span id="word-count">0</span> words found.</p>
+      <p><span id="word-count">0</span> words found in Profile Details and Contact Details (not including titles)</p>
     </div>
 
     <div id="problems" class="box">
@@ -63,6 +49,7 @@
     <div class="box">
 
       <h3>Edit Profile</h3>
+
       <form action="/update" method="POST">
 
         <fieldset>
@@ -142,11 +129,11 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+  var profile_values = document.getElementsByClassName('profile_list');
+  total_words = 0;
+  for (var i = 0; i < profile_values.length; i++) {
+    total_words = total_words + profile_values.item(i).innerHTML.split(' ').length;
+  }
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>

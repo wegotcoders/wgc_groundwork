@@ -41,7 +41,7 @@ ul, p, img, label, input {
 
 /* outer 960px column styling */
 
-.profile, .tracks_sums, .extras {
+.profile, .extras {
   width: 960px;
   margin: 0 auto;
   clear: both;
@@ -49,7 +49,7 @@ ul, p, img, label, input {
 
 /* inner 300px column styling */
 
-.profile_picture, .profile_details, .profile_contact {
+.profile_picture, .profile_info {
   font-size: 1em;
   background-color: #e6e6e6;
   background: -webkit-linear-gradient(#e6e6e6, #f2f2f2);
@@ -66,7 +66,7 @@ ul, p, img, label, input {
 
 /* inner 940px column styling */
 
-.tracks_sums_details, .box {
+.box {
   font-size: 1em;
   background-color: #e6e6e6;
   background: -webkit-linear-gradient(#e6e6e6, #f2f2f2);
