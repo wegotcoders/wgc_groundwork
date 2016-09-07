@@ -39,7 +39,68 @@ li, p, img, label, input {
   margin: 1em;
 }
 
+a {
+  text-decoration: none;
+}
+
+#nav ul, #footer p {
+  width: 940px;
+  margin: 0 auto;
+  padding: 10px 0px 10px 0px;
+  clear: both;
+  font-size: 1em;
+  background-color: #e6e6e6;
+  background: -webkit-linear-gradient(#e6e6e6, #f2f2f2);
+  background: -o-linear-gradient(#e6e6e6, #f2f2f2);
+  background: -moz-linear-gradient(#e6e6e6, #f2f2f2);
+  background: linear-gradient(#e6e6e6, #f2f2f2);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+#footer p {
+  text-align: center;
+}
+
+#nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+#nav li a:link, a:visited {
+  background-color: #d9d9d9;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  color: #333;
+  padding: 7px 7px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:link, a:visited {
+  color: #333;
+}
+
+#nav a:hover, a:active {
+  background-color: #df535a;
+  color: #333;
+}
+
+a:hover, a:active {
+  color: #df535a;
+}
+
 /* outer 960px column styling */
+
+#nav, #footer {
+  width: 960px;
+  margin: 0 auto;
+  clear: both;
+  padding: 10px;
+}
 
 .body, .profile, .extras {
   width: 960px;
@@ -79,4 +140,25 @@ li, p, img, label, input {
   width: 940px;
   margin: 10px;
   float: left;
+}
+
+/* form styling */
+
+fieldset {
+  width: 500px;
+}
+
+input {
+  border: #333;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  width: 100%;
+  padding: 10px 10px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+input:focus, input:hover {
+  background-color: #efa9ac;
 }
