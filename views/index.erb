@@ -1,59 +1,137 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+  <h2><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <br>
+
+  <div class="profile">
+
+    <div class="profile_picture">
+      <img src="/images/profile_picture.jpg" alt="Profile Photo" width="270" height="270" />
     </div>
-  <% end %>
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <div class="profile_info">
+      <h3>Profile Details</h3>
+      <ul>
+        <li class="profile_list">First Name: <%= @profile["first_name"] %></li>
+        <li class="profile_list">Last Name: <%= @profile["last_name"] %></li>
+        <li class="profile_list">Gender: <%= @profile["gender"] %></li>
+        <li class="profile_list">DOB: <%= @profile["dob"] %></li>
+        <li class="profile_list">Employment Status: <%= @profile["employment_status"] %></li>
+      </ul>
+    </div>
+
+    <div class="profile_info">
+      <h3>Contact Details</h3>
+      <ul>
+        <li class="profile_list">Phone Number: <%= @profile["phone_number"] %></li>
+        <li class="profile_list">Home Page: <%= @profile["homepage"] %></li>
+        <li class="profile_list">Twitter: <%= @profile["twitter"] %></li>
+        <li class="profile_list">Github: <%= @profile["github"] %></li>
+        <li class="profile_list">Codecademy: <%= @profile["codecademy"] %></li>
+      </ul>
+    </div>
+
   </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+  <div class="extras">
+
+    <div id="stats" class="box">
+      <h3>Stats</h3>
+      <!-- TODO - Set the contents of this span with JavaScript -->
+      <p><span id="word-count">0</span> words found in Profile Details and Contact Details (not including titles)</p>
+    </div>
+
+    <div id="problems" class="box">
+      <h3>Programming Problems</h3>
+      <p><a href="/primes">My Prime Number Solution</a></p>
+    </div>
+
+    <div class="box">
+
+      <h3>Edit Profile</h3>
+
+      <form action="/update" method="POST">
+
+        <fieldset>
+
+          <div class="form-group">
+            <label for="trainee[first_name]">First Name</label>
+            <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[last_name]">Last Name</label>
+            <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[gender]">Gender</label>
+            <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[dob]">DOB</label>
+            <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[employment_status]">Employment Status</label>
+            <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[phone_number]">Phone Number</label>
+            <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[homepage]">Home Page</label>
+            <input type="text" name="trainee[homepage]" value="<%= @profile["homepage"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[twitter]">Twitter</label>
+            <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[github]">Github</label>
+            <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="trainee[codecademy]">Codecademy</label>
+            <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+          </div>
+
+          <input type="submit" value="Update Profile" class="btn btn-primary" />
+
+        </fieldset>
+
+      </form>
+
+    </div>
+
   </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
 <% else %>
+
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
     <a href="/authorise">Authorise</a>
   </div>
+
 <% end %>
 
-
-<!-- Add your Javascript to this script tag -->
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+  var profile_values = document.getElementsByClassName('profile_list');
+  total_words = 0;
+  for (var i = 0; i < profile_values.length; i++) {
+    total_words = total_words + profile_values.item(i).innerHTML.split(' ').length;
+  }
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
