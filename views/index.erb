@@ -4,7 +4,7 @@
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
-      <h4><%= field %></h4>
+      <h4><%= field.capitalize.split("_").join(" ") %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
   <% end %>
@@ -56,4 +56,6 @@
   // hint - look at what the innerHTML property provides.
 
   document.getElementById('word-count').innerHTML = total_words;
+  var word_count = document.body.innerText.split(" ").length;
+
 </script>
