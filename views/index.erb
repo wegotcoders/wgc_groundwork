@@ -47,30 +47,65 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <div class="profile-section box">
-        <h4 id"accounts" >Linked accounts</h4>
-        <h6 class="pull-right">Update</h6>
+      <div id="accounts" class="profile-section box">
+        <h4>Linked accounts</h4><p class="update pull-right" onclick="showUpdate(event)">Update</p>
         <div class="profile-section2">
           <% @profile["codecademy"] = "house_92" %>
           <h5><%= @profile_array[0].capitalize.split("_").join(" ") %>:</h5>
           <p class="profile-value"><a id="codecademy"><%= @profile["codecademy"] %></a></p>
+          <form id="update" class="hide" action="/update" method="POST">
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[codecademy]"></label>
+                <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+              </div>
+              <input type="submit" value="Update" class="btn btn-primary" />
+            </fieldset>
+          </form>
           <ul>
             <li class="codecademy_tracks">
               <div class="profile-section2">
                 <img id="js" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" />
                 <p class="profile-value"><%= @profile["js_track_completedness"] %></p>
+                <form class="hide" action="/update" method="POST">
+                  <fieldset>
+                    <div class="form-group">
+                      <label for="trainee[js_track_completedness]"></label>
+                      <input type="text" name="trainee[js_track_completedness]" value="<%= @profile["js_track_completedness"] %>"/>
+                    </div>
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                  </fieldset>
+                </form>
               </div>
             </li>
             <li class="codecademy_tracks">
               <div class="profile-section2">
                 <img id="ruby" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1024px-Ruby_logo.svg.png" />
                 <p class="profile-value"><%= @profile["ruby_track_completedness"] %></p>
+                <form class="hide" action="/update" method="POST">
+                  <fieldset>
+                    <div class="form-group">
+                      <label for="trainee[ruby_track_completedness]"></label>
+                      <input type="text" name="trainee[ruby_track_completedness]" value="<%= @profile["ruby_track_completedness"] %>"/>
+                    </div>
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                  </fieldset>
+                </form>
               </div>
             </li>
             <li class="codecademy_tracks">
               <div class="profile-section2">
                 <img id="html" src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" />
                 <p class="profile-value"><%= @profile["web_track_completedness"] %></p>
+                <form class="hide" action="/update" method="POST">
+                  <fieldset>
+                    <div class="form-group">
+                      <label for="trainee[web_track_completedness]"></label>
+                      <input type="text" name="trainee[web_track_completedness]" value="<%= @profile["web_track_completedness"] %>"/>
+                    </div>
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                  </fieldset>
+                </form>
               </div>
             </li>
           </ul>
@@ -79,27 +114,82 @@
         <div class="profile-section2">
           <h5><%= @profile_array[5].capitalize.split("_").join(" ") %>:</h5>
           <p class="profile-value"><a id="github"><%= @profile["github"] %></a></p>
+          <form class="hide" action="/update" method="POST">
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[github]"></label>
+                <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
+              </div>
+              <input type="submit" value="Update" class="btn btn-primary" />
+            </fieldset>
+          </form>
         </div>
-        <div class="profile-section2">
-          <h5><%= @profile_array[6].capitalize.split("_").join(" ") %>:</h5>
-          <p class="profile-value"><%= @profile["homepage"] %></p>
-        </div>
+
         <div class="profile-section2">
           <h5><%= @profile_array[12].capitalize.split("_").join(" ") %>:</h5>
           <p class="profile-value"><%= @profile["twitter"] %></p>
+          <form class="hide" action="/update" method="POST">
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[twitter]"></label>
+                <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
+              </div>
+              <input type="submit" value="Update" class="btn btn-primary" />
+            </fieldset>
+          </form>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
 
+    <div class="col-md-6">
+      <div id="about" class="profile-section box">
+        <h4>More About Me</h4><p class="update pull-right" onclick="showUpdate(event)">Update</p>
+
+        <div class="profile-section2">
+          <h5><%= @profile_array[2].capitalize.split("_").join(" ") %>:</h5>
+          <p class="profile-value"><%= @profile["employment_status"] %></p>
+          <form class="hide" action="/update" method="POST">
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[employment_status]"></label>
+                <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
+              </div>
+              <input type="submit" value="Update" class="btn btn-primary" />
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="profile-section2">
+          <h5><%= @profile_array[6].capitalize.split("_").join(" ") %>:</h5>
+          <p class="profile-value"><%= @profile["homepage"] %></p>
+          <form class="hide" action="/update" method="POST">
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[homepage]"></label>
+                <input type="text" name="trainee[homepage]" value="<%= @profile["homepage"] %>"/>
+              </div>
+              <input type="submit" value="Update" class="btn btn-primary" />
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="profile-section2">
+          <h5><%= @profile_array[9].capitalize.split("_").join(" ") %>:</h5>
+          <p class="profile-value"><%= @profile["phone_number"] %></p>
+          <form class="hide" action="/update" method="POST">
+            <fieldset>
+              <div class="form-group">
+                <label for="trainee[phone_number]"></label>
+                <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+              </div>
+              <input type="submit" value="Update" class="btn btn-primary" />
+            </fieldset>
+          </form>
+        </div>
+
+      </div>
     </div>
   </div>
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field.capitalize.split("_").join(" ") %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
 
 
   <div id="stats" class="box">
@@ -154,4 +244,30 @@
   document.getElementById('github').href = "https://github.com/" + document.getElementById('github').innerText
   document.getElementById('codecademy').href = "https://codecademy.com/" + document.getElementById('codecademy').innerText
 
+  //UPDATE
+  function showUpdate(event) {
+    if (event.currentTarget.innerHTML == "Update") {
+      event.currentTarget.innerHTML = "Close";
+    }
+    else {
+      event.currentTarget.innerHTML = "Update";
+    };
+    var form = event.currentTarget.parentNode.parentNode.getElementsByTagName('form');
+
+    for (var i = 0; i < form.length; i++) {
+      form[i].classList.toggle('hide');
+    }
+  };
+
+  // SIZING
+  function sizing() {
+    setInterval(function() {
+      var accounts_height = document.getElementById('accounts').offsetHeight;
+      var px = "px"
+      var height = accounts_height.toString().concat(px)
+      document.getElementById('about').style.height = height;
+      console.log(height);
+    }, 10);
+  };
+  sizing()
 </script>

@@ -41,12 +41,30 @@ h3 {
   text-align:center;
 }
 
-h5, #accounts, p {
-  display:inline;
+.update {
+  font-size:10px;
+  font-weight:600;
+  padding-left:400px;
+  margin-top:-30px;
 }
 
-.profile-section2 {
-  padding-bottom:5px;
+.update:hover {
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+.hide {
+  display:none;
+}
+
+.btn {
+  max-height:30px;
+}
+
+#accounts .profile-section2 *:not(.codecademy_tracks),
+#about .profile-section2 * {
+  display:inline;
+  margin-bottom:8px;
 }
 
 .codecademy_tracks {
