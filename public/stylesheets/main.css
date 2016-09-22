@@ -37,3 +37,22 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+#img {
+  text-align:center;
+}
+
+h5, #accounts, p {
+  display:inline;
+}
+
+.profile-section2 {
+  padding-bottom:5px;
+}
+
+.codecademy_tracks {
+  padding-left:10px;
+}
+
+.codecademy_tracks img {
+  height:30px;
+}

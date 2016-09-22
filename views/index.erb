@@ -1,13 +1,106 @@
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <div class="row">
+    <div id="img" class="col-md-4">
+      <img class="img-circle" height="200px" src="https://pbs.twimg.com/profile_images/778267369798074368/SLPD1YS0_400x400.jpg" />
+    </div>
+    <div class="col-md-8">
+      <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+      <% @profile_array = []
+         @profile.each do |field, value| %>
+        <% @profile_array << field %>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+      <% end %>
+      <div class="profile-section box">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="profile-section2">
+              <h4><%= @profile_array[3].capitalize.split("_").join(" ") %></h4>
+              <p class="profile-value"><%= @profile["first_name"] %></p>
+            </div>
+            <div class="profile-section2">
+              <h4><%= @profile_array[4].capitalize.split("_").join(" ") %></h4>
+              <p class="profile-value"><%= @profile["gender"] %></p>
+            </div>
+            <div class="profile-section2">
+              <% @dob = Date.parse(@profile["dob"])
+                 @today = DateTime.now.to_date
+
+                 had_birthday = ((@dob.month > @today.month || (@today.month == @dob.month && @today.day > @dob.day)) ? true : false)
+
+                 @age = @today.year - @dob.year - (had_birthday ? 0 : 1) %>
+              <h4>Age</h4>
+              <p class="profile-value"><%= @age %></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="profile-section2">
+              <h4><%= @profile_array[8].capitalize.split("_").join(" ") %></h4>
+              <p class="profile-value"><%= @profile["last_name"] %></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="profile-section box">
+        <h4 id"accounts" >Linked accounts</h4>
+        <h6 class="pull-right">Update</h6>
+        <div class="profile-section2">
+          <% @profile["codecademy"] = "house_92" %>
+          <h5><%= @profile_array[0].capitalize.split("_").join(" ") %>:</h5>
+          <p class="profile-value"><a id="codecademy"><%= @profile["codecademy"] %></a></p>
+          <ul>
+            <li class="codecademy_tracks">
+              <div class="profile-section2">
+                <img id="js" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" />
+                <p class="profile-value"><%= @profile["js_track_completedness"] %></p>
+              </div>
+            </li>
+            <li class="codecademy_tracks">
+              <div class="profile-section2">
+                <img id="ruby" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1024px-Ruby_logo.svg.png" />
+                <p class="profile-value"><%= @profile["ruby_track_completedness"] %></p>
+              </div>
+            </li>
+            <li class="codecademy_tracks">
+              <div class="profile-section2">
+                <img id="html" src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" />
+                <p class="profile-value"><%= @profile["web_track_completedness"] %></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="profile-section2">
+          <h5><%= @profile_array[5].capitalize.split("_").join(" ") %>:</h5>
+          <p class="profile-value"><a id="github"><%= @profile["github"] %></a></p>
+        </div>
+        <div class="profile-section2">
+          <h5><%= @profile_array[6].capitalize.split("_").join(" ") %>:</h5>
+          <p class="profile-value"><%= @profile["homepage"] %></p>
+        </div>
+        <div class="profile-section2">
+          <h5><%= @profile_array[12].capitalize.split("_").join(" ") %>:</h5>
+          <p class="profile-value"><%= @profile["twitter"] %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
       <h4><%= field.capitalize.split("_").join(" ") %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
   <% end %>
+
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -50,12 +143,15 @@
   console.log("I am Javascript!");
 
   var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+  var total_words = document.body.innerText.split(" ").length;
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
   document.getElementById('word-count').innerHTML = total_words;
-  var word_count = document.body.innerText.split(" ").length;
+
+  // ACCOUNT LINKS
+  document.getElementById('github').href = "https://github.com/" + document.getElementById('github').innerText
+  document.getElementById('codecademy').href = "https://codecademy.com/" + document.getElementById('codecademy').innerText
 
 </script>
