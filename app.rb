@@ -13,7 +13,7 @@ get '/primes' do
   limit = 100
 
   # TODO - add your prime number solution in the primes.rb file.
-  @sum = Primes.sum_to(limit)
+  @sum = Primes.instance(limit)
 
   erb :primes, :layout => :main
 end

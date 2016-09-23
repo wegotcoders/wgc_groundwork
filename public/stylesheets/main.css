@@ -7,6 +7,7 @@ body {
 
 #logo {
   text-align: center;
+  opacity: 1.0;
 }
 
 #content {
@@ -37,6 +38,29 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+body {
+
+}
+
+.background > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+#profile:before {
+  background: transparent; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(transparent 30%, #85E377 70%); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(transparent 30%, #85E377 70%); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(transparent 30%, #85E377 70%); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(transparent 30%, #85E377 70%); /* Standard syntax */
+  background-size:cover;
+}
+
 #img {
   text-align:center;
 }
