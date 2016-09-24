@@ -40,7 +40,7 @@ h3 {
 
 h3 {
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5em;
   padding-bottom: 20px;
   font-family: cursive, sans-serif;
 }
@@ -49,16 +49,24 @@ h3 {
 .picture_me {
   text-align: center;
   border-radius: 10% 20%;
+  padding-bottom: 20px;
 }
 
-/*.profile-section {
-  
-  text-align: center;
-  border-radius: 10%;
-  padding: 20%;
-}*/
+h4 {
+  display: inline;
+  font-size: 2em;
+  padding-left: 30px; 
+  padding-right: 20px;
+}
+
+p {
+  display: inline;
+  font-size: 1.5em;
+  /*padding-left: 20px;*/
+}
 
 body {
-  padding: 0 20%
+  padding: 0 20%;
+  background: #ccffff;
 }
 
