@@ -46,9 +46,19 @@ h3 {
 }
 
 
+.picture_me {
+  text-align: center;
+  border-radius: 10% 20%;
+}
 
+/*.profile-section {
+  
+  text-align: center;
+  border-radius: 10%;
+  padding: 20%;
+}*/
 
-
-
-
+body {
+  padding: 0 20%
+}
 
