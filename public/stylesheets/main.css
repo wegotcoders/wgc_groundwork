@@ -23,11 +23,13 @@ body {
 }
 
 #content {
+  top: 100px;
   position: relative;
+  margin: auto;
   /*loat: right;
   margin-top: 100px;*/
   padding: 1em;
-  width: 300px;
+  width: 75%;
 }
 
 .box {
@@ -37,6 +39,7 @@ body {
   background: white;
   padding: 1em;
   margin-bottom: 0.5em;
+  width: 200px; 
 }
 
 .welcome {
@@ -68,3 +71,32 @@ h3 {
  /* color: #C21C1C; */
   color: #333;
 }
+
+.profile-picture{
+  width: 480px;
+  height: 640px;
+  float: left;
+  /*display: inline-block;*/
+  vertical-align: top;
+}
+
+.shadow {
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.about-me{
+  float: right;
+  /*display: inline-block;*/
+  border: 1px solid black;
+  width: 600px;
+}
+
+.profile-title{
+  margin-bottom: 10px;
+}
+
+.profile-section{
+}
+
