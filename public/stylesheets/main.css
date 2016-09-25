@@ -46,11 +46,15 @@ h3 {
 }
 
 
-.picture_me {
+.picture_me  {
   text-align: center;
-  border-radius: 10% 20%;
   padding-bottom: 20px;
+
 }
+
+.picture_me img  {
+  border-radius: 50px;
+  }
 
 h4 {
   display: inline;
@@ -69,4 +73,5 @@ body {
   padding: 0 20%;
   background: #ccffff;
 }
+
 
