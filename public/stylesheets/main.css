@@ -6,16 +6,35 @@ body {
 }
 
 #logo {
-  text-align: center;
+  /*text-align: center;*/
+  position: fixed;
+  background: black;
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  height:100px;
+  width:100%;
+  z-index: 1;
+}
+
+#logo-img {
+  display: inline-block;
+  padding: 30px 0 0 35px;
+  width: 259px;
 }
 
 #content {
+  position: relative;
+  /*loat: right;
+  margin-top: 100px;*/
   padding: 1em;
+  width: 300px;
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
+  border-radius: 5px;
+  /*border: 2px solid #09992a;*/
+  border: 2px solid #C21C1C;
+  background: white;
   padding: 1em;
   margin-bottom: 0.5em;
 }
@@ -37,3 +56,15 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+.profile-heading{
+
+}
+
+.profile-value{
+
+}
+
+.profile-title{
+ /* color: #C21C1C; */
+  color: #333;
+}
