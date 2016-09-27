@@ -52,7 +52,7 @@ body {
     opacity: 0.6;
 }
 
-#profile:before {
+body {
   background: transparent; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(transparent 30%, #85E377 70%); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(transparent 30%, #85E377 70%); /* For Opera 11.1 to 12.0 */

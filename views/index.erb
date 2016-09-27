@@ -40,7 +40,9 @@
             </div>
           </div>
         </div>
-
+        <p class="update pull-right" onclick="countWords(event)">
+          Word count
+        </p>
       </div>
 
     </div>
@@ -138,6 +140,9 @@
             </fieldset>
           </form>
         </div>
+        <p class="update pull-right" onclick="countWords(event)">
+          Word count
+        </p>
       </div>
     </div>
 
@@ -186,7 +191,9 @@
             </fieldset>
           </form>
         </div>
-
+        <p class="update pull-right" onclick="countWords(event)">
+          Word count
+        </p>
       </div>
     </div>
   </div>
@@ -232,6 +239,21 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
+  // WORD COUNT
+  function countWords(event) {
+    var words = event.currentTarget.parentNode.parentNode.innerText.split(/\n|\s/g)
+    var new_words = [];
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].length>0) {
+        new_words.push(words[i]);
+      }
+    }
+    var word_count = new_words.length;
+    console.log(new_words)
+
+    alert("Word count in this section: " + word_count);
+  }
+
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = document.body.innerText.split(" ").length;
 
@@ -266,7 +288,6 @@
       var px = "px"
       var height = accounts_height.toString().concat(px)
       document.getElementById('about').style.height = height;
-      console.log(height);
     }, 10);
   };
   sizing()
