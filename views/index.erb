@@ -1,4 +1,5 @@
 <% if @profile %>
+  
   <div class="header">
     <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
   </div>
@@ -23,9 +24,14 @@
       <li><strong>Web Track Completedness:</strong> 100%</li>
       <li><strong>JS Track Completedness:</strong> 100%</li>
       <li><strong>Ruby Track Completedness:</strong> 100%</li>
+      <li><strong>About:</strong> <%= @profile["about"] %></li>
     </ul>
   </div>
-        
+  
+  <% @profile.each do |key, value| %>
+    <%= puts key %>
+    <%= puts value %>
+  <% end %>
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -72,17 +78,19 @@
           <label for="trainee[phone_number]">Phone Number</label>
           <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
         </div> 
-
+        <div class="form-group">
+          <label for="trainee[phone_number]">About</label>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+        </div> 
 
         
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
   </div>
-  <div id="footer">
-    <div id="logo">
-      <copy&
-    </div>
+  <footer id="footer">
+    <img src="/images/logo.png" alt="We Got Coders"/>
+  </footer>
   </div>
 <% else %>
   <div class="welcome">
@@ -91,6 +99,7 @@
     <a href="/authorise">Authorise</a>
   </div>
   <div class="footer">
+    <img src="/images/logo.png" alt="We Got Coders"/>
   </div>
 <% end %>
 

@@ -70,7 +70,7 @@ li{
   padding:2px;
   font-family: sans-serif, Verdana;
   font-size: 1.1em;
-  magrin-left: 40px;
+  padding-left: 40px;
   
 }
 h4{
@@ -80,10 +80,10 @@ h4{
 }
 .form-group{
   margin:20px;
-  display: inline;
+  display: inline block;
 }
 .footer{
-	position: relative;
+	position: absolute;
 	bottom: -20px;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
