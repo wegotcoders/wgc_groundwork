@@ -12,8 +12,7 @@
   <div class="profile_details" id="grad">
     <h4>My Details</h4>
     <ul>
-      <li><strong>First Name:</strong> <%= @profile["first_name"] %> </li>
-      <li><strong>Last Name:</strong> <%= @profile["last_name"] %></li>
+      <li><strong>Name:</strong> <%= @profile["first_name"] %><%= @profile["last_name"] %></li>
       <li><strong>Gender:</strong> <%= @profile["gender"] %></li>
       <li><strong>DOB:</strong> <%= @profile["dob"] %></li>
       <li><strong>Employment Status:</strong> <%= @profile["employment_status"] %></li>
@@ -27,7 +26,7 @@
     </ul>
   </div>
 
-  <div class="profile_details" id="grad">
+  <div class="about_me">
       <h4>About Me</h4>
       <p><%= @profile["about"] %></p>
   </div>
@@ -51,17 +50,20 @@
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About Me:</label>
-          <textarea type="text" name="trainee[about]" cols="100" rows="5"><%= @profile["about"] %></textarea>
+          <textarea type="text" name="trainee[about]" cols="100" rows="5"><%= @profile["about"] %>
+          </textarea>
         </div>
 
         <div class="form-group">
           <label for="trainee[projects]">Projects:</label>
-          <textarea type="text" name="trainee[projects]" cols="100" rows="5"><%= @profile["projects"] %></textarea>
+          <textarea type="text" name="trainee[projects]" cols="100" rows="5"><%= @profile["projects"] %>
+          </textarea>
         </div>  
 
         <div class="form-group">
           <label for="trainee[projects]">Interests:</label>
-          <textarea type="text" name="trainee[interests]" cols="100" rows="5"><%= @profile["interests"] %></textarea>
+          <textarea type="text" name="trainee[interests]" cols="100" rows="5"><%= @profile["interests"] %>
+          </textarea>
         </div>  
 
 

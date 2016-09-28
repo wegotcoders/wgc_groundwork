@@ -55,7 +55,7 @@ h3 {
 }
 .profile_details{
   border: 2px solid black;
-  padding-left:10px;
+  padding:1px 1px 20px 10px;
 }
 .profile_picture{
   float:right;
@@ -63,9 +63,10 @@ h3 {
 }
 li{
   list-style-type: none;
-  padding:1px;
+  padding:2px;
   font-family: sans-serif, Verdana;
-  font-size: 1.1em
+  font-size: 1.1em;
+  margin-left: 40px;
 }
 h4{
   font-size: 2em;
@@ -85,4 +86,9 @@ h4{
 textarea{
   display: block;
   border: 1px solid black;
+}
+.about_me{
+  background-color: #fffee4;
+  border: 1px solid black;
+  padding-left: 20px;
 }
