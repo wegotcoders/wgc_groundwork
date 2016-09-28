@@ -1,5 +1,9 @@
+
 class Primes
-  def self.sum_to(limit = 100)
-  	prime_sum = Prime.each(limit).inject(:+)
+  def self.sum_to(limit)
+  	require 'prime'
+  	Prime.each(limit).inject(:+)
   end
 end
+
+#dynamic version

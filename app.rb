@@ -11,14 +11,10 @@ enable :sessions
 
 get '/primes' do
   # TODO - Can we make this dynamic?
-def limit
-	puts "Please enter any number up to 2000000 to be able to find the sum of all prime numbers less than the number:"
-	limit = gets.chomp.to_i
-end
 
 
   # TODO - add your prime number solution in the primes.rb file.
-  @sum = Primes.sum_to(limit)
+  @sum = Primes.sum_to(params[:prime_limit].to_i)
 
   erb :primes, :layout => :main
 end
