@@ -25,7 +25,7 @@ body {
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .error {
@@ -37,3 +37,27 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+.header {
+	position: relative;
+	margin-top:-20px;
+	text-align: center;
+	font-family: serif, Verdana;
+	background-color: #3c5761;
+ 	border: 2px solid #3c5799;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+ 	font-family: serif, Verdana;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 10px;
+	color: #acd1b2;
+  margin:auto;
+}
+.profile_details{
+  border: 2px solid black;
+  padding-left:10px;
+}
+.profile_picture{
+  float:right;
+  margin:30px;
+}
