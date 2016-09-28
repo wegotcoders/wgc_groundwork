@@ -9,10 +9,10 @@
       <img src= "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/005/068/304/3043d8b.jpg" alt= "Georgina Heap"/>
     </div>
 
-  <div class="profile_details" id="grad">
+  <div class="profile_details">
     <h4>My Details</h4>
     <ul>
-      <li><strong>Name:</strong> <%= @profile["first_name"] %><%= @profile["last_name"] %></li>
+      <li><strong>Name:</strong> <%= @profile["first_name"] %> <%= @profile["last_name"] %></li>
       <li><strong>Gender:</strong> <%= @profile["gender"] %></li>
       <li><strong>DOB:</strong> <%= @profile["dob"] %></li>
       <li><strong>Employment Status:</strong> <%= @profile["employment_status"] %></li>
@@ -23,13 +23,7 @@
       <li><strong>Web Track Completedness:</strong> 100%</li>
       <li><strong>JS Track Completedness:</strong> 100%</li>
       <li><strong>Ruby Track Completedness:</strong> 100%</li>
-      <li>About<%= @profile["about"] %></li>
     </ul>
-  </div>
-
-  <div class="about_me">
-      <h4>About Me</h4>
-      <p><%= @profile["about"] %></p>
   </div>
         
 
@@ -50,22 +44,34 @@
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
-          <label for="trainee[about]">About Me:</label>
-          <textarea type="text" name="trainee[about]" cols="100" rows="5"><%= @profile["about"] %>
-          </textarea>
+          <label for="trainee[first_name]">First Name</label>
+          <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
         </div>
 
         <div class="form-group">
-          <label for="trainee[projects]">Projects:</label>
-          <textarea type="text" name="trainee[projects]" cols="100" rows="5"><%= @profile["projects"] %>
-          </textarea>
-        </div>  
+          <label for="trainee[last_name]">Last Name</label>
+          <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+        </div>
 
         <div class="form-group">
-          <label for="trainee[projects]">Interests:</label>
-          <textarea type="text" name="trainee[interests]" cols="100" rows="5"><%= @profile["interests"] %>
-          </textarea>
-        </div>  
+          <label for="trainee[gender]">Gender</label>
+          <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[dob]">DOB</label>
+          <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[employment_status]">Employment Status</label>
+          <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[phone_number]">Phone Number</label>
+          <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+        </div> 
 
 
         
@@ -83,6 +89,8 @@
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
     <a href="/authorise">Authorise</a>
+  </div>
+  <div class="footer">
   </div>
 <% end %>
 

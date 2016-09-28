@@ -3,6 +3,11 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background: cyan; 
+  background: -webkit-linear-gradient(left top, blue, cyan); 
+  background: -o-linear-gradient(bottom right, blue, cyan); 
+  background: -moz-linear-gradient(bottom right, blue, cyan); 
+  background: linear-gradient(to bottom right, pink, cyan); 
 }
 
 #logo {
@@ -14,8 +19,7 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
+  border: 1px solid black;
   padding: 1em;
   margin-bottom: 0.5em;
 }
@@ -36,7 +40,6 @@ h3 {
   font-size: 1.5em;
 }
 
-/* TODO - Add your own styles here */
 .header {
 	position: relative;
 	margin-top:-20px;
@@ -51,11 +54,12 @@ h3 {
 	text-align: center;
 	padding-bottom: 10px;
 	color: #acd1b2;
-  margin:auto;
+  	margin:auto;
 }
 .profile_details{
-  border: 2px solid black;
+  border: 1px solid black;
   padding:1px 1px 20px 10px;
+  margin-bottom: 5px;
 }
 .profile_picture{
   float:right;
@@ -66,29 +70,26 @@ li{
   padding:2px;
   font-family: sans-serif, Verdana;
   font-size: 1.1em;
-  margin-left: 40px;
+  magrin-left: 40px;
+  
 }
 h4{
   font-size: 2em;
   text-decoration: underline;
   margin-left:20px;
 }
-#grad {
-  background: cyan; 
-  background: -webkit-linear-gradient(left top, blue, cyan); 
-  background: -o-linear-gradient(bottom right, blue, cyan); 
-  background: -moz-linear-gradient(bottom right, blue, cyan); 
-  background: linear-gradient(to bottom right, pink, cyan); 
-}
 .form-group{
   margin:20px;
+  display: inline;
 }
-textarea{
-  display: block;
-  border: 1px solid black;
-}
-.about_me{
-  background-color: #fffee4;
-  border: 1px solid black;
-  padding-left: 20px;
+.footer{
+	position: relative;
+	bottom: -20px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	height: 50px;
+	background-color: #3c5761;
+  	border: 2px solid #3c5799;
+	clear:both;
+	text-align:center;
 }
