@@ -11,24 +11,21 @@
 
   <div class="profile_details">
     <h3>My Details</h3>
-    <p>First Name: <%= @profile["first_name"] %> </p>
-    <p>Last Name: <%= @profile["last_name"] %></p>
-    <p>Gender: <%= @profile["gender"] %></p>
-    <p>DOB: <%= @profile["dob"] %></p>
-    <p>Employment Status: <%= @profile["employment_status"] %></p>
-    <p>Phone Number: <%= @profile["phone_number"] %></p>
-    <p>Twitter: <%= @profile["twitter"] %></p>
-    <p>Github: <%= @profile["github"] %></p>
-    <p>Codecademy: <%= @profile["codecademy"] %></p>
-    <p>Web Track Completedness: <%= @profile["web_track_completedness"] %></p>
-    <p>JS Track Completedness: <%= @profile["js_track_completedness"] %></p>
-    <p>Ruby Track Completedness: <%= @profile["ruby_track_completedness"] %></p>
+    <ul>
+      <li>First Name: <%= @profile["first_name"] %> </li>
+      <li>Last Name: <%= @profile["last_name"] %></li>
+      <li>Gender: <%= @profile["gender"] %></li>
+      <li>DOB: <%= @profile["dob"] %></li>
+      <li>Employment Status: <%= @profile["employment_status"] %></li>
+      <li>Phone Number: <%= @profile["phone_number"] %></li>
+      <li>Twitter: georgeheap</li>
+      <li>Github: <%= @profile["github"] %></li>
+      <li>Codecademy: georgeheap</li>
+      <li>Web Track Completedness: 100%</li>
+      <li>JS Track Completedness: 100%</li>
+      <li>Ruby Track Completedness: 100%</li>
+    </ul>
   </div>
-  <div id="about">
-    <h2>About Me</h2>
-    <p><%= @profile["about"] %></p>
-  </div>
-
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -49,6 +46,12 @@
         <div class="form-group">
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+
+
+          <label for="trainee[projects]">Projects</label>
+          <textarea type="text" name="trainee[projects]" cols="100" rows="5"><%= @profile["projects"] %></textarea>
+
+
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
@@ -73,8 +76,10 @@
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+  for (var i = 0; i < profile_values.length; i++) {
+    total_words += profile_values[i].innerHTML.trim.split(/\s+/).length;
+
+  };
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>

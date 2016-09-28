@@ -61,3 +61,21 @@ h3 {
   float:right;
   margin:30px;
 }
+li{
+  list-style-type: none;
+  padding:1px;
+  font-family: sans-serif, Verdana;
+  font-size: 1.1em
+}
+h4{
+  font-size: 2em;
+  text-decoration: underline;
+  margin-left:20px;
+}
+#grad {
+  background: cyan; 
+  background: -webkit-linear-gradient(left top, blue, cyan); 
+  background: -o-linear-gradient(bottom right, blue, cyan); 
+  background: -moz-linear-gradient(bottom right, blue, cyan); 
+  background: linear-gradient(to bottom right, pink, cyan); 
+}
