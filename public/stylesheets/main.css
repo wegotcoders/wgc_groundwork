@@ -46,7 +46,6 @@ h3 {
 	text-align: center;
 	font-family: serif, Verdana;
 	background-color: #3c5761;
- 	border: 2px solid #3c5799;
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
  	font-family: serif, Verdana;
@@ -83,13 +82,12 @@ h4{
   display: inline block;
 }
 .footer{
-	position: absolute;
+	position: relative;
 	bottom: -20px;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
 	height: 50px;
 	background-color: #3c5761;
-  	border: 2px solid #3c5799;
 	clear:both;
 	text-align:center;
 }
