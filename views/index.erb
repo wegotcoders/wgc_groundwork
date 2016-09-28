@@ -1,6 +1,6 @@
 <% if @profile %>
   <div class="header">
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+    <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
   </div>
     
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
@@ -10,20 +10,25 @@
     </div>
 
   <div class="profile_details">
-      <h3>My Details</h3>
-      <p>First Name: <%= @profile["first_name"] %> </p>
-      <p>Last Name: <%= @profile["last_name"] %></p>
-      <p>Gender: <%= @profile["gender"] %></p>
-      <p>DOB: <%= @profile["dob"] %></p>
-      <p>Employment Status: <%= @profile["employment_status"] %></p>
-      <p>Phone Number: <%= @profile["phone_number"] %></p>
-      <p>Twitter: <%= @profile["twitter"] %></p>
-      <p>Github: <%= @profile["github"] %></p>
-      <p>Codecademy: <%= @profile["codecademy"] %></p>
-      <p>Web Track Completedness: <%= @profile["web_track_completedness"] %></p>
-     <p>JS Track Completedness: <%= @profile["js_track_completedness"] %></p>
-     <p>Ruby Track Completedness: <%= @profile["ruby_track_completedness"] %></p>
-     </div>
+    <h3>My Details</h3>
+    <p>First Name: <%= @profile["first_name"] %> </p>
+    <p>Last Name: <%= @profile["last_name"] %></p>
+    <p>Gender: <%= @profile["gender"] %></p>
+    <p>DOB: <%= @profile["dob"] %></p>
+    <p>Employment Status: <%= @profile["employment_status"] %></p>
+    <p>Phone Number: <%= @profile["phone_number"] %></p>
+    <p>Twitter: <%= @profile["twitter"] %></p>
+    <p>Github: <%= @profile["github"] %></p>
+    <p>Codecademy: <%= @profile["codecademy"] %></p>
+    <p>Web Track Completedness: <%= @profile["web_track_completedness"] %></p>
+    <p>JS Track Completedness: <%= @profile["js_track_completedness"] %></p>
+    <p>Ruby Track Completedness: <%= @profile["ruby_track_completedness"] %></p>
+  </div>
+  <div id="about">
+    <h2>About Me</h2>
+    <p><%= @profile["about"] %></p>
+  </div>
+
 
   <div id="stats" class="box">
     <h3>Stats</h3>
