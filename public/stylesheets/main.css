@@ -14,8 +14,8 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
+  border: 1px solid #b82601;
+  /*background: #FCFCFC;*/
   padding: 1em;
   margin-bottom: 0.5em;
 }
@@ -37,3 +37,71 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+div {
+  background-color: #A1D6E2;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+}
+span {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.box {
+  background-color: #f1f1f2;
+}
+.profile-value {
+  font-family: Georgia, serif;
+  font-size: 1.5em ;
+  color: #3a5199;
+  font-weight: bold;
+}
+.profile-section box{
+  background-color: #f1f1f2;  
+}
+#about {
+  width: 60%;
+}
+#codecademy {
+  text-align: center;
+  color: #3a5199;
+  font-family: Georgia, serif;
+  font-weight: bold;  
+}
+#completedness {
+  display: inline-block;
+  clear: both;
+  text-align: center;
+}
+#completedness div:first-child {  
+  float: left;
+  width: 300px;
+  margin: 3px;
+}
+#completedness div:nth-child(2) {
+  float: left;
+  width: 300px;
+  margin: 3px;
+}
+#completedness div:nth-child(3) {
+  float: left;
+  width: 300px;
+  margin: 3px;
+}
+table {
+  border: 1px white solid;
+  color: #f1f1f2;
+  background-color: #3a5188;  
+  font-weight: bold;
+  font-family: Georgia, serif;
+  font-size: 1.2em;
+  margin-top: -400px;
+  margin-right: 100px;
+}
+img {
+  border-radius: 5px;
+  height: 270px;
+  width: 190px;
+  margin-top: -280px;
+  float: left;
+  margin-left: 340px;
+}

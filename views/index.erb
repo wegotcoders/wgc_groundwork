@@ -1,13 +1,70 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
+  <h3 style="text-align: center;"><span><%= @profile["first_name"] %>'s Super Amazing Profile</span></h3>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
+    <p style="text-align: left;"><span>About Me</span></p>
+    <div id="about">
+        <div class="profile-section box">
+            <h2 %=@profile.keys[3].capitalize%></h2>First name: 
+            <h3 class="profile-value"><%=@profile["first_name"]%></h3>
+            <h2 %=@profile.keys[8]%></h2>Last name: 
+            <h3 class="profile-value"><%=@profile["last_name"]%></h3>
+            <h2 %=@profile.keys[1]%></h2>Date of birth: 
+            <h3 class="profile-value"><%=@profile["dob"]%></h3>
+            <h2><%=@profile.keys[4].capitalize%>:</h2> 
+            <h3 class="profile-value"><%=@profile["gender"]%></h3>
+            <h2><%=@profile.keys[2].capitalize%>:</h2> 
+            <h3 class="profile-value"><%=@profile["employment_status"]%></h3>
+        </div>
+    </div>
+    <img src="https://c2.staticflickr.com/6/5645/29831645121_3a91df0659_n.jpg" />
+    <div id="codecademy">
+        <div class="profile-section box">
+            <h2><%=@profile.keys[0].capitalize%></h2> 
+            <h2 class="profile-value"><%=@profile["codecademy"]%></h2>
+        </div>
+    </div>
+    <div id="completedness">
+        <div class="profile-section box">
+            <h2><%=@profile.keys[7].capitalize%></h2> 
+            <h3 class="profile-value"><%=@profile["js_track_completedness"]%></h3>
+        </div>
+        <div class="profile-section box">
+            <h2><%=@profile.keys[11].capitalize%></h2> 
+            <h3 class="profile-value"><%=@profile["ruby_track_completedness"]%></h3>
+        </div>
+        <div class="profile-section box">
+            <h2><%=@profile.keys[13].capitalize%></h2> 
+            <h3 class="profile-value"><%=@profile["web_track_completedness"]%></h3>
+        </div>
+    </div>
+    <table align="right">
+    <thead>
+    <tr><th colspan="2">Contact</th><tr>
+    </thead>
+    <tr>
+        <td><%=@profile.keys[9].capitalize%>:  </td> 
+        <td><%=@profile["phone_number"]%></td>
+    </tr>
+    <tr>        
+        <td><%=@profile.keys[5].capitalize%></td> 
+        <td><%=@profile["github"]%></td>
+    </tr>
+    <tr>        
+        <td><%=@profile.keys[12].capitalize%></td> 
+        <td><%=@profile["twitter"]%></td>
+    </tr>
+    </table>
+    <div class="profile-section box">
+        <h2><%=@profile.keys[10].capitalize%></h2> 
+        <h3 class="profile-value"><%=@profile["primes_sum"]%></h3>
+    </div>
+<!--<% @profile.each do |field, value| %>
     <div class="profile-section box">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
-  <% end %>
+  <% end %> -->
+  
 
   <div id="stats" class="box">
     <h3>Stats</h3>
