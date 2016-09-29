@@ -1,40 +1,103 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
+  
+  <div class="header">
+    <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  </div>
+    
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+  <div class="my_profile">
+    <div class="profile_picture">
+      <img src= "/images/georgina.jpg" alt= "Georgina Heap"/>
     </div>
-  <% end %>
+
+  <div class="profile_details">
+    <h4>My Details</h4>
+    <ul>
+      <li><b>Name:</b> <%= @profile["first_name"] %> <%= @profile["last_name"] %></li>
+      <li>Gender: <%= @profile["gender"] %></li>
+      <li>DOB: <%= @profile["dob"] %></li>
+      <li>Employment Status:<%= @profile["employment_status"] %></li>
+      <li>Phone Number: <%= @profile["phone_number"] %></li>
+      <li>Twitter: <a href="https://twitter.com/georgeheap">georgeheap</a></li>
+      <li>Github: <a href="https://github.com/georgeheap"><%= @profile["github"] %></a></li>
+      <li>Codecademy: <a href="https://www.codecademy.com/georgeheap">georgeheap</a></li> 
+      <!-- because I can't get the about field to work I chose this solution instead for codeacademy-->
+      <li>Web Track Completedness: 100%</li>
+      <li>JS Track Completedness: 100%</li>
+      <li>Ruby Track Completedness: 100%</li>
+    </ul>
+    <h5>About me</h5>
+      <p id="about-me" class="profile-value">I was born in the UK and raised mainly in the states so I am bit of a hybrid really. I have worked in varying fields of travel and concert management. I am not trying to start a career in Web programming. I love travel, animals and music.<p>
+      <p id="about-me"> Click <a href="http://localhost:4567/likes.html">here</a> to see pictures of things that I like.</p>
+  </div>
+  
 
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <span id="word-count">0</span> words found in About Me section.
   </div>
 
   <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+    <form action="/primes">
+      <h3> Programming Challenge</h3>
+      <p>Enter a number upto 2 million below to find the sum of all primes:</p>
+      <input type="text" name="prime_limit" value="<%= @limit %>">
+      <input type="submit" value="Get Answer"> 
+    </form>
   </div>
-
+  <div id="primes_sum" class="box">
+    <h3>Prime Answers</h3>
+    <p> Sum of Prime Numbers up to 100: <%= @sum = Primes.sum_to(100) %></p> 
+    <p> Sum of Prime Numbers up to 2000000: <%= @sum = Primes.sum_to(2000000) %></p> 
+    <!--As I couldn't get the about field to work this was the best I could do-->
+  </div>
   <div class="box">
     <h3>Edit Profile</h3>
 
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <label for="trainee[first_name]">First Name: </label>
+          <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
         </div>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <label for="trainee[last_name]">Last Name: </label>
+          <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[gender]">Gender: </label>
+          <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[dob]">DOB: </label>
+          <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[employment_status]">Employment Status: </label>
+          <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[phone_number]">Phone Number: </label>
+          <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+        </div>   
+        <!--Cant get this about field to work. Tried every variation but can't make it update-->
+        <div class="form-group">
+          <label for="trainee[about]">About: </label>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+        </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
+  </div>
+  <footer class="footer">
+  </footer>
   </div>
 <% else %>
   <div class="welcome">
@@ -47,13 +110,21 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+  function countWords(){
+  
+    var profile_values = document.getElementsByClassName("profile-value");
+  
+    var total_words = 0;
+  
+    for(var i = 0; i < profile_values.length; i++)
+    {
+        total_words += profile_values[i].innerHTML.trim().split(' ').length;
+    }
+   
+    document.getElementById('word-count').innerHTML = total_words;
+}
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+countWords();
 
-  document.getElementById('word-count').innerHTML = total_words;
 </script>
