@@ -27,7 +27,7 @@
       <li>Ruby Track Completedness: 100%</li>
     </ul>
     <h5>About me</h5>
-      <p id="about-me" class="profile-value">I was born in the UK and raised mainly in the states so I am bit of a hybrid really. I have worked in varying fields of travel and concert management. I am not trying to start a career in Web programming.<p>
+      <p id="about-me" class="profile-value">I was born in the UK and raised mainly in the states so I am bit of a hybrid really. I have worked in varying fields of travel and concert management. I am not trying to start a career in Web programming. I love travel, animals and music.<p>
       <p id="about-me"> Click <a href="http://localhost:4567/likes.html">here</a> to see pictures of things that I like.</p>
   </div>
   
@@ -119,7 +119,7 @@
   
     for(var i = 0; i < profile_values.length; i++)
     {
-        total_words += profile_values[i].innerHTML.split(' ').length;
+        total_words += profile_values[i].innerHTML.trim().split(' ').length;
     }
    
     document.getElementById('word-count').innerHTML = total_words;
