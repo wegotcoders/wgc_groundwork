@@ -45,6 +45,14 @@
 </div>
 
 <div id="footer">
+ <img onclick="CloseBox()" src="images/close_icon.png" class="CloseButton">
+
+  <div id="stats">
+    <h3>Stats</h3>
+    <!-- TODO - Set the contents of this span with JavaScript -->
+    <span id="word-count">0</span> words found.
+  </div>
+</div>
   <!-- Add your Javascript to this script tag -->
   <script language="javascript">
   function strip(html)
@@ -74,15 +82,7 @@
       document.getElementById("footer").style.display = "none";
     }
   </script>
-  <img onclick="CloseBox()" src="images/close_icon.png" class="CloseButton">
-
-  <div id="stats">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
-</div>
-
+ 
 <% else %>
   
   <div id="welcome">
