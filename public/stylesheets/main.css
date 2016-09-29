@@ -1,9 +1,27 @@
+/*################################################*/
+/*######## DOCUMENT WIDE  */
+
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
 }
+
+
+.shadow {
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+/*################################################*/
+/*########  TOP BAR */
+
 
 #logo {
   /*text-align: center;*/
@@ -13,14 +31,21 @@ body {
   font-size: 16px;
   height:100px;
   width:100%;
-  z-index: 1;
+  z-index: 100;
 }
 
 #logo-img {
-  display: inline-block;
-  padding: 30px 0 0 35px;
+ /*  display: inline-block;
+  padding: 30px 0 0 35px;*/ 
+  float: left;
   width: 259px;
+  margin-left: 35px;
+  margin-top: 30px;
 }
+
+
+/*################################################*/
+/*########  BODY */
 
 #content {
   top: 100px;
@@ -28,26 +53,177 @@ body {
   margin: auto;
   /*loat: right;
   margin-top: 100px;*/
-  padding: 1em;
-  width: 75%;
-}
+  /* padding: 1em; */
+  /* width: 75%; */
+  text-align: center;
+  padding-bottom: 90px;
+ }
 
 .box {
-  border-radius: 5px;
+/*   border-radius: 5px;
   /*border: 2px solid #09992a;*/
-  border: 2px solid #C21C1C;
+/*  border: 2px solid #C21C1C; */
   background: white;
   padding: 1em;
   margin-bottom: 0.5em;
-  width: 200px; 
+  width: 200px;
 }
+
+
+/*################################################*/
+/*########  PICTURE */
+
+#profile-picture{
+  position: fixed;
+  width: 480px;
+  height: 640px;
+  /* float: left; */
+  /* display: inline-block; */
+  margin: 110px 10px 10px 10px;
+  /* vertical-align: top; */
+  /* align: left; */
+}
+
+/*################################################*/
+/*########  ABOUT ME */
+
+#about-me{
+  /* float: right; */
+  position: relative;
+
+  /* display: inline-block; */
+  /* border: 1px none black; */
+  width: 50%;  /*POI MAGARI VEDO CON UN @MEDA*/
+  margin: 0 0 0 500px;
+}
+
+.profile-title {
+  padding-top: 10px;
+ /* color: #C21C1C; */
+  color: #333;
+  /*margin-bottom: 10px;*/
+}
+
+/*################################################*/
+/*########  DETAILS */
+
+#details ul{
+  overflow:hidden;
+  padding:10px;
+}
+
+
+#details ul,li{
+  list-style:none;
+}
+
+#details ul li{
+  margin:1em;
+  float:left;
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+  /* border: 1px solid black; */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+
+/*   -webkit-transition: shadow 1s, scale 1s, rotate 1s, top 1s;
+          transition: shadow 1s, scale 1s, rotate 1s, top 1s; */
+  -webkit-transition: all 0.4s;
+          transition: all 0.4s;
+ }
+ 
+ #details ul li:nth-child(even){
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  background:#cfc;
+}
+#details ul li:nth-child(3n){
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#ccf;
+}
+#details ul li:nth-child(5n){
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+}
+
+#details ul li:hover,#details ul li:focus{
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:1;
+}
+
+.profile-heading{
+  font-size:100%;
+  font-weight:bold;
+  padding-bottom:10px;
+}
+
+
+.profile-value{
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:200%;
+}
+
+/*################################################*/
+/*########  FOOTER */
+
+#footer {
+  position: fixed;
+  bottom: 0px;
+  height: 70px;
+  width: 100%;
+  background: #c21c1c;
+  border-top: thin solid black;
+  font-size: small;
+  text-align: center;
+  z-index: 99;
+}
+
+#footer > div {
+	display: inline-block;
+	margin: 5px 10px 5px 10px;
+	color: white;
+	width: 100px;
+	/* background: white; */
+}
+
+#footer img.CloseButton {
+  cursor: pointer;
+  float: right;
+  margin: 4px 4px;
+}
+
+
+/*################################################*/
+/*########  OTHERS */
 
 .welcome {
   text-align: center;
-}
-
-h3 {
-  font-size: 1.5em;
 }
 
 .error {
@@ -58,45 +234,27 @@ h3 {
   font-size: 1.5em;
 }
 
-/* TODO - Add your own styles here */
-.profile-heading{
+/*################################################*/
+/* ######## EXTRA DOCUMENT STYLES */
 
+@media (max-width: 1000px) {
+   #profile-picture{display: none;}
+   #about-me {
+     margin-left: 0px;
+     width: 100%;
+  }
 }
 
-.profile-value{
-
+@media (max-height: 700px) {
+   #profile-picture{display: none;}
+   #about-me {
+     margin-left: 0px;
+     width: 100%;
+  }
 }
 
-.profile-title{
- /* color: #C21C1C; */
-  color: #333;
-}
-
-.profile-picture{
-  width: 480px;
-  height: 640px;
-  float: left;
-  /*display: inline-block;*/
-  vertical-align: top;
-}
-
-.shadow {
-  -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow:    3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Firefox 3.5 - 3.6 */
-  box-shadow:         3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-}
-
-.about-me{
-  float: right;
-  /*display: inline-block;*/
-  border: 1px solid black;
-  width: 600px;
-}
-
-.profile-title{
-  margin-bottom: 10px;
-}
-
-.profile-section{
-}
+@media (max-width: 300px) {
+    #footer{display: none;}
+    #content{padding-bottom: 10px}
+  }
 
