@@ -43,6 +43,58 @@ h3 {
   margin-top: 30px;
 }
 
+/*################################################*/
+/*########  MENU */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 200;
+}
+
+#menu {
+  float: right;
+  vertical-align: bottom;
+  margin: 15px 10px 0 0;
+  overflow: hidden;
+  transition-duration: 0.8s;
+  transition-property: transform;
+  cursor: pointer;
+}
+
+#dropdown-content {
+    display: block;
+    position: absolute;
+    /* top: -50px; */
+  right: -200px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-top: 100px;
+  /*z-index: 200;*/
+  -webkit-transition: right 1s;
+    transition:         right 1s;
+}
+
+#dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#dropdown-content a:hover {background-color: #e8e6e6}
+
+.dropdown:hover #dropdown-content {
+    display: block;
+  right: 0px;
+}
+
+#menu:hover {
+    transform: rotate(270);
+    -webkit-transform: rotate(270deg);
+}
+
 
 /*################################################*/
 /*########  BODY */
