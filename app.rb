@@ -10,10 +10,21 @@ enable :sessions
 
 get '/primes' do
   # TODO - Can we make this dynamic?
-  limit = 100
+  @limits = 100
 
   # TODO - add your prime number solution in the primes.rb file.
-  @sum = Primes.sum_to(limit)
+  @sum = Primes.sum_to(@limits)
+
+  erb :primes, :layout => :main
+end
+
+post '/primes' do
+  # TODO - Can we make this dynamic?
+  @limits = params["limits"].to_i
+
+
+  # TODO - add your prime number solution in the primes.rb file.
+  @sum = Primes.sum_to(@limits)
 
   erb :primes, :layout => :main
 end

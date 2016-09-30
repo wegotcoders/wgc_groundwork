@@ -1,0 +1,174 @@
+/*################################################*/
+/*########  PICTURE */
+
+#profile-picture{
+  position: fixed;
+  width: 480px;
+  height: 640px;
+  /* float: left; */
+  /* display: inline-block; */
+  margin: 110px 10px 10px 10px;
+  /* vertical-align: top; */
+  /* align: left; */
+}
+
+/*################################################*/
+/*########  ABOUT ME */
+
+#about-me{
+  /* float: right; */
+  position: relative;
+
+  /* display: inline-block; */
+  /* border: 1px none black; */
+  width: 50%;  /*POI MAGARI VEDO CON UN @MEDA*/
+  margin: 0 0 0 500px;
+}
+
+/*################################################*/
+/*########  DETAILS */
+
+#details ul{
+  overflow:hidden;
+  padding:10px;
+  padding-bottom: 30px;
+}
+
+
+#details ul,li{
+  list-style:none;
+}
+
+#details ul li{
+  margin:1em;
+  float:left;
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+  /* border: 1px solid black; */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+
+/*   -webkit-transition: shadow 1s, scale 1s, rotate 1s, top 1s;
+          transition: shadow 1s, scale 1s, rotate 1s, top 1s; */
+  -webkit-transition: all 0.4s;
+          transition: all 0.4s;
+ }
+ 
+ #details ul li:nth-child(even){
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  background:#cfc;
+}
+#details ul li:nth-child(3n){
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#ccf;
+}
+#details ul li:nth-child(5n){
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+}
+
+#details ul li:hover,#details ul li:focus{
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:1;
+}
+
+.profile-heading{
+  font-size:100%;
+  font-weight:bold;
+  padding-bottom:10px;
+}
+
+
+.profile-value{
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:200%;
+  width: 120px;
+  cursor: pointer;
+  border: 0px none black;
+  background: rgba(0,0,0,0);
+}
+
+.profile-value:hover, .profile-value:focus{
+  background: white;
+  -webkit-transition: all 0.8s;
+          transition: all 0.8s;
+}
+/*################################################*/
+/*########  FOOTER */
+
+#footer {
+  position: fixed;
+  bottom: 0px;
+  height: 70px;
+  width: 100%;
+  background: #c21c1c;
+  border-top: thin solid black;
+  font-size: small;
+  text-align: center;
+  z-index: 99;
+}
+
+#footer > div {
+	display: inline-block;
+	margin: 5px 10px 5px 10px;
+	color: white;
+	width: 100px;
+	/* background: white; */
+}
+
+#footer img.CloseButton {
+  cursor: pointer;
+  float: right;
+  margin: 4px 4px;
+}
+
+/*################################################*/
+/* ######## EXTRA DOCUMENT STYLES */
+
+@media (max-width: 1000px) {
+   #profile-picture{display: none;}
+   #about-me {
+     margin-left: 0px;
+     width: 100%;
+  }
+}
+
+@media (max-height: 700px) {
+   #profile-picture{display: none;}
+   #about-me {
+     margin-left: 0px;
+     width: 100%;
+  }
+}
+
+@media (max-width: 300px) {
+    #footer{display: none;}
+    #content{padding-bottom: 10px}
+  }
