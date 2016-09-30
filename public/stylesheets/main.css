@@ -65,7 +65,8 @@ span {
   text-align: center;
   color: #3a5199;
   font-family: Georgia, serif;
-  font-weight: bold;  
+  font-weight: bold;
+  font-size: 1.5em;  
 }
 #completedness {
   display: inline-block;
@@ -94,8 +95,8 @@ table {
   font-weight: bold;
   font-family: Georgia, serif;
   font-size: 1.2em;
-  margin-top: -400px;
-  margin-right: 100px;
+  margin-top: -430px;
+  width: 39%;
 }
 img {
   border-radius: 5px;
@@ -104,4 +105,10 @@ img {
   margin-top: -280px;
   float: left;
   margin-left: 340px;
+}
+input {
+  font-family: Georgia, serif;
+font-size: 1em;
+font-weight: bold;
+color: #3a5188;
 }
