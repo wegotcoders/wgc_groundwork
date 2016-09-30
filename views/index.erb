@@ -9,22 +9,21 @@
   <div id="about-me">
     <h3 class="profile-title"><%= @profile["first_name"] %>'s Amazing Profile</h3>
       <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+    <form action="/update" method="POST">
     <div id="details">
-    <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
+      <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
       <ul id="profile-section">
       <% @profile.each do |field, value| if value; %>
           <li class="profile-heading"><%= field %>
-          <p class="profile-value"><%= value %></p></li>
+          <input type="text" name="trainee[<%= field %>]" class="profile-value" value="<%= value %>" /></li>
       <%end; end %>
       </ul>
     </div>
+    <input type="submit" value="Update Profile" class="btn btn-primary"  style="display:none;"/>
+    </form>
 
-<!--     <div id="problems" class="box">
-      <h3>Programming Problems</h3>
-      <a href="/primes">My Prime Number Solution</a>
-    </div> -->
 
-    <div id="edit_profile">
+<!--     <div id="edit_profile">        FAILED AT ADDING FIELDS, SKIPPING
       <h3>Edit Profile</h3>
 
       <form action="/update" method="POST">
@@ -33,14 +32,11 @@
             <label for="trainee[about]">About</label>
             <input type="text" name="trainee[about]" value="<%= @profile["about"] %>" />
           </div>
-
-          <!-- TODO - Add more fields so that your profile can be edited -->
-
           <input type="submit" value="Update Profile" class="btn btn-primary" />
         </fieldset>
       </form>
     </div>
-  </div>
+  </div> -->
 
 </div>
 

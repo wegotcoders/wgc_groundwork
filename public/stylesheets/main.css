@@ -6,6 +6,8 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  overflow-x: hidden;
+
 }
 
 
@@ -73,7 +75,7 @@ h3 {
   margin-top: 100px;
   /*z-index: 200;*/
   -webkit-transition: right 1s;
-    transition:         right 1s;
+  transition:         right 1s;
 }
 
 #dropdown-content a {
@@ -239,8 +241,17 @@ h3 {
 .profile-value{
   font-family:"Reenie Beanie",arial,sans-serif;
   font-size:200%;
+  width: 120px;
+  cursor: pointer;
+  border: 0px none black;
+  background: rgba(0,0,0,0);
 }
 
+.profile-value:hover, .profile-value:focus{
+  background: white;
+  -webkit-transition: all 0.8s;
+          transition: all 0.8s;
+}
 /*################################################*/
 /*########  FOOTER */
 
