@@ -1,7 +1,6 @@
 <h1>Prime Numbers</h1>
-
-Sum : <%= @sum %>
-
+<p>The sum of all prime numbers less than <span class="sum">one hundred</span>: <%= @sum = Primes.sum_to(100) %></p>
+<p>The sum of all prime numbers up to <span class="sum">two million</span>: <%= @sum = Primes.sum_to(2_000_000) %></p>
 <div>
   <a href="/">Back</a>
 </div>

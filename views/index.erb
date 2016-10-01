@@ -6,15 +6,19 @@
     <p style="text-align: left;"><span>About Me</span></p>
     <div id="about">
         <div class="profile-section box">
-            <h2 %=@profile.keys[3].capitalize%></h2>First name: 
+            <h2 %=@profile.keys[3]%></h2>First name: 
             <h3 class="profile-value"><%=@profile["first_name"]%></h3>
+            
             <h2 %=@profile.keys[8]%></h2>Last name: 
             <h3 class="profile-value"><%=@profile["last_name"]%></h3>
+            
             <h2 %=@profile.keys[1]%></h2>Date of birth: 
             <h3 class="profile-value"><%=@profile["dob"]%></h3>
+
             <h2><%=@profile.keys[4].capitalize%>:</h2> 
-            <h3 class="profile-value"><%=@profile["gender"]%></h3>
-            <h2><%=@profile.keys[2].capitalize%>:</h2> 
+            <h3 class="profile-value"><%=@profile["gender"]%></h3>    
+
+            <h2 %=@profile.keys[2]%></h2>Employment status: 
             <h3 class="profile-value"><%=@profile["employment_status"]%></h3>
         </div>
     </div>
@@ -27,15 +31,15 @@
     </div>
     <div id="completedness">
         <div class="profile-section box">
-            <h2><%=@profile.keys[7].capitalize%></h2> 
+            <h2><%=@profile.keys[7]%></h2> 
             <h3 class="profile-value"><%=@profile["js_track_completedness"]%></h3>
         </div>
         <div class="profile-section box">
-            <h2><%=@profile.keys[11].capitalize%></h2> 
+            <h2><%=@profile.keys[11]%></h2> 
             <h3 class="profile-value"><%=@profile["ruby_track_completedness"]%></h3>
         </div>
         <div class="profile-section box">
-            <h2><%=@profile.keys[13].capitalize%></h2> 
+            <h2><%=@profile.keys[13]%></h2> 
             <h3 class="profile-value"><%=@profile["web_track_completedness"]%></h3>
         </div>
     </div>
@@ -44,57 +48,72 @@
     <tr><th colspan="2">Contact</th><tr>
     </thead>
     <tr>
-        <td><%=@profile.keys[9].capitalize%>:  </td> 
-        <td><%=@profile["phone_number"]%></td>
+        <td><p %=@profile.keys[9]%><p>Phone number:</td> 
+        <td><p><%=@profile["phone_number"]%></p></td>
     </tr>
-    <tr>        
-        <td><%=@profile.keys[5].capitalize%></td> 
-        <td><%=@profile["github"]%></td>
+    <tr> 
+        <td><p %=@profile.keys[5]%><p>Github:</td> 
+        <td><p><%=@profile["github"]%></p></td>       
     </tr>
-    <tr>        
-        <td><%=@profile.keys[12].capitalize%></td> 
-        <td><%=@profile["twitter"]%></td>
+    <tr>
+        <td><p %=@profile.keys[12]%><p>Twitter:</td> 
+        <td><p><%=@profile["twitter"]%></p></td>        
     </tr>
     </table>
-    <div class="profile-section box">
-        <h2><%=@profile.keys[10].capitalize%></h2> 
-        <h3 class="profile-value"><%=@profile["primes_sum"]%></h3>
-    </div>
 
+   
 
-<!--<% @profile.each do |field, value| %>
+    <!--<% @profile.each do |field, value| %>
     <div class="profile-section box">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
-  <% end %> -->
+    <% end %> -->
 
-
-<div id="stats" class="box">
+    <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript 
     <span id="word-count">0</span> words found. -->
 
-<!-- I wanted to do STAT in more interactive way, but by some reason it shows only 10 words which is definitely not correct. For now I have no idea what is wrong.-->
+    <!-- I wanted to do STAT in more interactive way, but by some reason it shows only 10 words
+    which is definitely not correct. I keep working on it.-->
+        <script type="text/javascript">
+            function countWords() {
+            profile_values = document.getElementsByClassName('profile-value');
+            total_words = 0;
+            for (i = 0; i < profile_values.length; i++) {
+                total_words += profile_values[i].innerHTML.split(' ').length;
+            }
+            document.getElementById('zero').innerHTML = total_words
+            }
+        </script>
+        <p>The number of words within my profile is <b id='zero'>0.</b>  </p>
+        <input type='button' onclick='countWords()' value='Click to count the words' />
+    </div>
 
-<script type="text/javascript">
-    function countWords() {
-     profile_values = document.getElementsByClassName('profile-value');
-     total_words = 0;
-    for (i = 0; i < profile_values.length; i++) {
-        total_words += profile_values[i].innerHTML.split(' ').length;
-    }
-    document.getElementById('zero').innerHTML = total_words
-}
-</script>
-<p>The number of words within my profile is <b id='zero'>0.</b>  </p>
-<input type='button' onclick='countWords()' value='Click to count the words' />
-  </div>
+<!--    <div class="profile-section box">
+        <h2><%=@profile.keys[10].capitalize%></h2> 
+        <h3 class="profile-value"><%=@profile["primes_sum"]%></h3>
+    </div> -->
+    
+<!--I keep working on this challenge. The issue is how to store the user input's number to use it furhter in Ruby function Primes.sum_to(here is user input number) and then how to show it in result within a file primes.erb  
+    <p>Let's get Fun!</p> 
+    <p>Enter any number up to 2 000 000 to find the sum of all prime numbers under it! </p>
+    <form action="/primes">
+        Your number: <input type="text" name="userNum">
+        <input type="submit" value="Answer">
+    </form> -->
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
   </div>
+
+
+
+
+
+
 
   <div class="box">
     <h3>Edit Profile</h3>
@@ -128,10 +147,3 @@
   // hint - look at what the innerHTML property provides.
     
 </script>
-
-
-
-
-
-
-

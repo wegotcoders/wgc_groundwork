@@ -74,18 +74,18 @@ span {
   text-align: center;
 }
 #completedness div:first-child {  
-  float: left;
-  width: 300px;
+  float: left;  
+  width: 350px;
   margin: 3px;
 }
 #completedness div:nth-child(2) {
   float: left;
-  width: 300px;
+  width: 350px;
   margin: 3px;
 }
 #completedness div:nth-child(3) {
   float: left;
-  width: 300px;
+  width: 325px;
   margin: 3px;
 }
 table {
@@ -108,7 +108,11 @@ img {
 }
 input {
   font-family: Georgia, serif;
-font-size: 1em;
-font-weight: bold;
-color: #3a5188;
+  font-size: 1em;
+  font-weight: bold;
+  color: #3a5188;
+}
+.sum {
+  font-weight: bold;
+  font-size: 1em;
 }
