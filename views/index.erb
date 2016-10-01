@@ -109,12 +109,6 @@
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
-
-
-
-
-
-
   <div class="box">
     <h3>Edit Profile</h3>
 
@@ -126,6 +120,47 @@
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        
+        <div class="form-group">
+        <label for="trainee[first_name]">Update first name</label>
+        <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
+        </div>
+        
+        <div class="form-group">
+        <label for="trainee[last_name]">Update last name</label>
+        <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+        </div>
+         
+        <div class="form-group">
+        <label for="trainee[dob]">Update date of birth</label>
+        <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+        </div>
+         
+        <div class="form-group">
+        <label for="trainee[gender]">Update gender</label>
+        <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/>
+        </div>
+         
+        <div class="form-group">
+        <label for="trainee[employment_status]">Update employment status</label>
+        <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
+        </div>
+         
+        <div class="form-group">
+        <label for="trainee[phone_number]">Update phone number</label>
+        <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+        </div>
+         
+        <div class="form-group">
+        <label for="trainee[github]">Update Github</label>
+        <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
+        </div>
+         
+        <div class="form-group">
+        <label for="trainee[twitter]">Update Twitter</label>
+        <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
+        </div>
+    
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
