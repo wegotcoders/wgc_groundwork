@@ -15,10 +15,14 @@ get '/primes' do
 
   # TODO - add your prime number solution in the primes.rb file.
   @sum = Primes.sum_to(limit) 
-  
-  # working on it
+
+  # working on the solution how to get any number from user as a limit
   # userNumber = params[:userNum].to_i  
   # @sum = Primes.sum_to(userNumber)
+
+  # working on the solution how to make ruby code work in app
+  # @sum_mult = Puzzle.sum_mult(mult)
+  # erb :puzzle, :layout => :main
 
   erb :primes, :layout => :main
 end
