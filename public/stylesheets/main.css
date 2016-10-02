@@ -61,32 +61,35 @@ span {
 #about {
   width: 60%;
 }
-#codecademy {
+#codprof {
   text-align: center;
   color: #3a5199;
   font-family: Georgia, serif;
   font-weight: bold;
-  font-size: 1.5em;  
+  width: 57%;
+  font-size: 1em; 
 }
-#completedness {
+#type {
+  width: 57%;
+}
+#track div {
+  position: relative;
   display: inline-block;
-  clear: both;
+  margin-left: 5px;
+  margin-top: 5px;
+  height: 25px;
+  width: auto;
+  border-radius: 10px;
   text-align: center;
 }
-#completedness div:first-child {  
-  float: left;  
-  width: 350px;
-  margin: 3px;
+a {
+  font-family: Georgia, serif;
+  color: #3a5199;
+  font-weight: bold;
 }
-#completedness div:nth-child(2) {
-  float: left;
-  width: 350px;
-  margin: 3px;
-}
-#completedness div:nth-child(3) {
-  float: left;
-  width: 325px;
-  margin: 3px;
+a:hover {
+  text-decoration: none;
+  text-shadow: 0 0 2px grey;
 }
 table {
   border: 1px white solid;
@@ -115,11 +118,4 @@ input {
 .sum {
   font-weight: bold;
   font-size: 1em;
-}
-#problems a {
-  font-family: Georgia, serif;
-  font-size: 1em;
-  font-weight: bold;
-  color: #3a5188;
-  text-decoration: none;
 }

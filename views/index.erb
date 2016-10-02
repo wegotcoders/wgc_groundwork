@@ -3,8 +3,8 @@
   
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
     
-    <p style="text-align: left;"><span>About Me</span></p>
-    <div id="about">
+      <p style="text-align: left;"><span>About Me</span></p>
+      <div id="about">
         <div class="profile-section box">
             <h2 %=@profile.keys[3]%></h2>First name: 
             <h3 class="profile-value"><%=@profile["first_name"]%></h3>
@@ -22,30 +22,38 @@
             <h3 class="profile-value"><%=@profile["employment_status"]%></h3>
         </div>
     </div>
+  
     <img src="/images/iryna.jpg" />
-    <div id="codecademy">
+    
+    <!--Add a field to the form to add Codecademy account to the profile -->
+  
+    <div id="codprof" class="profile-section box">
+        <h2 %=@profile.keys[0]%></h2>Codecademy profile name: 
+        <h3 class="profile-value"><a href="https://www.codecademy.com/IrynaBi"><%=@profile["codecademy"]%></a></h3>
+    </div>   
+    <div id="type" class="profile-section box">
+        <form action="/update" method="post">
+        Type Codecademy profile name: <input type="text" name="trainee[codecademy]" />
+        <input type="submit" value="Submit"/>
+    </div>   
+    <div id="track">
         <div class="profile-section box">
-            <h2><%=@profile.keys[0].capitalize%></h2> 
-            <h2 class="profile-value"><%=@profile["codecademy"]%></h2>
-        </div>
-    </div>
-    <div id="completedness">
-        <div class="profile-section box">
-            <h2><%=@profile.keys[7]%></h2> 
+            <h2 %=@profile.keys[7]%></h2><a href="https://www.codecademy.com/learn/javascript">JavaScript Track</a>
             <h3 class="profile-value"><%=@profile["js_track_completedness"]%></h3>
         </div>
         <div class="profile-section box">
-            <h2><%=@profile.keys[11]%></h2> 
+            <h2 %=@profile.keys[11]%></h2><a href="https://www.codecademy.com/learn/ruby">Ruby Track</a> 
             <h3 class="profile-value"><%=@profile["ruby_track_completedness"]%></h3>
         </div>
         <div class="profile-section box">
-            <h2><%=@profile.keys[13]%></h2> 
+            <h2 %=@profile.keys[13]%></h2><a href="https://www.codecademy.com/learn/web">Web Track</a> 
             <h3 class="profile-value"><%=@profile["web_track_completedness"]%></h3>
         </div>
     </div>
+   
     <table align="right">
-    <thead>
-    <tr><th colspan="2">Contact</th><tr>
+    <thead> 
+    <tr><th colspan="2">Contact me</th><tr>
     </thead>
     <tr>
         <td><p %=@profile.keys[9]%><p>Phone number:</td> 
@@ -60,8 +68,6 @@
         <td><p><%=@profile["twitter"]%></p></td>        
     </tr>
     </table>
-
-   
 
     <!--<% @profile.each do |field, value| %>
     <div class="profile-section box">
