@@ -89,16 +89,20 @@
     <!-- I wanted to do STAT in more interactive way, 
     but it shows only 10 words what is definitely not correct. 
     I keep working on it.-->
-        <script type="text/javascript">
+  
+ <script type="text/javascript">
             function countWords() {
             profile_values = document.getElementsByClassName('profile-value');
             total_words = 0;
             for (i = 0; i < profile_values.length; i++) {
-                total_words += profile_values[i].innerHTML.split(' ').length;
+                total_words += profile_values[i].innerHTML.trim().split(' ').length;
+                console.log(total_words);
             }
             document.getElementById('zero').innerHTML = total_words
             }
-        </script>
+
+        </script>        
+
         <p>The number of words within my profile is <b id='zero'>0.</b>  </p>
         <input type='button' onclick='countWords()' value='Click to count the words' />
     </div>
