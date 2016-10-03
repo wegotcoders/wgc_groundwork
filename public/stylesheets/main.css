@@ -1,31 +1,117 @@
+/*################################################*/
+/*######## DOCUMENT WIDE  */
+
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  overflow-x: hidden;
+
 }
 
-#logo {
-  text-align: center;
-}
 
-#content {
-  padding: 1em;
-}
-
-.box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
-}
-
-.welcome {
-  text-align: center;
+.shadow {
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 3px 0px rgba(0, 0, 0, 0.4);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
 h3 {
   font-size: 1.5em;
+  font-weight: bold;
+}
+
+.box {
+/*   border-radius: 5px;
+  /*border: 2px solid #09992a;*/
+/*  border: 2px solid #C21C1C; */
+  background: white;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  width: 200px;
+}
+
+/*################################################*/
+/*########  TOP BAR */
+
+#logo {
+  /*text-align: center;*/
+  position: fixed;
+  background: black;
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  height:100px;
+  width:100%;
+  z-index: 100;
+}
+
+#logo-img {
+ /*  display: inline-block;
+  padding: 30px 0 0 35px;*/ 
+  float: left;
+  width: 259px;
+  margin-left: 35px;
+  margin-top: 30px;
+}
+
+/*################################################*/
+/*########  MENU */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 200;
+}
+
+#menu {
+  float: right;
+  vertical-align: bottom;
+  margin: 15px 10px 0 0;
+  overflow: hidden;
+  transition-duration: 0.8s;
+  transition-property: transform;
+  cursor: pointer;
+}
+
+#dropdown-content {
+    display: block;
+    position: absolute;
+    /* top: -50px; */
+  right: -200px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-top: 100px;
+  /*z-index: 200;*/
+  -webkit-transition: right 1s;
+  transition:         right 1s;
+}
+
+#dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#dropdown-content a:hover {background-color: #e8e6e6}
+
+.dropdown:hover #dropdown-content {
+    display: block;
+  right: 0px;
+}
+
+#menu:hover {
+    transform: rotate(270);
+    -webkit-transform: rotate(270deg);
+}
+
+/*################################################*/
+/*########  OTHERS */
+
+.welcome {
+  text-align: center;
 }
 
 .error {
@@ -36,4 +122,24 @@ h3 {
   font-size: 1.5em;
 }
 
-/* TODO - Add your own styles here */
+/*################################################*/
+/*########  BODY */
+
+#content {
+  top: 100px;
+  position: relative;
+  margin: auto;
+  /*loat: right;
+  margin-top: 100px;*/
+  /* padding: 1em; */
+  /* width: 75%; */
+  text-align: center;
+  padding-bottom: 90px;
+ }
+
+ .profile-title {
+  padding-top: 10px;
+ /* color: #C21C1C; */
+  color: #333;
+  /*margin-bottom: 10px;*/
+}

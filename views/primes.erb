@@ -1,7 +1,30 @@
-<h1>Prime Numbers</h1>
+<link rel="stylesheet" href="/stylesheets/primes.css" />
+<link rel="stylesheet" href="/stylesheets/prism.css" />
+<script src="/scripts/prism.js"></script>
 
-Sum : <%= @sum %>
+<div id="solution" class="profile-title">
+	<h3>Prime Numbers</h3>
+	<p>It has been asked to provide a logic in Ruby to find prime numbers and theirs sum up, with sum less than a given number, defaulting on 100</p>
+	<p></p>
+	<p>Following is a snapshot of the code:</p>
+	<pre><code class="language-ruby" id="code-example">
+require 'prime'
 
-<div>
-  <a href="/">Back</a>
+total = 1
+
+(1..limit).each do |i|
+	break if ((total + i) > limit)  
+	total += i if (Prime.prime?(i))
+end
+
+return total
+	</code></pre>
+	
+	<p></p>
+	<form action="/primes" method="POST">
+		<!-- <p>Please, insert a sum limit: <input type="text" name="limits" value="100" /><input type="submit" value="Update Profile" class="btn btn-primary"  style="display:none;" /></p> -->
+		<p>The sum of all prime numbers between 1 and <%= @limits %> is: <%= @sum %></p>
+		<p>Please, insert a sum limit for a new calculation and hit the "Calc" button: <input type="text" name="limits" value="<%= @limits %>" /><input type="submit" value="Calc" class="btn" /></p>
+		
+
 </div>

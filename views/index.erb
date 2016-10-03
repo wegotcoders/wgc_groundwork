@@ -1,59 +1,90 @@
+<link rel="stylesheet" href="/stylesheets/index.css">
+
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  
+  <div id="profile-picture">
+    <img src="/images/profile.jpg" alt="My very serious picture" class="shadow" id="profile-img"/>
+  </div>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+  <div id="about-me">
+    <h3 class="profile-title"><%= @profile["first_name"] %>'s Amazing Profile</h3>
+      <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+    <form action="/update" method="POST">
+    <div id="details">
+      <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
+      <ul id="profile-section">
+      <% @profile.each do |field, value| if value; %>
+          <li class="profile-heading"><%= field %>
+          <input type="text" name="trainee[<%= field %>]" class="profile-value" value="<%= value %>" /></li>
+      <%end; end %>
+      </ul>
     </div>
-  <% end %>
+    <input type="submit" value="Update Profile" class="btn btn-primary"  style="display:none;"/>
+    </form>
 
-  <div id="stats" class="box">
+
+<!--     <div id="edit_profile">        FAILED AT ADDING FIELDS, SKIPPING
+      <h3>Edit Profile</h3>
+
+      <form action="/update" method="POST">
+        <fieldset>
+          <div class="form-group">
+            <label for="trainee[about]">About</label>
+            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>" />
+          </div>
+          <input type="submit" value="Update Profile" class="btn btn-primary" />
+        </fieldset>
+      </form>
+    </div>
+  </div> -->
+
+</div>
+
+<div id="footer">
+ <img onclick="CloseBox()" src="images/close_icon.png" class="CloseButton">
+
+  <div id="stats">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
+  
+  <!-- Add your Javascript to this script tag -->
+  <script language="javascript">
+  function strip(html)
+  {
+     if (html == null) return "";
+     var tmp = document.createElement("DIV");
+     tmp.innerHTML = html;
+     return tmp.textContent || tmp.innerText || "";
+  }
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
+    //console.log("I am Javascript!");
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+    var profile_values = document.getElementsByClassName('profile-value');
+    var total_words = 0;
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
+    // TODO - Count the number of words in the profile.
+    // hint - look at what the innerHTML property provides.
+    var container  = document.getElementsByClassName('profile-heading');
+    
+    for (var i = 0; i < container.length; i++) {  
+       total_words += container[i].textContent.split(/\s+/).length;
+  }
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+    document.getElementById('word-count').innerHTML = total_words;
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
+    function CloseBox() {
+      document.getElementById("footer").style.display = "none";
+    }
+  </script>
+ 
 <% else %>
-  <div class="welcome">
+  
+  <div id="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
-
     <a href="/authorise">Authorise</a>
   </div>
+
+
 <% end %>
-
-
-<!-- Add your Javascript to this script tag -->
-<script language="javascript">
-  console.log("I am Javascript!");
-
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
-</script>
