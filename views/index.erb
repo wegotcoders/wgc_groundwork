@@ -1,11 +1,33 @@
 <% if @profile %>
-  <h3 style="text-align: center;"><span><%= @profile["first_name"] %>'s Super Amazing Profile</span></h3>
-  
+<div id="first">
+
+<div id="header">
+  <h3><span><%= @profile["first_name"].upcase %></span> <%= @profile["last_name"].upcase %>'s <p> Am<span>az</span>ing <span>Pro</span>file</p></h3>
+  <img src="/images/iryna.jpg" />
+</div>
+
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-    
-      <p style="text-align: left;"><span>About Me</span></p>
-      <div id="about">
-        <div class="profile-section box">
+<div class="left">
+  <div class="profile-section box">
+  <table>
+    <tr>
+        <td><img src="/images/icon_phone.png" /></td>
+        <td><%=@profile["phone_number"]%></td>
+    </tr>
+    <tr>
+        <td><img src="/images/icon_github.png" /></td>
+        <td><%=@profile["github"]%></td>
+     </tr>
+     <tr>
+        <td><img src="/images/icon_twitter.png" /></td>
+        <td><%=@profile["twitter"]%></td>      
+    </tr>
+  </table><br>
+
+  <h3 style="color: #e9b000">Hello!</h3>
+  <p style="color: #008f95">I am a beginner in Web development but absolutely crazy about it. Determined, inspired and hard-working. I will keep on fighting with the creative challenge till the end. I like to travel and I am a fabulous coffee maker.</p><br>
+  <div id="info">
+  <h3>General Information</h3>
             <h2 %=@profile.keys[3]%></h2>First name: 
             <h3 class="profile-value"><%=@profile["first_name"]%></h3>
             
@@ -19,56 +41,39 @@
             <h3 class="profile-value"><%=@profile["gender"]%></h3>    
 
             <h2 %=@profile.keys[2]%></h2>Employment status: 
-            <h3 class="profile-value"><%=@profile["employment_status"]%></h3>
-        </div>
-    </div>
-  
-    <img src="/images/iryna.jpg" />
-    
+            <h3 class="profile-value"><%=@profile["employment_status"]%></h3><br>
+  </div>
+  <h3>Interests</h3>
+  <table>
+    <tbody>
+    <tr>
+        <td><img src="/images/icon_travelling.png" /></td>   
+        <td><img src="/images/icon_coffee.png" /></td>       
+        <td><img src="/images/icon_music.png" /></td> 
+        <td><img src="/images/icon_horses.png" /></td> 
+        <td><img src="/images/icon_gym.png" /></td> 
+        <td><img src="/images/icon_draughts.png" /><td>     
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>       
     <!--Add a field to the form to add Codecademy account to the profile -->
-  
-    <div id="codprof" class="profile-section box">
-        <h2 %=@profile.keys[0]%></h2>Codecademy profile name: 
-        <h3 class="profile-value"><a href="https://www.codecademy.com/IrynaBi"><%=@profile["codecademy"]%></a></h3>
-    </div>   
-    <div id="type" class="profile-section box">
-        <form action="/update" method="post">
-        Type Codecademy profile name: <input type="text" name="trainee[codecademy]" />
+<div class="right">
+       
+    <div class="profile-section box">
+      <h3>Track Completedness</h3>
+       
+        <h3 class="profile-value">from Codecademy profile with the name: <a href="https://www.codecademy.com/IrynaBi">
+<p><%=@profile["codecademy"]%></a></h3><br>
+    
+    <div class="percentage"><p><h2 %=@profile.keys[7]%></h2></p><a href="https://www.codecademy.com/learn/javascript"> JavaScript Track</a></div>     
+    <div class="percentage"><h2 %=@profile.keys[11]%></h2><a href="https://www.codecademy.com/learn/ruby">Ruby Track</a></div>      
+    <div class="percentage"> <h2 %=@profile.keys[13]%></h2><a href="https://www.codecademy.com/learn/web">Web Track</a></div>
+    <br>  
+    <form action="/update" method="post">
+        If you don't see Codecademy profile name, please, type it here: <input type="text" name="trainee[codecademy]" value="i.e. IrynaBi"/>
         <input type="submit" value="Submit"/>
-    </div>   
-    <div id="track">
-        <div class="profile-section box">
-            <h2 %=@profile.keys[7]%></h2><a href="https://www.codecademy.com/learn/javascript">JavaScript Track</a>
-            <h3 class="profile-value"><%=@profile["js_track_completedness"]%></h3>
-        </div>
-        <div class="profile-section box">
-            <h2 %=@profile.keys[11]%></h2><a href="https://www.codecademy.com/learn/ruby">Ruby Track</a> 
-            <h3 class="profile-value"><%=@profile["ruby_track_completedness"]%></h3>
-        </div>
-        <div class="profile-section box">
-            <h2 %=@profile.keys[13]%></h2><a href="https://www.codecademy.com/learn/web">Web Track</a> 
-            <h3 class="profile-value"><%=@profile["web_track_completedness"]%></h3>
-        </div>
-    </div>
-   
-    <table align="right">
-    <thead> 
-    <tr><th colspan="2">Contact me</th><tr>
-    </thead>
-    <tr>
-        <td><p %=@profile.keys[9]%><p>Phone number:</td> 
-        <td><p><%=@profile["phone_number"]%></p></td>
-    </tr>
-    <tr> 
-        <td><p %=@profile.keys[5]%><p>Github:</td> 
-        <td><p><%=@profile["github"]%></p></td>       
-    </tr>
-    <tr>
-        <td><p %=@profile.keys[12]%><p>Twitter:</td> 
-        <td><p><%=@profile["twitter"]%></p></td>        
-    </tr>
-    </table>
-
     <!--<% @profile.each do |field, value| %>
     <div class="profile-section box">
       <h4><%= field %></h4>
@@ -81,8 +86,9 @@
     <!-- TODO - Set the contents of this span with JavaScript 
     <span id="word-count">0</span> words found. -->
 
-    <!-- I wanted to do STAT in more interactive way, but by some reason it shows only 10 words
-    which is definitely not correct. I keep working on it.-->
+    <!-- I wanted to do STAT in more interactive way, 
+    but it shows only 10 words what is definitely not correct. 
+    I keep working on it.-->
         <script type="text/javascript">
             function countWords() {
             profile_values = document.getElementsByClassName('profile-value');
@@ -97,10 +103,6 @@
         <input type='button' onclick='countWords()' value='Click to count the words' />
     </div>
 
-<!--    <div class="profile-section box">
-        <h2><%=@profile.keys[10].capitalize%></h2> 
-        <h3 class="profile-value"><%=@profile["primes_sum"]%></h3>
-    </div> -->
     
 <!--I keep working on this challenge. The issue is how to store the user input's number to use it furhter in Ruby function Primes.sum_to(here is user input number) and then how to show it in result within a file primes.erb  
     <p>Let's get Fun!</p> 
@@ -117,55 +119,40 @@
   </div>
 
   <div class="box">
-    <h3>Edit Profile</h3>
+    <h3>Update Profile</h3>
 
     <form action="/update" method="POST">
       <fieldset>
-        <div class="form-group">
+        <!--<div class="form-group">
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
+        </div> -->
 
         <!-- TODO - Add more fields so that your profile can be edited -->
-        
-        <div class="form-group">
-        <label for="trainee[first_name]">Update first name</label>
+         <div class="form-group">
+        <label for="trainee[first_name]">First name</label>
         <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
-        </div>
         
-        <div class="form-group">
-        <label for="trainee[last_name]">Update last name</label>
-        <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
-        </div>
+        <p><label for="trainee[last_name]">Last name</label>
+        <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/></p>
+       
+        <p><label for="trainee[dob]">Date of birth</label>
+        <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/></p>
+
+        <p><label for="trainee[gender]">Gender</label>
+        <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/></p>
+        
+        <p><label for="trainee[employment_status]">Employment status</label>
+        <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/></p>
+        
+        <p><label for="trainee[phone_number]">Phone number</label>
+        <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/></p>
          
-        <div class="form-group">
-        <label for="trainee[dob]">Update date of birth</label>
-        <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
-        </div>
-         
-        <div class="form-group">
-        <label for="trainee[gender]">Update gender</label>
-        <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/>
-        </div>
-         
-        <div class="form-group">
-        <label for="trainee[employment_status]">Update employment status</label>
-        <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
-        </div>
-         
-        <div class="form-group">
-        <label for="trainee[phone_number]">Update phone number</label>
-        <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
-        </div>
-         
-        <div class="form-group">
-        <label for="trainee[github]">Update Github</label>
-        <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
-        </div>
-         
-        <div class="form-group">
-        <label for="trainee[twitter]">Update Twitter</label>
-        <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
+        <p><label for="trainee[github]">Github</label>
+        <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/></p>
+        
+        <p><label for="trainee[twitter]">Twitter</label>
+        <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/></p>
         </div>
     
 
@@ -173,6 +160,9 @@
       </fieldset>
     </form>
   </div>
+       
+</div>
+ 
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -184,8 +174,25 @@
 <script language="javascript">
     function countWords() {
     var profile_values = document.getElementsByClassName('profile-value');
-    var total_words = 0;
   // TODO - Count the number of words in the profile.
+    var total_words = 0;
   // hint - look at what the innerHTML property provides.
-    
-</script>
+</script> 
+
+  <!-- Experiment with using JavaScript to respond to user events -->
+  
+    <script type="text/javascript">
+        function sayThankYou() {
+            alert("THANK YOU FOR LOOKING!")
+            }
+    </script>
+<div id="footer"> 
+   <div id="thanks">
+        <p>To see personalised message left for you</p> 
+      
+         <form>
+             <input type="button" onclick="sayThankYou()" value="Click here" />
+         </form>
+    </div> 
+</div> 
+</div>

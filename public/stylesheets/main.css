@@ -3,6 +3,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background: #e9e9e9;
 }
 
 #logo {
@@ -14,7 +15,7 @@ body {
 }
 
 .box {
-  border: 1px solid #b82601;
+  /*border: 1px solid black;*/
   /*background: #FCFCFC;*/
   padding: 1em;
   margin-bottom: 0.5em;
@@ -26,6 +27,7 @@ body {
 
 h3 {
   font-size: 1.5em;
+  color: red;
 }
 
 .error {
@@ -37,85 +39,111 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
-div {
-  background-color: #A1D6E2;
-  border-radius: 5px;
-  font-family: Georgia, serif;
+div > table, td {
+  border-bottom: 1px solid #cdcdcd;
+  text-align: left;
+  width: 80%;
+  height: 20px;
+  font-size: 16px;
+  margin-left: 20px;
 }
-span {
-  font-weight: bold;
-  font-size: 1.5em;
+table img {
+  hight: 30px;
+  width: 30px;
 }
-.box {
-  background-color: #f1f1f2;
-}
-.profile-value {
-  font-family: Georgia, serif;
-  font-size: 1.5em ;
-  color: #3a5199;
-  font-weight: bold;
-}
-.profile-section box{
-  background-color: #f1f1f2;  
-}
-#about {
-  width: 60%;
-}
-#codprof {
+.percentage {
+  width: 150px;
+  height: 18px;
+  background-color: white; 
   text-align: center;
-  color: #3a5199;
-  font-family: Georgia, serif;
-  font-weight: bold;
-  width: 57%;
-  font-size: 1em; 
-}
-#type {
-  width: 57%;
-}
-#track div {
-  position: relative;
+  border-radius: 8px;
+  border: 2px solid #4ec5c1;
   display: inline-block;
-  margin-left: 5px;
-  margin-top: 5px;
-  height: 25px;
+}
+/*Aqua background; 1st level*/
+#first {
+  background: #4ec5c1;
+}
+#header {
+  z-index: 1;
+  height: 120px;
   width: auto;
-  border-radius: 10px;
+  background-color: #000000;
+  padding: 20px;
+  margin-top: -30px;
+  color: #fffff3;
   text-align: center;
+  color: white;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+#header img {
+  position: relative;
+  height: 145px;
+  width: 110px;
+  border-radius: 100%;
+  float: left;
+  margin-top: -130px;
+}
+#header h3 {
+  color: white;
+  font-size: 3em;
+  font-weight: bold; 
+}
+#header span { 
+  color: #4ec5c1;
+}
+.left {
+  height: 750px;
+  width: 30%;
+  background-color: #e9e9e9;
+  float: left;
+  margin-left: 7px; 
+}
+.left table, td {
+  text-align: center;
+  padding: 5px;
+  margin-left: -15px;
+}
+.left h3 {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+#info {
+  background: #4ec5c1;
+  color: white;
+  font-weight: bold;
+  width: 245px;
+  margin-left: -14px;
+}
+.right {
+  height: 750px;
+  width: 68%;
+  margin-left: 250px;
+  background: white; 
+}
+.right h3 {
+  color: #008f95;
+  font-weight: bold;
+  text-align: center; 
 }
 a {
-  font-family: Georgia, serif;
-  color: #3a5199;
+  color: #687a8f;
   font-weight: bold;
 }
 a:hover {
   text-decoration: none;
-  text-shadow: 0 0 2px grey;
+  text-shadow: 0 0 2px #687a8f;
+
 }
-table {
-  border: 1px white solid;
-  color: #f1f1f2;
-  background-color: #3a5188;  
-  font-weight: bold;
-  font-family: Georgia, serif;
-  font-size: 1.2em;
-  margin-top: -430px;
-  width: 39%;
-}
-img {
-  border-radius: 5px;
-  height: 270px;
-  width: 190px;
-  margin-top: -280px;
-  float: left;
-  margin-left: 340px;
-}
-input {
-  font-family: Georgia, serif;
-  font-size: 1em;
-  font-weight: bold;
-  color: #3a5188;
-}
-.sum {
-  font-weight: bold;
-  font-size: 1em;
+#footer {
+  clear: both;
+  width: 100%;
+  height: 50px;
+  background-color: #e9b000;
+  position: relative;
+  margin-bottom: 5px;
+  color: black;
+  text-align: center;
 }

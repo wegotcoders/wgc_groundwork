@@ -12,7 +12,6 @@ get '/primes' do
   # TODO - Can we make this dynamic?
   limit = 100
   
-
   # TODO - add your prime number solution in the primes.rb file.
   @sum = Primes.sum_to(limit) 
 
