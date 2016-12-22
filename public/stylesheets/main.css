@@ -3,6 +3,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background-image: url("/images/background.jpg");
 }
 
 #logo {
@@ -14,10 +15,15 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
+  border: 2px solid #999;
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
+  height: 150px;
+  background: -webkit-linear-gradient(#ffffff, #626262); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#ffffff, #626262); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#ffffff, #626262); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#ffffff, #626262); /* Standard syntax (must be last) */
 }
 
 .welcome {
@@ -25,7 +31,9 @@ body {
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
 }
 
 .error {
@@ -37,3 +45,40 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+
+p.profile-value{
+        color:#404040;
+        font:Arial, Helvetica, sans-serif;
+        letter-spacing: 0.05em;
+        margin: 0 0 10px;
+        padding-top: 5px;
+}
+
+h4{
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-decoration: underline;
+
+}
+
+div.myPic {
+    margin: 5px;
+    padding: 5px 2px 5px 2px;
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+div.myPic img {
+    display: inline;
+    margin: 5px;
+    border: 3px solid #ffffff;
+}
+
+
+.form-group{
+  margin: 10px;
+
+}
