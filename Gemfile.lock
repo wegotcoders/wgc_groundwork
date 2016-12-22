@@ -45,6 +45,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   httparty
@@ -53,3 +54,6 @@ DEPENDENCIES
   pry
   rspec
   sinatra
+
+BUNDLED WITH
+   1.10.6

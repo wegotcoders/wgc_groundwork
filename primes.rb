@@ -1,6 +1,19 @@
+######CANT LAUNCH SERVER WITHOUT THIS CODE###########
 class Primes
-  def self.sum_to(limit = 100)
-    # TODO - add your prime number solution here...
-    "I'm working on it!"
+  def self.sum_to(number)
+
+    start = 2
+    primes = (start..number).to_a
+    (start..number).each do |no|
+      (start..no).each do |num|
+        if ( no % num  == 0) && num != no
+          primes.delete(no)
+          break
+        end
+      end
+    end
+    primes.inject(:+)
   end
+
+
 end

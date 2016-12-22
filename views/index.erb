@@ -1,5 +1,10 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <div id="section1">
+      <h3 id="header-text"><%= @profile["first_name"] %>'s Profile</h3>
+      <div id="scroll-down"> <a href="#down">&#9660;</a> </div>
+  </div>
+<a name="down"></a>
+<img id="profile-pic" src="/images/me.jpg" alt="Picture of Sam Sargent"/>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
@@ -17,7 +22,7 @@
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+    <a href="/primes">Prime Number Challenge</a>
   </div>
 
   <div class="box">
@@ -25,12 +30,35 @@
 
     <form action="/update" method="POST">
       <fieldset>
+        <!--  about form -->
         <div class="form-group">
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <!--  codecademy form -->
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>
+
+        <!--  ambition form -->
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+        </div>
+
+        <!--Prime solution -->
+        <div class="form-group">
+          <label for="trainee[primes_sum]">Primes Sum</label>
+          <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[projects]">Projects</label>
+          <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+        </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
@@ -52,8 +80,33 @@
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
 
+
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
+  for (var i = 0; i < profile_values.length; i++) {
+      total_words = total_words + profile_values[i].innerText.split(" ").length;
+  };
+
   document.getElementById('word-count').innerHTML = total_words;
+
+
+</script>
+
+<!-- JQUERY TO HIDE ALL THE EMPTY FIELDS ON THE PAGE AND REPLACE _ IN TITLES WITH A SPACE -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+  var $h4 = $('h4').text();
+  $('h4').each(function(){
+    var string = $(this).html();
+    var newString = string.replace(/_/g, ' ');
+    $(this).html(newString);
+    if ( $(this).siblings('.profile-value').text().length === 0 ) {
+      $(this).parent('.profile-section').hide();
+    }
+  });
+});
 </script>
