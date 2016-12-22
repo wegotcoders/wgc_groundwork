@@ -1,33 +1,49 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <h1><%= @profile["first_name"] %>'s Amazing Profile</h1>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  <div class= "row" id ="profile-value">
   <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+  <% unless value.nil? or value.gsub(" ", "").empty? %>
+    <div class="col-xs-6">
+      <%= "<div class=\"alert alert-#{['info', 'danger', 'warning', 'success'].sample}\">" %>
+        <h4><%= field.capitalize.gsub("_", " ") %></h4>
+        <p class="profile-value"><%= value %></p>
+      </div>
     </div>
+   <% end %>
   <% end %>
+</div>
 
-  <div id="stats" class="box">
+  <div id="stats" class="alert">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
+
+  <hr />
+
+
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
-  <div class="box">
+  <div class="panel panel-default">
     <h3>Edit Profile</h3>
 
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/> <br/>
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/> <br/>
+          <label for="trainee[twitter]">Twitter</label>
+          <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/> <br/>
+          <label for="trainee[github]">Github</label>
+          <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/> <br/>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
@@ -53,6 +69,9 @@
   var total_words = 0;
 
   // TODO - Count the number of words in the profile.
+  for (var i = 0; i < profile_values.length; i++) {
+    total_words += profile_values[i].textContent.split(" ").length
+  }
   // hint - look at what the innerHTML property provides.
 
   document.getElementById('word-count').innerHTML = total_words;
