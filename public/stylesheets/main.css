@@ -1,31 +1,18 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
   line-height: 1.428571429;
   color: #333;
 }
 
 #logo {
   text-align: center;
-}
-
-#content {
-  padding: 1em;
-}
-
-.box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
+  float:left;
+  margin-top:1em;
 }
 
 .welcome {
   text-align: center;
-}
-
-h3 {
-  font-size: 1.5em;
 }
 
 .error {
@@ -37,3 +24,93 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+.title h2 {
+  font-size:3em;
+  text-align: center;
+  padding-top:0.5em;
+
+  font-weight:700;
+}
+
+.section-one {
+  height: 100vh;
+  width:100vw;
+  background-color:#49a7e9;
+}
+
+.section-two, .section-three, .section-four, .section-five, .section-six, .section-seven, .section-eight{
+  height: 50vh;
+  width:100vw;
+  text-align: center;
+}
+
+.section-two, .section-six {
+  background-color: #fab125;
+}
+
+.section-two .content, .section-five .content, .section-six .content, .section-eight .content{ 
+  width: 70%;
+  margin:auto;
+  padding-top:1em;
+}
+
+.section-three, .section-seven{
+  background-color: #63BD2F;
+}
+
+.section-four, .section-eight{
+  background-color: #c869bf;
+}
+
+.section-five{
+  background-color: #0fbfcf;
+}
+
+.section-six{  
+  margin:0 auto;
+}
+
+.section-six .form-group{
+  padding-left:1em;
+  padding-bottom:2em;
+}
+
+.info-container{
+  margin:0;
+  width:100vw;
+  padding-top:4em;
+}
+
+.basic-info{
+  float:left;
+  width:33%;
+}
+
+.basic-info h2{
+  font-size:1.5em;
+}
+
+.intro{
+  font-size:6em;
+  font-family:impact;
+  text-align:center;
+  clear:both;
+  padding-top:6%;
+  position:relative;
+}
+
+#my-picture img{
+  width:250px;
+  float:right;
+  margin:1em;
+  border-radius:25%;
+}
+
+.form-group label {
+  padding-left:2em;
+
+
+
+
+}

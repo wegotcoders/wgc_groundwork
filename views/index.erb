@@ -1,41 +1,135 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <div class="section-one">
+  <div class="intro"><h3  class ="profile-value"><%= @profile["first_name"] %>'s Amazing Profile</h3></div>
+</div>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
-
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
-
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
-
-  <div class="box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+  <div class="section-two">
+    <div class="title">
+      <h2><%=@profile.keys[0].capitalize%></h2>
+        <div class="content">
+          <h3 class ="profile-value"><%=@profile["about"] %></h3>
         </div>
+    </div>
 
+    <div class="info-container">
+      <div id="name" class="basic-info">
+        <h2><%=@profile.keys[5].capitalize%></h2>
+        <h3 class ="profile-value"><%=@profile["first_name"] %> <%=@profile["last_name"] %></h3>
+      </div>
+
+      <div id="dob" class="basic-info">
+        <h2><%=@profile.keys[3].capitalize%></h2>
+        <h3 class ="profile-value"><%=@profile["dob"] %></h3>
+      </div>
+
+      <div id="phone" class="basic-info">
+        <h2><%=@profile.keys[13].capitalize%></h2>
+        <h3 class ="profile-value"><%=@profile["phone_number"] %></h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-three">
+    <div class="title">
+      <h2><%=@profile.keys[1].capitalize%></h2>
+        <div class="content">
+          <h3 class ="profile-value"><%=@profile["ambition"] %></h3>
+        </div>
+    </div>
+  </div>
+
+  <div class="section-four">
+    <div class="title">
+      <h2>Codecademy</h2>
+        <div class="content">
+          <h3 class ="profile-value">Username: <%=@profile["codecademy"] %></h3>
+        </div>
+    </div>
+
+    <div class="info-container">
+      <div id="htmlcss" class="basic-info">
+        <h2>HTML & CSS </h2>
+        <h3 class ="profile-value"><%=@profile["web_track_completedness"] %></h3>
+      </div>
+
+      <div id="javascript" class="basic-info">
+        <h2>Javascript</h2>
+        <h3 class ="profile-value"><%=@profile["js_track_completedness"] %></h3>
+      </div>
+
+      <div id="ruby" class="basic-info">
+        <h2>Ruby</h2>
+        <h3 class ="profile-value"><%=@profile["ruby_track_completedness"] %></h3>
+      </div>
+    </div>
+  </div>
+
+<div class="section-five">
+    <div class="title">
+      <h2><%=@profile.keys[15].capitalize%></h2>
+        <div class="content">
+          <h3 class ="profile-value"><%=@profile["projects"] %></h3>
+        </div>
+    </div>
+</div>
+
+  <div class="section-six">
+    <div class="box">
+      <div class="content">
+        <div class="title">
+          <h2>Edit Profile</h2>
+
+          <form action="/update" method="POST">
+            <fieldset>
+              <div class="form-group">
+                  <% count=0 %>
+                 <% @profile.each do |field, value| %>
+            
+                      
+                      <label for="trainee[<%= field %>]"><%= field.capitalize %></label>
+                      <input type="text" name="trainee[<%= field %>]" value="<%= value %>"/>
+                      <% count+=1 %>
+                      <% if count == 3 %>
+                      <p>
+                      <% count = 0 %>
+                      <% end %>
+          
+                  <% end %>
+              </div>
+        </div>
+    </div>
         <!-- TODO - Add more fields so that your profile can be edited -->
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
+         <input type="submit" value="Update Profile" class="btn btn-primary" />
+        </fieldset>
+      </form>
+    </div>
   </div>
+
+<div class="section-seven">
+    <div class="title">
+      <h2>Stats</h2>
+        <div class="content">
+          <h3><span id="word-count">0</span> words found.</h3>
+        </div>
+    </div>
+</div>
+
+<!-- <h3><%=@profile.keys[0] %></h3>
+<h3><%=@profile["about"] %></h3>
+<h3><%=@profile%></h3> -->
+
+
+<div class="section-eight">
+    <div class="title">
+      <div id="problems" class="box">
+    <h2>Programming Problems</h2>
+    <a href="/primes">My Prime Number Solution</a>
+  </div>
+    </div>
+</div>
+
+  
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -46,12 +140,19 @@
 
 
 <!-- Add your Javascript to this script tag -->
+
+<!-- Fixed to count words with all elements with class name 'profile-value'-->
 <script language="javascript">
   console.log("I am Javascript!");
 
   var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+  total_words = 0
+  for (i=0; i < profile_values.length; i++){
+  total_words += profile_values[i].innerText.toString().split(' ').length;}
+  console.log(profile_values);
 
+
+  
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
