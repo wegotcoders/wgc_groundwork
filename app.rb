@@ -1,8 +1,8 @@
 require 'sinatra'
 require './lib/profile'
 
-set :application_id, 'EDIT_ME'
-set :secret, 'EDIT_ME'
+set :application_id, '279b70e2ddbdbe759a454f2cd5bf6ccf62e4db51f31450e625f0c9b7d8aae640'
+set :secret, '8a98c89d14f42107de125ce4f23b9798340f927a1a89ec553074fb02322795a3'
 set :redirect_uri, 'http://localhost:4567/callback'
 set :site_url, 'https://wegotcoders.com'
 set :session_secret, 'secret'
@@ -16,6 +16,11 @@ get '/primes' do
   @sum = Primes.sum_to(limit)
 
   erb :primes, :layout => :main
+end
+
+get '/edit' do
+  @profile = trainee.get_profile
+  erb :edit, :layout => :main
 end
 
 get '/' do
