@@ -18,7 +18,5 @@
     <%= yield %>
   </div>
 
-  
-  
 </body>
 </html>
