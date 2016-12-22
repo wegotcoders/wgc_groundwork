@@ -1,8 +1,13 @@
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.428571429;
   color: #333;
+  background-color: #FBF8EF;
+  background-image: url(../images/burnt_paper.png);
+  background-repeat: no-repeat;
+  background-position: 50px 80px;
+  background-size: 85%;
 }
 
 #logo {
@@ -14,10 +19,7 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
+  margin: 0 220px 0.5em 100px;
 }
 
 .welcome {
@@ -25,6 +27,7 @@ body {
 }
 
 h3 {
+  font-family: "Alegreya";
   font-size: 1.5em;
 }
 
@@ -37,3 +40,69 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+@font-face {
+  font-family: "Alegreya Bold";
+  src: url("Alegreya-Bold.otf");
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("Alegreya-Regular.otf");
+}
+
+h1 {
+  font-family: "Alegreya Bold";
+  font-size: 2.5em;
+  text-shadow: 2px 1px 0px #FFF;
+  text-align: center;
+  color: #FE2E2E;
+  margin-bottom: 2.5em;
+}
+
+h4 {
+  font-family: "Alegreya";
+  font-size: 1.4em;
+  text-transform: uppercase;
+  text-shadow: 2px 1px 0px #FBF8EF;
+}
+
+#profile-pic {
+  position: absolute;
+  z-index: 100;
+  top: 130px;
+  right: 250px;
+  box-shadow: 3px 3px 8px #FBF8EF;
+}
+
+.info {
+  overflow: hidden;
+}
+
+.accounts {
+  clear: both;
+  margin: 1.5em 220px 0px 100px;
+}
+
+.account-box {
+  width: 35%;
+  float: left;
+  margin-left: 100px;
+  margin-bottom: 0.5em;
+}
+
+.list {
+  font-family: "Alegreya";
+  font-size: 1.5em;
+}
+
+#stats {
+  margin-top: 1.5em;
+}
+
+.form-group label {
+  display: inline-block;
+  width: 180px;
+}
+
+.form-group textarea, input {
+  width: 260px;
+}

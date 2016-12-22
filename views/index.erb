@@ -1,14 +1,46 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
+  <h1><%= @profile["first_name"] %>'s Amazing Profile</h1>
+  <!-- Add picture -->
+  <div id="profile-pic">
+    <img src="../images/profile_pic.jpg" width="150" height="auto" border="0" alt="Natascha's profile picture" />
+  </div>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+  <div id="profile-overview">
+    <div class="info">
+    <% @profile.each do |field, value| %>
+      <!-- all profiles should be stand-alone -->
+      <% if field != "codecademy" && field != "github" && field != "homepage" && field != "twitter" %>
+        <div class="profile-section account-box">
+          <h4><%= field %></h4>
+          <p class="profile-value"><%= value %></p>
+        </div>
+      <% end %>
+    <% end %>
     </div>
-  <% end %>
-
+    <div class="accounts">
+    <h4>Accounts</h4>
+    <% if @profile["codecademy"] %>
+	  <div class="profile-section">
+	    <li><span class="list profile-value">codecademy</span>: <span class="list-entry"><%= @profile["codecademy"] %></span></li>
+	  </div>
+	<% end %>
+	<% if @profile["github"] %>
+	  <div class="profile-section">
+	    <li><span class="list profile-value">github</span>: <span class="list-entry"><%= @profile["github"] %></span></li>
+	  </div>
+	<% end %>
+	<% if @profile["homepage"] %>
+	  <div class="profile-section">
+	    <li><span class="list profile-value">homepage</span>: <span class="list-entry"><%= @profile["homepage"] %></span></li>
+	  </div>
+	<% end %>
+	<% if @profile["twitter"] %>
+	  <div class="profile-section">
+	   <li><span class="list profile-value">twitter</span>: <span class="list-entry"><%= @profile["twitter"] %></span></li>
+	  </div>
+	<% end %>
+    </div>
+  </div>
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
@@ -23,13 +55,25 @@
   <div class="box">
     <h3>Edit Profile</h3>
 
-    <form action="/update" method="POST">
+    <form id="update-form" action="/update" method="POST">
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <textarea name="trainee[about]" rows="4"><%= @profile["about"] %></textarea>
         </div>
-
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <textarea name="trainee[ambition]" rows="4"><%= @profile["ambition"] %></textarea>
+        </div>
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[projects]">Projects</label>
+          <textarea name="trainee[projects]" rows="4"><%= @profile["projects"] %></textarea>
+        </div>
+        
         <!-- TODO - Add more fields so that your profile can be edited -->
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
@@ -54,6 +98,11 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  for(var i = 0; i < profile_values.length; i++) {
+    //profile_values are HTML Elements. Get value.
+    var text = profile_values[i].innerHTML;
+    total_words += text.split(' ').length;
+  }
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
