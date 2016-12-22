@@ -1,8 +1,8 @@
 require 'sinatra'
 require './lib/profile'
 
-set :application_id, 'EDIT_ME'
-set :secret, 'EDIT_ME'
+set :application_id, '052846389e49b73d07f9564c19eb03d31036e72041d3fa0b213d43752d7cb746'
+set :secret, 'ad34b0a5652090cf46f71bbc8bd031230d4cdcb3373fa2e88eb77627a2401d4e'
 set :redirect_uri, 'http://localhost:4567/callback'
 set :site_url, 'https://wegotcoders.com'
 set :session_secret, 'secret'
@@ -11,6 +11,9 @@ enable :sessions
 get '/primes' do
   # TODO - Can we make this dynamic?
   limit = 100
+
+  #puts 'Enter any number upto 2000000 to find the sum of prime numbers less than the number'
+  #limit=gets.chomp.to_i  
 
   # TODO - add your prime number solution in the primes.rb file.
   @sum = Primes.sum_to(limit)

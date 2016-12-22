@@ -2,12 +2,59 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+    <img class="profile_pic" src="./images/supy.jpg"  />
+ 
+  <!--- <% @profile.each do |field, value| %> -->
+  <!--<% end %> -->
+  <div class="profile-section box">
+      <h4>Name</h4>
+      <p class="profile-value"> <%= @profile["first_name"] + ' ' + @profile["last_name"] %></p>
     </div>
-  <% end %>
+    <div class="profile-section box">
+      <h4>About</h4>
+        <ul>
+          <li >Obtained Masters in Embedded Systems from University of Essex</li>
+          <li >Thesis: 3D Reconstruction</li>
+          <li >Interested in Running</li>
+        </ul>      
+    </div>      
+  <div class="profile-section box">
+      <h4>Gender</h4>
+      <p class="profile-value"> <%= @profile["gender"] %></p>
+    </div>   
+    <div class="profile-section box">
+      <h4>Date of Birth</h4>
+      <p class="profile-value"> <%= @profile["dob"] %></p>
+    </div> 
+    <div class="profile-section box">
+      <h4>Phone Number</h4>
+      <p class="profile-value"> <%= @profile["phone_number"] %></p>
+    </div>     
+    <div class="profile-section box">
+      <h4>Ruby Fundamentals</h4>
+      <p class="profile-value"> Completed</p>
+    </div> 
+        <div class="profile-section box">
+      <h4>Javascript Fundamentals</h4>
+      <p class="profile-value">Completed</p>
+    </div> 
+        <div class="profile-section box">
+      <h4>Web Fundamentals</h4>
+      <p class="profile-value"> Completed</p>
+    </div>     
+    <div class="profile-section box">
+      <h4>Codecademy profile</h4>
+      <a href="http://www.codecademy.com/supiash">
+      <img class="codecademy_logo" src="https://www.codecademy.com/assets/logo/logo--dark-blue.svg" />
+      </a>
+    </div> 
+    <div class="profile-section box">
+      <h4>Github profile</h4>
+      <a href="https://github.com/supiash1">
+      <img  class="profile_logo" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" />
+      </a>
+    </div>    
+    
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -16,7 +63,7 @@
   </div>
 
   <div id="problems" class="box">
-    <h3>Programming Problems</h3>
+    <h3>Programming Problems</h3>   
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
@@ -29,6 +76,15 @@
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
         </div>
+        <div class="form-group">
+          <label for="trainee[employment_status]">Employment status</label>
+          <input type="text" name="trainee[employment_status]" />
+        </div>     
+        <div class="form-group">
+          <label for="trainee[phone_number]">Phone Number</label>
+          <input type="text" name="trainee[phone_number]" />
+        </div>   
+
 
         <!-- TODO - Add more fields so that your profile can be edited -->
 
@@ -47,13 +103,16 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
 
+  //console.log("I am Javascript!");
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
-
+    for (var i = 0; i < profile_values.length; i++) {
+      string_array= profile_values[i].innerHTML.split(" ");
+      total_words += string_array.length;
+    }
+  //total_words=profile_array.length
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
-
   document.getElementById('word-count').innerHTML = total_words;
 </script>
