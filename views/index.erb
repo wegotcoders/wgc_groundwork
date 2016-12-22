@@ -1,36 +1,83 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <img id="profile-pic" src="/images/Suited.png" alt="Suited and booted">
+  <h1><%= @profile["first_name"] %>'s Amazing Profile</h1>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+  <div class="profile-section no-col-box">
+    <h4>About</h4>
+    <p class="profile-value"><%= @profile["about"] %></p>
+  </div>
+  <div class="profile-section box">
+    <% @profile.each do |field, value| %>
+        <% if field != "about" && field != "codecademy" && field != "ruby_track_completedness" && field != "web_track_completedness" && field != "js_track_completedness" && field != "twitter"%>
+          <h4><%= field.capitalize %></h4>
+          <p class="profile-value"><%= value %></p>
+        <% end %>
+    <% end %>
+  </div>
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
+  <div class="profile-section no-col-box">
+    <h4>Accounts</h4>
+      <ul>
+        <li>
+          <h3>Codecademy</h3><p class="profile-value"><%= @profile["codecademy"] %></p>
+        </li>
+        <li>
+          <h3>Ruby Track Completedness</h3><p class="profile-value"><%= @profile["ruby_track_completedness"] %></p>
+        </li>
+        <li>
+          <h3>Web Track Completedness</h3><p class="profile-value"><%= @profile["web_track_completedness"] %></p>
+        </li>
+        <li>
+          <h3>JS Track Completedness</h3><p class="profile-value"><%= @profile["js_track_completedness"] %></p>
+        </li>
+        <li>
+          <h3>Twitter</h3><p class="profile-value"><%= @profile["twitter"] %></p>
+        </li>
+      </ul>
+  </div>
+
+  <div id="stats" class="no-col-box">
+    <h4>Stats</h4>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
+  <div id="problems" class="no-col-box">
+    <h4>Programming Problems</h4>
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+  <div class="no-col-box">
+    <h4>Edit Profile</h4>
 
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <textarea rows="4" name="trainee[about]"><%= @profile["about"] %></textarea>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <textarea rows="4" name="trainee[ambition]"><%= @profile["ambition"] %></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[phone_number]">Phone Number</label>
+          <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[twitter]">Twitter</label>
+          <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
+        </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
@@ -49,8 +96,12 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+  var profile_values = document.getElementsByClassName('profile-value');
+  for(var i = 0;i<profile_values.length;i++){
+    var words = profile_values[i].innerHTML.split(" ");
+    total_words += words.length;
+  }
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.

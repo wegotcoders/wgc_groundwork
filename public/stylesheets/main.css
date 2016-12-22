@@ -2,20 +2,38 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  color: #000;
 }
 
 #logo {
   text-align: center;
+  background-color: #e4e4e4;
+}
+
+#profile-pic{
+  border: 5px solid #660000;
+  display: block;
+  margin: auto;
 }
 
 #content {
+  width: 1000px;
+  margin: 2em auto;
   padding: 1em;
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
+  border: 2px solid #660000;
+  background-color: #fff;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  -webkit-column-count: 3;
+  column-count: 3;
+}
+
+.no-col-box {
+  border: 2px solid #660000;
+  background-color: #fff;
   padding: 1em;
   margin-bottom: 0.5em;
 }
@@ -24,8 +42,37 @@ body {
   text-align: center;
 }
 
-h3 {
-  font-size: 1.5em;
+h1{
+  font-size: 2.5em;
+  text-align: center;
+  font-family: Lobster, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 5px auto 25px;
+  width: 400px;
+}
+
+ul li h3{
+  font-size: 1.25em;
+  font-family: Lobster, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h4{
+  font-size: 1.75em;
+  font-family: Lobster, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.form-group{
+  width: 525px;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+
+.form-group input, textarea{
+  float: right;
+  width: 400px;
+}
+
+.form-group:after{
+  clear: both;
 }
 
 .error {
