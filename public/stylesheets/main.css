@@ -1,39 +1,121 @@
-body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333;
-}
-
-#logo {
-  text-align: center;
-}
-
-#content {
-  padding: 1em;
-}
-
-.box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
-}
-
-.welcome {
-  text-align: center;
-}
-
-h3 {
-  font-size: 1.5em;
-}
-
-.error {
-  text-align: center;
-}
-
-.error h2 {
-  font-size: 1.5em;
-}
-
 /* TODO - Add your own styles here */
+@font-face{
+  font-family: Simplifica;
+  src: local("?"), url(SIMPLIFICA%20Typeface.ttf) format("woff");
+}
+
+@font-face{
+  font-family: Ailerons;
+  src: local("?"), url(Ailerons.ttf) format("woff");
+}
+
+@font-face{
+  font-family: zwodrei;
+  src: local("?"), url(zwodrei_bold_demo.ttf) format("woff");
+}
+
+@charset "UTF-8";
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: Simplifica;
+  background-color: #EED974;
+  color: #C3C3C1;
+}
+
+h4{
+  font-family: Ailerons;
+  font-size: 200%;
+  color: #FFFFFF;
+}
+
+h3{
+  font-family: Ailerons;
+  font-size: 250%;
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: #38A54C;
+}
+
+p{
+  margin-top: 3%;
+  text-align: justify;
+  font-size: 18px;
+}
+
+#profilePicture{
+  margin-top: 10%;
+  margin-left: 5%;
+  width: 15%;
+  float: left;
+  position: fixed;
+}
+
+#profilePicture img{
+  width: 100%;
+  height: auto;
+  border-radius: 100px;
+}
+
+#content{
+  width: 75%;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  float: right;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 20px;
+}
+
+.box{
+  width: 75%;
+  margin: 2.5% auto 2.5%;
+}
+
+#logo{
+  width: 30%;
+  margin: 0px auto 0px;
+}
+#logo img{
+  width: 100%;
+  height: auto;
+}
+
+#stats h3, #problems h3{
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 200%;
+}
+
+#formLayer{
+  width: 100%;
+  margin-top: 50px;
+  font-size: 200%;
+}
+
+#formLayer label{
+  margin-top: 21px;
+  margin-bottom: 21px;
+  width: 50%;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+}
+
+#formLayer input{
+  width: 35%;
+  height: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 10%;
+  float: right;
+  text-align: center;
+}
+
+#submitButton{
+  margin-top: 15%;
+}
