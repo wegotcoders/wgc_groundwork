@@ -37,3 +37,117 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #f7f7f7;
+  background-image: linear-gradient(#302F3B, #5E6373);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+#content {
+  padding: 0;
+}
+
+#header-wrap {
+  background-image: url("/images/coast.jpg");
+  background-position: bottom;
+  background-size: cover;
+  padding-top: 1em;
+  color: #fff;
+}
+
+#logo {
+  position: fixed;
+  right: -150px;
+  z-index: 999;
+  -webkit-transition: right 0.5s ease;
+  transition: right 0.5s ease;
+}
+
+#logo:hover {
+  right: 10px;
+}
+
+#logo img {
+  max-height: 50px;
+  opacity: 0.5;
+}
+
+#profile-photo {
+  text-align: center;
+}
+
+.profile-img {
+  border-radius: 100%;
+  max-height: 20vw;
+}
+
+#name-header {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  color: #fff;
+}
+
+#name-header a {
+  color: #fff;
+}
+
+#details {
+  padding: 0;
+}
+
+#badge-well {
+  margin-top: 1em;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1em;
+}
+
+.website-badge {
+  max-height: 20px;
+  margin: 0 1em;
+}
+
+.box {
+  border: none;
+  background-color: transparent;
+  color: #f7f7f7;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  border-radius: 2px;
+  text-align: justify;
+}
+
+.box-header {
+  font-variant: small-caps;
+}
+
+.modal {
+  color: #232323;
+}
+
+.edit-profile-button {
+  cursor: pointer;
+}
