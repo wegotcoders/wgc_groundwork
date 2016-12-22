@@ -3,10 +3,20 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  background-image: url("/images/zwartevilt_@2X.jpg");
+}
+
+.container {
+  padding: 1.5em;
+  margin-top: 0em;
+  background-image: url("/images/brickwall_@2X.png");
 }
 
 #logo {
+  
   text-align: center;
+  margin-bottom: 0em;
+  background-image: url("/images/brickwall_@2X.png");
 }
 
 #content {
@@ -18,14 +28,72 @@ body {
   background: #FCFCFC;
   padding: 1em;
   margin-bottom: 0.5em;
+  border-radius: 10px;
+  height:120px;
+}
+
+.boxx{
+  border: 1px solid #999;
+  background: #FCFCFC;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  border-radius: 10px;
+}
+#pic {
+  border-radius: 10px;
+  margin-left: 75px;
+  margin-bottom: 0.5em;
+  clear: left;
+}
+
+#heading {
+  padding: 1.5em 1.5em 1.5em 0.5em;
+  font-family: cursive;
+  font-size: 50px;
+  color: #090909;
+  text-align: left;
+  clear: right;
+}
+
+.field_value {
+}
+
+#field {
+  text-align: right;
+  text-decoration: underline;
+  padding: 0.5em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: bold;
+}
+
+#value {
+  padding: 1em;
+  padding-left: 0px;
+  padding-right: 50px;
+  font-size: 130%;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.jumbotron {
+  margin-bottom: 0.5em;
+  padding: 1.5em;
 }
 
 .welcome {
   text-align: center;
 }
 
+h4 {
+  font-size: 1em;
+
+}
+
 h3 {
   font-size: 1.5em;
+}
+
+a {
+  text-decoration: none;
 }
 
 .error {
