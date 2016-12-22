@@ -37,3 +37,435 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+body {
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 800;
+}
+
+h4 {
+  font-size: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+}
+
+#profile_title {
+  font-family: Courier;
+  text-align: center;
+  font-weight: 800;
+}
+
+.profile-section {
+  /*width: 100%;*/
+  text-align: center;
+}
+
+#maincontent {
+  width: 70%;
+  margin: 10px auto;
+}
+
+.box {
+  border: none;
+  background: transparent;
+}
+
+.navbar li {
+  display: inline;
+}
+
+#profile-pic {
+  width: 35%;
+  position: relative;
+  float: right;
+  margin: 20px 10px 0px 10px;
+  border: 2px solid black;
+}
+
+.sectiontitle {
+  text-align: center;
+}
+
+#about .sectiontitle {
+  display: none;
+}
+
+#about {
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+#ambition .sectiontitle {
+  text-shadow: 2px 2px 5px #000;
+}
+
+#ambition {
+  background-image: linear-gradient(to bottom, #A9E2F3, #5882FA 10%, #08088A 95%);
+  border: 2px solid black;
+  border-radius: 20px;
+  color: white;
+  padding: 50px 5px;
+  margin: auto;
+  width: 80%;
+  margin-top: 20px;
+}
+
+#ambition:hover {
+  background-image: linear-gradient(to bottom, #A9F5A9, #00FF00 10%, #0B610B 95%);
+  box-shadow: 0px 0px 100px #82FA58;
+  cursor: crosshair;
+}
+
+#secondarycontent {
+  width: 70%;
+  margin: 50px auto 0px;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  padding: 20px;
+}
+
+#secondarycontent .sectiontitle {
+  font-family: Arial;
+  font-size: 18px;
+}
+
+#rationale {
+  margin-top: 30px;
+  border: 5px dotted grey;
+  border-radius: 20px;
+}
+
+#rationale .sectiontitle {
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 24px;
+}
+
+#rationale  p {
+  padding: 20px;
+  text-align: justify;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  font-family: 'Times New Roman';
+  font-size: 16px;
+}
+
+#dob {
+  position: absolute;
+  top: 40px;
+  left: 280px;
+  font-family: Courier;
+  font-weight: bold;
+  color: #DF0101;
+  border: 6px dashed #DF0101;
+  border-radius: 20px;
+  -ms-transform: rotate(350deg); /* IE 9 */
+    -webkit-transform: rotate(350deg); /* Safari */
+    transform: rotate(350deg);
+}
+
+#dob .sectiontitle {
+  font-family: Courier;
+}
+
+#first_name {
+  position: absolute;
+  top: 150px;
+  right: 50px;
+  width: 150px;
+  font-family: 'Just Another Hand', cursive;
+  font-size: 34px;
+  height: 60px;
+  vertical-align: middle;
+  font-weight: bold;
+  color: black;
+  background: url('../images/nametag.jpg');
+  background-position: center;
+  background-size: 110%;
+  border-radius: 10px;
+  border: 2px solid black;
+  -ms-transform: rotate(5deg);
+  -webkit-transform: rotate(5deg);
+  transform: rotate(5deg);
+}
+
+#first_name .sectiontitle {
+  font-size: 20px;
+  color: transparent;
+}
+
+#tertiarycontent {
+  width: 100%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+#tertiarycontent .box {
+  margin: 50px 0;
+  width: 100%;
+}
+
+#twitter {
+  position: absolute;
+  top: 450px;
+  left: 50px;
+  font-size: 20px;
+  font-family: Courier;
+}
+
+#twitter .sectiontitle {
+  display: none;
+}
+
+#twitterlogo {
+  height: 100px;
+  position: absolute;
+  top: 370px;
+  left: 60px;
+}
+
+#githublogo {
+  height: 100px;
+  position: absolute;
+  top: 940px;
+  left: 80px;
+}
+
+#github {
+  position: absolute;
+  top: 1025px;
+  left: 60px;
+  font-size: 18px;
+  font-family: Courier;
+  word-wrap: break-word;
+  width: 125px;
+}
+
+#github .sectiontitle {
+  display: none;
+}
+
+#codecademylogo {
+  height: 100px;
+  position: absolute;
+  top: 1100px;
+  right: 80px;
+}
+
+#codecademy {
+  position: absolute;
+  top: 1175px;
+  right: 30px;
+  font-size: 18px;
+  font-family: Courier;
+  word-wrap: break-word;
+  width: 170px;
+}
+
+#codecademy .sectiontitle {
+  display: none;
+}
+
+#projects {
+  height: 200px;
+  background: radial-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../images/code.JPG');
+  background-size: 110%;
+  background-position: center;
+  color: white;
+  border: 2px solid black;
+  text-align: left;
+  font-family: monospace;
+}
+
+.btn {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 20px;
+  background-color: #5882FA;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #58ACFA;
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: green;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+textarea {
+  width: 100%;
+}
+
+.wordcount {
+  display: inline;
+  float: right;
+  font-size: 16px;
+}
+
+#inksplat {
+  position: absolute;
+  right: 20px;
+  top: 700px;
+}
+
+#nav_button {
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  background-color: #5882FA;
+  color: white;
+  font-family: Courier, sans-serif;
+  font-weight: bold;
+  padding: 5px 5px 5px 20px;
+  height: 30px;
+  width: 150px;
+  border-bottom-right-radius: 10px;
+}
+
+#nav_button:hover {
+  cursor: pointer;
+}
+
+#nav_button h3 {
+  display: inline-block;
+  font-size: 22px;
+}
+
+.arrow {
+  height: 30px;
+  vertical-align: middle;
+  position: fixed;
+  top: 5px;
+  left: 130px;
+}
+
+.hidden {
+  display: none;
+}
+
+#navbar {
+  position: fixed;
+  z-index: 1;
+  top: 40px;
+  left: 0px;
+  width: 150px;
+  padding: 5px 5px 5px 20px;
+  background-color: #5882FA;
+  color: white;
+  font-size: 20px;
+  display: none;
+  font-family: Courier, sans-serif;
+  border-bottom-right-radius: 10px;
+}
+
+#navbar li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#navbar li:hover {
+  background-color: #58ACFA;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+#editbox {
+  margin-top: 30px;
+}
+
+.detail-form {
+  margin: 30px 0;
+}
+
+#learning_experience {
+  background: radial-gradient(transparent, white 70%), url('../images/studying.jpg') right no-repeat;
+  background-size: 100%;
+  padding: 50px 15px;
+  color: #1C1C1C;
+}
+
+#treehouse {
+  position: absolute;
+  top: 1225px;
+  left: 30px;
+  font-size: 18px;
+  font-family: Courier;
+  word-wrap: break-word;
+  width: 195px;
+}
+
+#treehouselogo {
+  height: 80px;
+  position: absolute;
+  top: 1160px;
+  left: 100px;
+}
+
+/*************************** programming problems ***************************/
+
+.problemdiv {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+}
+
+.problemdiv h1 {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.problemdiv h3 {
+  font-size: 30px;
+}
+
+.problemdiv p {
+  margin-bottom: 20px;
+}
+
+.problemdiv input {
+  font-size: 18px;
+}
+
+.problemdiv input[type=submit] {
+  color: #fff;
+  background-color: #286090;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.problemdiv input[type=submit]:hover {
+  background-color: #58ACFA;
+  cursor: pointer;
+}
+
+.problemdiv input[type=submit]:active {
+  background-color: green;
+  cursor: pointer;
+}
+

@@ -1,7 +1,25 @@
-<h1>Prime Numbers</h1>
+<div class="problemdiv">
+  <h1>Prime Numbers</h1>
+  <br />
+  Calculate the sum of all prime numbers up to...
+  <br /><br />
+  <form action="/primes" method="GET">
+    <input type="number" name="limit"/>
+    <input type="submit" />
+  </form>
 
-Sum : <%= @sum %>
+  <br />
 
-<div>
-  <a href="/">Back</a>
+  The sum of all prime numbers up to <%= @limit %> is:
+
+  <br /><br />
+
+  <h3><%= @sum %></h3>
+
+  <br />
+
+  <div>
+    <a href="/">Back</a>
+  </div>
+
 </div>
