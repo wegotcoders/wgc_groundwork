@@ -1,12 +1,14 @@
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.428571429;
   color: #333;
+  background-color: #333;
 }
 
 #logo {
   text-align: center;
+  background-color: #eee;
 }
 
 #content {
@@ -14,10 +16,15 @@ body {
 }
 
 .box {
+  color: #333;
   border: 1px solid #999;
   background: #FCFCFC;
-  padding: 1em;
+  /*padding: 1em;*/
+  margin-top: 0.25em;
   margin-bottom: 0.5em;
+  margin-right: 0.25em;
+  margin-left: 0.25em;
+  border-radius: 6px;
 }
 
 .welcome {
@@ -37,3 +44,139 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+#title {
+  color: white;
+  text-align:center;
+  font-size: 36px;
+  color: #ddd;
+  background-color: #eee;
+  border-radius: 6px;
+  margin: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  /*background: linear-gradient(#eeeeee 70%,#666666 100%);*/
+  background-image: url("/images/header.jpg");
+  background-size: 100% auto;
+  border: 2px solid #666;
+}
+
+#title img {
+  border-radius: 50%;
+  border: 5px solid #eee;
+  box-shadow: 0 5px 10px #333;
+}
+
+/* Main body wrapper and columns*/
+
+.wrapper {
+  width: auto;
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+  background-color: #eee;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.left-column {
+  width: auto;;
+  overflow: hidden;
+}
+
+.right-column {
+  float: right;
+  width: 40%;
+}
+
+/* box panel with a header and content area */
+
+.box {
+  border:2px solid #666;
+}
+
+.box h4 {
+  background:#aaa;
+  color:white;
+  padding:10px;
+  font-size: 24px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.box p {
+  color:#333;
+  padding:10px;
+}
+
+/* List of fields in right column */
+
+.profile-item {
+  list-style: none;
+  border-bottom: 1px solid #666;
+  padding: 5px;
+  margin: 3px;
+  padding-left: 5px;
+  /*background-color: red;*/
+}
+
+.profile-item li {
+  display: inline;
+}
+
+.profile-item:last-child { /* remove unecessary bottom styling on last item in profile-item list */
+  border-bottom: none;
+}
+
+.item-field {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.item-value {
+
+}
+
+/* Editing profile fields */
+
+.form-group {
+  margin: 5px;
+}
+
+.form-group input{
+  width: 60%;
+  height: 20px;
+  font-size: 16px;
+}
+
+/* Word cound styling */
+
+.pad-text {
+  padding-left: 5px;
+}
+
+/* Styling for primes result page */
+
+.primes-result {
+  color: #eee;
+}
+
+.primes-result a {
+  color: #eee;
+}
+
+/* Styling for profile update box */
+
+.notify {
+  width: auto;%;
+  height: 100px;
+  background-color: #cde9cf;
+  border: 1px solid #4b8b50;
+  color: #4b8b50;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+  border-radius: 6px;
+  margin: 5px;
+  font-size: 24px;
+}

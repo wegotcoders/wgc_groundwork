@@ -1,41 +1,157 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <!-- <div class="notify">
+    You profile was updated.
+  </div> -->
+
+  <div  id="title">
+    <img src="images/profile_image.jpeg"/>
+    <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  </div>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+  <div class="wrapper">
+
+    <div class="right-column">
+      <div class="box">
+        <h4>Info</h4>
+
+        <% @profile.each do |field, value| %>
+          <% unless ['about', 'ambition', 'projects', 'rationale'].include? field %>
+          <ul class="profile-item">
+              <li class="item-field"><%= field %>: </li>
+            <!-- Add hyperlinks to profile fields where applicable  -->
+             <% if value.to_s.strip.start_with?("http") %>
+              <li class="item-value"><a href="<%= value %>"><%= value %></a></li>
+            <% else %>
+              <li class="item-value"><%= value %></li>
+            <% end %>
+          </ul>
+          <% end %>
+        <% end %>
+
+      </div>
     </div>
-  <% end %>
+
+    <div class="left-column">
+      <% @profile.each do |field, value| %>
+        <% if ['about', 'ambition', 'projects', 'rationale'].include? field %>
+        <div class="profile-section box">
+          <h4><%= field %></h4>
+          <p class="profile-value"><%= value %></p>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <br/>
+  </div>
+
+  <div class="wrapper">
 
   <div id="stats" class="box">
-    <h3>Stats</h3>
+    <h4>Stats</h4>
     <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <span id="word-count" class="pad-text">0</span> words found
   </div>
 
   <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+    <h4>Programming Problems</h4>
+    <div class="pad-text">
+      <a href="/primes">My Prime Number Solution</a>
+      <br/>
+      <!-- Enter number <input type="text" id="upper-number" value=""/> -->
+      <Button id="primes-button" class="btn btn-primary">Get Sum of Primes up to 100</button>
+      <span id="primes-result"></span>
+    </div>
   </div>
 
   <div class="box">
-    <h3>Edit Profile</h3>
+    <h4>Edit Profile</h4>
+    <!-- TODO - Add more fields so that your profile can be edited -->
 
     <form action="/update" method="POST">
       <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+        <div class="right-column">
+          <div class="form-group">
+            <label for="trainee[dob]">D.O.B</label>
+            <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[employment_status]">Employment Status</label>
+            <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[first_name]">First Name</label>
+            <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[last_name]">Last Name</label>
+            <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[gender]">Gender</label>
+            <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[github]">Github</label>
+            <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[homepage]">Homepage</label>
+            <input type="text" name="trainee[homepage]" value="<%= @profile["homepage"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[how_did_you_hear]">How Did You Hear About Us?</label>
+            <input type="text" name="trainee[how_did_you_hear]" value="<%= @profile["how_did_you_hear"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[learning_experience:]">Learning Experience:</label>
+            <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[phone_number]">Phone Number</label>
+            <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[twitter]">Twitter</label>
+            <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[codecademy]">Code Academy</label>
+            <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[primes_sum]">Primes Sum</label>
+            <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
+          </div>
         </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
+        <div class="left-column">
+          <div class="form-group">
+            <label for="trainee[about]">About</label>
+            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[ambition]">Ambition</label>
+            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[projects]">Projects</label>
+            <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[rationale]">Rationale</label>
+            <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+          </div>
+          <div class="form-group">
+            <label for="trainee[ambition]">Ambition</label>
+            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          </div>
         <input type="submit" value="Update Profile" class="btn btn-primary" />
+      </div>
       </fieldset>
     </form>
   </div>
+</div>
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -49,11 +165,32 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
+  //primes solution --------------------------------------------------
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  for(var i = 0; i < profile_values.length; i++) {
+    var innerText = profile_values[i].innerHTML;
+    total_words += innerText.split(" ").length;
+  }
 
   document.getElementById('word-count').innerHTML = total_words;
+
+  //inline primes function
+  document.getElementById('primes-button').addEventListener("click", function() {
+    var resultField = document.getElementById('primes-result'); 
+    resultField.innerHTML = <%= Primes.sum_to(100) %>
+  });
+
+  // Hardcoded my github url as it would not save in my profile
+  var profileItems = document.getElementsByClassName('item-value');
+
+  for(var i = 0; i < profileItems.length; i++) {
+    if(profileItems[i].innerHTML.toLowerCase() === "spidey1") {
+      profileItems[i].innerHTML="<a href='https://github.com/spidey1'>https://github.com/spidey1</a>"
+    }
+  }
+
 </script>
