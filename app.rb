@@ -1,21 +1,22 @@
 require 'sinatra'
 require './lib/profile'
 
-set :application_id, 'EDIT_ME'
-set :secret, 'EDIT_ME'
+set :application_id, '698e07dac0ffc330811529fe071e43a10f135e1ae77fd183643e9f76f47af1fc'
+set :secret, '7a3925cd61439ad5938b6b0a7bf53e5874366933e1b94b39161b401f016efaa9'
 set :redirect_uri, 'http://localhost:4567/callback'
 set :site_url, 'https://wegotcoders.com'
 set :session_secret, 'secret'
 enable :sessions
 
 get '/primes' do
-  # TODO - Can we make this dynamic?
-  limit = 100
-
-  # TODO - add your prime number solution in the primes.rb file.
-  @sum = Primes.sum_to(limit)
+  limit = gets.chomp
+  @sum = Primes.sum_to(limit.to_i)
 
   erb :primes, :layout => :main
+end
+
+get '/pictures' do
+  erb :pictures, :layout => :main
 end
 
 get '/' do

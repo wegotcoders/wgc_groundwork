@@ -1,59 +1,78 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+    <div id="header">
+        <h1>Claudio's Amazing Profile</h1>
     </div>
-  <% end %>
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
+    <div id="navbar">
+        <ul>
+            <li class="new-box">
+                <a id="stats" href="#">Stats</a>
+                <div class="inner-box">
+                    <span id="word-count">0</span> words
+                </div>
+            </li>
+            <li>
+                <a href="/primes">Primes</a>
+            </li>
+            <li class="box">
+                <img src="/images/profile.jpg"/>
+                <a href="/pictures" style="color: black"><div class="inner-box">More Pictures</div></a>
+            </li>
+        </ul>
+    </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
-
-  <div class="box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+    <% @profile.each do |field, value| %>
+        <div class="content">
+            <h4><%= field %></h4>
+            <p class="profile-value"><%= value %></p>
         </div>
+    <% end %>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+    <div class="content big-content">
+        <h4 style="height: 100px; line-height: 100px; text-align: center">Edit Profile</h4>
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
+        <form action="/update" method="POST">
+          <fieldset>
+        
+            <% @profile.each do |field, value| %>
+                <div class="form-group">
+                    <label for="trainee[<%= field %>]"><%= field %></label>
+                    <input type="text" name="trainee[<%= field %>]" value="<%= value %>"/>
+                </div>
+            <% end %>
+
+            <div class="align">
+                <input type="submit" value="Update Profile" class="btn"/>
+            </div>
+
+          </fieldset>
+        </form>
+    </div>
+
 <% else %>
-  <div class="welcome">
-    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+    <div class="welcome">
+        <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
-    <a href="/authorise">Authorise</a>
-  </div>
+        <a href="/authorise">Authorise</a>
+    </div>
 <% end %>
 
 
-<!-- Add your Javascript to this script tag -->
+
+
+
+
+
+
+<!--JAVASCRIPT-->
 <script language="javascript">
-  console.log("I am Javascript!");
+    var profile_values = document.getElementsByClassName('profile-value')
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+    var total_words = 0
+    for (var i = 0; i < profile_values.length; i += 1) {
+        total_words += profile_values[i].innerHTML.split(' ').length
+    }
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
+    document.getElementById('word-count').innerHTML = total_words
 </script>

@@ -1,31 +1,5 @@
-body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333;
-}
-
 #logo {
   text-align: center;
-}
-
-#content {
-  padding: 1em;
-}
-
-.box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
-}
-
-.welcome {
-  text-align: center;
-}
-
-h3 {
-  font-size: 1.5em;
 }
 
 .error {
@@ -37,3 +11,182 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+* {
+  background-color: #dfe3ee;
+}
+
+h4, h3, h2, a, p, input, label {
+  font-family: Oswald;
+}
+
+#header {
+  height: 35px;
+}
+
+h1 {
+  text-align: center;
+  font-family: Tangerine;
+  font-size: 28px;
+}
+
+#navbar {
+  background-color: #3b5998;
+  height: 100px;
+  overflow: hidden;
+}
+
+#navbar ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+#navbar ul li {
+  list-style-type: none;
+  float: left;
+
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 100px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+#navbar ul li:nth-child(3) {
+  float: right;
+}
+
+img {
+  width: 100%;
+}
+
+#navbar ul li a {
+  background-color: #3b5998;
+  text-decoration: none;
+  display: block;
+  color: white;
+}
+
+#navbar ul li a:hover {
+  background-color: #8b9dc3;
+  color: black;
+}
+
+/***********************************************/
+
+.box {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.inner-box {
+  height: 100px;
+  width: 100px;
+  background-color: #8b9dc3;
+
+  position: absolute;
+  top: 100px;
+
+  -webkit-transition: top 0.5s ease-out 0s;
+}
+
+.box:hover .inner-box {
+  top: 0px;
+}
+
+/***********************************************/
+
+.content {
+  border: 1px solid #3b5998;
+  font-size: 16px;
+  margin: 10px;
+
+  height: 200px;
+  width: 300px;
+  float: left;
+  overflow-y: scroll;
+}
+
+h4 {
+  background-color: #3b5998;
+  color: white;
+  text-transform: capitalize;
+  padding: 4px;
+}
+
+p {
+  padding: 4px;
+  text-align: justify;
+}
+
+/**********************************************/
+
+.big-content {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  margin-left: -1px;
+  overflow-y: hidden;
+}
+
+.form-group {
+  border-bottom: 1px solid #3b5998;
+  height: 40px;
+}
+
+label, input {
+  margin: 4px;
+}
+
+label {
+  float: left;
+  text-transform: capitalize;
+}
+
+input {
+  float: right;
+  width: 50%;
+}
+
+/******************************************/
+
+.btn {
+  background-color: #3b5998;
+  color: white;
+  width: 100px;
+  height: 100px;
+  float: none;
+  margin: 20px;
+}
+
+.btn:hover {
+  background-color: #8b9dc3;
+  color: black;
+}
+
+.align {
+  text-align: center;
+}
+
+/*************************************/
+
+td {
+  padding: 10px;
+}
+
+/*************************************/
+
+.new-box {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.new-box:active .inner-box {
+  top: 0px;
+}
