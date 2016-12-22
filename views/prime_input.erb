@@ -1,0 +1,33 @@
+<h3 class="header-text">Prime Number Calculator</h3>
+<div class="container">
+<label for="primes-limit">Find the sum of prime numbers</label>
+    <input id="primes-limit" type="number" placeholder="Enter number..."/>
+<button id="calculate-primes-sum" class="button gradients">Calculate</button>
+</div>
+<script>
+    var ASCII_CODE_ENTER = 13;
+    var input = document.getElementById('primes-limit'), button = document.getElementById('calculate-primes-sum');
+
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+    
+    var calculatePrimesSum = function(e){
+        var value = input.value;
+
+        if(!isNumeric(value)){
+            alert('Please provide a number. Any other characters are not acceptable!');
+            return;
+        }
+        
+        window.location.href = '/primes/' + value;
+    };
+    
+    input.addEventListener('keypress', function(e){
+        if (e.keyCode == ASCII_CODE_ENTER){
+            calculatePrimesSum(e);
+        }
+    });
+    button.addEventListener('click', calculatePrimesSum);
+</script>

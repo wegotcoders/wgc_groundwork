@@ -1,0 +1,72 @@
+<% if @profile %>
+
+    <!--<%= @profile.inspect %>-->
+
+    <h3 class="header-text">Edit Profile</h3>
+
+    <div class="box gradients">
+
+        <form action="/update" method="POST">
+            <table class="edit-table">
+                <tr>
+                    <th>Field name</th>
+                    <th>Value</th>
+                    <th>Word count</th>
+                </tr>
+                <% @profile.each do |field, value| %>
+                    <tr>
+                        <td>
+                            <label for="trainee[<%= field %>]"><%= field.split('_').join(' ').capitalize() %></label>
+                        </td>
+                        <td>
+                            <% if field == 'codecademy' %>
+                                <textarea id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value=""><%= @codeacademyAccount %></textarea>
+                            <% elsif field == 'primes_sum' %>
+                                <textarea id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value=""><%= @primeNumberSumForTwoMilionLimit %></textarea>
+                            <% else %>
+                                <textarea id="trainee_<%= field %>" class="profile-value" type="text" name="trainee[<%= field %>]" value=""><%= @profile[field] %></textarea>
+                            <% end %>
+                        </td>
+                        <td>
+                            <span id="trainee_<%= field %>_counter" class="word-counter" type="number"></span>
+                        </td>
+                    </tr>
+                <% end %>
+            </table>
+            <input type="submit" value="Update Profile" class="button gradients"/>
+        </form>
+    </div>
+<% else %>
+    <div class="welcome">
+        <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+        <a href="/authorise">Authorise</a>
+    </div>
+<% end %>
+
+<script language="javascript">
+
+
+    var refreshCounter = function (e) {
+        var profileValues = document.getElementsByClassName('profile-value');
+        for (var index = 0; index < profileValues.length; index++) {
+            var input = profileValues[index],
+                    inputId = input.id,
+                    spanId = inputId + '_counter',
+                    inputSplitWords = input.value.split(' '),
+                    span = document.getElementById(spanId);
+
+            if (input.value === '') {
+                span.textContent = 0;
+                continue;
+            }
+
+            span.textContent = inputSplitWords.length;
+        }
+    };
+
+    window.onload = refreshCounter;
+
+    //document.getElementsByClassName('profile-value').addEventListener('keypress', refreshCounter);
+
+</script>
