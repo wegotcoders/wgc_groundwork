@@ -20,11 +20,11 @@ module WeGotCoders
           phone: "0048 794 668 294",
           status: "Student" ,
           about: 
-              "Despite the fact that I am 22, I have begun my studies last year. I study 
+              "Despite the fact that I am 22, I have begun my studies last year (quite late). I study 
               computing at Arden University (distance learning). After I have finished 
-              my high school, I was looking for the best path for myself so, I have 
+              my high school, I was looking for the best path for myself, so I have 
               travelled and worked.  I have spent whole 2015 in Copenhagen working 
-              in different places mostly in hospitality industry. In the late 2015 I have 
+              in different places, mostly in hospitality industry. In the late 2015 I have 
               started my journey with programming and got in love with it. I have spent 
               almost all 2016 on learning programming. In 2016 I have also worked as 
               an assistant to the local agriculture import-export company. My main 
@@ -41,19 +41,19 @@ module WeGotCoders
             user-events. I tried to use all best-practices and conventions I know, 
             but I have begun web development not long ago and do not have yet
             much knowledge in this field. One of the more demanding things in 
-            this project was to use SVG for drawing ‘programming-log’ feature as it 
-            was first time I have used it.",
+            this project was to dynamically insert SVG for drawing ‘programming-log' 
+            feature as it was first time I have used it.",
           
           why: 
             "I am seeking a career in web development and decided that I will take 
-            part in coding bootcamp. I know fundamentals of programming and 
+            part in a coding bootcamp. I know fundamentals of programming and 
             already know Java quite well so, I know that I will take a lot of knowledge 
-            from such camp. After research I have decided that ‘We Got Coders’ is 
+            from such camp. After research I have decided that ‘We Got Coders' is 
             the best fit as you teach Ruby with Rails, which I would like to learn, 
             and also offer real experience with working on client-based projects.",
           
           one_year_time: 
-            "In 1 year’s time, I see myself working as a full-stack developer and 
+            "In 1 year's time, I see myself working as a full-stack developer and 
             getting skills, experience and knowledge to be promoted a senior position.",
             
           learning_experience: 

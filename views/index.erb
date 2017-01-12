@@ -22,33 +22,64 @@
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
+<!-- Had to remove the form div because of the fetching issue. -->
+
   <div class="box">
-    <h3>WGC questions here</h3>
+    <h3>About</h3>
+    <p class="about"><%= @profile[:about] %></p>
+  </div>
+  <div class="box">
+    <h3>Programming Project</h3>
+    <p class="programming-project"><%= @profile[:programming_project] %></p>
+  </div>
+  <div class="box">
+    <h3>Why?</h3>
+    <p class="why"><%= @profile[:why] %></p>
+  </div>
+  <div class="box">
+    <h3>One year's time</h3>
+    <p class="one-year-time"><%= @profile[:one_year_time] %></p>
+  </div>
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile[:about] %>"/>
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
+  <div id="words">
+    <p>Hover over a section to calculate its words.</p>
   </div>
 <% end %>
 
 <script language="javascript">
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+var total_words = 0;
+var profile_values = document.getElementsByClassName("profile-value");
 
-  Array.prototype.forEach.call(profile_values, function(value) {
-      total_words += value.innerHTML.split(" ").length;
+Array.prototype.forEach.call(profile_values, function(value) {
+  total_words += value.innerHTML.split(" ").length;
+});
+
+document.getElementById('word-count').innerHTML = total_words - 1;
+// Had to reduce total number my one because there is a <a> tag in one of the
+// values provided, and I don't want to count that.
+
+
+// Add event listeners that will count words in given box class.
+var boxes = document.getElementsByClassName("box");
+
+Array.prototype.forEach.call(boxes, function(box) {
+var wordsP = document.querySelector("#words p");
+    box.addEventListener("mouseover", function(e) {
+      var output = "I don't count words in this section :)";
+      if (box.tagName !== "TABLE" && box.id !== "stats")
+        output = countWords(box.children) + " words found in this section."
+      wordsP.innerHTML = output;
     });
+});
 
-  document.getElementById('word-count').innerHTML = total_words - 1;
-  // Had to reduce total number my one because there is a <a> tag in one of the
-  // values provided, and I don't want to count that.
+function countWords(nodes) {
+  var total = 0;
+
+  Array.prototype.forEach.call(nodes, function(value) {
+      var tag = value.tagName;
+      if (tag === "P" || tag == "A" || tag == "SPAN" || tag.startsWith("H"))
+        total += value.innerHTML.match(/(\b([A-z]+'?)|(\d+)\b)+/g).length;
+    });
+  return total;
+}
 </script>
