@@ -15,7 +15,7 @@ module WeGotCoders
         @get_profile ||= { 
           name: "Bartlomiej Laskowski",
           age: 22,
-          webpage: "<a href='https://frameture.github.io'>frameture.github.io</a> ",
+          webpage: "<a href='https://frameture.github.io'>frameture.github.io</a>",
           email: "frameture@gmail.com",
           phone: "0048 794 668 294",
           status: "Student" ,

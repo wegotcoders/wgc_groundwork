@@ -36,4 +36,51 @@ h3 {
   font-size: 1.5em;
 }
 
-/* TODO - Add your own styles here */
+/*  -----------------  */
+
+body {
+  font-family: "Josefin Sans";
+  width: 40em;
+  margin: 0 auto;
+  font-size: 1.27em;
+  text-align: center;
+  background: cornsilk;
+}
+
+.profile-section {
+  
+}
+
+td {
+  width: 24%;
+  vertical-align: middle;
+}
+
+table p {
+  display: block;
+  text-align: left;
+  margin-top: .3em;
+  margin-bottom: .3em;
+}
+
+#left p {
+  margin-left: 3em;
+}
+
+#profile_picture {
+  width: 8em;
+  vertical-align: middle;
+  border: 0.4em solid cornsilk;
+  border-radius: 30%;
+}
+
+a {
+  text-decoration: none;
+  color: orange;
+  transition: color .5s;
+  -webkit-transition: color .5s
+}
+
+a:hover {
+  color: black;
+}
