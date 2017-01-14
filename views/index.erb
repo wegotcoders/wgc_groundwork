@@ -12,6 +12,7 @@
       <p class="profile-value">phone: <%= @profile[:phone] %></p>
     </td>
   </table>
+
   <div id="stats" class="box">
     <h3>Stats</h3>
     <span id="word-count">Can't be zero here</span> words found in the section above.
@@ -47,39 +48,39 @@
 <% end %>
 
 <script language="javascript">
-var total_words = 0;
-var profile_values = document.getElementsByClassName("profile-value");
+  var total_words = 0;
+  var profile_values = document.getElementsByClassName("profile-value");
 
-Array.prototype.forEach.call(profile_values, function(value) {
-  total_words += value.innerHTML.split(" ").length;
-});
+  Array.prototype.forEach.call(profile_values, function(value) {
+    total_words += value.innerHTML.split(" ").length;
+  });
 
-document.getElementById('word-count').innerHTML = total_words - 1;
-// Had to reduce total number my one because there is a <a> tag in one of the
-// values provided, and I don't want to count that.
+  document.getElementById('word-count').innerHTML = total_words - 1;
+  // Had to reduce total number my one because there is a <a> tag in one of the
+  // values provided, and I don't want to count that.
 
 
-// Add event listeners that will count words in given box class.
-var boxes = document.getElementsByClassName("box");
+  // Add event listeners that will count words in given box class.
+  var boxes = document.getElementsByClassName("box");
 
-Array.prototype.forEach.call(boxes, function(box) {
-var wordsP = document.querySelector("#words p");
-    box.addEventListener("mouseover", function(e) {
-      var output = "I don't count words in this section :)";
-      if (box.tagName !== "TABLE" && box.id !== "stats")
-        output = countWords(box.children) + " words found in this section."
-      wordsP.innerHTML = output;
-    });
-});
+  Array.prototype.forEach.call(boxes, function(box) {
+  var wordsP = document.querySelector("#words p");
+      box.addEventListener("mouseover", function(e) {
+        var output = "I don't count words in this section :)";
+        if (box.tagName !== "TABLE" && box.id !== "stats")
+          output = countWords(box.children) + " words found in this section."
+        wordsP.innerHTML = output;
+      });
+  });
 
-function countWords(nodes) {
-  var total = 0;
+  function countWords(nodes) {
+    var total = 0;
 
-  Array.prototype.forEach.call(nodes, function(value) {
-      var tag = value.tagName;
-      if (tag === "P" || tag == "A" || tag == "SPAN" || tag.startsWith("H"))
-        total += value.innerHTML.match(/(\b([A-z]+'?)|(\d+)\b)+/g).length;
-    });
-  return total;
-}
+    Array.prototype.forEach.call(nodes, function(value) {
+        var tag = value.tagName;
+        if (tag === "P" || tag == "A" || tag == "SPAN" || tag.startsWith("H"))
+          total += value.innerHTML.match(/(\b([A-z]+'?)|(\d+)\b)+/g).length;
+      });
+    return total;
+  }
 </script>

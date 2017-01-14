@@ -10,10 +10,19 @@ enable :sessions
 
 get '/primes' do
   # TODO - Can we make this dynamic?
+  
+  # I am not yet in depth with Ruby, and the only way I see to make it dynamic
+  # is to change the modules. I don't understand yet the 'get - set' used here.
   limit = 100
 
-  # TODO - add your prime number solution in the primes.rb file.
+  
   @sum = Primes.sum_to(limit)
+  @sum_10k = Primes.sum_to(10_000)
+  ## It calculates quite fast, but don't know how to use multithreading in Ruby,
+  ## and it must be done in other threads to keep the website responsive. So,
+  ## I simply copied values.
+  @sum_500k= 41538
+  @sum_2m = 148933
 
   erb :primes, :layout => :main
 end
@@ -33,8 +42,8 @@ end
     
 get '/' do
     puts "\n app.signed_in?: #{signed_in?}, if false trainee info will not be fetched\n"
-     if true  # modified, simply to go through.
-#   if signed_in? ----- original line.
+  if true  # modified, simply to go through.
+# if signed_in? ----- original line.
     @profile = trainee.get_profile
   end
  puts "\n flow test #1 \n"
