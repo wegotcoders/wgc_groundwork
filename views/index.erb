@@ -1,18 +1,21 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+  <table class="profile-section box"> 
+    <td id= "left">
+      <p class="profile-value"><%= @profile[:name] %></p>
+      <p class="profile-value">age: <%= @profile[:age] %></p>
+      <p class="profile-value">status: <%= @profile[:status] %></p>
+    </td>
+    <td><img id="profile_picture" src="/images/profile_picture.jpg"/></td>
+    <td id="right">
+      <p class="profile-value">webpage: <%= @profile[:webpage] %></p>
+      <p class="profile-value">email: <%= @profile[:email] %></p>
+      <p class="profile-value">phone: <%= @profile[:phone] %></p>
+    </td>
+  </table>
 
   <div id="stats" class="box">
     <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <span id="word-count">Can't be zero here</span> words found in the section above.
   </div>
 
   <div id="problems" class="box">
@@ -20,40 +23,64 @@
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
+<!-- Had to remove the form div because of the fetching issue. -->
+
   <div class="box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
+    <h3>About</h3>
+    <p class="about"><%= @profile[:about] %></p>
   </div>
-<% else %>
-  <div class="welcome">
-    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+  <div class="box">
+    <h3>Programming Project</h3>
+    <p class="programming-project"><%= @profile[:programming_project] %></p>
+  </div>
+  <div class="box">
+    <h3>Why?</h3>
+    <p class="why"><%= @profile[:why] %></p>
+  </div>
+  <div class="box">
+    <h3>One year's time</h3>
+    <p class="one-year-time"><%= @profile[:one_year_time] %></p>
+  </div>
 
-    <a href="/authorise">Authorise</a>
+  <div id="words">
+    <p>Hover over a section to calculate its words.</p>
   </div>
 <% end %>
 
-
-<!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
-
-  var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+  var profile_values = document.getElementsByClassName("profile-value");
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+  Array.prototype.forEach.call(profile_values, function(value) {
+    total_words += value.innerHTML.split(" ").length;
+  });
 
-  document.getElementById('word-count').innerHTML = total_words;
+  document.getElementById('word-count').innerHTML = total_words - 1;
+  // Had to reduce total number my one because there is a <a> tag in one of the
+  // values provided, and I don't want to count that.
+
+
+  // Add event listeners that will count words in given box class.
+  var boxes = document.getElementsByClassName("box");
+
+  Array.prototype.forEach.call(boxes, function(box) {
+  var wordsP = document.querySelector("#words p");
+      box.addEventListener("mouseover", function(e) {
+        var output = "I don't count words in this section :)";
+        if (box.tagName !== "TABLE" && box.id !== "stats")
+          output = countWords(box.children) + " words found in this section."
+        wordsP.innerHTML = output;
+      });
+  });
+
+  function countWords(nodes) {
+    var total = 0;
+
+    Array.prototype.forEach.call(nodes, function(value) {
+        var tag = value.tagName;
+        if (tag === "P" || tag == "A" || tag == "SPAN" || tag.startsWith("H"))
+          total += value.innerHTML.match(/(\b([A-z]+'?)|(\d+)\b)+/g).length;
+      });
+    return total;
+  }
 </script>
