@@ -5,15 +5,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>We Got Coders - My Amazing Application</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/reset.css">
   <link rel="stylesheet" href="/stylesheets/main.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <style media="screen">
+    #logo {
+      background-color: rgba(255,255,255,0.6);
+      position: fixed;
+      z-index: 2;
+      width: 100%;
+    }
+    #name-section {
+      padding-top: 25%;
+      padding-bottom: 30%;
+      background-image: url(./background-img.jpg);
+    }
+    #content {
+      padding: 0;
+
+    }
+    .welcome {
+      padding-top: 10%;
+    }
+  </style>
 </head>
 <body>
 
-  <div id="logo">
-    <img src="/images/logo.png" alt="We Got Coders"  />
-  </div>
+  <ul id="logo">
+    <li><img src="/images/logo.png" width="270px" alt="We Got Coders"  /></li>
+  </ul>
 
   <div id="content">
     <%= yield %>
