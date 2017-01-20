@@ -38,3 +38,157 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+body {
+    font-family: Merriweather;
+}
+#logo {
+    background-color: #fff;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+#name-section {
+    text-align: center;
+    position: relative;
+    top: 50px;
+    padding-top: 15%;
+    padding-bottom: 20%;
+    background-color: #67C5C2;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #fff;
+    text-shadow: 0 4px 3px rgba(0, 0, 0, 0.4), 0 8px 13px rgba(0, 0, 0, 0.1), 0 18px 23px rgba(0, 0, 0, 0.1);
+}
+#name-section p > img {
+    border: 10px solid rgba(255,255,255,0.8);
+}
+#name-section h1 {
+    padding-top: 30px;
+}
+#name-section h2 {
+    padding-top: 30px;
+    font-size: 1.5em;
+}
+#content {
+    padding: 0;
+
+}
+.welcome {
+    padding-top: 10%;
+}
+.info-section {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+.programing-section {
+    padding-bottom: 50px;
+}
+.info-section > h1,
+.programing-section > h1,
+.update-section > h1 {
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 20px;
+    color: #67C5C2;
+    text-shadow: 0 1px 1px rgba(103,197,194,0.2), 0 2px 4px rgba(103,197,194,0.1), 0 2px 4px rgba(103,197,194,0.1);
+}
+.list-item {
+    text-align: justify;
+    margin-bottom: 5px;
+    position: relative;
+    line-height: 2em;
+}
+.list-item > div {
+    padding: 0;
+}
+.list-item h4 {
+    padding: 20px;
+    font-weight: bold;
+    background: rgba(200,200,200,1);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    min-height: 5em;
+}
+
+.list-item p {
+    height: inherit;
+    padding: 20px;
+    background: rgba(200,200,200,0.6);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    min-height: 5em;
+}
+.list-item:nth-child(2n) h4 {
+    background: rgba(103,197,194,1);
+}
+.list-item:nth-child(2n) p {
+    background: rgba(103,197,194,0.6);
+}
+form {
+    margin-bottom: 100px;
+}
+form > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+a:hover {
+  text-decoration: none;
+}
+.mdl-textfield--floating-label.has-placeholder .mdl-textfield__label,
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label {
+    color: #67C5C2;
+}
+.mdl-textfield--floating-label.is-invalid .mdl-textfield__label {
+    color: #67C5C2;
+    font-size: 16px;
+}
+.mdl-textfield__label:after {
+    background-color: #67C5C2;
+}
+.mdl-textfield.is-invalid .mdl-textfield__input {
+    border-color: rgba(0, 0, 0, .12);
+}
+.mdl-textfield.is-invalid .mdl-textfield__label:after {
+    background-color: #67C5C2;
+}
+.btn-primary {
+    background-color: #67C5C2;
+    border-color: #67C5C2;
+}
+.btn-primary:active:focus,
+.btn-primary:active:hover,
+.btn-primary:focus,
+.btn-primary:hover {
+    background-color: rgba(103,197,194,.85);
+    border-color: rgba(103,197,194,.1);
+}
+@media (min-width: 768px) {
+    #name-section {
+      font-size: 1.9em;
+    }
+    #name-section h2 {
+        padding-top: 30px;
+        font-size: 1.8em;
+    }
+    .name-block {
+        height: 100%;
+        left: 0;
+        width: 25%;
+        position: absolute;
+    }
+    .name-block h4 {
+        height: 100%;
+    }
+    .list-item h4 {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+    .list-item p {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+}
