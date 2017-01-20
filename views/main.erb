@@ -1,104 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>We Got Coders - My Amazing Application</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheets/reset.css">
-  <link rel="stylesheet" href="/stylesheets/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
-  <style media="screen">
-    body {
-      font-family: Merriweather;
-    }
-    #logo {
-      background-color: rgba(255,255,255,0.6);
-      position: fixed;
-      z-index: 2;
-      width: 100%;
-    }
-    #name-section {
-      padding-top: 25%;
-      padding-bottom: 25%;
-      background-color: #67C5C2;
-      font-weight: bold;
-      font-size: 1.9em;
-      color: #fff;
-      text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1)
-    }
-    #name-section h2 {
-      padding-top: 30px;
-      font-size: 2em;
-    }
-    #content {
-      padding: 0;
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>We Got Coders - My Amazing Application</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/reset.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
+        <style media="screen">
 
-    }
-    .welcome {
-      padding-top: 10%;
-    }
-    .info-section {
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+        </style>
+    </head>
+    <body>
 
+        <ul id="logo">
+            <li><img src="/images/logo.png" width="270px" alt="We Got Coders"/></li>
+        </ul>
 
-    .list-item {
-      text-align: justify;
-      margin-bottom: 5px;
-      position: relative;
-      /*overflow: hidden;*/
-    }
-    .list-item > div {
-      padding: 0;
-    }
-    .list-item h4 {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      font-weight: bold;
-      background: rgba(103,197,194,0.9);
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-    }
-
-    .list-item p {
-      height: inherit;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      background: rgba(103,197,194,0.6);
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-    }
-    .list-item:nth-child(2n) h4 {
-      background: rgba(200,200,200,0.9);
-    }
-    .list-item:nth-child(2n) p {
-      background: rgba(200,200,200,0.9);
-    }
-    @media (min-width: 768px) {
-      .name-block {
-        height: 100%;
-        left: 0;
-        width: 25%;
-        position: absolute;
-      }
-      .name-block h4 {
-        height: 100%;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <ul id="logo">
-    <li><img src="/images/logo.png" width="270px" alt="We Got Coders"  /></li>
-  </ul>
-
-  <div id="content">
-    <%= yield %>
-  </div>
-
-</body>
+        <div id="content">
+            <%= yield %>
+        </div>
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    </body>
 </html>
