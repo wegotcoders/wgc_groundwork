@@ -6,6 +6,7 @@
     <h1 class="text-center"><%= @profile["first_name"] %>'s Amazing Profile</h1>
     <h2 class="text-center">*Develop your life*</h2>
 </div>
+
 <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 
 <div class="container info-section">
@@ -79,11 +80,17 @@
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
     console.log("I am Javascript!");
-
-    var profile_values = document.getElementsByClassName('profile-value');
-    var total_words = 0;
-
     // TODO - Count the number of words in the profile. hint - look at what the innerHTML property provides.
+    function wordsCounter(){
 
-    document.getElementById('word-count').innerHTML = total_words;
+        var profileValues = document.getElementsByClassName("profile-value");
+
+        var words = 0;
+
+        for(var i = 0; i < profileValues.length; i++) {
+          words += profileValues[i].innerText.trim().split(' ').length;
+        }
+        document.getElementById('word-count').innerHTML = words;
+    }
+    wordsCounter();
 </script>
