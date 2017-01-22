@@ -52,7 +52,7 @@
 
 <div class="container update-section">
     <h1>Update your profile</h1>
-    <form class="col-xs-12 col-md-8 col-md-offset-2"action="/update" method="POST">
+    <form class="col-xs-12 col-md-8 col-md-offset-2" action="/update" method="POST">
         <div class="col-xs-12 mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" name="trainee[twitter]" required value="<%= @profile[" twitter"] %>"/>
             <label class="mdl-textfield__label" for="trainee[twitter]">Twitter*</label>
@@ -81,14 +81,14 @@
 <script language="javascript">
     console.log("I am Javascript!");
     // TODO - Count the number of words in the profile. hint - look at what the innerHTML property provides.
-    function wordsCounter(){
+    function wordsCounter() {
 
         var profileValues = document.getElementsByClassName("profile-value");
 
         var words = 0;
 
-        for(var i = 0; i < profileValues.length; i++) {
-          words += profileValues[i].innerText.trim().split(' ').length;
+        for (var i = 0; i < profileValues.length; i++) {
+            words += profileValues[i].innerText.trim().split(' ').length;
         }
         document.getElementById('word-count').innerHTML = words;
     }
