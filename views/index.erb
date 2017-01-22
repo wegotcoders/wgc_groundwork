@@ -1,59 +1,97 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+<div class="container-fluid" id="name-section">
+    <p>
+        <img src="/images/my_photo.jpg" alt="Vasyl Kozhushko" width="200px" class="img-circle">
+    </p>
+    <h1 class="text-center"><%= @profile["first_name"] %>'s Amazing Profile</h1>
+    <h2 class="text-center">*Develop your life*</h2>
+</div>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+<!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
+<div class="container info-section">
+    <h1>Your Profile</h1>
+    <ul>
+        <% @profile.each do |field, value|%>
+        <li class="clearfix list-item">
+            <div class="name-block col-xs-12 col-sm-3">
+                <h4 ><%= field %></h4>
+            </div>
+            <div class="content-block profile-value col-xs-12 col-sm-9 col-sm-offset-3">
+                <p><%= value %></p>
+            </div>
+        </li>
+        <% end %>
+    </ul>
+</div>
+<div class="container programing-section">
+    <h1>Programing section</h1>
+    <ul>
+        <li class="clearfix list-item">
+            <div class="name-block col-xs-12 col-sm-3">
+                <h4>Stats</h4>
+            </div>
+            <div class="content-block profile-value col-xs-12 col-sm-9 col-sm-offset-3">
+                <p>
+                    <span id="word-count">0</span>
+                    words found.</p>
+            </div>
+        </li>
+        <li class="clearfix list-item">
+            <div class="name-block col-xs-12 col-sm-3">
+                <h4>Programming Problems</h4>
+            </div>
+            <div class="content-block profile-value col-xs-12 col-sm-9 col-sm-offset-3">
+                <p>
+                    <a href="/primes">My Prime Number Solution</a>
+                </p>
+            </div>
+        </li>
+    </ul>
+</div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
-
-  <div class="box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+<div class="container update-section">
+    <h1>Update your profile</h1>
+    <form class="col-xs-12 col-md-8 col-md-offset-2" action="/update" method="POST">
+        <div class="col-xs-12 mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="trainee[twitter]" required value="<%= @profile[" twitter"] %>"/>
+            <label class="mdl-textfield__label" for="trainee[twitter]">Twitter*</label>
         </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
+        <div class="col-xs-12 mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="trainee[homepage]" required value="<%= @profile[" homepage"] %>"/>
+            <label class="mdl-textfield__label" for="trainee[homepage]">Codecademy page*</label>
+        </div>
+        <div class="col-xs-12 mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="trainee[about]" value="<%= @profile[" about"] %>"/>
+            <label class="mdl-textfield__label" for="trainee[about]">About</label>
+        </div>
+        <input type="submit" value="Update Profile" class="center-block btn btn-primary btn-lg"/>
     </form>
-  </div>
+</div>
+
 <% else %>
-  <div class="welcome">
+<div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
     <a href="/authorise">Authorise</a>
-  </div>
+</div>
 <% end %>
-
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
+    console.log("I am Javascript!");
+    // TODO - Count the number of words in the profile. hint - look at what the innerHTML property provides.
+    function wordsCounter() {
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+        var profileValues = document.getElementsByClassName("profile-value");
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+        var words = 0;
 
-  document.getElementById('word-count').innerHTML = total_words;
+        for (var i = 0; i < profileValues.length; i++) {
+            words += profileValues[i].innerText.trim().split(' ').length;
+        }
+        document.getElementById('word-count').innerHTML = words;
+    }
+    wordsCounter();
 </script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" charset="utf-8"></script>

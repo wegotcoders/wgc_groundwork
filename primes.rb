@@ -1,6 +1,14 @@
 class Primes
   def self.sum_to(limit = 100)
     # TODO - add your prime number solution here...
-    "I'm working on it!"
-  end
+    primes = (2..limit).select do |n|
+    	(2..Math.sqrt(n)).none? do |i|
+    		(n%i).zero?
+    	end
+    end
+
+    	sum = primes.inject { |sum, i| sum + i }
+	end
 end
+
+Primes.sum_to(100)

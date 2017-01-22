@@ -1,7 +1,39 @@
-<h1>Prime Numbers</h1>
-
-Sum : <%= @sum %>
-
-<div>
-  <a href="/">Back</a>
+<div class="row primes">
+    <div class="container">
+        <div class="primes-info col-xs-12 col-md-6 col-md-offset-3">
+            <h1 class="primes-header">Prime Numbers</h1>
+            <h2>Sum :
+                <span id="count"><%= @sum %></span>
+            </h2>
+            <a href="/">Back</a>
+        </div>
+    </div>
 </div>
+
+<script type="text/javascript">
+    function easedAnimateScore() {
+        var interval = 1, //starting interval
+            score = 1, //starting point
+            finalScore = <%= @sum %>; //what we're counting up to
+
+        setTimeout(iterate(interval), interval);
+
+        function iterate(interval) {
+            score++;
+
+            //slow down the intervals only if there are 50 or fewer numbers left to count.  Better ways?
+            interval = (finalScore - score < 50)
+                ? (interval * 1.1)
+                : interval;
+
+            document.getElementById('count').innerHTML = score;
+
+            return function () {
+                if (score !== finalScore) {
+                    setTimeout(iterate(interval), interval);
+                }
+            }
+        }
+    }
+    easedAnimateScore();
+</script>
