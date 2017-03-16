@@ -2,40 +2,144 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+  <div class="profile-wrapper">
+  
+  <div style ="height:100px"></div>
+  <section class="profile-section">
+     <div class="header">
+      <img src="/images/IMG_20150718_003538.jpg" class="profile-photo-preview" alt="Edit photo" height="128" width="128">
+     </div> 
+    <div class="header">
+          <h1><span class="profile-value"><%= @profile["first_name"]%></span>&nbsp;&nbsp;<span class="profile-value"><%= @profile["last_name"]%></span></h1>
+          <p><label><b>Mobile# :</b></label><span class="profile-value"><%= @profile["phone_number"]%></span></p>
+          
+      </div>
+    </br>
+  </br>
+  </section>
+  <section class="profile-section">
+     <div class="header"><h2>More Details</h2></div>
 
-  <div id="stats" class="box">
+   <div class="row">
+    <div class="col"><label><b>Gender:</b></label></div>
+    <div class="col">
+      <span class="profile-value"><%= @profile["gender"]%></span>
+    </div>
+    <div class="col"><label><b>DOB:</b></label></div>
+    <div class="col">
+      <span class="profile-value"><%= @profile["dob"]%></span>
+    </div>
+   
+  </div>
+   <div class="row">   
+    <div class="col"><label><b>Git Hub:</b></label></div>
+    <div class="col">
+      <span class="profile-value"><%= @profile["github"]%></span>
+    </div>
+    <div class="col"><label><b>Employment Status:</b></label></div>
+    <div class="col">
+      <span class="profile-value"><%= @profile["employment_status"]%></span>
+    </div>
+
+    </div>
+  </br>
+  </section>
+  
+   <section class="profile-section">
+     <div class="header"><h2 >About</h2></div>
+   <div class="questions">
+
+    <span class="profile-value" ><%= @profile["about"]%></span>
+  </div>
+   </br>  
+  </section>
+
+  <section class="profile-section">
+     <div class="header"><h2>Projects</h2></div>
+    <div class="questions">
+   <span class="profile-value"><%= @profile["projects"]%></span>
+   <ul style="text-align:left"><b>TOOLS AND TECHNOLOGY:-</b>
+     <li>HTML</li>
+     <li>CSS</li>
+     <li>JAVASCRIPT</li>
+     <li>JQUERY</li>
+    </ul> 
+  </div>
+   </br>  
+  </section>
+
+  <section class="profile-section">
+     <div class="header"><h2>Rationale</h2></div>
+  <div class="questions">
+    <span class="profile-value"><%= @profile["rationale"]%></span>
+  </div>
+   </br>  
+  </section>
+
+  <section class="profile-section">
+     <div class="header"><h2>Ambition</h2></div>
+  <div class="questions">
+   <span class="profile-value"><%= @profile["ambition"]%></span>
+  </div>
+   </br>  
+  </section>
+
+  <section class="profile-section">
+     <div class="header"><h2>Learning Experience</h2></div>
+   <div class="questions">
+   <span class="profile-value"><%= @profile["learning_experience"]%></span>
+  </div>
+   </br>  
+  </section>
+  
+
+
+
+
+
+   <section class="profile-section">
+    <div id="stats" class="header">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
+    
     <span id="word-count">0</span> words found.
   </div>
 
-  <div id="problems" class="box">
+  <div id="problems" class="header">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
   </div>
+  <br>
+</section>
 
-  <div class="box">
+
+  
+  <section class="profile-section">
+  <div class="header">
     <h3>Edit Profile</h3>
-
+  
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <label for="trainees[about]">About</label>
+          <input type="text" name="trainees[about]" value="<%= @profile["about"] %>"/>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <label for="trainees[codeacademy_account]">Code Academy Account</label>
+          <input type="text" name="trainees[codeacademy_account]" value="<%= @profile["codeacademy_account"] %>"/><br>
+          <input type="submit" value="Update Profile" class="btn btn-primary" />
+        </div>
+      </br>
+      </section>
+    </div>
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
+  <br>
   </div>
+
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -51,9 +155,20 @@
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
-
+  for(var i=0;i<profile_values.length;i++)
+  {
+   //alert(profile_values[i].innerHTML);
+   if(profile_values[i] != undefined)
+    {
+    var contents=profile_values[i].innerHTML;
+    var section_length=contents.split(" ").length;
+   //alert(section_length);
+   total_words=total_words+section_length; 
+   }
+}
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  //alert(total_words);
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
