@@ -6,10 +6,10 @@
   
   <div style ="height:100px"></div>
   <section class="profile-section">
-     <div>
+     <div class="header">
       <img src="/images/IMG_20150718_003538.jpg" class="profile-photo-preview" alt="Edit photo" height="128" width="128">
      </div> 
-    <div>
+    <div class="header">
           <h1><span class="profile-value"><%= @profile["first_name"]%></span>&nbsp;&nbsp;<span class="profile-value"><%= @profile["last_name"]%></span></h1>
           <p><label><b>Mobile# :</b></label><span class="profile-value"><%= @profile["phone_number"]%></span></p>
           
@@ -18,7 +18,7 @@
   </br>
   </section>
   <section class="profile-section">
-     <div><h2>More Details</h2></div>
+     <div class="header"><h2>More Details</h2></div>
 
    <div class="row">
     <div class="col"><label><b>Gender:</b></label></div>
@@ -46,17 +46,17 @@
   </section>
   
    <section class="profile-section">
-     <div><h2 >About</h2></div>
-   <div>
+     <div class="header"><h2 >About</h2></div>
+   <div class="questions">
 
-    <span class="profile-value"><%= @profile["about"]%></span>
+    <span class="profile-value" ><%= @profile["about"]%></span>
   </div>
    </br>  
   </section>
 
   <section class="profile-section">
-     <div><h2>Projects</h2></div>
-   <div>
+     <div class="header"><h2>Projects</h2></div>
+    <div class="questions">
    <span class="profile-value"><%= @profile["projects"]%></span>
    <ul style="text-align:left"><b>TOOLS AND TECHNOLOGY:-</b>
      <li>HTML</li>
@@ -69,24 +69,24 @@
   </section>
 
   <section class="profile-section">
-     <div><h2>Rationale</h2></div>
-   <div>
+     <div class="header"><h2>Rationale</h2></div>
+  <div class="questions">
     <span class="profile-value"><%= @profile["rationale"]%></span>
   </div>
    </br>  
   </section>
 
   <section class="profile-section">
-     <div><h2>Ambition</h2></div>
-   <div>
+     <div class="header"><h2>Ambition</h2></div>
+  <div class="questions">
    <span class="profile-value"><%= @profile["ambition"]%></span>
   </div>
    </br>  
   </section>
 
   <section class="profile-section">
-     <div><h2>Learning Experience</h2></div>
-   <div>
+     <div class="header"><h2>Learning Experience</h2></div>
+   <div class="questions">
    <span class="profile-value"><%= @profile["learning_experience"]%></span>
   </div>
    </br>  
@@ -98,14 +98,14 @@
 
 
    <section class="profile-section">
-    <div id="stats" class="box">
+    <div id="stats" class="header">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
     
     <span id="word-count">0</span> words found.
   </div>
 
-  <div id="problems" class="box">
+  <div id="problems" class="header">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
   </div>
@@ -115,7 +115,7 @@
 
   
   <section class="profile-section">
-  <div>
+  <div class="header">
     <h3>Edit Profile</h3>
   
     <form action="/update" method="POST">
