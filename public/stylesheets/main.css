@@ -2,7 +2,12 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  color: #3F3F3;
+  background: linear-gradient(#999, rgba(255, 200, 0, 0.19));
+}
+table {
+    border-collapse: separate;
+    border-spacing: 10px;
 }
 
 #logo {
@@ -23,7 +28,10 @@ body {
 .welcome {
   text-align: center;
 }
-
+h2 {
+	font: 3.2em Georgia, "Times New Roman", Times, serif;
+	margin-bottom: .2em;
+}
 h3 {
   font-size: 1.5em;
 }
@@ -35,5 +43,36 @@ h3 {
 .error h2 {
   font-size: 1.5em;
 }
+   
+ol.custom-counter{
+    list-style-type: none;
 
-/* TODO - Add your own styles here */
+    margin: 0;
+    margin-left: 3em;
+    padding: 0;
+     
+    counter-reset: li-counter;
+}
+ol.custom-counter > li{
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 0.5em;
+    min-height: 3em;
+    border-left: 2px solid #CCCCCC;
+}
+ol.custom-counter> li:before {
+    position:relative;
+    top: 6px;
+    left: -1em;
+    width: 0.8em;
+    font-size: 2em;
+    line-height: 1;
+    font-weight: normal;
+    text-align: right;
+    color: #464646;
+    content: counter(li-counter);
+    counter-increment: li-counter;
+}
+img{
+	border-radius: 30px;
+}
