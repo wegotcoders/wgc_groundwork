@@ -1,14 +1,16 @@
+require 'prime'
+
 class Primes
   def self.sum_to(limit = 100)
-    primes = (2..100).select do |n| 
-    (2..Math.sqrt(n)).none? do |i|
-       (n % i).zero?
-    end
+     
+     sum = 0
+     Prime.each(100) do |prime|
+   		sum = sum + prime 
 
-  sum = primes.reduce(:+)  
-  
-  puts total_count
+	 end
 
-    "I'm working on it!"
-  end
-end
+     puts sum
+   end
+
+   puts sum_to
+end 
