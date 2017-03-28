@@ -1,13 +1,38 @@
-<% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+<% if @profile %>
+<div class="heading">
+  <div class="headingLeft">
+    <img src="/images/logo.png" alt="We Got Coders"/>
+  </div> 
+  <div class="headingRight">
+    <h1 class="nameTitle"><%= @profile["first_name"] + " " + @profile["last_name"] %> Profile</h1>
+  </div>
+</div>
+  <div id="aboutMe">
+  <div class="aboutMe_In">
+    <img class="profilePic" src="/images/profile.jpg"/>
+    
+    <h2 style="text-decoration: underline; font-size: 20px;"><%= @profile['first_name'] + " " + @profile['last_name'] %></h2>
+    <table>
+  <% aboutArr = @profile.to_a %>
+  <% aboutArr[0..8].each do |field, value| %>
+      <tr>
+        <td><%= field %>:</td>
+        <td><%= value %></td>
+      </tr>
+  <% end %>  
+  </table>
+  </div>
+  </div>
+  <div id="longerItems">
+    <% aboutArr[9..13].each do |field, value| %>
+    <div class="individualItem">
+      <h1><%= field.capitalize %></h1>
+      <p><%= value %></p>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -20,7 +45,7 @@
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
-  <div class="box">
+  <div class="box editProfile">
     <h3>Edit Profile</h3>
 
     <form action="/update" method="POST">
@@ -47,13 +72,34 @@
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+var allDivTd = document.getElementById("aboutMe").getElementsByTagName("TD");
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+var smallTotal = 0; 
 
-  document.getElementById('word-count').innerHTML = total_words;
+for(var i = 0; i < allDivTd.length; i++){
+  var td = allDivTd[i];
+  if (i % 2 == 1) { 
+  smallTotal += td.innerHTML.split(" ").length; 
+  }
+}
+console.log("Small Total is: " + smallTotal); 
+
+var bigTotal = 0;
+
+var parent = document.getElementsByClassName("individualItem");
+
+for (var i = 0; i < parent.length; i++){
+  para = parent[i].getElementsByTagName("p");
+  bigTotal += para[0].innerHTML.split(" ").length; 
+}
+
+console.log("Big Total is: " + bigTotal);
+
+var together = smallTotal + bigTotal;
+
+console.log(together);
+
+document.getElementById("word-count").innerHTML = together; 
+
 </script>
