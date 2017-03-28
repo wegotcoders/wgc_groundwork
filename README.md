@@ -30,41 +30,6 @@ in the terminal, and re-run ```ruby app.rb```.
 
 ## TODO
 
-Attempt the following tasks. The list is meant to be progressively more
-difficult and open-ended; the aim is to demonstrate your approach when dealing with programming issues and to test your initiative. Complete as much as you can within the time limit; you will not be penalised for not finishing the list. We are looking for self-motivated effort and to see how much of the groundwork you have grasped.
-
-Don't forget to ```git add .``` and ```git commit``` after each step, if you have made any changes to your code!
-
-* You should see a list of the profile data that you submitted to us when you
-applied to We Got Coders. Use your knowledge of HTML / CSS to redesign and
-layout the page in a presentable way. Show us what you can do with:
-
-    * Headings
-    * Lists
-    * Backgrounds / Gradients
-    * Multiple columns
-
-* Add an image of yourself to your profile. Add CSS where necessary to ensure that it looks presentable.
-
-* Observe how the about field works. What makes it bound to the data from your profile? Add more fields so that you can edit your profile.
-
-* Add a field to the form so that you can add your Codecademy account to
-your profile. You will need an input text box, with the appropriate ```name``` attribute.
-
-* Add some Javascript to the provided ```<script>``` tag in the views/index.erb file, that counts the number of words in each section. You ought to have at least twenty words for each of the questions.
-
-* Add code to the primes.rb file, that finds the sum of all prime numbers less than one hundred. Can you refactor the implementation so that you can pass in higher numbers to act as the limit? Test your implementation by running the rspec command ```rspec```. Find the sum of all prime numbers up to two million. Add a field to your profile named ```trainees[primes_sum]``` and enter in your answer.
-
-* Over to you! Make any adjustments that you see fit, and add a feature that you are interested in attempting. Perhaps you might:
-
-    * Attempt a programming puzzle in Ruby, see http://projecteuler.net
-    * Experiment with using JavaScript to respond to user events
-    * Add some more pages and link them together
-
-* Once you are done, submit a pull request. We will use this to review your work once you are done.
-
-* Get buzzing! Mention @wegotcoders and tell the world why you decided to join the course and become a web developer.
-
 ## FAQs / Troubleshooting
 
 * If you see this message, then you haven't set your application id and secret correctly.
