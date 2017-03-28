@@ -1,8 +1,85 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  display: flex;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
+  margin: auto;
+  background-color: #e3eaf4;
+}
+
+#content {
+  width: 85%;
+  display: block;
+  margin: auto;
+}
+
+.heading {
+  display: inline-flex;
+  border-radius: 30px;
+  float: left;
+  width: 100%;
+  background-color: rgba(106, 105, 104, 0.4);
+  align-items: center;
+}
+
+.headingLeft {
+  flex: 2;
+  /*border: 5px solid red;*/
+}
+
+.headingRight {
+  padding: 20px;
+  float: right;
+  flex: 1;
+}
+
+.headingRight h1 {
+  float: right;
+  font-size: 30px;
+}
+
+#aboutMe {
+  padding-top: 20px;
+  display: flex;
+  float: left;
+  background-color: lightgrey;
+  width: 50%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.aboutMe_In {
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+}
+
+.aboutMe_In table { 
+  width: auto;
+}
+
+.aboutMe_In table td { 
+  width: 100px;
+  padding: 10px;
+}
+
+.profilePic {
+  margin: auto;
+  display: flex;
+  border-radius: 50px;
+  max-height: 130px;
+  max-width: 100px;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 { 
+  text-decoration: underline;
 }
 
 #logo {
@@ -11,17 +88,73 @@ body {
 
 #content {
   padding: 1em;
+  align-items: center;
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 10px;
+}
+
+#longerItems { 
+  float: right;
+  width: 50%;
+  height: 520px;
+  overflow: hidden;
+}
+
+@-webkit-keyframes grow {
+    from {height: 50px;}
+    to {height: auto;}
+} 
+
+ Standard syntax  
+@keyframes grow {
+    from {height: 50px;}
+    to {height: auto;}
+}
+
+.individualItem {
+  text-align: center;
+  background-color: grey;
+  color: white;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 50px;
+  transition: all .5s ease-in-out;
+}
+
+.individualItem:hover { 
+  height: auto;
+
+}
+
+.individualItem h1 { 
+  font-size: 30px;
+  text-decoration: underline;
+  text-align: center;
+  padding: 5px;
+}
+
+.individualItem p { 
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 10px;
 }
 
 .welcome {
   text-align: center;
+}
+
+#editProfile {
+  background-color: black;
+  color:white;
 }
 
 h3 {
