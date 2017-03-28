@@ -7,6 +7,7 @@ module WeGotCoders
     def initialize(url, access_token)
       self.class.base_uri url
       self.access_token = access_token
+      puts access_token
     end
 
     def get_profile
