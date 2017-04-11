@@ -1,6 +1,8 @@
 <% if @profile %>
+<div  id ="image">
+<img class = "profilePic" src = "/images/matt.jpg" alt ="Matthew Jackman"></img>
+</div>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
     <div class="profile-section box">

@@ -2,7 +2,8 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  /*color: #333;*/
+  background: linear-gradient(to bottom right, #6a8c75, #6a8cb0);
 }
 
 #logo {
@@ -37,3 +38,15 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+.profilePic{
+  text-align: center;
+  width: 200px;
+  hight: 200px;
+  border-radius: 50%;
+}
+#image{
+  padding: 25px;
+  margin:25px;
+  text-align: center;
+}
