@@ -33,6 +33,25 @@
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="form-group">
+          <lable for="trainee[projects]">Projects</label>
+            <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <lable for="trainee[rationale]">Rationale</lable>
+            <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <lable for="trainee[ambition]">Ambition</lable>
+            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          </div>
+
+          <div class="form-group">
+            <lable for="trainee[learning_experience]">Learning Experience</lable>
+            <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+          </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
@@ -56,6 +75,8 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+
+    total_words = profile_values.split(" ").length;
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
