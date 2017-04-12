@@ -51,6 +51,9 @@ h3 {
   text-align: center;
 }
 
-.profile-value{
-
+.container{
+  text-align:center;
+}
+.field{
+  border: solid black;
 }

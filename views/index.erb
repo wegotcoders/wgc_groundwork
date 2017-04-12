@@ -1,7 +1,15 @@
 <% if @profile %>
-<div  id ="image">
-<img class = "profilePic" src = "/images/matt.jpg" alt ="Matthew Jackman"></img>
+<div  class="image text-center">
+<img class = "img-responsive img-circle margin text-center" style="display:inline" src = "/images/matt.jpg" alt ="Matthew Jackman" width="350" height="350"></img>
+<h1 class= "details"><%= @profile["first_name"] %> <%= @profile["last_name"] %></h1>
+<h1 class= "details">Date of Birth: <%= @profile["dob"] %><h1>
+<h1 class= "details">Gender: <%= @profile["gender"] %></h1>
+<p class= "details">Employment: <%= @profile["employment_status"] %></p>
+<h1 class= "details">Phone Number: <%= @profile["phone_number"] %></h1>
+
+
 </div>
+
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
