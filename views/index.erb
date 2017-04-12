@@ -8,19 +8,28 @@
   <h4 class= "details">Phone Number: <%= @profile["phone_number"] %></h4>
 </div>
 
-<div class="row">
-  <div class="col-sm-4 text-center">
+<div class="container">
+<div class="row col-sm-6 text-center">
     <h3>About Me</h3>
     <p><%= @profile["about"] %></p>
-  </div>
-  <div class="col-sm-4 text-center">
-    <h3>My Project</h3>
-    <p><%= @profile["projects"] %></p>
-  </div>
-  <div class="col-sm-4 text-center">
+</div>
+<div class="row col-sm-6 text-center">
     <h3>Reason For Taking Course</h3>
     <p><%= @profile["rationale"] %></p>
+</div>
+<div class="row col-sm-12 text-center">
+    <h3>My Project</h3>
+    <p><%= @profile["projects"] %></p>
+</div>
+  <div class="row col-sm-6 text-center">
+    <h3>My Ambotions</h3>
+    <p><%= @profile["ambition"] %></p>
   </div>
+  <div class="row col-sm-6 text-center">
+    <h3>A Good Learning Experience</h3>
+    <p><%= @profile["learning_experience"] %></p>
+  </div>
+</div>
 </div>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->

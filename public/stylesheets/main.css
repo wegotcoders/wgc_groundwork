@@ -57,3 +57,7 @@ h3 {
 .container{
   margin-bottom: 50px;
 }
+.row{
+  padding:30px;
+  margin: auto;
+}
