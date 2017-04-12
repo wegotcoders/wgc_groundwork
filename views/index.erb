@@ -5,9 +5,11 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
+  <div class = "col-sm-6">
     <div class="profile-section box">
-      <h4><%= field %></h4>
+      <h3><%= field %></h3>
       <p class="profile-value"><%= value %></p>
+    </div>
     </div>
   <% end %>
 
@@ -72,11 +74,34 @@
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
+  var index = 10;
+  wordCount(index)
+  switch () {
+    case about:
+     wordCount(9);
+     break;
+    case projects:
+     wordCount(10);
+     break;
+    case rationale:
+     wordCount(11);
+     break;
+    case ambition:
+    wordCount(12);
+    break;
+    case learning_experience:
+    wordCount(13);
+      break;
+    default:
+      index = null;
+  }
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+    function wordCount(index){
+      total_words = profile_values[index].innerHTML.split(" ").length;
+    }
 
-    total_words = profile_values.split(" ").length;
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
