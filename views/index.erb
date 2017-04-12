@@ -1,15 +1,27 @@
 <% if @profile %>
-<div  class="image text-center">
-<img class = "img-responsive img-circle margin text-center" style="display:inline" src = "/images/matt.jpg" alt ="Matthew Jackman" width="350" height="350"></img>
-<h1 class= "details"><%= @profile["first_name"] %> <%= @profile["last_name"] %></h1>
-<h1 class= "details">Date of Birth: <%= @profile["dob"] %><h1>
-<h1 class= "details">Gender: <%= @profile["gender"] %></h1>
-<p class= "details">Employment: <%= @profile["employment_status"] %></p>
-<h1 class= "details">Phone Number: <%= @profile["phone_number"] %></h1>
-
-
+<div  class="container text-center">
+  <img class = "img-responsive img-circle margin text-center" style="display:inline" src = "/images/matt.jpg" alt ="Matthew Jackman" width="350" height="350"></img>
+  <h1 class= "name"><%= @profile["first_name"] %> <%= @profile["last_name"] %></h1>
+  <h4 class= "details">Date of Birth: <%= @profile["dob"] %></h4>
+  <h4 class= "details">Gender: <%= @profile["gender"] %></h4>
+  <h4 class= "details">Employment: <%= @profile["employment_status"] %></h4>
+  <h4 class= "details">Phone Number: <%= @profile["phone_number"] %></h4>
 </div>
 
+<div class="row">
+  <div class="col-sm-4 text-center">
+    <h3>About Me</h3>
+    <p><%= @profile["about"] %></p>
+  </div>
+  <div class="col-sm-4 text-center">
+    <h3>My Project</h3>
+    <p><%= @profile["projects"] %></p>
+  </div>
+  <div class="col-sm-4 text-center">
+    <h3>Reason For Taking Course</h3>
+    <p><%= @profile["rationale"] %></p>
+  </div>
+</div>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>

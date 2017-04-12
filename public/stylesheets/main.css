@@ -50,10 +50,10 @@ h3 {
   margin-bottom:10px;
   text-align: center;
 }
+.name{
+  font-size: 25px;
+}
 
 .container{
-  text-align:center;
-}
-.field{
-  border: solid black;
+  margin-bottom: 50px;
 }
