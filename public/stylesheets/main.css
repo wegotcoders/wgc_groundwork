@@ -63,8 +63,8 @@ h3 {
   margin: auto;
 }
 .count{
-  font-family: monospace;
-  text-align: left;
+  font-family: monospace,Arial,sans-serif;
+  text-align: right;
 }
 .profile{
   display: none;

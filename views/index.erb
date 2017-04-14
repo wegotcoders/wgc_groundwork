@@ -12,27 +12,32 @@
   <div class="row col-sm-6 text-center">
     <h3>About Me</h3>
     <p><%= @profile["about"] %></p>
+    <br>
     <p class="count"><span id="about">0</span> words found.</p>
   </div>
   <div class="row col-sm-6 text-center">
     <h3>Reason For Taking Course</h3>
     <p><%= @profile["rationale"] %></p>
-    <span id="rationale">0</span> words found.
+    <br>
+    <p class="count"><span id="rationale">0</span> words found.</p>
   </div>
   <div class="row col-sm-12 text-center">
     <h3>My Project</h3>
     <p><%= @profile["projects"] %></p>
-    <span id="projects">0</span> words found.
+    <br>
+    <p class="count"><span id="projects">0</span> words found.</p>
   </div>
   <div class="row col-sm-6 text-center">
     <h3>My Ambotions</h3>
     <p><%= @profile["ambition"] %></p>
-    <span id="ambition">0</span> words found.
+    <br>
+    <p class="count"><span id="ambition">0</span> words found.</p>
   </div>
   <div class="row col-sm-6 text-center">
     <h3>A Good Learning Experience</h3>
     <p><%= @profile["learning_experience"] %></p>
-    <span id="learning_experience">0</span> words found.
+    <br>
+    <p class="count"><span id="learning_experience">0</span> words found.</p>
   </div>
   <div class="row col-sm-12 text-center">
     <h3>primes_sum<h3>
@@ -119,7 +124,13 @@
     function wordCount(){
       for (var i=9; i<profile_values.length; i++){
       total_words = profile_values[i].innerHTML.split(" ").length;
-    document.getElementById(arr[i].innerHTML).innerHTML = total_words;
+      if(total_words < 20){
+        document.getElementById(arr[i].innerHTML).innerHTML = "You need 20 words or more, only " + total_words + ", ";
+      }
+      else{
+        document.getElementById(arr[i].innerHTML).innerHTML = total_words;
+      }
+
   }
 }
 
