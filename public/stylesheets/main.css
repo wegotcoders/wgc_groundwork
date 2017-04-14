@@ -56,8 +56,16 @@ h3 {
 
 .container{
   margin-bottom: 50px;
+
 }
 .row{
   padding:30px;
   margin: auto;
+}
+.count{
+  font-family: monospace;
+  text-align: left;
+}
+.profile{
+  display: none;
 }
