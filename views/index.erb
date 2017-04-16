@@ -70,9 +70,7 @@
     <form class="form-inline">
       <div class="form-group">
         <lable for="codecademy">Enter Codecademy account name:</label>
-
             <input id="username" type="account-name" class="form-contol" value="jackamn2000">
-
         </div>
         <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
@@ -82,51 +80,59 @@
   </form>
 </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
+<div class="row col-sm-12 text-center">
+<h3>Edit Profile</h3>
+</div>
+<div class="container-fluid">
+  <form action="/update" method="POST">
+    <fieldset >
+      <div class="row text-center">
+        <div class="col-sm-4">
           <label for="trainee[about]">About</label>
-          <br>
-          <textarea class="text" col="85" rows="10" name="<%= @profile["about"] %>"/><%= @profile["about"] %></textarea>
-          <!--<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>-->
+            <br>
+              <textarea class="text" col="85" rows="10" name="<%= @profile["about"] %>"/><%= @profile["about"] %></textarea>
+              <!--<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>-->
         </div>
-
-        <!-- TODO - Add more fields so that your profile can be edited -->
-        <div class="form-group" "col-sm-6">
+      <div class="col-sm-4">
+        <div class="form-group">
           <lable for="trainee[projects]">Projects</label>
             <br>
-            <textarea class="text" col="85" rows="10" name="<%= @profile["projects"] %>"/><%= @profile["projects"] %></textarea>
-            <!--<input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>-->
-          </div>
-
-          <div class="form-group">
-            <lable for="trainee[rationale]">Rationale</lable>
+              <textarea class="text" col="85" rows="10" name="<%= @profile["projects"] %>"/><%= @profile["projects"] %></textarea>
+              <!--<input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>-->
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <lable for="trainee[rationale]">Rationale</lable>
             <br>
-            <textarea class="text" col="85" rows="10" name="<%= @profile["ratonale"] %>"/><%= @profile["rationale"] %></textarea>
-            <!--<input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>-->
-          </div>
-
-          <div class="form-group">
-            <lable for="trainee[ambition]">Ambition</lable>
+              <textarea class="text" col="85" rows="10" name="<%= @profile["ratonale"] %>"/><%= @profile["rationale"] %></textarea>
+              <!--<input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>-->
+        </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <lable for="trainee[ambition]">Ambition</lable>
             <br>
             <textarea class="text" col="85" rows="10" name="<%= @profile["ambition"] %>"/><%= @profile["ambition"] %></textarea>
             <!--<input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>-->
-          </div>
-
-          <div class="form-group">
-            <lable for="trainee[learning_experience]">Learning Experience</lable>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <lable for="trainee[learning_experience]">Learning Experience</lable>
             <br>
             <textarea class="text" col="85" rows="10" name="<%= @profile["learning_experience"] %>"/><%= @profile["learning_experience"] %></textarea>
-            <!--<input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>-->
-          </div>
+    <!--<input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>-->
+        </div>
+      </div>
+    </div>
+    <input type="submit" value="Update Profile" class="btn btn-primary" />
+  </fieldset>
+</form>
+</div>
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
