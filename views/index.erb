@@ -1,14 +1,17 @@
 <% if @profile %>
-<div  class="container text-center">
-  <img class = "img-responsive img-circle margin text-center" style="display:inline" src = "/images/matt.jpg" alt ="Matthew Jackman" width="350" height="350"></img>
-  <h1 class= "name"><%= @profile["first_name"] %> <%= @profile["last_name"] %></h1>
-  <h4 class= "details">Date of Birth: <%= @profile["dob"] %></h4>
-  <h4 class= "details">Gender: <%= @profile["gender"] %></h4>
-  <h4 class= "details">Employment: <%= @profile["employment_status"] %></h4>
-  <h4 class= "details">Phone Number: <%= @profile["phone_number"] %></h4>
+<div class="head">
+  <div  class="container text-center">
+    <img class = "img-responsive img-circle margin text-center" style="display:inline" src = "/images/matt.jpg" alt ="Matthew Jackman" width="350" height="350"></img>
+    <h1 class= "name"><%= @profile["first_name"] %> <%= @profile["last_name"] %></h1>
+    <h4 class= "details">Date of Birth: <%= @profile["dob"] %></h4>
+    <h4 class= "details">Gender: <%= @profile["gender"] %></h4>
+    <h4 class= "details">Employment: <%= @profile["employment_status"] %></h4>
+    <h4 class= "details">Phone Number: <%= @profile["phone_number"] %></h4>
+  </div>
 </div>
 
-<div class="container">
+<div class="discriptions">
+<div class="container-fluid">
   <div class="row col-sm-6 text-center">
     <h3>About Me</h3>
     <p><%= @profile["about"] %></p>
@@ -42,6 +45,7 @@
   <div class="row col-sm-12 text-center">
     <h3>primes_sum<h3>
   </div>
+</div>
 </div>
 
   <!--<h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
@@ -81,21 +85,21 @@
 </div>
 
 <div class="row col-sm-12 text-center">
-<h3>Edit Profile</h3>
+<h3 id="edit">Edit Profile</h3>
 </div>
-<div class="container-fluid">
+<div class="container-fluid box">
   <form action="/update" method="POST">
     <fieldset >
       <div class="row text-center">
         <div class="col-sm-4">
-          <label for="trainee[about]">About</label>
+          <label class="edit-tytle" for="trainee[about]">About</label>
             <br>
               <textarea class="text" col="85" rows="10" name="<%= @profile["about"] %>"/><%= @profile["about"] %></textarea>
               <!--<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>-->
         </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <lable for="trainee[projects]">Projects</label>
+          <lable class="edit-tytle" for="trainee[projects]">Projects</label>
             <br>
               <textarea class="text" col="85" rows="10" name="<%= @profile["projects"] %>"/><%= @profile["projects"] %></textarea>
               <!--<input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>-->
@@ -103,7 +107,7 @@
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <lable for="trainee[rationale]">Rationale</lable>
+          <lable class="edit-tytle" for="trainee[rationale]">Rationale</lable>
             <br>
               <textarea class="text" col="85" rows="10" name="<%= @profile["ratonale"] %>"/><%= @profile["rationale"] %></textarea>
               <!--<input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>-->
@@ -113,7 +117,7 @@
     <div class="row text-center">
       <div class="col-sm-4">
         <div class="form-group">
-          <lable for="trainee[ambition]">Ambition</lable>
+          <lable class="edit-tytle" for="trainee[ambition]">Ambition</lable>
             <br>
             <textarea class="text" col="85" rows="10" name="<%= @profile["ambition"] %>"/><%= @profile["ambition"] %></textarea>
             <!--<input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>-->
@@ -121,14 +125,16 @@
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <lable for="trainee[learning_experience]">Learning Experience</lable>
+          <lable class="edit-tytle" for="trainee[learning_experience]">Learning Experience</lable>
             <br>
             <textarea class="text" col="85" rows="10" name="<%= @profile["learning_experience"] %>"/><%= @profile["learning_experience"] %></textarea>
     <!--<input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>-->
         </div>
       </div>
     </div>
+    <div class="row col-sm-12 text-center">
     <input type="submit" value="Update Profile" class="btn btn-primary" />
+  </div>
   </fieldset>
 </form>
 </div>
@@ -140,6 +146,11 @@
     <a href="/authorise">Authorise</a>
   </div>
 <% end %>
+<footer>
+ <i style="font-size:24px" class="fa">&#xf09b;</i>
+ <i style="font-size:24px" class="fa">&#xf099;</i>
+ <i style="font-size:24px" class="fa">&#xf08c;</i>
+</footer>
 
 
 <!-- Add your Javascript to this script tag -->
