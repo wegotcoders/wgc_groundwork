@@ -85,12 +85,12 @@
 </div>
 
 <div class="row col-sm-12 text-center">
-<h3 id="edit">Edit Profile</h3>
+ <h3 id="edit">Edit Profile</h3>
 </div>
 <div class="container-fluid box">
   <form action="/update" method="POST">
     <fieldset >
-      <div class="row text-center">
+      <!--<div class="row">-->
         <div class="col-sm-4">
           <label class="edit-tytle" for="trainee[about]">About</label>
             <br>
@@ -113,8 +113,8 @@
               <!--<input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>-->
         </div>
       </div>
-    </div>
-    <div class="row text-center">
+
+    <!--<div class="row">-->
       <div class="col-sm-4">
         <div class="form-group">
           <lable class="edit-tytle" for="trainee[ambition]">Ambition</lable>
@@ -131,10 +131,10 @@
     <!--<input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>-->
         </div>
       </div>
-    </div>
+
     <div class="row col-sm-12 text-center">
-    <input type="submit" value="Update Profile" class="btn btn-primary" />
-  </div>
+      <input type="submit" value="Update Profile" class="btn btn-primary" />
+    </div>
   </fieldset>
 </form>
 </div>
@@ -164,19 +164,23 @@
   var profile_values = document.getElementsByClassName('profile-value');
   var profile_field = document.getElementsByClassName('profile-field');
   var total_words = 0;
+  var box_words = 0;
   var arr = [].slice.call(profile_field);
   wordCount();
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
     function wordCount(){
       for (var i=9; i<profile_values.length; i++){
-      total_words = profile_values[i].innerHTML.split(" ").length;
-      if(total_words < 20){
-        document.getElementById(arr[i].innerHTML).innerHTML = "You need 20 words or more, only " + total_words + ", ";
+      box_words = profile_values[i].innerHTML.split(" ").length;
+      total_words += box_words;
+      if(box_words < 20){
+        document.getElementById(arr[i].innerHTML).innerHTML = "You need 20 words or more, only " + box_words + ", ";
       }
       else{
-        document.getElementById(arr[i].innerHTML).innerHTML = total_words;
+        document.getElementById(arr[i].innerHTML).innerHTML = box_words;
+
       }
+      document.getElementById("word-count").innerHTML = "Total of " + total_words;
   }
 }
 </script>
