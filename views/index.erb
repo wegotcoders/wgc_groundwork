@@ -78,7 +78,7 @@
         </div>
         <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-          <input type="button" class="btn btn-info" value="Input Button" onclick="location.href = 'https://www.codecademy.com/Jackman2000';">
+          <input id="btn" type="button" class="btn btn-info" value="Input Button" onclick="location.href = 'https://www.codecademy.com/Jackman2000';" target="_blank">
       </div>
     </div>
   </form>
@@ -146,11 +146,15 @@
     <a href="/authorise">Authorise</a>
   </div>
 <% end %>
-<footer>
- <i style="font-size:24px" class="fa">&#xf09b;</i>
- <i style="font-size:24px" class="fa">&#xf099;</i>
- <i style="font-size:24px" class="fa">&#xf08c;</i>
+
+<div class="container text-right" id="bottom">
+<footer class="footer">
+ <a id="icons" href="https://twitter.com/Jackman307" target="_blank"><i class="fa">&#xf099;</i></a>
+ <a id="icons" href="https://github.com/mjjackman" target="_blank"><i class="fa">&#xf09b;</i></a>
+ <a id="icons" href="https://www.linkedin.com/in/matthew-jackman-654006131/" target="_blank"><i class="fa">&#xf08c;</i></a>
 </footer>
+</div>
+
 
 
 <!-- Add your Javascript to this script tag -->
@@ -175,5 +179,4 @@
       }
   }
 }
-
 </script>

@@ -78,7 +78,7 @@ h3 {
     height: 300px;
     border-radius: 10px;
     border: 1px solid #000;
-    background: #ffffff;
+    background-color: #ffffff;
 }
 .discriptions{
 
@@ -92,4 +92,18 @@ h3 {
 }
 .edit-tytle{
   font-size:1em;
+}
+
+#icons{
+  font-size:36px;
+  color: black;
+  padding:5px;
+  margin-bottom: 0px;
+}
+.footer{
+  padding:5px;
+  text-right;
+}
+#bottom{
+  margin-bottom: 1px;
 }
