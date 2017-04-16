@@ -69,3 +69,10 @@ h3 {
 .profile{
   display: none;
 }
+
+.text{
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    border: 1px solid #000;
+}

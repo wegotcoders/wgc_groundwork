@@ -71,8 +71,8 @@
       <div class="form-group">
         <lable for="codecademy">Enter Codecademy account name:</label>
 
-            <input id="username" type="account-name" class="form-contol" value="value" placeholder="jackman2000">
-          
+            <input id="username" type="account-name" class="form-contol" value="jackamn2000">
+
         </div>
         <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
@@ -89,28 +89,38 @@
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <br>
+          <textarea class="text" col="85" rows="10" name="<%= @profile["about"] %>"/><%= @profile["about"] %></textarea>
+          <!--<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>-->
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
-        <div class="form-group">
+        <div class="form-group" "col-sm-6">
           <lable for="trainee[projects]">Projects</label>
-            <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+            <br>
+            <textarea class="text" col="85" rows="10" name="<%= @profile["projects"] %>"/><%= @profile["projects"] %></textarea>
+            <!--<input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>-->
           </div>
 
           <div class="form-group">
             <lable for="trainee[rationale]">Rationale</lable>
-            <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+            <br>
+            <textarea class="text" col="85" rows="10" name="<%= @profile["ratonale"] %>"/><%= @profile["rationale"] %></textarea>
+            <!--<input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>-->
           </div>
 
           <div class="form-group">
             <lable for="trainee[ambition]">Ambition</lable>
-            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+            <br>
+            <textarea class="text" col="85" rows="10" name="<%= @profile["ambition"] %>"/><%= @profile["ambition"] %></textarea>
+            <!--<input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>-->
           </div>
 
           <div class="form-group">
             <lable for="trainee[learning_experience]">Learning Experience</lable>
-            <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+            <br>
+            <textarea class="text" col="85" rows="10" name="<%= @profile["learning_experience"] %>"/><%= @profile["learning_experience"] %></textarea>
+            <!--<input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>-->
           </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
