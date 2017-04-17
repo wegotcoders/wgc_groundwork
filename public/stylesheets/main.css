@@ -3,7 +3,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   /*color: #333;*/
-  background: linear-gradient(to bottom right,#474e5d 0%, #6a8c75 100%);
+  background: linear-gradient(to bottom right,#474e5d, #6a8c75);
 }
 
 #logo {
@@ -19,7 +19,7 @@ body {
   padding: 1em;
   margin-bottom: 0.5em;
   border-radius: 10px;
-  background-color: #669999;
+  background-color: #A9A9A9;
 }
 
 .welcome {
@@ -81,7 +81,6 @@ h3 {
     background-color: #ffffff;
 }
 .discriptions{
-
   font-size: 1.2em;
   margin-bottom:10px;
   background-color: #474e5d;
@@ -89,9 +88,6 @@ h3 {
 }
 #edit{
   font-size: 2em;
-}
-.edit-tytle{
-  font-size:1em;
 }
 
 #icons{

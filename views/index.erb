@@ -84,59 +84,53 @@
   </form>
 </div>
 
-<div class="row col-sm-12 text-center">
- <h3 id="edit">Edit Profile</h3>
-</div>
-<div class="container-fluid box">
+<div class="container">
+  <h3>Edit Profile</h3>
+
   <form action="/update" method="POST">
-    <fieldset >
-      <!--<div class="row">-->
-        <div class="col-sm-4">
-          <label class="edit-tytle" for="trainee[about]">About</label>
-            <br>
-              <textarea class="text" col="85" rows="10" name="<%= @profile["about"] %>"/><%= @profile["about"] %></textarea>
-              <!--<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>-->
-        </div>
+    <fieldset>
       <div class="col-sm-4">
-        <div class="form-group">
-          <lable class="edit-tytle" for="trainee[projects]">Projects</label>
-            <br>
-              <textarea class="text" col="85" rows="10" name="<%= @profile["projects"] %>"/><%= @profile["projects"] %></textarea>
-              <!--<input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>-->
-        </div>
+      <div class="form-group">
+        <label for="trainee[about]">About</label>
+        <textarea class="ab form-control" col="85" rows="10" name="trainee[about]"/><%= @profile["about"] %></textarea>
+        <!--<input class="ab form-control" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>-->
       </div>
-      <div class="col-sm-4">
-        <div class="form-group">
-          <lable class="edit-tytle" for="trainee[rationale]">Rationale</lable>
-            <br>
-              <textarea class="text" col="85" rows="10" name="<%= @profile["ratonale"] %>"/><%= @profile["rationale"] %></textarea>
-              <!--<input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>-->
-        </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="trainee[projects]">Projects</label>
+        <textarea class="pj form-control" col="85" rows="10" name="trainee[projetcs]"/><%= @profile["projects"] %></textarea>
+        <!--<input class="pj form-control" type="text" name="trainee[projetcs]" value="<%= @profile["projects"] %>"/>-->
       </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="trainee[rationale]">Rationale</label>
+        <textarea class="rt form-control" col="85" rows="10" name="trainee[rationale]"/><%= @profile["rationale"] %></textarea>
+        <!--<input class="rat form-control" type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>-->
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="trainee[ambition]">Ambition</label>
+        <textarea class="amb form-control" col="85" rows="10" name="trainee[ambition]"/><%= @profile["ambition"] %></textarea>
+        <!--<input class="amb form-control" type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>-->
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="trainee[learning_experience]">Learning Experience</label>
+        <textarea class="le form-control" col="85" rows="10" name="trainee[learning_experience]"/><%= @profile["learning_experience"] %></textarea>
+        <!--<input class="le form-control" type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>-->
+      </div>
+    </div>
 
-    <!--<div class="row">-->
-      <div class="col-sm-4">
-        <div class="form-group">
-          <lable class="edit-tytle" for="trainee[ambition]">Ambition</lable>
-            <br>
-            <textarea class="text" col="85" rows="10" name="<%= @profile["ambition"] %>"/><%= @profile["ambition"] %></textarea>
-            <!--<input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>-->
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="form-group">
-          <lable class="edit-tytle" for="trainee[learning_experience]">Learning Experience</lable>
-            <br>
-            <textarea class="text" col="85" rows="10" name="<%= @profile["learning_experience"] %>"/><%= @profile["learning_experience"] %></textarea>
-    <!--<input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>-->
-        </div>
-      </div>
-
-    <div class="row col-sm-12 text-center">
+      <!-- TODO - Add more fields so that your profile can be edited -->
+      <div class="col-sm-12 text-center">
       <input type="submit" value="Update Profile" class="btn btn-primary" />
     </div>
-  </fieldset>
-</form>
+    </fieldset>
+  </form>
 </div>
 
 <% else %>
@@ -148,11 +142,11 @@
 <% end %>
 
 <div class="container text-right" id="bottom">
-<footer class="footer">
- <a id="icons" href="https://twitter.com/Jackman307" target="_blank"><i class="fa">&#xf099;</i></a>
- <a id="icons" href="https://github.com/mjjackman" target="_blank"><i class="fa">&#xf09b;</i></a>
- <a id="icons" href="https://www.linkedin.com/in/matthew-jackman-654006131/" target="_blank"><i class="fa">&#xf08c;</i></a>
-</footer>
+  <footer class="footer">
+    <a id="icons" href="https://twitter.com/Jackman307" target="_blank"><i class="fa">&#xf099;</i></a>
+    <a id="icons" href="https://github.com/mjjackman" target="_blank"><i class="fa">&#xf09b;</i></a>
+    <a id="icons" href="https://www.linkedin.com/in/matthew-jackman-654006131/" target="_blank"><i class="fa">&#xf08c;</i></a>
+  </footer>
 </div>
 
 
