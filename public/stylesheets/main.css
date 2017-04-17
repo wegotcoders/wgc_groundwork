@@ -3,7 +3,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   /*color: #333;*/
-  background: linear-gradient(to bottom right,#009999, #00ffcc);
+  background: linear-gradient(to bottom right, #4f7667 30%, #4fb467 100%);
 }
 
 #logo {
@@ -66,6 +66,7 @@ h3 {
 .count{
   font-family: monospace,Arial,sans-serif;
   text-align: right;
+  margin-right: 20px;
 }
 .profile{
   display: none;
@@ -97,8 +98,13 @@ h3 {
   padding:5px;
   margin-bottom: 0px;
 }
+#icons:hover{
+  font-size: 40px;
+  color: blue;
+}
 .footer{
-  background-color: #80ced6;
+  height:60px;
+  background-color: #4fb49a;
   padding:5px;
   text-right;
   border-radius: 10px;
@@ -112,4 +118,8 @@ h3 {
   margin-right: auto;
   margin-left: auto;
   border-radius: 10px;
+}
+.info{
+  margin:5px;
+  padding:10px;
 }

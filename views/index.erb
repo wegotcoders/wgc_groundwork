@@ -14,37 +14,37 @@
 <div class="container-fluid">
   <div class="row col-sm-6 text-center">
     <h3>About Me</h3>
-    <p><%= @profile["about"] %></p>
+    <p class="info"><%= @profile["about"] %></p>
     <br>
     <p class="count"><span id="about">0</span> words found.</p>
   </div>
   <div class="row col-sm-6 text-center">
     <h3>Reason For Taking Course</h3>
-    <p><%= @profile["rationale"] %></p>
+    <p class="info"><%= @profile["rationale"] %></p>
     <br>
     <p class="count"><span id="rationale">0</span> words found.</p>
   </div>
   <div class="row col-sm-12 text-center">
     <h3>My Project</h3>
-    <p><%= @profile["projects"] %></p>
+    <p class="info"><%= @profile["projects"] %></p>
     <br>
     <p class="count"><span id="projects">0</span> words found.</p>
   </div>
   <div class="row col-sm-6 text-center">
     <h3>My Ambotions</h3>
-    <p><%= @profile["ambition"] %></p>
+    <p class="info"><%= @profile["ambition"] %></p>
     <br>
     <p class="count"><span id="ambition">0</span> words found.</p>
   </div>
   <div class="row col-sm-6 text-center">
     <h3>A Good Learning Experience</h3>
-    <p><%= @profile["learning_experience"] %></p>
+    <p class="info"><%= @profile["learning_experience"] %></p>
     <br>
     <p class="count"><span id="learning_experience">0</span> words found.</p>
   </div>
   <div class="row col-sm-12 text-center">
     <h3>primes_sum<h3>
-      <p><%= @profile["prime_sum"] %></p>
+      <p class="info"><%= @profile["prime_sum"] %></p>
   </div>
 </div>
 </div>
@@ -67,7 +67,7 @@
   </div>-->
 
 
-<div class="container text-center">
+<div class="container text-center" id="discriptions">
   <h3>Edit Profile</h3>
 
   <form action="/update" method="POST">
@@ -121,7 +121,7 @@
         </div>
         <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-          <input id="btn" type="button" class="btn btn-info" value="Input Button" onclick="location.href = 'https://www.codecademy.com/Jackman2000';" target="_blank">
+          <input id="btn" type="button" class="btn btn-primary" value="Input Button" onclick="location.href = 'https://www.codecademy.com/Jackman2000';" target="_blank">
       </div>
     </div>
   </form>
