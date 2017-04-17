@@ -44,6 +44,7 @@
   </div>
   <div class="row col-sm-12 text-center">
     <h3>primes_sum<h3>
+      <p><%= @profile["prime_sum"] %></p>
   </div>
 </div>
 </div>
@@ -69,20 +70,6 @@
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
   </div>
-
-  <div class="container">
-    <form class="form-inline">
-      <div class="form-group">
-        <lable for="codecademy">Enter Codecademy account name:</label>
-            <input id="username" type="account-name" class="form-contol" value="jackamn2000">
-        </div>
-        <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-          <input id="btn" type="button" class="btn btn-info" value="Input Button" onclick="location.href = 'https://www.codecademy.com/Jackman2000';" target="_blank">
-      </div>
-    </div>
-  </form>
-</div>
 
 <div class="container">
   <h3>Edit Profile</h3>
@@ -124,7 +111,25 @@
         <!--<input class="le form-control" type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>-->
       </div>
     </div>
-
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="trainee[primes_sum]">Enter the sum of prime numbers up to two million</label>
+        <input class="pm form-control" type="text" name="trainee[primes_sum]" value="142913828922"/>
+      </div>
+    </div>
+    <div class="col-sm-4">
+    <form>
+      <div class="form-group">
+        <lable for="codecademy"><b>Enter Codecademy account name:</b></label>
+            <input id="username" type="account-name" class="form-contol" value="jackamn2000">
+        </div>
+        <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+          <input id="btn" type="button" class="btn btn-info" value="Input Button" onclick="location.href = 'https://www.codecademy.com/Jackman2000';" target="_blank">
+      </div>
+    </div>
+  </form>
+</div>
       <!-- TODO - Add more fields so that your profile can be edited -->
       <div class="col-sm-12 text-center">
       <input type="submit" value="Update Profile" class="btn btn-primary" />
