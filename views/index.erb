@@ -11,46 +11,46 @@
 </div>
 
 <div class="discriptions">
-<div class="container-fluid">
-  <div class="row col-sm-6 text-center">
-    <h3>About Me</h3>
-    <p class="info"><%= @profile["about"] %></p>
-    <br>
-    <p class="count"><span id="about">0</span> words found.</p>
-  </div>
-  <div class="row col-sm-6 text-center">
-    <h3>Reason For Taking Course</h3>
-    <p class="info"><%= @profile["rationale"] %></p>
-    <br>
-    <p class="count"><span id="rationale">0</span> words found.</p>
-  </div>
-  <div class="row col-sm-12 text-center">
-    <h3>My Project</h3>
-    <p class="info"><%= @profile["projects"] %></p>
-    <br>
-    <p class="count"><span id="projects">0</span> words found.</p>
-  </div>
-  <div class="row col-sm-6 text-center">
-    <h3>My Ambotions</h3>
-    <p class="info"><%= @profile["ambition"] %></p>
-    <br>
-    <p class="count"><span id="ambition">0</span> words found.</p>
-  </div>
-  <div class="row col-sm-6 text-center">
-    <h3>A Good Learning Experience</h3>
-    <p class="info"><%= @profile["learning_experience"] %></p>
-    <br>
-    <p class="count"><span id="learning_experience">0</span> words found.</p>
-  </div>
-  <div class="row col-sm-12 text-center">
-    <h3>primes_sum<h3>
+  <div class="container-fluid">
+    <div class="row col-sm-6 text-center">
+      <h3>About Me</h3>
+      <p class="info"><%= @profile["about"] %></p>
+      <br>
+      <p class="count"><span id="about">0</span> words found.</p>
+    </div>
+    <div class="row col-sm-6 text-center">
+      <h3>Reason For Taking Course</h3>
+      <p class="info"><%= @profile["rationale"] %></p>
+      <br>
+      <p class="count"><span id="rationale">0</span> words found.</p>
+    </div>
+    <div class="row col-sm-12 text-center">
+      <h3>My Project</h3>
+      <p class="info"><%= @profile["projects"] %></p>
+      <br>
+      <p class="count"><span id="projects">0</span> words found.</p>
+    </div>
+    <div class="row col-sm-6 text-center">
+      <h3>My Ambotions</h3>
+      <p class="info"><%= @profile["ambition"] %></p>
+      <br>
+      <p class="count"><span id="ambition">0</span> words found.</p>
+    </div>
+    <div class="row col-sm-6 text-center">
+      <h3>A Good Learning Experience</h3>
+      <p class="info"><%= @profile["learning_experience"] %></p>
+      <br>
+      <p class="count"><span id="learning_experience">0</span> words found.</p>
+    </div>
+    <div class="row col-sm-12 text-center">
+      <h3>primes_sum<h3>
       <p class="info"><%= @profile["primes_sum"] %></p>
+    </div>
+    <div class="col-sm-12 text-right"
+      <h3><b>Stats</b></h3>
+      <p><span id="word-count">0</span> words found.</p>
+    </div>
   </div>
-  <div class="col-sm-12 text-right"
-  <h3><b>Stats</b></h3>
-  <p><span id="word-count">0</span> words found.</p>
-</div>
-</div>
 </div>
 
   <!--<h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
@@ -61,7 +61,7 @@
       <h3 class="profile-field hidden"><%= field %></h3>
       <p class="profile-value hidden"><%= value %></p>
     </div>
-    </div>
+  </div>
   <% end %>
 
   <!--<div id="stats" class="box">
@@ -77,71 +77,74 @@
   <form action="/update" method="POST">
     <fieldset>
       <div class="col-sm-4">
-      <div class="form-group">
-        <label for="trainee[about]">About</label>
-        <textarea class="ab form-control" col="85" rows="10" name="trainee[about]"/><%= @profile["about"] %></textarea>
-        <!--<input class="ab form-control" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>-->
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="form-group">
-        <label for="trainee[projects]">Projects</label>
-        <textarea class="pj form-control" col="85" rows="10" name="trainee[projetcs]"/><%= @profile["projects"] %></textarea>
-        <!--<input class="pj form-control" type="text" name="trainee[projetcs]" value="<%= @profile["projects"] %>"/>-->
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="form-group">
-        <label for="trainee[rationale]">Rationale</label>
-        <textarea class="rt form-control" col="85" rows="10" name="trainee[rationale]"/><%= @profile["rationale"] %></textarea>
-        <!--<input class="rat form-control" type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>-->
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="form-group">
-        <label for="trainee[ambition]">Ambition</label>
-        <textarea class="amb form-control" col="85" rows="10" name="trainee[ambition]"/><%= @profile["ambition"] %></textarea>
-        <!--<input class="amb form-control" type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>-->
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="form-group">
-        <label for="trainee[learning_experience]">Learning Experience</label>
-        <textarea class="le form-control" col="85" rows="10" name="trainee[learning_experience]"/><%= @profile["learning_experience"] %></textarea>
-        <!--<input class="le form-control" type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>-->
-
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="form-group">
-        <label for="trainee[primes_sum]">Enter the sum of prime numbers up to two million</label>
-        <input class="pm form-control" type="text" name="trainee[primes_sum]" value="142913828922"/>
-      </div>
-    </div>
-    <div class="col-sm-4">
-    <form>
-      <div class="form-group">
-        <lable for="codecademy"><b>Enter Codecademy account name:</b></label>
-            <input id="username" type="account-name" class="form-contol" value="jackamn2000">
-        </div>
         <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-          <input id="btn" type="button" class="btn btn-primary" value="Input Button" onclick="location.href = 'https://www.codecademy.com/Jackman2000';" target="_blank">
+          <label for="trainee[about]">About</label>
+          <textarea class="ab form-control" col="85" rows="10" name="trainee[about]"/><%= @profile["about"] %></textarea>
+          <!--<input class="ab form-control" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>-->
+        </div>
       </div>
-    </div>
-  </form>
-</div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="trainee[projects]">Projects</label>
+          <textarea class="pj form-control" col="85" rows="10" name="trainee[projetcs]"/><%= @profile["projects"] %></textarea>
+          <!--<input class="pj form-control" type="text" name="trainee[projetcs]" value="<%= @profile["projects"] %>"/>-->
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="trainee[rationale]">Rationale</label>
+          <textarea class="rt form-control" col="85" rows="10" name="trainee[rationale]"/><%= @profile["rationale"] %></textarea>
+          <!--<input class="rat form-control" type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>-->
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <textarea class="amb form-control" col="85" rows="10" name="trainee[ambition]"/><%= @profile["ambition"] %></textarea>
+          <!--<input class="amb form-control" type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>-->
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="trainee[learning_experience]">Learning Experience</label>
+          <textarea class="le form-control" col="85" rows="10" name="trainee[learning_experience]"/><%= @profile["learning_experience"] %></textarea>
+          <!--<input class="le form-control" type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>-->
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="trainee[primes_sum]">Enter the sum of prime numbers up to two million</label>
+          <input class="pm form-control" type="text" name="trainee[primes_sum]" value="142913828922"/>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <form>
+          <div class="form-group">
+            <lable for="codecademy"><b>Enter Codecademy account name:</b></label>
+            <input id="username" type="account-name" class="form-contol" value="jackamn2000">
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input id="btn" type="button" class="btn btn-primary" value="Input Button" onclick="location.href = 'https://www.codecademy.com/Jackman2000';" target="_blank">
+            </div>
+          </div>
+        </form>
+      </div>
       <!-- TODO - Add more fields so that your profile can be edited -->
       <div class="col-sm-12 text-center">
-      <input type="submit" value="Update Profile" class="btn btn-primary" />
-    </div>
+        <input type="submit" value="Update Profile" class="btn btn-primary" />
+      </div>
     </fieldset>
   </form>
 </div>
 
 <div class="container" id="problems" >
   <h3>Programming Problems</h3>
-  <a href="/primes">My Prime Number Solution</a>
+  <form action="/primes" method="GET">
+      <p> Find the sum of all the prime number up to the number you enter below:</p>
+      <input type="text" name="limit">
+      <input type="submit" value="Enter" class="btn btn-primary">
+    </form>
 </div>
 
 <% else %>
