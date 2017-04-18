@@ -44,8 +44,12 @@
   </div>
   <div class="row col-sm-12 text-center">
     <h3>primes_sum<h3>
-      <p class="info"><%= @profile["prime_sum"] %></p>
+      <p class="info"><%= @profile["primes_sum"] %></p>
   </div>
+  <div class="col-sm-12 text-right"
+  <h3><b>Stats</b></h3>
+  <p><span id="word-count">0</span> words found.</p>
+</div>
 </div>
 </div>
 
@@ -105,6 +109,7 @@
         <label for="trainee[learning_experience]">Learning Experience</label>
         <textarea class="le form-control" col="85" rows="10" name="trainee[learning_experience]"/><%= @profile["learning_experience"] %></textarea>
         <!--<input class="le form-control" type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>-->
+
       </div>
     </div>
     <div class="col-sm-4">
@@ -146,19 +151,6 @@
     <a href="/authorise">Authorise</a>
   </div>
 <% end %>
-
-
-  <footer class="footer">
-    <div class="col-sm-4"
-    <h3><b>Stats</b></h3>
-    <p><span id="word-count">0</span> words found.</p>
-  </div>
-    <div class="container text-right" id="bottom">
-    <a id="icons" href="https://twitter.com/Jackman307" target="_blank"><i class="fa">&#xf099;</i></a>
-    <a id="icons" href="https://github.com/mjjackman" target="_blank"><i class="fa">&#xf09b;</i></a>
-    <a id="icons" href="https://www.linkedin.com/in/matthew-jackman-654006131/" target="_blank"><i class="fa">&#xf08c;</i></a>
-  </footer>
-</div>
 
 
 

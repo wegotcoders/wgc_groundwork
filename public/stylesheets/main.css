@@ -3,7 +3,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   /*color: #333;*/
-  background: linear-gradient(to bottom right, #4f7667 30%, #4fb467 100%);
+  background: linear-gradient(to bottom right, #4f7667 50%, #3aac82 100%);
 }
 
 #logo {
@@ -107,7 +107,6 @@ h3 {
   background-color: #4fb49a;
   padding:5px;
   text-right;
-  border-radius: 10px;
 }
 #bottom{
   margin-bottom: 1px;
