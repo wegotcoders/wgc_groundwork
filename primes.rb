@@ -11,6 +11,5 @@ class Primes
       end
     end
       return total
-    "I'm working on it man!"
 end
 end
