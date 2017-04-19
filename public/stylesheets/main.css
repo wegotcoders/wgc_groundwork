@@ -112,13 +112,20 @@ h3 {
   margin-bottom: 1px;
 }
 #problems{
+  text-align: center;
+  width:600px;
   background-color: #618685;
-  width:300px;
-  margin-right: auto;
-  margin-left: auto;
   border-radius: 10px;
 }
 .info{
   margin:5px;
   padding:10px;
+}
+ul{
+  padding:15px;
+}
+.list{
+  margin-left: 150px;
+  width:300px;
+  text-align: left;
 }

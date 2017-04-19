@@ -140,8 +140,15 @@
 
 <div class="container" id="problems" >
   <h3>Programming Problems</h3>
-  <form action="/primes" method="GET">
-      <p> Find the sum of all the prime number up to the number you enter below:</p>
+  <br>
+  <div class="list">
+    <h4>Enter a number to find:</h4>
+    <ul style="list-style-type:disc">
+      <li>The sum of all the prime number within it.</li>
+      <li>The sum of all the multiples of 3 or 5.</li>
+    </ul>
+  </div>
+    <form action="/primes" method="GET">
       <input type="text" name="limit">
       <input type="submit" value="Enter" class="btn btn-primary">
     </form>
