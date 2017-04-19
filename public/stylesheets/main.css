@@ -113,7 +113,7 @@ h3 {
 }
 #problems{
   text-align: center;
-  width:600px;
+  width:800px;
   background-color: #618685;
   border-radius: 10px;
 }
@@ -125,6 +125,14 @@ ul{
   padding:15px;
 }
 .list{
+  margin-left: 5px;
+  width:300px;
+  text-align: left;
+}
+a:hover{
+  color: gray;
+}
+.cademy{
   margin-left: 150px;
   width:300px;
   text-align: left;

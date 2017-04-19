@@ -36,6 +36,11 @@ post '/update' do
   end
 end
 
+get '/academy/' do
+  @username = 'https://www.codecademy.com/' + params[:username]
+  erb :codecademy, :layout => :main
+end
+
 include Sinatra::OauthRoutes
 
 def trainee
