@@ -129,6 +129,9 @@ ul{
   width:300px;
   text-align: left;
 }
+a:link{
+  color: #999999;
+}
 a:hover{
   color: gray;
 }
