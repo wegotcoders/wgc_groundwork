@@ -1,8 +1,9 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: Arial,sans-serif,Helvetica;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  /*color: #333;*/
+  background: linear-gradient(to bottom right, #4f7667 50%, #3aac82 100%);
 }
 
 #logo {
@@ -14,10 +15,11 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
+  border: 1px solid #000;
   padding: 1em;
   margin-bottom: 0.5em;
+  border-radius: 10px;
+  background-color: #A9A9A9;
 }
 
 .welcome {
@@ -37,3 +39,104 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+.profilePic{
+  text-align: center;
+  width: 200px;
+  hight: 200px;
+  border-radius: 50%;
+}
+#image{
+  padding: 1px;
+  margin-bottom:10px;
+  text-align: center;
+}
+.name{
+  font-size: 25px;
+}
+
+.container{
+  margin-bottom: 50px;
+
+}
+.row{
+  padding:30px;
+  margin: auto;
+}
+.count{
+  font-family: monospace,Arial,sans-serif;
+  text-align: right;
+  margin-right: 20px;
+}
+.profile{
+  display: none;
+}
+
+.text{
+    font-size: 1em;
+    padding: 10px;
+    width:350px;
+    height: 300px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background-color: #ffffff;
+}
+.discriptions{
+  font-size: 1.2em;
+  margin-bottom:10px;
+  background-color: #474e5d;
+  color: #ffffff;
+  border-radius: 10px;
+}
+#edit{
+  font-size: 2em;
+}
+
+#icons{
+  font-size:36px;
+  color: black;
+  padding:5px;
+  margin-bottom: 0px;
+}
+#icons:hover{
+  font-size: 40px;
+  color: blue;
+}
+.footer{
+  height:60px;
+  background-color: #4fb49a;
+  padding:5px;
+  text-right;
+}
+#bottom{
+  margin-bottom: 1px;
+}
+#problems{
+  text-align: center;
+  width:800px;
+  background-color: #618685;
+  border-radius: 10px;
+}
+.info{
+  margin:5px;
+  padding:10px;
+}
+ul{
+  padding:15px;
+}
+.list{
+  margin-left: 5px;
+  width:300px;
+  text-align: left;
+}
+a:link{
+  color: #999999;
+}
+a:hover{
+  color: gray;
+}
+.cademy{
+  margin-left: 150px;
+  width:300px;
+  text-align: left;
+}
