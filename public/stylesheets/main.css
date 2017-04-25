@@ -1,8 +1,10 @@
+
+
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  color: #12171E;
 }
 
 #logo {
@@ -10,14 +12,35 @@ body {
 }
 
 #content {
-  padding: 1em;
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
   padding: 1em;
-  margin-bottom: 0.5em;
+  margin: 10px;
+  -webkit-transition: margin 0.5s;
+}
+
+
+.box:nth-child(2n+1) {
+  background: #F4F4F4;
+  margin-left:20px;
+  margin-right:80px;
+}
+
+.box:nth-child(2n+1):hover{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.box:nth-child(2n) {
+  background: #E7E7E7;
+  margin-left:80px;
+  margin-right:20px;
+}
+
+.box:nth-child(2n):hover{
+  margin-top:20px;
+  margin-bottom:20px;
 }
 
 .welcome {
@@ -37,3 +60,6 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+h4 {
+  font-size: 1.25em;
+}

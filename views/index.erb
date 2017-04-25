@@ -12,7 +12,9 @@
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <span id="word-count"></span> words found.
+    <h4>Breakdown of wordcount</h4>
+    <span id="word-count-breakdown"></span>
   </div>
 
   <div id="problems" class="box">
@@ -44,16 +46,31 @@
   </div>
 <% end %>
 
-
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+function WordCount(str) {
+  if (str == ""){
+    return 0
+  }
+  else{
+    // Here I use regular expressions to split the string into a list of items that don't contain an of the dissallowed characters. \s represents any whitespace character. The characters between the [ ] are the splitting references. Therefore here we are counting numbers as words.  
+    regexSelector =/[\s.,!]+/
+    return str.split(regexSelector).length;
+  }
+}
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+var profile_values = document.getElementsByClassName('profile-value');
+var total_words = 0;
+var word_count_breakdown = [];
+for (i in profile_values){
+  content = profile_values[i].innerHTML;
+  if (content != undefined){
+    total_words += WordCount(profile_values[i].innerHTML);
+    word_count_breakdown.push(WordCount(profile_values[i].innerHTML));
+  }
+}
 
-  document.getElementById('word-count').innerHTML = total_words;
+document.getElementById('word-count').innerHTML = total_words;
+document.getElementById('word-count-breakdown').innerHTML = word_count_breakdown;
 </script>
