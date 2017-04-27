@@ -1,40 +1,201 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <div class="banner"><img id="profile-image"/><div class="banner-text"><%= @profile["first_name"] %>'s Amazing Profile</div><img src="/images/profile.jpg" style="width:100%; height: 300px; no-repeat; object-fit: cover" /></div>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+    <div class="wrapper">
+      <div class="column-left" style="width:40%; height: 270px">
+        <h1 style="height: 250px; font-size: 60px">Personal Information</h1>
+      </div>
+      <div class="column-right" style="width:60%; height: 270px">
+        <h4>Name</h4>
+        <p><%= @profile["first_name"] %> <%= @profile["last_name"] %></p>
+        <h4>Date of Birth</h4>
+        <p><%= @profile["dob"] %>17/08/1987</p>
+        <h4>Phone Number</h4>
+        <p><%= @profile["phone_number"] %></p>
+        <h4>Gender</h4>
+        <p><%= @profile["gender"] %></p>
+          <h4>Employment Status</h4>
+         <p><%= @profile["employment_status"] %></p>
+        </div>
+      <div class="column-left" style="width: 40%; height: 170px">
+        <h1 style="height: 170px">Online Profile</h1>
+      </div>
+      <div class="column-right" style="width: 60%; height: 170px">
+        <h4>Twitter</h4>
+        <p><%= @profile["twitter"] %></p>
+        <h4>Github</h4>
+        <p><%= @profile["github"] %></p>
+       <h4>Codecademy</h4>
+        <p><%= @profile["codecademy"] %></p>
+
     </div>
-  <% end %>
-
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+  </div>
+  <div class="profile-section box">
   </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+  <div class="wrapper">
+      <div class="column-left" style="width:40%; height: 270px">
+        <h1 style="height: 250px; font-size: 60px">About</h1>
+      </div>
+      <div class="column-right" style="width:60%; height: 270px">
+        <p><%= @profile["about"] %></p>
+      </div>
+    </div>
+    </div>
+
+      <div class="profile-section box">
+    </div>
+
+    <div class="wrapper">
+      <div class="column-left" style="width:40%; height: 170px">
+        <h1 style="height: 170px; font-size: 60px">Projects</h1></div>
+      <div class="column-right" style="width:60%; height: 170px">
+        <p><%= @profile["projects"] %></p>
+      </div>
+    </div>
+    </div>
+    <div class="profile-section box">
+    </div>
+    <div class="wrapper">
+      <div class="column-left" style="width:40%; height: 170px">
+        <h1 style="height: 170px; font-size: 60px">Rationale</h1></div>
+      <div class="column-right" style="width:60%; height: 170px">
+        <p><%= @profile["rationale"] %></p>
+      </div>
+    </div>
+    </div>
+
+    <div class="profile-section box">
+    </div>
+
+    <div class="wrapper">
+      <div class="column-left" style="width:40%; height: 150px">
+        <h1 style="height: 150px; font-size: 60px">Ambition</h1></div>
+      <div class="column-right" style="width:60%; height: 150px">
+        <p><%= @profile["ambition"] %></p>
+      </div>
+    </div>
+    </div>
+
+    <div class="profile-section box">
+    </div>
+
+    <div class="wrapper">
+      <div class="column-left" style="width:40%; height: 200px">
+        <h1 style="height: 200px; font-size: 60px">Learning Experience</h1>
+      </div>
+      <div class="column-right" style="width:60%; height: 200px">
+        <p><%= @profile["learning_experience"] %></p>
+      </div>
+    </div>
+    </div>
+
+    <div class="profile-section box">
+    </div>
+
+      
+
+
+
+ <div hidden><% @profile.each do |field, value| %>
+    <div class="profile-section box hidden">
+      <h4 class="profile-field hidden"><%= field %></h4>
+      <p class="profile-value hidden"><%= value %></p>
+    </div>
+  <% end %></div>
+
+
+  <div class="wrapper" height:100px>
+        <h1 style="height: 100px; font-size: 60px; font-family: Barrio">Stats</h1>
+        <span id="word-count" style="font-size: 24px"></span>
+      </div>
   </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+  <div class="profile-section box">
+    </div>
+
+  <div class="wrapper" height:100px>
+        <h1 style="height: 100px; font-size: 60px; font-family: Barrio">Programming Problems</h1>
+        <form action="/primes" method="GET">
+        <div class="primes_sum">
+          <label for="trainee[primes_sum]">Enter a number</label>
+          <input type="text" name="limit" value="142913828922">
+
+        <input type="submit" value="Go" class="btn btn-primary" />
+    </form>
+      </div>
+  </div>
+
+  <div class="profile-section box">
+    </div>
+
+  <div class="edit_box">
+    <h1>Edit Profile</h1>
 
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <label for="trainee[first_name]">First Name</label>
+          <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>" id="form"/>
         </div>
+        <div class="form-group">
+          <label for="trainee[last_name]">Last Name</label>
+          <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>" id="form"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[gender]">Gender</label>
+          <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>" id="form"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[dob]">DOB</label>
+          <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>" id="form"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[twitter]">Twitter</label>
+          <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>" id="form"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[github]">Github</label>
+          <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"id="form"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy Profile</label>
+          <input type="text" name="trainee[codecademy]" id="form" value="https://www.codecademy.com/sophiefiggis"/>
+        <div class="form-group">
+          <label for="trainee[homepage]">Homepage</label>
+          <input type="text" name="trainee[homepage]" value="<%= @profile["homepage"] %>" id="form"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[employment_status]">Employment Status</label>
+          <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>" id="form"/>
+        </div>
+        <div class="form-group">
+          <label for="trainee[about]">About</label>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>" id="form"/>
+        </div>
+
 
         <!-- TODO - Add more fields so that your profile can be edited -->
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
+        <div class="form-group">
+          <label for="trainee[projects]">Projects</label>
+          <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>" id="form"/>
+        </div>
+    
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>" id="form"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[learning_experience]">Learning Experience</label>
+          <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>" id="form"/>
+        </div>
+        <input type="submit" value="Update Profile" class="button btn-primary" />
       </fieldset>
     </form>
+  
   </div>
 <% else %>
   <div class="welcome">
@@ -46,14 +207,22 @@
 
 
 <!-- Add your Javascript to this script tag -->
-<script language="javascript">
-  console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
-</script>
+<script type="text/javascript"> 
+      function WordCount() {
+        var count = 0;
+        var values = document.getElementsByClassName('profile-value');
+        var fields = document.getElementsByTagName('h4');
+        var array = [];
+          for (var i = 9; i < values.length; i++) {
+          var words = values[i].innerHTML.split(" ").length
+          count += words;
+          /*array.push("There are " + words + " words in " + fields[i].innerHTML + "<br>");*/
+        }
+        document.getElementById('word-count').innerHTML = array.join('') + "<br>TOTAL WORDS: " + count;
+        console.log(document.getElementsByClassName('profile-field'));
+        console.log(document.getElementsByClassName('profile-value'));
+        console.log(document.getElementById('fname'));
+  }
+  WordCount();
+  </script>
