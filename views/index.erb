@@ -1,94 +1,108 @@
 <% if @profile %>
-   <style type="text/css">
-#container { width: 100px; display:inline }
+  </style>
 
-#image {width: 50px; //fill up whole div }
+  <div id=contact>
+    <div id=linkedin>
+      <a href="https://www.linkedin.com/in/thomas-kitchen-a45848ab"><img class=logo src="/images/linkedin"/></a>
+    </div>
 
-#text { text-align: right; }    
-</style>
+    <div id=github>
+      <a href="https://github.com/tomk11"><img class=logo src="/images/github"/></a>
+    </div>
 
-   <div class=contact>
-     <a href="https://www.linkedin.com/in/thomas-kitchen-a45848ab"><img class=logo src="/images/linkedin"/></a>
+    <div id=phone>
+      <img class=logo src="/images/phone"/>
+      <!-- <p id=phonetext> 07792908514 </p> -->
+    </div>
 
-     <a href="https://github.com/tomk11"><img class=logo src="/images/github"/></a>
-     <div id=phone>
-       <img class=logo src="/images/phone"/>
-     </div>
-     <div id=email>
-       <img class=logo src="/images/mail"/>
-     </div>
-     <div id="container"> 
-       <img src="/images/phone" id="image" /> 
-       <p id="text">oooh look! text!</p> 
-     </div>
-       <p id=phonetext> 07792908514 </p>
-       <p id=emailtext> tomkitchen11@googlemail.com </p>
-   </div>
-
-
-
-
-   <div class="box"> 
-    <h3>Prime Sums</h3>
-    The sum of primes below 20000000 is 142913828922
-    <form>Enter another number to find the sum of primes below it: <input type="text" onkeyup="getPrimeSum(this.value)"></form>
-  <p><span id="limit"></span></p>
-   </div>
-
-   <div class="box"> 
-     <h3>About </h3>
-     <%= @profile['about'] %>
-   </div>
-   <div class="box"> 
-     <h3>Projects</h3>
-     <%= @profile['projects'] %>
-   </div>
-   <div class="box"> 
-     <h3>Rationale </h3>
-     <%= @profile['rationale'] %>
-   </div>
-   <div class="box"> 
-     <h3>Ambition </h3>
-     <%= @profile['ambition'] %>
-   </div>
-   <div class="box"> 
-     <h3>Learning Experience </h3>
-     <%= @profile['learning_experience'] %>
-   </div>
-
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <span id="word-count"></span> words found.
+    <div id=email>
+      <img class=logo src="/images/mail"/>
+      <!--<p id=emailtext> tomkitchen11@googlemail.com </p>a -->
+    </div>
   </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
+  
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+  <div id=main>
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
+
+    <div class="box"> 
+      <h3>About </h3>
+      <div>
+      <%= @profile['about'] %>
+    </div>
+    </div>
+
+    <div class="box"> 
+      <h3>Projects</h3>
+      <div>
+      <%= @profile['projects'] %>
+    </div>
+    </div>
+
+    <div class="box"> 
+      <h3>Rationale </h3>
+      <div>
+      <%= @profile['rationale'] %>
+    </div>
+    </div>
+
+    <div class="box"> 
+      <h3>Ambition </h3>
+      <div>
+      <%= @profile['ambition'] %>
+    </div>
+    </div>
+
+    <div class="box"> 
+      <h3>Learning Experience </h3>
+      <div>
+      <%= @profile['learning_experience'] %>
+    </div>
+    </div>
+
+    <div id="stats" class="box">
+      <h3>Challenges</h3>
+      <div>
+        <h4>Word Count</h4>
+      <span id="word-count"></span> words found.
+      </div>
+        <h4>Sum of primes </h4>
+      <p>The sum of primes below 20000000 is 142913828922 </p>
+      <form>Enter another number to find the sum of primes below it: <input type="text" onkeyup="getPrimeSum(this.value)"></form>
+      <p><span id="limit"></span></p>
+    </div>
+
+    <div class="box">
+      <h3>Edit Profile</h3>
+
+      <form action="/update" method="POST">
+        <fieldset>
+          <div class="form-group">
+            <label for="trainee[about]">About</label>
+            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          </div>
+
+          <!-- TODO - Add more fields so that your profile can be edited -->
+
+          <input type="submit" value="Update Profile" class="btn btn-primary" />
+        </fieldset>
+      </form>
+    </div>
   </div>
-<% else %>
-  <div class="welcome">
-    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+  <% else %>
+    <div class="welcome">
+      <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
-    <a href="/authorise">Authorise</a>
-  </div>
-<% end %>
+      <a href="/authorise">Authorise</a>
+    </div>
+  <% end %>
 
-<script>
-</script>
-</head>
-<body>
+  <script>
+  </script>
+  </head>
+  <body>
 
 
 <!-- Add your Javascript to this script tag -->
@@ -105,7 +119,7 @@ function WordCount(str) {
   }
 }
 
-var profile_values = document.getElementsByClassName('profile-value');
+var profile_values = document.getElementsByClassName('box');
 var total_words = 0;
 for (i in profile_values){
   content = profile_values[i].innerHTML;
@@ -114,23 +128,23 @@ for (i in profile_values){
   }
 }
 
-// I used ajax to update the page dynamically. I chose to cap the input at 100000 to stop overly hard requests to the server.
-function getPrimeSum(str) {
-    if (str.length == 0) {
-        document.getElementById("limit").innerHTML = "";
-        return;
-    } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("limit").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET", "primes?limit=" + str, true);
-        xmlhttp.send();
-    }
-}
-
 document.getElementById('word-count').innerHTML = total_words;
 document.getElementById('word-count-breakdown').innerHTML = word_count_breakdown;
+// I used ajax to update the page dynamically. I chose to cap the input at 100000 to stop overly hard requests to the server.
+function getPrimeSum(str) {
+  if (str.length == 0) {
+    document.getElementById("limit").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("limit").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "primes?limit=" + str, true);
+    xmlhttp.send();
+  }
+}
 </script>
+
