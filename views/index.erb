@@ -5,6 +5,8 @@
    
    <img class="profile-picture" src="/images/profile.jpg"/>
 
+<!-- Changed initial section to produce a list -->
+
   <div class='info-container'>
     <ul>
       <% @profile.first(10).each do |field, value| %>
@@ -46,10 +48,38 @@
 
         <!-- TODO - Add more fields so that your profile can be edited -->
 
+        <div class="form-group">
+          <label for="trainee[projects]">Projects</label>
+          <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[rationale]">Rationale</label>
+          <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[learning_experience]">Learning Experience</label>
+          <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[codecademy]">Codecademy Profile</label>
+          <input type="text" name="trainee[codecademy]" value="https://www.codecademy.com/Drexxy898"/>
+        </div>
+
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
   </div>
+
+
+
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -58,7 +88,7 @@
   </div>
 <% end %>
 
-
+<!-- JavaScript for accordion -->
 <script language="javascript">
   var acc = document.getElementsByClassName("accordion");
   var i;
@@ -82,11 +112,15 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+  var profile_values = document.getElementsByClassName('profile-value')
+  var total_words = 0
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+/* Not entirely accurate, paragraph jumps are counting 2 words as one so slightly lower count then should be. Will need to correct later */
+
+ for (var i = 0; i < profile_values.length; i++) {
+  total_words += profile_values[i].innerHTML.split(" ").length;
+
+};
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>

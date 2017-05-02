@@ -41,9 +41,9 @@ h3 {
 
 .profile-picture {
   margin-top: 5%;
-  margin-left: 5%;
+  margin-left: 10%;
   margin-bottom: 5%;
-  width: 30%;
+  width: 20%;
   border: 1px solid black;
   padding: 1em;
   display: inline-block;
@@ -90,12 +90,9 @@ p {
   margin-bottom: 0.5em;
 }
 
-
 .application-box:nth-child(-n+13) {
   display: none;
 }
-
-
 
 .info-container {
   display: inline-block;
@@ -103,13 +100,23 @@ p {
   margin-top: 5%;
   margin-left: 20%;
   vertical-align: top;
-
 }
-
 
 .info-container li {
   text-transform: capitalize;
   list-style-type: none;
   padding-top: 0.5em;
   font-size: 25px;
+}
+
+.info-container li:first-of-type {
+  text-transform: uppercase;
+}
+
+.info-container li:nth-of-type(6) {
+  text-transform: uppercase;
+}
+
+.form-group input{ 
+  width: 80%;
 }
