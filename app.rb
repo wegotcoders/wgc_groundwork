@@ -8,21 +8,20 @@ set :site_url, 'https://wegotcoders.com'
 set :session_secret, 'secret'
 enable :sessions
 
-get '/primes' do
-  # TODO - Can we make this dynamic?
-  limit = 100
-
-  # TODO - add your prime number solution in the primes.rb file.
-  @sum = Primes.sum_to(limit)
-
-  erb :primes, :layout => :main
+get '/primes' do 
+  @limit = params["limit"].to_i
+  if (@limit >=100000) then
+    @sum = "Try a value < 100000"
+  else
+    @sum = "The sum of primes below " + @limit.to_s + " is " +Primes.sum_to(@limit).to_s
+  end
+  erb :primes 
 end
 
 get '/' do
   if signed_in?
     @profile = trainee.get_profile
   end
-
   erb :index, :layout => :main
 end
 

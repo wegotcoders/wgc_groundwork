@@ -1,10 +1,8 @@
-
-
 body {
-  font-family: Arial,sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #12171E;
+  color: #333;
 }
 
 #logo {
@@ -12,35 +10,13 @@ body {
 }
 
 #content {
+  padding: 1em;
 }
 
 .box {
+  border-bottom: 1px solid #999;
+  background: #FCFCFC;
   padding: 1em;
-  margin: 10px;
-  -webkit-transition: margin 0.5s;
-}
-
-
-.box:nth-child(2n+1) {
-  background: #F4F4F4;
-  margin-left:20px;
-  margin-right:80px;
-}
-
-.box:nth-child(2n+1):hover{
-  margin-top:20px;
-  margin-bottom:20px;
-}
-
-.box:nth-child(2n) {
-  background: #E7E7E7;
-  margin-left:80px;
-  margin-right:20px;
-}
-
-.box:nth-child(2n):hover{
-  margin-top:20px;
-  margin-bottom:20px;
 }
 
 .welcome {
@@ -60,6 +36,34 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
-h4 {
-  font-size: 1.25em;
+.contact{
+    display:inline;
+
+}
+
+.contact img{
+    display:inline;
+  padding: 7px;
+  height:50px;
+  -webkit-transition:0.5s;
+}
+
+.contact img:hover {
+    height:60px;
+    padding:2px;
+    -webkit-transition:0.5s;
+}
+
+#email, #phone{
+   display:inline;
+}
+
+
+#emailtext, #phonetext {
+        color:red;
+ visibility:hidden;
+}
+
+#email:hover ~ #emailtext, #phone:hover ~ #phonetext {
+visibility:visible;
 }

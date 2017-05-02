@@ -1,25 +1,64 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+   <style type="text/css">
+#container { width: 100px; display:inline }
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+#image {width: 50px; //fill up whole div }
+
+#text { text-align: right; }    
+</style>
+
+   <div class=contact>
+     <a href="https://www.linkedin.com/in/thomas-kitchen-a45848ab"><img class=logo src="/images/linkedin"/></a>
+
+     <a href="https://github.com/tomk11"><img class=logo src="/images/github"/></a>
+     <div id=phone>
+       <img class=logo src="/images/phone"/>
+     </div>
+     <div id=email>
+       <img class=logo src="/images/mail"/>
+     </div>
+     <div id="container"> 
+       <img src="/images/phone" id="image" /> 
+       <p id="text">oooh look! text!</p> 
+     </div>
+       <p id=phonetext> 07792908514 </p>
+       <p id=emailtext> tomkitchen11@googlemail.com </p>
+   </div>
+
+
+
+
+   <div class="box"> 
+    <h3>Prime Sums</h3>
+    The sum of primes below 20000000 is 142913828922
+    <form>Enter another number to find the sum of primes below it: <input type="text" onkeyup="getPrimeSum(this.value)"></form>
+  <p><span id="limit"></span></p>
+   </div>
+
+   <div class="box"> 
+     <h3>About </h3>
+     <%= @profile['about'] %>
+   </div>
+   <div class="box"> 
+     <h3>Projects</h3>
+     <%= @profile['projects'] %>
+   </div>
+   <div class="box"> 
+     <h3>Rationale </h3>
+     <%= @profile['rationale'] %>
+   </div>
+   <div class="box"> 
+     <h3>Ambition </h3>
+     <%= @profile['ambition'] %>
+   </div>
+   <div class="box"> 
+     <h3>Learning Experience </h3>
+     <%= @profile['learning_experience'] %>
+   </div>
 
   <div id="stats" class="box">
     <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count"></span> words found.
-    <h4>Breakdown of wordcount</h4>
-    <span id="word-count-breakdown"></span>
-  </div>
-
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
   </div>
 
   <div class="box">
@@ -46,6 +85,12 @@
   </div>
 <% end %>
 
+<script>
+</script>
+</head>
+<body>
+
+
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
 
@@ -62,13 +107,28 @@ function WordCount(str) {
 
 var profile_values = document.getElementsByClassName('profile-value');
 var total_words = 0;
-var word_count_breakdown = [];
 for (i in profile_values){
   content = profile_values[i].innerHTML;
   if (content != undefined){
     total_words += WordCount(profile_values[i].innerHTML);
-    word_count_breakdown.push(WordCount(profile_values[i].innerHTML));
   }
+}
+
+// I used ajax to update the page dynamically. I chose to cap the input at 100000 to stop overly hard requests to the server.
+function getPrimeSum(str) {
+    if (str.length == 0) {
+        document.getElementById("limit").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("limit").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "primes?limit=" + str, true);
+        xmlhttp.send();
+    }
 }
 
 document.getElementById('word-count').innerHTML = total_words;
