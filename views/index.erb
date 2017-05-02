@@ -2,10 +2,24 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+   
+   <img class="profile-picture" src="/images/profile.jpg"/>
+
+  <div class='info-container'>
+    <ul>
+      <% @profile.first(10).each do |field, value| %>
+      <li><%= field %>: <%= value %></li>
+      <% end %>
+    </ul>
+  </div>
+
+
   <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+    <div class="application-box">
+      <button class="accordion"><%= field %></button>
+      <div class="panel">
+        <p class="profile-value"><%= value %></p>
+      </div>
     </div>
   <% end %>
 
@@ -43,6 +57,25 @@
     <a href="/authorise">Authorise</a>
   </div>
 <% end %>
+
+
+<script language="javascript">
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i=0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+      this.classList.toggle("active");
+
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+          panel.style.display = "none";
+      } else {
+          panel.style.display = "block";
+      }
+    }
+  }
+</script>
 
 
 <!-- Add your Javascript to this script tag -->

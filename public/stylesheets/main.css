@@ -26,6 +26,7 @@ body {
 
 h3 {
   font-size: 1.5em;
+  text-align: center;
 }
 
 .error {
@@ -37,3 +38,78 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+.profile-picture {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  width: 30%;
+  border: 1px solid black;
+  padding: 1em;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  text-transform: capitalize;
+  font-size: 1.5em;
+}
+
+button.accordion.active, button.accordion:hover {
+  background-color: #ddd;
+}
+
+div.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+}
+
+h4 {
+  text-transform: capitalize;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.0em;
+}
+
+.application-box {
+  border: 1px solid #999;
+  background: #FCFCFC;
+  margin-bottom: 0.5em;
+}
+
+
+.application-box:nth-child(-n+13) {
+  display: none;
+}
+
+
+
+.info-container {
+  display: inline-block;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  margin-left: 20%;
+  vertical-align: top;
+
+}
+
+
+.info-container li {
+  text-transform: capitalize;
+  list-style-type: none;
+  padding-top: 0.5em;
+  font-size: 25px;
+}
