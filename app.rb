@@ -18,6 +18,17 @@ get '/primes' do
   erb :primes 
 end
 
+get '/coinsum' do 
+  @coinlimit = params["limit"].to_i
+  if (@coinlimit >=100000) then
+    @coinsum = "Try a value < 100000"
+  else
+    @coinsum = "There are " + CoinSum.combos(@coinlimit).to_s + " different ways to make " + @coinlimit.to_s + " pence."
+  end
+  puts(@coinsum)
+  erb :coinsum 
+end
+
 get '/' do
   if signed_in?
     @profile = trainee.get_profile

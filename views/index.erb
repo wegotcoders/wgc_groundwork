@@ -1,39 +1,84 @@
 <% if @profile %>
   <div id=main>
-    <img id=photo src="/images/me.jpg"/>
-    <div class="box"><h3>About</h3><div><%= @profile['about'] %></div></div>
-    <div class="box"><h3>Projects</h3><div><%= @profile['projects'] %></div></div>
-    <div class="box"><h3>Rationale</h3><div><%= @profile['rationale'] %></div></div>
-    <div class="box"><h3>Ambition</h3><div><%= @profile['ambition'] %></div></div>
-    <div class="box"><h3>Learning</h3><div><%= @profile['learning_experience'] %></div></div>
-    <div id="stats" class="box">
-      <h3>Challenges</h3>
-      <div><h4>Word Count</h4> <span id="word-count"></span> words found.</div>
-      <h4>Sum of primes </h4><p>The sum of primes below 20000000 is 142913828922 </p>
-      <form>Enter another number to find the sum of primes below it: <input type="text" onkeyup="getPrimeSum(this.value)"></form>
-      <p><span id="limit"></span></p>
+
+    <div id=info>
+      <div>
+        <img id=photo src="/images/me.jpg"/>
+      </div>
+      <div class=contact>
+        <a href="https://www.linkedin.com/in/thomas-kitchen-a45848ab">
+          <img style="vertical-align:middle" src="/images/Black/linkedin"/>Linked In</a> 
+      </div>
+      <div class=contact>
+        <a href="https://github.com/tomk11">
+          <img style="vertical-align:middle" src="/images/Black/github"/>Github</a>
+      </div>
+      <div class=contact>
+        <a href="https://www.codecademy.com/tomk11">
+          <img style="vertical-align:middle" src="/images/Black/codeacademy"/>Code Academy</a>
+      </div>
+      <div class=contact>
+        <img style="vertical-align:middle" src="/images/Black/phone"/>
+        <span>07792908514</span>
+      </div>
+      <div class=contact>
+        <img style="vertical-align:middle" src="/images/Black/mail"/>
+        <span>tomkitchen11@googlemail.com</span>
+      </div>
     </div>
 
-    <div class="box"><h3>Edit Profile</h3>
-      <form action="/update" method="POST">
-        <fieldset>
-          <div class="form-group">
-            <label for="trainee[about]">About</label>
-            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-          </div>
+    <div id=answers>
+      <div class="box">
+        <h3>About</h3>
+        <div><%= @profile['about'] %></div>
+      </div>
+      <div class="box">
+        <h3>Projects</h3>
+        <div><%= @profile['projects'] %></div>
+      </div>
+      <div class="box">
+        <h3>Rationale</h3>
+        <div><%= @profile['rationale'] %></div>
+      </div>
+      <div class="box">
+        <h3>Ambition</h3>
+        <div><%= @profile['ambition'] %></div>
+      </div>
+      <div class="box">
+        <h3>Learning</h3>
+        <div><%= @profile['learning_experience'] %></div>
+      </div>
+      <div id="stats" class="box">
+        <h3>Challenges</h3>
+        <h4>Word Count</h4> 
+        <span id="word-count"></span> words found.
 
-          <!-- TODO - Add more fields so that your profile can be edited -->
-          <input type="submit" value="Update Profile" class="btn btn-primary" />
-        </fieldset>
-      </form>
+        <h4>Sum of primes </h4>
+        <p>The sum of primes below 20000000 is 142913828922 </p>
+        <form>Enter another number to find the sum of primes below it: <input type="text" onkeyup="updateRuby('primes',this.value)"></form>
+        <p><span id="limit"></span></p>
+
+        <h4>Coin Sum</h4>
+        I decided to attempt problem 31 on Project Euler. The qyestion is how many different ways can you make a £2 from any number of coins. <a href="https://projecteuler.net/problem=31">You can view the problem here</a>.
+        <form>Enter a different amount to find out how many different ways it can be made from english coins: <input type="text" onkeyup="updateRuby('coinsum', this.value)"></form>
+        <p><span id="limit"></span></p>
+      </div>
+
+      <div class="box"><h3>Edit Profile</h3>
+        <form action="/update" method="POST">
+          <fieldset>
+            <div class="form-group">
+              <label for="trainee[about]">About</label>
+              <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+            </div>
+
+            <!-- TODO - Add more fields so that your profile can be edited -->
+            <input type="submit" value="Update Profile" class="btn btn-primary" />
+          </fieldset>
+        </form>
+      </div>
+
     </div>
-    <div id=footer>
-      <div id=linkedin><a href="https://www.linkedin.com/in/thomas-kitchen-a45848ab"><img class=logo src="/images/linkedin"/></a> </div>
-      <div id=github><a href="https://github.com/tomk11"><img class=logo src="/images/github"/></a></div>
-      <div id=phone><img class=logo src="/images/phone"/><!-- <p id=phonetext> 07792908514 </p> --></div>
-      <div id=email><img class=logo src="/images/mail"/><!--<p id=emailtext> tomkitchen11@googlemail.com </p>a--></div>
-    </div>
-  </div>
 
 
 <% else %>
@@ -46,8 +91,6 @@
 
 </head>
 </body>
-
-
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
@@ -75,7 +118,7 @@ for (i in profile_values){
 document.getElementById('word-count').innerHTML = total_words;
 document.getElementById('word-count-breakdown').innerHTML = word_count_breakdown;
 // I used ajax to update the page dynamically. I chose to cap the input at 100000 to stop overly hard requests to the server.
-function getPrimeSum(str) {
+function updateRuby(request, str){
   if (str.length == 0) {
     document.getElementById("limit").innerHTML = "";
     return;
@@ -86,7 +129,7 @@ function getPrimeSum(str) {
         document.getElementById("limit").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET", "primes?limit=" + str, true);
+    xmlhttp.open("GET", request+ "?limit=" + str, true);
     xmlhttp.send();
   }
 }

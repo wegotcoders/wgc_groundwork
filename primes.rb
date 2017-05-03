@@ -28,5 +28,3 @@ class Primes
   end
 end
 
-#puts(Primes.sum_to(2000000))
-

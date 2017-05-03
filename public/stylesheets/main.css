@@ -4,7 +4,7 @@ body {
         line-height: 1.428571429;
         color: #333;
         margin-bottom: 60px;
-
+        min-width:800px
 }
 
 #logo {
@@ -28,31 +28,27 @@ h3 {
 .error h2 {
         font-size: 1.5em;
 }
-
-/* TODO - Add your own styles here */
-
-/* main Body containing my answers*/
-#photo{
-        width:200px;
-        border-radius: 8px;
-        border: 3px solid white;
-        top: 20px;
-        right: 20px;
-        position: absolute;
-
-}
 #main{
         padding:1em;
 }
 
+/* TODO - Add your own styles here */
+
+/* We have a two column design. #answers makes room for the second column.*/
+
+#answers{
+        margin-right:270px;
+}
+
+/* Content is stored in divs of class .box.*/
 .box {
         border: 1px solid #AF1327;
         position: relative;
         max-width: 700px;
-        min-height: 180px;
+        min-height: 170px;
         border-left: 40px solid #AF1327;
         padding:10px;
-        margin: 10px auto 10px auto ;
+        margin: 10px auto 10px auto;
 }
 
 
@@ -63,7 +59,6 @@ h3 {
         left: 0;
         margin-left: -35px;
         text-align: center;
-
         color: white;
         transform:rotate(270deg);
         transform-origin: 0 0;
@@ -76,30 +71,30 @@ h3 {
 
 
 /* Footer containing my contact details */
-#footer{
-        position: fixed; 
-        bottom: 0; left: 0; right: 0; 
-        background:black;
-        text-align: center;
-        padding:10px;
-        height:60px;
-
+#info{
+        top: 20px;
+        right: 20px;
+        position: fixed;
+        width:250px;
 }
 
-#footer div{
-        display:inline;
+#photo{
+        width:250px;
+        border-radius: 8px;
+        border: 3px solid white;
 }
 
-#footer img{
-        display:inline;
-        padding: 7px 20px 7px 20px;
-        height:46px;
-        -webkit-transition:0.5s;
+.contact img{
+        height:30px;
+        padding:5px;
 }
 
-#footer img:hover {
-        height:56px;
-        padding:2px 15px 2px 15px;
-        -webkit-transition:0.5s;
+a{
+ color:#AF1327;
 }
+
+a:hover{
+        font-weight: bold;
+}
+
 
