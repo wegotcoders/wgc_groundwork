@@ -1,93 +1,105 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333;
-  margin-bottom: 60px;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 1.428571429;
+        color: #333;
+        margin-bottom: 60px;
 
 }
 
 #logo {
-  text-align: center;
-  background:black;
+        text-align: center;
+        background:black;
 }
 
 .welcome {
-  text-align: center;
+        text-align: center;
 }
 
 h3 {
-  color:#AF1327;
-  font-size: 1.5em;
+        color:#AF1327;
+        font-size: 1.5em;
 }
 
 .error {
-  text-align: center;
+        text-align: center;
 }
 
 .error h2 {
-  font-size: 1.5em;
+        font-size: 1.5em;
 }
 
 /* TODO - Add your own styles here */
 
 /* main Body containing my answers*/
+#photo{
+        width:200px;
+        border-radius: 8px;
+        border: 3px solid white;
+        top: 20px;
+        right: 20px;
+        position: absolute;
+
+}
 #main{
         padding:1em;
 }
 
 .box {
-  border: 1px solid #AF1327;
-  position: relative;
-  width: 500px;
-  min-height: 250px;
-  display: inline-block;
-  border-left: 40px solid #AF1327;
-  padding:15px;
-  margin: 10px;
+        border: 1px solid #AF1327;
+        position: relative;
+        max-width: 700px;
+        min-height: 180px;
+        border-left: 40px solid #AF1327;
+        padding:10px;
+        margin: 10px auto 10px auto ;
 }
 
 
 .box h3{
-    text-transform: uppercase;
-    transform:rotate(270deg);
-    transform-origin: 0 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin-left: -35px;
-    color: white;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-left: -35px;
+        text-align: center;
+
+        color: white;
+        transform:rotate(270deg);
+        transform-origin: 0 0;
 }
 
 .box h4{
-  color: #AF1327;
-  font-weight: bold;
+        color: #AF1327;
+        font-weight: bold;
 }
 
 
 /* Footer containing my contact details */
-#contact{
-  position: fixed; 
-  bottom: 0; left: 0; right: 0; 
-  background:black;
-  text-align: center;
-  padding:10px;
+#footer{
+        position: fixed; 
+        bottom: 0; left: 0; right: 0; 
+        background:black;
+        text-align: center;
+        padding:10px;
+        height:60px;
+
 }
 
-#contact div{
-  display:inline;
+#footer div{
+        display:inline;
 }
 
-#contact img{
-  display:inline;
-  padding: 7px 20px 7px 20px;
-  height:30px;
-  -webkit-transition:0.5s;
+#footer img{
+        display:inline;
+        padding: 7px 20px 7px 20px;
+        height:46px;
+        -webkit-transition:0.5s;
 }
 
-#contact img:hover {
-    height:40px;
-    padding:2px 15px 2px 15px;
-    -webkit-transition:0.5s;
+#footer img:hover {
+        height:56px;
+        padding:2px 15px 2px 15px;
+        -webkit-transition:0.5s;
 }
 

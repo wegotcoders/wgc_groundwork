@@ -1,82 +1,20 @@
 <% if @profile %>
-  </style>
-
-  <div id=contact>
-    <div id=linkedin>
-      <a href="https://www.linkedin.com/in/thomas-kitchen-a45848ab"><img class=logo src="/images/linkedin"/></a>
-    </div>
-
-    <div id=github>
-      <a href="https://github.com/tomk11"><img class=logo src="/images/github"/></a>
-    </div>
-
-    <div id=phone>
-      <img class=logo src="/images/phone"/>
-      <!-- <p id=phonetext> 07792908514 </p> -->
-    </div>
-
-    <div id=email>
-      <img class=logo src="/images/mail"/>
-      <!--<p id=emailtext> tomkitchen11@googlemail.com </p>a -->
-    </div>
-  </div>
-
-
-  
-
   <div id=main>
-
-
-    <div class="box"> 
-      <h3>About </h3>
-      <div>
-      <%= @profile['about'] %>
-    </div>
-    </div>
-
-    <div class="box"> 
-      <h3>Projects</h3>
-      <div>
-      <%= @profile['projects'] %>
-    </div>
-    </div>
-
-    <div class="box"> 
-      <h3>Rationale </h3>
-      <div>
-      <%= @profile['rationale'] %>
-    </div>
-    </div>
-
-    <div class="box"> 
-      <h3>Ambition </h3>
-      <div>
-      <%= @profile['ambition'] %>
-    </div>
-    </div>
-
-    <div class="box"> 
-      <h3>Learning Experience </h3>
-      <div>
-      <%= @profile['learning_experience'] %>
-    </div>
-    </div>
-
+    <img id=photo src="/images/me.jpg"/>
+    <div class="box"><h3>About</h3><div><%= @profile['about'] %></div></div>
+    <div class="box"><h3>Projects</h3><div><%= @profile['projects'] %></div></div>
+    <div class="box"><h3>Rationale</h3><div><%= @profile['rationale'] %></div></div>
+    <div class="box"><h3>Ambition</h3><div><%= @profile['ambition'] %></div></div>
+    <div class="box"><h3>Learning</h3><div><%= @profile['learning_experience'] %></div></div>
     <div id="stats" class="box">
       <h3>Challenges</h3>
-      <div>
-        <h4>Word Count</h4>
-      <span id="word-count"></span> words found.
-      </div>
-        <h4>Sum of primes </h4>
-      <p>The sum of primes below 20000000 is 142913828922 </p>
+      <div><h4>Word Count</h4> <span id="word-count"></span> words found.</div>
+      <h4>Sum of primes </h4><p>The sum of primes below 20000000 is 142913828922 </p>
       <form>Enter another number to find the sum of primes below it: <input type="text" onkeyup="getPrimeSum(this.value)"></form>
       <p><span id="limit"></span></p>
     </div>
 
-    <div class="box">
-      <h3>Edit Profile</h3>
-
+    <div class="box"><h3>Edit Profile</h3>
       <form action="/update" method="POST">
         <fieldset>
           <div class="form-group">
@@ -85,24 +23,30 @@
           </div>
 
           <!-- TODO - Add more fields so that your profile can be edited -->
-
           <input type="submit" value="Update Profile" class="btn btn-primary" />
         </fieldset>
       </form>
     </div>
-  </div>
-  <% else %>
-    <div class="welcome">
-      <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
-
-      <a href="/authorise">Authorise</a>
+    <div id=footer>
+      <div id=linkedin><a href="https://www.linkedin.com/in/thomas-kitchen-a45848ab"><img class=logo src="/images/linkedin"/></a> </div>
+      <div id=github><a href="https://github.com/tomk11"><img class=logo src="/images/github"/></a></div>
+      <div id=phone><img class=logo src="/images/phone"/><!-- <p id=phonetext> 07792908514 </p> --></div>
+      <div id=email><img class=logo src="/images/mail"/><!--<p id=emailtext> tomkitchen11@googlemail.com </p>a--></div>
     </div>
-  <% end %>
+  </div>
 
-  <script>
-  </script>
-  </head>
-  <body>
+
+<% else %>
+  <div class="welcome">
+    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+    <a href="/authorise">Authorise</a>
+  </div>
+<% end %>
+
+</head>
+</body>
+
 
 
 <!-- Add your Javascript to this script tag -->
