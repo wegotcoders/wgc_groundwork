@@ -1,28 +1,38 @@
 require 'sinatra'
 require './lib/profile'
 
-set :application_id, 'EDIT_ME'
-set :secret, 'EDIT_ME'
+set :application_id, '8731ecc1361a3943a11689dbb3f1800ea50467f42e64e8ffe08b2249176754ff'
+set :secret, 'a8ccb0b0bb61a5afa94fe6288458322d0c3ab1c39b04ae7a1361103153509170'
 set :redirect_uri, 'http://localhost:4567/callback'
 set :site_url, 'https://wegotcoders.com'
 set :session_secret, 'secret'
 enable :sessions
 
-get '/primes' do
-  # TODO - Can we make this dynamic?
-  limit = 100
+get '/primes' do 
+  @limit = params["limit"].to_i
+  if (@limit >=100000) then
+    @sum = "Try a value < 100000"
+  else
+    @sum = "The sum of primes below " + @limit.to_s + " is " +Primes.sum_to(@limit).to_s
+  end
+  erb :primes 
+end
 
-  # TODO - add your prime number solution in the primes.rb file.
-  @sum = Primes.sum_to(limit)
-
-  erb :primes, :layout => :main
+get '/coinsum' do 
+  @coinlimit = params["limit"].to_i
+  if (@coinlimit >=100000) then
+    @coinsum = "Try a value < 100000"
+  else
+    @coinsum = "There are " + CoinSum.combos(@coinlimit).to_s + " different ways to make " + @coinlimit.to_s + " pence."
+  end
+  puts(@coinsum)
+  erb :coinsum 
 end
 
 get '/' do
   if signed_in?
     @profile = trainee.get_profile
   end
-
   erb :index, :layout => :main
 end
 
