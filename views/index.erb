@@ -1,13 +1,73 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
+  <h2><%= @profile["first_name"] %>'s Amazing Profile</h2>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+    <table>
+      <th></th>
+      <tr>
+      <td><img src="/images/cristina.jpg" width="310" height="375"/></td>
+      </tr>
+      <th></th>
+      <tr>
+        <td>First Name</td>
+        <td>Cristina</td>
+      </tr>
+      <tr>
+        <td>Last name</td>
+        <td>Radu</td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>Female</td>
+      </tr>
+      <tr>
+        <td>DOB</td>
+        <td>3rd August 1988</td>
+      </tr>
+      <tr>
+        <td>Employment Status</td>
+        <td>Unemployed</td>
+      </tr>
+      <tr>
+        <td>Contact</td>
+        <td>07738108788</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><a href="http://www.counselling-direct.eu"> Home Page </a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><a href="https://www.linkedin.com/in/cristina-m-radu-054731107/"> Linkedin </a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><a href="https://github.com/cristinaradu3"> Github </a></td>
+      </tr>
+    </table>
+    <h3>About Me</h3>
+      <ol class="custom-counter">
+        <li> Intro </li>
+          <ul>
+           <li><p>I am a fully qualified counselor, looking for a career change. I am motivated person interested in learning new things. I am curious mind and I like to find ways of solving problems.</p></li>
+          </ul>
+        <li>Projects</li>
+          <ul>
+            <li><p>I haven't worked on any programming project so far, but tried self learning coding myself. However, i am looking forward to be able to work on a first programming project.</p></li>
+          </ul>  
+        <li>Rationale</li>
+          <ul>
+            <li><p>I believe in personal development and that we as people are to constantly strive to become better. I see learning to code as challenge- which I am ready to embrace, as well as something of making a living out of it.</p></li>
+          </ul>  
+        <li>Ambition</li>
+          <ul>
+            <li><p> I see myself mastering what I'd been learned throughout the 12 weeks of training and constantly building upon it. After one year of learning and gaining experience in coding I see myself hired on a permanent position in a company where I can develop professional and have the possibility of a career progression.</p></li>
+          </ul>  
+        <li>Learning experience</li>
+          <ul>
+           <li><p> Someone's motivations to learn new things, the curiosity for the subject, next to perseverance and determination.
+            Also, on the other hand I believe it has to do with the openness of the trainers and the other trainees to help each other, when needed in the process of learning.</p></li>
+          </ul>  
+      </ol>
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -30,7 +90,10 @@
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
         </div>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+        <div class="code-cademy">
+          <label for="trainee[codecademy]">Codecademy</label>
+          <input type="url" name="trainee[codecademy]" value="https://www.codecademy.com/Cristinaradu">
+        </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
