@@ -1,58 +1,181 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+		<h3>Welcome to <%= @profile["first_name"] %>'s Amazing Profile</h3>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+		<!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3" >
+					<div class="panel">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="images/me.jpg" class="img-responsive circle"> </div>
+								<div class=" col-md-9 col-lg-9 ">
+									<table class="table">
+										<tbody>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+										<tr>
+											<td><h4>Full Name:</h4></td>
+											<td><p class="profile-value"> <%= @profile["first_name"] + ' ' + @profile["last_name"] %></p>
+											</td>
+										</tr>
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
+										<tr>
+											<td><h4>Gender:</h4></td>
+											<td><p class="profile-value"> <%= @profile["gender"] %></p></td>
+										</tr>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+										<tr>
+											<td><h4>Date of Birth:</h4></td>
+											<td><p class="profile-value"> <%= @profile["dob"] %></p></td>
+										</tr>
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
+										<tr>
+											<td><h4>Phone Number:</h4></td>
+											<td><p class="profile-value"> <%= @profile["phone_number"] %></p></td>
+										</tr>
+
+										<tr>
+											<td><h4>Sum of primes below 2 million:</h4></td>
+											<td><p class="profile-value"> <%= @profile["primes_sum"] %></p></td>
+										</tr>
+
+										<tr>
+											<td><h4>Codecademy Account:</h4></td>
+											<td><p class="profile-value"><a href="https://www.codecademy.com/tafdev" target="_blank"><%= @profile["codecademy"] %> </a></p></td>
+										</tr>
+
+										<!--                   <tr>
+                    <td><h4>About:</h4></td>
+                    <td><p class="profile-value"> <%= @profile["about"] %></p></td>
+                  </tr>     -->
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<h2 align="center">Let's Connect</h2>
+			<ul class="center list-inline">
+
+				<li>
+					<a href="https://twitter.com/TafDev1" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-twitter fa-5x"></i> <span class="network-name">Twitter</span></a>
+				</li>
+
+				<li>
+					<a href="https://github.com/TafDev" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-github fa-5x"></i> <span class="network-name">Github</span></a>
+				</li>
+
+			</ul>
+
+			<br>
+			<br>
+
+			<h2 align="center">Skills</h2>
+			<hr>
+
+			<h4>Ruby Fundamentals:</h4>
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+					Complete
+				</div>
+			</div>
+
+			<h4>Javascript Fundamentals:</h4>
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+					Complete
+				</div>
+			</div>
+
+			<h4>Web Fundamentals:</h4>
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped active" role="progressbar"
+				     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+					Complete
+				</div>
+			</div>
+		</div>
+
+		<div class="jumbotron">
+			<div id="stats">
+				<h3>Stats</h3>
+				<!-- TODO - Set the contents of this span with JavaScript -->
+				<span id="word-count" class="large">0</span><br> words found.
+			</div>
+
+			<div id="problems">
+				<h3>Programming Problems</h3>
+				<br>
+				<a href="/primes">My Prime Number Solution</a>
+			</div>
+		</div>
+
+		<div class="jumbotron">
+			<h3>Edit Profile</h3>
+
+			<form action="/update" method="POST">
+				<fieldset>
+					<div class="row">
+						<div class="form-group">
+							<label for="trainee[about]" class="col-sm-3 control-label">About</label>
+							<input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+
+							<!-- TODO - Add more fields so that your profile can be edited -->
+							<br>
+							<label for="trainee[codecademy]" class="col-sm-3 control-label">Codecademy Username: </label>
+							<input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+
+							<br>
+
+							<label for="trainee[homepage]" class="col-sm-3 control-label">Homepage: </label>
+							<input type="text" name="trainee[homepage]" value="<%= @profile["homepage"] %>"/>
+
+							<br>
+
+							<label for="trainee[primes_sum]" class="col-sm-3 control-label">My Primes Solution: </label>
+							<input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
+
+							<br>
+
+							<label for="trainee[phone_number]" class="col-sm-3 control-label">Phone Number: </label>
+							<input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/>
+
+							<br>
+
+						</div>
+					</div>
+
+					<input type="submit" value="Update Profile" class="btn btn-primary" />
+				</fieldset>
+			</form>
+		</div>
 <% else %>
-  <div class="welcome">
-    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+		<div class="welcome">
+			<p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
-    <a href="/authorise">Authorise</a>
-  </div>
+			<a href="/authorise">Authorise</a>
+		</div>
 <% end %>
 
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
+  //console.log("I am Javascript!");
 
   var profile_values = document.getElementsByClassName('profile-value');
   var total_words = 0;
 
   // TODO - Count the number of words in the profile.
+  for (i = 0; i < profile_values.length; i++) {
+    total_words += profile_values[i].innerHTML.trim().split(/\s+/).length;
+  }
+
   // hint - look at what the innerHTML property provides.
 
   document.getElementById('word-count').innerHTML = total_words;
