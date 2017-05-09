@@ -22,9 +22,6 @@ class Primes
         total = total + i
       end
     end
-    puts total
+    return total
   end
 end
-
-Primes.sum_to(2000000)
-

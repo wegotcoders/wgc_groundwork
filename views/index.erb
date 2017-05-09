@@ -1,7 +1,7 @@
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+<main> 
    
    <img class="profile-picture" src="/images/profile.jpg"/>
 
@@ -9,9 +9,10 @@
 
   <div class='info-container'>
     <ul>
-      <% @profile.first(10).each do |field, value| %>
+      <% @profile.first(11).each do |field, value| %>
       <li><%= field %>: <%= value %></li>
       <% end %>
+      <li>Codecademy Profile: <%= @profile["codecademy_profile"] %></li>
     </ul>
   </div>
 
@@ -36,52 +37,104 @@
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+  <div id="edit">
+    <button class="accordion">Edit Profile</button>
+    <div class="panel">
 
     <form action="/update" method="POST">
       <fieldset>
+
+      <div class="form-group">
+        <label for="trainee[email]">email:</label>
+        <input type="text" name="trainee[email]" value=<%= @profile["email"] %>>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[first_name]">First Name:</label>
+        <input type="text" name="trainee[first_name]" value=<%= @profile["first_name"] %>>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[last_name]">Last Name:</label>
+        <input type="text" name="trainee[last_name]" value=<%= @profile["last_name"] %>>
+      </div>
+
+       <div class="form-group">
+        <label for="trainee[phone_number]">Phone Number:</label>
+        <input type="text" name="trainee[phone_number]" value=<%= @profile["phone_number"] %>>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[gender]">Gender:</label>
+        <input type="text" name="trainee[gender]" value=<%= @profile["gender"] %>>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[dob]">Date of Birth:</label>
+        <input type="text" name="trainee[dob]" value=<%= @profile["dob"] %>>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[twitter]">Twitter:</label>
+        <input type="text" name="trainee[twitter]" value=<%= @profile["twitter"] %>>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[github]">Github:</label>
+        <input type="text" name="trainee[github]" value=<%= @profile["github"] %>>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[homepage]">Homepage:</label>
+        <input type="text" name="trainee[homepage]" value=<%= @profile["homepage"] %>>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[employment_status]">Employment Status:</label>
+        <input type="text" name="trainee[employment_status]" value=<%= @profile["employment_status"] %>>
+      </div>
+
         <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <label for="trainee[codecademy_profile]">Codecademy Profile:</label>
+          <input type="text" name="trainee[codecademy_profile]" value=<%= @profile["codecademy_profile"] %>>
         </div>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
-
         <div class="form-group">
-          <label for="trainee[projects]">Projects</label>
-          <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+          <label for="trainee[about]">About:</label>
+          <textarea rows="4" cols="150" name="trainee[about]"><%= @profile["about"] %>"</textarea>
         </div>
 
         <div class="form-group">
-          <label for="trainee[rationale]">Rationale</label>
-          <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+          <label for="trainee[projects]">Projects:</label>
+          <textarea rows="4" cols="150" name="trainee[projects]"><%= @profile["projects"] %></textarea>
         </div>
 
         <div class="form-group">
-          <label for="trainee[ambition]">Ambition</label>
-          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          <label for="trainee[rationale]">Rationale:</label>
+          <textarea rows="4" cols="150" name="trainee[rationale]"><%= @profile["rationale"] %></textarea>
         </div>
 
         <div class="form-group">
-          <label for="trainee[learning_experience]">Learning Experience</label>
-          <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+          <label for="trainee[ambition]">Ambition:</label>
+          <textarea rows="4" cols="150" name="trainee[ambition]"><%= @profile["ambition"] %></textarea>
         </div>
 
         <div class="form-group">
-          <label for="trainee[codecademy]">Codecademy Profile</label>
-          <input type="text" name="trainee[codecademy]" value="https://www.codecademy.com/Drexxy898"/>
+          <label for="trainee[learning_experience]">Learning Experience:</label>
+          <textarea rows="4" cols="150" name="trainee[learning_experience]"><%= @profile["learning_experience"] %></textarea>
         </div>
 
         <div class="form-group">
-          <label for="trainees[prime_sum]">Primes Sum</label>
-          <input type="text" name="trainees[prime_sum]" value="142913828922">
+          <label for="trainee[primes_sum]">Primes Sum:</label>
+          <input type="text" name="trainee[primes_sum]" value="142913828922">
         </div>
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
+    </div>
   </div>
+  </main>
 
 
 
@@ -111,7 +164,6 @@
     }
   }
 </script>
-
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
