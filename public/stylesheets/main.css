@@ -37,3 +37,41 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+h3 {
+  text-align: center;
+  font-size: 2.5em;
+  padding-bottom: 20px;
+  font-family: cursive, sans-serif;
+}
+
+
+.picture_me  {
+  text-align: center;
+  padding-bottom: 20px;
+
+}
+
+.picture_me img  {
+  border-radius: 50px;
+  }
+
+h4 {
+  display: inline;
+  font-size: 2em;
+  padding-left: 30px; 
+  padding-right: 20px;
+}
+
+p {
+  display: inline;
+  font-size: 1.5em;
+  /*padding-left: 20px;*/
+}
+
+body {
+  padding: 0 20%;
+  background: #ccffff;
+}
+
+

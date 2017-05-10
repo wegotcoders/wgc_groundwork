@@ -1,6 +1,10 @@
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
+  <div class="picture_me">
+      <img src="/images/Me.jpg" alt="Picture of myself">
+  </div>
+  
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
@@ -54,6 +58,13 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  // total_words = profile_values.split(" ");
+  total_words = profile_values.length;
+  
+
+
 
   document.getElementById('word-count').innerHTML = total_words;
+
+
 </script>
