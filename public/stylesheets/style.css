@@ -1,0 +1,138 @@
+body {
+	width: 100%;
+	margin:auto;
+	background-color: #dddddd;
+	font-family: Helvetica Neue, Ariel;
+	color: #444444;
+
+}
+
+#background {
+	width: 100%;
+	height: 1000px;
+	display: block;
+}
+
+#topbar {
+	width: 100%;
+	height: 150px;
+	display: block;
+	background-color: #006666;
+
+}
+
+#container {
+	width: 1280px;
+	height: auto;
+	margin: 0 auto;
+}
+
+#sidebar {
+	position: fixed;	
+	width: 200px;
+	padding: 5px;
+	background-color: #ffffff;
+	height: 1000px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-image: url("../images/shading.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
+	text-shadow: -1px 0 white;
+}
+
+#photo {
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+#sidebar h1 {
+	font-size: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-style: italic;	
+}
+
+a:hover {
+	color: #777777;
+	font-style: normal;
+}
+
+#main_body {
+	width: 1080px;
+	height: 1000px;
+	margin:-150px 0 0 200px;
+	padding: 0 auto;
+}
+
+#logo {
+	width: 500px;
+	display: block;
+	text-align: center;
+}
+
+.segment {
+	background-color: white;
+	width: auto;
+	margin-top: 5px;
+	padding: 10px 40px;
+	border: 2px outset #cdcdcd;
+	border-radius: 10px;
+	line-height: 25px;
+}
+
+.segment h2 {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#about {
+
+}
+
+#connect {
+	margin-top: 35px;
+}
+
+p {
+	font-size: 17px;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+li {
+	display: inline;
+	padding: 5px 20px;
+}
+
+.link {
+	width: 100px;
+}
+
+.icon {
+	height: 100px;
+
+}
+
+td {
+	padding: 20px 50px 0 50px;
+	font-weight: bold;
+	color: #000000;
+}
+
+
+
+
+
+
+
+
+
+

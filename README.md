@@ -2,6 +2,21 @@
   <img src="http://wegotcoders.com/assets/logos/WEGOTCODERS_color_linked_in.png" alt="We Got Coders" />
 </p>
 
+
+#Some notes on my programming challenge
+
+I wasn't sure quite how to deal with this app that you sent me, I found working on the individual languages in a console window fairly easy, but this totally threw me.
+
+As I wasn't sure how to do a lot of this properly, so I decided to do what I could, and therefore demonstrate some of my programming knowlege.  
+
+For example I'm not sure where the content I was supposed to be laying out in main.erb was located, or how to arrange it if I couldn't see it. So I created a new page with my profile information on it.
+
+
+
+
+
+
+
 # Programming Challenge
 
 This is the application that you will be using to demonstrate your preparedness for the course. If you've already applied and are ready to get started, follow the instructions below. If you haven't yet applied, please read about We Got Coders and apply on our website, http://wegotcoders.com/trainees.
