@@ -20,6 +20,7 @@ module WeGotCoders
 
     def update_profile(params)
       response = self.class.put("/trainees/profile?access_token=#{access_token}", :body => params)
+      response
     end
   end
 end

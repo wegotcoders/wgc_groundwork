@@ -6,7 +6,7 @@ body {
   min-width: 90%;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("/images/wall4.png");
+  background-image: url("/images/background1.svg");
 }
 
 main {
@@ -131,10 +131,6 @@ p {
   border: 1px solid #999;
   background: #FCFCFC;
   margin-bottom: 0.5em;
-}
-
-.application-box:nth-child(-n+13) {
-  display: none;
 }
 
 .form-group label{

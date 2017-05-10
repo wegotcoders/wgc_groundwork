@@ -2,22 +2,20 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
 <main> 
-   
-   <img class="profile-picture" src="/images/profile.jpg"/>
 
-<!-- Changed initial section to produce a list -->
+  <img class="profile-picture" src="/images/profile.jpg"/>
 
   <div class='info-container'>
     <ul>
-      <% @profile.first(11).each do |field, value| %>
+      <% @profile.to_a[0..10].each do |field, value| %>
       <li><%= field %>: <%= value %></li>
       <% end %>
-      <li>Codecademy Profile: <%= @profile["codecademy_profile"] %></li>
+      <li>Codecademy Profile: <%= @profile["codecademy"] %></li>
     </ul>
   </div>
 
 
-  <% @profile.each do |field, value| %>
+  <% @profile.to_a[11..-1].each do |field, value| %>
     <div class="application-box">
       <button class="accordion"><%= field %></button>
       <div class="panel">
@@ -95,8 +93,8 @@
       </div>
 
         <div class="form-group">
-          <label for="trainee[codecademy_profile]">Codecademy Profile:</label>
-          <input type="text" name="trainee[codecademy_profile]" value=<%= @profile["codecademy_profile"] %>>
+          <label for="trainee[codecademy]">Codecademy Profile:</label>
+          <input type="text" name="trainee[codecademy]" value=<%= @profile["codecademy"] %>>
         </div>
 
         <div class="form-group">
