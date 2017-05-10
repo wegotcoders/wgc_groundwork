@@ -1,7 +1,45 @@
 <h1>Prime Numbers</h1>
+<h4>Find the sum of prime numbers up to:</h4>
+<input id="limit" type="number" min="0" value="100"/>
+<br />
+<% # TODO - Can we make this dynamic?
+limit = 100
+
+def is_prime?(n)
+  if n == 0 || n == 1
+    return false
+  else
+  ((2..(Math.sqrt(n)))).each do |i|
+    return false if n % i == 0
+  end
+  return true
+end
+end
+
+# TODO - add your prime number solution in the primes.rb file.
+@sum = array = []
+  (1..limit).each do |n|
+  if is_prime?(n)
+    array << n
+  end
+  end
+  total = 0
+  array.each do |x|
+    total += x
+  end
+  @sum = total
+ %>
+ <div id="value">
+ </div>
 
 Sum : <%= @sum %>
 
 <div>
   <a href="/">Back</a>
 </div>
+
+<script language="javascript">
+  document.getElementById('limit').onchange = function() {
+    <%= limit %> = document.getElementById('limit').value;
+  }
+</script>
