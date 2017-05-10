@@ -1,0 +1,57 @@
+<% def even?(n)
+  if n % 2 == 0
+    even = true
+  else
+    even = false
+  end
+end %>
+
+<h3>Edit Profile</h3>
+
+<form action="/update" method="POST">
+  <fieldset>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <div class="profile-section box">
+                <label for="trainee[about]">About</label>
+                <br>
+                <textarea rows="3" cols="40" name="trainee[about]" value="<%= @personal_info["about"] %>"></textarea>
+            </div>
+          </td>
+          <td>
+            <div class="profile-section box">
+                <label for="trainee[ambition]">Ambition</label>
+                <br>
+                <textarea rows="3" cols="40" name="trainee[ambition]" value="<%= @personal_info["ambition"] %>"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <% count = 1 %>
+          <% @profile.each do |field, value| %>
+          <td>
+            <div class="profile-section box">
+              <label for="trainee[<%= field %>]"><%= field.capitalize.tr("_"," ")%></label>
+              <input type="text" name="trainee[<%= field %>]" value="<%= @profile[ value ] %>"/>
+            </div>
+          </td>
+          <% if count.even? %>
+        </tr>
+        <tr>
+          <% count += 1 %>
+          <% else %>
+          <% count += 1 %>
+          <% end %>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div class="profile-section box">
+      <input id="input" type="submit" value="Update Profile" class="btn btn-primary" />
+    </div>
+    </fieldset>
+  </form>
+</div>

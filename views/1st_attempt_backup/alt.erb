@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>We Got Coders - My Amazing Application</title>
+  <title>We Got Coders - My Application</title>
   <link rel="stylesheet" href="/stylesheets/reset.css">
   <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
@@ -12,28 +12,23 @@
   <table>
     <thead>
       <tr>
-        <th colspan="3">
-          <div>
-            <img id="logo" src="/images/logo.png" alt="We Got Coders"/>
+        <th id="logobox">
+          <div class="pic">
+            <img src="/images/logo.png" alt="We Got Coders"/>
           </div>
         </th>
-      </tr>
-      <tr>
-        <th>
-          <div>
-            <img id="profile-pic" src="/images/profile-1.jpg"/>
-          </div>
-        </th>
-        <th>
-          <div>
-            <img id="profile-pic" src="/images/profile-3.jpg"/>
+        <th id="profilebox">
+          <div class="pic">
+            <div id="profile">
+              <!-- <img id="profile" src="/images/profile.jpg" alt="Profile" height="190px" width="150px" /> -->
+            </div>
           </div>
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td colspan="2">
+    <tr>
+      <td colspan="2">
           <div id="content">
             <%= yield %>
           </div>

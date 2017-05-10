@@ -1,0 +1,15 @@
+<script language="javascript">
+  console.log("I am Javascript!");
+
+function total_words() {
+  profile_values = document.getElementsByClassName("profile-value");
+  total_words = 0;
+  for (i = 0; i < profile_values.length; i++) {
+    elem_content = profile_values[i].textContent;
+    elem_words = elem_content.split(" ");
+    total_words += (elem_words.length)
+  };
+  document.getElementById('word-count').innerHTML = total_words;
+};
+
+</script>
