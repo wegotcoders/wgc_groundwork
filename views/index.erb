@@ -1,59 +1,327 @@
+<!-- @profile = {"about":null,"ambition":null,"codecademy":null,"dob":"1978-09-23","employment_status":"Self-employed","first_name":"TAMLYN","gender":"FEMALE","github":"tamlyn10","homepage":"","how_did_you_hear":"Course Report!","js_track_completedness":null,"last_name":"RUDOLPH","learning_experience":null,"phone_number":"07471286289","primes_sum":null,"projects":null,"rationale":null,"ruby_track_completedness":null,"twitter":"","web_track_completedness":null}
+ -->
+
+<% puts @profile %>
+
+<!-- Page Content -->
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+<!-- Tamlyn Intro -->
+<div class="row" style="margin-bottom: 15px;">
+                
+    <div class="col-sm-4">
+        <img class="img-responsive img-circle" src="images/tam.png" />
     </div>
-  <% end %>
+                  
+    <div class="col-sm-7 col-sm-offset-1  well quickinfo">
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
+        <p>
+            <ul>
+                <li class = "profile-value" id="name"><span>Name:</span> <%=@profile["first_name"]%> <%=@profile["last_name"]%> </li>
+                <li class = "profile-value"><span>Dob:</span> <%=@profile["dob"]%> </li>
+                <li class = "profile-value"><span>Gender:</span> <%=@profile["gender"]%></li>
+                <li class = "profile-value"><span>Employment Status:</span> <%=@profile["employment_status"]%> </li>
+                <li class = "profile-value"><span>GitHub:</span> <%=@profile["github"]%> </li>
+                <li class = "profile-value"><span>Phone Number:</span> <%=@profile["phone_number"]%> </li>                            
+                <li class = "profile-value"><span>Codecademy:</span> <%=@profile["codecademy"]%> </li>
+                <li class = "profile-value"><span>Homepage:</span> <%=@profile["homepage"]%> </li>
+                <li class = "profile-value"><span>Geeky fact:</span> <%=@profile["primes_sum"]%> is the sum of prime numbers under 2 million!! </li>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
+            </ul>
+        </p>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+    </div>
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+
+</div>
+<!-- /.row -->            
+
+
+<!-- Dynamic Nav Bars -->
+
+<div class="row">
+
+    <div class="col-lg-12">
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">About</a></li>
+            <li><a data-toggle="tab" href="#menu1">Ambition</a></li>
+            <li><a data-toggle="tab" href="#menu2">Learning</a></li>
+            <li><a data-toggle="tab" href="#menu3">Rationale</a></li>
+            <li><a data-toggle="tab" href="#menu4">Projects</a></li>
+        </ul>
+
+        <div class="tab-content">
+            
+            <div id="home" class="tab-pane fade in active well">
+                <p class="profile-value"><%=@cont[:about]%></p>
+            </div>
+            
+            <div id="menu1" class="tab-pane fade well">
+                <p class="profile-value"><%=@cont[:ambition]%></p>
+            </div>
+            
+            <div id="menu2" class="tab-pane fade well">
+                <p class="profile-value"><%=@cont[:learning_experience]%></p>
+            </div>
+            
+            <div id="menu3" class="tab-pane fade well">
+                <p class="profile-value"><%=@cont[:rationale]%></p>
+            </div>
+            
+            <div id="menu4" class="tab-pane fade well">
+                <p class="profile-value"><%=@cont[:projects]%></p>
+            </div>
+          
         </div>
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
+    </div>
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
+</div>
+<!-- End Dynamic Nav Bars -->
+            
+<div class="row">
+
+    <div class="col-md-6 update-fields"> 
+
+        <div class="dropdown">
+              
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                Section to Edit<span class="caret"></span>
+            </button>
+              
+            <ul class="dropdown-menu">
+                <li class="dropdown-header">Editable</li>
+                <li><a href="#change" onclick="pre_pop('first_name')">First Name</a></li>
+                <li><a href="#change" onclick="pre_pop('last_name')">Last Name</a></li>
+                <li><a href="#change" onclick="pre_pop('dob')">Date of Birth</a></li>
+                <li><a href="#change" onclick="pre_pop('phone_number')">Phone Number</a></li>
+                <li><a href="#change" onclick="pre_pop('gender')">Gender</a></li>
+                <li><a href="#change" onclick="pre_pop('employment_status')">Employment Status</a></li>
+                <li><a href="#change" onclick="pre_pop('github')">GitHub</a></li>                            
+                <li><a href="#change" onclick="pre_pop('codecademy')">Codecademy</a></li>
+                <li><a href="#change" onclick="pre_pop('homepage')">Homepage</a></li>                         
+                <li><a href="#change" onclick="pre_pop('primes_sum')">Primes Sum</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Un-editable</li>
+                <li><a href="#change" onclick="pre_pop('about')">About</a></li>
+                <li><a href="#change" onclick="pre_pop('ambition')">Ambition</a></li>
+                <li><a href="#change" onclick="pre_pop('learning')">Learning</a></li>                            
+                <li><a href="#change" onclick="pre_pop('rationale')">Rationale</a></li>                            
+                <li><a href="#change" onclick="pre_pop('projects')">Projects</a></li>
+            </ul>
+
+        </div>
+
+        <form class="form-horizontal" name = "myForm" role="form" action="update" method="post">
+            <div class="form-group edit-txt">
+                <div class="col-sm-10"> 
+                    <textarea class="form-control" type="text" name="" value="Update Profile" rows="15" id="change" placeholder="edit text"></textarea>
+                </div>
+            </div>
+              
+    </div>
+
+</div>
+<!-- /.row -->   
+
+<div class="row">
+   
+    <div class="col-md-6 update-fields">                      
+
+        <div class="col-sm-2 form-group"> 
+            <button type="submit" value="Update Profile" class="btn btn-default">Submit</button>
+        </div>
+
+        </form>
+
+        <!-- word count -->
+        <div class="col-sm-6 col-sm-offset-4 word_section"> 
+            <p id="wc"></p>
+        </div>
+        <!-- /word count -->
+
+    </div>
+   
+</div>
+            
+
+<!-- Page Footer -->
+<div class="footer">
+
+    <div class="row">
+
+        <div class="col-sm-12 well">
+
+            <p>You may be interested to know that there are <span id="word-count"></span> words in the profile content on this page.  For more fun maths, check out <a href="/primes">my primes!<a></p>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- /.row -->
+
+
+<!-- Else for @profile == false --> 
+
 <% else %>
-  <div class="welcome">
+
+    <div class="welcome">
+    
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
     <a href="/authorise">Authorise</a>
-  </div>
-<% end %>
+
+<% end %> 
 
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
 
+    // count total words by counting spaces that immediately follow a letter.
+
+    function countwords(text_block){
+        var total_words = 0;
+        var text = text_block;
+          
+        if(text_block.length > 0){
+            total_words = 1;
+            for (var j = 1; j <= text.length-1; j++) {
+                if ((text[j] === " ")&&(text[j-1]!= " ")) {
+                    total_words ++;
+                }
+            }
+        }
+            
+        return total_words;
+    }
+
+    
+
+    function pre_pop(key){
+      var inner;
+      document.getElementById("wc").innerHTML = "";
+
+      switch (key){          
+          case "first_name":
+          inner = "<%= @profile['first_name'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[first_name]");
+          break;
+          case "last_name":
+          inner = "<%= @profile['last_name'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[last_name]");
+          break;
+          case "dob":
+          inner = "<%= @profile['dob'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[dob]");
+          break;
+          case "phone_number":
+          inner = "<%= @profile['phone_number'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[phone_number]");
+          break;
+          case "gender":
+          inner = "<%= @profile['gender'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[gender]");
+          break;
+          case "employment_status":
+          inner = "<%= @profile['employment_status'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[employment_status]");
+          break;
+          case "github":
+          inner = "<%= @profile['github'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[github]");
+          break;
+          case "codecademy":
+          inner = "<%= @profile['codecademy'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[codecademy]");
+          break;
+          case "homepage":
+          inner = "<%= @profile['homepage'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[homepage]");
+          break;
+          case "primes_sum":
+          inner = "<%= @profile['primes_sum'] %>";
+          document.getElementById("change").setAttribute("name", "trainee[primes_sum]");
+          break;
+          case "about":
+          inner = "<%= @cont[:about] %>";
+          document.getElementById("change").setAttribute("name", "trainee[about]");
+          document.getElementById("wc").innerHTML = countwords(inner) + " words (min 20 required)";
+          break;
+          case "ambition":
+          inner = "<%= @cont[:ambition] %>";
+          document.getElementById("change").setAttribute("name", "trainee[ambition]");
+          document.getElementById("wc").innerHTML = countwords(inner) + " words (min 20 required)";
+          break;
+          case "learning":
+          inner = "<%= @cont[:learning_experience] %>";
+          document.getElementById("change").setAttribute("name", "trainee[learning_experience]");
+          document.getElementById("wc").innerHTML = countwords(inner) + " words (min 20 required)";
+          break;
+          case "rationale":
+          inner = "<%= @cont[:rationale] %>";
+          document.getElementById("change").setAttribute("name", "trainee[rationale]");
+          document.getElementById("wc").innerHTML = countwords(inner) + " words (min 20 required)";
+          break;
+          case "projects":
+          inner = "<%= @cont[:projects] %>";
+          document.getElementById("change").setAttribute("name", "trainee[projects]");
+          document.getElementById("wc").innerHTML = countwords(inner) + " words (min 20 required)";
+          break; 
+
+
+        default: 
+          inner = "case does not exist";
+
+      }
+      
+      wc = countwords(inner);
+
+      document.getElementById('change').innerHTML = inner;
+  
+    }
+
+    
+
+    function generate_params(key){
+      
+      var k = key;
+      var str = "trainee[" + k + "]";
+
+      return str
+
+    }
+
+    // var y = generate_params("last_name");
+    // console.log(y);
+
+    function post_update(key){
+
+      // update_txt = document.myForm.textarea.hello.value = "hello world";
+
+    }
+
+    // post_update();
+
+
+  // count all words in the profile sections of the document
   var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+  var total_content=[]; //one long string of whole page content
+  var profile_content=[]; 
 
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+    for(i = 0; i < profile_values.length; i++){
+    var P = profile_values[i].innerHTML;
+    profile_content.push(P);
+    total_content += P + " ";  
+    }
 
+  var total_words = countwords(total_content); //whole page words
+  console.log(profile_content);
+
+  console.log("Number of words is :" + total_words);
   document.getElementById('word-count').innerHTML = total_words;
+
+
 </script>
+

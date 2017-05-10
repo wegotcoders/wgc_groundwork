@@ -10,9 +10,14 @@ module WeGotCoders
     end
 
     def get_profile
-      response = self.class.get("/trainees/profile?access_token=#{access_token}")
+      response = self.class.get("/trainees/profile?access_token=#{access_token}") 
+        
+      puts access_token
+      puts "response.body after GET & before JSON"
+      puts response.body
+        
       if response.code == 200
-        @get_profile ||= JSON.parse(response.body)
+          @get_profile ||= JSON.parse(response.body) #
       else
         raise Exception.new("Could not find profile. Is the site_url correct?")
       end
@@ -23,3 +28,6 @@ module WeGotCoders
     end
   end
 end
+
+       
+        
