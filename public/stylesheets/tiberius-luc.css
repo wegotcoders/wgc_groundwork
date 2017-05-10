@@ -1,0 +1,74 @@
+/*This is the alternate */
+body {
+  font-family:Verdana,sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: gray;
+  background:gray;
+}
+
+#logo {
+  text-align: right;
+position: fixed;
+right: 10px;
+}
+
+#content {
+  padding: 1em;
+}
+
+.box {
+
+  background: #FCFCFC;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}
+
+.welcome {
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.75em;
+  color: white;
+}
+
+.error {
+  text-align: center;
+}
+
+.error h2 {
+  font-size: 1.5em;
+}
+
+/* TODO - Add your own styles here */
+h4 {
+  font-size: 1.75em;
+  text-transform: capitalize;
+
+}
+
+.box {
+ width: 25%;
+ float: left;
+ box-shadow:inset 0px 0px 20px 0px #000;
+-moz-box-shadow:inset 0px 0px 20px 0px #000;
+-webkit-box-shadow:inset 0px 0px 20px 0px #000;
+
+
+}
+
+#avatar{
+
+/*position: fixed; */
+top: -10px;
+
+}
+
+li {
+list-style-type: circle;
+list-style-position: inside;
+
+
+}
+

@@ -6,7 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>We Got Coders - My Amazing Application</title>
   <link rel="stylesheet" href="/stylesheets/reset.css">
-  <link rel="stylesheet" href="/stylesheets/main.css">
+  <link id="pagestyle" rel="stylesheet" href="/stylesheets/main.css">
+
+<script>
+function swapStyleSheet(sheet){
+  document.getElementById('pagestyle').setAttribute('href', sheet);
+}
+</script>
+
+
 </head>
 <body>
 
@@ -16,7 +24,22 @@
 
   <div id="content">
     <%= yield %>
-  </div>
 
+<div class="profile-section box">
+<h4>Music Tastes</h4>
+<ul>
+<li>Soul, R&amp;B</li>
+<li>Soft Rock</li>
+<li>Classical</li>
+<li>Dance</li>
+<li>80's &amp; 90's</li>
+
+</ul>
+</div>
+
+  </div id="switchup">
+<button onclick="swapStyleSheet('/stylesheets/tiberius-luc.css')">Dark Side</button>
+<button onclick="swapStyleSheet('/stylesheets/main.css')">Clean(er)</button>
+</div>
 </body>
 </html>

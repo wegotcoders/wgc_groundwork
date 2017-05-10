@@ -1,12 +1,26 @@
+/*This is the original*/
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: Georgia, serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  color: gray;
+ background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #eeeeee 0%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+
+
+
+
+
+  
 }
 
 #logo {
-  text-align: center;
+  text-align: right;
+position: fixed;
+right: 10px;
 }
 
 #content {
@@ -14,10 +28,30 @@ body {
 }
 
 .box {
-  border: 1px solid #999;
+
   background: #FCFCFC;
-  padding: 1em;
+  padding: 2em;
   margin-bottom: 0.5em;
+  z-index: -1;
+  position:relative;
+  content: "";
+  bottom: 15px;
+  right: 10px;
+  left: auto;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+ 
+
+
+
+
+
+
 }
 
 .welcome {
@@ -25,7 +59,10 @@ body {
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.6em;
+  bottom: 35px;
+  position: relative;
+  color: #3D312A;
 }
 
 .error {
@@ -37,3 +74,29 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+h4 {
+  font-size: 1.75em;
+  text-transform: capitalize;
+
+}
+
+.box {
+ width: 25%;
+ float: left;
+ border: dashed 1px white;
+}
+
+#avatar{
+
+/*position: fixed; */
+top: -10px;
+
+}
+
+li {
+list-style-type: circle;
+list-style-position: inside;
+
+
+}
+
