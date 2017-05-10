@@ -1,41 +1,168 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+<div id="first">
+
+<div id="header">
+  <h3><span><%= @profile["first_name"].upcase %></span> <%= @profile["last_name"].upcase %>'s <p> Am<span>az</span>ing <span>Pro</span>file</p></h3>
+  <img src="/images/iryna.jpg" />
+</div>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
+<div class="left">
+  <div class="profile-section box">
+  <table>
+    <tr>
+        <td><img src="/images/icon_phone.png" /></td>
+        <td><%=@profile["phone_number"]%></td>
+    </tr>
+    <tr>
+        <td><img src="/images/icon_github.png" /></td>
+        <td><%=@profile["github"]%></td>
+     </tr>
+     <tr>
+        <td><img src="/images/icon_twitter.png" /></td>
+        <td><%=@profile["twitter"]%></td>      
+    </tr>
+  </table><br>
+
+  <h3 style="color: #e9b000">Hello!</h3>
+  <p style="color: #008f95">I am a beginner in Web development but absolutely crazy about it. Determined, inspired and hard-working. I will keep on fighting with the creative challenge till the end. I like to travel and I am a fabulous coffee maker.</p><br>
+  <div id="info">
+  <h3>General Information</h3>
+            <h2 %=@profile.keys[3]%></h2>First name: 
+            <h3 class="profile-value"><%=@profile["first_name"]%></h3>
+            
+            <h2 %=@profile.keys[8]%></h2>Last name: 
+            <h3 class="profile-value"><%=@profile["last_name"]%></h3>
+            
+            <h2 %=@profile.keys[1]%></h2>Date of birth: 
+            <h3 class="profile-value"><%=@profile["dob"]%></h3>
+
+            <h2><%=@profile.keys[4].capitalize%>:</h2> 
+            <h3 class="profile-value"><%=@profile["gender"]%></h3>    
+
+            <h2 %=@profile.keys[2]%></h2>Employment status: 
+            <h3 class="profile-value"><%=@profile["employment_status"]%></h3><br>
+  </div>
+  <h3>Interests</h3>
+  <table>
+    <tbody>
+    <tr>
+        <td><img src="/images/icon_travelling.png" /></td>   
+        <td><img src="/images/icon_coffee.png" /></td>       
+        <td><img src="/images/icon_music.png" /></td> 
+        <td><img src="/images/icon_horses.png" /></td> 
+        <td><img src="/images/icon_gym.png" /></td> 
+        <td><img src="/images/icon_draughts.png" /><td>     
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>       
+    <!--Add a field to the form to add Codecademy account to the profile -->
+<div class="right">
+       
+    <div class="profile-section box">
+      <h3>Track Completedness</h3>
+       
+        <h3 class="profile-value">from Codecademy profile with the name: <a href="https://www.codecademy.com/IrynaBi">
+<p><%=@profile["codecademy"]%></a></h3><br>
+    
+    <div class="percentage"><p><h2 %=@profile.keys[7]%></h2></p><a href="https://www.codecademy.com/learn/javascript"> JavaScript Track</a></div>     
+    <div class="percentage"><h2 %=@profile.keys[11]%></h2><a href="https://www.codecademy.com/learn/ruby">Ruby Track</a></div>      
+    <div class="percentage"> <h2 %=@profile.keys[13]%></h2><a href="https://www.codecademy.com/learn/web">Web Track</a></div>
+    <br>  
+    <form action="/update" method="post">
+        If you don't see Codecademy profile name, please, type it here: <input type="text" name="trainee[codecademy]" value="i.e. IrynaBi"/>
+        <input type="submit" value="Submit"/>
+    <!--<% @profile.each do |field, value| %>
     <div class="profile-section box">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
-  <% end %>
+    <% end %> -->
 
-  <div id="stats" class="box">
+    <div id="stats" class="box">
     <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
+    <!-- TODO - Set the contents of this span with JavaScript 
+    <span id="word-count">0</span> words found. -->
+  
+ <script type="text/javascript">
+            function countWords() {
+            profile_values = document.getElementsByClassName('profile-value');
+            total_words = 0;
+            for (i = 0; i < profile_values.length; i++) {
+                total_words += profile_values[i].innerHTML.trim().split(' ').length;
+                console.log(total_words);
+            }
+            document.getElementById('zero').innerHTML = total_words
+            }
+
+        </script>        
+
+        <p>The number of words within my profile is <b id='zero'>0.</b>  </p>
+        <input type='button' onclick='countWords()' value='Click to count the words' />
+    </div>
+
+    
+<!--I keep working on this challenge. The issue is how to store the user input's number to use it furhter in Ruby function Primes.sum_to(here is user input number) and then how to show it in result within a file primes.erb  
+    <p>Let's get Fun!</p> 
+    <p>Enter any number up to 2 000 000 to find the sum of all prime numbers under it! </p>
+    <form action="/primes">
+        Your number: <input type="text" name="userNum">
+        <input type="submit" value="Answer">
+    </form> -->
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
+    <p><a href="/primes">Programming puzzle in Ruby from <a href="https://projecteuler.net/problem=1">Project Euler</a></a></p>
   </div>
 
   <div class="box">
-    <h3>Edit Profile</h3>
+    <h3>Update Profile</h3>
 
     <form action="/update" method="POST">
       <fieldset>
-        <div class="form-group">
+        <!--<div class="form-group">
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
+        </div> -->
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+         <div class="form-group">
+        <label for="trainee[first_name]">First name</label>
+        <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
+        
+        <p><label for="trainee[last_name]">Last name</label>
+        <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/></p>
+       
+        <p><label for="trainee[dob]">Date of birth</label>
+        <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/></p>
+
+        <p><label for="trainee[gender]">Gender</label>
+        <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/></p>
+        
+        <p><label for="trainee[employment_status]">Employment status</label>
+        <input type="text" name="trainee[employment_status]" value="<%= @profile["employment_status"] %>"/></p>
+        
+        <p><label for="trainee[phone_number]">Phone number</label>
+        <input type="text" name="trainee[phone_number]" value="<%= @profile["phone_number"] %>"/></p>
+         
+        <p><label for="trainee[github]">Github</label>
+        <input type="text" name="trainee[github]" value="<%= @profile["github"] %>"/></p>
+        
+        <p><label for="trainee[twitter]">Twitter</label>
+        <input type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/></p>
+        </div>
+    
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
     </form>
   </div>
+       
+</div>
+ 
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -43,17 +170,29 @@
     <a href="/authorise">Authorise</a>
   </div>
 <% end %>
-
-
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
-  console.log("I am Javascript!");
-
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
-
+    function countWords() {
+    var profile_values = document.getElementsByClassName('profile-value');
   // TODO - Count the number of words in the profile.
+    var total_words = 0;
   // hint - look at what the innerHTML property provides.
+</script> 
 
-  document.getElementById('word-count').innerHTML = total_words;
-</script>
+  <!-- Experiment with using JavaScript to respond to user events -->
+  
+    <script type="text/javascript">
+        function sayThankYou() {
+            alert("THANK YOU FOR LOOKING!")
+            }
+    </script>
+<div id="footer"> 
+   <div id="thanks">
+        <p>To see personalised message left for you</p> 
+      
+         <form>
+             <input type="button" onclick="sayThankYou()" value="Click here" />
+         </form>
+    </div> 
+</div> 
+</div>

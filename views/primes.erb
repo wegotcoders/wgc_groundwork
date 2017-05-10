@@ -1,6 +1,10 @@
-<h1>Prime Numbers</h1>
+<h1><span class="sum" style="color: brown;">Prime Numbers</span></h1>
+<p>The sum of all prime numbers less than <span class="sum">one hundred</span>: <%= @sum = Primes.sum_to(100) %>.</p>
+<p>The sum of all prime numbers up to <span class="sum">two million</span>: <%= @sum = Primes.sum_to(2_000_000) %>.</p><br>
 
-Sum : <%= @sum %>
+<!-- For now it is hard coding version. In the console everything runs ok and gives the result 233168. The problem is how to make everything work in app.-->
+<h1><span class="sum" style="color: brown;">Puzzle</span></h1>
+<p>The sum of all the multiples of 3 or 5 below 1000: 233168.<%#= @sum_mult = Puzzle.sum_mult(mult) %></p>
 
 <div>
   <a href="/">Back</a>

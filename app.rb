@@ -1,8 +1,8 @@
 require 'sinatra'
 require './lib/profile'
 
-set :application_id, 'EDIT_ME'
-set :secret, 'EDIT_ME'
+set :application_id, '2a763742ef3199e389ac692aa16d84bb480d36a686c04325a6de76b93926cfe5'
+set :secret, '11f30e45418d19b8679bac24c7faa3c572fbdfac4f95d3ec1457bc835d566a6a'
 set :redirect_uri, 'http://localhost:4567/callback'
 set :site_url, 'https://wegotcoders.com'
 set :session_secret, 'secret'
@@ -11,13 +11,20 @@ enable :sessions
 get '/primes' do
   # TODO - Can we make this dynamic?
   limit = 100
-
+  
   # TODO - add your prime number solution in the primes.rb file.
-  @sum = Primes.sum_to(limit)
+  @sum = Primes.sum_to(limit) 
+
+  # working on the solution how to get any number from user as a limit
+  # userNumber = params[:userNum].to_i  
+  # @sum = Primes.sum_to(userNumber)
+
+  # working on the solution how to make ruby code work in app
+  # @sum_mult = Puzzle.sum_mult(mult)
+  # erb :puzzle, :layout => :main
 
   erb :primes, :layout => :main
 end
-
 get '/' do
   if signed_in?
     @profile = trainee.get_profile
