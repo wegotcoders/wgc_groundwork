@@ -2,30 +2,56 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  color: #333335;
 }
 
 #logo {
-  text-align: center;
+  text-align: center; 
+  background-color: #FCFCFC;
+}
+
+#cover-photo {
+  height: 21em;
+  background:url(https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/935256_597938700218265_424213745_n.jpg?oh=4d0e24ff718ca965cb7ba860a970408c&oe=5822404C);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0em -20em; 
+  padding: 1em;
+  margin-bottom: 0.5em;
+  /*border: 2px solid #FCFCFC;*/
+
+}
+
+#me {
+  border: 0.5em solid #FCFCFC;
+  float: right;
+  margin-top: -12em;
 }
 
 #content {
   padding: 1em;
+  background-color: #1A1A1A; 
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
+  border: 2px solid #09992a;
+  background-color: #FCFCFC;
+  color: #333335;
+  padding: 0.5em;
+  padding-top: 1em;
+  margin: 0.5em;
+  clear: both;
 }
 
 .welcome {
   text-align: center;
 }
 
-h3 {
+.col-md-4 h3, .left h3 {
   font-size: 1.5em;
+  color: #B51B28;
+  font-family: "PT Sans";
+  font-weight: bold; 
 }
 
 .error {
@@ -37,3 +63,91 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+.page-header {
+  font-family: "PT Sans Bold", sans-serif; 
+  color: #09992a;
+  font-size: 2em;
+}
+
+/*.profile-section {
+  font-family: "PT Sans";
+  position: relative;
+  float: left;
+  border: 2px solid #09992a;
+}*/
+
+
+.main {
+  color: #FCFCFC;
+  background-color: #333333; 
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.right {
+  background-color: #FCFCFC;
+  color: #333333;
+  padding: 0.5em; 
+  margin: 0.5em; 
+  margin-right: -0.5em; 
+  border: 2px solid #09992a;
+}
+
+.col-md-8 h1 {
+  font-family: "PT Sans Bold", sans-serif; 
+  color: #09992a;
+  font-size: 2em;
+}
+
+
+td:first-child, label {
+  font-weight: bold; 
+  padding-right: 0.5em;
+}
+
+.link {
+  color: #09992a;
+  text-decoration: none; 
+}
+
+.link:hover {
+  font-weight: bold; 
+}
+
+.link:visited {
+  color: #333335; 
+}
+
+.form-group {
+  padding-bottom: 0.5em; 
+}
+
+.table li {
+  list-style: none; 
+}
+
+.left ul {
+ padding: 0.5em;
+}
+
+/*.btn {
+  background-color: #09992a;
+  color: #FCFCFC; 
+  padding:  0.5em 1em 0.5em 1em;
+}
+
+.btn:hover {
+  background-color: #333335;
+}*/
+
+
+/*Prime Numbers*/
+/*h1 {
+  color: #FCFCFC;
+  font-size: 2em; 
+}
+
+p {
+  color: #FCFCFC;
+}*/

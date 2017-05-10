@@ -1,41 +1,176 @@
-<% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+<% if @profile %>   <!-- N: @profile = instance variable that stores a hash -->
+  <div id="header" class="page-header">
+  	<h3><%= @profile["first_name"].upcase %>'S AMAZING PROFILE</h3>
+  </div> 
+  
+  <div id="cover-photo" class="jumbotron">
+  	<img src="/images/me2.jpg" width="17.5%" id="me"/>
+  </div> 
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
+  <div class="container-fluid">
+  	<div class="row profile-section box">
+  	
+  	 	<div class="col-md-4">
+      		<table class="table"> 
+    			<tr> <th colspan="2"> <h3> Basic Information </h3> </th> </tr>
+	 			<tr> <td> First Name: </td>
+			 		 <td class="profile-value"> <%= @profile['first_name'] %> </td> </tr>
+    			<tr> <td> Last Name: </td> 
+    		 		 <td class="profile-value"> <%= @profile['last_name'] %> </td> </tr>
+    			<tr> <td> Gender: </td>
+    		 		 <td class="profile-value"> <%= @profile['gender'] %> </td> </tr>
+    			<tr> <td> Date of Birth: </td>
+    		 		 <td class="profile-value"> <%= @profile['dob'] %> </td> </tr>
+    			<tr> <td> Work: </td>
+    		 		 <td class="profile-value"> <%= @profile['employment_status'] %> </td> </tr>
+       		</table> 
+       	 </div>
+       	 
+  	     <div class="col-md-4">
+       		<table class="table"> 
+    			<tr> <th colspan="2"> <h3> Contact Information </h3> </th> </tr>
+	 			<tr> <td> Email: </td>
+			 		 <td class="profile-value"> nicole.sentis@gmail.com </td> </tr>
+    			<tr> <td> Phone: </td> 
+    		 		 <td class="profile-value"> 07845587309 </td> </tr>
+    			<tr> <td> Find me on: </td>
+  		  	 		 <td> <ul> 
+  				  		<li> <a href="https://uk.linkedin.com/in/nicolesentis" class="link profile-value">LinkedIn</a> </li> 
+  				  		<li> <a href="https://www.facebook.com/nicole.sentis" class="link profile-value">Facebook</a> </li>
+  				  		<li> <a href="https://www.codecademy.com/gigaMaster22806" class="link profile-value">Codecademy</a> </li>
+  				  		<li> <a href="https://github.com/NicoleAMS" class="link profile-value">GitHub </a> </li>  
+  		  		  	 </ul> 
+    		   	</td>		  
+        	</table> 
+    	  </div>
+    	  
+    	  <div class="col-md-4">
+    	   <h3>Edit Profile: Address</h3>
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
-
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
-
-  <div class="box">
-    <h3>Edit Profile</h3>
-
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
+        	<form action="/update" method="POST"> <!-- N: <form> is used to create an HTML form for user input -->
+        		<fieldset>                          <!-- N: <fieldset> is used to group related elements in a form. It draws a box around related elements. -->
+          			<div class="form-group">
+            			<label for="trainee[address]">Street: </label> <!-- N: <label> defines a label for an <input> element. Its for attribute should be equal to the id attribute of the related element. -->
+            			<input id="trainee[address]" type="text" name="trainee[address]" value="16 Churchill Gardens"/> <!-- N: <input> specifies an input field where the user can enter data. Type can be things like text, button, password, checkbox. -->
+    	  			</div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
+        
+          			<div class="form-group">
+            			<label for="trainee[town]">Town/City: </label>
+            			<input id="trainee[town]" type="text" name="trainee[town]" value="Newcastle upon Tyne"/> 
+          			</div> 
+            
+          			<div class="form-group">
+            			<label for="trainee[postcode]">Postcode: </label>
+            			<input id="trainee[postcode]" type="text" name="trainee[postcode]" value="NE2 1HB"/> 
+          			</div> 
+            
+          			<input type="submit" value="Update Profile" class="btn btn-primary" /> 
+        		</fieldset>
+      		</form>
+     	</div>	
+    </div>
+   </div> 
+  
+    <div class="container-fluid">
+      <div class="row main">
+      
+   		 <div class="col-md-8">
+    		<div class="left">
+    			<h1> About me </h1>
+    			<p>I am Nicole, a 30-year old girl from The Netherlands with a background in art history and heritage management 
+    			and an interest in digital technology (e.g. 3D reconstructions, websites, apps, virtual/augmented reality). For 
+    			me cultural heritage is very important because of its power to help people find their identity by connecting them 
+    			to their own local past, but also to help them understand and appreciate the accomplishments of people from other 
+    			cultures, and thus connecting people world wide and through time, hopefully contributing to a better world. </p>
+    			<p>I first got interested in 3D reconstructions when I was about 10 years old. We had a CD-ROM with the 
+    			reconstruction of an Egyptian temple, which I found fascinating. Later I loved watching documentaries that involved 
+    			(virtual) reconstructions of buildings and people. But never during my teenage years and early twenties did I think
+    			 I could actually do something with that, because computers and me didn’t seem to like each other much nor did I 
+    			 see myself as particularly creative. That changed gradually over the years as I learned to use databases and 
+    			 collections management software and build a webpage with a small team from a template. Then when I was working for 
+    			 the Urban Design and Conservation Team of Newcastle City Council who had Google SketchUp installed on their 
+    			 computers, I decided that I wanted to learn basic modelling. I started to read about Digital Heritage, which is a 
+    			 relatively new field, realised how I excited I was whenever I could use an app in a museum, and in the end became 
+    			 a volunteer at the Digital Heritage International Congress in Granada, Spain, last October. At the same time two 
+    			 friends who were into programming stimulated me to learn how to code assuring me that I could do this, and that’s 
+    			 how I ended up doing online programming courses and to my astonishment actually understanding and liking it.</p>
+    			 <p>As for the rest, I like reading, salsa dancing, yoga, playing violin, walking/hiking and occasionally hunting 
+    			 Pokemon. I love classical music, jazz & blues, Latin music, classic rock and much more. I’m interested in health 
+    			 and nutrition, the environment, interior design, and colour theory. Also I’m a bit anxious and tend to worry a 
+    			 lot. But if I have to or really want something I can work very hard under pressure and do much better than 
+    			 expected.</p>
+    			<br> </br>
+    		    <h1>My Challenge Experience</h1>
+    		    <p>As it was the first time ever for me to do a project on my own computer, rather than in an online environment 
+    		    like Codecademy, the biggest challenge turned out to be setting up the environment and understanding all the different files 
+    		    and what to do with them. This was a bit scary and overwhelming, but (with the help of a friend, who ONLY gave hints and NEVER full 
+    		    solutions) I managed and learned a lot while doing every part of the challenge. This blog will be an account of my experiences, 
+    		    written in the form of notes, that show some of the problems I had, how I solved them and what I’ve learned. I know this challenge 
+    		    took me quite a while to finish, but I decided (as there is no time limit) that it was better to really understand (and hopefully 
+    		    remember) what I was doing than to do things hastily. Understanding things takes time. As my friend put it: “This is and will rewire 
+    		    your brain” cause “it's building and mapping new and faster neural pathways internally in your brain. (…) Your brain resists and 
+    		    resists and resists, and you break through. And suddenly it's like flood gates open and you're thinking in a whole new paradigm.”
+    		    I will not post the full blog here as that will take too much time, but instead email you a word document with the full text. </p>
+    		    <h3>DAY 1:</h3>
+    		    <p>When I saw what I had to install and do to even get started: PANIC PANIC! I’m not good with installing things, how am I going 
+    		    to manage? Well, turned out that it was less difficult than I thought, I only struggled with a few things:
+    		    	<ul>
+    		    		<li> While trying to install Bundler I got an error message: “You don’t have write permissions for the 
+    		    		(…) directory.” Fixed with “sudo gem install Bundler. Sudo = Super User Do. Finally understand what sudo can be used for.</li>
+    		    		<li>Installing RVM: what version to install?? </li> 
+    		    		<li>Installing Bundler gave an error: “Your user account isn’t allowed to install to the system Rubygems (…). You can enter your password and install the bundled gems to Rubygems using sudo.” Again that sudo. Anyway, I reinstalled Bundle with sudo in my projects’ folder, and then ran Bundle and it seemed to work. </li>
+    		    	</ul> </p>
+    		    <p>Note to self: Always be in the right directory when you try to run something, like app.rb or Bundler. </p>
+    		    <h3>DAY 2:</h3>
+    		    <ul> 
+    		    	<li>First thing I did was cloning the challenge to my computer. Easier than I thought, no big problems. </li>
+    		    	<li>Next: figuring out how to update app.rb with the OAuth application ID and secret. </li>
+    		    	<li>I then learned that localhost is in fact MY computer.</li>
+    		    	<li>I learned that .erb files are HTML files with Ruby embedded.</li>
+    		    	<li>I learned how I can use git on my own computer. Or rather, I got a bit of a Git crash course by my friend. I admit that my preparation for Git could’ve been better as I had only tried Git on Codecademy and not on my own computer. </li> </ul>
+    		    <p> REMEMBER: Git works locally. Once you’re happy with your changes to the code, add and commit them. Then when you’re ready, PUSH to a remote server (GitHub). </p>
+    		    <p>REMEMBER: the computer is running software (this project) which uses OAuth to access another online resource which you authorise and your project gets the info and presents it. </p>
+    		    <h3>FAST FORWARD TO DAY 7:</h3>
+    		    <p>First attempt at changing text and layout! I’ve decided that the colours should be similar to the ones used on www.wegotcoders.com. </p>
+    		    <p>PANIC PANIC PANIC PANIC!!!!!! PROBLEM: h2 and h4 tags produce the same size text! How is that possible? Tried to change font-size, font-family, color in CSS, but to no avail. Nothing works, WHY???</p>
+    		    <p>REASON: Ok, this is gonna sound ridiculous, but in order to refresh localhost every time I changed something, I clicked the URL and then hit ‘enter’. Apparently, for some changes that is enough to make them visible, but NOT for CSS, or at least not now. NOTE TO SELF: when refreshing the page, click ‘RELOAD THIS PAGE’!!! Took me hours to figure this out. Or rather, it was my boyfriend who suggested it to me after I’d been struggling with it for hours. Thank you Haris! </p>
+    		    <h3>FAST FORWARD TO DAY 10:</h3>
+    		    <ul>
+    		    	<li>Figured out the Prime Number Challenge entirely on my own (without help from my friend or boyfriend). That means: the first part, cause I still had to make it dynamic. Thought of a few possible solutions (like user input), but didn’t really know how to continue, so focussed on word count instead.</li>
+    		    	<li>Trying to make sense of the word count challenge. What do they mean by ‘each section’? Or by ‘each of the questions’? </li>
+    		    </ul>
+    		    <h3>FAST FORWARD TO DAY 13:</h3>
+    		    <ul>
+    		    	<li>Word count WORKS!!! Well, after I deleted the profile-value class from the input tags.</li>
+    		    	<li>Trying to make the page more presentable with CSS. My columns are a bit of a mess, so time for:</li>
+    		    	<li>Bootstrap!! But… on Codecademy it was easier. I think I need to read more about it.</li>
+    		    </ul>
+    		    <h3>FAST FORWARD TO DAY 16:</h3>
+    		    <p>Going through all the conversations with my friend and boyfriend and through all the notes I made, in order to write this blog. It’s only now I realise how much I’ve learned and overcome. It also reminds me of what a wonderful boyfriend and extremely patient friend I have, who were always there to help and encourage me. Thank you so much, Haris and Neil! I wouldn’t be where I am now without you! </p>
+    		</div> 
+    	</div> 
+    
+      	<div class="col-md-4">
+  			<div class="right">
+  
+   				<div id="stats"> <!-- N: Creates H3 Stats box for word count code -->
+    				<h3>Stats</h3>
+    				<!-- TODO - Set the contents of this span with JavaScript -->
+    				<span id="word-count">0</span> words found.
+   				</div>
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
+  				<div id="problems"> <!-- N: Creates H3 Programming Problems box for Prime Number code -->
+    				<h3>Programming Problems</h3>
+    				<a href="/primes" class="link">My Prime Number Solution</a>
+  				</div>
+  			</div>
+    	</div>	
+    </div>
+
+
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -54,6 +189,13 @@
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
+  // N: In order to also count the words in the input fields, I'd have to include an if-statement that determines whether an element is an input field and if so, use value rather than innerHTML
+  for (i = 0; i < profile_values.length; i++) {
+  		var words = profile_values[i].innerHTML.trim().split(" ").length; 
+  		total_words += words;  
+  		//words2 = profile_values[i].innerHTML.trim().split(" ");
+  		//console.log(words2); 
+  }
 
   document.getElementById('word-count').innerHTML = total_words;
 </script>
