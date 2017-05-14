@@ -1,0 +1,136 @@
+
+<section>
+  <div class="container container-main">
+    <img src="/images/profile.png" class="profile-img">
+    <header>
+      <h1> <strong><%= @profile["first_name"] %></strong> </h1>
+    </header>
+    <img src="images/line.png" class="line">
+    <div class="row">
+      <div class="col-md-7">
+        <h2># About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet mi ornare massa gravida, auctor accumsan ipsum rhoncus. Vestibulum in erat tempor, rutrum diam fringilla, feugiat augue. Morbi dapibus bibendum erat, nec euismod lacus ultrices eu. Aliquam a bibendum ante, id convallis massa. Aliquam iaculis</p>
+      </div>
+      <div class="col-md-5">
+        <h2># Contact Info</h2>
+        <ul class="contact-list">
+          <li><img src="images/phone.png">Phone<span> <strong><%= @profile["phone_number"] %></strong></span></li>
+          <li><img src="images/email.png"> Email<span><strong><%= @profile["email"] %></strong></span></li>
+          <li><img src="images/facebook.png"> Facebook<span>facebook.com/johndoe</span></li>
+          <li><img src="images/twitter.png"> Twitter <span><strong><%= @profile["tiwitter"] %></strong></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-7">
+        <h2># Education &amp; Experience</h2>
+        <div class="media">
+          <div class="media-left">
+            1996 - 1999
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Whittier Technical High School</h4>
+            <p>Vestibulum in erat tempor, rutrum diam fringilla, feugiat augue</p>
+          </div>
+        </div>
+
+      <div class="media">
+          <div class="media-left">
+            2000 - 2003
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Salem State College</h4>
+            <p>Vestibulum in erat tempor, rutrum diam fringilla, feugiat augue</p>
+          </div>
+        </div>
+
+        <div class="media">
+          <div class="media-left">
+            2004 - 2008
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Massachusetts Institute of Technology</h4>
+            <p>Vestibulum in erat tempor, rutrum diam fringilla, feugiat augue</p>
+          </div>
+        </div>
+
+        <div class="media">
+          <div class="media-left">
+            2009 - 2014
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Web Programming Job</h4>
+            <p>Vestibulum in erat tempor, rutrum diam fringilla, feugiat augue</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <h2># Programming Skills</h2>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: 100%;">
+            HTML / CSS
+          </div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 100%;">
+            JavaScript
+          </div>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 95%;">
+            PHP &amp; MySQL
+          </div>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 90%;">
+            Ruby on Rails
+          </div>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 80%;">
+            ActionScript &amp; Flash
+          </div>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 80%;">
+            Python
+          </div>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 70%;">
+            Java
+          </div>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 70%;">
+            C #
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+</div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Copyright &copy; 2017, Tahir Raza</p>
+  </div>
+</footer>
+
+  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  <% @profile.each do |field, value| %>
+    <div class="box">
+      <h4><%= field %></h4>
+      <p><%= value %></p>
+    </div>
+    <% end %>

@@ -37,3 +37,109 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+.clear{
+  clear: both;
+}
+.main-container{
+  margin: 0 auto;
+  width: 90%;
+  border: 2px solid blue;
+  background-color: lightgreen;
+}
+.header{
+  width: 100%;
+
+}
+.right-section{
+  margin-top: 10px;
+  border: 2px solid yellow;
+  width: 60%;
+  height: 760px;
+  float: right;
+  border-radius: 10px;
+}
+.left-section{
+  border: 2px solid red;
+  width: 40%;
+  height: 760px;
+  float: left;
+  border-radius: 10px;
+}
+/* -------------------------------- */
+.container-main {
+  background: #fff;
+  margin-top: 80px;
+  padding: 0 30px 30px 30px;
+}
+
+header {
+  min-height: 100px;
+  overflow: auto;
+}
+
+header h1 {
+  margin: 0;
+  padding: 20px 0 0 0;
+  font-size: 2.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  width: 160px;
+  display: block;
+  margin: auto;
+  margin-top: -80px;
+}
+
+.line {
+  max-width: 100%;
+}
+
+.contact-list {
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  list-style: none;
+  font-weight: bold;
+  line-height: 3.2em;
+}
+
+.contact-list span {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 0.1em;
+  margin-left: 37px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.media {
+  background: #ededed;
+  padding: 10px;
+}
+
+.work-list li {
+  list-style: none;
+  float: left;
+  padding: 0 10px 0 10px;
+  margin-bottom: 30px;
+}
+
+footer {
+  background: #3b5a76;
+  color: #fff;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
