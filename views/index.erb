@@ -80,6 +80,13 @@
 	            <label for="trainee[how_did_you_hear]">How did you hear:</label>
 	            <input type="text" name="trainee[how_did_you_hear]" value="<%= @profile["how_did_you_hear"] %>"/>
 				</li>
+			
+			
+				<li>
+	            <label for="trainee[code]">Codecademy a/c:</label>
+	            <input type="text" name="trainee[code]" value="<%= @profile["code"] 				%>"/>
+				</li>
+			
 				
 				
 			</ul>
@@ -93,11 +100,7 @@
 	      </form>
 	    </div>
 		
-		<form action="/profile.rb" method="POST">
-          <label for="trainee[codecademy]">Codecademy a/c:</label>
-		  <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
-		  <input type="submit" value="Submit">
-		</form>
+		
 	
 </div>
 
@@ -118,13 +121,18 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
 
+  var profile_values = document.getElementsByClassName("profile-value");
+  var total_words = 0;
+   for (var i = 0; i < profile_values.length; i++) {
+    total_words = total_words + profile_values[i].innerHTML.trim().split(" ").length
+  };
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
-  document.getElementById('word-count').innerHTML = total_words;
+  document.getElementById("word-count").innerHTML = total_words;
+  
+
 </script>
 
 
