@@ -1,0 +1,118 @@
+body {
+	font-family: "Whitney SSm A", "Whitney SSm B", Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+}
+
+#logo {
+	position: fixed;
+  text-align: center;
+  width:100%;
+  background-color: gray;
+  opacity:0.9;
+    background: -webkit-linear-gradient(left, gray , white); 
+    background: -o-linear-gradient(right, gray, white); 
+    background: -moz-linear-gradient(right, gray, white); 
+    background: linear-gradient(to right, gray , white); 
+  }
+  	  
+
+
+#content {
+  padding: 5em;
+}
+
+ 
+.welcome {
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.0em;
+  text-align: center;
+  margin: 15px 15px 15px 15px;
+  padding: 15px;
+  font-weight: bold;
+ 
+}
+
+h4 {
+  font-size: 1.2em;
+  text-align: left;
+  margin: 2px 10px 2px 10px;
+  padding: 1px;
+  font-weight: bold;
+}
+
+
+.error {
+  text-align: center;
+}
+
+.error h2 {
+  font-size: 1.5em;
+}
+
+/* TODO - Add your own styles here */
+
+img.resize {
+	max-width: 100%;
+	max-height:1%;
+	object-fit: contain;
+	margin-top: 107px;
+	float: left;
+	
+}
+
+.heading {
+			height: 2.5%; 
+	      text-align:center; 
+	      display: table;
+	      width:100%;
+		  font-weight: bold;
+	  }
+	  
+.container .mainContent {
+		 display: inline-block;
+		 width:69%;
+		 padding: 3px;
+   	     background-color: #DFE6E6;
+			
+	     }
+	  
+ .container .sidebar {
+ display: inline-block;
+ width: 29%;
+	float:right;
+    background-color: #DFE6E6;
+	padding: 3px;
+			
+	}
+	
+ #me {
+	 width: 100%;
+	 float:right;
+	 text-align: center;
+	 margin-top: 15px;
+ }
+	  
+ .container {
+	 width: 100%;
+	        
+	 }
+	    	 
+.container .mainContent .profilesection {
+		 
+		 }
+		 
+		 .container .mainContent .profilesection .profile-value {
+			 margin-left:8px;
+				padding: 3px;
+		 
+		 		 }
+				 
+				 #stats, #problems {
+					 margin-left:10px;
+				 }
+				 

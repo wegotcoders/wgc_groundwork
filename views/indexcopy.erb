@@ -1,0 +1,91 @@
+
+
+
+<div class="heading">
+	<% if @profile %>
+  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  </div>
+
+<div class ="container">	
+	
+
+	<div class="mainContent">
+  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  	<% @profile.each do |field, value| %>
+    <div class="profilesection">
+      <h4><%= field %>:</h4>
+      <p class="profile-value"><%= value %></p>
+    </div>
+	
+	  <% end %>
+  
+	</div>
+  
+  	<div class="sidebar">
+	  
+      <div id="me">
+          <img class="fit" src="/images/me1.jpg" alt="Photo of me"  />
+		  
+      </div>
+	  
+ 	 <div id="stats">
+    <h4>Stats:</h4>
+    <!-- TODO - Set the contents of this span with JavaScript -->
+    <span id="word-count">0</span> words found.
+  	</div>
+
+  	<div id="problems">
+    <h4>Programming Problems:</h4>
+    <a href="/primes">My Prime Number Solution</a>
+  	</div>
+
+  	<div>
+    <h4>Edit Profile:</h4>
+
+    <form action="/update" method="POST">
+      <fieldset>
+        <div class="form-group">
+          <label for="trainee[about]">About</label>
+          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+        </div>
+	</div>
+		
+	<div>
+        <input type="submit" value="Update Profile" class="btn btn-primary" />
+      </fieldset>
+    </form>
+  	</div>
+  
+  	</div>
+	
+     
+
+
+</div>
+
+
+        <!-- TODO - Add more fields so that your profile can be edited -->
+
+   
+  
+<% else %>
+  <div class="welcome">
+    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+    <a href="/authorise">Authorise</a>
+  </div>
+<% end %>
+
+
+<!-- Add your Javascript to this script tag -->
+<script language="javascript">
+  console.log("I am Javascript!");
+
+  var profile_values = document.getElementsByClassName('profile-value');
+  var total_words = 0;
+
+  // TODO - Count the number of words in the profile.
+  // hint - look at what the innerHTML property provides.
+
+  document.getElementById('word-count').innerHTML = total_words;
+</script>
