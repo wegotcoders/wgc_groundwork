@@ -47,8 +47,43 @@
 	      <form action="/update" method="POST">
 	        <fieldset>
 	          <div class="form-group">
-	            <label for="trainee[about]">About</label>
+				 
+			 <ul>
+					  
+				<li> 
+	            <label for="trainee[about]">About:</label>
 	            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+				</li>
+				
+				<li>
+	            <label for="trainee[projects]">Projects:</label>
+	            <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+				</li>
+				
+				<li>
+	            <label for="trainee[rationale]">Rationale:</label>
+	            <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+				</li>
+				
+				<li>
+	            <label for="trainee[ambition]">Ambition:</label>
+	            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+				</li>
+				
+				<li>
+	            <label for="trainee[learning_experience]">Learning experience:</label>
+	            <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] 				%>"/>
+				</li>
+				
+				
+				<li>
+	            <label for="trainee[how_did_you_hear]">How did you hear:</label>
+	            <input type="text" name="trainee[how_did_you_hear]" value="<%= @profile["how_did_you_hear"] %>"/>
+				</li>
+				
+				
+			</ul>
+				
 	          </div>
 	  	</div>
 		
@@ -57,6 +92,12 @@
 	        </fieldset>
 	      </form>
 	    </div>
+		
+		<form action="/profile.rb" method="POST">
+          <label for="trainee[codecademy]">Codecademy a/c:</label>
+		  <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+		  <input type="submit" value="Submit">
+		</form>
 	
 </div>
 
