@@ -38,9 +38,10 @@ h3 {
 h4 {
   font-size: 1.2em;
   text-align: left;
-  margin: 2px 10px 2px 10px;
-  padding: 1px;
+  
+  padding-left: 20px;
   font-weight: bold;
+  
 }
 
 
@@ -64,102 +65,84 @@ img.resize {
 }
 
 #heading {
-			height: 2.5%; 
-	      text-align:center; 
-	      display: table;
-	      width:100%;
-		  font-weight: bold;
+	height: 2.5%; 
+	text-align:center; 
+	display: table;
+	width:100%;
+	font-weight: bold;
 	  }
 	  
 #profile_info {
-	
-		 width:64%;
-   	     background-color: #DFE6E6;
-		 float: left;
-		 /*border: 2px solid black;*/
-		 border-radius: 15px;
-			
-	     }
+	width:64%;
+   	background-color: #DFE6E6;
+	float: left;
+	/*border: 2px solid black;*/
+	border-radius: 15px;
+	padding-top: 15px;
+	}
 	  
-#codey_stuff {
+#tasks {
  	width: 31%;
 	float:right;
     background-color: #DFE6E6;
  	/*border: 2px solid black;*/
  	margin-top: 50px;
  	border-radius: 15px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 30px;
 	text-align: center;
-			
 	}
 	
  #photo {
-	 width: 31%;
-	 float:right;
-	 /*border: 2px solid black;*/
-	 border-radius: 15px;
-	 
-	 
- }
+	width: 31%;
+	float:right;
+	/*border: 2px solid black;*/
+	border-radius: 15px;
+	}
  
 #me {
 	 width:100%;
 	 vertical-align:bottom;
 	 vertical-align:top;
 	 border-radius: 15px;
-	 
-		 
- }
+ 	}
 	  
 #content_area {
 	 width: 100%;
-	 padding: 5px;       
 	 }
 	    	 
+#content_area #profile_info .profilesection .profile-value {
+	padding: 5px 20px 5px 20px;
+	 }
+	 
+	 #stats, #problems, #edit {
+	padding: 5px 5px 25px 5px;
+	}
+				 
+#button {
+	text-align:center;
+	}
+				 
+.btn-primary {
+    -webkit-border-radius: 7;
+    -moz-border-radius: 7;
+	border-radius: 7px;
+	font-family: Arial;
+	color: #FFFFFF;
+	font-size: 20px;
+	background: #AB1F27;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	}
 
-		 
-		#content_area #profile_info .profilesection .profile-value {
-			 margin-left:8px;
-				padding: 5px;
-		 
-		 		 }
-				 
-				 #stats, #problems, #edit {
-					 margin-left:10px;
-					 padding: 25px;
-				 }
-				 
-				
-				 
-				 
-				 #button {
-				 	
-					 text-align:center;
-					
-				 }
-				 
-				 .btn-primary {
-					 
-					 
-					   -webkit-border-radius: 7;
-					   -moz-border-radius: 7;
-					   border-radius: 7px;
-					   font-family: Arial;
-					   color: white;
-					   font-size: 20px;
-					   background: #AB1F27;
-					   padding: 10px 20px 10px 20px;
-					   text-decoration: none;
-					 }
-
-					 .btn-primary:hover {
-					   background: #D8CD63;
-					   text-decoration: none;
-					 }
+.btn-primary:hover {
+	background: #D8CD63;
+	text-decoration: none;
+	 }
 					   
-					 .form-group li {
-						 text-align:left;
-						 padding: 5px;
-					 } 
+.form-group li {
+	text-align:left;
+	padding: 5px 20px 5px 20px
+	 
+	} 
 				 

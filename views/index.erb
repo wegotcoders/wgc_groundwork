@@ -2,33 +2,29 @@
 <div id="heading">
 	<% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-  </div>
+</div>
 
 
 <div id="content_area"> 
 	
-	
 	<div id="profile_info">
-	
-	  <% @profile.each do |field, value| %>
+	<% @profile.each do |field, value| %>
 	    <div class="profilesection">
 	      <h4><%= field %>:</h4>
 	      <p class="profile-value"><%= value %></p>
-	    </div>
+ 	 </div>
 	
 	  <% end %>
   
-	</div>
+</div>
 	
 	
-	<div id="photo">
-        
-            <img id="me" src="/images/me1.jpg">
-		  
-        </div>
+<div id="photo">
+        <img id="me" src="/images/me1.jpg">
+</div>
 			
 	
-	<div id="codey_stuff">
+<div id="tasks">
 		
 	    <div id="stats">
 	      <h4>Stats:</h4>
@@ -39,9 +35,9 @@
 	    <div id="problems">
 	      <h4>Programming Problems:</h4>
 	      <a href="/primes">My Prime Number Solution</a>
-	    </div>
+		</div>
 
-	    <div id="edit">
+		<div id="edit">
 	      <h4>Edit Profile:</h4>
 
 	      <form action="/update" method="POST">
@@ -81,7 +77,7 @@
 	            <input type="text" name="trainee[how_did_you_hear]" value="<%= @profile["how_did_you_hear"] %>"/>
 				</li>
 			
-			
+			<!--I wasn't able to get the codecademy task working, but I feel like I was close-->
 				<li>
 	            <label for="trainee[code]">Codecademy a/c:</label>
 	            <input type="text" name="trainee[code]" value="<%= @profile["code"] 				%>"/>
@@ -96,14 +92,14 @@
 				
 			</ul>
 				
-	          </div>
-	  	</div>
+	 		</div>
+		</div>
 		
-	  	<div id="button">
+	 <div id="button">
 	          <input type="submit" value="Update Profile" class="btn-primary" />
 	        </fieldset>
 	      </form>
-	    </div>
+	 </div>
 		
 		
 	
