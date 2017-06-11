@@ -21,6 +21,7 @@ end
 get '/' do
   if signed_in?
     @profile = trainee.get_profile
+
   end
 
   erb :index1, :layout => :main
