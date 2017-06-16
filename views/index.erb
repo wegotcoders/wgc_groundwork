@@ -1,41 +1,114 @@
-<% if @profile %>
+
+<div id="heading">
+	<% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+</div>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
-  </div>
+<div id="content_area"> 
+	
+	<div id="profile_info">
+	<% @profile.each do |field, value| %>
+	    <div class="profilesection">
+	      <h4><%= field %>:</h4>
+	      <p class="profile-value"><%= value %></p>
+ 	 </div>
+	
+	  <% end %>
+  
+</div>
+	
+	
+<div id="photo">
+        <img id="me" src="/images/me1.jpg">
+</div>
+			
+	
+<div id="tasks">
+		
+	    <div id="stats">
+	      <h4>Stats:</h4>
+	      <!-- TODO - Set the contents of this span with JavaScript -->
+	      <span id="word-count">0</span> words found.
+	    </div>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
+	    <div id="problems">
+	      <h4>Programming Problems:</h4>
+	      <a href="/primes">My Prime Number Solution</a>
+		</div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+		<div id="edit">
+	      <h4>Edit Profile:</h4>
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
+	      <form action="/update" method="POST">
+	        <fieldset>
+	          <div class="form-group">
+				 
+			 <ul>
+					  
+				<li> 
+	            <label for="trainee[about]">About:</label>
+	            <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+				</li>
+				
+				<li>
+	            <label for="trainee[projects]">Projects:</label>
+	            <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+				</li>
+				
+				<li>
+	            <label for="trainee[rationale]">Rationale:</label>
+	            <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+				</li>
+				
+				<li>
+	            <label for="trainee[ambition]">Ambition:</label>
+	            <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+				</li>
+				
+				<li>
+	            <label for="trainee[learning_experience]">Learning experience:</label>
+	            <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] 				%>"/>
+				</li>
+				
+				
+				<li>
+	            <label for="trainee[how_did_you_hear]">How did you hear:</label>
+	            <input type="text" name="trainee[how_did_you_hear]" value="<%= @profile["how_did_you_hear"] %>"/>
+				</li>
+			
+			<!--I wasn't able to get the codecademy task working, but I feel like I was close-->
+				<li>
+	            <label for="trainee[code]">Codecademy a/c:</label>
+	            <input type="text" name="trainee[code]" value="<%= @profile["code"] 				%>"/>
+				</li>
+				
+				<li>
+	            <label for="trainee[primes_sum]">Sum of all prime numbers up to 2 million:</label>
+	            <input type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>
+				</li>
+			
+				
+				
+			</ul>
+				
+	 		</div>
+		</div>
+		
+	 <div id="button">
+	          <input type="submit" value="Update Profile" class="btn-primary" />
+	        </fieldset>
+	      </form>
+	 </div>
+		
+		
+	
+</div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
+   
+  
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -49,11 +122,19 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
 
+  var profile_values = document.getElementsByClassName("profile-value");
+  var total_words = 0;
+   for (var i = 0; i < profile_values.length; i++) {
+    total_words = total_words + profile_values[i].innerHTML.trim().split(" ").length
+  };
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
-  document.getElementById('word-count').innerHTML = total_words;
+  document.getElementById("word-count").innerHTML = total_words;
+  
+
 </script>
+
+
+

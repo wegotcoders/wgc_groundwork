@@ -1,32 +1,49 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Whitney SSm A", "Whitney SSm B", Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333;
 }
 
 #logo {
-  text-align: center;
-}
+	position: fixed;
+  	text-align: center;
+  	width:100%;
+  	background-color: gray;
+  	opacity:0.9;
+    background: -webkit-linear-gradient(left, gray , white); 
+    background: -o-linear-gradient(right, gray, white); 
+    background: -moz-linear-gradient(right, gray, white); 
+    background: linear-gradient(to right, gray , white); 
+  }
 
 #content {
-  padding: 1em;
+  	padding: 5em;
 }
 
-.box {
-  border: 1px solid #999;
-  background: #FCFCFC;
-  padding: 1em;
-  margin-bottom: 0.5em;
-}
-
+ 
 .welcome {
-  text-align: center;
+  	text-align: center;
 }
 
 h3 {
-  font-size: 1.5em;
+  	font-size: 2.0em;
+  	text-align: center;
+  	margin: 15px 15px 15px 15px;
+  	padding: 15px;
+  	font-weight: bold;
+ 
 }
+
+h4 {
+  font-size: 1.2em;
+  text-align: left;
+  
+  padding-left: 20px;
+  font-weight: bold;
+  
+}
+
 
 .error {
   text-align: center;
@@ -37,3 +54,95 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+img.resize {
+	max-width: 100%;
+	object-fit: contain;
+	margin-top: 105px;
+	vertical-align: top;
+	float: left;
+	
+}
+
+#heading {
+	height: 2.5%; 
+	text-align:center; 
+	display: table;
+	width:100%;
+	font-weight: bold;
+	  }
+	  
+#profile_info {
+	width:64%;
+   	background-color: #DFE6E6;
+	float: left;
+	/*border: 2px solid black;*/
+	border-radius: 15px;
+	padding-top: 15px;
+	}
+	  
+#tasks {
+ 	width: 31%;
+	float:right;
+    background-color: #DFE6E6;
+ 	/*border: 2px solid black;*/
+ 	margin-top: 50px;
+ 	border-radius: 15px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	text-align: center;
+	}
+	
+ #photo {
+	width: 31%;
+	float:right;
+	/*border: 2px solid black;*/
+	border-radius: 15px;
+	}
+ 
+#me {
+	 width:100%;
+	 vertical-align:bottom;
+	 vertical-align:top;
+	 border-radius: 15px;
+ 	}
+	  
+#content_area {
+	 width: 100%;
+	 }
+	    	 
+#content_area #profile_info .profilesection .profile-value {
+	padding: 5px 20px 5px 20px;
+	 }
+	 
+	 #stats, #problems, #edit {
+	padding: 5px 5px 25px 5px;
+	}
+				 
+#button {
+	text-align:center;
+	}
+				 
+.btn-primary {
+    -webkit-border-radius: 7;
+    -moz-border-radius: 7;
+	border-radius: 7px;
+	font-family: Arial;
+	color: #FFFFFF;
+	font-size: 20px;
+	background: #AB1F27;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	}
+
+.btn-primary:hover {
+	background: #D8CD63;
+	text-decoration: none;
+	 }
+					   
+.form-group li {
+	text-align:left;
+	padding: 5px 20px 5px 20px
+	 
+	} 
+				 
