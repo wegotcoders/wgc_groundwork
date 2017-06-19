@@ -2,22 +2,77 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  <!-- Note: original code commented out by Paul O'Hara 17/06/2017 but left in for reference/comparison testing purposes -->
+  <!--
   <% @profile.each do |field, value| %>
     <div class="profile-section box">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
   <% end %>
+  -->
+
+
+  <!--HTML code below has been added by Paul O'Hara 17/06/2017 - 18/06/2017, for we Got Coders admission test. -->  
+  <div id="listSection" class="contentsList"> 
+  <br>
+  <h5>Your profile is broken down as follows: </h5>
+  <br>
+     <li>Your photo</li>
+     <li>Table of personal details</li>
+     <li>Word stats</li>
+     <li>Programming problems</li>
+     <li>Link to Coding Academy website</li>
+     <li>Edit profile option</li>
+  <br>
+  </div>
+
+  <div id="Paul_logo" class="photo";>
+    <img src="/images/Paul_O'Hara_photo.png" alt="Paul's photo" width="300" height="300"/>
+  </div>
+  
+ 
+  <div id="personalDetails" class="tableStats">
+        <table border="100px">
+         <thead>
+             <tr>
+                <th colspan="2">Your <span style="font-family: Impact;">'We Got Coders'</span> personal information for <%= @profile["first_name"] %></th>
+             </tr>
+             
+             <tr>
+                  <th>Personal value</th>
+                  <th>Details</th>
+             </tr> 
+             
+         
+         <% @profile.each do |field, value| %>
+             <tr><span id="numberOfTableValues">
+                  <td><%= field %></td>
+                  <td><%= value %></td>  
+         <% end %>              
+             </tr></span>
+      </table>
+  </div>   
+  <!-- End of HTML code added by Paul O'Hara 17/06/2017 - 18/06/2017 --> 
 
   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <!-- JS Code added below by Paul O'Hara 18/06/2017... can't get function working correctly in time limit, deeper DOM study needed -->
+    <!-- Note: unable to call function without triggering an event (otherwise not sure how this can be done ?) --> 
+    <span id="word-count"><a href="javascript:countValuesInTableFunction();">click this link for</a></span> words found (n.b. at present just shows number of Personal value rows in table of personal details, and not number of words in details section of table - to correct in future version).   
+    
+    <!-- End of JS code added below by Paul O'Hara 18/06/2017. -->
   </div>
 
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
+  </div>
+
+  <div id="codeAcademyLink" class="box">
+    <h3>Link to Coding Academy website</h3>
+    <a href="https://www.codecademy.com">Link to Coding Academy website</a>
   </div>
 
   <div class="box">
@@ -28,6 +83,21 @@
         <div class="form-group">
           <label for="trainee[about]">About</label>
           <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <!-- Code added below by Paul O'Hara 18/06/2017 to allow extra profile fields to be updated - part of admission test -->
+          <label for="trainee[projects]">Projects</label>
+          <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+          <label for="trainee[rationale]">Rationale</label>
+          <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+          <label for="trainee[ambition]">Ambition</label>
+          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+          <label for="trainee[learning_experience]">Learning experience</label>
+          <input type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+          <label for="trainee[how_did_you_hear]">How did you hear</label>
+          <input type="text" name="trainee[how_did_you_hear]" value="<%= @profile["how_did_you_hear"] %>"/>
+          <!-- Note: Unsure how to write "code academy" values back to "We Got Coders" server without changing client Ruby modules ?-->
+          <label for="trainee[code_academy_acc]">Code Academy Account</label>
+          <input type="text" name="trainee[code_academy_acc]" value="<%= @profile["code_academy_acc"] %>"/>
+          <!-- End of code added below by Paul O'Hara 18/06/2017 to allow extra profile fields to be updated -->
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
@@ -46,14 +116,23 @@
 
 
 <!-- Add your Javascript to this script tag -->
+<!-- Code added below by Paul O'Hara 18/06/2017 - (N.B. due to lack of knowledge of DOM, unable to get working properly in time limit) -->
 <script language="javascript">
-  console.log("I am Javascript!");
-
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+  function countValuesInTableFunction() 
+  {
+     console.log("I am Javascript!");
+     var total_values_in_table = 0;
+     
+     //N.B. complex DOM looping needed to count actual section words for each table value - unable to do so (or refactor) in time limit. 
+     //     I think coding a table above has made the process of going via innerHTML for element IDs too complex/unworkable (i.e. to 
+     //     count words in each section). DOM loops within loops might be needed to go through all table elements for work count.
+     total_values_in_table = document.getElementById('numberOfTableValues').innerHTML.length;  // Does not give correct result !
+     
+     //alert(total_values_in_table);
+     return total_values_in_table; 
+  }
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
+  //document.getElementById('rationale').innerHTML = total_words;
 </script>
