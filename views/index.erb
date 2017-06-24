@@ -2,8 +2,11 @@
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+  <div>
+<img src="../../../WGC/wgc_groundwork/public/images/profile_pic.jpeg">
+	 </div>
   <% @profile.each do |field, value| %>
-    <div class="profile-section box">
+    <div class="profile-section-box">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
@@ -44,7 +47,7 @@
   </div>
 <% end %>
 
-
+	
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
   console.log("I am Javascript!");
