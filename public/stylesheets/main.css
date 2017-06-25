@@ -5,12 +5,16 @@ body {
   color: #333;
 }
 
+
+
 #logo {
   text-align: center;
 }
 
+
 #content {
   padding: 1em;
+	background-color:aquamarine;
 }
 
 .box {
@@ -37,3 +41,47 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+
+h1{
+	font-size: 20px;
+}
+
+#profile_pic{
+	float: right;
+	margin-right: 30px;
+
+}
+
+#input1{
+	height: auto;
+	width: 500px;
+	box-shadow: #000  0 0 5px;
+    padding: 15px;
+    margin: 10px ;
+	float: left;
+}
+#input2{
+	height: auto;
+	width: 510px;
+	box-shadow: #000  0 0 5px;
+    padding: 15px;
+    margin: 10px ;
+	float: right;
+}
+.field-style, .txtStyle{
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-topleft:5px;
+	border-top-left-radius:5px;
+	border-bottom-right-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	-webkit-border-bottom-right-radius:5px;
+	-moz-border-radius-bottomright:5px;
+	-moz-border-radius-topright:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	font-size: 15px;
+	border: thin 1px #607771;
+}
