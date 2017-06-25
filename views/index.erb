@@ -1,21 +1,118 @@
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
+<h1> Hello, my name is Corina Feraru and i want to be a web developer.</h1>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <div>
-<img src="../../../WGC/wgc_groundwork/public/images/profile_pic.jpeg">
-	 </div>
-  <% @profile.each do |field, value| %>
-    <div class="profile-section-box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
-    </div>
-  <% end %>
 
-  <div id="stats" class="box">
+  <!--<% @profile.each do |field, value| %>
+    <div class="profile-section-box">
+      <h3><%= field %></h3>
+      <h1 class="profile-value"><%= value %></h1>
+    </div>
+  <% end %>  -->
+  <div id="general_info">
+  <div id="profile_pic">
+<img src="/images/profile_pic.jpeg" alt="My profile picture" height="200" width="150">
+	 </div>
+	 <div id='input1'>
+  <form >
+  Name:
+  	<input type="text" class='field-style' name="firstname" value="Corina">
+  	<input type="text" class='field-style' name="lasttname" value="Feraru">
+ <br>
+  Date of Birth:
+  	<input type="date" class='field-style' name="dob" value="1990-06-01">
+  	<br>
+  	Gender:
+  	<input type="text" class='field-style' name="gender" value="Female">
+  	<br>
+  	Phone number:
+  	<input type="text" class='field-style' name="phone-number" value="07552812575">
+  	<br>
+  	Employment Status:
+  	<select class='field-style' name="employed">
+  	<option>Employed
+  	<option>Unemployed
+  	<option>Self-Employed
+  	<option>Student		
+  	</select>
+  	<br>
+  	<div id='input3'>
+ 	<form>
+ 	<strong>Please tell us a bit about yourself. What's your backstory?</strong>
+		<textarea onKeyDown="textCounter(this.form.about,this.form.countDisplay);" onKeyUp="textCounter(this.form.about,this.form.countDisplay);" 
+		 class='txtStyle' name="about" maxlength='200' cols=40 rows=5 id='txt1'
+		 		onkeydown="countBoxWords('word-count');"
+		 	onkeyup="countBoxWords('word-count');" 	
+		 	onmouseout="countBoxWords('word-count');"
+		 
+		 ></textarea>
+		<br>
+		<input readonly type='text' name='countDisplay'size='3' maxlength='3' value='20'> Words remaining
+		</form>
+		<form>
+	<strong>Why do you want to apply for this program?</strong>
+	<textarea onKeyDown="textCounter(this.form.rationale,this.form.countDisplay);" onKeyUp="textCounter(this.form.rationale,this.form.countDisplay);"  class='txtStyle' name="rationale" maxlength='200' cols=40 rows=5 id='txt2'
+		onkeydown="countBoxWords('word-count');"
+		 	onkeyup="countBoxWords('word-count');"	
+		 	onmouseout="countBoxWords('word-count');"
+	></textarea>
+		<br>
+		<input readonly type='text' name='countDisplay'size='3' maxlength='3' value='20'> Words remaining
+ 	</form>
+ 			</div>
+  	
+  			</div>
+  					<div id='input2'>
+  		<form>
+ 	Email:
+  	<input type="text"  class='field-style' name="email_txt" value="corina_feer@yahoo.com">
+  	
+  	Twitter:
+  	<input type="text" class='field-style' name="email_txt" value="@CorinaFeer">
+  	<br>
+ 	GitHub:
+ 	<input type="text" class='field-style' name="email_txt" value="CorinaFer">
+ 	
+ 	GitLab:
+ 	<input type="text" class='field-style' name="email_txt" value="corina_feraru_2460">
+ 	<br>
+ 	LinkedIn account:
+ 	<input type="text"  class='field-style' name="linkedin" value="https://www.linkedin.com/in/corina-feraru">
+ 	<br>
+ 	Homepage / Blog:
+ 	<input type="text" class='field-style' name="email_txt" value="http://corinaferdesign.com">
+ 	<br>
+ 	CodeAcademy account:
+ 	<input type="text" class='field-style' name="codeacademy" value="teraCoder99829">
+ 		</form>
+			
+ 	<form>
+ 		<strong>Tell us about a programming project that you worked on and what your role was.</strong>
+		<textarea onKeyDown="textCounter(this.form.project,this.form.countDisplay);" onKeyUp="textCounter(this.form.project,this.form.countDisplay);" class='txtStyle' name="project" maxlength='200' cols=40 rows=5 id='txt3'
+				  onkeydown="countBoxWords('word-count');"
+		 	onkeyup="countBoxWords('word-count');"	
+		 	onmouseout="countBoxWords('word-count');"></textarea>
+		<br>
+		<input readonly type='text' name='countDisplay'size='3' maxlength='3' value='20'> Words remaining
+	</form>
+	<form>
+		<h2>What are your goals for the coming year when it comes to coding?</h2>
+		<textarea onKeyDown="textCounter(this.form.ambition,this.form.countDisplay);" onKeyUp="textCounter(this.form.ambition,this.form.countDisplay);" class='txtStyle' name="ambition" maxlength='200' cols=40 rows=5 id='txt4'
+			onkeydown="countBoxWords('word-count');"
+		 	onkeyup="countBoxWords('word-count');" 	
+		 	onmouseout="countBoxWords('word-count');"
+		></textarea>
+		<br>
+		<input readonly type='text' name='countDisplay'size='3' maxlength='3' value='20'> Words remaining
+ 	</form>
+ 		</div>	
+ 	</div>
+ 	
+ 	***************************************************************************************************<div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count">0</span> words found.
+    <span id="word-count">0</span>  words found.
+    
   </div>
 
   <div id="problems" class="box">
@@ -51,12 +148,28 @@
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
   console.log("I am Javascript!");
-
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
-
-  document.getElementById('word-count').innerHTML = total_words;
+	
+//count all words in the 4 textareas
+	
+ function countBoxWords(to){
+	 	var box1words = document.getElementById('txt1').value.split(' ').length-1;
+		var box2words = document.getElementById('txt2').value.split(' ').length-1;
+		var box3words = document.getElementById('txt3').value.split(' ').length-1;
+		var box4words = document.getElementById('txt4').value.split(' ').length-1;
+		document.getElementById(to).innerHTML = box1words + box2words + box3words + box4words;
+	 
+  } 
+//count minimum words inserted in every textarea
+	
+var minimumWords = 20; 
+	function textCounter(textField,showCountField){
+		if(textField.value.split(' ').length-1 > minimumWords){
+			alert('Please do not exceed 30 words');
+		}
+		else {
+			showCountField.value = minimumWords - textField.value.split(' ').length+1
+		}
+	}
+	
+  
 </script>
