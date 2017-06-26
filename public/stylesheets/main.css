@@ -14,14 +14,29 @@ body {
 
 #content {
   padding: 1em;
-	background-color:aquamarine;
+	background-color:aliceblue;
 }
 
 .box {
+  width: 500px;
+  box-shadow: #000  0 0 5px;
   border: 1px solid #999;
-  background: #FCFCFC;
+  background: aliceblue;
   padding: 1em;
   margin-bottom: 0.5em;
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-topleft:5px;
+	border-top-left-radius:5px;
+	border-bottom-right-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	-webkit-border-bottom-right-radius:5px;
+	-moz-border-radius-bottomright:5px;
+	-moz-border-radius-topright:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	margin-left: 10px;
 }
 
 .welcome {
@@ -49,7 +64,9 @@ h1{
 
 #profile_pic{
 	float: right;
-	margin-right: 30px;
+	margin-right: 2px;
+	margin-top: 10px;
+	margin-left: 20px;
 
 }
 
@@ -60,6 +77,18 @@ h1{
     padding: 15px;
     margin: 10px ;
 	float: left;
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-topleft:5px;
+	border-top-left-radius:5px;
+	border-bottom-right-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	-webkit-border-bottom-right-radius:5px;
+	-moz-border-radius-bottomright:5px;
+	-moz-border-radius-topright:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
 }
 #input2{
 	height: auto;
@@ -68,8 +97,20 @@ h1{
     padding: 15px;
     margin: 10px ;
 	float: right;
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-topleft:5px;
+	border-top-left-radius:5px;
+	border-bottom-right-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	-webkit-border-bottom-right-radius:5px;
+	-moz-border-radius-bottomright:5px;
+	-moz-border-radius-topright:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
 }
-.field-style, .txtStyle{
+.field-style{
 	-webkit-border-top-left-radius:5px;
 	-webkit-border-bottom-left-radius:5px;
 	-moz-border-radius-bottomleft:5px;
@@ -84,4 +125,25 @@ h1{
 	border-bottom-right-radius:5px;
 	font-size: 15px;
 	border: thin 1px #607771;
+}
+
+	
+
+#picSite{
+	float: right;
+	margin-top: 20px;
+	margin-right: 200px;
+	box-shadow: #000  0 0 5px;
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-topleft:5px;
+	border-top-left-radius:5px;
+	border-bottom-right-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	-webkit-border-bottom-right-radius:5px;
+	-moz-border-radius-bottomright:5px;
+	-moz-border-radius-topright:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
 }
