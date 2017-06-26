@@ -1,6 +1,6 @@
 <% if @profile %>
   <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-<h1> Hello, my name is Corina Feraru and i want to be a web developer.</h1>
+<h1> Hello! Please see below a brief description about my passion for code.</h1>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 
   <!--<% @profile.each do |field, value| %>
@@ -9,7 +9,7 @@
       <h1 class="profile-value"><%= value %></h1>
     </div>
   <% end %>  -->
-  <div id="general_info">
+  
   <div id="profile_pic">
 <img src="/images/profile_pic.jpeg" alt="My profile picture" height="200" width="150">
 	 </div>
@@ -38,9 +38,11 @@
   	<br>
   	<div id='input3'>
  	<form>
- 	<strong>Please tell us a bit about yourself. What's your backstory?</strong>
+ 	Please tell us a bit about yourself. What's your backstory?
 		<textarea onKeyDown="textCounter(this.form.about,this.form.countDisplay);" onKeyUp="textCounter(this.form.about,this.form.countDisplay);" 
-		 class='txtStyle' name="about" maxlength='200' cols=40 rows=5 id='txt1'
+		 class='field-style' name="about" maxlength='200' cols=40 rows=5 id='txt1'
+		 	value='I graduated foreign languages but i eventually discovered that my true passion is for programming languages; i have always flirted with IT.'
+		 
 		 		onkeydown="countBoxWords('word-count');"
 		 	onkeyup="countBoxWords('word-count');" 	
 		 	onmouseout="countBoxWords('word-count');"
@@ -50,8 +52,10 @@
 		<input readonly type='text' name='countDisplay'size='3' maxlength='3' value='20'> Words remaining
 		</form>
 		<form>
-	<strong>Why do you want to apply for this program?</strong>
-	<textarea onKeyDown="textCounter(this.form.rationale,this.form.countDisplay);" onKeyUp="textCounter(this.form.rationale,this.form.countDisplay);"  class='txtStyle' name="rationale" maxlength='200' cols=40 rows=5 id='txt2'
+	Why do you want to apply for this program?
+	<textarea onKeyDown="textCounter(this.form.rationale,this.form.countDisplay);" onKeyUp="textCounter(this.form.rationale,this.form.countDisplay);"  class='field-style' name="rationale" maxlength='200' cols=40 rows=5 id='txt2'
+		value='I genuinely want to make this my career, i want to learn from the best and to be surrounded by inspirational people that will make me progress and develop my skills.'
+	
 		onkeydown="countBoxWords('word-count');"
 		 	onkeyup="countBoxWords('word-count');"	
 		 	onmouseout="countBoxWords('word-count');"
@@ -82,22 +86,27 @@
  	Homepage / Blog:
  	<input type="text" class='field-style' name="email_txt" value="http://corinaferdesign.com">
  	<br>
- 	CodeAcademy account:
- 	<input type="text" class='field-style' name="codeacademy" value="teraCoder99829">
+ 	CodeAcademy:
+ 	<input type="text" class='field-style' name="codeacademy" value="teraCoder99829" size='10'>
+ 	2M Primes Sum:
+ 	<input type="text" class='field-style' name="2MPrimesCount" value="142,913,828,922" size='12'>
  		</form>
 			
  	<form>
- 		<strong>Tell us about a programming project that you worked on and what your role was.</strong>
-		<textarea onKeyDown="textCounter(this.form.project,this.form.countDisplay);" onKeyUp="textCounter(this.form.project,this.form.countDisplay);" class='txtStyle' name="project" maxlength='200' cols=40 rows=5 id='txt3'
-				  onkeydown="countBoxWords('word-count');"
+ 		Tell us about a programming project that you worked on and what your role was.
+		<textarea onKeyDown="textCounter(this.form.project,this.form.countDisplay);" onKeyUp="textCounter(this.form.project,this.form.countDisplay);" name="project" maxlength='200' cols=40 rows=5 id='txt3'class='field-style'
+			value='Please see below my website that i have created for my last years exam at a web design school in Romania. It only contains HTML and CSS and now i am working on a new site with more JS and Ruby.'
+		
+			onkeydown="countBoxWords('word-count');"
 		 	onkeyup="countBoxWords('word-count');"	
 		 	onmouseout="countBoxWords('word-count');"></textarea>
 		<br>
 		<input readonly type='text' name='countDisplay'size='3' maxlength='3' value='20'> Words remaining
 	</form>
 	<form>
-		<h2>What are your goals for the coming year when it comes to coding?</h2>
-		<textarea onKeyDown="textCounter(this.form.ambition,this.form.countDisplay);" onKeyUp="textCounter(this.form.ambition,this.form.countDisplay);" class='txtStyle' name="ambition" maxlength='200' cols=40 rows=5 id='txt4'
+		What are your goals for the coming year when it comes to coding?
+		<textarea onKeyDown="textCounter(this.form.ambition,this.form.countDisplay);" onKeyUp="textCounter(this.form.ambition,this.form.countDisplay);"  name="ambition" maxlength='200' cols=40 rows=5 id='txt4'class='field-style'
+			value='I want to get to easily manage JS, Ruby, PHP and SQL, to be able to complete a project by myself from scratch, to use my creativity and to get hired as a junior developer.'
 			onkeydown="countBoxWords('word-count');"
 		 	onkeyup="countBoxWords('word-count');" 	
 		 	onmouseout="countBoxWords('word-count');"
@@ -106,9 +115,16 @@
 		<input readonly type='text' name='countDisplay'size='3' maxlength='3' value='20'> Words remaining
  	</form>
  		</div>	
- 	</div>
- 	
- 	***************************************************************************************************<div id="stats" class="box">
+ 	***************************************JS and Ruby *****************************************
+   	<div id='picSite'>
+   	<h1>Please see here my humble website</h1>
+   
+  		<a href='http://corinaferdesign.com/index.html'> <img id='siteScrnshot' src="/images/websiteCorina.jpg" height="250" width="500" /> </a>
+  					</div>
+  					
+  					
+   <div id='theThreeBoxes'>
+   <div id="stats" class="box">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span>  words found.
@@ -134,8 +150,10 @@
 
         <input type="submit" value="Update Profile" class="btn btn-primary" />
       </fieldset>
-    </form>
-  </div>
+    	</form>
+  			</div>
+  				</div>
+  
 <% else %>
   <div class="welcome">
     <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
@@ -149,7 +167,7 @@
 <script language="javascript">
   console.log("I am Javascript!");
 	
-//count all words in the 4 textareas
+//count all words in the 4 textareas i tried to do it by Class instead of ID but it did not work
 	
  function countBoxWords(to){
 	 	var box1words = document.getElementById('txt1').value.split(' ').length-1;
