@@ -6,6 +6,10 @@ prime_array = Prime.take_while{|p| p < 100}
 total_count = prime_array.inject{|sum,items| sum + items}
 p total_count
 	  
-    "The result is 1060"
+	  second_array = Prime.take_while {|q| q < 2000000 }
+millions_count = second_array.inject {|amount,digits| amount + digits }
+p millions_count
+	  
+    "The results are 1,060 and 142,913,828,922"
   end
 end
