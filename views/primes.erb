@@ -1,7 +1,82 @@
-<h1>Prime Numbers</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>We Got Coders - My Amazing Application</title>
+  <link rel="stylesheet" 
+  type="text/css"
+  href="public\stylesheets\reset.css"/>
 
-Sum : <%= @sum %>
+
+  <link rel="stylesheet" 
+  type="text/css" 
+  href="../public/stylesheets/main.css"/>
+
+<header>
+   <a href="https://www.wegotcoders.com/courses"> <img src="public\images\logo.png"></a>
+<a href="https://www.linkedin.com/in/tudor-dan-petrescu-84b72660/"> <img src="public\images\picture.jpg" align="left" height="110" width="150">
+
+<a href="mypage.erb" align="center">2nd Page</a>
+
+</header>
+
+
+</head>
+
+
+<body>
+
+<h3>Sum: </h3>
+
+<iframe class="center fit" src="https://codepad.remoteinterview.io/QAHSPRFRXO" width="768" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" language="JavaScript">
+  function set_body_height() { // set body height = window height
+    $('body').height($(window).height());
+  }
+  $(document).ready(function() {
+    $(window).bind('resize', set_body_height);
+    set_body_height();
+  });
+</script>
+
 
 <div>
-  <a href="/">Back</a>
+  <h3><a href="index.erb">Back</a></h3>
 </div>
+
+
+
+<!--
+
+require 'cgi'
+require 'prime'
+array_of_primes = []
+start_time = Time.now
+(1..100).each do |n|
+    if Prime.prime?(n)
+        array_of_primes << n
+    end
+end
+
+answer = array_of_primes.inject(:+)
+duration = Time.now - start_time
+
+puts "Sum of primes below #{100} is #{answer}. Took #{duration} s to calculate using my Ruby's Prime.prime? method." 
+
+I found the code online, and i have tried to integrate it into the html. The only way i could figure was to integrate an iframe with a ruby compiler. I would have made it work, but i did not wanted to submitt too late.
+
+//-->
+
+
+
+
+    <footer>Tudor-Dan Petrescu</footer>
+
+</body>
