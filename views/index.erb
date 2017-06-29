@@ -1,188 +1,234 @@
 <% if @profile %>
+    
+  
 
-<img class="pic" src="/images/UNADJUSTEDNONRAW_thumb_3b9.jpg">
-		
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+    <div class="bg-img"></div>
+    
+    <div id="topbar">
+    
+        <img id="logo" src="images/logo.png">
+        <h3 id="title"><%= @profile["first_name"] %>'s Amazing Profile</h3>
+    
+    </div>
+        
+    <div id="contact_banner"><h4>Contact</h4></div>
+        
+    <div id="contact_menu-bar">
+        
+        <ul>
+            <li>Phone
+                <ul>    
+                    <li><%=@profile["phone_number"]%></li>
+                </ul>
+            </li>
+            <li>Email
+                <ul>    
+                    <li>michaelconstantinou330@gmail.com</li>
+                </ul>
+            </li>
+            <li>Twitter
+                <ul>    
+                    <li>@MichaConstantin</li>
+                </ul>
+            </li>
+            <li>Git Hub
+                <ul>    
+                    <li><%=@profile["github"]%></li>
+                </ul>
+            </li>
+            <li>Codecademy
+                <ul>    
+                    <li id="contact_codecademy">Michael Constantinou</li>
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+ 
+    <img id="pic" src="images/mic_pic.png"> 
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <div class="left">
-	<table border="2px">
-		<thead>
-			<tr>
-				
-				<th colspan="2"><strong>Personal Details</strong></th>
-			</tr>
-		</thead>
-		<tbody>
-				<tr>
-					<td>First Name</td>
-					<td><%=@profile["first_name"]%></td>
-				</tr>
-				<tr>
-					<td>Last Name</td>
-					<td><%=@profile["last_name"]%></td>
-				</tr>
-				<tr>
-					<td>Date of Birth</td>
-					<td><%=@profile["dob"]%></td>
-				</tr>
-				<tr>
-					<td>Employment Status</td>
-					<td><%=@profile["employment_status"]%></td>
-				</tr>
-				<tr>
-					<td>Student Number</td>
-					<td><%=@profile["id"]%></td>
-				</tr>
-		</tbody>
+    <table border="2px">
+                <thead>
+                    <tr>
+                        <th colspan="2"><strong>Personal Details</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>First Name</td>
+                            <td><%=@profile["first_name"]%></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td><%=@profile["last_name"]%></td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth</td>
+                            <td><%=@profile["dob"]%></td>
+                        </tr>
+                        <tr>
+                            <td>Employment Status</td>
+                            <td><%=@profile["employment_status"]%></td>
+                        </tr>
+                        <tr>
+                            <td>Student Number</td>
+                            <td><%=@profile["id"]%></td>
+                        </tr>
+                </tbody>
 
-	</table>
-  </div>
-      <div class="right">
-	<table border="2px">
-		<thead>
-			<tr>
-				<th colspan="2"><strong>Contact and Profile Details</strong></th>
-			</tr>
-		</thead>
-		<tbody>
-				<tr>
-					<td>Phone Number</td>
-					<td><%=@profile["phone_number"]%></td>
-				</tr>
-				<tr>
-					<td>Email</td>
-					<td>michaelconstantinou330@gmail.com</td>
-				</tr>
-				<tr>
-					<td>Twitter</td>
-					<td>@MichaConstantin</td>
-				</tr>
-				<tr>
-					<td>Git Hub</td>
-					<td><%=@profile["github"]%></td>
-				</tr>
-				<tr>
-					<td>Codecademy</td>
-					<td>Michael Constantinou</td>
-				</tr>
-				</tr>
-		</tbody>
-
-	</table>
-  </div>
-
-<div class="profile">
-  <!-- Not sure what I did it, but  profile data is not posting anymore-->
-	<ul>
-		<li><h4>About</h4></li>
-			<br/>
-			<ul>
-				<li><%= @profile["about"]%></li>
-			</ul>
-		<br/>
-			<li><h4>Projects</h4></li>
-		<br/>
-			<ul>
-				<li><%= @profile["projects"]%></li>
-			</ul>
-		<br/>
-			<li><h4>Rationale</h4></li>
-		<br/>
-			<ul>
-				<li><%= @profile["rationale"]%></li>
-			</ul>
-		<br/>
-			<li><h4>Ambition</h4></li>
-			<ul>
-		<br/>
-				<li><%= @profile["ambition"]%></li>
-		<br/>
-			</ul>
-		<br/>
-			<li><h4>Learning Experience</h4></li>
-		<br/>
-			<ul>
-				<li><%= @profile["learning_experience"]%></li>
-			</ul>
-	</ul>
+      </table>
 
 
-</div>
+        <div class="profile">
 
-  <div id="stats" class="box">
-    <h3>Stats</h3>
-    <!-- TODO - Set the contents of this span with JavaScript -->
-    <span id="word-count"><script language="javascript"></script></span> words found.
-  </div>
+            <ul>
+                <li><h4>About</h4>
+                   
+                    <ul>
+                        <li id="profile_about_text" class="profile_value"><%= @profile["about"]%></li>
+                    </ul>
+                </li>
+                
+                <li><h4>Projects</h4>
+                
+                    <ul>
+                        <li id="profile_projects_text" class="profile_value"><%= @profile["projects"]%></li>
+                    </ul>
+                </li>
+                
+                <li><h4>Rationale</h4>
+               
+                    <ul>
+                        <li id="profile_rationale_text" class="profile_value"><%= @profile["rationale"]%></li>
+                    </ul>
+                </li>
+               
+                <li><h4>Ambition</h4>
+                    <ul>
+                
+                        <li id="profile_ambition_text" class="profile_value"><%= @profile["ambition"]%></li>
+               
+                    </ul>
+                </li>
+                
+                <li><h4>Learning Experience</h4>
+               
+                    <ul>
+                        <li id="profile_learning_text" class="profile_value"><%= @profile["learning_experience"]%></li>
+                    </ul>
+                </li>
+            </ul>
 
-  <div id="problems" class="box">
-    <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
-  </div>
+        </div>
 
-  <div class="box">
-    <h3>Edit Profile</h3>
+        
+        <div id="stats" class="box">
 
-    <form action="/update" method="POST">
-      <fieldset>
-        <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+            <h3>Stats</h3>
+            <!-- TODO - Set the contents of this span with JavaScript -->
+            <span id="word-count"><script language="javascript"></script></span> words found.
+            
+        </div>
+        
+         
+        <div id="problems" class="box">
 
-        <!-- TODO - Add more fields so that your profile can be edited -->
-	<label for="trainee[projects]">Projects</label>
-       <input type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
-	<label for="trainee[rationale]">Rationale</label>
-        <input type="text" name="trainee[rationale]" value="<%= @profile["rationale"] 	%>"/>
-	<label for="trainee[ambition]">Ambition</label>
-          <input type="text" name="trainee[ambition]" value="<%= @profile["ambition"] 	%>"/>
-	<label for="trainee[learning_experience]">Learning Experience</label>
-          <input type="text" name="trainee[learning_experience]" value="<%= 		@profile["learning_experience"] %>"/>
-	<label for="trainee[codecademy_account]">Codecademy Account</label>
-          <input type="text" name="trainee[codecademy_account]" value="<%= 		@profile["learning_experience"] %>"/>
+            <h3>Programming Problems</h3>
+            <a href="/primes">My Prime Number Solution</a>
 
-	 </div>
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
-      </fieldset>
-    </form>
-  </div>
-<% else %>
-  <div class="welcome">
-    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+        </div>
 
-    <a href="/authorise">Authorise</a>
-  </div>
-<% end %>
+        
+        <div id="edit" class="box">
+            
+            <h3>Edit Profile</h3>
 
+            <form action="/update" method="POST">
 
-<!-- Add your Javascript to this script tag -->
-<script language="javascript">
-  console.log("I am Javascript!");
-
-  var profile_values = document.getElementsByClassName('profile-value');
-
-function textCount(text) {
-	var count=1;
-	for (var i=0;  i<text.length; i++){
-	if (text[i] === " ") {
-	count++;
-	}
-}
-	if (count < 20) {
-           confirm("Field should contain a mininimum of twenty words.")
-	    }
-	    else  {
-			return count;
-	}
-return textCount(profile_values) = total_words;
-
-  //The function is good but am struggling to display the answer on my profile
-
-  // TODO - Count the number of words in the profile.
-  // hint - look at what the innerHTML property provides.
+              <fieldset>
 
 
-  document.getElementById('word-count').innerHTML = total_words;
-}
-</script>
+                <div class="form-group">
+
+                    <label for="trainee_about">About</label>
+                    <input id="trainee_about" type="text" name="trainee[about]" value="test2"/>
+
+                <!-- TODO - Add more fields so that your profile can be edited -->
+
+                   <label for="trainee_projects">Projects</label>
+                    <input id="trainee_projects" type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+
+                   <label for="trainee_rationale">Rationale</label>
+                    <input id="trainee_rationale" type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+
+                   <label for="trainee[ambition]">Ambition</label>
+                    <input id="trainee_ambition" type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+
+                   <label for="trainee[learning_experience]">Learning Experience</label>
+                    <input id="trainee_learning_exp" type="text" name="trainee[learning_experience]" value="<%= @profile["learning_experience"] %>"/>
+
+                   <label for="trainee[codecademy_account]">Codecademy Account</label>
+                    <input id="trainee_codecademy_account" type="text" name="trainee[codecademy_account]" value="Michael Constantinou"/>
+
+             </div>
+
+                <input type="submit" value="Update Profile" Id="update_button" onclick="update_profile();"/>
+                  
+                <script language="javascript">
+                    
+                          function update_profile() {
+
+                              document.getElementById("profile_about_text").innerHTML = document.getElementById("trainee_about").value;	
+                              document.getElementById("profile_projects_text").innerHTML = document.getElementById("trainee_projects").value;
+                              document.getElementById("profile_rationale_text").innerHTML = document.getElementById("trainee_rationale").value;	
+                              document.getElementById("profile_ambition_text").innerHTML = document.getElementById("trainee_ambition").value;
+                              document.getElementById("profile_learning_text").innerHTML = document.getElementById("trainee_learning_exp").value;	
+                              document.getElementById("contact_codecademy").innerHTML = document.getElementById("trainee_codecademy_account").value;			           
+		  }
+                    
+                </script>
+
+            </fieldset>
+
+          </form>
+
+        </div>
+        
+         <!-- Add your Javascript to this script tag -->
+        <script language="javascript">
+            
+        // TODO - Count the number of words in the profile.
+        // hint - look at what the innerHTML property provides.
+            
+            console.log("I am Javascript!");
+
+            var profile_values = document.getElementsByClassName("profile_value");
+        
+            var total_words = 0;
+            
+            for (var i =0; i < profile_values.length; i++){
+                
+            total_words = total_words + profile_values[i].innerHTML.split(" ").length;
+            
+            };
+        
+            document.getElementById("word-count").innerHTML = total_words;
+            
+        </script>
+
+
+        <% else %>
+
+          <div id="welcome">
+            <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
+
+            <a href="/authorise">Authorise</a>
+
+          </div>
+        <% end %>
+        
+    
+        
+
+
+
