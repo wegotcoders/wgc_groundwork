@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>We Got Coders - My Amazing Application</title>
+  <link rel="stylesheet" 
+  type="text/css"
+  href="public\stylesheets\reset.css"/>
+
+
+  <link rel="stylesheet" 
+  type="text/css" 
+  href="public\stylesheets\main.css"/>
+
+<header>
+  <a href="https://www.wegotcoders.com/courses"> <img src="public\images\logo.png"></a>
+<a href="https://www.linkedin.com/in/tudor-dan-petrescu-84b72660/"> <img src="public\images\picture.jpg" align="left" height="110" width="150">
+
+<a href="index.erb" align="center">1st Page</a>
+
+</header>
+
+
+
+</head>
+
+
+<body>
+
+<a href="https://www.codecademy.com/cowmilkscow"> <img class="center fit" src="public\images\codecademy.png"></a>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" language="JavaScript">
+  function set_body_height() { // set body height = window height
+    $('body').height($(window).height());
+  }
+  $(document).ready(function() {
+    $(window).bind('resize', set_body_height);
+    set_body_height();
+  });
+</script>
+
+
+
+
+</br>
+
+<button onclick="myFunction1()">What is your name?</button>
+
+<p id="demo1"></p>
+
+<script>
+function myFunction1() {
+    var person = prompt("Please enter your name, mine is Tudor!", "Name");
+    if (person != null) {
+        document.getElementById("demo1").innerHTML =
+        "Hello " + person + "! How are you today?";
+    }
+}
+
+</script>
+
+</br>
+
+
+<button onclick="myFunction()">Tell me, how?</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var text;
+    var favDrink = prompt("How are you today?", "Fine");
+    switch(favDrink) {
+        case "sad":
+        text = "Do not worry, it is just one day!";
+        break;
+    case "Fine":
+        text = "That is great!";
+        break;
+        case "happy":
+        text = "Really? That sounds amasing!";
+        break;
+        default:
+        text = "You are special!";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+
+
+</script>
+</br>
+  <footer>Tudor-Dan Petrescu</footer>
+
+</body>

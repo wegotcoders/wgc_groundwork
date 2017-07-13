@@ -1,13 +1,188 @@
-<% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>We Got Coders - My Amazing Application</title>
+  <link rel="stylesheet" 
+  type="text/css"
+  href="public\stylesheets\reset.css"/>
+
+
+  <link rel="stylesheet" 
+  type="text/css" 
+  href="public\stylesheets\main.css"/>
+
+
+
+<script type="text/javascript">
+
+function countWords(){
+  s = document.getElementById("inputString").value;
+  s = s.replace(/(^\s*)|(\s*$)/gi,"");
+  s = s.replace(/[ ]{2,}/gi," ");
+  s = s.replace(/\n /,"\n");
+  document.getElementById("wordcount").value = s.split(' ').length;
+}
+</script>
+
+
+</head>
+
+
+<body>
+
+
+<header>
+   <a href="https://www.wegotcoders.com/courses"> <img src="public\images\logo.png"> </a>
+<a href="https://www.linkedin.com/in/tudor-dan-petrescu-84b72660/"> <img src="public\images\picture.jpg" align="left" height="110" width="150"> </a>
+
+<strong align="center"><a href="mypage.erb" align="center">2nd Page</strong>
+
+</header>
+  
+<h3><a href="https://www.youtube.com/watch?v=tRFHXMQP-QU">Tudor-Dan's Supercalifragilisticexpialidocious Profile</a></h3>
+
+ </br>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d19702.199099085192!2d-0.3938307!3d51.883321599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1498257236740" width="400" height="200" frameborder="0" style="border:0" align="right" allowfullscreen></iframe>
+
+<div class="profile-section">
+
+  <p>ID: <strong class="profile-value">2976</strong> </p>
+    </div> </td>
+
+<div class="profile-section">
+    <p>Email: <strong class="profile-value">tudordanp@gmail.com</strong></p>
     </div>
-  <% end %>
+      
+<div class="profile-section">
+    <p>First name: <strong class="profile-value">Tudor-Dan</strong></p>
+     
+    </div>
+  
+    <div class="profile-section">
+      <h4>Last name: <strong class="profile-value">Petrescu</strong></h4>
+      </div>
+  
+    <div class="profile-section">
+      <h4>Phone number: <strong class="profile-value">07496093640</strong></h4>
+      </div>
+  
+    <div class="profile-section">
+      <h4>Gender:  <strong class="profile-value">Male</strong> </h4>
+     
+    </div>
+ 
+    <div class="profile-section">
+      <h4>DOB: <strong class="profile-value"><select>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+</select>
+<select>
+  <option value="September">September</option>
+  <option value="October">October</option>
+  <option value="November">November</option>
+  <option value="December">December</option>
+</select>
+<select>
+  <option value="1988">1988</option>
+  <option value="1989">1989</option>
+  <option value="1990">1990</option>
+  <option value="1991">1991</option>
+</select>
+</strong></h4>
+      
+    </div>
+  
+    <div class="profile-section">
+      <h4>Twitter: <strong class="profile-value">cowilkscow</strong></h4>
+      
+    </div>
+  
+    <div class="profile-section">
+      <h4>Github:  <strong class="profile-value">cowmilkscow</strong></h4>
+     
+    </div>
+  
+    <div class="profile-section">
+      <h4>Nickname: <strong class="profile-value">MotherBoard</srtong></h4>
+      
+    </div>
+    
+</div>
+
+
+</br>
+<div class="newspaper">
+<div class="profile-section">
+      <h3>About Me:</h3>
+        <strong class="profile-value">My name is Tudor-Dan Petrescu. I am the kind of a person that continuously challenges himself. Whenever I feel that I am stuck in my comfort zone, I try to run from it. I am always looking for ways to improve and develop myself in order to never stop growing as a person and as a professional. I have studied marketing because of my creative side, believing that this will be a good way of putting my aptitudes in value, and I was right. Before leaving Romania to study an MSc in Uk, I had my own advertising company and had been in charge of another company helping it grow and develop in a profitable business. I love writing, being in nature, honesty, and reality. </strong>
+     </div>
+    </div>
+  </br>
+  <div class="newspaper">
+    <div class="profile-section">
+      <h3>Projects:</h3>
+      <strong class="profile-value">I have done a C++ course that helped me understand better what coding is about. I have done a few websites in HTML and a bit of javascript. My best experience with a programming project, was before I knew too much about it, I gave a solution to the IT department while they were developing a web app and got stuck. I can say that was the point when I discovered that I want to know more about the subject. </strong>
+      </div>
+    </div>
+  </br>
+  <div class="newspaper">
+    <div class="profile-section">
+      <h3>Rationale:</h3>
+        <strong class="profile-value">I found my passion for programming when I was doing HTML web pages, but they were too simple and I tried to look a bit in Javascript. What made me so interested was the challenge of understanding how things are created in machine language, and how it works, from code to reality. I want to apply to this program because I think I can combine what I have studied with programming and all my experience will help me, master this domain in time. I find it extremely interesting and addictive to read, understand and write code, and because this will be a structured way of learning what I want. </strong>
+      </div>
+    </div>
+  </br>
+  <div class="newspaper">
+    <div class="profile-section">
+      <h3>Ambition:</h3>
+        <strong class="profile-value">I want to improve and enrich my knowledge in order to be able to put my creativity to a good use. I want to be able to create web applications. To have a better understanding of programming languages, other than C++. I want to understand databases better, and how to work with them. </strong>
+      
+    </div>
+</div>
+  </br>
+    <div class="newspaper">
+
+<div class="profile-section">
+      
+  <h3>Learning experience: </h3> 
+  <strong>Having a nice environment with people that are willing to share their experience and knowledge. 
+Working on various assignments in teams, in order to have a better understanding of the learning material.
+Plenty examples from practical applications of the things we learn.</strong>
+
+       
+    </div>
+</div>
+  </br>
+   
+<div>
+<div class="profile-section">
+
+  <h3>How did you hear:</h3> 
+  <strong class="profile-value">From a friend, that found the ad through the university job site.</Strong>
+
+</div>
+</br>
+ <form name="form1" method="post" action="">
+      <h3> How about the future?</h3>
+  <textarea name="inputString" id="inputString" cols="70" rows="7"> Mix me, steer my sight because only you can make my blood move in the rythm of your heart beat. Complicate my world with just a touch of faith, when I can not hold my thougths in chains of peace and make me feel the all in the nothing, and do that like an ordinary thing. Drops of water will never look just like rain because you rewrite the normal and make the natural surreal, making the story look like a fairytale with real people. </textarea>
+    </br>
+    <input type="button" name="Convert" value="Count Words" onClick="countWords();"> 
+<input name="wordcount" id="wordcount" type="text" value="" size="6">
+</form>
+</br>
+
+<div class="profile-section box">
+      <h3>Primes sum</h3>
+      <p class="profile-value">1060</p>
+    </div>
+  
 
   <div id="stats" class="box">
     <h3>Stats</h3>
@@ -15,9 +190,10 @@
     <span id="word-count">0</span> words found.
   </div>
 
+
   <div id="problems" class="box">
     <h3>Programming Problems</h3>
-    <a href="/primes">My Prime Number Solution</a>
+    <a href="primes.erb">My Prime Number Solution is 1060</a>
   </div>
 
   <div class="box">
@@ -27,7 +203,7 @@
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <input type="text" name="trainee[about]" value="My name is Tudor-Dan Petrescu. I am the kind of a person that continuously challenges himself. Whenever I feel that I am stuck in my comfort zone, I try to run from it. I am always looking for ways to improve and develop myself in order to never stop growing as a person and as a professional. I have studied marketing because of my creative side, believing that this will be a good way of putting my aptitudes in value, and I was right. Before leaving Romania to study an MSc in Uk, I had my own advertising company and had been in charge of another company helping it grow and develop in a profitable business. I love writing, being in nature, honesty, and reality."/>
         </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
@@ -36,13 +212,9 @@
       </fieldset>
     </form>
   </div>
-<% else %>
-  <div class="welcome">
-    <p>Welcome! Once you have updated the OAuth tokens, the link below will fetch your profile information.</p>
 
-    <a href="/authorise">Authorise</a>
-  </div>
-<% end %>
+</br>
+   
 
 
 <!-- Add your Javascript to this script tag -->
@@ -55,5 +227,18 @@
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
-  document.getElementById('word-count').innerHTML = total_words;
+ document.getElementById('word-count').innerHTML = total_words;
 </script>
+  </div>
+
+
+
+
+<footer>Tudor-Dan Petrescu</footer>
+
+
+</body>
+
+
+
+</html>
