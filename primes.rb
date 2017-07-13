@@ -2,21 +2,32 @@ class Primes
   def self.sum_to(limit = 100)
     # TODO - add your prime number solution here...
 
-    require 'cgi'
-require 'prime'
-array_of_primes = []
-start_time = Time.now
-(1..100).each do |n|
-    if Prime.prime?(n)
-        array_of_primes << n
-    end
-end
+num = 1 
+last = 100
+primes = []
 
-answer = array_of_primes.inject(:+)
-duration = Time.now - start_time
+while (num <= last)
+  condition = true
+  x = 2
+  
+  while (x <= num / 2)
+    if (num % x == 0)
+      condition = false
+      break
+    end 
 
-puts "Sum of primes below #{100} is #{answer}. Took #{duration} s to calculate using my Ruby's Prime.prime? method." 
+    x = x + 1  
 
-    "I'm working on it!"
   end
+  
+  if condition && num > 1    
+    
+      primes << num
+       
+  end
+   
+  num = num + 1
+  
 end
+
+print primes.inject(:+)
