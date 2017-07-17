@@ -7,31 +7,41 @@ body {
 
 #logo {
   text-align: center;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  background: white;
+  z-index: 10;
 }
 
 #content {
   padding: 1em;
   background: #a5784d url("/images/woodfloor.jpg") no-repeat fixed center;
-  
+  margin-top: 30px;
 }
 
 .box {
-  border: 1px solid #999;
-  background: #FCFCFC;
+  /*border: 1px solid #999;
+  background: #FCFCFC;*/
   padding: 1em;
   margin-bottom: 0.5em;
+  /*added*/	
+  border-radius: 25px;
+  background-color: #ffffff;
+  opacity: 0.6;
 }
 
 .welcome {
   text-align: center;
 }
 
+
 h3 {
   font-size: 2em;
   text-align: center;
-  /*color: #333;*/
-  color: /*#7c5e39*/ #513d23;
+  color:#513d23;
   text-shadow: #333 2px 1px 0px;
+  margin-top: 70px;
 }
 
 .error {
@@ -48,6 +58,19 @@ h3 {
     background-color: yellow;
 }
 
+div h4 {
+    text-transform: uppercase;
+    font-family: courier;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.profile-value {
+    text-transform: capitalize;
+    font-family: arial;
+    font-size: 1em;
+}
+
 #stats {
     background-color: lightblue;
 }
@@ -58,8 +81,7 @@ h3 {
 
 
 .box {
-    background-color: #ffffff;
-    opacity: 0.6;
+
 }
 
 .form-group {
