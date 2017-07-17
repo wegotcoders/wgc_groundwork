@@ -11,6 +11,8 @@ body {
 
 #content {
   padding: 1em;
+  background: #a5784d url("/images/woodfloor.jpg") no-repeat fixed center;
+  
 }
 
 .box {
@@ -25,7 +27,11 @@ body {
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 2em;
+  text-align: center;
+  /*color: #333;*/
+  color: /*#7c5e39*/ #513d23;
+  text-shadow: #333 2px 1px 0px;
 }
 
 .error {
@@ -52,7 +58,8 @@ h3 {
 
 
 .box {
-    background-color: green;
+    background-color: #ffffff;
+    opacity: 0.6;
 }
 
 .form-group {
