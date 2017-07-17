@@ -37,3 +37,28 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+.profile-section box {
+    background-color: yellow;
+}
+
+#stats {
+    background-color: lightblue;
+}
+
+#problems {
+    background-color: red;
+}
+
+
+.box {
+    background-color: green;
+}
+
+.form-group {
+    background-color: black;
+}
+
+.welcome {
+    background-color: #f49b42;
+}
