@@ -7,6 +7,7 @@ body {
 
 #logo {
   text-align: center;
+  /*added*/
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
@@ -16,8 +17,11 @@ body {
 
 #content {
   padding: 1em;
+  /*added*/
   background: #a5784d url("/images/woodfloor.jpg") no-repeat fixed center;
   margin-top: 30px;
+  margin-left: 50px; /*added*/	
+  margin-right: 50px;  
 }
 
 .box {
@@ -29,6 +33,7 @@ body {
   border-radius: 25px;
   background-color: #ffffff;
   opacity: 0.6;
+  overflow: hidden;
 }
 
 .welcome {
@@ -39,9 +44,11 @@ body {
 h3 {
   font-size: 2em;
   text-align: center;
-  color:#513d23;
+  color:#513d23; /*modified*/
+  /*added*/
   text-shadow: #333 2px 1px 0px;
   margin-top: 70px;
+  margin-bottom: 30px;
 }
 
 .error {
@@ -54,8 +61,10 @@ h3 {
 
 /* TODO - Add your own styles here */
 
+
 .profile-section box {
-    background-color: yellow;
+    background-color: yellow; 
+
 }
 
 div h4 {
@@ -66,9 +75,23 @@ div h4 {
 }
 
 .profile-value {
-    text-transform: capitalize;
     font-family: arial;
     font-size: 1em;
+    columns: 100px 2;
+    
+}
+#profilePicDiv {
+    width: 300px;
+    float:left; /* add this */
+    height:auto;
+    margin-right: 30px;
+    transform: rotate(-7deg);
+}
+
+#profilePic{
+    width:auto;
+    height:auto;
+    border: 10px solid white; 
 }
 
 #stats {
@@ -77,11 +100,6 @@ div h4 {
 
 #problems {
     background-color: red;
-}
-
-
-.box {
-
 }
 
 .form-group {

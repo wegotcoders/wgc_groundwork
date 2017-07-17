@@ -2,13 +2,17 @@
   <h3 class="header"><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  
-  <% @profile.each do |field, value| %>
+
+    <div id="profilePicDiv">
+    <img id="profilePic" src="/images/joe.png" alt="Joe's pic">
+    </div>
+    <% @profile.each do |field, value| %>
     <div class="profile-section box">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
   <% end %>
+  
 
   <div id="stats" class="box">
     <h3>Stats</h3>
