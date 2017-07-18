@@ -39,6 +39,10 @@ body {
 
 .welcome {
   text-align: center;
+  margin-top: 70px;
+  margin-left: 50px; /*added*/	
+  margin-right: 50px;  
+  background: none;
 }
 
 
@@ -61,6 +65,10 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+#authorize {
+  z-index: 10;
+  margin-bottom: 100px;
+}
 
 .boxFullWidth {  
   padding: 1em;
@@ -107,4 +115,5 @@ div h4 {
     float: left;
     margin: 0px 5px 5px 5px;
     height:20px;
+
 }
