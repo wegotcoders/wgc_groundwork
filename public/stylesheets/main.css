@@ -60,7 +60,9 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
-
+.header {
+    border-radius: 10px;
+}
 
 .profile-section box {
     background-color: yellow; 
@@ -78,8 +80,8 @@ div h4 {
     font-family: arial;
     font-size: 1em;
     columns: 100px 2;
-    
 }
+
 #profilePicDiv {
     width: 300px;
     float:left; /* add this */
@@ -88,24 +90,15 @@ div h4 {
     transform: rotate(-7deg);
 }
 
-#profilePic{
+#profilePic {
     width:auto;
     height:auto;
     border: 10px solid white; 
 }
 
-#stats {
-    background-color: lightblue;
-}
-
-#problems {
-    background-color: red;
-}
-
-.form-group {
-    background-color: black;
-}
-
-.welcome {
-    background-color: #f49b42;
+.inputBox{
+    width: 100%;
+    float: left;
+    margin: 0px 5px 5px 5px;
+    height:20px;
 }
