@@ -34,6 +34,7 @@ body {
   background-color: #ffffff;
   opacity: 0.6;
   overflow: hidden;
+  display: inline-block;
 }
 
 .welcome {
@@ -60,6 +61,18 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+
+.boxFullWidth {  
+  padding: 1em;
+  margin-bottom: 0.5em;
+  border-radius: 25px;
+  background-color: #ffffff;
+  opacity: 0.6;
+  overflow: hidden;
+  display: inline-block;
+  width: 97%;
+}
+
 .header {
     border-radius: 10px;
 }
@@ -86,7 +99,8 @@ div h4 {
     width: 300px;
     float:left; /* add this */
     height:auto;
-    margin-right: 30px;
+    margin-right: 20px;
+    margin-bottom: 30px;
     transform: rotate(-7deg);
 }
 

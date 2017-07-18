@@ -14,18 +14,18 @@
   <% end %>
   
 
-  <div id="stats" class="box">
+  <div id="stats" class="boxFullWidth">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
 
-  <div id="problems" class="box">
+  <div id="problems" class="boxFullWidth">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
-  <div class="box">
+  <div class="boxFullWidth">
     <h3>Edit Profile</h3>
 
     <form action="/update" method="POST">
@@ -63,6 +63,11 @@
         <div class="form-group">
           <label for="trainee[dob]">DOB</label>
           <input class="inputBox" type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>    
+	</div>
+
+        <div class="form-group">
+          <label for="trainee[homepage]">Homepage</label>
+          <input class="inputBox" type="text" name="trainee[homepage]" value="<%= @profile["homepage"] %>"/>    
 	</div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
