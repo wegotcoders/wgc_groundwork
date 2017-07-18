@@ -1,4 +1,4 @@
-
+<% if @profile %>
 <section>
   <div class="container container-main">
     <img src="/images/profile.png" class="profile-img">
@@ -34,6 +34,7 @@
           <li><img src="images/facebook.png"> Facebook<span>facebook.com/johndoe</span></li>
           <li><img src="images/github.png"> Github<span><strong><%= @profile["github"] %></strong></span></li>
           <li><img src="images/twitter.png"> Twitter <span><strong><%= @profile["tiwitter"] %></strong></span></li>
+          <li><img src="images/twitter.png"> CodeCadmey <span><strong><%= @profile["codecademy"] %></strong></span></li>
         </ul>
       </div>
     </div>
@@ -41,34 +42,70 @@
     <div class="row">
 
       <div class="col-md-7">
-        <h2># Learning Experience</h2>
+        <h2># WGC Profile(<a href="/edit"><code class="small">Edit</code></a>)</h2>
         <div class="media">
           <div class="media-left">
-            2016 - 2017
+            Oct - 2017
           </div>
           <div class="media-body">
-            <h4 class="media-heading">Goals</h4>
-            <p><%= @profile["ambition"] %></p>
+            <h4 class="media-heading">Ambition</h4>
+            <p id="ambition"><%= @profile["ambition"] %></p>
           </div>
         </div>
         <div class="media">
           <div class="media-left">
-            2016 - 2017
+            Oct - 2017
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Learning Dynamics</h4>
+            <p><%= @profile["learning_experience"] %></p>
+          </div>
+        </div>
+        <div class="media">
+          <div class="media-left">
+            Oct - 2017
           </div>
           <div class="media-body">
             <h4 class="media-heading">Self Motivated Work</h4>
             <p><%= @profile["projects"] %></p>
           </div>
+
         </div>
         <div class="media">
           <div class="media-left">
-            2016 - 2017
+            Oct - 2017
           </div>
           <div class="media-body">
             <h4 class="media-heading">Why WGC </h4>
             <p><%= @profile["rationale"] %></p>
           </div>
+          <div class="media-body">
+              <h4 class="media-heading">How did I find WGC? </h4>
+              <p><%= @profile["how_did_you_hear"] %></p>
+            </div>
+
         </div>
+
+        <div class="media">
+          <div class="media-left">
+            Oct - 2017
+          </div>
+          <div class="media-body">
+            <h3>Programming Problems</h3>
+            <a href="/primes">My Prime Number Solution</a>
+          </div>
+        </div>
+        <div class="media">
+          <div class="media-left">
+            Oct - 2017
+          </div>
+          <div class="media-body">
+            <h3>Stats</h3>
+            <!-- TODO - Set the contents of this span with JavaScript -->
+            <span id="word-count">0</span> words found in Ambition section.
+          </div>
+        </div>
+
       </div>
 
       <div class="col-md-5">
@@ -87,7 +124,7 @@
           <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 90%;">
             Ruby on Rails
           </div>
-        </div>    
+        </div>
       </div>
     </div>
 </div>
@@ -98,11 +135,30 @@
     <p>Copyright &copy; 2017, Tahir Raza</p>
   </div>
 </footer>
+<% else %>
+<div class="welcome">
+<p>Authorise   to retrive your profile </p>
+<a href="/authorise">Authorise</a>
 
-  <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="box">
-      <h4><%= field %></h4>
-      <p><%= value %></p>
-    </div>
-    <% end %>
+</div>
+<% end %>
+
+
+<script language="javascript">
+  console.log("I am Javascript!");
+
+  var profile_values = document.getElementById('ambition').innerHTML;
+  console.log(profile_values);
+
+  var words = profile_values.split(/\W+/);
+  console.log(words);
+
+  var total_words = 0;
+  for (var i = 0; i < words.length; i++){
+    total_words += 1;
+  }
+  // TODO - Count the number of words in the profile.
+  // hint - look at what the innerHTML property provides.
+
+  document.getElementById('word-count').innerHTML = total_words;
+</script>

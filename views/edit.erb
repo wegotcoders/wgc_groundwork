@@ -1,0 +1,79 @@
+
+<div >
+  <h3>Edit Profile</h3>
+
+  <form action="/update" method="POST">
+    <fieldset>
+      <legend>Your Details :</legend>
+      <div class="form-group">
+        <label for="trainee[first_name]">First Name</label>
+        <input type="text" name="trainee[first_name]" value="<%= @profile["first_name"] %>"/>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[last_name]">Last Name</label>
+        <input type="text" name="trainee[last_name]" value="<%= @profile["last_name"] %>"/>
+      </div>
+      <div class="form-group">
+        <label for="trainee[dob]">Date of Birth</label>
+        <input type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>
+      </div>
+      <div class="form-group">
+        <label for="trainee[gender]">Gender</label>
+        <input type="text" name="trainee[gender]" value="<%= @profile["gender"] %>"/>
+      </div>
+      <div class="form-group">
+        <label for="trainee[codecademy]">CodeCademy</label>
+        <input type="text" name="trainee[codecademy]" value="<%= @profile["codecademy"] %>"/>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        General Information
+      </legend
+
+      <div class="form-group">
+        <label for="trainee[about]">About</label>
+        <textarea rows="4" cols="70" name="trainee[about]" id="trainee_about">
+          <%= @profile["about"] %>
+        </textarea>
+      </div>
+      <div class="form-group">
+        <label for="trainee[ambition]">Ambition</label>
+        <textarea rows="4" cols="70" name="trainee[ambition]" id="trainee_ambition">
+          <%= @profile["ambition"] %>
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[learning_experience]">Learning Experience</label>
+        <textarea rows="4" cols="70" name="trainee[learning_experience]" id="trainee_learning_experience">
+          <%= @profile["learning_experience"] %>
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[projects]">Projects</label>
+        <textarea rows="4" cols="70" name="trainee[projects]" id="trainee_projects">
+          <%= @profile["projects"] %>
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="trainee[rationale]">Rationale</label>
+        <textarea rows="4" cols="70" name="trainee[rationale]" id="trainee_rationale">
+          <%= @profile["rationale"] %>
+        </textarea>
+      </div>
+
+
+      <!-- TODO - Add more fields so that your profile can be edited -->
+
+      <input type="submit" value="Update Profile" class="btn btn-primary" />
+      <a href="/" class="btn btn-primary" role="button">Cancel</a>
+
+    </fieldset>
+  </form>
+</div>

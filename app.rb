@@ -17,6 +17,12 @@ get '/primes' do
 
   erb :primes, :layout => :main
 end
+get '/edit' do
+  if signed_in?
+    @profile = trainee.get_profile
+  end
+  erb :edit, :layout => :main
+end
 
 get '/' do
   if signed_in?
