@@ -95,5 +95,13 @@
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
-  document.getElementById('word-count').innerHTML = total_words;
+    function wordCountFunction(p_array) {
+        for(var i = 0;i < p_array.length ;i++) {
+           total_words += p_array[i].innerHTML.split(' ').length;
+        }
+    }
+
+    wordCountFunction(profile_values)
+
+  document.getElementById('word-count').innerHTML = total_words
 </script>
