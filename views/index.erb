@@ -1,34 +1,78 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
+  <h3 class="header"><%= @profile["first_name"] %>'s Amazing Profile</h3>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
+
+    <div id="profilePicDiv">
+    <img id="profilePic" src="/images/joe.png" alt="Joe's pic">
+    </div>
+    <% @profile.each do |field, value| %>
     <div class="profile-section box">
       <h4><%= field %></h4>
       <p class="profile-value"><%= value %></p>
     </div>
   <% end %>
+  
 
-  <div id="stats" class="box">
+  <div id="stats" class="boxFullWidth">
     <h3>Stats</h3>
     <!-- TODO - Set the contents of this span with JavaScript -->
     <span id="word-count">0</span> words found.
   </div>
 
-  <div id="problems" class="box">
+  <div id="problems" class="boxFullWidth">
     <h3>Programming Problems</h3>
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
-  <div class="box">
+  <div class="boxFullWidth">
     <h3>Edit Profile</h3>
 
     <form action="/update" method="POST">
       <fieldset>
         <div class="form-group">
-          <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
-        </div>
+          <label for label="trainee[about]">About</label>
+          <input class="inputBox" type="text" name="trainee[about]" value="<%= @profile["about"]%>"/>
+	</div>
+
+        <div class="form-group">
+          <label for="trainee[projects]">Projects</label>
+          <input class="inputBox" type="text" name="trainee[projects]" value="<%= @profile["projects"] %>"/>
+	</div>
+
+        <div class="form-group">
+          <label for="trainee[rationale]">Rationale</label>
+          <input class="inputBox" type="text" name="trainee[rationale]" value="<%= @profile["rationale"] %>"/>
+	</div>
+
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <input class="inputBox" type="text" name="trainee[ambition]" value="<%= @profile["ambition"] %>"/>
+	</div>
+
+        <div class="form-group">
+          <label for="trainee[codeacademy]">Codeacademy</label>
+          <input class="inputBox" type="text" name="trainee[codeacademy]" value="<%= @profile["codeacademy"] %>"/>    
+	</div>
+
+        <div class="form-group">
+          <label for="trainee[twitter]">Twitter</label>
+          <input class="inputBox" type="text" name="trainee[twitter]" value="<%= @profile["twitter"] %>"/>    
+	</div>
+
+        <div class="form-group">
+          <label for="trainee[dob]">DOB</label>
+          <input class="inputBox" type="text" name="trainee[dob]" value="<%= @profile["dob"] %>"/>    
+	</div>
+
+        <div class="form-group">
+          <label for="trainee[homepage]">Homepage</label>
+          <input class="inputBox" type="text" name="trainee[homepage]" value="<%= @profile["homepage"] %>"/>    
+	</div>
+
+          <label for="trainee[primes_sum]">Primes sum</label>
+          <input class="inputBox" type="text" name="trainee[primes_sum]" value="<%= @profile["primes_sum"] %>"/>    
+	</div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
 
@@ -55,5 +99,13 @@
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
-  document.getElementById('word-count').innerHTML = total_words;
+    function wordCountFunction(p_array) {
+        for(var i = 0;i < p_array.length ;i++) {
+           total_words += p_array[i].innerHTML.split(' ').length;
+        }
+    }
+
+    wordCountFunction(profile_values)
+
+  document.getElementById('word-count').innerHTML = total_words
 </script>
