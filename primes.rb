@@ -7,9 +7,16 @@ class Primes
 end
 =end
 
-primes_to_hundred = Prime.take_while {|p| p < 100}
+require 'prime'
 
-total = 0
+class Primes
+  def self.sum_to(limit = 100)
+    total = 0
+    primes_to_hundred = Prime.take_while {|p| p < 100}
+    primes_to_hundred.each { |x| total +=x }
+    puts total
+  end
+end
 
-primes_to_hundred.each { |x| total +=x }
-puts total
+Primes.sum_to()
+

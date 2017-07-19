@@ -20,7 +20,7 @@ body {
   /*added*/
   background: #a5784d url("/images/woodfloor.jpg") no-repeat fixed center;
   margin-top: 30px;
-  margin-left: 50px; /*added*/	
+  margin-left: 50px; 
   margin-right: 50px;  
 }
 
@@ -39,10 +39,12 @@ body {
 
 .welcome {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 75px;
   margin-left: 50px; /*added*/	
   margin-right: 50px;  
-  background: none;
+  background: white;
+  opacity: 0.6;
+  border-radius: 25px;
 }
 
 
