@@ -117,6 +117,12 @@
                         <li id="profile_learning_text" class="profile_value"><%= @profile["learning_experience"]%></li>
                     </ul>
                 </li>
+            <li><h4>Prime Solution</h4>
+               
+                    <ul>
+                        <li id="profile_prime_solution" class="profile_value">142913828922</li>
+                    </ul>
+                </li>
             </ul>
 
         </div>
@@ -169,6 +175,9 @@
 
                    <label for="trainee[codecademy_account]">Codecademy Account</label>
                     <input id="trainee_codecademy_account" type="text" name="trainee[codecademy_account]" value="Michael Constantinou"/>
+                    
+                    <label for="trainee[primes_sum]">Prime Solution</label>
+                    <input id="trainee_profile_sum" type="text" name="trainees[primes_sum]" value="142913828922"/>
 
              </div>
 
@@ -183,7 +192,8 @@
                               document.getElementById("profile_rationale_text").innerHTML = document.getElementById("trainee_rationale").value;	
                               document.getElementById("profile_ambition_text").innerHTML = document.getElementById("trainee_ambition").value;
                               document.getElementById("profile_learning_text").innerHTML = document.getElementById("trainee_learning_exp").value;	
-                              document.getElementById("contact_codecademy").innerHTML = document.getElementById("trainee_codecademy_account").value;			           
+                              document.getElementById("contact_codecademy").innerHTML = document.getElementById("trainee_codecademy_account").value;
+                              document.getElementById("profile_prime_solution").innerHTML = document.getElementById("trainee_profile_sum").value;
 		  }
                     
                 </script>

@@ -41,18 +41,18 @@
             
             #title {
                 
-                padding: 10px 0 10px 0;
+                padding: 10px 0 3px 0;
                 text-indent: 100px;
                 float:left;
-                border-left: 5px #1D2625 solid;
                 font-size: 32px;
-                
+                margin-bottom: 0;
+                border-bottom: 0;
                 
             }
             
             #contact_banner {
                 
-                margin-top: -30px;
+                margin-top: -50px;
                 text-indent: 10px;
                 color: #5F5F5F;
                 background-color: #1D2625;
@@ -60,7 +60,7 @@
                 margin-bottom: 0;
                 position: relative;
                 height: 40px;
-               
+            
                 
             }
             
@@ -217,7 +217,7 @@
                 height: 125px;
                 margin-top: 100px;
                 margin-bottom: 10px;
-                text-indent: 40px;
+                text-indent: 5px;
               
             }
             
