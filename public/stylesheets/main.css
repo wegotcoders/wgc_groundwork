@@ -37,3 +37,46 @@ h3 {
 }
 
 /* TODO - Add your own styles here */
+/* CSS code below has been added by Paul O'Hara 17/06/2017 - 18/06/2017, for we Got Coders admission test. */ 
+
+.tableStats {
+  background: linear-gradient(to bottom right, grey, yellow);
+  font-family: Helvetica;
+  color: navy;
+}
+
+.contentsList {
+  background: linear-gradient(to bottom right, white, grey);
+}
+
+.photo {
+    position:absolute; top:10px; right:40px; z-index:10;
+ 
+    
+}
+
+h5 {
+  bold; font-size: 2.5em;
+  color: olive;
+}
+
+li {
+  font-family: sans-serif;
+  font-size: 1.5;
+  color: purple;
+}
+
+th {
+  font-family: monospace;
+  padding:10px;
+  border:2px solid black;
+  color: maroon;
+  font-size: 1.0;
+}
+
+td {
+  padding:5px;
+  border:1px solid black
+}
+
+
