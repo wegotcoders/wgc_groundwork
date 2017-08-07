@@ -1,11 +1,39 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: 'Ubuntu', "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333;
+  min-width: 400px;
+  background: rgb(184,225,252); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(184,225,252,1) 0%, rgba(169,210,243,1) 10%, rgba(144,186,228,1) 25%, rgba(144,188,234,1) 37%, rgba(144,191,240,1) 50%, rgba(107,168,229,1) 70%, rgba(162,218,245,1) 83%, rgba(189,243,253,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 70%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(184,225,252,1) 0%,rgba(169,210,243,1) 10%,rgba(144,186,228,1) 25%,rgba(144,188,234,1) 37%,rgba(144,191,240,1) 50%,rgba(107,168,229,1) 70%,rgba(162,218,245,1) 83%,rgba(189,243,253,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.container {
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 #logo {
+  text-align: center;
+}
+
+
+#mypic {
+  max-width: 80px;
+  height: auto;
+  border-radius: 50%;
+  text-align: center;
+}
+
+#heading {
   text-align: center;
 }
 
@@ -17,16 +45,50 @@ body {
   border: 1px solid #999;
   background: #FCFCFC;
   padding: 1em;
-  margin-bottom: 0.5em;
+  margin: 10px;
+}
+
+.row {
+  display: table;
+  width: 100%;
+  border-spacing: 10px;
+  height: auto;
+}
+
+.profile-section {
+  display: table-cell;
+  width: 33%;
+  height: inherit;
+  border: 1px solid #999;
+  background: #FCFCFC;
+  padding: 1em;
 }
 
 .welcome {
   text-align: center;
 }
 
+h2 {
+  font-size: 2em;
+}
+
 h3 {
   font-size: 1.5em;
 }
+
+h4 {
+  font-size: 1.3em;
+}
+
+h2, h3, h4 {
+  font-weight: bold; 
+}
+
+.forminput {
+  width: 100px;
+  height: 400px;
+}
+
 
 .error {
   text-align: center;

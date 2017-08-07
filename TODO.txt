@@ -1,0 +1,3 @@
+img center
+form styling
+bottom boxes => columns

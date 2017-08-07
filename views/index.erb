@@ -1,11 +1,14 @@
 <% if @profile %>
-  <h3><%= @profile["first_name"] %>'s Amazing Profile</h3>
-
+    <h2 id="heading" class=""><%= @profile["first_name"] %>'s Amazing Profile</h2>
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
-  <% @profile.each do |field, value| %>
-    <div class="profile-section box">
-      <h4><%= field %></h4>
-      <p class="profile-value"><%= value %></p>
+  <% @profile.each_slice(3).to_a.each do |array| %>
+    <div class="row">
+    <% array.each do |field, value| %>
+      <div class="profile-section">
+        <h4><%= field %>:</h4>
+        <p class="profile-value"><%= value %></p>
+      </div>
+      <% end %>
     </div>
   <% end %>
 
@@ -27,8 +30,10 @@
       <fieldset>
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <input class="forminput" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
         </div>
+
+
 
         <!-- TODO - Add more fields so that your profile can be edited -->
 
@@ -44,6 +49,7 @@
   </div>
 <% end %>
 
+<img id="mypic" class="" src="/images/me.jpg" alt="Ethan Carter"/>
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
