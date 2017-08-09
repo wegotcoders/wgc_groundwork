@@ -23,18 +23,24 @@ body {
 
 #logo {
   text-align: center;
+  margin: 0;
 }
 
 
-img {
+#mypic {
   max-width: 80px;
   height: auto;
   border-radius: 50%;
+  margin: 15px 0 10px;
   display: block;
   text-align: center;
-    margin-left:auto;
+  margin-left:auto;
   margin-right:auto;
+  transition: 0.4s;
+}
 
+#mypic:hover {
+  opacity: 0.75;
 }
 
 
@@ -89,11 +95,30 @@ h2, h3, h4 {
   font-weight: bold; 
 }
 
-.forminput {
-  width: 100px;
-  height: 400px;
+.form-group {
+  display: table-cell;
+  width: 33%;
+  margin-left:auto;
+  margin-right:auto;
+
 }
 
+.forminput {
+  width: 100%;
+  height: auto;
+
+}
+
+label {
+  display: block;
+
+  text-align: center;
+}
+
+input.btn {
+  display: block;
+  margin: 0 auto ;
+}
 
 .error {
   text-align: center;

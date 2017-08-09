@@ -1,3 +1,9 @@
-img center
+
 form styling
-bottom boxes => columns
+get rid of underscores in headers
+find codecademy name attribute
+
+
+
+          <input class="forminput" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+        </div>

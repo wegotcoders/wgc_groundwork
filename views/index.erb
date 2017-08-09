@@ -1,5 +1,7 @@
 <% if @profile %>
     <h2 id="heading" class=""><%= @profile["first_name"] %>'s Amazing Profile</h2>
+    <a href="https://github.com/ethaning/" target="_blank"><img id="mypic" class="" src="/images/me.jpg" alt="Ethan Carter"/></a>
+
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
   <% @profile.each_slice(3).to_a.each do |array| %>
     <div class="row">
@@ -7,8 +9,11 @@
       <div class="profile-section">
         <h4><%= field %>:</h4>
         <p class="profile-value"><%= value %></p>
+        <p id="word-count"></p>
       </div>
       <% end %>
+
+      </div>
     </div>
   <% end %>
 
@@ -23,21 +28,59 @@
     <a href="/primes">My Prime Number Solution</a>
   </div>
 
+
   <div class="box">
     <h3>Edit Profile</h3>
-
     <form action="/update" method="POST">
       <fieldset>
+      <div class="row"> 
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <input class="forminput" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
+          <textarea name="trainee[about]" class="forminput" cols="30" rows="10"><%= @profile["about"] %></textarea>
         </div>
 
 
+        <div class="form-group">
+          <label for="trainee[projects]">Projects</label>
+          <textarea name="trainee[projects]" class="forminput" cols="30" rows="10"><%= @profile["projects"] %></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[rationale]">Rationale</label>
+          <textarea name="trainee[rationale]" class="forminput" cols="30" rows="10"><%= @profile["rationale"] %></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="trainee[ambition]">Ambition</label>
+          <textarea name="trainee[ambition]" class="forminput" cols="30" rows="10"><%= @profile["ambition"] %></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[learning_experience]">Learning Experience</label>
+          <textarea name="trainee[learning_experience]" class="forminput" cols="30" rows="10"><%= @profile["learning_experience"] %></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="trainee[how_did_you_hear]">How Did You Hear</label>
+          <textarea name="trainee[how_did_you_hear]" class="forminput" cols="30" rows="10"><%= @profile["how_did_you_hear"] %></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="trainee[codecademy_username]">Codecademy Username</label>
+          <textarea name="trainee[codecademy_username]" class="forminput" cols="30" rows="1"><%= @profile["codecademy_username"] %></textarea>
+       
+        <div class="form-group">
+          <label for="trainee[primes_sum]">Primes Sum</label>
+          <textarea name="trainee[primes_sum]" class="forminput" cols="30" rows="1"><%= @profile["primes_sum"] %></textarea>
+      </div>
 
         <!-- TODO - Add more fields so that your profile can be edited -->
 
-        <input type="submit" value="Update Profile" class="btn btn-primary" />
+        <input type="submit" value="Update Profile" class="btn btn-primary" id="submit" />
       </fieldset>
     </form>
   </div>
@@ -49,7 +92,6 @@
   </div>
 <% end %>
 
-<img id="mypic" class="" src="/images/me.jpg" alt="Ethan Carter"/>
 
 <!-- Add your Javascript to this script tag -->
 <script language="javascript">
