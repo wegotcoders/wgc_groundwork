@@ -3,13 +3,15 @@
     <a href="https://github.com/ethaning/" target="_blank"><img id="mypic" class="" src="/images/me.jpg" alt="Ethan Carter"/></a>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
+
+
+
   <% @profile.each_slice(3).to_a.each do |array| %>
     <div class="row">
     <% array.each do |field, value| %>
       <div class="profile-section">
         <h4><%= field %>:</h4>
         <p class="profile-value"><%= value %></p>
-        <p id="word-count"></p>
       </div>
       <% end %>
 
@@ -36,42 +38,49 @@
       <div class="row"> 
         <div class="form-group">
           <label for="trainee[about]">About</label>
-          <textarea name="trainee[about]" class="forminput" cols="30" rows="10"><%= @profile["about"] %></textarea>
+          <textarea name="trainee[about]" class="forminput" cols="30" rows="10" onkeyup="wordCount('trainee[about]', 'trainee[about]-count')"><%= @profile["about"] %></textarea>
+          <span id="trainee[about]-count">0</span> words
         </div>
+
 
 
         <div class="form-group">
           <label for="trainee[projects]">Projects</label>
-          <textarea name="trainee[projects]" class="forminput" cols="30" rows="10"><%= @profile["projects"] %></textarea>
+          <textarea name="trainee[projects]" class="forminput" cols="30" rows="10" onkeyup="wordCount('trainee[projects]', 'trainee[projects]-count')"><%= @profile["projects"] %></textarea>
+          <span id="trainee[projects]-count">0</span> words
         </div>
 
         <div class="form-group">
           <label for="trainee[rationale]">Rationale</label>
-          <textarea name="trainee[rationale]" class="forminput" cols="30" rows="10"><%= @profile["rationale"] %></textarea>
+          <textarea name="trainee[rationale]" class="forminput" cols="30" rows="10" onkeyup="wordCount('trainee[rationale]', 'trainee[rationale]-count')"><%= @profile["rationale"] %></textarea>
+          <span id="trainee[rationale]-count">0</span> words
         </div>
       </div>
 
       <div class="row">
         <div class="form-group">
           <label for="trainee[ambition]">Ambition</label>
-          <textarea name="trainee[ambition]" class="forminput" cols="30" rows="10"><%= @profile["ambition"] %></textarea>
+          <textarea name="trainee[ambition]" class="forminput" cols="30" rows="10" onkeyup="wordCount('trainee[ambition]', 'trainee[ambition]-count')"><%= @profile["ambition"] %></textarea>
+          <span id="trainee[ambition]-count">0</span> words
         </div>
 
         <div class="form-group">
           <label for="trainee[learning_experience]">Learning Experience</label>
-          <textarea name="trainee[learning_experience]" class="forminput" cols="30" rows="10"><%= @profile["learning_experience"] %></textarea>
+          <textarea name="trainee[learning_experience]" class="forminput" cols="30" rows="10" onkeyup="wordCount('trainee[learning_experience]', 'trainee[learning_experience]-count')"><%= @profile["learning_experience"] %></textarea>
+          <span id="trainee[learning_experience]-count">0</span> words
         </div>
 
         <div class="form-group">
           <label for="trainee[how_did_you_hear]">How Did You Hear</label>
-          <textarea name="trainee[how_did_you_hear]" class="forminput" cols="30" rows="10"><%= @profile["how_did_you_hear"] %></textarea>
+          <textarea name="trainee[how_did_you_hear]" class="forminput" cols="30" rows="10" onkeyup="wordCount('trainee[how_did_you_hear]', 'trainee[how_did_you_hear]-count')"><%= @profile["how_did_you_hear"] %></textarea>
+          <span id="trainee[how_did_you_hear]-count">0</span> words
         </div>
       </div>
 
       <div class="row">
         <div class="form-group">
-          <label for="trainee[codecademy_username]">Codecademy Username</label>
-          <textarea name="trainee[codecademy_username]" class="forminput" cols="30" rows="1"><%= @profile["codecademy_username"] %></textarea>
+          <label for="trainee[homepage]">Codecademy Username/Homepage</label>
+          <textarea name="trainee[homepage]" class="forminput" cols="30" rows="1"><%= @profile["homepage"] %></textarea>
        
         <div class="form-group">
           <label for="trainee[primes_sum]">Primes Sum</label>
@@ -97,11 +106,48 @@
 <script language="javascript">
   console.log("I am Javascript!");
 
-  var profile_values = document.getElementsByClassName('profile-value');
-  var total_words = 0;
+
+  function totalWordCount (array) {
+    var len = array.length;
+    var total_words = 0;
+    var temp = '';
+    var countID = '';
+    //console.log(array);
+
+    for (i = 0; i < len-2; i++){
+      temp = array[i].value.split(' ');
+      temp = temp.length;
+      //console.log (temp);
+      total_words += temp;
+      countID = array[i].name + '-count';
+      //console.log(countID + ' ' + temp);
+      document.getElementById(countID).innerHTML = temp; 
+      if (temp < 20) {
+        array[i].style.backgroundColor = "red";
+      }
+      temp = '';
+    }
+    return total_words;
+  }
+
+  function wordCount (count, target) {
+    var textbox = document.getElementsByName(count)[0];
+    var total = textbox.value.split(' ').length ;//.value  ;//.split(' ').length;
+    document.getElementById(target).innerHTML = total;
+    if (total < 20){
+      textbox.style.backgroundColor = "red";
+    } else {
+      textbox.style.backgroundColor =  "white";
+    }
+  }
+
+  var profile_values = document.getElementsByClassName('forminput');
+  document.getElementById('word-count').innerHTML = totalWordCount(profile_values);
+
 
   // TODO - Count the number of words in the profile.
   // hint - look at what the innerHTML property provides.
 
-  document.getElementById('word-count').innerHTML = total_words;
+
+  //profile_values[0].value.length;
 </script>

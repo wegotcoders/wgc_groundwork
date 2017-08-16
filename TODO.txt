@@ -3,7 +3,11 @@ form styling
 get rid of underscores in headers
 find codecademy name attribute
 
+fix red error message for under 20 words in edit profile
+
 
 
           <input class="forminput" type="text" name="trainee[about]" value="<%= @profile["about"] %>"/>
         </div>
+
+
