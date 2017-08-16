@@ -1,6 +1,6 @@
 <% if @profile %>
     <h2 id="heading" class=""><%= @profile["first_name"] %>'s Amazing Profile</h2>
-    <a href="https://github.com/ethaning/" target="_blank"><img id="mypic" class="" src="/images/me.jpg" alt="Ethan Carter"/></a>
+    <div class="imgwrap"><a href="https://github.com/ethaning/" target="_blank"><img id="mypic" class="" src="/images/me.jpg" alt="Ethan Carter"/></a></div>
 
   <!-- TODO- Perhaps re-jig this to fit your new design / layout -->
 
@@ -10,7 +10,7 @@
     <div class="row">
     <% array.each do |field, value| %>
       <div class="profile-section">
-        <h4><%= field %>:</h4>
+        <h4><%= field.tr('_', ' ') %>:</h4>
         <p class="profile-value"><%= value %></p>
       </div>
       <% end %>
@@ -77,12 +77,12 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="form-group">
+      <div class="row row-bottom">
+        <div class="form-group-bottom">
           <label for="trainee[homepage]">Codecademy Username/Homepage</label>
           <textarea name="trainee[homepage]" class="forminput" cols="30" rows="1"><%= @profile["homepage"] %></textarea>
        
-        <div class="form-group">
+        <div class="form-group-bottom">
           <label for="trainee[primes_sum]">Primes Sum</label>
           <textarea name="trainee[primes_sum]" class="forminput" cols="30" rows="1"><%= @profile["primes_sum"] %></textarea>
       </div>

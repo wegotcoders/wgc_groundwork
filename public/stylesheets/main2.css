@@ -32,11 +32,14 @@ body {
   height: auto;
   border-radius: 50%;
   margin: 15px 0 10px;
-  display: block;
-  text-align: center;
+  transition: 0.4s;
+}
+
+.imgwrap {
+  width: 100px;
+  height: auto;
   margin-left:auto;
   margin-right:auto;
-  transition: 0.4s;
 }
 
 #mypic:hover {
@@ -65,6 +68,12 @@ body {
   border-spacing: 10px;
   height: auto;
 }
+
+
+.row-bottom {
+  height: 100px;
+}
+
 
 .profile-section {
   display: table-cell;
@@ -101,6 +110,13 @@ h2, h3, h4 {
   margin-left:auto;
   margin-right:auto;
 
+}
+
+.form-group-bottom{
+  display: table-cell;
+  width: 33%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .forminput {
