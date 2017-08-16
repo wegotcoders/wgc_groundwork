@@ -23,18 +23,27 @@ body {
 
 #logo {
   text-align: center;
+  margin: 0;
 }
 
 
-img {
+#mypic {
   max-width: 80px;
   height: auto;
   border-radius: 50%;
-  display: block;
-  text-align: center;
-    margin-left:auto;
-  margin-right:auto;
+  margin: 15px 0 10px;
+  transition: 0.4s;
+}
 
+.imgwrap {
+  width: 100px;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#mypic:hover {
+  opacity: 0.75;
 }
 
 
@@ -59,6 +68,12 @@ img {
   border-spacing: 10px;
   height: auto;
 }
+
+
+.row-bottom {
+  height: 100px;
+}
+
 
 .profile-section {
   display: table-cell;
@@ -89,11 +104,37 @@ h2, h3, h4 {
   font-weight: bold; 
 }
 
-.forminput {
-  width: 100px;
-  height: 400px;
+.form-group {
+  display: table-cell;
+  width: 33%;
+  margin-left:auto;
+  margin-right:auto;
+
 }
 
+.form-group-bottom{
+  display: table-cell;
+  width: 33%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.forminput {
+  width: 100%;
+  height: auto;
+
+}
+
+label {
+  display: block;
+
+  text-align: center;
+}
+
+input.btn {
+  display: block;
+  margin: 0 auto ;
+}
 
 .error {
   text-align: center;
